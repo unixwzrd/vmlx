@@ -7968,7 +7968,7 @@ class TestStartupCompatibilityGuards:
 
         assert "sign_bundled_python_native_files()" in source
         assert 'find "$bundled_python" -type f' in source
-        assert '-name "*.dylib" -o -name "*.so" -o -perm +111' in source
+        assert 'find "$bundled_python/python/bin" -type f' in source
         assert 'codesign --force --timestamp --options runtime --sign "$identity" "$native_file"' in source
         assert "finalize_release_app_signature" in source
         assert (

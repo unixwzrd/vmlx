@@ -12,7 +12,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PANEL_DIR="$(dirname "$SCRIPT_DIR")"
 REPO_DIR="$(dirname "$PANEL_DIR")"
 BUNDLE_DIR="$PANEL_DIR/bundled-python"
-JANG_LOCAL="${VMLX_JANG_TOOLS_SOURCE:-${VMLINUX_JANG_TOOLS_SOURCE:-$HOME/jang/jang-tools}}"
+JANG_LOCAL="$(bash "$REPO_DIR/scripts/resolve-jang-tools.sh" "$REPO_DIR")"
 
 echo "==> Bundling Python $PYTHON_VERSION for standalone vMLX distribution"
 
@@ -54,10 +54,11 @@ trap 'rm -f "$STANDALONE_TARBALL"' EXIT
 restore_python_runtime_files() {
   local RESTORE_TMP
   RESTORE_TMP="$(mktemp -d)"
+  # Member paths must omit the "./" prefix: BSD tar on macOS rejects
+  # "./python/..." even when those files exist in the archive.
   tar xzf "$STANDALONE_TARBALL" -C "$RESTORE_TMP" \
-    "./python/bin/python3" \
-    "./python/bin/python3.12" \
-    "./python/lib/libpython3.12.dylib"
+    "python/bin/python3.12" \
+    "python/lib/libpython3.12.dylib"
   mkdir -p "$BUNDLE_DIR/python/bin" "$BUNDLE_DIR/python/lib"
   cp -f "$RESTORE_TMP/python/bin/python3.12" "$BUNDLE_DIR/python/bin/python3.12"
   cp -f "$RESTORE_TMP/python/lib/libpython3.12.dylib" "$BUNDLE_DIR/python/lib/libpython3.12.dylib"
@@ -696,4 +697,10 @@ echo "==> Bundle size:"
 du -sh "$BUNDLE_DIR"
 echo ""
 echo "==> Done! Bundled Python ready at: $BUNDLE_DIR"
-echo "    Next: npm run build && npx electron-builder --mac"
+echo
+echo "✓ bundled-python ready"
+date -u +%Y-%m-%dT%H:%M:%SZ > "$BUNDLE_DIR/.bundle-stamp"
+echo "  Next:     cd .. && make app && make install   (local, no DMG)"
+echo "  Ship:     cd .. && make release               (DMG + SHA256SUMS)"
+echo "  Engine:   make engine-and-install             (sync + app + /Applications)"
+echo "  Ship eng: make engine-dmg                       (sync + DMG for distribution)"

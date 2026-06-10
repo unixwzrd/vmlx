@@ -51,7 +51,12 @@ sign_bundled_python_native_files() {
       codesign --force --timestamp --options runtime --sign "$identity" "$native_file" >/dev/null
       signed_count=$((signed_count + 1))
     fi
-  done < <(find "$bundled_python" -type f \( -name "*.dylib" -o -name "*.so" -o -perm +111 \))
+  done < <(
+    {
+      find "$bundled_python" -type f \( -name "*.dylib" -o -name "*.so" \) 2>/dev/null
+      find "$bundled_python/python/bin" -type f 2>/dev/null
+    } | sort -u
+  )
   echo "  signed $signed_count bundled Python native files"
 }
 
