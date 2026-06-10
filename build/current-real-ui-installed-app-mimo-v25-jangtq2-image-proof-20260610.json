@@ -1,0 +1,89 @@
+{
+  "assertion_failures": [
+    "renderer send errors: [object Object]",
+    "requested real image media but proof did not record vl_image surface"
+  ],
+  "boundary": "MiMo JANGTQ_2 installed-app image/media is not wired. Vision weights/config metadata do not equal runtime media support; forced MLLM is overridden to text-only.",
+  "cache": {
+    "cache_hit_tokens": 39,
+    "cache_hit_tokens_by_detail": {
+      "paged": 39
+    },
+    "disk_writes": 3,
+    "l2_block_tokens_on_disk": 132,
+    "l2_tokens_on_disk": 132,
+    "last_cache_execution": {
+      "blocks": 1,
+      "cache_detail": "paged",
+      "cached_tokens": 39,
+      "dequantization_seconds": 0,
+      "dequantized": false,
+      "reconstructed": true,
+      "reconstruction_ok": true,
+      "reconstruction_seconds": 0.004154,
+      "request_id": "chatcmpl-a52182d1",
+      "selection": {
+        "hot_advantage_threshold_tokens": 64,
+        "hot_advantage_tokens": 39,
+        "paged_cached_tokens": 39,
+        "paged_cold_tokens": 0,
+        "reason": "no_warm_prefix_alternative",
+        "rejected": null,
+        "selected": "paged",
+        "warm_cached_tokens": 0
+      },
+      "total_worker_cache_seconds": 0.00433
+    }
+  },
+  "failure_stage": "image_send_message",
+  "memory": {
+    "active_mb": 76491.8,
+    "cache_mb": 107.8,
+    "peak_mb": 77127.2
+  },
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+  "native_cache": {
+    "block_disk_l2": true,
+    "cache_subtype": "mimo_v2_asymmetric_swa",
+    "cache_type": "mixed_swa_kv",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "family": "mimo_v2",
+    "generic_turboquant_kv": {
+      "enabled": false,
+      "reason": "not_active"
+    },
+    "paged": true,
+    "prefix": true,
+    "schema": "mixed_swa_kv_v1",
+    "storage_quantization": {
+      "applies_to": "full_and_sliding_attention_kv",
+      "bits": null,
+      "enabled": false,
+      "group_size": null,
+      "metadata_policy": "preserve_rotating_window_metadata",
+      "mode": "storage_boundary"
+    }
+  },
+  "positive_evidence": [
+    "installed_app_ui",
+    "real_loaded_model",
+    "image_attachment_attempted",
+    "server_MEDIA_DIAG_image_url",
+    "server_cache_controls",
+    "cache_hit_telemetry",
+    "l2_disk_storage"
+  ],
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-image-20260610-proof.json",
+  "red_boundary": "/v1/chat/completions returned 400 unsupported media modality image because the loaded runtime is text-only; supported modalities: text.",
+  "requested_media": true,
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-image-20260610-chat.png",
+  "served_model": "mimo-v25-jangtq2-installed-ui-image-20260610",
+  "status": "fail",
+  "ui_launch_mode": "installed-app",
+  "visible_assistant_turns_complete": true,
+  "wire_api": "chat"
+}

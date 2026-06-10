@@ -1,0 +1,60 @@
+INFO:vmlx_engine.model_config_registry:Model config: detection_source=jang_stamped family=gemma4 reasoning_parser=gemma4 tool_parser=gemma4 think_in_template=False cache_type=kv cache_subtype=None is_mllm=True
+INFO:__main__:--kv-cache-quantization=none explicit; VMLX_DISABLE_TQ_KV=1 set so JANG-calibrated TurboQuant KV is skipped at load time. Omit the flag (or set VMLX_FORCE_TQ_AUTO=1) to keep the bundle's calibrated TQ.
+INFO:__main__:Reasoning parser enabled: gemma4
+============================================================
+SECURITY CONFIGURATION
+============================================================
+  Authentication: DISABLED - Use --api-key to enable
+  Rate limiting: DISABLED - Use --rate-limit to enable
+  Request timeout: 300.0s
+  Tool calling: ENABLED (parser: gemma4)
+  Reasoning: ENABLED (parser: Gemma4ReasoningParser)
+  External speculative decoding: Use --speculative-model to enable
+============================================================
+Loading model: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4
+Served model name: gemma4-12b-mxfp4-media-smoke
+Max output fallback: 4096 (bundle max_new_tokens wins when present)
+Mode: Simple (maximum throughput)
+INFO:vmlx_engine.server:Serving model as: gemma4-12b-mxfp4-media-smoke (actual: OsaurusAI/gemma-4-12B-it-MXFP4)
+INFO:vmlx_engine.server:System memory before load: 112.0GB available / 128.0GB total (12.5% used)
+INFO:vmlx_engine.server:Loading model with SimpleEngine: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4
+INFO:vmlx_engine:is_mllm_model(/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4): tier=config_json_vision_config result=True
+INFO:vmlx_engine.models.mllm:Loading JANG VL model: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4
+INFO:vmlx_engine.utils.jang_loader:JANG v2 VLM detected — loading via mmap (instant)
+INFO:vmlx_engine.utils.jang_loader:  Wired limit set to 25 GB (model 8 GB)
+INFO:vmlx_engine.utils.jang_loader:  TurboQuant KV skipped: VMLX_DISABLE_TQ_KV=1; using native model cache plus scheduler-level q4/q8 storage only when explicitly requested and compatible.
+INFO:vmlx_engine.utils.jang_loader:JANG v2 VLM loaded in 1.4s
+[transformers] You are using a model of type `gemma4_unified` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+INFO:vmlx_engine.models.mllm:JANG VL model loaded: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4
+INFO:vmlx_engine.engine.simple:SimpleEngine loaded: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 (MLLM=True)
+INFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=7.4GB max=107.5GB reason=simple_engine_start
+INFO:vmlx_engine.server:MLLM model loaded (simple mode): /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4
+INFO:vmlx_engine.server:Metal GPU memory after load: 7.37GB active, 7.37GB peak
+INFO:vmlx_engine.server:System memory after load: 104.1GB available (18.7% used)
+INFO:vmlx_engine.server:Native tool format enabled for parser: gemma4
+INFO:vmlx_engine.server:Default max tokens fallback: 4096 (bundle max_new_tokens wins when present)
+Starting server at http://127.0.0.1:8892
+INFO:     Started server process [17071]
+INFO:     Waiting for application startup.
+INFO:vmlx_engine.server:Started caffeinate system wake lock for PID 17071
+INFO:vmlx_engine.mcp.config:No MCP config file found, using empty config
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8892 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57483 - "GET /health HTTP/1.1" 200 OK
+WARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.
+INFO:     127.0.0.1:57484 - "GET /v1/models/gemma4-12b-mxfp4-media-smoke/capabilities HTTP/1.1" 200 OK
+INFO:vmlx_engine.server:[MEDIA_DIAG] request_shape={"engine_is_mllm": true, "family": "gemma4", "media": {"content_arrays": 1, "data_url": 1, "messages": 1, "missing_source": 0, "roles": {"user": 1}, "total": 1, "types": {"image_url": 1}, "url_or_path": 0}, "model": "gemma-4-12B-it-MXFP4", "omni_modalities": null, "registry_is_mllm": true, "route": "/v1/chat/completions"}
+INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 32, 'enable_thinking': False}
+INFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages
+INFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 1 images, 0 audio
+INFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'image'}, {'type': 'text', 'text': 'The image is a solid color. Answer...
+INFO:vmlx_engine.models.mllm:[PREFIX CACHE] Stored KV cache for 1 image(s) (281 prompt tokens)
+INFO:vmlx_engine.server:Chat completion: 6 tokens in 0.39s (15.4 tok/s)
+INFO:     127.0.0.1:57485 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:vmlx_engine.engine.simple:SimpleEngine stopped
+INFO:vmlx_engine.server:Engine stopped
+INFO:vmlx_engine.server:Caffeinate process terminated
+INFO:     Application shutdown complete.
+INFO:     Finished server process [17071]

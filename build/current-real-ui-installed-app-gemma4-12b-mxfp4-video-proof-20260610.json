@@ -1,0 +1,125 @@
+{
+  "generated_at": "2026-06-10T04:17:27.887Z",
+  "status": "pass",
+  "source_proof": "docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-video-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-video-20260610-chat.png",
+  "repo_dir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "ui_launch_mode": "installed-app",
+  "installed_app_path": "/Applications/vMLX.app",
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4",
+  "served_model": "gemma4-12b-mxfp4-installed-ui-video-20260610",
+  "wire_api": "chat",
+  "server_cache_controls_verified": true,
+  "status_summary": {
+    "visible_assistant_turns_complete": true,
+    "first_assistant_content": "The system is now active and ready for use. Please proceed with your request. REAL_UI_LIVE",
+    "second_assistant_content": "The video shows a solid red background with no movement or changes.",
+    "send_errors": [],
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false
+  },
+  "media": {
+    "requested_video": true,
+    "persisted_video_attachment": true,
+    "video_expected_regex": "red|solid",
+    "video_semantic_verified": true,
+    "video_verified": true,
+    "assistant_answer": "The video shows a solid red background with no movement or changes.",
+    "server_video_decode": "base64 MP4 decoded; 25 total frames at 25 fps; 4 frames extracted"
+  },
+  "event_counts": {
+    "stream": 34,
+    "tool": 0,
+    "reasoning_done": 0,
+    "complete": 3
+  },
+  "stream_traces": [
+    {
+      "count": 21,
+      "last_full_content": "The system is now active and ready for use. Please proceed with your request. REAL_UI_LIVE",
+      "last_cached_tokens": 0,
+      "last_cache_detail": "",
+      "last_tokens_per_second": "57.1"
+    },
+    {
+      "count": 12,
+      "last_full_content": "This is the second UI turn. REAL_UI_LIVE",
+      "last_cached_tokens": 20,
+      "last_cache_detail": "paged+mixed_swa",
+      "last_tokens_per_second": "57.0"
+    },
+    {
+      "count": 1,
+      "last_full_content": "The video shows a solid red background with no movement or changes.",
+      "last_cached_tokens": 0,
+      "last_cache_detail": "",
+      "last_tokens_per_second": "0.0"
+    }
+  ],
+  "runtime": {
+    "model_type": "mllm",
+    "active_mb": 7764.1,
+    "peak_mb": 8369.3,
+    "quantization_codec": "affine_quantized_matmul",
+    "weight_format": "mxfp4",
+    "profile": "MXFP4",
+    "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+    "metal_na_active_on_host": true,
+    "passthrough_tensor_count": 349
+  },
+  "native_cache": {
+    "family": "gemma4",
+    "schema": "mixed_swa_kv_v1",
+    "cache_type": "mixed_swa_kv",
+    "cache_subtype": "mixed_swa_kv",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "generic_turboquant_kv_enabled": false,
+    "generic_turboquant_kv_reason": "not_active",
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true
+  },
+  "cache": {
+    "cache_hit_requests": 1,
+    "cache_hit_tokens": 20,
+    "cache_hit_tokens_by_detail": {
+      "paged+mixed_swa": 20
+    },
+    "last_cache_execution": {
+      "cache_detail": "paged+mixed_swa",
+      "cached_tokens": 20,
+      "reconstructed": true,
+      "dequantized": true,
+      "reconstruction_ok": true,
+      "dequantization_ok": true
+    },
+    "ram_tokens_cached": 70,
+    "l2_block_tokens_on_disk": 70,
+    "l2_tokens_on_disk": 70,
+    "block_disk_writes": 2
+  },
+  "proven_surfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "generation_defaults_applied",
+    "installed_app_ui",
+    "l2_disk_storage",
+    "language_leak_check",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "server_cache_controls",
+    "settings_persistence",
+    "video_where_supported"
+  ],
+  "not_proven": [
+    "Gemma audio support",
+    "public tunnel raw SSE parity",
+    "Developer ID notarized public DMG release"
+  ]
+}

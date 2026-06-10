@@ -1,0 +1,2041 @@
+{
+  "generatedAt": "2026-06-10T06:41:31.879Z",
+  "status": "pass",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "panelDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel",
+  "script": "panel/scripts/live-real-ui-model-proof.mjs",
+  "modelPath": "/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+  "modelName": "gemma-4-31B-it-qat-JANG_4M",
+  "servedModel": "gemma4-31b-jang4m-dev-ui-video-20260610",
+  "requestedWireApi": "chat",
+  "requestedBuiltinTools": false,
+  "requestedServerCacheControls": true,
+  "requestedMedia": false,
+  "requestedVideo": true,
+  "requestedAudio": false,
+  "requestContract": {
+    "promptOne": "Reply briefly in English. Include the phrase REAL_UI_LIVE once.",
+    "promptTwo": "Repeat the phrase REAL_UI_LIVE once and mention that this is the second UI turn.",
+    "requestMaxTokens": 128,
+    "requestMaxPromptTokens": 12000,
+    "maxToolIterations": 4,
+    "toolResultMaxChars": 12345,
+    "wireApi": "chat",
+    "builtinToolsEnabled": false,
+    "enableThinking": null,
+    "samplingOverrides": {
+      "temperature": 0,
+      "topP": 1
+    },
+    "checkServerCacheControls": true,
+    "checkMedia": false,
+    "checkVideo": true,
+    "checkAudio": false,
+    "expectPagedCacheLocked": false,
+    "imageExpectRegex": "\\bred\\b",
+    "videoExpectRegex": "red|solid",
+    "audioExpectRegex": "",
+    "cacheExpectRegex": ""
+  },
+  "baseUrl": "http://127.0.0.1:64097",
+  "python": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+  "runDir": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-qb3TEQ",
+  "userDataDir": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-userdata-mqBuy2",
+  "workingDirectory": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-tools-EDOcEf",
+  "uiLaunchMode": "electron-dev",
+  "uiCommand": [
+    "npm",
+    "run",
+    "dev",
+    "--",
+    "--",
+    "--user-data-dir=/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-userdata-mqBuy2",
+    "--remote-debugging-port=64098"
+  ],
+  "serverCommand": [
+    "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+    "-B",
+    "-s",
+    "-m",
+    "vmlx_engine.cli",
+    "serve",
+    "/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "64097",
+    "--served-model-name",
+    "gemma4-31b-jang4m-dev-ui-video-20260610",
+    "--timeout",
+    "240",
+    "--max-num-seqs",
+    "1",
+    "--prefill-batch-size",
+    "512",
+    "--prefill-step-size",
+    "1024",
+    "--completion-batch-size",
+    "128",
+    "--continuous-batching",
+    "--use-paged-cache",
+    "--paged-cache-block-size",
+    "64",
+    "--max-cache-blocks",
+    "1000",
+    "--enable-block-disk-cache",
+    "--block-disk-cache-dir",
+    "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-qb3TEQ/block-cache",
+    "--block-disk-cache-max-gb",
+    "2",
+    "--ssm-state-cache-mb",
+    "512",
+    "--max-tokens",
+    "128",
+    "--log-level",
+    "INFO",
+    "--default-enable-thinking",
+    "false",
+    "--max-prompt-tokens",
+    "12000"
+  ],
+  "server": {
+    "baseUrl": "http://127.0.0.1:64097",
+    "health": {
+      "status": "healthy",
+      "model_loaded": true,
+      "model_name": "JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+      "model_type": "mllm",
+      "engine_type": "batched",
+      "last_request_time": 1781073689.393646,
+      "mcp": null,
+      "memory": {
+        "active_mb": 25842.8,
+        "peak_mb": 26233.1,
+        "cache_mb": 13.2
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "speculative_decoding": "not_configured",
+      "scheduler": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": null,
+        "batch_generator": {
+          "prompt_tokens": 25,
+          "prompt_time": 0.5093769160012016,
+          "prompt_tps": 49.07956998966366,
+          "generation_tokens": 36,
+          "generation_time": 1.7051414129673503,
+          "generation_tps": 21.112618417584184,
+          "vision_encoding_time": 0,
+          "num_images_processed": 0,
+          "peak_memory": 27.507389644,
+          "hybrid_kv_without_ssm_hits": 0,
+          "hybrid_kv_without_ssm_tokens": 0,
+          "last_hybrid_kv_without_ssm": null,
+          "last_cache_execution": {
+            "request_id": "chatcmpl-793c5ede",
+            "cache_detail": "paged+mixed_swa",
+            "cached_tokens": 20,
+            "blocks": 0,
+            "selection": "paged",
+            "disk_hit": false,
+            "reconstructed": true,
+            "dequantized": true,
+            "reconstruction_seconds": 0.003155,
+            "dequantization_seconds": 0.000006,
+            "total_worker_cache_seconds": 0.003421,
+            "reconstruction_ok": true,
+            "dequantization_ok": true
+          },
+          "last_native_mtp": null,
+          "last_prefill_trace": null
+        },
+        "single_active_decode": false,
+        "ewma_ttft_seconds": 0,
+        "cache_hit_requests": 1,
+        "cache_hit_tokens": 20,
+        "cache_hit_tokens_by_detail": {
+          "paged+mixed_swa": 20
+        },
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": null,
+        "last_cache_execution": {
+          "request_id": "chatcmpl-793c5ede",
+          "cache_detail": "paged+mixed_swa",
+          "cached_tokens": 20,
+          "blocks": 0,
+          "selection": "paged",
+          "disk_hit": false,
+          "reconstructed": true,
+          "dequantized": true,
+          "reconstruction_seconds": 0.003155,
+          "dequantization_seconds": 0.000006,
+          "total_worker_cache_seconds": 0.003421,
+          "reconstruction_ok": true,
+          "dequantization_ok": true
+        }
+      },
+      "cache": {
+        "scheduler_cache": {
+          "pixel_cache_hits": 0,
+          "pixel_cache_misses": 0,
+          "pixel_hit_rate": 0,
+          "total_time_saved": 0,
+          "total_images_processed": 0,
+          "pixel_cache_size": 0,
+          "hits": 1,
+          "misses": 1,
+          "hit_rate": 0.5,
+          "tokens_saved": 20,
+          "active_requests": 0,
+          "entries_by_type": {
+            "assistant": 2,
+            "user": 0,
+            "system": 0
+          },
+          "block_size": 64,
+          "max_blocks": 1000,
+          "allocated_blocks": 3,
+          "free_blocks": 997,
+          "shared_blocks": 1,
+          "total_tokens_cached": 62,
+          "utilization": 0.003,
+          "cache_hit_rate": 0.5,
+          "cache_hits": 2,
+          "cache_misses": 2,
+          "disk_hits": 0,
+          "disk_misses": 0,
+          "cow_copies": 0,
+          "evictions": 0
+        },
+        "block_disk_cache": {
+          "blocks_on_disk": 2,
+          "disk_size_bytes": 55929764,
+          "disk_size_gb": 0.052,
+          "total_accesses": 0,
+          "total_tokens_on_disk": 62,
+          "total_cached_tokens": 62,
+          "disk_hits": 0,
+          "disk_misses": 4,
+          "disk_writes": 2,
+          "disk_evictions": 0
+        },
+        "ssm_companion": {
+          "entries": 0,
+          "max_entries": 8,
+          "nbytes": 0,
+          "nbytes_mb": 0,
+          "disk_enabled": false,
+          "disk_directory": null
+        },
+        "totals": {
+          "ram_tokens_cached": 62,
+          "l2_prompt_tokens_on_disk": 0,
+          "l2_block_tokens_on_disk": 62,
+          "l2_ssm_tokens_on_disk": 0,
+          "ssm_tokens_on_disk": 0,
+          "l2_tokens_on_disk": 62,
+          "l2_tokens_on_disk_store_sum": 62,
+          "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+        }
+      },
+      "quantization_format": {
+        "type": "jang",
+        "target_bits": null,
+        "actual_bits": null,
+        "block_size": 64
+      },
+      "quantization": {
+        "codec": "affine_quantized_matmul",
+        "weight_format": "jang_affine",
+        "backend": "mx.quantize",
+        "profile": "JANG_4M",
+        "target_bits": 8,
+        "config_bits": 8,
+        "group_size": 32,
+        "passthrough_tensor_count": 778,
+        "weight_index": {
+          "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M/model.safetensors.index.json",
+          "total_tensors": 2008,
+          "suffix_counts": {
+            "biases": 410,
+            "scales": 410,
+            "weight": 1125
+          },
+          "tq_target_counts": {},
+          "routed_layout_counts": {
+            "prestacked_switch": 0,
+            "split_expert": 0
+          },
+          "mtp_tensor_count": 0
+        },
+        "weight_matmul_dispatch": {
+          "primary": "mlx_affine_quantized_matmul",
+          "uses_mlx_quantized_matmul": true,
+          "metal_na_eligible": true,
+          "reason": null
+        },
+        "sidecar": {
+          "jang_config": true,
+          "jangtq_runtime": false,
+          "prestacked_bundle": false
+        }
+      },
+      "acceleration": {
+        "kernel_type": "affine_quantized_matmul",
+        "metal_na_capable": true,
+        "metal_na_active_on_host": true,
+        "reason": null,
+        "metal_na_symbols": {
+          "available": true,
+          "nax_symbols": 4668,
+          "naxtile_symbols": 4154,
+          "affine_qmm_symbols": 4212,
+          "affine_gather_qmm_symbols": 3456
+        },
+        "host": {
+          "supported": true,
+          "brand": "Apple M5 Max",
+          "reason": null
+        }
+      },
+      "mtp": {
+        "config_num_nextn_predict_layers": null,
+        "config_mtp_layer_source": null,
+        "jang_mtp_layers": null,
+        "jang_drop_mtp": null,
+        "index_has_mtp_tensors": false,
+        "index_mtp_layer_count": null,
+        "mtp_tensor_count": 0,
+        "artifact_available": false,
+        "family": "gemma4",
+        "has_vision_config": true,
+        "has_vision_weights": true,
+        "vision_tensor_count": 355,
+        "cache_type": "kv",
+        "runtime_supported": false,
+        "runtime_available": false,
+        "runtime_active": false,
+        "runtime_validation_blocked": false,
+        "effective_depth": null,
+        "effective_depth_source": null,
+        "runtime_scope": null,
+        "vl_runtime_available": false,
+        "runtime_bundle_has_mtp": null,
+        "runtime_mtp_mode": null,
+        "runtime_reason": "config does not request MTP",
+        "status": "not_configured",
+        "issues": [],
+        "request_policy": "compatible-only",
+        "request_gate": "temperature=0,repetition_penalty=1.0"
+      },
+      "max_prompt_tokens": 12000,
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "gemma4",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      }
+    },
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "gemma4-31b-jang4m-dev-ui-video-20260610",
+          "object": "model",
+          "created": 1781073684,
+          "owned_by": "vmlx-engine"
+        },
+        {
+          "id": "JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+          "object": "model",
+          "created": 1781073684,
+          "owned_by": "vmlx-engine"
+        }
+      ]
+    }
+  },
+  "cache": {
+    "before": {
+      "scheduler_cache": {
+        "hits": 0,
+        "misses": 0,
+        "hit_rate": 0,
+        "tokens_saved": 0,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 0,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 1,
+        "free_blocks": 999,
+        "shared_blocks": 0,
+        "total_tokens_cached": 0,
+        "utilization": 0.001,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "cow_copies": 0,
+        "evictions": 0
+      },
+      "scheduler_stats": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": null,
+        "batch_generator": {},
+        "single_active_decode": false,
+        "num_requests_processed": 0,
+        "total_prompt_tokens": 0,
+        "total_completion_tokens": 0,
+        "ewma_ttft_seconds": 0,
+        "cache_hit_requests": 0,
+        "cache_hit_tokens": 0,
+        "cache_hit_tokens_by_detail": {},
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": null,
+        "last_cache_execution": null
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "gemma4",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 0,
+        "disk_size_bytes": 0,
+        "disk_size_gb": 0,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 0,
+        "total_cached_tokens": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "disk_writes": 0,
+        "disk_evictions": 0
+      },
+      "cache_totals": {
+        "ram_tokens_cached": 0,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 0,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 0,
+        "l2_tokens_on_disk_store_sum": 0,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      },
+      "memory": {
+        "active_mb": 25288.4,
+        "peak_mb": 25288.4,
+        "cache_mb": 0
+      }
+    },
+    "after": {
+      "scheduler_cache": {
+        "pixel_cache_hits": 0,
+        "pixel_cache_misses": 0,
+        "pixel_hit_rate": 0,
+        "total_time_saved": 0,
+        "total_images_processed": 0,
+        "pixel_cache_size": 0,
+        "hits": 1,
+        "misses": 1,
+        "hit_rate": 0.5,
+        "tokens_saved": 20,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 2,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 3,
+        "free_blocks": 997,
+        "shared_blocks": 1,
+        "total_tokens_cached": 62,
+        "utilization": 0.003,
+        "cache_hit_rate": 0.5,
+        "cache_hits": 2,
+        "cache_misses": 2,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "cow_copies": 0,
+        "evictions": 0
+      },
+      "scheduler_stats": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": null,
+        "batch_generator": {
+          "prompt_tokens": 25,
+          "prompt_time": 0.5093769160012016,
+          "prompt_tps": 49.07956998966366,
+          "generation_tokens": 36,
+          "generation_time": 1.7051414129673503,
+          "generation_tps": 21.112618417584184,
+          "vision_encoding_time": 0,
+          "num_images_processed": 0,
+          "peak_memory": 27.507389644,
+          "hybrid_kv_without_ssm_hits": 0,
+          "hybrid_kv_without_ssm_tokens": 0,
+          "last_hybrid_kv_without_ssm": null,
+          "last_cache_execution": {
+            "request_id": "chatcmpl-793c5ede",
+            "cache_detail": "paged+mixed_swa",
+            "cached_tokens": 20,
+            "blocks": 0,
+            "selection": "paged",
+            "disk_hit": false,
+            "reconstructed": true,
+            "dequantized": true,
+            "reconstruction_seconds": 0.003155,
+            "dequantization_seconds": 0.000006,
+            "total_worker_cache_seconds": 0.003421,
+            "reconstruction_ok": true,
+            "dequantization_ok": true
+          },
+          "last_native_mtp": null,
+          "last_prefill_trace": null
+        },
+        "single_active_decode": false,
+        "num_requests_processed": 2,
+        "total_prompt_tokens": 84,
+        "total_completion_tokens": 36,
+        "ewma_ttft_seconds": 0,
+        "cache_hit_requests": 1,
+        "cache_hit_tokens": 20,
+        "cache_hit_tokens_by_detail": {
+          "paged+mixed_swa": 20
+        },
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": null,
+        "last_cache_execution": {
+          "request_id": "chatcmpl-793c5ede",
+          "cache_detail": "paged+mixed_swa",
+          "cached_tokens": 20,
+          "blocks": 0,
+          "selection": "paged",
+          "disk_hit": false,
+          "reconstructed": true,
+          "dequantized": true,
+          "reconstruction_seconds": 0.003155,
+          "dequantization_seconds": 0.000006,
+          "total_worker_cache_seconds": 0.003421,
+          "reconstruction_ok": true,
+          "dequantization_ok": true
+        }
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "gemma4",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 2,
+        "disk_size_bytes": 55929764,
+        "disk_size_gb": 0.052,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 62,
+        "total_cached_tokens": 62,
+        "disk_hits": 0,
+        "disk_misses": 4,
+        "disk_writes": 2,
+        "disk_evictions": 0
+      },
+      "cache_totals": {
+        "ram_tokens_cached": 62,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 62,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 62,
+        "l2_tokens_on_disk_store_sum": 62,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      },
+      "ssm_companion": {
+        "entries": 0,
+        "max_entries": 8,
+        "nbytes": 0,
+        "nbytes_mb": 0,
+        "disk_enabled": false,
+        "disk_directory": null
+      },
+      "memory": {
+        "active_mb": 25842.8,
+        "peak_mb": 26233.1,
+        "cache_mb": 13.2
+      }
+    },
+    "cacheHitTokens": 62
+  },
+  "chat": {
+    "turns": [
+      {
+        "role": "user",
+        "content": "Reply briefly in English. Include the phrase REAL_UI_LIVE once."
+      },
+      {
+        "role": "assistant",
+        "content": "The system is now REAL_UI_LIVE and fully operational."
+      },
+      {
+        "role": "user",
+        "content": "Repeat the phrase REAL_UI_LIVE once and mention that this is the second UI turn."
+      },
+      {
+        "role": "assistant",
+        "content": "REAL_UI_LIVE. This is the second UI turn."
+      },
+      {
+        "role": "user",
+        "content": "[{\"type\":\"text\",\"text\":\"Describe the attached video briefly in English.\"},{\"type\":\"video_url\",\"video_url\":{\"url\":\"data:video/mp4;base64,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\"}}]"
+      },
+      {
+        "role": "assistant",
+        "content": "The provided image is a solid red square."
+      }
+    ],
+    "finalVisibleText": "The provided image is a solid red square.",
+    "rawParserTagLeak": false,
+    "cjkLeakCount": 0,
+    "koreanLeakCount": 0,
+    "reasoningText": "",
+    "reasoningRawParserTagLeak": false,
+    "reasoningCjkLeakCount": 0,
+    "reasoningKoreanLeakCount": 0,
+    "reasoningNumericRunCount": 0
+  },
+  "screenshots": {
+    "chat": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-video-20260610-chat.png"
+  },
+  "rendererWireApi": "chat",
+  "rendererBuiltinToolsEnabled": false,
+  "remoteSessionId": "b172840d-d104-4a4d-a085-676a1a9aa440",
+  "remoteSessionStarted": true,
+  "chatId": "e2cccfa0-6a6b-4adf-8562-4524598599e3",
+  "chatOverrides": {
+    "chatId": "e2cccfa0-6a6b-4adf-8562-4524598599e3",
+    "temperature": 0,
+    "topP": 1,
+    "topK": null,
+    "minP": null,
+    "maxTokens": 128,
+    "maxThinkingTokens": null,
+    "repeatPenalty": null,
+    "systemPrompt": null,
+    "stopSequences": null,
+    "wireApi": "chat",
+    "maxToolIterations": 4,
+    "builtinToolsEnabled": false,
+    "workingDirectory": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-tools-EDOcEf",
+    "hideToolStatus": false,
+    "webSearchEnabled": false,
+    "braveSearchEnabled": false,
+    "fetchUrlEnabled": false,
+    "fileToolsEnabled": false,
+    "searchToolsEnabled": false,
+    "shellEnabled": false,
+    "toolResultMaxChars": 12345,
+    "gitEnabled": false,
+    "utilityToolsEnabled": false
+  },
+  "sendErrors": [],
+  "rendererFailureStage": null,
+  "media": {
+    "requestedImage": false,
+    "requestedVideo": true,
+    "requestedAudio": false,
+    "imageExpectedRegex": "\\bred\\b",
+    "videoExpectedRegex": "red|solid",
+    "audioExpectedRegex": "",
+    "imageSemanticVerified": false,
+    "videoSemanticVerified": true,
+    "audioSemanticVerified": false,
+    "imageVerified": false,
+    "videoVerified": true,
+    "audioVerified": false,
+    "persistedImageAttachment": false,
+    "persistedVideoAttachment": true,
+    "persistedAudioAttachment": false
+  },
+  "messageCount": 6,
+  "assistantCount": 3,
+  "firstAssistantContent": "The system is now REAL_UI_LIVE and fully operational.",
+  "secondAssistantContent": "The provided image is a solid red square.",
+  "persistedReasoningByMessage": [
+    [],
+    [],
+    []
+  ],
+  "persistedToolsByMessage": [
+    [],
+    [],
+    []
+  ],
+  "persistedReasoningText": "",
+  "persistedReasoningCount": 0,
+  "persistedToolCount": 0,
+  "streamTraceByMessage": [
+    {
+      "messageId": "c6ec7c20-224e-431a-a2a0-15a8f2bd84d1",
+      "count": 13,
+      "firstFullContent": "The",
+      "lastFullContent": "The system is now REAL_UI_LIVE and fully operational.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 5,
+        "promptTokens": 21,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "36.9",
+        "ttft": "0.57",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 17,
+        "promptTokens": 21,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "19.7",
+        "ppSpeed": "36.9",
+        "ttft": "0.57",
+        "elapsed": "0.6"
+      }
+    },
+    {
+      "messageId": "973fbe23-dbc1-481d-a130-da24bc86c456",
+      "count": 13,
+      "firstFullContent": "REAL",
+      "lastFullContent": "REAL_UI_LIVE. This is the second UI turn.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 5,
+        "promptTokens": 63,
+        "cachedTokens": 20,
+        "cacheDetail": "paged+mixed_swa",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "134.3",
+        "ttft": "0.47",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 17,
+        "promptTokens": 63,
+        "cachedTokens": 20,
+        "cacheDetail": "paged+mixed_swa",
+        "tokensPerSecond": "20.0",
+        "ppSpeed": "134.3",
+        "ttft": "0.47",
+        "elapsed": "0.6"
+      }
+    },
+    {
+      "messageId": "ed5d8e47-2cdb-4023-b597-42cb54274fa1",
+      "count": 1,
+      "firstFullContent": "The provided image is a solid red square.",
+      "lastFullContent": "The provided image is a solid red square.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 14,
+        "promptTokens": 355,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "244.2",
+        "ttft": "1.45",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 14,
+        "promptTokens": 355,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "244.2",
+        "ttft": "1.45",
+        "elapsed": "0.0"
+      }
+    }
+  ],
+  "turns": [
+    {
+      "role": "user",
+      "content": "Reply briefly in English. Include the phrase REAL_UI_LIVE once."
+    },
+    {
+      "role": "assistant",
+      "content": "The system is now REAL_UI_LIVE and fully operational."
+    },
+    {
+      "role": "user",
+      "content": "Repeat the phrase REAL_UI_LIVE once and mention that this is the second UI turn."
+    },
+    {
+      "role": "assistant",
+      "content": "REAL_UI_LIVE. This is the second UI turn."
+    },
+    {
+      "role": "user",
+      "content": "[{\"type\":\"text\",\"text\":\"Describe the attached video briefly in English.\"},{\"type\":\"video_url\",\"video_url\":{\"url\":\"data:video/mp4;base64,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\"}}]"
+    },
+    {
+      "role": "assistant",
+      "content": "The provided image is a solid red square."
+    }
+  ],
+  "rawParserLeak": false,
+  "reasoningRawParserLeak": false,
+  "reasoningCjkLeakCount": 0,
+  "reasoningKoreanLeakCount": 0,
+  "reasoningNumericRunCount": 0,
+  "preloadHealthBefore": {
+    "status": "healthy",
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "model_type": "mllm",
+    "engine_type": "batched",
+    "last_request_time": null,
+    "mcp": null,
+    "memory": {
+      "active_mb": 25288.4,
+      "peak_mb": 25288.4,
+      "cache_mb": 0
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "speculative_decoding": "not_configured",
+    "scheduler": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": null,
+      "batch_generator": {},
+      "single_active_decode": false,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 0,
+      "cache_hit_tokens": 0,
+      "cache_hit_tokens_by_detail": {},
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": null
+    },
+    "cache": {
+      "scheduler_cache": {
+        "hits": 0,
+        "misses": 0,
+        "hit_rate": 0,
+        "tokens_saved": 0,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 0,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 1,
+        "free_blocks": 999,
+        "shared_blocks": 0,
+        "total_tokens_cached": 0,
+        "utilization": 0.001,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "cow_copies": 0,
+        "evictions": 0
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 0,
+        "disk_size_bytes": 0,
+        "disk_size_gb": 0,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 0,
+        "total_cached_tokens": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "disk_writes": 0,
+        "disk_evictions": 0
+      },
+      "totals": {
+        "ram_tokens_cached": 0,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 0,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 0,
+        "l2_tokens_on_disk_store_sum": 0,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      }
+    },
+    "quantization_format": {
+      "type": "jang",
+      "target_bits": null,
+      "actual_bits": null,
+      "block_size": 64
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "jang_affine",
+      "backend": "mx.quantize",
+      "profile": "JANG_4M",
+      "target_bits": 8,
+      "config_bits": 8,
+      "group_size": 32,
+      "passthrough_tensor_count": 778,
+      "weight_index": {
+        "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M/model.safetensors.index.json",
+        "total_tensors": 2008,
+        "suffix_counts": {
+          "biases": 410,
+          "scales": 410,
+          "weight": 1125
+        },
+        "tq_target_counts": {},
+        "routed_layout_counts": {
+          "prestacked_switch": 0,
+          "split_expert": 0
+        },
+        "mtp_tensor_count": 0
+      },
+      "weight_matmul_dispatch": {
+        "primary": "mlx_affine_quantized_matmul",
+        "uses_mlx_quantized_matmul": true,
+        "metal_na_eligible": true,
+        "reason": null
+      },
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": false,
+        "prestacked_bundle": false
+      }
+    },
+    "acceleration": {
+      "kernel_type": "affine_quantized_matmul",
+      "metal_na_capable": true,
+      "metal_na_active_on_host": true,
+      "reason": null,
+      "metal_na_symbols": {
+        "available": true,
+        "nax_symbols": 4668,
+        "naxtile_symbols": 4154,
+        "affine_qmm_symbols": 4212,
+        "affine_gather_qmm_symbols": 3456
+      },
+      "host": {
+        "supported": true,
+        "brand": "Apple M5 Max",
+        "reason": null
+      }
+    },
+    "mtp": {
+      "config_num_nextn_predict_layers": null,
+      "config_mtp_layer_source": null,
+      "jang_mtp_layers": null,
+      "jang_drop_mtp": null,
+      "index_has_mtp_tensors": false,
+      "index_mtp_layer_count": null,
+      "mtp_tensor_count": 0,
+      "artifact_available": false,
+      "family": "gemma4",
+      "has_vision_config": true,
+      "has_vision_weights": true,
+      "vision_tensor_count": 355,
+      "cache_type": "kv",
+      "runtime_supported": false,
+      "runtime_available": false,
+      "runtime_active": false,
+      "runtime_validation_blocked": false,
+      "effective_depth": null,
+      "effective_depth_source": null,
+      "runtime_scope": null,
+      "vl_runtime_available": false,
+      "runtime_bundle_has_mtp": null,
+      "runtime_mtp_mode": null,
+      "runtime_reason": "config does not request MTP",
+      "status": "not_configured",
+      "issues": [],
+      "request_policy": "compatible-only",
+      "request_gate": "temperature=0,repetition_penalty=1.0"
+    },
+    "max_prompt_tokens": 12000,
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    }
+  },
+  "preloadHealthAfter": {
+    "status": "healthy",
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "model_type": "mllm",
+    "engine_type": "batched",
+    "last_request_time": 1781073689.393646,
+    "mcp": null,
+    "memory": {
+      "active_mb": 25842.8,
+      "peak_mb": 26233.1,
+      "cache_mb": 13.2
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "speculative_decoding": "not_configured",
+    "scheduler": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": null,
+      "batch_generator": {
+        "prompt_tokens": 25,
+        "prompt_time": 0.5093769160012016,
+        "prompt_tps": 49.07956998966366,
+        "generation_tokens": 36,
+        "generation_time": 1.7051414129673503,
+        "generation_tps": 21.112618417584184,
+        "vision_encoding_time": 0,
+        "num_images_processed": 0,
+        "peak_memory": 27.507389644,
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "last_cache_execution": {
+          "request_id": "chatcmpl-793c5ede",
+          "cache_detail": "paged+mixed_swa",
+          "cached_tokens": 20,
+          "blocks": 0,
+          "selection": "paged",
+          "disk_hit": false,
+          "reconstructed": true,
+          "dequantized": true,
+          "reconstruction_seconds": 0.003155,
+          "dequantization_seconds": 0.000006,
+          "total_worker_cache_seconds": 0.003421,
+          "reconstruction_ok": true,
+          "dequantization_ok": true
+        },
+        "last_native_mtp": null,
+        "last_prefill_trace": null
+      },
+      "single_active_decode": false,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 1,
+      "cache_hit_tokens": 20,
+      "cache_hit_tokens_by_detail": {
+        "paged+mixed_swa": 20
+      },
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": {
+        "request_id": "chatcmpl-793c5ede",
+        "cache_detail": "paged+mixed_swa",
+        "cached_tokens": 20,
+        "blocks": 0,
+        "selection": "paged",
+        "disk_hit": false,
+        "reconstructed": true,
+        "dequantized": true,
+        "reconstruction_seconds": 0.003155,
+        "dequantization_seconds": 0.000006,
+        "total_worker_cache_seconds": 0.003421,
+        "reconstruction_ok": true,
+        "dequantization_ok": true
+      }
+    },
+    "cache": {
+      "scheduler_cache": {
+        "pixel_cache_hits": 0,
+        "pixel_cache_misses": 0,
+        "pixel_hit_rate": 0,
+        "total_time_saved": 0,
+        "total_images_processed": 0,
+        "pixel_cache_size": 0,
+        "hits": 1,
+        "misses": 1,
+        "hit_rate": 0.5,
+        "tokens_saved": 20,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 2,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 3,
+        "free_blocks": 997,
+        "shared_blocks": 1,
+        "total_tokens_cached": 62,
+        "utilization": 0.003,
+        "cache_hit_rate": 0.5,
+        "cache_hits": 2,
+        "cache_misses": 2,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "cow_copies": 0,
+        "evictions": 0
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 2,
+        "disk_size_bytes": 55929764,
+        "disk_size_gb": 0.052,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 62,
+        "total_cached_tokens": 62,
+        "disk_hits": 0,
+        "disk_misses": 4,
+        "disk_writes": 2,
+        "disk_evictions": 0
+      },
+      "ssm_companion": {
+        "entries": 0,
+        "max_entries": 8,
+        "nbytes": 0,
+        "nbytes_mb": 0,
+        "disk_enabled": false,
+        "disk_directory": null
+      },
+      "totals": {
+        "ram_tokens_cached": 62,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 62,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 62,
+        "l2_tokens_on_disk_store_sum": 62,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      }
+    },
+    "quantization_format": {
+      "type": "jang",
+      "target_bits": null,
+      "actual_bits": null,
+      "block_size": 64
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "jang_affine",
+      "backend": "mx.quantize",
+      "profile": "JANG_4M",
+      "target_bits": 8,
+      "config_bits": 8,
+      "group_size": 32,
+      "passthrough_tensor_count": 778,
+      "weight_index": {
+        "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M/model.safetensors.index.json",
+        "total_tensors": 2008,
+        "suffix_counts": {
+          "biases": 410,
+          "scales": 410,
+          "weight": 1125
+        },
+        "tq_target_counts": {},
+        "routed_layout_counts": {
+          "prestacked_switch": 0,
+          "split_expert": 0
+        },
+        "mtp_tensor_count": 0
+      },
+      "weight_matmul_dispatch": {
+        "primary": "mlx_affine_quantized_matmul",
+        "uses_mlx_quantized_matmul": true,
+        "metal_na_eligible": true,
+        "reason": null
+      },
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": false,
+        "prestacked_bundle": false
+      }
+    },
+    "acceleration": {
+      "kernel_type": "affine_quantized_matmul",
+      "metal_na_capable": true,
+      "metal_na_active_on_host": true,
+      "reason": null,
+      "metal_na_symbols": {
+        "available": true,
+        "nax_symbols": 4668,
+        "naxtile_symbols": 4154,
+        "affine_qmm_symbols": 4212,
+        "affine_gather_qmm_symbols": 3456
+      },
+      "host": {
+        "supported": true,
+        "brand": "Apple M5 Max",
+        "reason": null
+      }
+    },
+    "mtp": {
+      "config_num_nextn_predict_layers": null,
+      "config_mtp_layer_source": null,
+      "jang_mtp_layers": null,
+      "jang_drop_mtp": null,
+      "index_has_mtp_tensors": false,
+      "index_mtp_layer_count": null,
+      "mtp_tensor_count": 0,
+      "artifact_available": false,
+      "family": "gemma4",
+      "has_vision_config": true,
+      "has_vision_weights": true,
+      "vision_tensor_count": 355,
+      "cache_type": "kv",
+      "runtime_supported": false,
+      "runtime_available": false,
+      "runtime_active": false,
+      "runtime_validation_blocked": false,
+      "effective_depth": null,
+      "effective_depth_source": null,
+      "runtime_scope": null,
+      "vl_runtime_available": false,
+      "runtime_bundle_has_mtp": null,
+      "runtime_mtp_mode": null,
+      "runtime_reason": "config does not request MTP",
+      "status": "not_configured",
+      "issues": [],
+      "request_policy": "compatible-only",
+      "request_gate": "temperature=0,repetition_penalty=1.0"
+    },
+    "max_prompt_tokens": 12000,
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    }
+  },
+  "cacheBefore": {
+    "scheduler_cache": {
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": 0,
+      "tokens_saved": 0,
+      "active_requests": 0,
+      "entries_by_type": {
+        "assistant": 0,
+        "user": 0,
+        "system": 0
+      },
+      "block_size": 64,
+      "max_blocks": 1000,
+      "allocated_blocks": 1,
+      "free_blocks": 999,
+      "shared_blocks": 0,
+      "total_tokens_cached": 0,
+      "utilization": 0.001,
+      "cache_hit_rate": 0,
+      "cache_hits": 0,
+      "cache_misses": 0,
+      "disk_hits": 0,
+      "disk_misses": 0,
+      "cow_copies": 0,
+      "evictions": 0
+    },
+    "scheduler_stats": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": null,
+      "batch_generator": {},
+      "single_active_decode": false,
+      "num_requests_processed": 0,
+      "total_prompt_tokens": 0,
+      "total_completion_tokens": 0,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 0,
+      "cache_hit_tokens": 0,
+      "cache_hit_tokens_by_detail": {},
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": null
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "block_disk_cache": {
+      "blocks_on_disk": 0,
+      "disk_size_bytes": 0,
+      "disk_size_gb": 0,
+      "total_accesses": 0,
+      "total_tokens_on_disk": 0,
+      "total_cached_tokens": 0,
+      "disk_hits": 0,
+      "disk_misses": 0,
+      "disk_writes": 0,
+      "disk_evictions": 0
+    },
+    "cache_totals": {
+      "ram_tokens_cached": 0,
+      "l2_prompt_tokens_on_disk": 0,
+      "l2_block_tokens_on_disk": 0,
+      "l2_ssm_tokens_on_disk": 0,
+      "ssm_tokens_on_disk": 0,
+      "l2_tokens_on_disk": 0,
+      "l2_tokens_on_disk_store_sum": 0,
+      "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+    },
+    "memory": {
+      "active_mb": 25288.4,
+      "peak_mb": 25288.4,
+      "cache_mb": 0
+    }
+  },
+  "cacheAfter": {
+    "scheduler_cache": {
+      "pixel_cache_hits": 0,
+      "pixel_cache_misses": 0,
+      "pixel_hit_rate": 0,
+      "total_time_saved": 0,
+      "total_images_processed": 0,
+      "pixel_cache_size": 0,
+      "hits": 1,
+      "misses": 1,
+      "hit_rate": 0.5,
+      "tokens_saved": 20,
+      "active_requests": 0,
+      "entries_by_type": {
+        "assistant": 2,
+        "user": 0,
+        "system": 0
+      },
+      "block_size": 64,
+      "max_blocks": 1000,
+      "allocated_blocks": 3,
+      "free_blocks": 997,
+      "shared_blocks": 1,
+      "total_tokens_cached": 62,
+      "utilization": 0.003,
+      "cache_hit_rate": 0.5,
+      "cache_hits": 2,
+      "cache_misses": 2,
+      "disk_hits": 0,
+      "disk_misses": 0,
+      "cow_copies": 0,
+      "evictions": 0
+    },
+    "scheduler_stats": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": null,
+      "batch_generator": {
+        "prompt_tokens": 25,
+        "prompt_time": 0.5093769160012016,
+        "prompt_tps": 49.07956998966366,
+        "generation_tokens": 36,
+        "generation_time": 1.7051414129673503,
+        "generation_tps": 21.112618417584184,
+        "vision_encoding_time": 0,
+        "num_images_processed": 0,
+        "peak_memory": 27.507389644,
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "last_cache_execution": {
+          "request_id": "chatcmpl-793c5ede",
+          "cache_detail": "paged+mixed_swa",
+          "cached_tokens": 20,
+          "blocks": 0,
+          "selection": "paged",
+          "disk_hit": false,
+          "reconstructed": true,
+          "dequantized": true,
+          "reconstruction_seconds": 0.003155,
+          "dequantization_seconds": 0.000006,
+          "total_worker_cache_seconds": 0.003421,
+          "reconstruction_ok": true,
+          "dequantization_ok": true
+        },
+        "last_native_mtp": null,
+        "last_prefill_trace": null
+      },
+      "single_active_decode": false,
+      "num_requests_processed": 2,
+      "total_prompt_tokens": 84,
+      "total_completion_tokens": 36,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 1,
+      "cache_hit_tokens": 20,
+      "cache_hit_tokens_by_detail": {
+        "paged+mixed_swa": 20
+      },
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": {
+        "request_id": "chatcmpl-793c5ede",
+        "cache_detail": "paged+mixed_swa",
+        "cached_tokens": 20,
+        "blocks": 0,
+        "selection": "paged",
+        "disk_hit": false,
+        "reconstructed": true,
+        "dequantized": true,
+        "reconstruction_seconds": 0.003155,
+        "dequantization_seconds": 0.000006,
+        "total_worker_cache_seconds": 0.003421,
+        "reconstruction_ok": true,
+        "dequantization_ok": true
+      }
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "block_disk_cache": {
+      "blocks_on_disk": 2,
+      "disk_size_bytes": 55929764,
+      "disk_size_gb": 0.052,
+      "total_accesses": 0,
+      "total_tokens_on_disk": 62,
+      "total_cached_tokens": 62,
+      "disk_hits": 0,
+      "disk_misses": 4,
+      "disk_writes": 2,
+      "disk_evictions": 0
+    },
+    "cache_totals": {
+      "ram_tokens_cached": 62,
+      "l2_prompt_tokens_on_disk": 0,
+      "l2_block_tokens_on_disk": 62,
+      "l2_ssm_tokens_on_disk": 0,
+      "ssm_tokens_on_disk": 0,
+      "l2_tokens_on_disk": 62,
+      "l2_tokens_on_disk_store_sum": 62,
+      "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+    },
+    "ssm_companion": {
+      "entries": 0,
+      "max_entries": 8,
+      "nbytes": 0,
+      "nbytes_mb": 0,
+      "disk_enabled": false,
+      "disk_directory": null
+    },
+    "memory": {
+      "active_mb": 25842.8,
+      "peak_mb": 26233.1,
+      "cache_mb": 13.2
+    }
+  },
+  "eventCounts": {
+    "stream": 27,
+    "tool": 0,
+    "reasoningDone": 0,
+    "complete": 3
+  },
+  "serverCacheControls": {
+    "requested": true,
+    "verified": true,
+    "cacheExpectRegex": "",
+    "expectPagedCacheLocked": false,
+    "cacheExpectationMatches": true,
+    "labels": [
+      "Enable Prefix Cache",
+      "Use Paged KV Cache",
+      "Block Disk Cache (L2)",
+      "Enable Disk Cache",
+      "Stored Cache Quantization"
+    ],
+    "initialCacheControls": {
+      "enablePrefixCache": true,
+      "usePagedCache": true,
+      "enableBlockDiskCache": true,
+      "enableDiskCache": false,
+      "usePagedCacheDisabled": true,
+      "enableDiskCacheDisabled": true,
+      "blockDiskCachePresent": true
+    },
+    "sectionClickResults": [
+      {
+        "title": "Prefix Cache",
+        "found": true,
+        "text": "▶\nPrefix Cache",
+        "blockDiskVisibleBefore": false,
+        "blockDiskVisibleAfter": false
+      },
+      {
+        "title": "Paged KV Cache",
+        "found": true,
+        "text": "▶\nPaged KV Cache",
+        "blockDiskVisibleBefore": false,
+        "blockDiskVisibleAfter": true
+      },
+      {
+        "title": "KV Cache Quantization",
+        "found": true,
+        "text": "▶\nKV Cache Quantization",
+        "blockDiskVisibleBefore": true,
+        "blockDiskVisibleAfter": true
+      },
+      {
+        "title": "Disk Cache (Persistent)",
+        "found": true,
+        "text": "▶\nDisk Cache (Persistent)",
+        "blockDiskVisibleBefore": true,
+        "blockDiskVisibleAfter": true
+      }
+    ],
+    "textHead": "Code\nChat\nServer\nTools\nImage\nAPI\n🇺🇸\nBack\nCreate Session\nStep 2: Configure\nModel\n\n/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M\n\n▶\nServer Settings\nHost\n?\nPort\n?\nAPI Key\n?\nServed Model Name\n?\nRate Limit (req/min)\n?\nDisabled\nTimeout (seconds)\n?\nNo limit\nLog Level\n?\nDEBUG (verbose)\nINFO (default)\nWARNING\nERROR (minimal)\nCORS Origins\n?\n▶\nConcurrent Processing\n▶\nPrefix Cache\nSpeeds up repeated conversations by remembering previous prompts. Makes follow-up messages much faster (lower time-to-first-token).\nEnable Prefix Cache\n?\nLegacy Entry-Count Cache\n?\nCache Memory Limit and Cache Memory % only apply to memory-aware non-paged prefix cache. With paged cache on, use Max Cache Blocks for L1 RAM capacity and Block Cache Max for L2 disk capacity.\nCache Memory Limit (MB)\n?\nAuto-detect\nCache Memory %\n?\nCache TTL has no effect when paged cache is enabled — paged cache uses block-count LRU eviction instead. To control paged cache size, adjust 'Max Cache Blocks' in the Paged KV Cache section below. To use time-based TTL, disable 'Use Paged KV Cache' in the Paged KV Cache section.\nCache TTL (minutes)\n?\nNo expiration\n▶\nPaged KV Cache\nReduces memory waste by splitting the KV cache into small blocks instead of one big chunk. Lets the server handle longer conversations without running out of RAM.\nPaged cache and legacy Disk Cache cannot run simultaneously. Enabling paged cache will auto-disable legacy Disk Cache. For persistent caching with paged cache, use 'Block Disk Cache (L2)' below instead.\nHybrid/Mamba cache models require paged cache while prefix cache is enabled so KV blocks "
+  },
+  "toolProbeFiles": {},
+  "streamTrace": [
+    {
+      "messageId": "c6ec7c20-224e-431a-a2a0-15a8f2bd84d1",
+      "count": 13,
+      "firstFullContent": "The",
+      "lastFullContent": "The system is now REAL_UI_LIVE and fully operational.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 5,
+        "promptTokens": 21,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "36.9",
+        "ttft": "0.57",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 17,
+        "promptTokens": 21,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "19.7",
+        "ppSpeed": "36.9",
+        "ttft": "0.57",
+        "elapsed": "0.6"
+      }
+    },
+    {
+      "messageId": "973fbe23-dbc1-481d-a130-da24bc86c456",
+      "count": 13,
+      "firstFullContent": "REAL",
+      "lastFullContent": "REAL_UI_LIVE. This is the second UI turn.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 5,
+        "promptTokens": 63,
+        "cachedTokens": 20,
+        "cacheDetail": "paged+mixed_swa",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "134.3",
+        "ttft": "0.47",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 17,
+        "promptTokens": 63,
+        "cachedTokens": 20,
+        "cacheDetail": "paged+mixed_swa",
+        "tokensPerSecond": "20.0",
+        "ppSpeed": "134.3",
+        "ttft": "0.47",
+        "elapsed": "0.6"
+      }
+    },
+    {
+      "messageId": "ed5d8e47-2cdb-4023-b597-42cb54274fa1",
+      "count": 1,
+      "firstFullContent": "The provided image is a solid red square.",
+      "lastFullContent": "The provided image is a solid red square.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 14,
+        "promptTokens": 355,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "244.2",
+        "ttft": "1.45",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 14,
+        "promptTokens": 355,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "244.2",
+        "ttft": "1.45",
+        "elapsed": "0.0"
+      }
+    }
+  ],
+  "appLogTail": [
+    "(!) /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/sessions.ts is dynamically imported by /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/models.ts but also statically imported by /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/api-gateway.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/index.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/benchmark.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/chat.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/developer.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/distributed.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/image.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/performance.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/sessions.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/ipc/utils.ts, /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/src/main/tray.ts, dynamic import will not move module into another chunk.",
+    "rendering chunks...",
+    "dist/main/index.mjs  938.39 kB",
+    "✓ built in 331ms",
+    "build the electron main process successfully",
+    "-----",
+    "vite v5.4.21 building SSR bundle for development...",
+    "transforming...",
+    "✓ 1 modules transformed.",
+    "rendering chunks...",
+    "dist/preload/index.js  22.91 kB",
+    "✓ built in 9ms",
+    "build the electron preload files successfully",
+    "-----",
+    "dev server running for the electron renderer process at:",
+    "  ➜  Local:   http://localhost:5173/",
+    "  ➜  Network: use --host to expose",
+    "start electron app...",
+    "DevTools listening on ws://127.0.0.1:64098/devtools/browser/ab2d4b7d-1822-4ef1-b06f-2898088f1103",
+    "[MODE] Auto-detected: expert (128GB RAM)",
+    "[STARTUP] Restoring 0 App Sandbox bookmarks",
+    "[UPDATE] Skipping update check because VMLX_SKIP_UPDATE_CHECK=1",
+    "[IMAGE] Migrated existing model: schnell q=4 → /Users/eric/.mlxstudio/models/image/FLUX.1-schnell-mflux-4bit",
+    "[IMAGE] Migrated existing model: klein-4b q=4 → /Users/eric/.mlxstudio/models/image/FLUX.2-klein-4B-mflux-4bit",
+    "[IMAGE] Migrated existing model: klein-9b q=0 → /Users/eric/.mlxstudio/models/image/FLUX.2-klein-9B",
+    "[IMAGE] Migrated existing model: qwen-image-edit q=0 → /Users/eric/.mlxstudio/models/image/Qwen-Image-Edit",
+    "[IMAGE] Migrated existing model: z-image-turbo q=4 → /Users/eric/.mlxstudio/models/image/Z-Image-Turbo-mflux-4bit",
+    "[IMAGE] Migrated existing model: qwen-image q=4 → /Users/eric/.mlxstudio/models/image/qwen-image-mflux-4bit",
+    "[IMAGE] Migration complete: registered 6 existing image model(s) in DB",
+    "[STARTUP] Adopted 1 vmlx-engine process(es):",
+    "  - JANGQ-AI/gemma-4-31B-it-qat-JANG_4M on port 64097 (PID 56994)",
+    "[MemoryEnforcer] Started (max 120 GB, poll 5000ms, TTL 30m)",
+    "[gateway] Listening on 127.0.0.1:8080",
+    "[Engine Manager] Checking installation...",
+    "[Engine Manager] Found at: /Users/eric/.local/bin/vmlx-engine",
+    "[Engine Manager] Checking installation...",
+    "[Engine Manager] Found at: /Users/eric/.local/bin/vmlx-engine",
+    "[Engine Manager] Version: 1.5.0",
+    "[Engine Manager] Version: 1.5.0",
+    "[Engine Manager] Checking installation...",
+    "[Engine Manager] Found at: /Users/eric/.local/bin/vmlx-engine",
+    "[Engine Manager] Version: 1.5.0",
+    "[SESSION] Connecting to remote: http://127.0.0.1:64097/v1/models",
+    "[SESSION] Remote connected: http://127.0.0.1:64097/v1/models (attempt 1)",
+    "[SLEEP] touchSession b172840d — idle timer reset",
+    "[CHAT] Endpoint resolution: isRemote=true, rawBaseUrl=http://127.0.0.1:64097, baseUrl=http://127.0.0.1:64097, session=b172840d-d104-4a4d-a085-676a1a9aa440, type=remote",
+    "[CHAT] Skipping health check — global monitor confirmed healthy within 15s",
+    "[CHAT] Sending to: http://127.0.0.1:64097/v1/chat/completions (wire: chat, remote: true)",
+    "[CHAT] Stream ended — content: 53 chars, reasoning: 0 chars, tool calls: 0, buffered: false",
+    "[CHAT] Response complete: 18 tokens in 1.5s (29.6 t/s, live=19.7 t/s, TTFT: 0.57s, pp: 21 tokens, 36.9 pp/s, usage=server)",
+    "[CHAT] Endpoint resolution: isRemote=true, rawBaseUrl=http://127.0.0.1:64097, baseUrl=http://127.0.0.1:64097, session=b172840d-d104-4a4d-a085-676a1a9aa440, type=remote",
+    "[CHAT] Skipping health check — global monitor confirmed healthy within 15s",
+    "[CHAT] Sending to: http://127.0.0.1:64097/v1/chat/completions (wire: chat, remote: true)",
+    "[CHAT] Stream ended — content: 41 chars, reasoning: 0 chars, tool calls: 0, buffered: false",
+    "[CHAT] Response complete: 18 tokens in 1.4s (30.1 t/s, live=20.0 t/s, TTFT: 0.47s, pp: 63 tokens (20 cached), 134.3 pp/s, usage=server)",
+    "[CHAT] Endpoint resolution: isRemote=true, rawBaseUrl=http://127.0.0.1:64097, baseUrl=http://127.0.0.1:64097, session=b172840d-d104-4a4d-a085-676a1a9aa440, type=remote",
+    "[CHAT] Skipping health check — global monitor confirmed healthy within 15s",
+    "[CHAT] Forcing multimodal=true for e2cccfa0-6a6b-4adf-8562-4524598599e3 — user attached 0 image(s), 1 video(s), 0 audio file(s)",
+    "[CHAT] Sending to: http://127.0.0.1:64097/v1/chat/completions (wire: chat, remote: true)",
+    "[POWER] System sleep blocked (id=0)",
+    "[CHAT] Stream ended — content: 41 chars, reasoning: 0 chars, tool calls: 0, buffered: false",
+    "[CHAT] Response complete: 14 tokens in 1.5s (0.0 t/s, live=0.0 t/s, TTFT: 1.45s, pp: 355 tokens, 244.2 pp/s, usage=server)",
+    "[MODELS] Scanning directories: [",
+    "  '/Users/eric/.mlxstudio/models',",
+    "  '/Users/eric/.cache/huggingface/hub',",
+    "  '/Users/eric/.exo/models'",
+    "]",
+    "[MODELS] Scanning directories: [",
+    "  '/Users/eric/.mlxstudio/models',",
+    "  '/Users/eric/.cache/huggingface/hub',",
+    "  '/Users/eric/.exo/models'",
+    "]",
+    "[MODELS] Found 14 models in /Users/eric/.mlxstudio/models",
+    "[MODELS] Found 14 models in /Users/eric/.mlxstudio/models",
+    "[MODELS] Found 0 models in /Users/eric/.cache/huggingface/hub",
+    "[MODELS] Found 0 models in /Users/eric/.cache/huggingface/hub",
+    "[MODELS] Found 0 models in /Users/eric/.exo/models",
+    "[MODELS] Found 0 models in /Users/eric/.exo/models",
+    "[MODELS] Total models found: 14 (0 duplicates removed)",
+    "[MODELS] Total models found: 14 (0 duplicates removed)"
+  ],
+  "serverLogTail": [
+    "INFO:vmlx_engine.model_config_registry:Model config: detection_source=jang_stamped family=gemma4 reasoning_parser=gemma4 tool_parser=gemma4 think_in_template=False cache_type=kv cache_subtype=None is_mllm=True",
+    "INFO:__main__:KV cache auto mode: TurboQuant enabled for compatible models; stored prefix cache quantization=q4",
+    "INFO:__main__:Auto-configured tool parser from registry: gemma4",
+    "INFO:__main__:Auto-configured reasoning parser from registry: gemma4",
+    "============================================================",
+    "SECURITY CONFIGURATION",
+    "============================================================",
+    "  Authentication: DISABLED - Use --api-key to enable",
+    "  Rate limiting: DISABLED - Use --rate-limit to enable",
+    "  Request timeout: 240.0s",
+    "  Tool calling: Use --enable-auto-tool-choice to enable",
+    "  Reasoning: ENABLED (parser: Gemma4ReasoningParser)",
+    "  External speculative decoding: Use --speculative-model to enable",
+    "============================================================",
+    "Loading model: /Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "Served model name: gemma4-31b-jang4m-dev-ui-video-20260610",
+    "Default max tokens override: 128",
+    "Max prompt/context tokens: 12000",
+    "Mode: Continuous batching (for multiple concurrent users)",
+    "Stream interval: 1 tokens",
+    "Paged cache: block_size=64, max_blocks=1000",
+    "Block disk cache: max=2.0GB",
+    "KV cache quantization: q4 (group_size=64)",
+    "INFO:vmlx_engine.server:Serving model as: gemma4-31b-jang4m-dev-ui-video-20260610 (actual: JANGQ-AI/gemma-4-31B-it-qat-JANG_4M)",
+    "INFO:vmlx_engine.server:System memory before load: 113.8GB available / 128.0GB total (11.1% used)",
+    "INFO:vmlx_engine.server:Loading model with BatchedEngine: /Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "INFO:vmlx_engine:is_mllm_model(/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M): tier=config_json_vision_config result=True",
+    "INFO:vmlx_engine.server:Model loaded (batched mode): /Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "INFO:vmlx_engine.server:Max prompt/context length: ~12,000 tokens (explicit --max-prompt-tokens)",
+    "INFO:vmlx_engine.server:Metal GPU memory after load: 0.00GB active, 0.00GB peak",
+    "INFO:vmlx_engine.server:System memory after load: 113.8GB available (11.1% used)",
+    "INFO:vmlx_engine.server:Native tool format enabled for parser: gemma4",
+    "INFO:vmlx_engine.server:Default max tokens override: 128",
+    "Starting server at http://127.0.0.1:64097",
+    "INFO:     Started server process [56994]",
+    "INFO:     Waiting for application startup.",
+    "INFO:vmlx_engine.server:Started caffeinate system wake lock for PID 56994",
+    "INFO:vmlx_engine.models.mllm:Loading JANG VL model: /Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "INFO:vmlx_engine.utils.jang_loader:JANG v2 VLM detected — loading via mmap (instant)",
+    "INFO:vmlx_engine.utils.jang_loader:  Vision tower upcast to bfloat16 (Gemma 4 VLM — avoids float16 overflow in SigLIP encoder with low-bit JANG quant)",
+    "INFO:vmlx_engine.utils.jang_loader:  Wired limit set to 44 GB (model 27 GB)",
+    "INFO:vmlx_engine.utils.jang_loader:  TurboQuant KV skipped: mixed sliding/full attention model uses native RotatingKVCache metadata; flat generic TQ-KV would violate the mixed_swa_kv_v1 cache contract.",
+    "INFO:vmlx_engine.utils.jang_loader:JANG v2 VLM loaded in 3.6s",
+    "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/lib/python3.13/site-packages/transformers/audio_utils.py:549: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.",
+    "  warnings.warn(",
+    "INFO:vmlx_engine.models.mllm:JANG VL model loaded: /Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "INFO:vmlx_engine.mllm_scheduler:VLM mixed-attention model detected (e.g. Gemma 4 sliding+full). Prefix cache remains enabled; RotatingKVCache metadata will be preserved during truncation and paged/L2 reconstruction.",
+    "INFO:vmlx_engine.block_disk_store:BlockDiskStore initialized: dir=/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-qb3TEQ/block-cache, max_size=2.0GB, entries=0, size=0.00GB",
+    "INFO:vmlx_engine.mllm_scheduler:VLM block disk cache enabled: dir=/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-qb3TEQ/block-cache, max=2.0GB",
+    "INFO:vmlx_engine.paged_cache:PagedCacheManager initialized: block_size=64, max_blocks=1000, max_tokens=64000",
+    "INFO:vmlx_engine.mllm_scheduler:VLM Paged cache enabled: block_size=64, max_blocks=1000",
+    "INFO:vmlx_engine.mllm_scheduler:Mixed-SWA VLM cache detected — disabling auto q4/q8 stored-cache quantization (was: q4). Native KVCache/RotatingKVCache prefix, paged, and block-L2 cache remain active; explicit q4/q8 is a diagnostic override until family-specific semantic parity is proven.",
+    "INFO:vmlx_engine.mllm_scheduler:Runtime cache layout: model_type=gemma4 layers=60 layout=0:RotatingKVCache;1:RotatingKVCache;2:RotatingKVCache;3:RotatingKVCache;4:RotatingKVCache;5:KVCache;6:RotatingKVCache;7:RotatingKVCache;8:RotatingKVCache;9:RotatingKVCache;10:RotatingKVCache;11:KVCache;12:RotatingKVCache;13:RotatingKVCache;14:RotatingKVCache;15:RotatingKVCache;16:RotatingKVCache;17:KVCache;18:RotatingKVCache;19:RotatingKVCache;20:RotatingKVCache;21:RotatingKVCache;22:RotatingKVCache;23:KVCache;24:RotatingKVCache;25:RotatingKVCache;26:RotatingKVCache;27:RotatingKVCache;28:RotatingKVCache;29:KVCache;30:RotatingKVCache;31:RotatingKVCache;32:RotatingKVCache;33:RotatingKVCache;34:RotatingKVCache;35:KVCache;36:RotatingKVCache;37:RotatingKVCache;38:RotatingKVCache;39:RotatingKVCache;40:RotatingKVCache;41:KVCache;42:RotatingKVCache;43:RotatingKVCache;44:RotatingKVCache;45:RotatingKVCache;46:RotatingKVCache;47:KVCache;48:RotatingKVCache;49:RotatingKVCache;50:RotatingKVCache;51:RotatingKVCache;52:RotatingKVCache;53:KVCache;54:RotatingKVCache;55:RotatingKVCache;56:RotatingKVCache;57:RotatingKVCache;58:RotatingKVCache;59:KVCache",
+    "INFO:vmlx_engine.mllm_scheduler:MLLM Scheduler initialized: cache_mode=paged, hybrid=False, zaya_cca=False, kv_quant=none, prompt_l2=False, block_l2=True, max_seqs=1",
+    "INFO:vmlx_engine.mllm_scheduler:MLLM Scheduler started with max_num_seqs=1",
+    "INFO:vmlx_engine.engine.batched:MLLM Scheduler started with continuous batching: max_num_seqs=1, prefill_batch=512, completion_batch=128",
+    "INFO:vmlx_engine.engine.batched:BatchedEngine loaded: /Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M (mllm=True)",
+    "INFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=24.7GB max=107.5GB reason=lifespan_engine_start",
+    "INFO:vmlx_engine.mcp.config:No MCP config file found, using empty config",
+    "INFO:     Application startup complete.",
+    "INFO:     Uvicorn running on http://127.0.0.1:64097 (Press CTRL+C to quit)",
+    "WARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.",
+    "INFO:     127.0.0.1:64108 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:64113 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:64108 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:64113 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:64113 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:64113 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 128, 'enable_thinking': False}",
+    "INFO:     127.0.0.1:64122 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLMBatchGenerator: Using VLM's language_model for batched generation",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLMBatchGenerator: Vision cache enabled (size=16)",
+    "INFO:vmlx_engine.mllm_batch_generator:Metal cache limit set to 26.88GB (max_ws=107.5GB, active=24.7GB, free=82.8GB; base=26.88GB safety=41.41GB; mlxstudio#78)",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLM native MTP skipped for request=chatcmpl-a49ace3f: loaded language model has no native MTP head",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=20, num_new_blocks=1, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 60 positional layers (out of 60 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 1 (10 kv layers, rotating_kv=50, 20 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 1 blocks to SSD",
+    "INFO:vmlx_engine.mllm_scheduler:VLM Scheduler stored paged Prefix Cache for chatcmpl-a49ace3f: 60 layers, truncated to 20 tokens",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 128, 'enable_thinking': False}",
+    "INFO:     127.0.0.1:64123 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.prefix_cache:Paged cache hit for chatcmpl-793c5ede: 1 blocks, 20 tokens",
+    "INFO:vmlx_engine.mllm_batch_generator:VLM prefix cache HIT for chatcmpl-793c5ede: 20 cached, 46 remaining (incl. 3-token gen-prompt suffix)",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLM native MTP skipped for request=chatcmpl-793c5ede: loaded language model has no native MTP head",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=42, num_new_blocks=1, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 60 positional layers (out of 60 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 2 (10 kv layers, rotating_kv=50, 42 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 1 blocks to SSD",
+    "INFO:vmlx_engine.mllm_scheduler:VLM Scheduler stored paged Prefix Cache for chatcmpl-793c5ede: 60 layers, truncated to 62 tokens",
+    "INFO:vmlx_engine.server:[MEDIA_DIAG] request_shape={\"engine_is_mllm\": true, \"family\": \"gemma4\", \"media\": {\"content_arrays\": 1, \"data_url\": 1, \"messages\": 1, \"missing_source\": 0, \"roles\": {\"user\": 1}, \"total\": 1, \"types\": {\"video_url\": 1}, \"url_or_path\": 0}, \"model\": \"gemma-4-31B-it-qat-JANG_4M\", \"omni_modalities\": null, \"registry_is_mllm\": true, \"route\": \"/v1/chat/completions\"}",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 128, 'enable_thinking': False}",
+    "INFO:     127.0.0.1:64125 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.models.mllm:Base64 video decoded: /var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/tmpz1iu1nfc.mp4 (0.0 MB)",
+    "INFO:vmlx_engine.models.mllm:Video: 25 total frames @ 25.0 fps, extracting 4 frames",
+    "INFO:vmlx_engine.engine.batched:Using simple MLLM media streaming fallback for gemma4 with 1 image(s), 0 video(s)",
+    "INFO:vmlx_engine.models.mllm:MLLM.chat() called with 5 messages",
+    "INFO:vmlx_engine.models.mllm:Applying chat template with 5 messages, 1 images, 0 audio",
+    "INFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Reply briefly in English. Include the phrase REAL_UI_...",
+    "INFO:vmlx_engine.models.mllm:  Chat msg 1: role=assistant, content=The system is now REAL_UI_LIVE and fully operational....",
+    "INFO:vmlx_engine.models.mllm:  Chat msg 2: role=user, content=[{'type': 'text', 'text': 'Repeat the phrase REAL_UI_LIVE once and mention that ...",
+    "INFO:vmlx_engine.models.mllm:  Chat msg 3: role=assistant, content=REAL_UI_LIVE. This is the second UI turn....",
+    "INFO:vmlx_engine.models.mllm:  Chat msg 4: role=user, content=[{'type': 'image'}, {'type': 'text', 'text': 'Describe the attached video briefl...",
+    "INFO:     127.0.0.1:64113 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:64126 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.models.mllm:[PREFIX CACHE] Stored KV cache for 1 image(s) (355 prompt tokens)",
+    "INFO:     127.0.0.1:64113 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:64113 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:64127 - \"GET /health HTTP/1.1\" 200 OK"
+  ],
+  "visibleAssistantTurnsComplete": true,
+  "liveSpeedSamples": [
+    {
+      "tokens": 18,
+      "liveTokensPerSecond": 19.7,
+      "ttftSeconds": 0.57,
+      "line": "[CHAT] Response complete: 18 tokens in 1.5s (29.6 t/s, live=19.7 t/s, TTFT: 0.57s, pp: 21 tokens, 36.9 pp/s, usage=server)"
+    },
+    {
+      "tokens": 18,
+      "liveTokensPerSecond": 20,
+      "ttftSeconds": 0.47,
+      "line": "[CHAT] Response complete: 18 tokens in 1.4s (30.1 t/s, live=20.0 t/s, TTFT: 0.47s, pp: 63 tokens (20 cached), 134.3 pp/s, usage=server)"
+    },
+    {
+      "tokens": 14,
+      "liveTokensPerSecond": 0,
+      "ttftSeconds": 1.45,
+      "line": "[CHAT] Response complete: 14 tokens in 1.5s (0.0 t/s, live=0.0 t/s, TTFT: 1.45s, pp: 355 tokens, 244.2 pp/s, usage=server)"
+    }
+  ],
+  "provenSurfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "current_electron_dev_build",
+    "generation_defaults_applied",
+    "l2_disk_storage",
+    "language_leak_check",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "server_cache_controls",
+    "settings_persistence",
+    "video_where_supported"
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "status": "pass",
+  "classification": "dev_app_image_vl_green",
+  "generated_at": "2026-06-10",
+  "model": {
+    "path": "/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+    "served_model": "gemma4-31b-jang4m-dev-ui-image-20260610",
+    "family": "gemma4",
+    "model_type": "mllm",
+    "row": "Gemma 4 31B QAT JANG_4M"
+  },
+  "artifacts": {
+    "raw_proof": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-image-20260610-proof.json",
+    "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-image-20260610-chat.png"
+  },
+  "request_contract": {
+    "wire_api": "chat",
+    "ui_launch_mode": "electron-dev",
+    "temperature": 0,
+    "top_p": 1,
+    "max_tokens": 96,
+    "builtin_tools_enabled": false,
+    "image_requested": true,
+    "video_requested": false,
+    "audio_requested": false,
+    "server_cache_controls_checked": true
+  },
+  "media": {
+    "image_expected_regex": "\\bred\\b",
+    "image_semantic_verified": true,
+    "image_verified": true,
+    "persisted_image_attachment": true,
+    "assistant_image_answer": "Red",
+    "app_forced_multimodal": true,
+    "server_media_diag": "image_url",
+    "runtime_media_path": "gemma4 simple MLLM media streaming fallback",
+    "images_processed_by_fallback": 1,
+    "audio_processed_by_fallback": 0
+  },
+  "parser_and_reasoning": {
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "persisted_tool_count": 0,
+    "persisted_reasoning_count": 0,
+    "visible_assistant_turns_complete": true,
+    "tool_parser": "gemma4",
+    "reasoning_parser": "gemma4"
+  },
+  "streaming": {
+    "text_turn_one": {
+      "last_full_content": "The system is now REAL_UI_LIVE and fully operational.",
+      "token_count": 17,
+      "prompt_tokens": 21,
+      "cached_tokens": 0,
+      "tokens_per_second": 19.8,
+      "prefill_tokens_per_second": 37.6,
+      "ttft_seconds": 0.56
+    },
+    "text_turn_two": {
+      "last_full_content": "REAL_UI_LIVE. This is the second UI turn.",
+      "token_count": 17,
+      "prompt_tokens": 63,
+      "cached_tokens": 20,
+      "cache_detail": "paged+mixed_swa",
+      "tokens_per_second": 20.1,
+      "prefill_tokens_per_second": 133.8,
+      "ttft_seconds": 0.47
+    },
+    "image_turn": {
+      "last_full_content": "Red",
+      "token_count": 6,
+      "prompt_tokens": 365,
+      "cached_tokens": 0,
+      "prefill_tokens_per_second": 363.2,
+      "ttft_seconds": 1.0
+    }
+  },
+  "runtime": {
+    "memory": {
+      "active_mb": 25850.6,
+      "peak_mb": 26233.1,
+      "cache_mb": 13.3
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "jang_affine",
+      "backend": "mx.quantize",
+      "profile": "JANG_4M",
+      "target_bits": 8,
+      "config_bits": 8,
+      "group_size": 32,
+      "passthrough_tensor_count": 778,
+      "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+      "uses_mlx_quantized_matmul": true,
+      "metal_na_eligible": true,
+      "sidecar_jang_config": true,
+      "sidecar_jangtq_runtime": false,
+      "prestacked_bundle": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv_enabled": false,
+      "generic_turboquant_kv_reason": "not_active",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache": {
+      "cache_hit_requests": 1,
+      "cache_hit_tokens": 20,
+      "cache_hit_tokens_by_detail": {
+        "paged+mixed_swa": 20
+      },
+      "ram_tokens_cached": 62,
+      "l2_block_tokens_on_disk": 62,
+      "l2_tokens_on_disk": 62,
+      "l2_tokens_on_disk_store_sum": 62,
+      "block_disk_writes": 2,
+      "block_disk_hits": 0,
+      "blocks_on_disk": 2,
+      "media_prefix_cache_stored_tokens": 365
+    }
+  },
+  "positive_surfaces": [
+    "current_electron_dev_build",
+    "real_loaded_model",
+    "chat_completions",
+    "real_app_image_attachment",
+    "server_media_diag_image_url",
+    "vl_image",
+    "semantic_image_answer",
+    "generation_defaults_applied",
+    "parser_leak_check",
+    "language_leak_check",
+    "server_cache_controls",
+    "native_cache_status",
+    "cache_hit_telemetry",
+    "l2_disk_storage"
+  ],
+  "release_boundary": {
+    "clears": [
+      "Gemma 4 31B QAT JANG_4M current Electron dev-build image/VL path",
+      "Gemma 4 31B QAT JANG_4M image attachment persistence through the app",
+      "Gemma 4 31B QAT JANG_4M media fallback with one image and semantic red answer"
+    ],
+    "does_not_clear": [
+      "Gemma 4 31B video",
+      "Gemma 4 31B audio",
+      "installed-app parity for this 31B row",
+      "public tunnel raw SSE parity",
+      "package/sign/notarize/tag/upload/download",
+      "full release readiness"
+    ],
+    "release_ready": false
+  }
+}

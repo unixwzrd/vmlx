@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-06-10T05:35:34.288Z",
+  "status": "fail",
+  "classification": "installed_app_runtime_cache_pass_exact_output_red",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "app": "/Applications/vMLX.app",
+  "modelPath": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+  "servedModel": "mimo-v25-jangtq2-installed-ui-exact-output-20260610",
+  "wireApi": "chat",
+  "rawProof": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-exact-output-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-exact-output-20260610-chat.png",
+  "expected": {
+    "firstAssistantContent": "ACK-CB-742",
+    "secondAssistantContent": "{\"status\":\"ok\",\"value\":\"blue-cat\"}"
+  },
+  "actual": {
+    "firstAssistantContent": "ACKCB-742",
+    "secondAssistantContent": "{\""
+  },
+  "exactness": {
+    "firstExactMatch": false,
+    "secondExactMatch": false,
+    "failureMode": "MiMo JANGTQ_2 removed the hyphen from the literal text probe and truncated the JSON probe after the opening object/string tokens."
+  },
+  "positiveEvidence": {
+    "installedAppUi": true,
+    "realLoadedModel": true,
+    "visibleAssistantTurnsCompletedByHarness": true,
+    "chatCompletions": true,
+    "rawParserLeak": false,
+    "reasoningRawParserLeak": false,
+    "persistedToolCount": 0,
+    "persistedReasoningCount": 0,
+    "serverCacheControls": true,
+    "generationDefaultsApplied": true
+  },
+  "runtime": {
+    "memoryActiveMb": 76483.5,
+    "memoryPeakMb": 77024.8,
+    "singleActiveDecode": true,
+    "quantizationCodec": "turboquant_codebook",
+    "quantizationProfile": "JANGTQ_2",
+    "routedLayout": "prestacked_switch",
+    "weightMatmulDispatch": "jang_tools_turboquant_custom_kernels"
+  },
+  "cache": {
+    "nativeCacheFamily": "mimo_v2",
+    "nativeCacheSchema": "mixed_swa_kv_v1",
+    "nativeCacheSubtype": "mimo_v2_asymmetric_swa",
+    "cacheDetail": "paged",
+    "cacheHitRequests": 1,
+    "cacheHitTokens": 41,
+    "l2BlockTokensOnDisk": 117,
+    "l2TokensOnDisk": 117,
+    "blockDiskWrites": 3,
+    "blockDiskHits": 0
+  },
+  "releaseBoundary": "Does not clear MiMo JANGTQ_2 literal/JSON/source-vs-quant exactness. This run only proves installed-app launch, chat UI, parser cleanliness, native mixed-SWA paged cache hit, and block L2 writes under the exact-output probe."
+}

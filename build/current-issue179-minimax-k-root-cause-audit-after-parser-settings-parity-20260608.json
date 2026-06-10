@@ -1,0 +1,1005 @@
+{
+  "bundle_hash_parity": {
+    "latest_public_server_sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5",
+    "local_installed_matches_latest_public": false,
+    "local_installed_matches_public_v1549_tahoe": false,
+    "local_installed_server_sha256": "9e8cfed83d00bba9b7e59a22a1e80b3f897577ebd4e2e75ac099173ef79ca146",
+    "public_v1549_tahoe_server_sha256": null,
+    "source_matches_latest_public": false,
+    "source_matches_local_installed": false,
+    "source_matches_public_v1549_tahoe": false,
+    "source_server_sha256": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452"
+  },
+  "current_source_minimax_small_smoke": {
+    "all_checks_pass": true,
+    "checks": {
+      "block_disk_l2_restart_restore": true,
+      "cache_second_hit_tq": true,
+      "exact_code_whitespace": true,
+      "model_family_minimax": true,
+      "native_cache_reports_tq_l2": true,
+      "reasoning_parser_minimax_m2": true,
+      "reasoning_separated": true,
+      "required_tool_call_parsed": true,
+      "status_pass": true,
+      "structured_json_exact": true,
+      "tool_parser_minimax": true,
+      "tool_result_continuation_exact": true
+    },
+    "exists": true,
+    "model_name": "MiniMax-M2.7-Small-JANGTQ",
+    "path": "build/current-all-local-model-smoke-minimax-small-jangtq-cache-language-after-bare-invoke-tool-20260609/summary.json",
+    "release_boundary": "Current-source MiniMax Small JANGTQ proof only. This validates the parser/cache/L2 path used by source smokes, but it does not prove reporter MiniMax-K artifact/session parity or close #179.",
+    "request_labels": [
+      "exact_code_whitespace",
+      "reasoning_on",
+      "structured_json_exact",
+      "text_cache_repeat_1",
+      "text_cache_repeat_2",
+      "text_multiturn_recall",
+      "tool_required",
+      "tool_result_continuation"
+    ],
+    "served_name": "minimax-m2.7-small-jangtq",
+    "sha256": "376bebc00c534a937abf06e1351b5c4e5faf9c394952889d2ac943840efae92d",
+    "status": "pass"
+  },
+  "issue": {
+    "id": 179,
+    "model": "JANGQ-AI/MiniMax-M2.7-JANGTQ_K",
+    "title": "MiniMax-M2.7-JANGTQ_K produces gabage"
+  },
+  "language_planning_leak_isolation": {
+    "axes": [
+      {
+        "axis": "reporter_exact_prompt_reproduction",
+        "current_evidence": [
+          "local_exact_prompt_clean",
+          "reporter_bad_text_not_in_log"
+        ],
+        "required_next_evidence": [
+          "reporter_machine_same_prompt_raw_sse_capture",
+          "reporter_machine_visible_and_reasoning_text_capture",
+          "reporter_machine_cancel_lifecycle_same_response_id"
+        ],
+        "status": "open"
+      },
+      {
+        "axis": "generation_config_and_sampling",
+        "current_evidence": [
+          "local_generation_config_present",
+          "reporter_or_local_sampling_shape_seen"
+        ],
+        "required_next_evidence": [
+          "generation_config_hash_match",
+          "resolved_sampling_kwargs_match",
+          "no_sampler_clamp_or_prompt_only_fix"
+        ],
+        "status": "partial"
+      },
+      {
+        "axis": "parser_template_reasoning",
+        "current_evidence": [
+          "local_parser_leak_checks_clean",
+          "current_source_minimax_small_tool_and_reasoning_clean",
+          "reporter_reasoning_parser_unknown",
+          "reporter_tool_parser_unknown"
+        ],
+        "required_next_evidence": [
+          "rendered_chat_template_hash",
+          "thinking_template_flag_match",
+          "reasoning_parser_output_no_cjk_numeric_raw_leak",
+          "tool_parser_no_raw_minimax_markup_leak"
+        ],
+        "status": "partial"
+      },
+      {
+        "axis": "paged_prefix_cache",
+        "current_evidence": [
+          "local_cache_hit_telemetry_seen",
+          "current_source_minimax_small_paged_tq_second_hit",
+          "reporter_paged_cache_flag_unknown"
+        ],
+        "required_next_evidence": [
+          "cache_on_off_same_prompt",
+          "first_miss_second_hit_cached_tokens",
+          "cache_detail_paged_or_prefix",
+          "same_visible_and_reasoning_text_across_cache_state"
+        ],
+        "status": "partial"
+      },
+      {
+        "axis": "block_disk_l2",
+        "current_evidence": [
+          "local_installed_cache_flags_seen",
+          "current_source_minimax_small_l2_restart_restore",
+          "reporter_block_disk_cache_flag_unknown"
+        ],
+        "required_next_evidence": [
+          "fresh_process_l2_restore_same_prompt",
+          "block_disk_l2_write_count",
+          "block_disk_l2_hit_count",
+          "same_visible_and_reasoning_text_after_restore"
+        ],
+        "status": "partial"
+      },
+      {
+        "axis": "turboquant_kv",
+        "current_evidence": [
+          "reporter_tq_kv_runtime_unknown",
+          "local_clean_with_current_cache_path",
+          "current_source_minimax_small_native_tq_cache_reported"
+        ],
+        "required_next_evidence": [
+          "tq_kv_off_same_prompt",
+          "tq_kv_on_same_prompt",
+          "kv_encode_decode_shape_dtype_checksum",
+          "same_visible_and_reasoning_text_with_tq_ab"
+        ],
+        "status": "partial"
+      }
+    ],
+    "current_source_minimax_small": {
+      "all_checks_pass": true,
+      "checks": {
+        "block_disk_l2_restart_restore": true,
+        "cache_second_hit_tq": true,
+        "exact_code_whitespace": true,
+        "model_family_minimax": true,
+        "native_cache_reports_tq_l2": true,
+        "reasoning_parser_minimax_m2": true,
+        "reasoning_separated": true,
+        "required_tool_call_parsed": true,
+        "status_pass": true,
+        "structured_json_exact": true,
+        "tool_parser_minimax": true,
+        "tool_result_continuation_exact": true
+      },
+      "path": "build/current-all-local-model-smoke-minimax-small-jangtq-cache-language-after-bare-invoke-tool-20260609/summary.json",
+      "release_boundary": "Current-source MiniMax Small JANGTQ proof only. This validates the parser/cache/L2 path used by source smokes, but it does not prove reporter MiniMax-K artifact/session parity or close #179.",
+      "status": "pass"
+    },
+    "local_clean_rows": 5,
+    "local_surfaces": [
+      "cache_hit_telemetry",
+      "chat_completions",
+      "current_electron_dev_build",
+      "installed_app_ui",
+      "language_leak_check",
+      "parser_leak_check",
+      "real_loaded_model",
+      "reasoning_display",
+      "responses_api",
+      "settings_persistence"
+    ],
+    "release_boundary": "single_axis_runtime_ab_required: this matrix is proof planning and classification only. Do not clear MiniMax wrong-language/planning leak by disabling cache, TQ KV, L2, reasoning, or changing sampling unless the matching same-prompt A/B proof identifies that axis.",
+    "status": "open"
+  },
+  "latest_public_release_dmg_contract": {
+    "asset": "vMLX-1.5.56-tahoe-arm64.dmg",
+    "asset_size_bytes": 495269296,
+    "boundary": "Public v1.5.56 vMLX-1.5.56-tahoe-arm64.dmg DMG route/hash contract for issue #179 reporter bundle provenance; this does not load the model.",
+    "exists": true,
+    "path": "build/issue-179/public-v1.5.56-tahoe-dmg-contract.json",
+    "release_tag": "v1.5.56",
+    "server_cancel_calls_engine_abort": true,
+    "server_has_responses_cancel_route": true,
+    "server_sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5",
+    "sha256": "cd4266254979def0ca6728d559fe7735dbace9f6097da26eb017ca518b343944"
+  },
+  "live_probe_memory_preflight": {
+    "active_heavy_process_count": null,
+    "available_for_gate_gb": null,
+    "exists": true,
+    "free_plus_speculative_purgeable_gb": null,
+    "launch_allowed": false,
+    "launch_decision": "do_not_launch",
+    "memory_gap_gb": null,
+    "model_path": "/Users/eric/models/JANGQ/MiniMax-M2.7-JANGTQ_K",
+    "model_size_gb": null,
+    "path": "build/current-issue179-minimax-k-responses-cancel-probe-memory-preflight-20260602-local-ready-check.json",
+    "preflight_captured_at": "2026-06-09T07:09:39-0700",
+    "preflight_memory_source": null,
+    "reason": "model_path_missing",
+    "required_free_gb": null,
+    "sha256": "1afb5a87ba526a38e6c44ce03d6afd82715b337f975444072becc72c73bae917",
+    "status": "skipped"
+  },
+  "local_installed_bundle_contract": {
+    "exists": true,
+    "server_cancel_calls_engine_abort": true,
+    "server_has_responses_cancel_route": true,
+    "server_path": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+    "sha256": "9e8cfed83d00bba9b7e59a22a1e80b3f897577ebd4e2e75ac099173ef79ca146"
+  },
+  "local_model_manifest": {
+    "checks": {
+      "has_config": true,
+      "has_generation_config": true,
+      "has_jang_config": true,
+      "has_jangtq_runtime": true,
+      "has_model_index": true,
+      "has_tokenizer": true,
+      "model_shard_count_is_67": true
+    },
+    "exists": false,
+    "hash_shards": false,
+    "hashed_file_count": 6,
+    "local_full_k_artifact_shape_recorded": true,
+    "metadata_fallback": {
+      "metadata_files_hashed": [
+        "config.json",
+        "generation_config.json",
+        "jang_config.json",
+        "model.safetensors.index.json",
+        "tokenizer_config.json",
+        "tokenizer.json"
+      ],
+      "reason": "manifest_artifact_missing_hashing_metadata_only_no_shards",
+      "shard_hash_boundary": "Shard hashes are intentionally not computed by this fallback; reporter model-file parity remains open until a full manifest or reporter-machine model hashes are captured.",
+      "status": "used"
+    },
+    "model_file_hashes": [
+      {
+        "path": "config.json",
+        "sha256": "8371298d174db8f5fb7986e0bfa8f821e55ed3072ddffb89c45c3e545f444e0f"
+      },
+      {
+        "path": "generation_config.json",
+        "sha256": "2c24fe5507e260bb081727e2a14693d9a982942e721b28720c184d201bffb9dd"
+      },
+      {
+        "path": "jang_config.json",
+        "sha256": "5bb98e772935dd5914e0aaf4937e69a26a006fc08a315b08628ac0379d07c8b5"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "sha256": "b8fa956e64f75dc16846d4f88e19540300f602a559f1dcede0a714ab581a61a3"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "sha256": "200f376c5eac775e6c5a567c556041fdd76ee359b9946a5f6941a53010735a67"
+      },
+      {
+        "path": "tokenizer.json",
+        "sha256": "757622126525aeeb131756849d93298070ff3f0319c455ec8c5bb0f6b1cebbe8"
+      }
+    ],
+    "model_path": "/Users/eric/models/dealign.ai/MiniMax-M2.7-JANGTQ_K-CRACK",
+    "model_shard_count": 67,
+    "path": "build/current-issue179-minimax-k-local-model-manifest-20260527.json",
+    "sha256": "",
+    "status": "metadata_fallback",
+    "total_bytes": 79412329185,
+    "total_file_count": 84,
+    "unhashed_safetensors_count": 67
+  },
+  "local_real_ui": {
+    "all_required_clean": true,
+    "clean_count": 5,
+    "installed_session_settings_parity": {
+      "all_installed_disable_builtin_tools": true,
+      "all_installed_have_cache_flags": true,
+      "all_installed_server_cache_controls_disabled": true,
+      "all_installed_use_bundled_python": true,
+      "all_installed_use_responses": true,
+      "has_hi_auto_clean_repeat": true,
+      "has_thinking_512_code_clean": true,
+      "installed_proof_count": 4
+    },
+    "proofs": [
+      {
+        "assistant_count": 2,
+        "cache_hit_tokens": 135,
+        "chat_overrides": {
+          "builtinToolsEnabled": false,
+          "enableThinking": true,
+          "maxTokens": 192,
+          "toolResultMaxChars": 12345,
+          "wireApi": "responses"
+        },
+        "clean": true,
+        "exists": true,
+        "final_visible_text": "```python\ndef add_one(x):\n    return x + 1\n```",
+        "installed_app_path": null,
+        "model": "MiniMax-M2.7-JANGTQ_K",
+        "path": "docs/internal/agent-notes/diagnostic-real-ui-live-model-minimax-m27-jangtq-k-issue179-20260527-proof.json",
+        "python": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+        "reasoning_leaks": {
+          "cjk": 0,
+          "korean": 0,
+          "numeric": 0,
+          "raw": false
+        },
+        "renderer_builtin_tools_enabled": false,
+        "renderer_enable_thinking": true,
+        "renderer_wire_api": "responses",
+        "requested_builtin_tools": false,
+        "requested_enable_thinking": true,
+        "server_cache_controls": {
+          "requested": false,
+          "verified": false
+        },
+        "server_command_has_cache_flags": true,
+        "sha256": "b4462049d89ac0f3cd4f5002db88d7fa798f46c392b15d8f9bd48580294d0a3b",
+        "surfaces": [
+          "cache_hit_telemetry",
+          "chat_completions",
+          "current_electron_dev_build",
+          "language_leak_check",
+          "parser_leak_check",
+          "real_loaded_model",
+          "reasoning_display",
+          "responses_api",
+          "settings_persistence"
+        ],
+        "ui_launch_mode": "dev",
+        "wire_api": "responses"
+      },
+      {
+        "assistant_count": 2,
+        "cache_hit_tokens": 135,
+        "chat_overrides": {
+          "builtinToolsEnabled": false,
+          "enableThinking": true,
+          "maxTokens": 192,
+          "toolResultMaxChars": 12345,
+          "wireApi": "responses"
+        },
+        "clean": true,
+        "exists": true,
+        "final_visible_text": "4",
+        "installed_app_path": "/Applications/vMLX.app",
+        "model": "MiniMax-M2.7-JANGTQ_K",
+        "path": "docs/internal/agent-notes/diagnostic-installed-ui-live-model-minimax-m27-jangtq-k-issue179-20260527-proof.json",
+        "python": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/bin/python3",
+        "reasoning_leaks": {
+          "cjk": 0,
+          "korean": 0,
+          "numeric": 0,
+          "raw": false
+        },
+        "renderer_builtin_tools_enabled": false,
+        "renderer_enable_thinking": true,
+        "renderer_wire_api": "responses",
+        "requested_builtin_tools": false,
+        "requested_enable_thinking": true,
+        "server_cache_controls": {
+          "requested": false,
+          "verified": false
+        },
+        "server_command_has_cache_flags": true,
+        "sha256": "1f61c70e4a2d0de2b6c4668d46fe46baf8b48b8e2086ffcbac97bbac5dacc64e",
+        "surfaces": [
+          "cache_hit_telemetry",
+          "chat_completions",
+          "installed_app_ui",
+          "language_leak_check",
+          "parser_leak_check",
+          "real_loaded_model",
+          "reasoning_display",
+          "responses_api",
+          "settings_persistence"
+        ],
+        "ui_launch_mode": "installed-app",
+        "wire_api": "responses"
+      },
+      {
+        "assistant_count": 2,
+        "cache_hit_tokens": 97,
+        "chat_overrides": {
+          "builtinToolsEnabled": false,
+          "maxTokens": 512,
+          "toolResultMaxChars": 12345,
+          "wireApi": "responses"
+        },
+        "clean": true,
+        "exists": true,
+        "final_visible_text": "Hi there! \ud83d\udc4b How can I help you today?",
+        "installed_app_path": "/Applications/vMLX.app",
+        "model": "MiniMax-M2.7-JANGTQ_K",
+        "path": "docs/internal/agent-notes/diagnostic-installed-ui-live-model-minimax-m27-jangtq-k-issue179-hi-auto-20260527-proof.json",
+        "python": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/bin/python3",
+        "reasoning_leaks": {
+          "cjk": 0,
+          "korean": 0,
+          "numeric": 0,
+          "raw": false
+        },
+        "renderer_builtin_tools_enabled": false,
+        "renderer_enable_thinking": null,
+        "renderer_wire_api": "responses",
+        "requested_builtin_tools": false,
+        "requested_enable_thinking": null,
+        "server_cache_controls": {
+          "requested": false,
+          "verified": false
+        },
+        "server_command_has_cache_flags": true,
+        "sha256": "469fc39c1f33feb74ca39817ff4ae729e1ce82e2621608aa6cbbeb4be89aedac",
+        "surfaces": [
+          "cache_hit_telemetry",
+          "chat_completions",
+          "installed_app_ui",
+          "language_leak_check",
+          "parser_leak_check",
+          "real_loaded_model",
+          "responses_api",
+          "settings_persistence"
+        ],
+        "ui_launch_mode": "installed-app",
+        "wire_api": "responses"
+      },
+      {
+        "assistant_count": 2,
+        "cache_hit_tokens": 86,
+        "chat_overrides": {
+          "builtinToolsEnabled": false,
+          "enableThinking": true,
+          "maxTokens": 512,
+          "toolResultMaxChars": 12345,
+          "wireApi": "responses"
+        },
+        "clean": true,
+        "exists": true,
+        "final_visible_text": "Hello again! I'm ready to help you with any questions or tasks you might have. What would you like to work on today?",
+        "installed_app_path": "/Applications/vMLX.app",
+        "model": "MiniMax-M2.7-JANGTQ_K",
+        "path": "docs/internal/agent-notes/diagnostic-installed-ui-live-model-minimax-m27-jangtq-k-issue179-hi-thinking-20260527-proof.json",
+        "python": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/bin/python3",
+        "reasoning_leaks": {
+          "cjk": 0,
+          "korean": 0,
+          "numeric": 0,
+          "raw": false
+        },
+        "renderer_builtin_tools_enabled": false,
+        "renderer_enable_thinking": true,
+        "renderer_wire_api": "responses",
+        "requested_builtin_tools": false,
+        "requested_enable_thinking": true,
+        "server_cache_controls": {
+          "requested": false,
+          "verified": false
+        },
+        "server_command_has_cache_flags": true,
+        "sha256": "6ae801ae36e6c4672fb8f13fa3130afee008b9bc83508184d366c3655c097cb5",
+        "surfaces": [
+          "cache_hit_telemetry",
+          "chat_completions",
+          "installed_app_ui",
+          "language_leak_check",
+          "parser_leak_check",
+          "real_loaded_model",
+          "reasoning_display",
+          "responses_api",
+          "settings_persistence"
+        ],
+        "ui_launch_mode": "installed-app",
+        "wire_api": "responses"
+      },
+      {
+        "assistant_count": 2,
+        "cache_hit_tokens": 140,
+        "chat_overrides": {
+          "builtinToolsEnabled": false,
+          "enableThinking": true,
+          "maxTokens": 512,
+          "toolResultMaxChars": 12345,
+          "wireApi": "responses"
+        },
+        "clean": true,
+        "exists": true,
+        "final_visible_text": "def add_one(x):\n    return x + 1",
+        "installed_app_path": "/Applications/vMLX.app",
+        "model": "MiniMax-M2.7-JANGTQ_K",
+        "path": "docs/internal/agent-notes/diagnostic-installed-ui-live-model-minimax-m27-jangtq-k-issue179-512-20260527-proof.json",
+        "python": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/bin/python3",
+        "reasoning_leaks": {
+          "cjk": 0,
+          "korean": 0,
+          "numeric": 0,
+          "raw": false
+        },
+        "renderer_builtin_tools_enabled": false,
+        "renderer_enable_thinking": true,
+        "renderer_wire_api": "responses",
+        "requested_builtin_tools": false,
+        "requested_enable_thinking": true,
+        "server_cache_controls": {
+          "requested": false,
+          "verified": false
+        },
+        "server_command_has_cache_flags": true,
+        "sha256": "3698b64fa5681cb3c5891634bbaba8da639ac6abcea6abfe929ddb7f940fafb0",
+        "surfaces": [
+          "cache_hit_telemetry",
+          "chat_completions",
+          "installed_app_ui",
+          "language_leak_check",
+          "parser_leak_check",
+          "real_loaded_model",
+          "reasoning_display",
+          "responses_api",
+          "settings_persistence"
+        ],
+        "ui_launch_mode": "installed-app",
+        "wire_api": "responses"
+      }
+    ],
+    "required_count": 5
+  },
+  "local_reporter_prompt_reproduction": {
+    "bad_text_captured": false,
+    "bad_text_counts": {
+      "cjk": 0,
+      "korean": 0,
+      "numeric": 0,
+      "raw_parser_tag": false
+    },
+    "cancel_status": 200,
+    "cancel_trigger": "delay_elapsed",
+    "clean": true,
+    "configured_path": "build/current-issue179-minimax-k-responses-cancel-probe-current-source-parser-settings-parity-20260608.json",
+    "content_text": "",
+    "exists": true,
+    "observed_stream_text": true,
+    "path": "build/current-issue179-minimax-k-responses-cancel-probe-after-mimo-dsv4-ledger-20260607.json",
+    "reasoning_text": "The",
+    "request_matches_reporter": true,
+    "response_id_seen": true,
+    "selected_fallback_path": "build/current-issue179-minimax-k-responses-cancel-probe-after-mimo-dsv4-ledger-20260607.json",
+    "sha256": "467942f4aabb2d06f64ddad260a36cf6b9e5b2f00a3b54ba41ea77b4ed4ec712",
+    "status": "pass",
+    "stream_started": true
+  },
+  "local_responses_cancel_probe": {
+    "cancel_status": null,
+    "exists": false,
+    "max_output_tokens": null,
+    "model": null,
+    "path": "build/current-issue179-minimax-k-responses-cancel-probe-current-source-parser-settings-parity-20260608.json",
+    "probe": {},
+    "prompt": null,
+    "response_id_seen": false,
+    "sha256": null,
+    "status": null
+  },
+  "not_proven": [
+    "reporter model shard/codebook hashes match local full K artifact",
+    "reporter model artifact manifest is available for direct local comparison",
+    "reporter installed app bundle hash matches public/local server.py route proof",
+    "reporter response id was still active when the cancel request was sent",
+    "reporter chat/session/settings database state matches local diagnostic state",
+    "the 404 cancel response caused the screenshot rather than followed the stream abort"
+  ],
+  "proven": {
+    "current_source_responses_cancel_contract_proven": true,
+    "current_source_responses_cancel_inactive_404_contract_proven": true,
+    "latest_public_dmg_has_responses_cancel_route": true,
+    "local_installed_bundle_has_responses_cancel_route": true,
+    "local_installed_issue179_session_settings_parity": true,
+    "local_installed_responses_cancel_live_probe": false,
+    "local_real_ui_diagnostics_clean": true,
+    "local_reporter_prompt_reproduction_clean": true,
+    "public_v1549_tahoe_dmg_has_responses_cancel_route": false,
+    "reporter_cancel_404_after_econnreset_same_response_id_proven": false,
+    "reporter_cancel_404_after_stream_abort_order_proven": false,
+    "reporter_log_has_abort_before_visible_content": false,
+    "reporter_log_has_responses_cancel_404": false,
+    "reporter_log_installed_app_bundled_python_seen": false,
+    "reporter_log_launch_parser_cache_flags_seen": false,
+    "reporter_log_request_shape_and_sampling_kwargs_seen": false
+  },
+  "public_release_dmg_contract": {
+    "asset": null,
+    "asset_size_bytes": null,
+    "boundary": null,
+    "exists": false,
+    "path": "build/issue-179/public-v1.5.49-tahoe-dmg-contract.json",
+    "release_tag": null,
+    "server_cancel_calls_engine_abort": false,
+    "server_has_responses_cancel_route": false,
+    "server_sha256": null,
+    "sha256": null
+  },
+  "public_release_dmg_contracts": [
+    {
+      "asset": "vMLX-1.5.56-sequoia-arm64.dmg",
+      "asset_size_bytes": 479506057,
+      "boundary": "Public v1.5.56 vMLX-1.5.56-sequoia-arm64.dmg DMG route/hash contract for issue #179 reporter bundle provenance; this does not load the model.",
+      "exists": true,
+      "path": "build/issue-179/public-v1.5.56-sequoia-dmg-contract.json",
+      "release_tag": "v1.5.56",
+      "server_cancel_calls_engine_abort": true,
+      "server_has_responses_cancel_route": true,
+      "server_sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5",
+      "sha256": "321978fb84369d2374df47b79743c23a3ef834eef8a9e516b59010566b1bbef7"
+    },
+    {
+      "asset": "vMLX-1.5.56-tahoe-arm64.dmg",
+      "asset_size_bytes": 495269296,
+      "boundary": "Public v1.5.56 vMLX-1.5.56-tahoe-arm64.dmg DMG route/hash contract for issue #179 reporter bundle provenance; this does not load the model.",
+      "exists": true,
+      "path": "build/issue-179/public-v1.5.56-tahoe-dmg-contract.json",
+      "release_tag": "v1.5.56",
+      "server_cancel_calls_engine_abort": true,
+      "server_has_responses_cancel_route": true,
+      "server_sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5",
+      "sha256": "cd4266254979def0ca6728d559fe7735dbace9f6097da26eb017ca518b343944"
+    }
+  ],
+  "release_boundary": "#179 remains open: local dev UI and installed app UI diagnostics are clean, but the reporter log proves abort-before-visible-content plus Responses cancel 404 and does not contain the bad text shown in the screenshot. The reporter screenshot garbage is an interrupted reasoning-panel stream, not proven final visible answer text.",
+  "reporter": {
+    "bad_text_captured_in_log": false,
+    "block_disk_cache_seen": false,
+    "econnreset_seen": false,
+    "exists": false,
+    "installed_bundled_python_seen": false,
+    "launch_config": {},
+    "model_config": {},
+    "model_path_seen": false,
+    "paged_cache_seen": false,
+    "path": "build/issue-179/vmlx-logs-490f58c0-2026-05-27.log",
+    "prompt_chars": null,
+    "reasoning_parser_seen": false,
+    "request_error": {},
+    "request_error_before_visible_content": false,
+    "request_error_line": null,
+    "request_error_response_id": null,
+    "request_shape": {},
+    "resolved_sampling_kwargs": {},
+    "response_ids": [],
+    "responses_cancel_404_after_econnreset_same_response_id": false,
+    "responses_cancel_404_after_request_error": false,
+    "responses_cancel_404_line": null,
+    "responses_cancel_404_response_id": null,
+    "responses_cancel_404_seen": false,
+    "responses_stream_request_seen": false,
+    "runtime_config": {},
+    "sha256": null,
+    "tool_parser_seen": false,
+    "turboquant_runtime_seen": false
+  },
+  "reporter_parity_artifact": {
+    "capture_provenance": "github_issue_179_comment_jjang-ai_2026-06-02",
+    "comparison_status": "missing_reporter_parity_artifact",
+    "exists": false,
+    "installed_server_sha256": "a2c4aed88d69b0537de9c7bb7ecb68e4d97f40e92e9fec781e9f79b9b157e8be",
+    "note": "Full reporter parity artifact is missing, but the reporter installed server.py hash was published in GitHub issue #179 comments by jjang-ai on 2026-06-02.",
+    "path": "build/issue-179/reporter-parity-metadata-20260527.json",
+    "required_fields": [
+      "capture_provenance",
+      "installed_server_sha256",
+      "server_has_responses_cancel_route",
+      "server_cancel_calls_engine_abort",
+      "model_manifest_sha256",
+      "model_file_hashes",
+      "chat_id",
+      "session_settings",
+      "response_id",
+      "response_active_at_cancel",
+      "raw_sse_cancel_lifecycle"
+    ],
+    "server_cancel_calls_engine_abort": true,
+    "server_has_responses_cancel_route": true,
+    "status": "open"
+  },
+  "reporter_parity_comparison": {
+    "failures": [
+      "missing_reporter_parity_artifact"
+    ],
+    "status": "open"
+  },
+  "reporter_screenshot": {
+    "exists": false,
+    "manual_observation": {
+      "interrupted": null,
+      "looks_like_numeric_sequence_garbage": null,
+      "note": null,
+      "source": "manual_visual_inspection",
+      "surface": null
+    },
+    "path": "build/issue-179/minimax-garbage-screenshot.png",
+    "sha256": null
+  },
+  "reporter_server_hash_parity": {
+    "failure": "reporter_installed_server_hash_drift",
+    "latest_public_server_sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5",
+    "local_installed_server_sha256": "9e8cfed83d00bba9b7e59a22a1e80b3f897577ebd4e2e75ac099173ef79ca146",
+    "provenance": {
+      "checked_sources": [
+        "source_contract",
+        "local_installed_bundle",
+        "public_v1549_tahoe_dmg",
+        "public_release_dmg_contracts",
+        "local_installed_app_backups",
+        "sibling_python_worktrees",
+        "local_app_bundle_servers",
+        "git_history"
+      ],
+      "direct_matches": {
+        "local_installed": false,
+        "public_v1549_tahoe": false,
+        "source": false
+      },
+      "failure": "reporter_server_hash_provenance_unknown",
+      "git_history": {
+        "checked": true,
+        "commit": null,
+        "error": null,
+        "match": false
+      },
+      "local_app_bundle_checked": [
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "792a22c944e61bf1a8bade26302e4aae50c62a9dcc1828c3437481fce5501909"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "792a22c944e61bf1a8bade26302e4aae50c62a9dcc1828c3437481fce5501909"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "80b8c4f8ce0116f4fe8e6f7abdc3abb8a83e7c2adf3a5936457d73941ceb7117"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "80b8c4f8ce0116f4fe8e6f7abdc3abb8a83e7c2adf3a5936457d73941ceb7117"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/tahoe-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/tahoe-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "9e8cfed83d00bba9b7e59a22a1e80b3f897577ebd4e2e75ac099173ef79ca146"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "9e8cfed83d00bba9b7e59a22a1e80b3f897577ebd4e2e75ac099173ef79ca146"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx/panel/release/tahoe-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "9e8cfed83d00bba9b7e59a22a1e80b3f897577ebd4e2e75ac099173ef79ca146"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx/panel/release/tahoe-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "9e8cfed83d00bba9b7e59a22a1e80b3f897577ebd4e2e75ac099173ef79ca146"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx/panel/release-dev-cache-ui/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "3c39b12ccd0a4a57c561d602afc1d0e95b2ffb058d680c50170cbf951c7fbcd8"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx/panel/release-dev-cache-ui/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "3c39b12ccd0a4a57c561d602afc1d0e95b2ffb058d680c50170cbf951c7fbcd8"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-release-1.5.33/panel/release/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "d6044f008d38003a2f451481efafc428171210ffd830d90eb8b532b7529e50e7"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-release-1.5.33/panel/release/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "d6044f008d38003a2f451481efafc428171210ffd830d90eb8b532b7529e50e7"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-release-v1.5.45-clean/panel/release/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "836cef92a2998df117f646ea9c8efd3cb7419877470886829f4759ffb662aea0"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-release-v1.5.45-clean/panel/release/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "836cef92a2998df117f646ea9c8efd3cb7419877470886829f4759ffb662aea0"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/mtp-qwen36-depth3-20260516/panel/release/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "3258101539b24e610032aa53f1dd6b732b776257f93d3bda6805642292f71847"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/mtp-qwen36-depth3-20260516/panel/release/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "3258101539b24e610032aa53f1dd6b732b776257f93d3bda6805642292f71847"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/publish-main-v1.5.43-20260519102753/panel/release/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "7cb1bb5780744bb42b914275f644873885bca0584b8dfb87388ce023ac677b75"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/publish-main-v1.5.43-20260519102753/panel/release/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "7cb1bb5780744bb42b914275f644873885bca0584b8dfb87388ce023ac677b75"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/python-release-df7dffa5/panel/release/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "140312f09400e04925638f1068117d9920da5de381fbc52a16ab2ec03be8b7b0"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/python-release-df7dffa5/panel/release/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "140312f09400e04925638f1068117d9920da5de381fbc52a16ab2ec03be8b7b0"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/release-1.5.39-mtp/panel/release/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "48d6fc7fda14fa0e665d486fa2225e17d161bc45513011f1ee4be408a8f10317"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/release-1.5.39-mtp/panel/release/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "48d6fc7fda14fa0e665d486fa2225e17d161bc45513011f1ee4be408a8f10317"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/release-push-current-20260518/panel/release/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+          "sha256": "2d5733b3179eca7c74eb801026c2eb917482acfef36e89e9b44e154a1b7f9826"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/.config/superpowers/worktrees/vllm-mlx/release-push-current-20260518/panel/release/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+          "sha256": "2d5733b3179eca7c74eb801026c2eb917482acfef36e89e9b44e154a1b7f9826"
+        }
+      ],
+      "local_app_bundle_checked_count": 26,
+      "local_app_bundle_matches": [],
+      "local_backup_checked_count": 0,
+      "local_backup_matches": [],
+      "missing_required_public_release_contracts": [],
+      "public_release_checked": [
+        {
+          "asset": "vMLX-1.5.56-sequoia-arm64.dmg",
+          "matches_reporter": false,
+          "path": "build/issue-179/public-v1.5.56-sequoia-dmg-contract.json",
+          "release_tag": "v1.5.56",
+          "server_sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5"
+        },
+        {
+          "asset": "vMLX-1.5.56-tahoe-arm64.dmg",
+          "matches_reporter": false,
+          "path": "build/issue-179/public-v1.5.56-tahoe-dmg-contract.json",
+          "release_tag": "v1.5.56",
+          "server_sha256": "0be1c30c44da2a57e4a3e89bf87c803d2ae00a86140ff81f7c39e58f5bc3c4f5"
+        }
+      ],
+      "public_release_checked_count": 2,
+      "public_release_matches": [],
+      "sibling_source_checked": [
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx/vmlx_engine/server.py",
+          "sha256": "5bbc56f08b16096bf6ad17d21f72a5bc6072ecc4f82204a2fc79691ad6cc2c12"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-pypi-v1.5.45/vmlx_engine/server.py",
+          "sha256": "0c99ed320eac04f1a621f18d35309a5736eeb3ae75aeb71446a480c201340d8c"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-qwen-before-vlm-eval/vmlx_engine/server.py",
+          "sha256": "a4c5c2cdd1f8feb429a4405420bd3b269011c6415858cc084f0cd9e188b6b63e"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-release-1.5.33/vmlx_engine/server.py",
+          "sha256": "d6044f008d38003a2f451481efafc428171210ffd830d90eb8b532b7529e50e7"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-release-v1.5.45-clean/vmlx_engine/server.py",
+          "sha256": "836cef92a2998df117f646ea9c8efd3cb7419877470886829f4759ffb662aea0"
+        },
+        {
+          "matches_reporter": false,
+          "path": "/Users/eric/mlx/vllm-mlx-review-origin-main/vmlx_engine/server.py",
+          "sha256": "0c99ed320eac04f1a621f18d35309a5736eeb3ae75aeb71446a480c201340d8c"
+        }
+      ],
+      "sibling_source_checked_count": 6,
+      "sibling_source_matches": [],
+      "status": "open"
+    },
+    "public_v1549_tahoe_server_sha256": null,
+    "reporter_installed_server_sha256": "a2c4aed88d69b0537de9c7bb7ecb68e4d97f40e92e9fec781e9f79b9b157e8be",
+    "reporter_matches_latest_public": false,
+    "reporter_matches_local_installed": false,
+    "reporter_matches_public_v1549_tahoe": false,
+    "reporter_matches_source": false,
+    "route_markers_match": true,
+    "source_server_sha256": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452",
+    "status": "open"
+  },
+  "root_cause_discriminators": [
+    {
+      "id": "reporter_bundle_cancel_route_parity",
+      "next_proof": "Compare reporter installed bundle server.py hash/routes and request lifecycle against the local rebuilt bundle and public v1.5.49 Tahoe DMG. The public DMG has the route, so the reporter 404 is more likely an inactive/already-finished response id after stream abort than a missing route.",
+      "observed": [
+        "reporter_cancel_route_unknown",
+        "local_installed_cancel_route_present",
+        "public_v1549_tahoe_dmg_cancel_route_unproven",
+        "local_installed_live_cancel_unproven",
+        "source_proves_inactive_response_cancel_404_after_lookup",
+        "local_installed_hash_differs_from_public_v1549_tahoe",
+        "missing_reporter_parity_artifact"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "reporter_stream_abort_vs_model_text",
+      "next_proof": "Run the same raw SSE/cancel capture on the reporter bundle/session; local synced installed app already captured the controlled interrupt boundary without screenshot-shaped garbage.",
+      "observed": [
+        "visible_content_seen",
+        "reporter_cancel_404_order_unproven",
+        "bad_text_not_captured_in_log",
+        "local_controlled_cancel_bad_text_unproven"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "local_runtime_cache_math_parity",
+      "next_proof": "Run the reporter exact prompt/session after bundle parity is proven; if garbage reproduces, A/B paged cache, L2, TurboQuant KV, and single-active scheduling without changing sampler defaults.",
+      "observed": [
+        "single_active_scheduler",
+        "paged_prefix_cache_hits",
+        "block_disk_l2_writes_and_hits",
+        "turboquant_kv_live_decode"
+      ],
+      "status": "partially_proven"
+    },
+    {
+      "id": "prompt_template_parser_parity",
+      "next_proof": "Capture rendered prompt, template flags, thinking setting, parser selection, and persisted session settings from reporter and local runs.",
+      "observed": [
+        "reporter_reasoning_parser_unknown",
+        "reporter_tool_parser_unknown",
+        "source_routes_response_cancel"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "model_artifact_hash_parity",
+      "next_proof": "Compare reporter and local model safetensor/codebook/tokenizer/generation_config hashes before attributing output to runtime math.",
+      "observed": [
+        "reporter_model_path_missing",
+        "local_full_k_artifact_manifest_recorded",
+        "local_full_k_shard_hashes_not_recorded"
+      ],
+      "status": "partially_proven"
+    }
+  ],
+  "source_contract": {
+    "panel_routes_resp_ids_to_responses_cancel": true,
+    "server_cancel_calls_engine_abort": true,
+    "server_has_responses_cancel_route": true,
+    "source_hashes": {
+      "panel/src/main/ipc/chat.ts": "1d147559881dabf7b50bc003ba98ad352307799b915feb3163c8328d38ec5504",
+      "tests/test_cancellation.py": "b12eec9c30cfadcefa330be1224a55e4115ec96bbbd417cfca52928c0359f2a2",
+      "vmlx_engine/server.py": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452"
+    },
+    "test_proves_inactive_responses_cancel_404_after_engine_lookup": true,
+    "test_proves_successful_responses_cancel_route": true
+  },
+  "status": "open"
+}

@@ -4130,9 +4130,9 @@ def test_release_regression_manifest_current_sweep_uses_latest_live_smoke_artifa
     assert "current-regression-suite-20260528-release-ready-top-level.json" not in joined
     assert "current-regression-suite-20260528-dsv4-memory-refresh.json" not in joined
     assert "current-regression-suite-20260528-signing-detail-ledger.json" not in joined
-    assert "current-installed-app-runtime-parity-audit-after-installed-app-rebuild-20260606.json" in joined
-    assert "current-installed-app-runtime-parity-audit-after-installed-app-rebuild-20260606.json" in row_text
-    assert "run_installed_app_runtime_parity_audit.py --app panel/release/sequoia-app/mac-arm64/vMLX.app --out build/current-installed-app-runtime-parity-audit-after-installed-app-rebuild-20260606.json" in row_text
+    assert "current-installed-app-runtime-parity-audit-sequoia-checkpoint-dmg-20260609.json" in joined
+    assert "current-installed-app-runtime-parity-audit-sequoia-checkpoint-dmg-20260609.json" in row_text
+    assert "run_installed_app_runtime_parity_audit.py --app panel/release/sequoia-app/mac-arm64/vMLX.app --out build/current-installed-app-runtime-parity-audit-sequoia-checkpoint-dmg-20260609.json" in row_text
     assert "current-installed-app-runtime-parity-audit-20260602-developer-id-installed-signing.json" not in joined
     assert "current-installed-app-runtime-parity-audit-20260602-developer-id-installed-signing.json" not in row_text
     assert "current-installed-app-runtime-parity-audit-20260602-performance-health-epipe.json" not in joined
@@ -4145,7 +4145,7 @@ def test_release_regression_manifest_current_sweep_uses_latest_live_smoke_artifa
     assert "current-installed-app-runtime-parity-audit-20260531-childstream-epipe-installed-sync.json" not in row_text
     assert "current-installed-app-runtime-parity-audit-20260528-epipe-aggregate-guard.json" not in joined
     assert "current-installed-app-runtime-parity-audit-20260528-epipe-aggregate-guard.json" not in row_text
-    assert "current-staged-app-runtime-parity-audit-gemma4-release-boundary-after-ui-e2e-fixes-dmg-build-20260604.json" in joined
+    assert "current-installed-app-runtime-parity-audit-tahoe-checkpoint-dmg-20260609.json" in joined
     assert "current-staged-app-runtime-parity-audit-20260602-performance-health-epipe.json" not in joined
     assert "current-staged-app-runtime-parity-audit-20260601-cache-ipc-epipe-staged.json" not in joined
     assert "current-staged-app-runtime-parity-audit-20260601-wrapper-epipe-package-refresh.json" not in joined
@@ -4253,7 +4253,7 @@ def test_release_regression_manifest_current_sweep_uses_latest_live_smoke_artifa
     assert "current-api-surface-contract-20260527-cache-endpoint-autoswitch-proof.json" not in joined
     assert "current-api-surface-contract-20260526-single-model-auto-switch-review.json" not in joined
     assert "current-api-surface-contract-20260525-single-model-responses-deltas.json" not in joined
-    assert "current-packaged-integrity-contract-after-bundled-python-sync-20260608.json" in joined
+    assert "current-packaged-integrity-contract-after-checkpoint-app-parity-20260609.json" in joined
     assert "current-packaged-integrity-contract-20260601-qwen-fix-resigned-staged-app.json" not in joined
     assert "current-packaged-integrity-contract-20260601-developer-id-dmg-assertions.json" not in joined
     assert "current-packaged-integrity-contract-20260601-cache-ipc-epipe-package-refresh.json" not in joined
@@ -15166,13 +15166,13 @@ def test_release_regression_manifest_tracks_packaged_integrity_with_runner_artif
     joined = " ".join(row["commands"] + row["artifacts"] + row["proves"])
 
     assert "run_packaged_integrity_contract.py" in joined
-    assert "current-packaged-integrity-contract-after-bundled-python-sync-20260608.json" in joined
+    assert "current-packaged-integrity-contract-after-checkpoint-app-parity-20260609.json" in joined
     assert "current-packaged-integrity-contract-20260601-qwen-fix-resigned-staged-app.json" not in joined
     assert "current-packaged-integrity-contract-20260601-cache-ipc-epipe-package-refresh.json" not in joined
     assert "current-packaged-integrity-contract-20260531-after-lfm2-staged-sync.json" not in joined
     assert "current-packaged-integrity-contract-20260531-step37-mixed-swa-runtime.json" not in joined
     assert (
-        "build/current-packaged-integrity-contract-after-bundled-python-sync-20260608.json"
+        "build/current-packaged-integrity-contract-after-checkpoint-app-parity-20260609.json"
         in " ".join(row["commands"])
     )
     assert "current-packaged-integrity-contract-20260531-local-release-decision-refresh.json" not in joined
@@ -15183,7 +15183,7 @@ def test_release_regression_manifest_tracks_packaged_integrity_with_runner_artif
     assert "Version triples" in joined
     assert "bundled Python hash parity" in joined
     assert "objective proof digest" in joined
-    assert "current-objective-proof-after-n2-jang1l-memory-refresh-20260609.json" in joined
+    assert "current-objective-proof-after-mimo-n2-dev-app-proof-refresh-20260610.json" in joined
     assert "objective-gate-enforced" in joined
     assert "verify-bundled" in joined
 
@@ -15195,7 +15195,7 @@ def test_release_regression_manifest_tracks_current_packaged_integrity_recheck()
     joined = " ".join(row["commands"] + row["artifacts"] + row["proves"])
 
     assert "current-packaged-integrity-contract-20260522-recheck-bundled-release-gate.json" in joined
-    assert "current-packaged-integrity-contract-after-bundled-python-sync-20260608.json" in joined
+    assert "current-packaged-integrity-contract-after-checkpoint-app-parity-20260609.json" in joined
     assert "current-packaged-integrity-contract-20260601-qwen-fix-resigned-staged-app.json" not in joined
     assert "current-packaged-integrity-contract-20260524-text-additional-args-sanitizer.json" in joined
     assert "clean JANG source path" in joined
@@ -15252,7 +15252,7 @@ def test_release_regression_manifest_tracks_current_updater_and_i18n_rechecks():
     ling = rows["ling-bailing-multilingual-quality-live"]
     ling_joined = " ".join(ling["commands"] + ling["artifacts"] + ling["proves"])
     assert (
-        "current-objective-proof-after-n2-jang1l-memory-refresh-20260609.json"
+        "current-objective-proof-after-mimo-n2-dev-app-proof-refresh-20260610.json"
         in ling_joined
     )
 

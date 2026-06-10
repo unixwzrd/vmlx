@@ -1,0 +1,71 @@
+{
+  "status": "fail",
+  "generated_at": "2026-06-10",
+  "scope": "real Electron dev-app MiMo V2.5 JANG_2L Chat Completions built-in tool follow-up proof",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-chat-tools-followup-20260610-proof.json",
+  "source_change_under_proof": {
+    "file": "panel/src/main/ipc/chat.ts",
+    "behavior": "Chat Completions tool-result follow-up requests suppress the original explicit single-tool tool_choice after a tool call has already executed."
+  },
+  "proven": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "wire_api": "chat",
+    "builtin_run_command_executed": true,
+    "send_errors": [],
+    "tool_choice_required_followup_error_observed": false,
+    "visible_assistant_turns_completed": 2,
+    "persisted_tool_count": 135,
+    "event_counts": {
+      "stream": 239,
+      "tool": 135,
+      "reasoningDone": 0,
+      "complete": 2
+    },
+    "cache_hit_tokens": 8072,
+    "native_cache": {
+      "family": "mimo_v2",
+      "schema": "mixed_swa_kv_v1",
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "block_disk_l2": {
+      "l2_block_tokens_on_disk": 4580,
+      "l2_tokens_on_disk": 4580
+    },
+    "server_cache_controls_verified": true,
+    "proven_surfaces": [
+      "cache_endpoint_stats",
+      "cache_hit_telemetry",
+      "chat_completions",
+      "current_electron_dev_build",
+      "generation_defaults_applied",
+      "l2_disk_storage",
+      "language_leak_check",
+      "native_cache_status",
+      "parser_leak_check",
+      "real_loaded_model",
+      "server_cache_controls",
+      "settings_persistence"
+    ]
+  },
+  "red": {
+    "long_tool_loop": false,
+    "expected_probe_files_created": false,
+    "tool_argument_exactness": false,
+    "details": [
+      "The first requested sentinel REAL_UI_LIVE_TOOL_ONE was mutated to REAL_UI_LAND_TOOL_ONE.",
+      "The second requested sentinel REAL_UI_LIVE_TOOL_TWO was mutated to REAL_UI_LAND_TOOL_TWO.",
+      "The requested configured working-directory files were not created; MiMo wrote /tmp/real_ui_land_tool_one.txt and /tmp/real_ui_land_tool_two.txt instead.",
+      "The harness therefore failed with: requested real built-in tools but proof did not record long_tool_loop surface."
+    ]
+  },
+  "release_boundary": [
+    "This reduces the panel Chat Completions follow-up tool_choice failure class without faking tool calls or rewriting arguments.",
+    "MiMo JANG_2L dev-app tool exactness remains red and is not checkpoint-release green for agentic tool loops.",
+    "Do not chase cache/L2 for this row; the remaining blocker is model/runtime/artifact decode or tool-argument exactness."
+  ]
+}

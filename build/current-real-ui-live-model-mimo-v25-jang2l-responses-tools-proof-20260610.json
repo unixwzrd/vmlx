@@ -1,0 +1,91 @@
+{
+  "status": "fail",
+  "generated_at": "2026-06-10",
+  "scope": "real Electron dev-app MiMo V2.5 JANG_2L Responses built-in tool proof",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+  "served_model": "mimo-v25-jang2l-dev-ui-responses-tools-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-responses-tools-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-responses-tools-20260610-chat.png",
+  "request": {
+    "wire_api": "responses",
+    "max_tokens": 384,
+    "max_prompt_tokens": 12000,
+    "enable_thinking": false,
+    "builtin_tools": true,
+    "max_tool_iterations": 8
+  },
+  "proven": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "model_type": "llm",
+    "responses_endpoint_used": true,
+    "first_turn_emitted_tool_call": true,
+    "responses_tool_followup_previous_response_id": true,
+    "first_turn_tool_loop_completed": true,
+    "second_turn_started": true,
+    "generation_defaults_applied": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 384,
+      "enable_thinking": false
+    },
+    "runtime": {
+      "profile": "JANG_2L_322_D3E16",
+      "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+      "metal_na_active_on_host": true,
+      "prestacked_switch_experts": 423,
+      "split_experts": 0,
+      "memory_mb": {
+        "active": 105965.7,
+        "peak": 109374.2
+      },
+      "live_speed_sample": {
+        "tokens": 424,
+        "live_tokens_per_second": 1.2,
+        "ttft_seconds": 9.29,
+        "line": "[CHAT] Response complete: 424 tokens in 289.0s (1.9 t/s, live=1.2 t/s, TTFT: 9.29s, pp: 3482 tokens (384 cached), 374.7 pp/s, usage=server)"
+      }
+    },
+    "native_cache": {
+      "family": "mimo_v2",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": false,
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache": {
+      "cache_hit_requests": 2,
+      "cache_hit_tokens": 1071,
+      "cache_hit_tokens_by_detail": {
+        "paged": 1071
+      },
+      "last_cache_detail": "paged",
+      "last_cached_tokens": 687,
+      "l2_block_tokens_on_disk": 3784,
+      "l2_tokens_on_disk": 3784,
+      "disk_hits": 18,
+      "disk_writes": 60
+    }
+  },
+  "red": {
+    "visible_assistant_turns_complete": false,
+    "tool_probe_files_verified": false,
+    "long_tool_loop": false,
+    "failure_stage": "renderer_real_ui_chat",
+    "error": "CDP timeout: Runtime.evaluate",
+    "boundary": "First Responses tool loop and previous_response_id follow-up completed, but the full two-turn real dev-app tool loop did not finish under the harness timeout; the second turn was still running with one server request active."
+  },
+  "release_boundary": [
+    "Do not claim MiMo JANG_2L Responses tool-loop support in the checkpoint release.",
+    "This run proves the app can send MiMo Responses tool calls and use previous_response_id follow-up, but it does not prove exact tool-file semantics or full multi-turn completion.",
+    "Cache/L2 is not the blocker for this row; the proof shows paged cache hits and block-disk L2 writes/hits."
+  ]
+}

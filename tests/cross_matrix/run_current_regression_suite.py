@@ -43,7 +43,7 @@ DEFERRED_RELEASE_OPEN_REQUIREMENTS = {
 }
 
 CURRENT_OBJECTIVE_DIGEST_ARTIFACT = (
-    "build/current-objective-proof-after-n2-jang1l-memory-refresh-20260609.json"
+    "build/current-objective-proof-after-mimo-n2-dev-app-proof-refresh-20260610.json"
 )
 
 CURRENT_SUITE_SOURCE_HASH_FILES = (
@@ -75,6 +75,7 @@ CURRENT_SUITE_SOURCE_HASH_FILES = (
     "panel/src/shared/reasoningParserAliases.ts",
     "panel/tests/api-gateway-ollama-behavior.test.ts",
     "panel/tests/api-gateway-ollama.test.ts",
+    "panel/tests/api-gateway-qwen35-live-capture.test.ts",
     "panel/tests/api-gateway-single-model.behavior.test.ts",
     "panel/tests/image-system.test.ts",
     "panel/tests/interleaved-reasoning-render.test.ts",
@@ -131,6 +132,7 @@ CURRENT_SUITE_SOURCE_HASH_FILES = (
     "tests/cross_matrix/run_production_family_audit.py",
     "tests/cross_matrix/run_reasoning_template_contract.py",
     "tests/cross_matrix/run_responses_raw_sse_parity_contract.py",
+    "tests/cross_matrix/run_qwen35_responses_raw_sse_capture.py",
     "tests/cross_matrix/run_release_regression_manifest.py",
     "tests/cross_matrix/run_release_surface_contract.py",
     "tests/cross_matrix/run_remote_max2_dsv4_exactness_guard.py",
@@ -192,6 +194,7 @@ CURRENT_SUITE_SOURCE_HASH_FILES = (
     "tests/test_release_gate_python_app.py",
     "tests/test_release_regression_manifest.py",
     "tests/test_responses_raw_sse_parity_contract.py",
+    "tests/test_qwen35_responses_raw_sse_capture.py",
     "tests/test_real_ui_dsv4_memory_preflight.py",
     "tests/test_runtime_memory_stress_probe.py",
     "tests/test_scheduler_repetition_context.py",
@@ -677,7 +680,7 @@ CURRENT_SUITE_COMMANDS: dict[str, list[str]] = {
         sys.executable,
         "tests/cross_matrix/run_packaged_integrity_contract.py",
         "--out",
-        "build/current-packaged-integrity-contract-after-bundled-python-sync-20260608.json",
+        "build/current-packaged-integrity-contract-after-checkpoint-app-parity-20260609.json",
     ],
     "installed_app_runtime_parity_audit": [
         sys.executable,
@@ -685,15 +688,15 @@ CURRENT_SUITE_COMMANDS: dict[str, list[str]] = {
         "--app",
         "panel/release/sequoia-app/mac-arm64/vMLX.app",
         "--out",
-        "build/current-installed-app-runtime-parity-audit-after-installed-app-rebuild-20260606.json",
+        "build/current-installed-app-runtime-parity-audit-sequoia-checkpoint-dmg-20260609.json",
     ],
     "staged_app_runtime_parity_audit": [
         sys.executable,
         "tests/cross_matrix/run_installed_app_runtime_parity_audit.py",
         "--app",
-        "panel/release/sequoia-app/mac-arm64/vMLX.app",
+        "panel/release/tahoe-app/mac-arm64/vMLX.app",
         "--out",
-        "build/current-staged-app-runtime-parity-audit-gemma4-release-boundary-after-ui-e2e-fixes-dmg-build-20260604.json",
+        "build/current-installed-app-runtime-parity-audit-tahoe-checkpoint-dmg-20260609.json",
     ],
     "issue179_minimax_k_root_cause_audit": [
         sys.executable,
@@ -724,7 +727,7 @@ CURRENT_SUITE_COMMANDS: dict[str, list[str]] = {
         sys.executable,
         "tests/cross_matrix/run_public_app_issue_audit.py",
         "--out",
-        "build/current-public-app-issue-audit-after-issue179-memory-preflight-20260607.json",
+        "build/current-public-app-issue-audit-after-checkpoint-packaged-integrity-20260609.json",
     ],
     "gemma_qat_native_mxfp4_inventory_gate": [
         sys.executable,
@@ -793,10 +796,11 @@ CURRENT_SUITE_COMMANDS: dict[str, list[str]] = {
         "tests/test_step37_crash_falsification_contract.py",
         "tests/test_gemma_qat_native_mxfp4_inventory_gate.py",
         "tests/test_responses_raw_sse_parity_contract.py",
+        "tests/test_qwen35_responses_raw_sse_capture.py",
         "tests/test_mlx_lm_runtime_patches.py",
         "tests/test_single_active_batch_generator.py",
         "-k",
-        "objective_proof_digest or full_release_objective_checklist or default_cache_tool_loop or current_regression_suite or release_regression_manifest or remote_max2_dsv4 or issue179_reporter_parity_metadata or reporter_server_hash_parity or issue179_memory_preflight or issue181_183_runtime_audit or public_app_issue_audit or model_family_detection or mcp_policy_contract or decode_speed_gate or gemma4_speed_gate or gemma_qat_inventory_gate or vl_media_cache_contract or step37_crash_falsification or responses_raw_sse_parity or mlx_lm_runtime_patches or single_active_generator or dsv4_cache_hit_repetition_processor or generated_only_logits_processor or dsv4_repetition_penalty_uses_generated_only_prompt_context or dsv4_warmup or dsv4_code_exactness_probe or cache_vs_nocache or n2_chat_cache_gate or n2_jang1l_memory_preflight",
+        "objective_proof_digest or full_release_objective_checklist or default_cache_tool_loop or current_regression_suite or release_regression_manifest or remote_max2_dsv4 or issue179_reporter_parity_metadata or reporter_server_hash_parity or issue179_memory_preflight or issue181_183_runtime_audit or public_app_issue_audit or model_family_detection or mcp_policy_contract or decode_speed_gate or gemma4_speed_gate or gemma_qat_inventory_gate or vl_media_cache_contract or step37_crash_falsification or responses_raw_sse_parity or qwen35_raw_sse_capture or mlx_lm_runtime_patches or single_active_generator or dsv4_cache_hit_repetition_processor or generated_only_logits_processor or dsv4_repetition_penalty_uses_generated_only_prompt_context or dsv4_warmup or dsv4_code_exactness_probe or cache_vs_nocache or n2_chat_cache_gate or n2_jang1l_memory_preflight",
     ],
     "objective_digest": [
         sys.executable,

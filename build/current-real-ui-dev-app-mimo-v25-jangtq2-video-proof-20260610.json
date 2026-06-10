@@ -1,0 +1,95 @@
+{
+  "status": "fail",
+  "classification": "honest_text_only_runtime_video_guard",
+  "generated_at": "2026-06-10T06:59:38.605Z",
+  "proof_raw": "docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-video-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-video-20260610-chat.png",
+  "ui_launch_mode": "electron-dev",
+  "wire_api": "chat",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+  "served_model": "mimo-v25-jangtq2-dev-ui-video-20260610",
+  "positive_evidence": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "health_reached": true,
+    "visible_text_turns_completed_before_video": 2,
+    "first_assistant_content": "Hello! How you have any questions or need assistance, feel free to ask. I'm here to help. REAL_UI_LIVE",
+    "second_assistant_content": "REAL_UI_LIVE. This is the second UI turn.",
+    "server_media_diag_saw_video_url": true,
+    "server_cache_controls_verified": true,
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "persisted_reasoning_count": 0,
+    "persisted_tool_count": 0
+  },
+  "red_evidence": {
+    "failure_stage": "video_send_message",
+    "http_status": 400,
+    "error": "/v1/chat/completions received unsupported media modality video because the loaded runtime is text-only. Supported modalities: text.",
+    "requested_video": true,
+    "video_expected_regex": "red|solid",
+    "video_semantic_verified": false,
+    "persisted_video_attachment": false
+  },
+  "runtime_detection": {
+    "model_type": "mimo_v2",
+    "engine_is_mllm": false,
+    "registry_is_mllm": true,
+    "is_mllm_tier": "mimo_v2_preserved_text_runtime",
+    "loaded_as_text_only": true
+  },
+  "quantization": {
+    "codec": "turboquant_codebook",
+    "profile": "JANGTQ_2",
+    "target_bits": 2,
+    "config_bits": 8,
+    "group_size": 64,
+    "routed_expert_bits_label": "gate=2/up=2/down=2-bit",
+    "total_tensors": 1415,
+    "tq_target_counts": {
+      "routed_expert": 423
+    },
+    "routed_layout_counts": {
+      "prestacked_switch": 423,
+      "split_expert": 0
+    },
+    "weight_matmul_dispatch_primary": "jang_tools_turboquant_custom_kernels",
+    "sidecar": {
+      "jang_config": true,
+      "jangtq_runtime": true,
+      "prestacked_bundle": true
+    }
+  },
+  "runtime_cache": {
+    "family": "mimo_v2",
+    "schema": "mixed_swa_kv_v1",
+    "cache_type": "mixed_swa_kv",
+    "cache_subtype": "mimo_v2_asymmetric_swa",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "generic_turboquant_kv_enabled": false,
+    "generic_turboquant_kv_reason": "not_active",
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true
+  },
+  "cache_after": {
+    "ram_tokens_cached": 132,
+    "l2_block_tokens_on_disk": 132,
+    "l2_tokens_on_disk": 132,
+    "block_disk_writes": 3,
+    "block_disk_misses": 4,
+    "block_disk_hits": 0,
+    "blocks_on_disk": 3,
+    "disk_size_gb": 0.055
+  },
+  "memory": {
+    "active_mb": 76491.8,
+    "peak_mb": 77127.3,
+    "cache_mb": 107.8
+  },
+  "release_boundary": "This classifies MiMo V2.5 JANGTQ_2 dev-app video as unsupported by the current text-only runtime despite preserved media metadata. It does not clear MiMo media support, installed-app parity, exactness, or release readiness."
+}

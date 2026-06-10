@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-06-06T11:35:05-0700",
-  "status": "pass",
+  "created_at": "2026-06-09T16:30:39-0700",
+  "status": "fail",
   "checks": {
     "release_gate_unit_contracts_pass": true,
     "bundled_python_verify_passes": true,
@@ -14,27 +14,55 @@
     "packaged_epipe_closed_stream_guards": true,
     "packaged_user_data_isolation_bootstrap": true,
     "packaged_python_has_no_pycache": true,
-    "staged_app_engine_hash_parity": true,
-    "staged_app_engine_source_hash_parity": true,
+    "staged_app_engine_hash_parity": false,
+    "staged_app_engine_source_hash_parity": false,
     "release_dmg_hardened_runtime_entitlements": true,
     "release_dmg_notarization_verifier_contract": true,
     "release_dmg_notarization_submit_contract": true,
     "dry_release_gate_fails_only_on_known_objectives": true,
-    "dry_release_gate_uses_current_objective_digest": true
+    "dry_release_gate_uses_current_objective_digest": false
   },
-  "failed": [],
+  "failed": [
+    "packaged_app_developer_id_signing_blocked"
+  ],
   "known_expected_release_gate_open_requirements": [
-    "Cross-family cache architecture is classified per family",
-    "High-risk model family parser, artifact, and launch policy gates are current",
-    "Generation defaults, Native MTP, and VL media gates are current",
     "Cross-family live multi-turn smoke matrix is release-cleared",
+    "Gemma QAT/native MXFP4 E2B/E4B/12B/26B/31B runtime/media/cache/API/UI quality is release-cleared",
     "MiMo V2.5 JANG_2L runtime/tool/long-prompt quality is release-cleared",
+    "N2 Pro 397B JANG1L/JANGTQ runtime/cache/API/UI quality is release-cleared",
     "MiniMax-M2.7-JANGTQ_K reporter parity/root cause is release-cleared",
     "Real Electron UI cross-family live model matrix is release-cleared",
     "DSV4 long-output/code/file-generation quality is release-cleared"
   ],
+  "current_effective_release_gate_open_requirements": [
+    "DSV4 Flash prefix/paged/L2 cache is enabled by default from app launch",
+    "DSV4 cache is native SWA+CSA/HCA composite, not generic KV/TurboQuant KV",
+    "DSV4 same-process cache hit improves latency/TTFT and records paged+dsv4 hit",
+    "DSV4 block disk L2 stores and hits after restart",
+    "DSV4 Responses one-tool call stops after tool result",
+    "DSV4 can perform multiple tool iterations then final answer",
+    "DSV4 default-cache multi-tool agent loop is proven",
+    "App maxToolIterations cap is enforced for DSV4 tool loop",
+    "Server default max output and max context are distinct and map to correct CLI flags",
+    "Cross-family cache architecture is classified per family",
+    "High-risk model family parser, artifact, and launch policy gates are current",
+    "Generation defaults, Native MTP, and VL media gates are current",
+    "Qwen/JANG packaged MX matmul speed is release-cleared",
+    "Qwen native MTP live decode speed and output equivalence are release-cleared",
+    "Qwen 27B JANG_4M prompt-processing speed floor is release-cleared",
+    "Current-source API adapters and non-DSV4 cache contracts are no-heavy covered",
+    "Ling/Bailing multilingual output quality is release-cleared",
+    "Gemma4 26B CRACK Responses visible-content and language quality is release-cleared",
+    "Gemma4 26B CRACK mixed-SWA app-engine speed floor is release-cleared",
+    "Cross-family live multi-turn smoke matrix is release-cleared",
+    "Gemma QAT/native MXFP4 E2B/E4B/12B/26B/31B runtime/media/cache/API/UI quality is release-cleared",
+    "MiMo V2.5 JANG_2L runtime/tool/long-prompt quality is release-cleared",
+    "N2 Pro 397B JANG1L/JANGTQ runtime/cache/API/UI quality is release-cleared",
+    "MiniMax-M2.7-JANGTQ_K reporter parity/root cause is release-cleared",
+    "Real Electron UI unblocked non-MiMo live model matrix is proven"
+  ],
   "package_signing_preflight": {
-    "status": "pass",
+    "status": "open",
     "app": "panel/release/sequoia-app/mac-arm64/vMLX.app",
     "app_exists": true,
     "developer_id_signed": true,
@@ -42,9 +70,9 @@
     "keychain_info_statuses": [
       {
         "keychain": "/Users/eric/Library/Keychains/vmlx-build.keychain-db",
-        "returncode": 0,
+        "returncode": 36,
         "tail": [
-          "Keychain \"/Users/eric/Library/Keychains/vmlx-build.keychain-db\" no-timeout"
+          "security: SecKeychainCopySettings /Users/eric/Library/Keychains/vmlx-build.keychain-db: User interaction is not allowed."
         ]
       },
       {
@@ -62,15 +90,23 @@
         ]
       }
     ],
-    "simple_developer_id_sign_rc": 0,
+    "simple_developer_id_sign_rc": 1,
     "simple_developer_id_sign_tail": [
-      "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-codesign-preflight.gbxkxghq/codesign-probe: replacing existing signature"
+      "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-codesign-preflight.ytjkplny/codesign-probe: replacing existing signature",
+      "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-codesign-preflight.ytjkplny/codesign-probe: errSecInternalComponent"
     ],
-    "signing_blocker_reason": null,
-    "signing_blocker_reasons": [],
-    "manual_remediation_required": false,
-    "remediation_summary": null,
-    "remediation_steps": [],
+    "signing_blocker_reason": "developer_id_keychain_user_interaction_not_allowed",
+    "signing_blocker_reasons": [
+      "developer_id_keychain_user_interaction_not_allowed"
+    ],
+    "manual_remediation_required": true,
+    "remediation_summary": "Developer ID identities are visible, but codesign cannot use the private key from this non-interactive process.",
+    "remediation_steps": [
+      "Unlock the signing keychain in an interactive macOS session.",
+      "Grant codesign access to the Developer ID private key, for example with security set-key-partition-list using the keychain password outside Codex logs.",
+      "Rebuild or reseal the packaged app after bundled runtime sync so codesign --verify --deep --strict passes before notarization.",
+      "Rerun the packaged integrity contract and require package_signing_preflight.status=pass before notarization."
+    ],
     "signature_is_adhoc": false,
     "hardened_runtime_enabled": true,
     "team_identifier": "55KGF2S5AY",
@@ -90,21 +126,21 @@
       "VersionMin=720896",
       "VersionSDK=917504",
       "Hash type=sha256 size=32",
-      "CandidateCDHash sha256=6bca8e7bb22d3a6d9cee7761162489ad1a4a8970",
-      "CandidateCDHashFull sha256=6bca8e7bb22d3a6d9cee7761162489ad1a4a8970dcc392236a99b328291ac32c",
+      "CandidateCDHash sha256=037b59bfede0026399e1b1aaaf382cb2c3bdfa36",
+      "CandidateCDHashFull sha256=037b59bfede0026399e1b1aaaf382cb2c3bdfa368ca7512d6eb45bbc44966ec2",
       "Hash choices=sha256",
-      "CMSDigest=6bca8e7bb22d3a6d9cee7761162489ad1a4a8970dcc392236a99b328291ac32c",
+      "CMSDigest=037b59bfede0026399e1b1aaaf382cb2c3bdfa368ca7512d6eb45bbc44966ec2",
       "CMSDigestType=2",
       "Executable Segment base=0",
       "Executable Segment limit=16384",
       "Executable Segment flags=0x1",
       "Page size=16384",
-      "CDHash=6bca8e7bb22d3a6d9cee7761162489ad1a4a8970",
-      "Signature size=9049",
+      "CDHash=037b59bfede0026399e1b1aaaf382cb2c3bdfa36",
+      "Signature size=9051",
       "Authority=Developer ID Application: ShieldStack LLC (55KGF2S5AY)",
       "Authority=Developer ID Certification Authority",
       "Authority=Apple Root CA",
-      "Timestamp=Jun 6, 2026 at 11:12:03\u202fAM",
+      "Timestamp=Jun 8, 2026 at 12:49:45\u202fPM",
       "Info.plist entries=30",
       "TeamIdentifier=55KGF2S5AY",
       "Runtime Version=14.0.0",
@@ -112,20 +148,20 @@
       "Internal requirements count=1 size=172"
     ],
     "verify_tail": [
+      "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Mantle.framework/Versions/Current/.",
       "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper.app",
-      "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper (Plugin).app",
-      "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper.app",
+      "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.",
       "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper (GPU).app",
-      "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper (Plugin).app",
+      "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper (Plugin).app",
+      "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Mantle.framework/Versions/Current/.",
       "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper (Renderer).app",
+      "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper.app",
+      "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper (Plugin).app",
       "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper (GPU).app",
+      "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.",
       "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/vMLX Helper (Renderer).app",
       "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/ReactiveObjC.framework/Versions/Current/.",
-      "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Mantle.framework/Versions/Current/.",
       "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/ReactiveObjC.framework/Versions/Current/.",
-      "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.",
-      "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Mantle.framework/Versions/Current/.",
-      "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.",
       "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/.",
       "--prepared:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/Helpers/chrome_crashpad_handler",
       "--validated:/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/Helpers/chrome_crashpad_handler",
@@ -145,11 +181,18 @@
       " 18) D4DBBCB52F666D03F0A5154BFFEA2227BEE8FC7C \"Developer ID Application: ShieldStack LLC (55KGF2S5AY)\""
     ]
   },
-  "release_blockers": [],
+  "release_blockers": [
+    {
+      "id": "packaged_app_developer_id_signing_blocked",
+      "status": "open",
+      "evidence": "package_signing_preflight",
+      "next_proof": "Build and verify a Developer ID signed vMLX.app before notarization."
+    }
+  ],
   "source_hashes": {
-    "panel/scripts/release-gate-python-app.py": "a0870ebb2bf51835b39924ad41f6a575798c59cc17c0451326544d30b5f8f8e2",
-    "panel/scripts/verify-bundled-python.sh": "433f016ed8288244adfb65341d6160406547de59d9b4b586ef5ebed7797f681e",
-    "panel/scripts/bundle-python.sh": "88ebae4dbf4b9b19d22a654b17a4c1c83554c4c22ea2456b4449e1129a8a959f",
+    "panel/scripts/release-gate-python-app.py": "56e4c11a78a99f04188a548465c1bc0214c5237453a747dbbbe1a04532ca399d",
+    "panel/scripts/verify-bundled-python.sh": "59b472eb81e0eb1d3b3886671ed8202daa8a37ada2df5cab5cc58d7257c8740b",
+    "panel/scripts/bundle-python.sh": "424851a89a25e72118defab46a114a46418e5b21889f614f6fa32356bd2c9b8b",
     "panel/scripts/build-release-dmgs.sh": "82ab1161022b512a28831b481b094bd07daf5efff66feb4eb47e59595e5a7687",
     "panel/scripts/notarize-release-dmgs.sh": "dab3d4ee52a225a671dc275ca83fad9d110d9acf680eb49d38479003b00547db",
     "panel/scripts/verify-release-dmgs.sh": "79917d68bb95c35df12e137d3647ac4a8b94e8eee5bf00c79eff4d06c6d2f3a4",
@@ -160,15 +203,15 @@
     "panel/src/main/ipc/cache.ts": "0ebdf5e2308ee1ec7a3e9b1f0c1ae9e411169bc1259c0029ed6badbed1900094",
     "panel/src/main/ipc/image.ts": "dec552c5ea6894fa89d8dfe5e965395a4bed1fc6fb50cb1d8646a747093b92a1",
     "panel/src/main/ipc/imageGenerationState.ts": "8bab3ba9a99b4b3ddc4bfd5ac2428c6063b1b6950aa3e2d50670072ab95725e2",
-    "panel/src/main/ipc/models.ts": "483d98790e17a93de82bcab573eab9c3764f117a36a12734d398a9d9863f76f1",
+    "panel/src/main/ipc/models.ts": "3054fcbcdf411ee4943c93ff16ac92a2bd71704333f88bfdade73530e0a5eab0",
     "panel/src/main/tools/executor.ts": "89f0869f819912d339aabbd2b3cd080f5a47b7ebb8c15fceeefc3b711b5b2fd5",
     "panel/src/main/user-data-dir.ts": "74495c6ed1c6a2a57ef4312cad1da6cf7e547c2765d4d3c9c4edd9275d7f67ca",
     "panel/package.json": "7ba537450e73b576f2e74c381f27fa9b15c4c94fdd8d2dad032767f2e67312eb",
     "pyproject.toml": "20d9bf46cd2dc6e99f7472299eb37118dca92c6dfa68b14e0623da2c685cfc9c",
-    "tests/test_release_gate_python_app.py": "13582c0f2b61acbf7fc33aedd41cc0b7275ad4bd7f3fa77bb3f8263d335ee809",
-    "tests/test_packaged_integrity_contract.py": "87f3b628b8a30e8718d423c2465d46e838aec5ceee3cdd5f2a6a1e274d4289fc",
-    "tests/cross_matrix/summarize_objective_proof.py": "23723ded8f37f961e4270ba53c9cc9078d6173ec79c340719239be470265fcc4",
-    "tests/test_objective_proof_digest.py": "ab1070ee8efb6ed4d2545e7fd8f274b4420b2937e70e0246e39e1e12c89fdfce"
+    "tests/test_release_gate_python_app.py": "8c9cd95a6105601fd4fd8a0607cb3e039a7474708a469224159575f1a95f3994",
+    "tests/test_packaged_integrity_contract.py": "54264f7251276f1e9715a2c4d1c63cf42241372cb86fa75d88b7cdb2edfc7e69",
+    "tests/cross_matrix/summarize_objective_proof.py": "c94f338c06ebf33bd86cab7e5219f48243d8c322096b81d70f98c87335398513",
+    "tests/test_objective_proof_digest.py": "a0f4b5203061edaca00e9d38e95dad95acc7323ae156d807a52f15eefbd8de9a"
   },
   "results": {
     "release_gate_unit_contracts": {
@@ -212,7 +255,7 @@
       ],
       "cwd": "panel",
       "returncode": 0,
-      "elapsed_sec": 17.963,
+      "elapsed_sec": 19.062,
       "counts": {
         "passed": null,
         "skipped": null,
@@ -292,7 +335,7 @@
       ],
       "cwd": ".",
       "returncode": 1,
-      "elapsed_sec": 21.103,
+      "elapsed_sec": 22.607,
       "counts": {
         "passed": null,
         "skipped": null,
@@ -300,16 +343,16 @@
       },
       "stdout_tail": [
         "[PASS] version triple: 1.5.56",
-        "[PASS] twine check dist: 0.5s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260606_113441/twine_check_dist.log",
-        "[PASS] panel request/type tests: 0.4s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260606_113441/panel_request_type_tests.log",
-        "[PASS] panel typecheck: 2.1s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260606_113441/panel_typecheck.log",
-        "[PASS] bundled python import gate: 17.9s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260606_113441/bundled_python_import_gate.log",
-        "[PASS] objective proof digest refresh: 0.1s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260606_113441/objective_proof_digest_refresh.log",
-        "[FAIL] objective proof digest: Cross-family cache architecture is classified per family; High-risk model family parser, artifact, and launch policy gates are current; Generation defaults, Native MTP, and VL media gates are current; Cross-family live multi-turn smoke matrix is release-cleared; MiMo V2.5 JANG_2L runtime/tool/long-prompt quality is release-cleared; MiniMax-M2.7-JANGTQ_K reporter parity/root cause is release-cleared",
+        "[PASS] twine check dist: 0.5s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260609_163013/twine_check_dist.log",
+        "[PASS] panel request/type tests: 0.4s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260609_163013/panel_request_type_tests.log",
+        "[PASS] panel typecheck: 2.1s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260609_163013/panel_typecheck.log",
+        "[PASS] bundled python import gate: 19.4s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260609_163013/bundled_python_import_gate.log",
+        "[PASS] objective proof digest refresh: 0.1s; log=/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260609_163013/objective_proof_digest_refresh.log",
+        "[FAIL] objective proof digest: DSV4 Flash prefix/paged/L2 cache is enabled by default from app launch; DSV4 cache is native SWA+CSA/HCA composite, not generic KV/TurboQuant KV; DSV4 same-process cache hit improves latency/TTFT and records paged+dsv4 hit; DSV4 block disk L2 stores and hits after restart; DSV4 Responses one-tool call stops after tool result; DSV4 can perform multiple tool iterations then final answer; DSV4 default-cache multi-tool agent loop is proven; App maxToolIterations cap is enforced for DSV4 tool loop; Server default max output and max context are distinct and map to correct CLI flags; Cross-family cache architecture is classified per family; High-risk model family parser, artifact, and launch policy gates are current; Generation defaults, Native MTP, and VL media gates are current; Qwen/JANG packaged MX matmul speed is release-cleared; Qwen native MTP live decode speed and output equivalence are release-cleared; Qwen 27B JANG_4M prompt-processing speed floor is release-cleared; Current-source API adapters and non-DSV4 cache contracts are no-heavy covered; Ling/Bailing multilingual output quality is release-cleared; Gemma4 26B CRACK Responses visible-content and language quality is release-cleared; Gemma4 26B CRACK mixed-SWA app-engine speed floor is release-cleared; Cross-family live multi-turn smoke matrix is release-cleared; Gemma QAT/native MXFP4 E2B/E4B/12B/26B/31B runtime/media/cache/API/UI quality is release-cleared; MiMo V2.5 JANG_2L runtime/tool/long-prompt quality is release-cleared; N2 Pro 397B JANG1L/JANGTQ runtime/cache/API/UI quality is release-cleared; MiniMax-M2.7-JANGTQ_K reporter parity/root cause is release-cleared; Real Electron UI unblocked non-MiMo live model matrix is proven",
         "[WARN] release-ready manifest: skipped by --skip-release-manifest",
         "[WARN] packaged app checks: skipped by --skip-app",
         "",
-        "Summary: /Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260606_113441/SUMMARY.md"
+        "Summary: /Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/release-gates/20260609_163013/SUMMARY.md"
       ]
     }
   }

@@ -1,0 +1,117 @@
+{
+  "status": "fail",
+  "classification": "first_turn_whitespace_visible_output",
+  "generated_at": "2026-06-10T07:19:10.192Z",
+  "proof_raw": "docs/internal/agent-notes/current-real-ui-dev-app-n2-jang1l-one-turn-visible-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-n2-jang1l-one-turn-visible-20260610-chat.png",
+  "ui_launch_mode": "electron-dev",
+  "wire_api": "chat",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L",
+  "served_model": "n2-jang1l-dev-ui-one-turn-visible-20260610",
+  "harness_contract": {
+    "second_turn_enabled": false,
+    "prompt": "Reply with exactly N2_JANG1L_VISIBLE and no other text.",
+    "max_tokens": 16,
+    "max_prompt_tokens": 1024,
+    "temperature": 0,
+    "top_p": 1
+  },
+  "positive_evidence": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "health_reached": true,
+    "chat_completion_request_completed": true,
+    "send_errors": [],
+    "stream_event_count": 16,
+    "complete_event_count": 1,
+    "assistant_message_count": 1,
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "reasoning_text_empty": true,
+    "server_cache_controls_verified": true
+  },
+  "red_evidence": {
+    "assistant_visible_content": "",
+    "final_visible_text": "",
+    "last_stream_full_content": "                ",
+    "assertion_failures": [
+      "assistant content is empty",
+      "final visible assistant content is empty",
+      "UI turn ended with empty visible assistant content"
+    ],
+    "second_turn_cache_reuse_not_claimed": true
+  },
+  "runtime_detection": {
+    "model_type": "qwen3_5_moe",
+    "profile": "JANG_1L",
+    "tool_parser": "qwen",
+    "reasoning_parser": "qwen3",
+    "is_mllm_tier": "affine_qwen_hybrid_jang_text_only",
+    "native_mtp": "metadata_inconsistent_compatible_only",
+    "quant_shape_patches": 482
+  },
+  "quantization": {
+    "codec": "affine_quantized_matmul",
+    "backend": "mx.quantize",
+    "profile": "JANG_1L",
+    "target_bits": 1,
+    "actual_bits": 2.13,
+    "config_bits": 2,
+    "group_size": 128,
+    "passthrough_tensor_count": 135,
+    "total_tensors": 2845,
+    "routed_layout_counts": {
+      "prestacked_switch": 540,
+      "split_expert": 0
+    },
+    "weight_matmul_dispatch_primary": "mlx_affine_quantized_matmul",
+    "metal_na_eligible": true
+  },
+  "runtime_cache": {
+    "family": "qwen3_5_moe",
+    "schema": "hybrid_ssm_v1",
+    "cache_type": "hybrid_ssm_typed",
+    "components": [
+      "attention_kv",
+      "ssm_companion_state",
+      "async_rederive"
+    ],
+    "generic_turboquant_kv_enabled": true,
+    "generic_turboquant_kv_reason": "hybrid_attention_kv_only",
+    "live_attention_tq_kv_enabled": true,
+    "attention_layers": 15,
+    "ssm_companion_layers": 45,
+    "attention_kv_storage_quantization": {
+      "enabled": true,
+      "bits": 4,
+      "group_size": 64,
+      "mode": "storage_boundary",
+      "rederive": "async_clean_prefill_on_miss_or_warm_pass"
+    },
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true
+  },
+  "cache_after": {
+    "ram_tokens_cached": 19,
+    "l2_block_tokens_on_disk": 19,
+    "l2_ssm_tokens_on_disk": 19,
+    "l2_tokens_on_disk": 38,
+    "block_disk_writes": 1,
+    "block_disk_misses": 2,
+    "ssm_companion_disk_stores": 1,
+    "cache_hit_tokens": 0,
+    "cache_reuse_claimed": false
+  },
+  "memory": {
+    "active_mb": 112550.2,
+    "peak_mb": 112807.4,
+    "cache_mb": 191.0
+  },
+  "speed": {
+    "ttft_s": 46.44,
+    "decode_tokens_per_second": 0.8,
+    "prefill_tokens_per_second": 0.6
+  },
+  "release_boundary": "This one-turn proof avoids the prior second-turn working-set guard but still fails visible output: N2 JANG_1L streamed whitespace only. It proves live load/cache/L2/autodetect surfaces, not release support, multi-turn cache reuse, tools, Responses, or visible quality."
+}

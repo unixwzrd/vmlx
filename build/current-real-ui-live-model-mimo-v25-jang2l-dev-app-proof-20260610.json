@@ -1,0 +1,283 @@
+{
+  "generated_from": [
+    "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-chat-tools-cache-20260610-proof.json"
+  ],
+  "next_actions": [
+    "compare MiMo JANG_2L raw chat/tool output against panel dev-app chat trace to determine whether tool parser selection, prompt/template, or model output quality causes no tool call",
+    "do not chase cache/L2 for this red row; cache and L2 were positive in the failed app proof"
+  ],
+  "proven": [
+    "real Electron dev app launched via npm run dev",
+    "real vMLX server loaded /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "MiMo JANG_2L loaded as llm with mlx_affine_quantized_matmul",
+    "native MiMo mixed-SWA cache surfaced with prefix, paged cache, and block-disk L2",
+    "cache hit telemetry observed: cached_tokens=3407 and cache_detail=paged",
+    "block-disk L2 writes observed: l2_block_tokens_on_disk=3544 and disk_writes=57",
+    "server cache controls were visible in the dev app",
+    "no raw parser/tool markup leak observed"
+  ],
+  "red": [
+    "UI turn ended with empty visible assistant content",
+    "built-in run_command tool loop was not proven; expected probe files were not created",
+    "first assistant output was low-quality prose rather than a valid tool call",
+    "second assistant output streamed 24 tokens but visible content stayed empty",
+    "this does not clear MiMo dev-app tool, Responses, media, installed-app, or release readiness"
+  ],
+  "row": {
+    "assertion_failures": [
+      "UI turn ended with empty visible assistant content",
+      "requested real built-in tools but proof did not record long_tool_loop surface"
+    ],
+    "block_disk_cache": {
+      "blocks_on_disk": 57,
+      "disk_evictions": 0,
+      "disk_hits": 0,
+      "disk_misses": 4,
+      "disk_size_bytes": 812173316,
+      "disk_size_gb": 0.756,
+      "disk_writes": 57,
+      "total_accesses": 0,
+      "total_cached_tokens": 3544,
+      "total_tokens_on_disk": 3544
+    },
+    "cache_totals": {
+      "l2_block_tokens_on_disk": 3544,
+      "l2_prompt_tokens_on_disk": 0,
+      "l2_ssm_tokens_on_disk": 0,
+      "l2_tokens_on_disk": 3544,
+      "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap",
+      "l2_tokens_on_disk_store_sum": 3544,
+      "ram_tokens_cached": 3544,
+      "ssm_tokens_on_disk": 0
+    },
+    "event_counts": {
+      "complete": 2,
+      "reasoningDone": 1,
+      "stream": 45,
+      "tool": 100
+    },
+    "first_assistant_content": "We need to to run the a a a to_command tool to the to1. First",
+    "generated_at": "2026-06-10T02:18:27.437Z",
+    "memory": {
+      "active_mb": 105044.7,
+      "cache_mb": 209.8,
+      "peak_mb": 109231.7
+    },
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "model_type": "llm",
+    "native_cache": {
+      "block_disk_l2": true,
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "cache_type": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "family": "mimo_v2",
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "paged": true,
+      "prefix": true,
+      "schema": "mixed_swa_kv_v1",
+      "storage_quantization": {
+        "applies_to": "full_and_sliding_attention_kv",
+        "bits": null,
+        "enabled": false,
+        "group_size": null,
+        "metadata_policy": "preserve_rotating_window_metadata",
+        "mode": "storage_boundary"
+      }
+    },
+    "persisted_tool_count": 100,
+    "proof_path": "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-chat-tools-cache-20260610-proof.json",
+    "proven_surfaces": [
+      "cache_endpoint_stats",
+      "cache_hit_telemetry",
+      "chat_completions",
+      "current_electron_dev_build",
+      "generation_defaults_applied",
+      "l2_disk_storage",
+      "language_leak_check",
+      "native_cache_status",
+      "parser_leak_check",
+      "real_loaded_model",
+      "reasoning_display",
+      "server_cache_controls",
+      "settings_persistence"
+    ],
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "config_bits": 8,
+      "group_size": 64,
+      "mxtq_bits_by_role": {
+        "down_proj": 2,
+        "gate_proj": 3,
+        "up_proj": 2
+      },
+      "profile": "JANG_2L_322_D3E16",
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": false,
+        "prestacked_bundle": false
+      },
+      "target_bits": 8,
+      "weight_index": {
+        "index_file": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L/model.safetensors.index.json",
+        "mtp_tensor_count": 0,
+        "routed_layout_counts": {
+          "prestacked_switch": 423,
+          "split_expert": 0
+        },
+        "suffix_counts": {
+          "biases": 194,
+          "scales": 194,
+          "weight": 663
+        },
+        "total_tensors": 1319,
+        "tq_target_counts": {}
+      },
+      "weight_matmul_dispatch": {
+        "metal_na_eligible": true,
+        "primary": "mlx_affine_quantized_matmul",
+        "reason": null,
+        "uses_mlx_quantized_matmul": true
+      }
+    },
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "scheduler_stats": {
+      "batch_generator": {
+        "class": "SingleBatchGenerator",
+        "max_num_seqs": 1,
+        "path": "single_active",
+        "single_active_decode": true
+      },
+      "cache_hit_requests": 1,
+      "cache_hit_tokens": 3407,
+      "cache_hit_tokens_by_detail": {
+        "paged": 3407
+      },
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "cache_reuse_skip_tokens": 0,
+      "cache_reuse_skips": 0,
+      "engine_path": "single_active",
+      "ewma_ttft_seconds": 3.275,
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_cache_execution": {
+        "blocks": 54,
+        "cache_detail": "paged",
+        "cached_tokens": 3407,
+        "dequantization_seconds": 0,
+        "dequantized": false,
+        "reconstructed": true,
+        "reconstruction_ok": true,
+        "reconstruction_seconds": 0.037638,
+        "request_id": "chatcmpl-ab77a149",
+        "selection": {
+          "hot_advantage_threshold_tokens": 64,
+          "hot_advantage_tokens": 3407,
+          "paged_cached_tokens": 3407,
+          "paged_cold_tokens": 0,
+          "reason": "no_warm_prefix_alternative",
+          "rejected": null,
+          "selected": "paged",
+          "warm_cached_tokens": 0
+        },
+        "total_worker_cache_seconds": 0.037879
+      },
+      "last_cache_reuse_partial": null,
+      "last_cache_reuse_skip": null,
+      "last_cache_selection": {
+        "hot_advantage_threshold_tokens": 64,
+        "hot_advantage_tokens": 3407,
+        "paged_cached_tokens": 3407,
+        "paged_cold_tokens": 0,
+        "reason": "no_warm_prefix_alternative",
+        "rejected": null,
+        "selected": "paged",
+        "warm_cached_tokens": 0
+      },
+      "last_hybrid_kv_without_ssm": null,
+      "num_requests_processed": 2,
+      "num_running": 0,
+      "num_waiting": 0,
+      "single_active_decode": true,
+      "total_completion_tokens": 120,
+      "total_prompt_tokens": 6938
+    },
+    "screenshot": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-chat-tools-cache-20260610-chat.png",
+    "second_assistant_content": "",
+    "served_model": "mimo-v25-jang2l-dev-ui-tools-cache-20260610",
+    "server_cache_controls_verified": true,
+    "server_status": "healthy",
+    "status": "fail",
+    "stream_trace": [
+      {
+        "count": 20,
+        "firstFullContent": "We",
+        "firstMetrics": {
+          "cacheDetail": "",
+          "cachedTokens": 0,
+          "elapsed": "0.0",
+          "ppSpeed": "99.0",
+          "promptTokens": 3408,
+          "tokenCount": 1,
+          "tokensPerSecond": "0.0",
+          "ttft": "34.44"
+        },
+        "firstReasoningContent": " the",
+        "lastFullContent": "We need to to run the a a a to_command tool to the to1. First",
+        "lastMetrics": {
+          "cacheDetail": "",
+          "cachedTokens": 0,
+          "elapsed": "12.0",
+          "ppSpeed": "99.0",
+          "promptTokens": 3408,
+          "tokenCount": 22,
+          "tokensPerSecond": "1.7",
+          "ttft": "34.44"
+        },
+        "lastReasoningContent": " the.",
+        "messageId": "75992de7-e03f-4218-82ac-c2fdaef3e07c"
+      },
+      {
+        "count": 25,
+        "firstFullContent": "",
+        "firstMetrics": {
+          "cacheDetail": "paged",
+          "cachedTokens": 3407,
+          "elapsed": "1.8",
+          "promptTokens": 3530,
+          "tokenCount": 1,
+          "tokensPerSecond": "0.0",
+          "ttft": "1.81"
+        },
+        "firstReasoningContent": "",
+        "lastFullContent": "",
+        "lastMetrics": {
+          "cacheDetail": "paged",
+          "cachedTokens": 3407,
+          "elapsed": "23.2",
+          "promptTokens": 3530,
+          "tokenCount": 24,
+          "tokensPerSecond": "1.1",
+          "ttft": "1.81"
+        },
+        "lastReasoningContent": "",
+        "messageId": "51b65484-0cf0-4b13-8bfb-85fbed053949"
+      }
+    ],
+    "tool_probe_files": {},
+    "ui_launch_mode": "electron-dev",
+    "wire_api": "chat"
+  },
+  "scope": "dev Electron app real remote-session proof for MiMo V2.5 JANG_2L chat/tools/cache",
+  "status": "fail"
+}

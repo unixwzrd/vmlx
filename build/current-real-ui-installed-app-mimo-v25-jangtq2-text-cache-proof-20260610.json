@@ -1,0 +1,129 @@
+{
+  "boundary": "MiMo JANGTQ_2 installed-app short exact text/cache is green for this two-turn Chat proof. This does not clear older broader JANGTQ_2 artifact exactness failures, tools, media, source-vs-quant, public tunnel, or release readiness.",
+  "cache": {
+    "cache_hit_tokens": 42,
+    "cache_hit_tokens_by_detail": {
+      "paged": 42
+    },
+    "disk_writes": 3,
+    "l2_block_tokens_on_disk": 120,
+    "l2_tokens_on_disk": 120,
+    "last_cache_execution": {
+      "blocks": 1,
+      "cache_detail": "paged",
+      "cached_tokens": 42,
+      "dequantization_seconds": 0,
+      "dequantized": false,
+      "reconstructed": true,
+      "reconstruction_ok": true,
+      "reconstruction_seconds": 0.00391,
+      "request_id": "chatcmpl-a33a45c8",
+      "selection": {
+        "hot_advantage_threshold_tokens": 64,
+        "hot_advantage_tokens": 42,
+        "paged_cached_tokens": 42,
+        "paged_cold_tokens": 0,
+        "reason": "no_warm_prefix_alternative",
+        "rejected": null,
+        "selected": "paged",
+        "warm_cached_tokens": 0
+      },
+      "total_worker_cache_seconds": 0.004091
+    }
+  },
+  "memory": {
+    "active_mb": 76484.8,
+    "cache_mb": 102.4,
+    "peak_mb": 77037.2
+  },
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+  "native_cache": {
+    "block_disk_l2": true,
+    "cache_subtype": "mimo_v2_asymmetric_swa",
+    "cache_type": "mixed_swa_kv",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "family": "mimo_v2",
+    "generic_turboquant_kv": {
+      "enabled": false,
+      "reason": "not_active"
+    },
+    "paged": true,
+    "prefix": true,
+    "schema": "mixed_swa_kv_v1",
+    "storage_quantization": {
+      "applies_to": "full_and_sliding_attention_kv",
+      "bits": null,
+      "enabled": false,
+      "group_size": null,
+      "metadata_policy": "preserve_rotating_window_metadata",
+      "mode": "storage_boundary"
+    }
+  },
+  "prompts": {
+    "audioExpectRegex": "",
+    "builtinToolsEnabled": false,
+    "cacheExpectRegex": "",
+    "checkAudio": false,
+    "checkMedia": false,
+    "checkServerCacheControls": true,
+    "checkVideo": false,
+    "enableThinking": null,
+    "expectPagedCacheLocked": false,
+    "imageExpectRegex": "\\bred\\b",
+    "maxToolIterations": 4,
+    "promptOne": "Output exactly this string and nothing else: MIMO_JANGTQ2_TEXT_ONE",
+    "promptTwo": "Output exactly this string and nothing else: MIMO_JANGTQ2_TEXT_TWO",
+    "requestMaxPromptTokens": null,
+    "requestMaxTokens": 64,
+    "samplingOverrides": {
+      "temperature": 0,
+      "topP": 1
+    },
+    "toolResultMaxChars": 12345,
+    "videoExpectRegex": "",
+    "wireApi": "chat"
+  },
+  "proven_surfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "generation_defaults_applied",
+    "installed_app_ui",
+    "l2_disk_storage",
+    "language_leak_check",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "server_cache_controls",
+    "settings_persistence"
+  ],
+  "quantization": {
+    "codec": "turboquant_codebook",
+    "profile": "JANGTQ_2",
+    "weight_matmul_dispatch": {
+      "metal_na_eligible": false,
+      "primary": "jang_tools_turboquant_custom_kernels",
+      "reason": "turboquant_codebook_uses_custom_tq_kernels",
+      "uses_mlx_quantized_matmul": false
+    }
+  },
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-text-cache-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-text-cache-20260610-chat.png",
+  "served_model": "mimo-v25-jangtq2-installed-ui-text-cache-20260610",
+  "status": "pass",
+  "stream_delta_counts": [
+    9,
+    9
+  ],
+  "stream_last_full_content": [
+    "MIMO_JANGTQ2_TEXT_ONE",
+    "MIMO_JANGTQ2_TEXT_TWO"
+  ],
+  "ui_launch_mode": "installed-app",
+  "visible_assistant_turns_complete": true,
+  "wire_api": "chat"
+}

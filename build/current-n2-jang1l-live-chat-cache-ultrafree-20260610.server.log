@@ -1,0 +1,43 @@
+INFO:vmlx_engine.model_config_registry:Model config: detection_source=jang_stamped family=qwen3_5_moe reasoning_parser=qwen3 tool_parser=qwen think_in_template=True cache_type=hybrid cache_subtype=None is_mllm=False
+INFO:__main__:KV cache auto mode: TurboQuant enabled for compatible models; stored prefix cache quantization=q4
+INFO:__main__:Qwen3.6 hybrid/path-dependent cache model detected — keeping auto live TurboQuant enabled for attention KVCache layers only; SSM/GatedDelta companion state remains native full precision. Stored attention-KV quantization=q4 remains active for prefix/paged/L2 boundaries.
+INFO:__main__:Auto-configured tool parser from registry: qwen
+INFO:__main__:Auto-configured reasoning parser from registry: qwen3
+============================================================
+SECURITY CONFIGURATION
+============================================================
+  Authentication: DISABLED - Use --api-key to enable
+  Rate limiting: DISABLED - Use --rate-limit to enable
+  Request timeout: 900.0s
+  Tool calling: Use --enable-auto-tool-choice to enable
+  Reasoning: ENABLED (parser: Qwen3ReasoningParser)  [thinking model detected]
+  External speculative decoding: Use --speculative-model to enable
+  Native MTP: metadata inconsistent (scope: text, policy: compatible-only)
+============================================================
+Loading model: /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L
+Served model name: n2-pro-jang1l-live-launch-ultrafree-20260610
+Default max tokens override: 256
+Mode: Continuous batching (for multiple concurrent users)
+Stream interval: 1 tokens
+Paged cache: block_size=64, max_blocks=256
+Block disk cache: max=2.0GB
+KV cache quantization: q4 (group_size=64)
+INFO:vmlx_engine.server:Serving model as: n2-pro-jang1l-live-launch-ultrafree-20260610 (actual: JANGQ-AI/Nex-N2-Pro-JANG_1L)
+INFO:vmlx_engine.server:System memory before load: 114.0GB available / 128.0GB total (11.0% used)
+INFO:vmlx_engine.server:Loading model with BatchedEngine: /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L
+INFO:vmlx_engine:is_mllm_model(/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L): tier=affine_qwen_hybrid_jang_text_only result=False
+INFO:vmlx_engine.server:Model loaded (batched mode): /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L
+INFO:vmlx_engine.server:Metal GPU memory after load: 0.00GB active, 0.00GB peak
+INFO:vmlx_engine.server:System memory after load: 114.0GB available (11.0% used)
+INFO:vmlx_engine.server:Default max tokens override: 256
+Starting server at http://127.0.0.1:8907
+INFO:     Started server process [47181]
+INFO:     Waiting for application startup.
+INFO:vmlx_engine.server:Started caffeinate system wake lock for PID 47181
+INFO:vmlx_engine.utils.tokenizer:Detected JANG model: /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L
+INFO:vmlx_engine.utils.jang_loader:JANG v2 detected — loading via mmap (instant)
+WARNING:vmlx_engine.utils.quant_shape_inference:quant_shape_inference: patched 482 module(s) in Nex-N2-Pro-JANG_1L — config disagreed with safetensors shapes (top-level config claimed bits=2 group_size=128; per-module overrides corrected from shape). Most common cause: an older JANG/JANGTQ converter wrote uniform bits=2 into config.json while actual weights were stored with mixed precision per layer.
+INFO:vmlx_engine.utils.jang_loader:  Loading 123 safetensors shards via mmap
+INFO:vmlx_engine.utils.jang_loader:  bfloat16 enabled: 512 experts, hidden=4096 (float16 overflow prevention)
+INFO:vmlx_engine.utils.jang_loader:  Wired limit set to 115 GB (model 119 GB)
+libc++abi: terminating due to uncaught exception of type std::runtime_error: [METAL] Command buffer execution failed: Insufficient Memory (00000008:kIOGPUCommandBufferCallbackErrorOutOfMemory)

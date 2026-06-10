@@ -2,6 +2,7 @@ import json
 
 from tests.cross_matrix.run_responses_raw_sse_parity_contract import (
     build_artifact,
+    classify_server_log,
     classify_sse_capture,
 )
 
@@ -195,6 +196,58 @@ def test_raw_sse_parity_fails_when_capture_arguments_do_not_match_expected(tmp_p
     assert artifact["captures"]["direct"]["expected_arguments_match"] is False
 
 
+def test_raw_sse_parity_accepts_json_argument_formatting_differences(tmp_path):
+    direct = tmp_path / "direct.sse"
+    gateway = tmp_path / "gateway.sse"
+    tunnel = tmp_path / "tunnel.sse"
+    direct.write_text(_sse(arguments='{"query": "alpha"}'))
+    gateway.write_text(_sse(arguments='{"query":"alpha"}'))
+    tunnel.write_text(_sse(arguments='{\n  "query": "alpha"\n}'))
+
+    artifact = build_artifact(
+        direct_sse=direct,
+        gateway_sse=gateway,
+        tunnel_sse=tunnel,
+        expected_function_name="lookup",
+        expected_arguments='{"query":"alpha"}',
+        require_reasoning_events=True,
+    )
+
+    assert artifact["status"] == "pass"
+    assert (
+        artifact["checks"]["authoritative_arguments_match_across_present_surfaces"]
+        is True
+    )
+    assert artifact["checks"]["all_present_surfaces_match_expected_arguments"] is True
+    assert artifact["captures"]["direct"]["authoritative_arguments"] == '{"query": "alpha"}'
+
+
+def test_raw_sse_parity_still_fails_on_json_argument_value_mismatch(tmp_path):
+    direct = tmp_path / "direct.sse"
+    gateway = tmp_path / "gateway.sse"
+    tunnel = tmp_path / "tunnel.sse"
+    direct.write_text(_sse(arguments='{"query":"alpha"}'))
+    gateway.write_text(_sse(arguments='{"query":"alpha"}'))
+    tunnel.write_text(_sse(arguments='{"query":"beta"}'))
+
+    artifact = build_artifact(
+        direct_sse=direct,
+        gateway_sse=gateway,
+        tunnel_sse=tunnel,
+        expected_function_name="lookup",
+        expected_arguments='{"query":"alpha"}',
+        require_reasoning_events=True,
+    )
+
+    assert artifact["status"] == "fail"
+    assert (
+        artifact["checks"]["authoritative_arguments_match_across_present_surfaces"]
+        is False
+    )
+    assert artifact["checks"]["all_present_surfaces_match_expected_arguments"] is False
+    assert artifact["captures"]["tunnel"]["expected_arguments_match"] is False
+
+
 def test_raw_sse_parity_can_require_reasoning_events(tmp_path):
     direct = tmp_path / "direct.sse"
     gateway = tmp_path / "gateway.sse"
@@ -264,6 +317,24 @@ data: {"type":"response.reasoning_summary_text.delta","delta":"checking"}
     assert artifact["checks"]["no_reasoning_disable_workaround"] is True
     assert artifact["captures"]["direct"]["reasoning_enabled_by_server_log"] is True
     assert artifact["captures"]["direct"]["enable_thinking_resolved_true"] is True
+
+
+def test_raw_sse_parity_accepts_structured_gateway_reasoning_log():
+    row = classify_server_log(
+        json.dumps(
+            {
+                "status": 200,
+                "containsReasoning": True,
+                "containsFunctionDelta": True,
+                "containsFunctionDone": True,
+            }
+        )
+    )
+
+    assert row["reasoning_enabled_by_server_log"] is True
+    assert row["reasoning_disabled_by_server_log"] is False
+    assert row["enable_thinking_resolved_true"] is True
+    assert row["no_reasoning_disable_workaround"] is True
 
 
 def test_raw_sse_parity_fails_when_surface_reuses_message_output_index_for_tool(

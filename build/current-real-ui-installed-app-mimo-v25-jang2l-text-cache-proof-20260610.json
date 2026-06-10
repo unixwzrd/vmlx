@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-10T04:38:42.965Z",
+  "status": "pass",
+  "scope": "local rebuilt installed app MiMo V2.5 JANG_2L text/cache boundary",
+  "app_path": "/Applications/vMLX.app",
+  "ui_launch_mode": "installed-app",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+  "served_model": "mimo-v25-jang2l-installed-ui-text-cache-20260610",
+  "wire_api": "chat",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-text-cache-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-text-cache-20260610-chat.png",
+  "positive_evidence": {
+    "installed_app_ui": true,
+    "real_loaded_model": true,
+    "visible_text_turns": true,
+    "exact_first_visible": "MIMO_INSTALLED_TEXT_ONE",
+    "exact_second_visible": "MIMO_INSTALLED_TEXT_TWO",
+    "server_cache_controls": true,
+    "chat_completions": true,
+    "generation_defaults_applied": true,
+    "parser_leak_check": true,
+    "reasoning_leak_check": true
+  },
+  "runtime": {
+    "loaded_family": "mimo_v2",
+    "model_type": "llm",
+    "active_memory_mb": 105017.5,
+    "peak_memory_mb": 105961.1,
+    "quantization_type": "jang",
+    "quantization_codec": "affine_quantized_matmul",
+    "profile": "JANG_2L_322_D3E16",
+    "kernel_type": "affine_quantized_matmul",
+    "metal_na_active_on_host": true,
+    "single_active_decode": true,
+    "native_mtp_status": "not_configured"
+  },
+  "cache": {
+    "native_cache_schema": "mixed_swa_kv_v1",
+    "cache_subtype": "mimo_v2_asymmetric_swa",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "generic_turboquant_kv": false,
+    "generic_turboquant_kv_reason": "MiMo-V2 uses native asymmetric full/SWA RotatingKVCache metadata",
+    "cache_detail": "paged",
+    "cached_tokens": 41,
+    "l2_block_tokens_on_disk": 114,
+    "l2_tokens_on_disk": 114,
+    "block_disk_writes": 3
+  },
+  "speed": {
+    "first_turn_live_tokens_per_second": 1.9,
+    "first_turn_ttft_seconds": 25.74,
+    "second_turn_live_tokens_per_second": 1.9,
+    "second_turn_ttft_seconds": 1.57,
+    "second_turn_prompt_prefill_tokens_per_second": 47.2
+  },
+  "release_boundary": {
+    "clears_installed_app_text_cache": true,
+    "clears_installed_app_tools": false,
+    "clears_installed_app_media": false,
+    "clears_mimo_jangtq2_exactness": false,
+    "clears_public_tunnel_sse": false,
+    "clears_dmg_package_sign_notarize": false,
+    "release_ready": false
+  }
+}

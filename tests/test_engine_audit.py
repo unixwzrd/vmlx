@@ -6504,7 +6504,7 @@ class TestStartupCompatibilityGuards:
         # Ling/Bailing hybrid needs the mlx-lm runtime floor that the bundle
         # uses before the local bailing_hybrid vendor file is applied.
         assert '"mlx-lm>=0.31.3"' in pyproject
-        assert pyproject.count('"jang>=2.5.29"') >= 3
+        assert pyproject.count('"jang>=2.5.30"') >= 3
 
     def test_bundled_python_installs_distutils_version_shim_for_radio(self):
         bundle_script = Path("./panel/scripts/bundle-python.sh").read_text()
@@ -6532,7 +6532,7 @@ class TestStartupCompatibilityGuards:
 
         assert '${VMLX_ALLOW_PYPI_JANG:-${VMLINUX_ALLOW_PYPI_JANG:-0}}' in bundle_script
         assert "RELEASE BLOCKED — local jang-tools source missing" in bundle_script
-        assert 'pip install --no-deps "jang>=2.5.29"' in bundle_script
+        assert 'pip install --no-deps "jang>=2.5.30"' in bundle_script
         assert '${VMLX_ALLOW_MISSING_JANG_SOURCE_HASH:-${VMLINUX_ALLOW_MISSING_JANG_SOURCE_HASH:-0}}' in verify_script
         assert "RELEASE BLOCKED — local jang_tools source unavailable for hash parity" in verify_script
 
@@ -6591,6 +6591,22 @@ class TestStartupCompatibilityGuards:
         assert "python/bin/python3.12" in bundle_script
         assert "python/lib/libpython3.12.dylib" in bundle_script
         assert "restore_python_runtime_files" in dependency_block
+
+    def test_bundled_python_restores_launcher_before_dependency_install(self):
+        bundle_script = Path("./panel/scripts/bundle-python.sh").read_text()
+        extract_idx = bundle_script.index('tar xzf "$STANDALONE_TARBALL" -C "$BUNDLE_DIR"')
+        pip_upgrade_idx = bundle_script.index('echo "==> Upgrading pip..."')
+        mlx_install_idx = bundle_script.index(
+            '"$PYTHON" -m pip install "$WHEELHOUSE"/mlx-"$MLX_VERSION"'
+        )
+        dependency_install_idx = bundle_script.index('echo "==> Installing dependencies..."')
+        bootstrap_block = bundle_script[extract_idx:pip_upgrade_idx]
+        mlx_install_block = bundle_script[mlx_install_idx:dependency_install_idx]
+
+        assert "restore_python_runtime_files" in bootstrap_block
+        assert 'PYTHON="$BUNDLE_DIR/python/bin/python3.12"' in bootstrap_block
+        assert "restore_python_runtime_files" in mlx_install_block
+        assert 'PYTHON="$BUNDLE_DIR/python/bin/python3"' in mlx_install_block
 
     def test_local_installer_installs_node_deps_before_typecheck(self):
         install_script = Path("./panel/scripts/build-and-install.sh").read_text()
@@ -7899,7 +7915,7 @@ class TestStartupCompatibilityGuards:
             lambda: (_ for _ in ()).throw(ImportError("missing bailing patch")),
         )
 
-        with pytest.raises(RuntimeError, match="jang>=2.5.29"):
+        with pytest.raises(RuntimeError, match="jang>=2.5.30"):
             jang_loader._ensure_jang_family_runtime_supported(
                 Path("/models/Hy3-preview-JANGTQ2"), {"model_type": "hy_v3"}
             )

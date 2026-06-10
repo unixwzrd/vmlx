@@ -1,0 +1,83 @@
+{
+  "status": "fail",
+  "generated_at": "2026-06-10",
+  "scope": "real Electron dev-app MiMo V2.5 JANG_2L Chat Completions image modality proof",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+  "served_model": "mimo-v25-jang2l-dev-ui-image-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-image-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-image-20260610-chat.png",
+  "request": {
+    "wire_api": "chat",
+    "max_tokens": 96,
+    "max_prompt_tokens": 12000,
+    "enable_thinking": false,
+    "builtin_tools": false,
+    "media": "image",
+    "image_expect_regex": "\\bred\\b",
+    "forced_mllm_flag": true
+  },
+  "proven": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "model_type": "llm",
+    "force_mllm_requested": true,
+    "runtime_downgraded_to_text_only": true,
+    "text_chat_turns_before_image_completed": true,
+    "server_media_diag_image_url": true,
+    "unsupported_modality_guard_returned_400": true,
+    "supported_modalities_reported": [
+      "text"
+    ],
+    "generation_defaults_applied": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 96,
+      "enable_thinking": false
+    },
+    "memory_mb": {
+      "active": 105016.1,
+      "peak": 106138.8
+    },
+    "quantization": {
+      "format": "jang",
+      "profile": "JANG_2L_322_D3E16",
+      "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+      "metal_na_active_on_host": true,
+      "prestacked_switch_experts": 423,
+      "split_experts": 0
+    },
+    "native_cache": {
+      "family": "mimo_v2",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": false,
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache_before_image": {
+      "cache_detail": "paged",
+      "cached_tokens": 39,
+      "l2_block_tokens_on_disk": 110,
+      "l2_tokens_on_disk": 110
+    }
+  },
+  "red": {
+    "image_attachment_persisted": false,
+    "image_semantic_verified": false,
+    "vl_image_surface": false,
+    "failure_stage": "image_send_message",
+    "api_error": "400 - /v1/chat/completions received unsupported media modality image because the loaded runtime is text-only. Supported modalities: text."
+  },
+  "release_boundary": [
+    "Do not claim MiMo V2.5 JANG_2L image/VL support in the checkpoint release.",
+    "The bundle has preserved vision/audio weights, but runtime metadata marks them unwired and the server routes this artifact text-only even when --is-mllm is requested.",
+    "This is an honest capability guard, not a model load, cache, L2, or crash failure."
+  ]
+}

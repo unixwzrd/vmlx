@@ -1,6 +1,6 @@
 {
   "boundary": "No-heavy checklist only. A pass here would mean current evidence claims every listed gate is green; it still must be backed by the live artifacts referenced by each row. Open rows are release blockers.",
-  "created_at": "2026-06-09T16:06:47-0700",
+  "created_at": "2026-06-09T16:53:30-0700",
   "failed": [
     {
       "detail": false,
@@ -336,26 +336,23 @@
     },
     {
       "detail": "fail",
-      "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+      "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
       "name": "qwen35_raw_sse_status_pass",
       "ok": false
     },
     {
       "detail": {
         "conflicting_output_indices": {
-          "direct": [
-            0
-          ],
-          "gateway": [
-            0
-          ],
           "tunnel": [
             0
           ]
         },
-        "missing_captures": []
+        "missing_captures": [
+          "direct",
+          "gateway"
+        ]
       },
-      "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+      "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
       "name": "qwen35_raw_sse_valid_output_item_indices",
       "ok": false
     },
@@ -4343,6 +4340,30 @@
         "evidence": "build/current-issue179-minimax-k-root-cause-audit-after-parser-settings-parity-20260608.json",
         "name": "issue179_reporter_prompt_reproduction_or_log_proof",
         "ok": true
+      },
+      {
+        "detail": {
+          "checks": {
+            "block_disk_l2_restart_restore": true,
+            "cache_second_hit_tq": true,
+            "exact_code_whitespace": true,
+            "model_family_minimax": true,
+            "native_cache_reports_tq_l2": true,
+            "reasoning_parser_minimax_m2": true,
+            "reasoning_separated": true,
+            "required_tool_call_parsed": true,
+            "status_pass": true,
+            "structured_json_exact": true,
+            "tool_parser_minimax": true,
+            "tool_result_continuation_exact": true
+          },
+          "path": "build/current-all-local-model-smoke-minimax-small-jangtq-cache-language-after-bare-invoke-tool-20260609/summary.json",
+          "release_boundary": "Current-source MiniMax Small JANGTQ proof only. This validates the parser/cache/L2 path used by source smokes, but it does not prove reporter MiniMax-K artifact/session parity or close #179.",
+          "status": "pass"
+        },
+        "evidence": "build/current-issue179-minimax-k-root-cause-audit-after-parser-settings-parity-20260608.json",
+        "name": "issue179_current_source_minimax_small_smoke",
+        "ok": true
       }
     ],
     "n2_pro_397b": [
@@ -5480,53 +5501,50 @@
       },
       {
         "detail": "fail",
-        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
         "name": "qwen35_raw_sse_artifact_exists",
         "ok": true
       },
       {
         "detail": "fail",
-        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
         "name": "qwen35_raw_sse_status_pass",
         "ok": false
       },
       {
         "detail": true,
-        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
         "name": "qwen35_raw_sse_same_model_surfaces",
         "ok": true
       },
       {
-        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
         "name": "qwen35_raw_sse_authoritative_args",
         "ok": true
       },
       {
-        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
         "name": "qwen35_raw_sse_reasoning_events",
         "ok": true
       },
       {
         "detail": {
           "conflicting_output_indices": {
-            "direct": [
-              0
-            ],
-            "gateway": [
-              0
-            ],
             "tunnel": [
               0
             ]
           },
-          "missing_captures": []
+          "missing_captures": [
+            "direct",
+            "gateway"
+          ]
         },
-        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
         "name": "qwen35_raw_sse_valid_output_item_indices",
         "ok": false
       },
       {
-        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json",
+        "evidence": "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json",
         "name": "qwen35_raw_sse_local_source_guards",
         "ok": true
       },

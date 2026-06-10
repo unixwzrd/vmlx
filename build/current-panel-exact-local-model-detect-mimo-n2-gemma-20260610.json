@@ -1,0 +1,145 @@
+{
+  "created_at": "2026-06-10T01:53:06.568Z",
+  "schema": "vmlx-panel-exact-local-model-detect-v1",
+  "status": "pass",
+  "checks": {
+    "gemma4_mxfp4_rotating_paged_gemma4_tools": true,
+    "gemma4_jang4m_rotating_paged_gemma4_tools": true,
+    "mimo_jang2l_asymmetric_swa_paged_xml_tools_no_reasoning_claim": true,
+    "mimo_jangtq2_asymmetric_swa_paged_xml_tools_no_reasoning_claim": true,
+    "n2_jangtq2_hybrid_qwen_tools_reasoning_multimodal_tq": true,
+    "n2_jang1l_hybrid_qwen_tools_reasoning_text_only_until_vl_proof": true
+  },
+  "detections": {
+    "gemma4_12b_mxfp4": {
+      "path": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4",
+      "detected": {
+        "family": "gemma4",
+        "toolParser": "gemma4",
+        "reasoningParser": "gemma4",
+        "supportsThinking": true,
+        "thinkInTemplate": false,
+        "cacheType": "rotating_kv",
+        "usePagedCache": true,
+        "enableAutoToolChoice": true,
+        "isMultimodal": true,
+        "description": "Gemma 4 (multimodal)",
+        "maxContextLength": 131072
+      }
+    },
+    "gemma4_12b_jang4m": {
+      "path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+      "detected": {
+        "family": "gemma4",
+        "toolParser": "gemma4",
+        "reasoningParser": "gemma4",
+        "supportsThinking": true,
+        "thinkInTemplate": false,
+        "cacheType": "rotating_kv",
+        "usePagedCache": true,
+        "enableAutoToolChoice": true,
+        "isMultimodal": true,
+        "description": "Gemma 4 (multimodal)",
+        "maxContextLength": 131072
+      }
+    },
+    "mimo_v25_jang2l": {
+      "path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+      "detected": {
+        "family": "mimo_v2",
+        "toolParser": "xml_function",
+        "supportsThinking": false,
+        "thinkInTemplate": false,
+        "cacheType": "kv",
+        "cacheSubtype": "mimo_v2_asymmetric_swa",
+        "architectureHints": {
+          "runtimeMtpMode": "absent",
+          "fullAttentionKvHeads": 4,
+          "swaAttentionKvHeads": 8,
+          "attentionValueScale": 0.707,
+          "swaWindow": 128,
+          "swaAttentionSinkBias": true
+        },
+        "usePagedCache": true,
+        "enableAutoToolChoice": true,
+        "isMultimodal": true,
+        "description": "MiMo V2.5 multimodal MoE",
+        "maxContextLength": 1048576
+      }
+    },
+    "mimo_v25_jangtq2": {
+      "path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+      "detected": {
+        "family": "mimo_v2",
+        "toolParser": "xml_function",
+        "supportsThinking": false,
+        "thinkInTemplate": false,
+        "cacheType": "kv",
+        "cacheSubtype": "mimo_v2_asymmetric_swa",
+        "architectureHints": {
+          "runtimeMtpMode": "absent",
+          "fullAttentionKvHeads": 4,
+          "swaAttentionKvHeads": 8,
+          "attentionValueScale": 0.707,
+          "swaWindow": 128,
+          "swaAttentionSinkBias": true
+        },
+        "usePagedCache": true,
+        "enableAutoToolChoice": true,
+        "isMultimodal": true,
+        "description": "MiMo V2.5 multimodal MoE",
+        "maxContextLength": 1048576
+      }
+    },
+    "nex_n2_pro_jangtq2": {
+      "path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+      "detected": {
+        "family": "qwen3.5-moe",
+        "toolParser": "qwen",
+        "reasoningParser": "qwen3",
+        "supportsThinking": true,
+        "thinkInTemplate": true,
+        "cacheType": "hybrid",
+        "usePagedCache": true,
+        "enableAutoToolChoice": true,
+        "isMultimodal": true,
+        "description": "Qwen 3.5 MoE",
+        "maxContextLength": 262144,
+        "isTurboQuant": true
+      }
+    },
+    "nex_n2_pro_jang1l": {
+      "path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L",
+      "detected": {
+        "family": "qwen3.5-moe",
+        "toolParser": "qwen",
+        "reasoningParser": "qwen3",
+        "supportsThinking": true,
+        "thinkInTemplate": true,
+        "cacheType": "hybrid",
+        "usePagedCache": true,
+        "enableAutoToolChoice": true,
+        "isMultimodal": false,
+        "description": "Qwen 3.5 MoE",
+        "maxContextLength": 262144,
+        "forceTextOnly": true
+      }
+    }
+  },
+  "boundaries": {
+    "proves": [
+      "dev-app detector sees exact local Gemma 12B MXFP4/JANG4M as gemma4 multimodal rotating_kv/paged with gemma4 tool and reasoning parsers",
+      "dev-app detector sees exact local MiMo JANG_2L/JANGTQ_2 as mimo_v2 XML-tool asymmetric-SWA paged cache and does not auto-advertise reasoning",
+      "dev-app detector sees exact local Nex N2 Pro JANGTQ2 as qwen3.5-moe hybrid/paged qwen tools qwen3 reasoning, TurboQuant, and multimodal",
+      "dev-app detector sees exact local Nex N2 Pro JANG_1L as qwen3.5-moe hybrid/paged qwen tools qwen3 reasoning but text-only/forceTextOnly until VL and memory-safe runtime proof exist"
+    ],
+    "does_not_prove": [
+      "Electron UI clicked chat transcript",
+      "installed-app packaged parity for these exact rows",
+      "N2 JANG_1L memory-safe live startup",
+      "MiMo JANGTQ_2 exactness",
+      "Gemma audio/video semantic E2E",
+      "same-model direct/gateway/tunnel raw SSE deployed parity"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "status": "pass",
+  "generated_at": "2026-06-10",
+  "scope": "real Electron dev-app Gemma 4 12B QAT MXFP4 Responses built-in tool/cache proof",
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4",
+  "served_model": "gemma4-12b-qat-mxfp4-dev-ui-responses-tools-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-qat-mxfp4-responses-tools-20260610-proof.json",
+  "request": {
+    "wire_api": "responses",
+    "max_tokens": 96,
+    "max_prompt_tokens": 12000,
+    "enable_thinking": false,
+    "builtin_tools": true
+  },
+  "proven": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "model_type": "mllm",
+    "responses_api": true,
+    "responses_delta_streaming": true,
+    "responses_tool_followup_previous_response_id": true,
+    "builtin_run_command_executed": true,
+    "tool_probe_files": {
+      "real_ui_tool_probe_1.txt": "REAL_UI_LIVE_TOOL_ONE\n",
+      "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO\n"
+    },
+    "visible_assistant_turns_complete": true,
+    "first_visible_answer": "The file has been successfully created. REAL_UI_LIVE_TOOL_ONE",
+    "second_visible_answer": "thought\nI have successfully read the first probe and created the second file. REAL_UI_LIVE_TOOL_TWO. This is the second UI turn.",
+    "event_counts": {
+      "stream": 47,
+      "tool": 160,
+      "reasoningDone": 0,
+      "complete": 2
+    },
+    "stream_delta_counts": [
+      16,
+      31
+    ],
+    "generation_defaults_applied": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_tokens": 96,
+      "enable_thinking": false
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "mxfp4",
+      "profile": "MXFP4",
+      "target_bits": 4,
+      "group_size": 32,
+      "passthrough_tensor_count": 349,
+      "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+      "metal_na_active_on_host": true
+    },
+    "memory_mb": {
+      "active": 7773.6,
+      "peak": 10518.0
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache": {
+      "cache_detail": "paged+mixed_swa",
+      "cache_hit_tokens": 3538,
+      "final_cached_tokens": 2688,
+      "l2_block_tokens_on_disk": 3588,
+      "l2_tokens_on_disk": 3588,
+      "block_disk_hits": 30,
+      "block_disk_writes": 58
+    },
+    "server_cache_controls_verified": true,
+    "proven_surfaces": [
+      "cache_endpoint_stats",
+      "cache_hit_telemetry",
+      "chat_completions",
+      "current_electron_dev_build",
+      "generation_defaults_applied",
+      "l2_disk_storage",
+      "language_leak_check",
+      "long_tool_loop",
+      "native_cache_status",
+      "parser_leak_check",
+      "real_loaded_model",
+      "responses_api",
+      "responses_cache_detail_usage",
+      "responses_delta_streaming",
+      "server_cache_controls",
+      "settings_persistence",
+      "tool_l2_cache_integrated"
+    ]
+  },
+  "caveats": [
+    "The second visible assistant answer starts with the plain word 'thought'. The leak gates passed because this was not a raw <think> tag, hidden reasoning channel, or tool parser markup, but it should remain visible in release notes until a stricter Gemma visible-final style gate is added."
+  ],
+  "not_proven": [
+    "Gemma 12B QAT MXFP4 image/video/audio in the dev app",
+    "Gemma 12B QAT MXFP4 installed-app parity",
+    "Gemma 12B QAT MXFP4 public tunnel parity",
+    "Signed/notarized DMG release readiness"
+  ],
+  "release_boundary": [
+    "Gemma 12B QAT MXFP4 is now checkpoint-green for source Electron dev-app Responses tool loop, content deltas, MXFP4 runtime dispatch, mixed-SWA cache, and block-disk L2.",
+    "This is not installed-app, signed DMG, or notarized release proof."
+  ]
+}

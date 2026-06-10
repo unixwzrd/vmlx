@@ -1,0 +1,795 @@
+{
+  "checks": {
+    "auto_mode_tool_call_present": true,
+    "cache_positive": true,
+    "release_boundary": "This probe proves direct server Chat tool behavior for MiMo JANG_2L. It does not prove the Electron app, media, installed app, or release readiness.",
+    "required_mode_tool_call_present": true
+  },
+  "health_after": {
+    "acceleration": {
+      "host": {
+        "brand": "Apple M5 Max",
+        "reason": null,
+        "supported": true
+      },
+      "kernel_type": "affine_quantized_matmul",
+      "metal_na_active_on_host": true,
+      "metal_na_capable": true,
+      "metal_na_symbols": {
+        "affine_gather_qmm_symbols": 3456,
+        "affine_qmm_symbols": 4212,
+        "available": true,
+        "nax_symbols": 4668,
+        "naxtile_symbols": 4154
+      },
+      "reason": null
+    },
+    "cache": {
+      "block_disk_cache": {
+        "blocks_on_disk": 6,
+        "disk_evictions": 0,
+        "disk_hits": 36,
+        "disk_misses": 5,
+        "disk_size_bytes": 154264710,
+        "disk_size_gb": 0.144,
+        "disk_writes": 6,
+        "total_accesses": 36,
+        "total_cached_tokens": 346,
+        "total_tokens_on_disk": 346
+      },
+      "scheduler_cache": {
+        "active_requests": 4,
+        "allocated_blocks": 7,
+        "batch_generator": {
+          "class": "SingleBatchGenerator",
+          "max_num_seqs": 1,
+          "path": "single_active",
+          "single_active_decode": true
+        },
+        "block_size": 64,
+        "cache_hit_rate": 0.8181818181818182,
+        "cache_hits": 36,
+        "cache_misses": 8,
+        "cow_copies": 0,
+        "disk_hits": 0,
+        "disk_misses": 2,
+        "engine_path": "single_active",
+        "entries_by_type": {
+          "assistant": 4,
+          "system": 0,
+          "user": 0
+        },
+        "evictions": 0,
+        "free_blocks": 993,
+        "hit_rate": 0.75,
+        "hits": 3,
+        "max_blocks": 1000,
+        "misses": 1,
+        "shared_blocks": 6,
+        "tokens_saved": 1038,
+        "total_tokens_cached": 346,
+        "utilization": 0.007
+      },
+      "totals": {
+        "l2_block_tokens_on_disk": 346,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 346,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap",
+        "l2_tokens_on_disk_store_sum": 346,
+        "ram_tokens_cached": 346,
+        "ssm_tokens_on_disk": 0
+      }
+    },
+    "engine_type": "batched",
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "last_request_time": 1781058348.188904,
+    "max_prompt_tokens": 4096,
+    "mcp": null,
+    "memory": {
+      "active_mb": 104985.5,
+      "cache_mb": 230.1,
+      "peak_mb": 106409.2
+    },
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "model_type": "llm",
+    "mtp": {
+      "artifact_available": false,
+      "cache_type": null,
+      "config_mtp_layer_source": null,
+      "config_num_nextn_predict_layers": null,
+      "effective_depth": null,
+      "effective_depth_source": null,
+      "family": "mimo_v2",
+      "has_vision_config": true,
+      "has_vision_weights": true,
+      "index_has_mtp_tensors": false,
+      "index_mtp_layer_count": null,
+      "issues": [],
+      "jang_drop_mtp": null,
+      "jang_mtp_layers": null,
+      "mtp_tensor_count": 0,
+      "request_gate": "temperature=0,repetition_penalty=1.0",
+      "request_policy": "compatible-only",
+      "runtime_active": false,
+      "runtime_available": false,
+      "runtime_bundle_has_mtp": null,
+      "runtime_mtp_mode": null,
+      "runtime_reason": "config does not request MTP",
+      "runtime_scope": null,
+      "runtime_supported": false,
+      "runtime_validation_blocked": false,
+      "status": "not_configured",
+      "vision_tensor_count": 364,
+      "vl_runtime_available": false
+    },
+    "native_cache": {
+      "block_disk_l2": true,
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "cache_type": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "family": "mimo_v2",
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "paged": true,
+      "prefix": true,
+      "schema": "mixed_swa_kv_v1",
+      "storage_quantization": {
+        "applies_to": "full_and_sliding_attention_kv",
+        "bits": null,
+        "enabled": false,
+        "group_size": null,
+        "metadata_policy": "preserve_rotating_window_metadata",
+        "mode": "storage_boundary"
+      }
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "config_bits": 8,
+      "group_size": 64,
+      "mxtq_bits_by_role": {
+        "down_proj": 2,
+        "gate_proj": 3,
+        "up_proj": 2
+      },
+      "profile": "JANG_2L_322_D3E16",
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": false,
+        "prestacked_bundle": false
+      },
+      "target_bits": 8,
+      "weight_index": {
+        "index_file": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L/model.safetensors.index.json",
+        "mtp_tensor_count": 0,
+        "routed_layout_counts": {
+          "prestacked_switch": 423,
+          "split_expert": 0
+        },
+        "suffix_counts": {
+          "biases": 194,
+          "scales": 194,
+          "weight": 663
+        },
+        "total_tensors": 1319,
+        "tq_target_counts": {}
+      },
+      "weight_matmul_dispatch": {
+        "metal_na_eligible": true,
+        "primary": "mlx_affine_quantized_matmul",
+        "reason": null,
+        "uses_mlx_quantized_matmul": true
+      }
+    },
+    "quantization_format": {
+      "actual_bits": null,
+      "block_size": 64,
+      "target_bits": null,
+      "type": "jang"
+    },
+    "routing": {
+      "effective_active_experts": 8,
+      "effective_active_experts_source": "trained_default",
+      "n_routed_experts": 256,
+      "override_env": null,
+      "trained_active_experts": 8,
+      "trained_active_experts_source": "config.num_experts_per_tok"
+    },
+    "scheduler": {
+      "batch_generator": {
+        "class": "SingleBatchGenerator",
+        "max_num_seqs": 1,
+        "path": "single_active",
+        "single_active_decode": true
+      },
+      "cache_hit_requests": 3,
+      "cache_hit_tokens": 1038,
+      "cache_hit_tokens_by_detail": {
+        "paged": 1038
+      },
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "cache_reuse_skip_tokens": 0,
+      "cache_reuse_skips": 0,
+      "engine_path": "single_active",
+      "ewma_ttft_seconds": 1.721,
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_cache_execution": {
+        "blocks": 6,
+        "cache_detail": "paged",
+        "cached_tokens": 346,
+        "dequantization_seconds": 0.0,
+        "dequantized": false,
+        "reconstructed": true,
+        "reconstruction_ok": true,
+        "reconstruction_seconds": 0.067846,
+        "request_id": "chatcmpl-493bc48f",
+        "selection": {
+          "hot_advantage_threshold_tokens": 64,
+          "hot_advantage_tokens": 346,
+          "paged_cached_tokens": 346,
+          "paged_cold_tokens": 0,
+          "reason": "no_warm_prefix_alternative",
+          "rejected": null,
+          "selected": "paged",
+          "warm_cached_tokens": 0
+        },
+        "total_worker_cache_seconds": 0.068068
+      },
+      "last_cache_reuse_partial": null,
+      "last_cache_reuse_skip": null,
+      "last_cache_selection": {
+        "hot_advantage_threshold_tokens": 64,
+        "hot_advantage_tokens": 346,
+        "paged_cached_tokens": 346,
+        "paged_cold_tokens": 0,
+        "reason": "no_warm_prefix_alternative",
+        "rejected": null,
+        "selected": "paged",
+        "warm_cached_tokens": 0
+      },
+      "last_hybrid_kv_without_ssm": null,
+      "num_running": 0,
+      "num_waiting": 0,
+      "single_active_decode": true
+    },
+    "speculative_decoding": "not_configured",
+    "status": "healthy",
+    "turboquant_kv_cache": {
+      "enabled": false
+    }
+  },
+  "health_before": {
+    "acceleration": {
+      "host": {
+        "brand": "Apple M5 Max",
+        "reason": null,
+        "supported": true
+      },
+      "kernel_type": "affine_quantized_matmul",
+      "metal_na_active_on_host": true,
+      "metal_na_capable": true,
+      "metal_na_symbols": {
+        "affine_gather_qmm_symbols": 3456,
+        "affine_qmm_symbols": 4212,
+        "available": true,
+        "nax_symbols": 4668,
+        "naxtile_symbols": 4154
+      },
+      "reason": null
+    },
+    "cache": {
+      "block_disk_cache": {
+        "blocks_on_disk": 0,
+        "disk_evictions": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "disk_size_bytes": 0,
+        "disk_size_gb": 0.0,
+        "disk_writes": 0,
+        "total_accesses": 0,
+        "total_cached_tokens": 0,
+        "total_tokens_on_disk": 0
+      },
+      "scheduler_cache": {
+        "active_requests": 0,
+        "allocated_blocks": 1,
+        "batch_generator": {
+          "class": null,
+          "max_num_seqs": 1,
+          "path": "none",
+          "single_active_decode": false
+        },
+        "block_size": 64,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 0,
+        "cow_copies": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "engine_path": "none",
+        "entries_by_type": {
+          "assistant": 0,
+          "system": 0,
+          "user": 0
+        },
+        "evictions": 0,
+        "free_blocks": 999,
+        "hit_rate": 0,
+        "hits": 0,
+        "max_blocks": 1000,
+        "misses": 0,
+        "shared_blocks": 0,
+        "tokens_saved": 0,
+        "total_tokens_cached": 0,
+        "utilization": 0.001
+      },
+      "totals": {
+        "l2_block_tokens_on_disk": 0,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 0,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap",
+        "l2_tokens_on_disk_store_sum": 0,
+        "ram_tokens_cached": 0,
+        "ssm_tokens_on_disk": 0
+      }
+    },
+    "engine_type": "batched",
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "last_request_time": null,
+    "max_prompt_tokens": 4096,
+    "mcp": null,
+    "memory": {
+      "active_mb": 104985.5,
+      "cache_mb": 0.0,
+      "peak_mb": 104985.5
+    },
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "model_type": "llm",
+    "mtp": {
+      "artifact_available": false,
+      "cache_type": null,
+      "config_mtp_layer_source": null,
+      "config_num_nextn_predict_layers": null,
+      "effective_depth": null,
+      "effective_depth_source": null,
+      "family": "mimo_v2",
+      "has_vision_config": true,
+      "has_vision_weights": true,
+      "index_has_mtp_tensors": false,
+      "index_mtp_layer_count": null,
+      "issues": [],
+      "jang_drop_mtp": null,
+      "jang_mtp_layers": null,
+      "mtp_tensor_count": 0,
+      "request_gate": "temperature=0,repetition_penalty=1.0",
+      "request_policy": "compatible-only",
+      "runtime_active": false,
+      "runtime_available": false,
+      "runtime_bundle_has_mtp": null,
+      "runtime_mtp_mode": null,
+      "runtime_reason": "config does not request MTP",
+      "runtime_scope": null,
+      "runtime_supported": false,
+      "runtime_validation_blocked": false,
+      "status": "not_configured",
+      "vision_tensor_count": 364,
+      "vl_runtime_available": false
+    },
+    "native_cache": {
+      "block_disk_l2": true,
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "cache_type": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "family": "mimo_v2",
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "paged": true,
+      "prefix": true,
+      "schema": "mixed_swa_kv_v1",
+      "storage_quantization": {
+        "applies_to": "full_and_sliding_attention_kv",
+        "bits": null,
+        "enabled": false,
+        "group_size": null,
+        "metadata_policy": "preserve_rotating_window_metadata",
+        "mode": "storage_boundary"
+      }
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "config_bits": 8,
+      "group_size": 64,
+      "mxtq_bits_by_role": {
+        "down_proj": 2,
+        "gate_proj": 3,
+        "up_proj": 2
+      },
+      "profile": "JANG_2L_322_D3E16",
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": false,
+        "prestacked_bundle": false
+      },
+      "target_bits": 8,
+      "weight_index": {
+        "index_file": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L/model.safetensors.index.json",
+        "mtp_tensor_count": 0,
+        "routed_layout_counts": {
+          "prestacked_switch": 423,
+          "split_expert": 0
+        },
+        "suffix_counts": {
+          "biases": 194,
+          "scales": 194,
+          "weight": 663
+        },
+        "total_tensors": 1319,
+        "tq_target_counts": {}
+      },
+      "weight_matmul_dispatch": {
+        "metal_na_eligible": true,
+        "primary": "mlx_affine_quantized_matmul",
+        "reason": null,
+        "uses_mlx_quantized_matmul": true
+      }
+    },
+    "quantization_format": {
+      "actual_bits": null,
+      "block_size": 64,
+      "target_bits": null,
+      "type": "jang"
+    },
+    "routing": {
+      "effective_active_experts": 8,
+      "effective_active_experts_source": "trained_default",
+      "n_routed_experts": 256,
+      "override_env": null,
+      "trained_active_experts": 8,
+      "trained_active_experts_source": "config.num_experts_per_tok"
+    },
+    "scheduler": {
+      "batch_generator": {
+        "class": null,
+        "max_num_seqs": 1,
+        "path": "none",
+        "single_active_decode": false
+      },
+      "cache_hit_requests": 0,
+      "cache_hit_tokens": 0,
+      "cache_hit_tokens_by_detail": {},
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "cache_reuse_skip_tokens": 0,
+      "cache_reuse_skips": 0,
+      "engine_path": "none",
+      "ewma_ttft_seconds": 0.0,
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_cache_execution": null,
+      "last_cache_reuse_partial": null,
+      "last_cache_reuse_skip": null,
+      "last_cache_selection": null,
+      "last_hybrid_kv_without_ssm": null,
+      "num_running": 0,
+      "num_waiting": 0,
+      "single_active_decode": false
+    },
+    "speculative_decoding": "not_configured",
+    "status": "healthy",
+    "turboquant_kv_cache": {
+      "enabled": false
+    }
+  },
+  "model": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+  "prompt": "Use the run_command tool exactly once to create a file named real_ui_tool_probe_1.txt in the configured working directory. Write the text REAL_UI_LIVE_TOOL_ONE into that file. After the tool result is returned, reply briefly in English and include REAL_UI_LIVE_TOOL_ONE once.",
+  "rows": {
+    "auto_nonstream": {
+      "content": "I'll execute the command to write the the the the the to the the file file",
+      "elapsed_s": 51.93,
+      "error": null,
+      "finish_reason": "tool_calls",
+      "raw_preview": "{\"id\":\"chatcmpl-4b9a116f\",\"object\":\"chat.completion\",\"created\":1781058279,\"model\":\"mimo-v25-jang2l-chat-tool-boundary-20260610\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"I'll execute the command to write the the the the the to the the file file\",\"tool_calls\":[{\"id\":\"call_80e506cc\",\"type\":\"function\",\"function\":{\"name\":\"run_command\",\"arguments\":\"{\\\"command\\\": \\\"echo \\\\\\\"REAL_UI_LIVE_TOOL_ONE\\\\\\\" > /tmp/REAL_UI_LIVE_TOOL_ONE\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":347,\"completion_tokens\":58,\"total_tokens\":405}}",
+      "status_code": 200,
+      "tool_call_arguments": [
+        "{\"command\": \"echo \\\"REAL_UI_LIVE_TOOL_ONE\\\" > /tmp/REAL_UI_LIVE_TOOL_ONE\"}"
+      ],
+      "tool_call_names": [
+        "run_command"
+      ],
+      "tool_calls": [
+        {
+          "arguments": "{\"command\": \"echo \\\"REAL_UI_LIVE_TOOL_ONE\\\" > /tmp/REAL_UI_LIVE_TOOL_ONE\"}",
+          "id": "call_80e506cc",
+          "name": "run_command"
+        }
+      ],
+      "usage": {
+        "completion_tokens": 58,
+        "prompt_tokens": 347,
+        "total_tokens": 405
+      }
+    },
+    "auto_stream": {
+      "content": "I'll execute the command to write the the the the the to the the file file<think>",
+      "elapsed_s": 33.581,
+      "error": null,
+      "event_count": 63,
+      "event_types": [
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message"
+      ],
+      "raw_preview": "data: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\"}}]}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"I\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 1, \"total_tokens\": 348, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"'ll\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 2, \"total_tokens\": 349, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" execute\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 3, \"total_tokens\": 350, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 4, \"total_tokens\": 351, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" command\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 5, \"total_tokens\": 352, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" to\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 6, \"total_tokens\": 353, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" write\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 7, \"total_tokens\": 354, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 8, \"total_tokens\": 355, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 9, \"total_tokens\": 356, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 10, \"total_tokens\": 357, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-b60895d2\", \"object\": \"chat.completion.chunk\", \"created\": 1781058279, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"",
+      "reasoning": "",
+      "status_code": 200,
+      "tool_call_arguments": [
+        "{\"command\": \"echo \\\"REAL_UI_LIVE_TOOL_ONE\\\" > /tmp/REAL_UI_LIVE_TOOL_ONE\"}"
+      ],
+      "tool_call_names": [
+        "run_command"
+      ]
+    },
+    "required_nonstream": {
+      "content": "I'll execute the command to write the the the the the to the the file file",
+      "elapsed_s": 35.213,
+      "error": null,
+      "finish_reason": "tool_calls",
+      "raw_preview": "{\"id\":\"chatcmpl-db5fb033\",\"object\":\"chat.completion\",\"created\":1781058348,\"model\":\"mimo-v25-jang2l-chat-tool-boundary-20260610\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"I'll execute the command to write the the the the the to the the file file\",\"tool_calls\":[{\"id\":\"call_34f6b93d\",\"type\":\"function\",\"function\":{\"name\":\"run_command\",\"arguments\":\"{\\\"command\\\": \\\"echo \\\\\\\"REAL_UI_LIVE_TOOL_ONE\\\\\\\" > /tmp/REAL_UI_LIVE_TOOL_ONE\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":347,\"completion_tokens\":58,\"total_tokens\":405,\"prompt_tokens_details\":{\"cached_tokens\":346,\"cache_detail\":\"paged\"}}}",
+      "status_code": 200,
+      "tool_call_arguments": [
+        "{\"command\": \"echo \\\"REAL_UI_LIVE_TOOL_ONE\\\" > /tmp/REAL_UI_LIVE_TOOL_ONE\"}"
+      ],
+      "tool_call_names": [
+        "run_command"
+      ],
+      "tool_calls": [
+        {
+          "arguments": "{\"command\": \"echo \\\"REAL_UI_LIVE_TOOL_ONE\\\" > /tmp/REAL_UI_LIVE_TOOL_ONE\"}",
+          "id": "call_34f6b93d",
+          "name": "run_command"
+        }
+      ],
+      "usage": {
+        "completion_tokens": 58,
+        "prompt_tokens": 347,
+        "prompt_tokens_details": {
+          "cache_detail": "paged",
+          "cached_tokens": 346
+        },
+        "total_tokens": 405
+      }
+    },
+    "required_stream": {
+      "content": "I'll execute the command to write the the the the the to the the file file<think>",
+      "elapsed_s": 34.687,
+      "error": null,
+      "event_count": 63,
+      "event_types": [
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message",
+        "message"
+      ],
+      "raw_preview": "data: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\"}}]}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"I\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 1, \"total_tokens\": 348, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"'ll\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 2, \"total_tokens\": 349, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" execute\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 3, \"total_tokens\": 350, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 4, \"total_tokens\": 351, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" command\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 5, \"total_tokens\": 352, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" to\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 6, \"total_tokens\": 353, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" write\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 7, \"total_tokens\": 354, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 8, \"total_tokens\": 355, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 9, \"total_tokens\": 356, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"usage\": {\"prompt_tokens\": 347, \"completion_tokens\": 10, \"total_tokens\": 357, \"prompt_tokens_details\": {\"cached_tokens\": 346, \"cache_detail\": \"paged\"}}}\n\ndata: {\"id\": \"chatcmpl-493bc48f\", \"object\": \"chat.completion.chunk\", \"created\": 1781058348, \"model\": \"mimo-v25-jang2l-chat-tool-boundary-20260610\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \" the\"}}], \"",
+      "reasoning": "",
+      "status_code": 200,
+      "tool_call_arguments": [
+        "{\"command\": \"echo \\\"REAL_UI_LIVE_TOOL_ONE\\\" > /tmp/REAL_UI_LIVE_TOOL_ONE\"}"
+      ],
+      "tool_call_names": [
+        "run_command"
+      ]
+    }
+  },
+  "schema": "vmlx-mimo-jang2l-chat-tool-boundary-v1",
+  "served_model_name": "mimo-v25-jang2l-chat-tool-boundary-20260610",
+  "server_log": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/build/chat-tool-captures-20260610/mimo-jang2l-chat-tool-boundary.server.log",
+  "status": "pass",
+  "telemetry": [
+    {
+      "name": "before_launch",
+      "system_memory": {
+        "available_gb": 114.34,
+        "available_gib": 114.34,
+        "percent": 10.7,
+        "total_gb": 128.0,
+        "total_gib": 128.0,
+        "unit": "GiB"
+      },
+      "time": "2026-06-09T19:23:24-0700"
+    },
+    {
+      "name": "after_health",
+      "process": {
+        "num_threads": 33,
+        "pid": 6972,
+        "rss_gb": 27.083,
+        "status": "sleeping"
+      },
+      "system_memory": {
+        "available_gb": 24.65,
+        "available_gib": 24.65,
+        "percent": 80.7,
+        "total_gb": 128.0,
+        "total_gib": 128.0,
+        "unit": "GiB"
+      },
+      "time": "2026-06-09T19:23:47-0700"
+    },
+    {
+      "name": "after_requests",
+      "process": {
+        "num_threads": 34,
+        "pid": 6972,
+        "rss_gb": 26.456,
+        "status": "sleeping"
+      },
+      "system_memory": {
+        "available_gb": 9.13,
+        "available_gib": 9.13,
+        "percent": 92.9,
+        "total_gb": 128.0,
+        "total_gib": 128.0,
+        "unit": "GiB"
+      },
+      "time": "2026-06-09T19:26:22-0700"
+    }
+  ],
+  "tool": {
+    "function": {
+      "description": "Execute a shell command in the working directory. Has a 60 second timeout. Returns stdout, stderr, and exit code.",
+      "name": "run_command",
+      "parameters": {
+        "properties": {
+          "command": {
+            "description": "Shell command to execute (runs via /bin/sh)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command"
+        ],
+        "type": "object"
+      }
+    },
+    "type": "function"
+  }
+}

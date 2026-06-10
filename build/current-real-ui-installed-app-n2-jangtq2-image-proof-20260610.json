@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-10T04:21:48.795Z",
+  "status": "pass",
+  "source_proof": "docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-image-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-image-20260610-chat.png",
+  "repo_dir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "ui_launch_mode": "installed-app",
+  "installed_app_path": "/Applications/vMLX.app",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+  "served_model": "n2-jangtq2-installed-ui-image-20260610",
+  "wire_api": "chat",
+  "server_cache_controls_verified": true,
+  "status_summary": {
+    "visible_assistant_turns_complete": true,
+    "first_assistant_content": "REAL_UI_LIVE",
+    "second_assistant_content": "Red",
+    "send_errors": [],
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false
+  },
+  "media": {
+    "requested_image": true,
+    "persisted_image_attachment": true,
+    "image_expected_regex": "\\bred\\b",
+    "image_semantic_verified": true,
+    "image_verified": true,
+    "assistant_answer": "Red",
+    "num_images_processed": 1
+  },
+  "event_counts": {
+    "stream": 17,
+    "tool": 0,
+    "reasoning_done": 0,
+    "complete": 3
+  },
+  "runtime": {
+    "model_type": "mllm",
+    "active_mb": 103812.6,
+    "peak_mb": 104874.6,
+    "quantization_codec": "turboquant_codebook",
+    "weight_format": "mxtq",
+    "profile": "JANGTQ2",
+    "native_cache_schema": "hybrid_ssm_v1"
+  },
+  "native_cache": {
+    "family": "qwen3_5_moe",
+    "schema": "hybrid_ssm_v1",
+    "cache_type": "hybrid_ssm_typed",
+    "components": [
+      "attention_kv",
+      "ssm_companion_state",
+      "async_rederive"
+    ],
+    "attention_tq_kv_only": true,
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true
+  },
+  "cache": {
+    "cache_hit_requests": 1,
+    "cache_hit_tokens": 18,
+    "cache_hit_tokens_by_detail": {
+      "paged+ssm": 18
+    },
+    "last_cache_execution": {
+      "cache_detail": "paged+ssm",
+      "cached_tokens": 18,
+      "reconstructed": true,
+      "dequantized": true,
+      "reconstruction_ok": true,
+      "dequantization_ok": true
+    },
+    "ram_tokens_cached": 50,
+    "l2_block_tokens_on_disk": 50,
+    "l2_ssm_tokens_on_disk": 68,
+    "l2_tokens_on_disk": 118,
+    "block_disk_hits": 3,
+    "block_disk_writes": 2,
+    "ssm_disk_stores": 2
+  },
+  "proven_surfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "generation_defaults_applied",
+    "installed_app_ui",
+    "l2_disk_storage",
+    "language_leak_check",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "server_cache_controls",
+    "settings_persistence",
+    "vl_image"
+  ],
+  "not_proven": [
+    "N2 audio support",
+    "N2 JANG_1L memory-safe runtime",
+    "public tunnel raw SSE parity",
+    "Developer ID notarized public DMG release"
+  ]
+}

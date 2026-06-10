@@ -1,0 +1,160 @@
+{
+  "status": "pass",
+  "classification": "dev_app_responses_tools_cache_green",
+  "generated_at": "2026-06-10",
+  "model": {
+    "path": "/Users/eric/models/JANGQ-AI/gemma-4-26B-A4B-it-qat-JANG_4M",
+    "served_model": "gemma4-26b-jang4m-dev-ui-responses-tools-20260610",
+    "family": "gemma4",
+    "model_type": "mllm",
+    "row": "Gemma 4 26B A4B QAT JANG_4M"
+  },
+  "artifacts": {
+    "raw_proof": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-responses-tools-cache-20260610-proof.json",
+    "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-responses-tools-cache-20260610-chat.png"
+  },
+  "request_contract": {
+    "wire_api": "responses",
+    "ui_launch_mode": "electron-dev",
+    "builtin_tools_enabled": true,
+    "temperature": 0,
+    "top_p": 1,
+    "max_tokens": 256,
+    "max_tool_iterations": 4,
+    "tool_result_max_chars": 12345,
+    "media_requested": false,
+    "server_cache_controls_checked": true
+  },
+  "tool_loop": {
+    "first_assistant_content": "I have created the file with the text REAL_UI_LIVE_TOOL_ONE.",
+    "second_assistant_content": "I have successfully read the first file and created the second file containing REAL_UI_LIVE_TOOL_TWO. This is the second UI turn.",
+    "visible_assistant_turns_complete": true,
+    "tool_probe_files": {
+      "real_ui_tool_probe_1.txt": "REAL_UI_LIVE_TOOL_ONE\n",
+      "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO\n"
+    },
+    "tool_probe_files_match": true,
+    "responses_tool_followup_lines": [
+      "Responses tool follow-up using previous_response_id=resp_f275aac0854c with 1 function_call_output item(s)",
+      "Responses tool follow-up using previous_response_id=resp_19b5673c442c with 1 function_call_output item(s)"
+    ],
+    "tool_loop_completed_lines": 2
+  },
+  "parser_and_reasoning": {
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "persisted_tool_count": 345,
+    "persisted_reasoning_count": 0,
+    "tool_parser": "gemma4",
+    "reasoning_parser": "gemma4"
+  },
+  "responses_streaming": {
+    "first_turn": {
+      "last_full_content": "I have created the file with the text REAL_UI_LIVE_TOOL_ONE.",
+      "token_count": 277,
+      "prompt_tokens": 2774,
+      "cached_tokens": 320,
+      "cache_detail": "paged+mixed_swa",
+      "tokens_per_second": 85.6,
+      "prefill_tokens_per_second": 3556.4,
+      "ttft_seconds": 0.78
+    },
+    "second_turn": {
+      "last_full_content": "I have successfully read the first file and created the second file containing REAL_UI_LIVE_TOOL_TWO. This is the second UI turn.",
+      "token_count": 123,
+      "prompt_tokens": 3049,
+      "cached_tokens": 2688,
+      "cache_detail": "paged+mixed_swa",
+      "tokens_per_second": 85.6,
+      "prefill_tokens_per_second": 9295.7,
+      "ttft_seconds": 0.33
+    }
+  },
+  "runtime": {
+    "memory": {
+      "active_mb": 17782.0,
+      "peak_mb": 19943.9,
+      "cache_mb": 917.8
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "jang_affine",
+      "backend": "mx.quantize",
+      "profile": "JANG_4M",
+      "target_bits": 8,
+      "config_bits": 8,
+      "group_size": 32,
+      "passthrough_tensor_count": 718,
+      "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+      "uses_mlx_quantized_matmul": true,
+      "metal_na_eligible": true,
+      "sidecar_jang_config": true,
+      "sidecar_jangtq_runtime": false,
+      "prestacked_bundle": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv_enabled": false,
+      "generic_turboquant_kv_reason": "not_active",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache": {
+      "cache_hit_requests": 3,
+      "cache_hit_tokens": 3538,
+      "cache_hit_tokens_by_detail": {
+        "paged+mixed_swa": 3538
+      },
+      "ram_tokens_cached": 3559,
+      "l2_block_tokens_on_disk": 3559,
+      "l2_tokens_on_disk": 3559,
+      "l2_tokens_on_disk_store_sum": 3559,
+      "block_disk_writes": 58,
+      "block_disk_hits": 30,
+      "block_disk_evictions": 0,
+      "blocks_on_disk": 58
+    }
+  },
+  "positive_surfaces": [
+    "current_electron_dev_build",
+    "real_loaded_model",
+    "responses_api",
+    "responses_delta_streaming",
+    "responses_cache_detail_usage",
+    "builtin_run_command_tool",
+    "previous_response_id_tool_followup",
+    "tool_l2_cache_integrated",
+    "generation_defaults_applied",
+    "parser_leak_check",
+    "language_leak_check",
+    "server_cache_controls",
+    "native_cache_status",
+    "cache_hit_telemetry",
+    "l2_disk_storage"
+  ],
+  "release_boundary": {
+    "clears": [
+      "Gemma 4 26B A4B QAT JANG_4M current Electron dev-build Responses built-in tool loop",
+      "Gemma 4 26B A4B QAT JANG_4M previous_response_id tool-result continuation",
+      "Gemma 4 26B A4B QAT JANG_4M Responses delta/cache-detail surface in this app run",
+      "Gemma 4 26B A4B QAT JANG_4M mixed-SWA paged prefix/L2 telemetry in this tool run"
+    ],
+    "does_not_clear": [
+      "Gemma 4 26B image/video/audio",
+      "installed-app parity for this 26B row",
+      "public tunnel raw SSE parity",
+      "package/sign/notarize/tag/upload/download",
+      "full release readiness"
+    ],
+    "release_ready": false
+  }
+}

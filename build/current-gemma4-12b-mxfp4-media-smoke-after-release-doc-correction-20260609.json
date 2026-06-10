@@ -1,0 +1,399 @@
+{
+  "created_at": "2026-06-09T17:01:17-0700",
+  "status": "pass",
+  "checks": {
+    "all_rows_passed": true,
+    "at_least_one_row_ran": true
+  },
+  "rows": {
+    "mxfp4_image": {
+      "row": "mxfp4",
+      "media": "image",
+      "model_path": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4",
+      "served_name": "gemma4-12b-mxfp4-media-smoke",
+      "status": "pass",
+      "checks": {
+        "capabilities_ok": true,
+        "vision_advertised": true,
+        "chat_ok": true,
+        "visible_answer": true,
+        "red_detected": true,
+        "no_channel_leak": true
+      },
+      "failures": [],
+      "server_log": "build/current-gemma4-12b-mxfp4-media-smoke-after-release-doc-correction-20260609_artifacts/mxfp4_image_server.log",
+      "command": [
+        "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+        "-B",
+        "-s",
+        "-P",
+        "-m",
+        "vmlx_engine.cli",
+        "serve",
+        "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4",
+        "--served-model-name",
+        "gemma4-12b-mxfp4-media-smoke",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8892",
+        "--reasoning-parser",
+        "gemma4",
+        "--tool-call-parser",
+        "gemma4",
+        "--enable-auto-tool-choice",
+        "--default-enable-thinking",
+        "false",
+        "--log-level",
+        "INFO",
+        "--no-continuous-batching",
+        "--disable-prefix-cache",
+        "--kv-cache-quantization",
+        "none",
+        "--disable-native-mtp"
+      ],
+      "health": {
+        "ok": true,
+        "body": {
+          "status": "healthy",
+          "model_loaded": true,
+          "model_name": "OsaurusAI/gemma-4-12B-it-MXFP4",
+          "model_type": "mllm",
+          "engine_type": "simple",
+          "last_request_time": null,
+          "mcp": null,
+          "memory": {
+            "active_mb": 7544.9,
+            "peak_mb": 7544.9,
+            "cache_mb": 0.0
+          },
+          "speculative_decoding": "not_configured",
+          "quantization_format": {
+            "type": "jang",
+            "target_bits": null,
+            "actual_bits": null,
+            "block_size": 64
+          },
+          "quantization": {
+            "codec": "affine_quantized_matmul",
+            "weight_format": "mxfp4",
+            "backend": "mx.quantize",
+            "profile": "MXFP4",
+            "target_bits": 4,
+            "config_bits": 4,
+            "group_size": 32,
+            "passthrough_bit_widths_used": [
+              16
+            ],
+            "passthrough_tensor_count": 349,
+            "weight_index": {
+              "index_file": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4/model.safetensors.index.json",
+              "total_tensors": 1005,
+              "suffix_counts": {
+                "scales": 328,
+                "weight": 624
+              },
+              "tq_target_counts": {},
+              "routed_layout_counts": {
+                "prestacked_switch": 0,
+                "split_expert": 0
+              },
+              "mtp_tensor_count": 0
+            },
+            "weight_matmul_dispatch": {
+              "primary": "mlx_affine_quantized_matmul",
+              "uses_mlx_quantized_matmul": true,
+              "metal_na_eligible": true,
+              "reason": null
+            },
+            "sidecar": {
+              "jang_config": true,
+              "jangtq_runtime": false,
+              "prestacked_bundle": false
+            }
+          },
+          "acceleration": {
+            "kernel_type": "affine_quantized_matmul",
+            "metal_na_capable": true,
+            "metal_na_active_on_host": true,
+            "reason": null,
+            "metal_na_symbols": {
+              "available": true,
+              "nax_symbols": 4668,
+              "naxtile_symbols": 4154,
+              "affine_qmm_symbols": 4212,
+              "affine_gather_qmm_symbols": 3456
+            },
+            "host": {
+              "supported": true,
+              "brand": "Apple M5 Max",
+              "reason": null
+            }
+          },
+          "mtp": {
+            "config_num_nextn_predict_layers": null,
+            "config_mtp_layer_source": null,
+            "jang_mtp_layers": null,
+            "jang_drop_mtp": null,
+            "index_has_mtp_tensors": false,
+            "index_mtp_layer_count": null,
+            "mtp_tensor_count": 0,
+            "artifact_available": false,
+            "family": "gemma4",
+            "has_vision_config": true,
+            "has_vision_weights": false,
+            "vision_tensor_count": 0,
+            "cache_type": "kv",
+            "runtime_supported": false,
+            "runtime_available": false,
+            "runtime_active": false,
+            "runtime_validation_blocked": false,
+            "effective_depth": null,
+            "effective_depth_source": null,
+            "runtime_scope": null,
+            "vl_runtime_available": false,
+            "runtime_bundle_has_mtp": null,
+            "runtime_mtp_mode": null,
+            "runtime_reason": "config does not request MTP",
+            "status": "not_configured",
+            "issues": [],
+            "request_policy": "disabled",
+            "request_gate": "temperature=0,repetition_penalty=1.0"
+          },
+          "turboquant_kv_cache": {
+            "enabled": false
+          },
+          "native_cache": {
+            "family": "gemma4",
+            "schema": "plain_kv_v1",
+            "cache_type": "paged_kv",
+            "components": [
+              "attention_kv"
+            ],
+            "generic_turboquant_kv": {
+              "enabled": false,
+              "reason": "not_active"
+            },
+            "storage_quantization": {
+              "enabled": false,
+              "bits": null,
+              "group_size": null
+            },
+            "prefix": false,
+            "paged": false,
+            "block_disk_l2": false
+          }
+        },
+        "elapsed_sec": 6.254
+      },
+      "capabilities": {
+        "code": 200,
+        "body": {
+          "id": "gemma4-12b-mxfp4-media-smoke",
+          "loaded_model": "gemma4-12b-mxfp4-media-smoke",
+          "model_path": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4",
+          "family": "gemma4",
+          "compat_warnings": [],
+          "supports_tools": true,
+          "tool_parser": "gemma4",
+          "supports_thinking": true,
+          "reasoning_parser": "gemma4",
+          "think_in_template": false,
+          "supported_modes": [
+            "instruct",
+            "reasoning"
+          ],
+          "experimental_modes": [],
+          "reasoning_efforts": [],
+          "modalities": [
+            "text",
+            "vision",
+            "video"
+          ],
+          "media": {
+            "runtime_modalities": [
+              "text",
+              "vision",
+              "video"
+            ],
+            "declared_modalities": [
+              "text",
+              "vision",
+              "image",
+              "video",
+              "audio"
+            ],
+            "preserved_modalities": [],
+            "unwired_modalities": [],
+            "memory_gate": {
+              "applicable": false,
+              "safe": true,
+              "reason": "not_mimo_v2"
+            },
+            "status_by_modality": {
+              "audio": "declared_not_runtime_supported",
+              "image": "runtime_supported",
+              "text": "runtime_supported",
+              "video": "runtime_supported",
+              "vision": "runtime_supported"
+            }
+          },
+          "cache": {
+            "prefix": false,
+            "type": "disabled",
+            "paged": false,
+            "block_disk_l2": false,
+            "dsv4_composite_state": false,
+            "native": {
+              "family": "gemma4",
+              "schema": "plain_kv_v1",
+              "cache_type": "paged_kv",
+              "components": [
+                "attention_kv"
+              ],
+              "generic_turboquant_kv": {
+                "enabled": false,
+                "reason": "not_active"
+              },
+              "storage_quantization": {
+                "enabled": false,
+                "bits": null,
+                "group_size": null
+              },
+              "prefix": false,
+              "paged": false,
+              "block_disk_l2": false
+            }
+          },
+          "quantization": {
+            "codec": "affine_quantized_matmul",
+            "weight_format": "mxfp4",
+            "backend": "mx.quantize",
+            "profile": "MXFP4",
+            "target_bits": 4,
+            "config_bits": 4,
+            "group_size": 32,
+            "passthrough_bit_widths_used": [
+              16
+            ],
+            "passthrough_tensor_count": 349,
+            "weight_index": {
+              "index_file": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4/model.safetensors.index.json",
+              "total_tensors": 1005,
+              "suffix_counts": {
+                "scales": 328,
+                "weight": 624
+              },
+              "tq_target_counts": {},
+              "routed_layout_counts": {
+                "prestacked_switch": 0,
+                "split_expert": 0
+              },
+              "mtp_tensor_count": 0
+            },
+            "weight_matmul_dispatch": {
+              "primary": "mlx_affine_quantized_matmul",
+              "uses_mlx_quantized_matmul": true,
+              "metal_na_eligible": true,
+              "reason": null
+            },
+            "sidecar": {
+              "jang_config": true,
+              "jangtq_runtime": false,
+              "prestacked_bundle": false
+            }
+          },
+          "acceleration": {
+            "kernel_type": "affine_quantized_matmul",
+            "metal_na_capable": true,
+            "metal_na_active_on_host": true,
+            "reason": null,
+            "metal_na_symbols": {
+              "available": true,
+              "nax_symbols": 4668,
+              "naxtile_symbols": 4154,
+              "affine_qmm_symbols": 4212,
+              "affine_gather_qmm_symbols": 3456
+            },
+            "host": {
+              "supported": true,
+              "brand": "Apple M5 Max",
+              "reason": null
+            }
+          },
+          "mtp": {
+            "config_num_nextn_predict_layers": null,
+            "config_mtp_layer_source": null,
+            "jang_mtp_layers": null,
+            "jang_drop_mtp": null,
+            "index_has_mtp_tensors": false,
+            "index_mtp_layer_count": null,
+            "mtp_tensor_count": 0,
+            "artifact_available": false,
+            "family": "gemma4",
+            "has_vision_config": true,
+            "has_vision_weights": false,
+            "vision_tensor_count": 0,
+            "cache_type": "kv",
+            "runtime_supported": false,
+            "runtime_available": false,
+            "runtime_active": false,
+            "runtime_validation_blocked": false,
+            "effective_depth": null,
+            "effective_depth_source": null,
+            "runtime_scope": null,
+            "vl_runtime_available": false,
+            "runtime_bundle_has_mtp": null,
+            "runtime_mtp_mode": null,
+            "runtime_reason": "config does not request MTP",
+            "status": "not_configured",
+            "issues": [],
+            "request_policy": "disabled",
+            "request_gate": "temperature=0,repetition_penalty=1.0"
+          },
+          "routing": null,
+          "sampling_defaults": {
+            "temperature": 1.0,
+            "top_p": 0.95,
+            "top_k": 64.0
+          }
+        },
+        "raw_tail": "{\"id\":\"gemma4-12b-mxfp4-media-smoke\",\"loaded_model\":\"gemma4-12b-mxfp4-media-smoke\",\"model_path\":\"/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\",\"family\":\"gemma4\",\"compat_warnings\":[],\"supports_tools\":true,\"tool_parser\":\"gemma4\",\"supports_thinking\":true,\"reasoning_parser\":\"gemma4\",\"think_in_template\":false,\"supported_modes\":[\"instruct\",\"reasoning\"],\"experimental_modes\":[],\"reasoning_efforts\":[],\"modalities\":[\"text\",\"vision\",\"video\"],\"media\":{\"runtime_modalities\":[\"text\",\"vision\",\"video\"],\"declared_modalities\":[\"text\",\"vision\",\"image\",\"video\",\"audio\"],\"preserved_modalities\":[],\"unwired_modalities\":[],\"memory_gate\":{\"applicable\":false,\"safe\":true,\"reason\":\"not_mimo_v2\"},\"status_by_modality\":{\"audio\":\"declared_not_runtime_supported\",\"image\":\"runtime_supported\",\"text\":\"runtime_supported\",\"video\":\"runtime_supported\",\"vision\":\"runtime_supported\"}},\"cache\":{\"prefix\":false,\"type\":\"disabled\",\"paged\":false,\"block_disk_l2\":false,\"dsv4_composite_state\":false,\"native\":{\"family\":\"gemma4\",\"schema\":\"plain_kv_v1\",\"cache_type\":\"paged_kv\",\"components\":[\"attention_kv\"],\"generic_turboquant_kv\":{\"enabled\":false,\"reason\":\"not_active\"},\"storage_quantization\":{\"enabled\":false,\"bits\":null,\"group_size\":null},\"prefix\":false,\"paged\":false,\"block_disk_l2\":false}},\"quantization\":{\"codec\":\"affine_quantized_matmul\",\"weight_format\":\"mxfp4\",\"backend\":\"mx.quantize\",\"profile\":\"MXFP4\",\"target_bits\":4,\"config_bits\":4,\"group_size\":32,\"passthrough_bit_widths_used\":[16],\"passthrough_tensor_count\":349,\"weight_index\":{\"index_file\":\"/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4/model.safetensors.index.json\",\"total_tensors\":1005,\"suffix_counts\":{\"scales\":328,\"weight\":624},\"tq_target_counts\":{},\"routed_layout_counts\":{\"prestacked_switch\":0,\"split_expert\":0},\"mtp_tensor_count\":0},\"weight_matmul_dispatch\":{\"primary\":\"mlx_affine_quantized_matmul\",\"uses_mlx_quantized_matmul\":true,\"metal_na_eligible\":true,\"reason\":null},\"sidecar\":{\"jang_config\":true,\"jangtq_runtime\":false,\"prestacked_bundle\":false}},\"acceleration\":{\"kernel_type\":\"affine_quantized_matmul\",\"metal_na_capable\":true,\"metal_na_active_on_host\":true,\"reason\":null,\"metal_na_symbols\":{\"available\":true,\"nax_symbols\":4668,\"naxtile_symbols\":4154,\"affine_qmm_symbols\":4212,\"affine_gather_qmm_symbols\":3456},\"host\":{\"supported\":true,\"brand\":\"Apple M5 Max\",\"reason\":null}},\"mtp\":{\"config_num_nextn_predict_layers\":null,\"config_mtp_layer_source\":null,\"jang_mtp_layers\":null,\"jang_drop_mtp\":null,\"index_has_mtp_tensors\":false,\"index_mtp_layer_count\":null,\"mtp_tensor_count\":0,\"artifact_available\":false,\"family\":\"gemma4\",\"has_vision_config\":true,\"has_vision_weights\":false,\"vision_tensor_count\":0,\"cache_type\":\"kv\",\"runtime_supported\":false,\"runtime_available\":false,\"runtime_active\":false,\"runtime_validation_blocked\":false,\"effective_depth\":null,\"effective_depth_source\":null,\"runtime_scope\":null,\"vl_runtime_available\":false,\"runtime_bundle_has_mtp\":null,\"runtime_mtp_mode\":null,\"runtime_reason\":\"config does not request MTP\",\"status\":\"not_configured\",\"issues\":[],\"request_policy\":\"disabled\",\"request_gate\":\"temperature=0,repetition_penalty=1.0\"},\"routing\":null,\"sampling_defaults\":{\"temperature\":1.0,\"top_p\":0.95,\"top_k\":64.0}}"
+      },
+      "chat": {
+        "code": 200,
+        "elapsed_sec": 0.394,
+        "body": {
+          "id": "chatcmpl-44c242ef",
+          "object": "chat.completion",
+          "created": 1781049677,
+          "model": "gemma4-12b-mxfp4-media-smoke",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Red",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 281,
+            "completion_tokens": 6,
+            "total_tokens": 287,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-44c242ef\",\"object\":\"chat.completion\",\"created\":1781049677,\"model\":\"gemma4-12b-mxfp4-media-smoke\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Red\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":281,\"completion_tokens\":6,\"total_tokens\":287,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "Red"
+      },
+      "server_returncode": -15,
+      "server_log_tail": "INFO:vmlx_engine.model_config_registry:Model config: detection_source=jang_stamped family=gemma4 reasoning_parser=gemma4 tool_parser=gemma4 think_in_template=False cache_type=kv cache_subtype=None is_mllm=True\nINFO:__main__:--kv-cache-quantization=none explicit; VMLX_DISABLE_TQ_KV=1 set so JANG-calibrated TurboQuant KV is skipped at load time. Omit the flag (or set VMLX_FORCE_TQ_AUTO=1) to keep the bundle's calibrated TQ.\nINFO:__main__:Reasoning parser enabled: gemma4\n============================================================\nSECURITY CONFIGURATION\n============================================================\n  Authentication: DISABLED - Use --api-key to enable\n  Rate limiting: DISABLED - Use --rate-limit to enable\n  Request timeout: 300.0s\n  Tool calling: ENABLED (parser: gemma4)\n  Reasoning: ENABLED (parser: Gemma4ReasoningParser)\n  External speculative decoding: Use --speculative-model to enable\n============================================================\nLoading model: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nServed model name: gemma4-12b-mxfp4-media-smoke\nMax output fallback: 4096 (bundle max_new_tokens wins when present)\nMode: Simple (maximum throughput)\nINFO:vmlx_engine.server:Serving model as: gemma4-12b-mxfp4-media-smoke (actual: OsaurusAI/gemma-4-12B-it-MXFP4)\nINFO:vmlx_engine.server:System memory before load: 112.0GB available / 128.0GB total (12.5% used)\nINFO:vmlx_engine.server:Loading model with SimpleEngine: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nINFO:vmlx_engine:is_mllm_model(/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4): tier=config_json_vision_config result=True\nINFO:vmlx_engine.models.mllm:Loading JANG VL model: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nINFO:vmlx_engine.utils.jang_loader:JANG v2 VLM detected \u2014 loading via mmap (instant)\nINFO:vmlx_engine.utils.jang_loader:  Wired limit set to 25 GB (model 8 GB)\nINFO:vmlx_engine.utils.jang_loader:  TurboQuant KV skipped: VMLX_DISABLE_TQ_KV=1; using native model cache plus scheduler-level q4/q8 storage only when explicitly requested and compatible.\nINFO:vmlx_engine.utils.jang_loader:JANG v2 VLM loaded in 1.4s\n[transformers] You are using a model of type `gemma4_unified` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.\nINFO:vmlx_engine.models.mllm:JANG VL model loaded: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nINFO:vmlx_engine.engine.simple:SimpleEngine loaded: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 (MLLM=True)\nINFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=7.4GB max=107.5GB reason=simple_engine_start\nINFO:vmlx_engine.server:MLLM model loaded (simple mode): /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nINFO:vmlx_engine.server:Metal GPU memory after load: 7.37GB active, 7.37GB peak\nINFO:vmlx_engine.server:System memory after load: 104.1GB available (18.7% used)\nINFO:vmlx_engine.server:Native tool format enabled for parser: gemma4\nINFO:vmlx_engine.server:Default max tokens fallback: 4096 (bundle max_new_tokens wins when present)\nStarting server at http://127.0.0.1:8892\nINFO:     Started server process [17071]\nINFO:     Waiting for application startup.\nINFO:vmlx_engine.server:Started caffeinate system wake lock for PID 17071\nINFO:vmlx_engine.mcp.config:No MCP config file found, using empty config\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://127.0.0.1:8892 (Press CTRL+C to quit)\nINFO:     127.0.0.1:57483 - \"GET /health HTTP/1.1\" 200 OK\nWARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.\nINFO:     127.0.0.1:57484 - \"GET /v1/models/gemma4-12b-mxfp4-media-smoke/capabilities HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:[MEDIA_DIAG] request_shape={\"engine_is_mllm\": true, \"family\": \"gemma4\", \"media\": {\"content_arrays\": 1, \"data_url\": 1, \"messages\": 1, \"missing_source\": 0, \"roles\": {\"user\": 1}, \"total\": 1, \"types\": {\"image_url\": 1}, \"url_or_path\": 0}, \"model\": \"gemma-4-12B-it-MXFP4\", \"omni_modalities\": null, \"registry_is_mllm\": true, \"route\": \"/v1/chat/completions\"}\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 32, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 1 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'image'}, {'type': 'text', 'text': 'The image is a solid color. Answer...\nINFO:vmlx_engine.models.mllm:[PREFIX CACHE] Stored KV cache for 1 image(s) (281 prompt tokens)\nINFO:vmlx_engine.server:Chat completion: 6 tokens in 0.39s (15.4 tok/s)\nINFO:     127.0.0.1:57485 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:vmlx_engine.engine.simple:SimpleEngine stopped\nINFO:vmlx_engine.server:Engine stopped\nINFO:vmlx_engine.server:Caffeinate process terminated\nINFO:     Application shutdown complete.\nINFO:     Finished server process [17071]\n"
+    }
+  }
+}

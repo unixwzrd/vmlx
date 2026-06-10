@@ -1,0 +1,152 @@
+{
+  "status": "pass",
+  "classification": "dev_app_exact_text_json_green",
+  "generated_at": "2026-06-10",
+  "model": {
+    "path": "/Users/eric/models/JANGQ-AI/gemma-4-26B-A4B-it-qat-JANG_4M",
+    "served_model": "gemma4-26b-jang4m-dev-ui-exact-output-20260610",
+    "family": "gemma4",
+    "model_type": "mllm",
+    "row": "Gemma 4 26B A4B QAT JANG_4M"
+  },
+  "artifacts": {
+    "raw_proof": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-exact-output-20260610-proof.json",
+    "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-exact-output-20260610-chat.png"
+  },
+  "request_contract": {
+    "wire_api": "chat",
+    "ui_launch_mode": "electron-dev",
+    "temperature": 0,
+    "top_p": 1,
+    "max_tokens": 64,
+    "builtin_tools_enabled": false,
+    "media_requested": false,
+    "server_cache_controls_checked": true
+  },
+  "exact_output": {
+    "text": {
+      "expected": "GEMMA26-JANG4M-ACK-742",
+      "actual": "GEMMA26-JANG4M-ACK-742",
+      "matched": true
+    },
+    "json": {
+      "expected": "{\"status\":\"ok\",\"value\":\"gemma26-jang4m-blue\"}",
+      "actual": "{\"status\":\"ok\",\"value\":\"gemma26-jang4m-blue\"}",
+      "matched": true
+    }
+  },
+  "parser_and_reasoning": {
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "persisted_tool_count": 0,
+    "persisted_reasoning_count": 0,
+    "visible_assistant_turns_complete": true,
+    "tool_parser": "gemma4",
+    "reasoning_parser": "gemma4"
+  },
+  "streaming": {
+    "first_turn": {
+      "last_full_content": "GEMMA26-JANG4M-ACK-742",
+      "token_count": 19,
+      "prompt_tokens": 30,
+      "cached_tokens": 0,
+      "tokens_per_second": 90.3,
+      "prefill_tokens_per_second": 114.1,
+      "ttft_seconds": 0.26
+    },
+    "second_turn": {
+      "last_full_content": "{\"status\":\"ok\",\"value\":\"gemma26-jang4m-blue\"}",
+      "token_count": 22,
+      "prompt_tokens": 82,
+      "cached_tokens": 29,
+      "cache_detail": "paged+mixed_swa",
+      "tokens_per_second": 89.5,
+      "prefill_tokens_per_second": 522.3,
+      "ttft_seconds": 0.16
+    }
+  },
+  "runtime": {
+    "memory": {
+      "active_mb": 17650.5,
+      "peak_mb": 17842.9,
+      "cache_mb": 93.4
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "jang_affine",
+      "backend": "mx.quantize",
+      "profile": "JANG_4M",
+      "target_bits": 8,
+      "config_bits": 8,
+      "group_size": 32,
+      "passthrough_tensor_count": 718,
+      "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+      "uses_mlx_quantized_matmul": true,
+      "metal_na_eligible": true,
+      "sidecar_jang_config": true,
+      "sidecar_jangtq_runtime": false,
+      "prestacked_bundle": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv_enabled": false,
+      "generic_turboquant_kv_reason": "not_active",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache": {
+      "cache_hit_requests": 1,
+      "cache_hit_tokens": 29,
+      "cache_hit_tokens_by_detail": {
+        "paged+mixed_swa": 29
+      },
+      "ram_tokens_cached": 81,
+      "l2_block_tokens_on_disk": 81,
+      "l2_tokens_on_disk": 81,
+      "l2_tokens_on_disk_store_sum": 81,
+      "block_disk_writes": 2,
+      "block_disk_hits": 0,
+      "blocks_on_disk": 2
+    }
+  },
+  "positive_surfaces": [
+    "current_electron_dev_build",
+    "real_loaded_model",
+    "chat_completions",
+    "exact_text_output",
+    "exact_json_output",
+    "generation_defaults_applied",
+    "parser_leak_check",
+    "language_leak_check",
+    "server_cache_controls",
+    "native_cache_status",
+    "cache_hit_telemetry",
+    "l2_disk_storage"
+  ],
+  "release_boundary": {
+    "clears": [
+      "Gemma 4 26B A4B QAT JANG_4M current Electron dev-build exact text output",
+      "Gemma 4 26B A4B QAT JANG_4M current Electron dev-build exact JSON output",
+      "Gemma 4 26B A4B QAT JANG_4M mixed-SWA paged prefix/L2 telemetry for this no-media run"
+    ],
+    "does_not_clear": [
+      "Gemma 4 26B tools or Responses API loops",
+      "Gemma 4 26B image/video/audio",
+      "Gemma 4 31B",
+      "installed-app parity for this 26B row",
+      "public tunnel raw SSE parity",
+      "package/sign/notarize/tag/upload/download",
+      "full release readiness"
+    ],
+    "release_ready": false
+  }
+}

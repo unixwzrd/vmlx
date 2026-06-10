@@ -1,0 +1,108 @@
+{
+  "schema": "vmlx.real_ui_model_proof_summary.v1",
+  "status": "fail",
+  "generated_at": "2026-06-10T02:48:00Z",
+  "model": {
+    "path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "profile": "JANG_2L",
+    "served_model_names": [
+      "mimo-v25-jang2l-dev-ui-tools-cache-after-toolchoice-20260610",
+      "mimo-v25-jang2l-dev-ui-tools-cache-after-toolchoice-strict-20260610"
+    ]
+  },
+  "source_fix": {
+    "files": [
+      "panel/src/main/ipc/chat.ts",
+      "panel/tests/request-builder.test.ts"
+    ],
+    "summary": "When built-in tools are enabled and the latest user message explicitly names exactly one available tool, the panel now sends a specific tool_choice for Chat Completions and Responses. Multiple named tools and no explicit tool name remain unpinned.",
+    "reason": "Direct MiMo JANG_2L probes showed single-tool auto mode and full-surface required mode can call run_command, while full panel auto mode can exceed the prompt/context budget or overload tool selection."
+  },
+  "direct_server_boundary": {
+    "single_tool_artifact": "build/current-mimo-v25-jang2l-chat-tool-boundary-20260610.json",
+    "single_tool_status": "pass",
+    "single_tool_checks": {
+      "auto_mode_tool_call_present": true,
+      "required_mode_tool_call_present": true,
+      "cache_positive": true
+    },
+    "full_panel_artifact": "build/current-mimo-v25-jang2l-chat-tool-boundary-fulltools-20260610.json",
+    "full_panel_status": "fail",
+    "full_panel_checks": {
+      "auto_mode_tool_call_present": false,
+      "required_mode_tool_call_present": true,
+      "cache_positive": true
+    },
+    "full_panel_auto_failure": "Full panel auto nonstream returned HTTP 413 and stream logged prompt_too_long at 4754 tokenized prompt tokens with max 4096. Required/specific run_command still produced a tool call."
+  },
+  "app_attempts": [
+    {
+      "artifact": "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-chat-tools-cache-after-toolchoice-20260610-proof.json",
+      "status": "fail",
+      "assertion_failures": [
+        "requested real built-in tools but proof did not record long_tool_loop surface"
+      ],
+      "positive_surfaces": [
+        "current_electron_dev_build",
+        "real_loaded_model",
+        "chat_completions",
+        "parser_leak_check",
+        "language_leak_check",
+        "cache_hit_telemetry",
+        "native_cache_status",
+        "l2_disk_storage",
+        "server_cache_controls",
+        "settings_persistence",
+        "generation_defaults_applied"
+      ],
+      "event_counts": {
+        "stream": 144,
+        "tool": 90,
+        "complete": 2
+      },
+      "tool_result": "run_command executed on both turns, but MiMo mutated requested file/content semantics.",
+      "observed_first_assistant": "REAL_UI_LAND_TOOL_ONE has been written to `/tmp/real_ui_land_tool_one.txt. The command successfully created the file with the specified content.",
+      "observed_second_assistant": "REAL_UI_LIVE_TOOL_TWO has been written to /tmp/real_ui_land_tool_two.txt. The command successfully created the file with the specified content.",
+      "expected_probe_files_created": false,
+      "cache": {
+        "cached_tokens": 2344,
+        "cache_detail": "paged",
+        "l2_block_tokens_on_disk": 1074,
+        "disk_writes": 18
+      }
+    },
+    {
+      "artifact": "docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-chat-tools-cache-after-toolchoice-strict-20260610-proof.json",
+      "status": "fail",
+      "assertion_failures": [
+        "UI turn ended with empty visible assistant content",
+        "requested real built-in tools but proof did not record long_tool_loop surface"
+      ],
+      "prompt_shape": "Explicit exact printf/cat shell commands with fixed working directory /tmp/vmlx-mimo-jang2l-toolproof-after-toolchoice-20260610.",
+      "observed_first_assistant": "The user wants me to run run a specific command with the exact argument:",
+      "observed_second_assistant": "",
+      "expected_probe_files_created": false,
+      "event_counts": {
+        "stream": 69,
+        "tool": 136,
+        "complete": 2
+      }
+    }
+  ],
+  "proven": [
+    "MiMo JANG_2L loads in the real Electron dev-app harness on the 128GB host.",
+    "The panel request fix emits specific tool_choice only for explicit single built-in tool names.",
+    "The app can execute MiMo-generated run_command tool calls after the fix.",
+    "MiMo JANG_2L app runs expose mixed_swa_kv_v1 / mimo_v2_asymmetric_swa native cache, paged cache hits, and block-disk L2 writes.",
+    "No raw parser/tool markup leak or reasoning language leak was observed in the app attempts."
+  ],
+  "not_proven": [
+    "MiMo JANG_2L robust app tool exactness.",
+    "MiMo JANG_2L long_tool_loop release surface.",
+    "MiMo JANG_2L Responses API tool path.",
+    "MiMo JANG_2L fresh-process L2 restore.",
+    "MiMo JANG_2L VL/audio/video runtime.",
+    "Installed-app parity and signed DMG release readiness for this fix."
+  ],
+  "release_boundary": "This is a scoped fix and proof summary. It does not clear MiMo JANG_2L for robust checkpoint tool use and does not authorize package/sign/notarize/tag/download release actions."
+}

@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-10T04:33:54.187Z",
+  "status": "fail",
+  "failure_stage": "audio_send_message",
+  "scope": "local rebuilt installed app Gemma 12B QAT MXFP4 audio boundary",
+  "app_path": "/Applications/vMLX.app",
+  "ui_launch_mode": "installed-app",
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4",
+  "served_model": "gemma4-12b-mxfp4-installed-ui-audio-20260610",
+  "wire_api": "chat",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-audio-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-audio-20260610-chat.png",
+  "positive_evidence": {
+    "installed_app_ui": true,
+    "real_loaded_model": true,
+    "model_type": "mllm",
+    "visible_text_turns_before_audio": true,
+    "audio_attachment_attempted": true,
+    "server_media_diag_saw_input_audio": true,
+    "server_cache_controls": true,
+    "chat_completions": true,
+    "generation_defaults_applied": true,
+    "parser_leak_check": true,
+    "reasoning_leak_check": true
+  },
+  "runtime": {
+    "loaded_family": "gemma4",
+    "active_memory_mb": 7562.3,
+    "peak_memory_mb": 7872.4,
+    "quantization_type": "jang",
+    "quantization_codec": "affine_quantized_matmul",
+    "weight_format": "mxfp4",
+    "profile": "MXFP4",
+    "kernel_type": "affine_quantized_matmul",
+    "metal_na_active_on_host": true,
+    "mtp_status": "not_configured",
+    "mtp_runtime_active": false
+  },
+  "cache": {
+    "native_cache_schema": "mixed_swa_kv_v1",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "generic_turboquant_kv": false,
+    "generic_turboquant_kv_reason": "mixed sliding/full attention model uses native RotatingKVCache metadata",
+    "cache_detail": "paged+mixed_swa",
+    "cached_tokens": 20,
+    "l2_block_tokens_on_disk": 70,
+    "l2_ssm_tokens_on_disk": 0,
+    "l2_tokens_on_disk": 70,
+    "block_disk_hits": 0,
+    "block_disk_writes": 2
+  },
+  "red_boundary": {
+    "audio_supported": false,
+    "api_status": 400,
+    "error": "/v1/chat/completions received unsupported media modality audio. Supported modalities: text, vision, video.",
+    "classification": "honest unsupported-modality guard, not load/cache/L2 failure"
+  },
+  "release_boundary": {
+    "clears_installed_app_audio_support": false,
+    "clears_installed_app_audio_gate_classification": true,
+    "clears_gemma_mxfp4_text_tools_cache": false,
+    "clears_gemma_mxfp4_image_video": false,
+    "clears_public_tunnel_sse": false,
+    "clears_dmg_package_sign_notarize": false,
+    "release_ready": false
+  }
+}

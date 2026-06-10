@@ -1,0 +1,78 @@
+{
+  "status": "pass",
+  "generated_at": "2026-06-10",
+  "proof_kind": "real_ui_dev_app_video_vl",
+  "ui_launch_mode": "electron-dev",
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M",
+  "served_model": "gemma4-31b-jang4m-dev-ui-video-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-video-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-video-20260610-chat.png",
+  "request": {
+    "wire_api": "chat",
+    "max_tokens": 128,
+    "max_prompt_tokens": 12000,
+    "temperature": 0,
+    "top_p": 1,
+    "video_fixture": "build/media-fixtures/red-64x64-1s.mp4",
+    "video_expected_regex": "red|solid"
+  },
+  "proven": {
+    "visible_text_turns_completed": true,
+    "persisted_video_attachment": true,
+    "server_media_diag_video_url": true,
+    "base64_video_decoded": true,
+    "video_frames_extracted": 4,
+    "frame_through_vision_fallback": true,
+    "video_semantic_verified": true,
+    "assistant_video_answer": "The provided image is a solid red square.",
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "persisted_tool_count": 0,
+    "persisted_reasoning_count": 0
+  },
+  "runtime": {
+    "family": "gemma4",
+    "weight_format": "jang_affine",
+    "profile": "JANG_4M",
+    "tool_parser": "gemma4",
+    "reasoning_parser": "gemma4",
+    "active_memory_mb": 25842.8,
+    "peak_memory_mb": 26233.1,
+    "cache_memory_mb": 13.2,
+    "metal_na_eligible": true,
+    "metal_na_active_on_host": true
+  },
+  "cache": {
+    "native_schema": "mixed_swa_kv_v1",
+    "cache_type": "mixed_swa_kv",
+    "cache_subtype": "mixed_swa_kv",
+    "cache_detail": "paged+mixed_swa",
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true,
+    "generic_turboquant_kv_enabled": false,
+    "generic_turboquant_kv_reason": "not_active",
+    "cache_hit_tokens": 20,
+    "ram_tokens_cached": 62,
+    "l2_block_tokens_on_disk": 62,
+    "l2_tokens_on_disk": 62,
+    "block_disk_writes": 2,
+    "media_prefix_cache_prompt_tokens": 355
+  },
+  "streaming": {
+    "first_turn_last_content": "The system is now REAL_UI_LIVE and fully operational.",
+    "second_turn_last_content": "REAL_UI_LIVE. This is the second UI turn.",
+    "video_turn_last_content": "The provided image is a solid red square.",
+    "second_turn_cached_tokens": 20,
+    "second_turn_cache_detail": "paged+mixed_swa",
+    "video_turn_prompt_tokens": 355,
+    "video_turn_ttft_seconds": 1.45
+  },
+  "boundary": [
+    "Clears only Gemma 31B QAT JANG4M current Electron dev-app video/VL with explicit max_prompt_tokens=12000.",
+    "The runtime proves video attachment plumbing, MP4 decode, four extracted frames, and Gemma vision-frame fallback; the final assistant text calls the frame an image while still semantically identifying the solid red content.",
+    "Does not clear default 4096-token video context behavior.",
+    "Does not clear Gemma 31B audio, installed-app parity, public tunnel SSE parity, package/sign/notarize/tag/upload/download, or full release readiness."
+  ],
+  "release_action": "none"
+}

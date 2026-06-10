@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-06-10T06:13:00Z",
+  "status": "open",
+  "classification": "startup_and_first_chat_improved_full_probe_red",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "modelPath": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L",
+  "servedModel": "n2-pro-jang1l-deferred-eval-live-attempt-20260610",
+  "codeFix": {
+    "file": "vmlx_engine/utils/tokenizer.py",
+    "policy": "Nex/N2 qwen3_5_moe affine JANG_1L defers JANG startup parameter eval by passing skip_eval=True to load_jang_model",
+    "ordinaryJangAffected": false,
+    "jangtqAffected": false,
+    "reason": "Avoid eager all-parameter Metal materialization during startup for the 397B-class affine JANG_1L row."
+  },
+  "preflight": {
+    "artifact": "build/current-n2-pro-jang1l-local-memory-preflight-deferred-eval-live-attempt-20260610.json",
+    "status": "open",
+    "decision": "schedule_live_proof",
+    "availableGiB": 114.04,
+    "requiredAvailableGiB": 113.57,
+    "indexedPayloadGiB": 110.57,
+    "requiredExtraHeadroomGiB": 3,
+    "format": "jang",
+    "artifactProfile": "JANG_1L",
+    "modelType": "qwen3_5_moe"
+  },
+  "liveProof": {
+    "artifact": "build/current-n2-jang1l-live-chat-cache-deferred-eval-live-attempt-20260610.json",
+    "serverLog": "build/current-n2-jang1l-live-chat-cache-deferred-eval-live-attempt-20260610.server.log",
+    "l2RestartServerLog": "build/current-n2-jang1l-live-chat-cache-deferred-eval-live-attempt-20260610.server.l2_restart.server.log",
+    "status": "fail",
+    "serverReachedHealth": true,
+    "firstChatStatusCode": 200,
+    "firstChatElapsedSeconds": 49.05,
+    "serverExit": -15,
+    "crashed": false,
+    "cacheWarmStoreStatusCode": 503,
+    "cacheHitStatusCode": 503,
+    "toolProbeStatusCode": 503,
+    "responsesProbeStatusCode": 503,
+    "responsesStreamProbeStatusCode": 503,
+    "rejectReason": "Metal GPU working set too full (102% of 107.5GB cap)",
+    "afterRequestsAvailableGiB": 10.1,
+    "afterRequestsProcessRssGiB": 27.493
+  },
+  "runtimeEvidence": {
+    "autodetect": {
+      "family": "qwen3_5_moe",
+      "toolParser": "qwen",
+      "reasoningParser": "qwen3",
+      "thinkInTemplate": true,
+      "cacheType": "hybrid",
+      "isMllm": false
+    },
+    "loader": {
+      "quantShapePatches": 482,
+      "shards": 123,
+      "expertsBfloat16": 512,
+      "hiddenSize": 4096,
+      "deferredStartupEval": true,
+      "loadedSeconds": 6.7
+    },
+    "cache": {
+      "attentionKvLayers": 15,
+      "ssmLayers": 45,
+      "liveTurboQuantKv": true,
+      "storageQuantization": "q4",
+      "blockDiskL2Initialized": true,
+      "ssmCompanionL2Initialized": true,
+      "pagedCacheInitialized": true
+    }
+  },
+  "negativeEvidence": {
+    "fullChatCacheToolResponsesL2GatePassed": false,
+    "reason": "After the first bounded chat request, active Metal working set exceeded the default guard threshold and subsequent cache/tool/Responses probes were rejected to avoid command-buffer OOM.",
+    "guard104Artifact": "build/current-n2-jang1l-live-chat-cache-deferred-eval-guard104-20260610.json",
+    "guard104Outcome": "Raising VMLX_METAL_WS_REJECT_PCT to 104 with wired-limit setup reproduced a first-request Metal OOM with server_exit=-6."
+  },
+  "releaseBoundary": "This fixes the prior pre-health startup OOM class for N2 JANG_1L by deferring eager parameter eval and proves /health plus one bounded Chat Completions request. It does not clear N2 JANG_1L cache reuse, tool calls, Responses, L2 restart, UI, media, or release support. N2 JANGTQ2 remains the release checkpoint candidate."
+}

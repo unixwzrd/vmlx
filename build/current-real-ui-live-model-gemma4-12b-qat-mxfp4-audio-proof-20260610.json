@@ -1,0 +1,77 @@
+{
+  "status": "fail",
+  "generated_at": "2026-06-10",
+  "scope": "real Electron dev-app Gemma 4 12B QAT MXFP4 Chat Completions audio modality proof",
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4",
+  "served_model": "gemma4-12b-qat-mxfp4-dev-ui-audio-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-qat-mxfp4-audio-20260610-proof.json",
+  "fixture": {
+    "path": "build/media-fixtures/audio-present.wav",
+    "bytes": 26372,
+    "description": "16 kHz mono WAV saying audio present"
+  },
+  "request": {
+    "wire_api": "chat",
+    "max_tokens": 96,
+    "max_prompt_tokens": 12000,
+    "enable_thinking": false,
+    "builtin_tools": false,
+    "media": "audio",
+    "audio_expect_regex": "audio present"
+  },
+  "proven": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "model_type": "mllm",
+    "chat_text_turns_before_audio_completed": true,
+    "server_media_diag_input_audio": true,
+    "unsupported_modality_guard_returned_400": true,
+    "supported_modalities_reported": [
+      "text",
+      "vision",
+      "video"
+    ],
+    "generation_defaults_applied": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_tokens": 96,
+      "enable_thinking": false
+    },
+    "memory_mb": {
+      "active": 7560.6,
+      "peak": 7842.4
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache_before_audio": {
+      "cache_detail": "paged+mixed_swa",
+      "cached_tokens": 20,
+      "l2_block_tokens_on_disk": 68,
+      "l2_tokens_on_disk": 68
+    }
+  },
+  "red": {
+    "audio_attachment_persisted": false,
+    "audio_semantic_verified": false,
+    "audio_where_supported_surface": false,
+    "failure_stage": "audio_send_message",
+    "api_error": "400 - /v1/chat/completions received unsupported media modality audio. Supported modalities: text, vision, video."
+  },
+  "release_boundary": [
+    "Do not claim Gemma 12B QAT MXFP4 audio support in the checkpoint release.",
+    "This is an honest capability guard: the runtime is green for text, vision, and video, but audio is rejected before decode/generation.",
+    "The failure is not a model load, cache, L2, or crash failure."
+  ]
+}

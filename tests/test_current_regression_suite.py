@@ -1237,13 +1237,18 @@ def test_current_regression_suite_tracks_responses_raw_sse_parity_contract():
     required = {
         "tests/cross_matrix/run_responses_raw_sse_parity_contract.py",
         "tests/test_responses_raw_sse_parity_contract.py",
+        "tests/cross_matrix/run_qwen35_responses_raw_sse_capture.py",
+        "tests/test_qwen35_responses_raw_sse_capture.py",
+        "panel/tests/api-gateway-qwen35-live-capture.test.ts",
     }
 
     assert required.issubset(set(suite.CURRENT_SUITE_SOURCE_HASH_FILES))
     assert "responses_raw_sse_parity_contract" in suite.CURRENT_SUITE_COMMANDS
     command = " ".join(suite.CURRENT_SUITE_COMMANDS["focused_regression_pytest"])
     assert "tests/test_responses_raw_sse_parity_contract.py" in command
+    assert "tests/test_qwen35_responses_raw_sse_capture.py" in command
     assert "responses_raw_sse_parity" in command
+    assert "qwen35_raw_sse_capture" in command
     parity_command = " ".join(
         suite.CURRENT_SUITE_COMMANDS["responses_raw_sse_parity_contract"]
     )
@@ -1881,7 +1886,7 @@ def test_current_regression_suite_refreshes_current_objective_digest_artifact(
 
     assert artifact["status"] == "pass"
     assert suite.CURRENT_OBJECTIVE_DIGEST_ARTIFACT == (
-        "build/current-objective-proof-after-n2-jang1l-memory-refresh-20260609.json"
+        "build/current-objective-proof-after-mimo-n2-dev-app-proof-refresh-20260610.json"
     )
     assert any(
         name == "objective_digest"

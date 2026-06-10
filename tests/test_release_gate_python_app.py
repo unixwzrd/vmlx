@@ -158,7 +158,7 @@ def test_release_gate_objective_digest_default_tracks_current_release_matrix():
         "--out",
         str(
             Path.cwd()
-            / "build/current-objective-proof-after-pr-intake-matrix-refresh-20260609.json"
+            / "build/current-objective-proof-after-mimo-n2-dev-app-proof-refresh-20260610.json"
         ),
     ]
 
@@ -413,6 +413,36 @@ def test_release_dmg_final_sign_preserves_hardened_runtime_entitlements():
     assert "runtime" in final_sign_block
     assert "--entitlements" in final_sign_block
     assert "build/entitlements.mac.plist" in final_sign_block
+
+
+def test_release_dmg_build_default_still_requires_prepackage_ready():
+    script = Path("panel/scripts/build-release-dmgs.sh").read_text()
+
+    strict_block = script[
+        script.index('else\n  (') : script.index("fi\n\nsign_bundled_python_native_files")
+    ]
+
+    assert "VMLX_CHECKPOINT_RELEASE_OVERRIDE" in script
+    assert 'PREPACKAGE_READY_MANIFEST_OUT="$ROOT_DIR/$PREPACKAGE_READY_MANIFEST_OUT"' in script
+    assert "--require-prepackage-ready" in strict_block
+    assert "run_release_regression_manifest.py" in strict_block
+
+
+def test_release_dmg_checkpoint_override_records_open_manifest_without_require_flag():
+    script = Path("panel/scripts/build-release-dmgs.sh").read_text()
+
+    override_block = script[
+        script.index('if [[ "$CHECKPOINT_RELEASE_OVERRIDE" = "1" ]]')
+        : script.index("else\n  (")
+    ]
+
+    assert "building a checkpoint DMG with open rows" in override_block
+    assert "Release notes must list open rows" in override_block
+    assert "manifest_rc=$?" in override_block
+    assert "did not produce pre-package manifest" in override_block
+    assert "continuing only because override is explicit" in override_block
+    assert "--out" in override_block
+    assert "--require-prepackage-ready" not in override_block
 
 
 def test_bundled_verifier_rejects_non_relocatable_console_shebangs():

@@ -1,0 +1,205 @@
+{
+  "created_at": "2026-06-09T18:54:44-0700",
+  "status": "pass",
+  "checks": {
+    "panel_settings_contract_count": true,
+    "dsv4_default_native_prefix_on": true,
+    "dsv4_explicit_prefix_off_disables_native_flags": true,
+    "dsv4_l2_explicit_off_preserves_prefix": true,
+    "dsv4_generic_kv_flags_suppressed": true,
+    "dsv4_pool_quant_controls_are_dsv4_only": true,
+    "max_output_context_cli_split": true,
+    "chat_max_output_is_per_chat_override": true,
+    "non_dsv4_cache_toggles_preserved": true,
+    "i18n_max_output_context_copy": true,
+    "lazy_mmap_launch_memory_admission": true,
+    "minimax_reasoning_parser_detection": true,
+    "native_mtp_d3_default_policy": true,
+    "model_family_parser_registry": true,
+    "engine_cache_architecture_registry": true,
+    "panel_emitted_flags_are_registered_engine_cli_flags": true,
+    "panel_typecheck": true
+  },
+  "missing_source_markers": [],
+  "source_hashes": {
+    "panel/src/main/sessions.ts": "6d28d2ff792eef3870e7710d61ecc2d59d88b1a19e1a83a4509687bb06f265b1",
+    "panel/src/main/memory-enforcer.ts": "bcdbcba2fc3ad32271f7e5a79573788c93c5e9d715288ea4a76e02b53c7274ac",
+    "panel/src/main/model-config-registry.ts": "a97db54b9a8936d809756566cc058ac662050f54f41f47ce6553fe1713b143d9",
+    "panel/src/renderer/src/components/sessions/SessionSettings.tsx": "dcfda9f63233f7509a7d9dcdf290993340612c25038ba4d4efad6081c8cbe849",
+    "panel/src/renderer/src/components/sessions/SessionConfigForm.tsx": "bc1f8f85524a1ecf5b9a4e19aaa7217e6ca45ab148104794d9e4e163ac36979c",
+    "panel/src/renderer/src/components/sessions/CreateSession.tsx": "66ba137d5ad2ba1b1fb3105011ec09553164291164960534a463094eec229745",
+    "panel/src/renderer/src/components/sessions/ServerSettingsDrawer.tsx": "3e61d06773883413bc6af090b48d5b97fcd8467a979db6562a7047f5300113c9",
+    "panel/src/renderer/src/components/sessions/CachePanel.tsx": "1a7ceb1e541e6d39aa6076decc39d1f760e5b8b7d0a8bf8f794f792ce2e5e51a",
+    "panel/src/renderer/src/components/sessions/PerformancePanel.tsx": "1be27b40c8211e661c7bc26bb835594a8a2222f87cdf2f015e14108dd75d1f03",
+    "panel/src/renderer/src/components/chat/ChatSettings.tsx": "d0e10bff7c7d599a6bf95a08b8ecc550d62c3c7eac4b26ab358514bc92e2c7e9",
+    "panel/src/shared/dsv4Env.ts": "f3d5c1a45a6a608d562eeae0238435b7547ae0941695003af525583c48630453",
+    "panel/src/shared/cacheControlPolicy.ts": "6d1d2f0f4baa06814215c01b89b13809a29c855f02497313cd8d0ff913170d82",
+    "panel/src/shared/reasoningParserAliases.ts": "d400d714e7b521fa14a8f8cb7c9c4de0cb3dde1f3b9e1caccf08d012f1a6f92c",
+    "panel/src/shared/sessionConfigMigrations.ts": "923dac3146e0fcedd4e00282700822f3048de6ebba76baf18cc9845e7655d8b2",
+    "panel/src/renderer/src/i18n/locales/en.json": "c79c242e7c85937af2ede036c40f26c9ecedb168cde5bc76bbcabf1c3df617b6",
+    "panel/src/renderer/src/i18n/locales/es.json": "b77f8fc61129feac28a2e73191a009b443d4850e782aa0ccc8030c9ac603980b",
+    "panel/src/renderer/src/i18n/locales/ja.json": "8170cd0ba7270bebb033dc8abe0a31b43d8bc2f502051219e9a2af89ccbedddf",
+    "panel/src/renderer/src/i18n/locales/ko.json": "6e7e1e8dfbb1278a417fdf8bbaa312a6495d5c8dfd4e2d7daedb8f11e8c687a8",
+    "panel/src/renderer/src/i18n/locales/zh.json": "8eb62e1bae82024f22b491958b15aaed7a62b7d2489b9146f126e8f7869ee393",
+    "panel/tests/settings-flow.test.ts": "033a14dc971bad4b484b855a1e24bda96a063d05b1aa21faed0e467dcf2889a9",
+    "panel/tests/dsv4-env.test.ts": "f1e724f3da968f622b6fedc706c0e34c2b84d4e493abb3588f86820f696807c7",
+    "panel/tests/cache-control-policy.test.ts": "91169afdcd88c2b3aa14bac6649da65e45a7d26ce60551525b89d71963976d6d",
+    "panel/tests/generation-defaults.test.ts": "43e1d2e21106e2567f1a595be7d861a5ec159896de19207d2bae46e1dd708be9",
+    "panel/tests/i18n-consistency.test.ts": "693fef9d322e7f837f5c89d427ef1a73464e15db4b71143a80ec645798390a18",
+    "panel/tests/load-progress-honesty.test.ts": "e3de012583c7e95ccf25cf676207994c5ca6160a985307d34cb7c7611b768de9",
+    "panel/tests/model-config-registry.test.ts": "8af152ec546723fdf0ab13793099ad5c66eb5dc2a7a29d3f25c81bcf44504ad9",
+    "tests/test_model_config_registry.py": "4c1667b9a20f476b478f3444176fd763ba8cb4d8bb47babec126b84e8674e121",
+    "tests/test_panel_cli_flag_contract.py": "c505fb04b31b109a474f9726ba0defbb0a7564b50b3f71354fde07bdf5e55c65"
+  },
+  "commands": {
+    "panel_settings_contracts": {
+      "name": "panel_settings_contracts",
+      "command": [
+        "npx",
+        "vitest",
+        "run",
+        "tests/settings-flow.test.ts",
+        "tests/dsv4-env.test.ts",
+        "tests/cache-control-policy.test.ts",
+        "tests/generation-defaults.test.ts",
+        "tests/i18n-consistency.test.ts",
+        "tests/load-progress-honesty.test.ts"
+      ],
+      "returncode": 0,
+      "elapsed_sec": 0.502,
+      "counts": {
+        "test_files_passed": 6,
+        "tests_passed": 315,
+        "tests_skipped": null
+      },
+      "stdout_tail": [
+        "",
+        " RUN  v4.0.18 /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel",
+        "",
+        " \u2713 tests/load-progress-honesty.test.ts (5 tests) 2ms",
+        " \u2713 tests/cache-control-policy.test.ts (12 tests) 2ms",
+        " \u2713 tests/dsv4-env.test.ts (25 tests) 5ms",
+        " \u2713 tests/i18n-consistency.test.ts (7 tests) 23ms",
+        " \u2713 tests/settings-flow.test.ts (254 tests) 31ms",
+        " \u2713 tests/generation-defaults.test.ts (12 tests) 11ms",
+        "",
+        " Test Files  6 passed (6)",
+        "      Tests  315 passed (315)",
+        "   Start at  18:54:38",
+        "   Duration  224ms (transform 401ms, setup 0ms, import 464ms, tests 75ms, environment 0ms)",
+        ""
+      ]
+    },
+    "panel_typecheck": {
+      "name": "panel_typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "returncode": 0,
+      "elapsed_sec": 2.095,
+      "counts": {
+        "test_files_passed": null,
+        "tests_passed": null,
+        "tests_skipped": null
+      },
+      "stdout_tail": [
+        "",
+        "> vmlx@1.5.56 typecheck",
+        "> tsc --noEmit",
+        ""
+      ]
+    },
+    "panel_model_config_registry": {
+      "name": "panel_model_config_registry",
+      "command": [
+        "npx",
+        "vitest",
+        "run",
+        "tests/model-config-registry.test.ts"
+      ],
+      "returncode": 0,
+      "elapsed_sec": 0.435,
+      "counts": {
+        "test_files_passed": 1,
+        "tests_passed": 66,
+        "tests_skipped": null
+      },
+      "stdout_tail": [
+        "",
+        " RUN  v4.0.18 /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel",
+        "",
+        " \u2713 tests/model-config-registry.test.ts (66 tests) 26ms",
+        "",
+        " Test Files  1 passed (1)",
+        "      Tests  66 passed (66)",
+        "   Start at  18:54:41",
+        "   Duration  122ms (transform 42ms, setup 0ms, import 49ms, tests 26ms, environment 0ms)",
+        ""
+      ]
+    },
+    "engine_model_config_registry": {
+      "name": "engine_model_config_registry",
+      "command": [
+        "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "../tests/test_model_config_registry.py"
+      ],
+      "returncode": 0,
+      "elapsed_sec": 2.462,
+      "counts": {
+        "test_files_passed": null,
+        "tests_passed": 140,
+        "tests_skipped": null
+      },
+      "stdout_tail": [
+        "============================= test session starts ==============================",
+        "platform darwin -- Python 3.13.11, pytest-9.0.2, pluggy-1.6.0",
+        "rootdir: /Users/eric/mlx/vllm-mlx-finite-launch-guard",
+        "configfile: pytest.ini (WARNING: ignoring pytest config in pyproject.toml!)",
+        "plugins: asyncio-1.3.0, anyio-4.13.0",
+        "asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function",
+        "collected 140 items",
+        "",
+        "../tests/test_model_config_registry.py ................................. [ 23%]",
+        "........................................................................ [ 75%]",
+        "...................................                                      [100%]",
+        "",
+        "============================= 140 passed in 1.86s =============================="
+      ]
+    },
+    "engine_panel_cli_flag_contract": {
+      "name": "engine_panel_cli_flag_contract",
+      "command": [
+        "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "../tests/test_panel_cli_flag_contract.py"
+      ],
+      "returncode": 0,
+      "elapsed_sec": 0.122,
+      "counts": {
+        "test_files_passed": null,
+        "tests_passed": 9,
+        "tests_skipped": null
+      },
+      "stdout_tail": [
+        "============================= test session starts ==============================",
+        "platform darwin -- Python 3.13.11, pytest-9.0.2, pluggy-1.6.0",
+        "rootdir: /Users/eric/mlx/vllm-mlx-finite-launch-guard",
+        "configfile: pytest.ini (WARNING: ignoring pytest config in pyproject.toml!)",
+        "plugins: asyncio-1.3.0, anyio-4.13.0",
+        "asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function",
+        "collected 9 items",
+        "",
+        "../tests/test_panel_cli_flag_contract.py .........                       [100%]",
+        "",
+        "============================== 9 passed in 0.02s ==============================="
+      ]
+    }
+  }
+}

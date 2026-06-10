@@ -1,0 +1,112 @@
+{
+  "schema": "vmlx.real_ui_model_proof_summary.v1",
+  "status": "pass",
+  "generated_at": "2026-06-10T02:46:47Z",
+  "model": {
+    "path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+    "profile": "JANGTQ2",
+    "served_model_name": "n2-jangtq2-dev-ui-responses-delta-only-20260610"
+  },
+  "raw_artifact": "docs/internal/agent-notes/current-real-ui-live-model-n2-jangtq2-responses-delta-only-20260610-proof.json",
+  "scope": "Real Electron dev-app Responses content-delta proof without built-in tools. This complements, but does not replace, the separate N2 dev-app built-in-tool/cache proof.",
+  "request": {
+    "wire_api": "responses",
+    "builtin_tools_enabled": false,
+    "enable_thinking": false,
+    "max_tokens": 180,
+    "max_prompt_tokens": 4096,
+    "server_cache_controls_checked": true
+  },
+  "proven_surfaces": [
+    "current_electron_dev_build",
+    "real_loaded_model",
+    "chat_completions",
+    "responses_api",
+    "responses_delta_streaming",
+    "responses_cache_detail_usage",
+    "generation_defaults_applied",
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "native_cache_status",
+    "l2_disk_storage",
+    "server_cache_controls",
+    "settings_persistence",
+    "parser_leak_check",
+    "language_leak_check"
+  ],
+  "streaming": {
+    "event_counts": {
+      "stream": 45,
+      "tool": 0,
+      "complete": 2
+    },
+    "assistant_traces": [
+      {
+        "count": 21,
+        "first_full_content": "N",
+        "last_full_content": "N2_APP_DELTA_ONE is ready. prefix cache, paged cache, and streaming delta are included.",
+        "last_metrics": {
+          "token_count": 20,
+          "prompt_tokens": 46,
+          "cached_tokens": 0,
+          "cache_detail": "",
+          "tokens_per_second": "29.9",
+          "ttft": "1.25"
+        }
+      },
+      {
+        "count": 24,
+        "first_full_content": "N",
+        "last_full_content": "N2_APP_DELTA_TWO is ready. hybrid SSM, TurboQuant KV, and block disk L2 are included.",
+        "last_metrics": {
+          "token_count": 23,
+          "prompt_tokens": 121,
+          "cached_tokens": 45,
+          "cache_detail": "paged+ssm",
+          "tokens_per_second": "28.7",
+          "ttft": "0.88"
+        }
+      }
+    ],
+    "visible_assistant_turns_complete": true
+  },
+  "runtime_cache": {
+    "model_loaded": true,
+    "model_type": "mllm",
+    "memory_active_mb": 103807.6,
+    "memory_peak_mb": 104616.8,
+    "native_cache": {
+      "family": "qwen3_5_moe",
+      "schema": "hybrid_ssm_v1",
+      "cache_type": "hybrid_ssm_typed",
+      "components": [
+        "attention_kv",
+        "ssm_companion_state",
+        "async_rederive"
+      ],
+      "live_attention_tq_kv": true,
+      "attention_tq_applies_to": "attention_kv_layers_only",
+      "ssm_policy": "native_full_precision_companion_state",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache_after": {
+      "cache_hit_tokens": 45,
+      "cache_detail": "paged+ssm",
+      "l2_block_tokens_on_disk": 120,
+      "l2_ssm_tokens_on_disk": 274,
+      "l2_tokens_on_disk": 394,
+      "block_disk_writes": 3,
+      "ssm_disk_stores": 3
+    }
+  },
+  "not_proven": [
+    "Built-in tool execution in this specific delta-only run.",
+    "Installed-app packaged parity for current HEAD.",
+    "VL/audio/video runtime.",
+    "Public tunnel SSE parity.",
+    "Full production release readiness."
+  ],
+  "release_boundary": "This proof clears the N2 JANGTQ2 dev-app Responses content-delta streaming surface. It does not by itself clear tool-loop, media, installed-app, package/sign/notarize, tag, upload, or public release gates."
+}

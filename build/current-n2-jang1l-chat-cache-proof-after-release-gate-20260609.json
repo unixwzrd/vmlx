@@ -1,0 +1,33 @@
+{
+  "status": "skipped",
+  "reason": "n2_jang1l_insufficient_available_memory",
+  "unit": "GiB",
+  "available_gib": 112.35,
+  "required_available_gib": 118.57,
+  "memory_gap_gib": 6.22,
+  "indexed_payload_gib": 110.57,
+  "required_extra_headroom_gib": 8.0,
+  "telemetry": [
+    {
+      "name": "n2_jang1l_preflight",
+      "time": "2026-06-09T16:49:31-0700",
+      "system_memory": {
+        "unit": "GiB",
+        "total_gib": 128.0,
+        "available_gib": 112.35,
+        "total_gb": 128.0,
+        "available_gb": 112.35,
+        "percent": 12.2
+      }
+    }
+  ],
+  "release_boundary": "N2 JANG_1L live proof was not launched because the indexed payload plus Metal/runtime headroom exceeds current available memory. 128 GiB total RAM is not sufficient evidence without current available headroom.",
+  "model": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L",
+  "artifact": "build/current-n2-jang1l-chat-cache-proof-after-release-gate-20260609.json",
+  "requested_probes": {
+    "tool": false,
+    "responses": false,
+    "responses_stream": false,
+    "l2_restart": false
+  }
+}

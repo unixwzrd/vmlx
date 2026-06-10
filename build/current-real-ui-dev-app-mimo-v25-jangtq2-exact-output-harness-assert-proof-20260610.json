@@ -1,0 +1,88 @@
+{
+  "status": "fail",
+  "classification": "dev_app_exactness_harness_assertion_red",
+  "generated_at": "2026-06-10T07:25:05.868Z",
+  "proof_raw": "docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-exact-output-harness-assert-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-exact-output-harness-assert-20260610-chat.png",
+  "ui_launch_mode": "electron-dev",
+  "wire_api": "chat",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+  "served_model": "mimo-v25-jangtq2-dev-ui-exact-harness-assert-20260610",
+  "harness_contract": {
+    "expected_assistant_1": "ACK-CB-742",
+    "expected_assistant_2": "{\"status\":\"ok\",\"value\":\"blue-cat\"}",
+    "prompt_1": "Reply with exactly ACK-CB-742 and no other text.",
+    "prompt_2": "Reply with exactly {\"status\":\"ok\",\"value\":\"blue-cat\"} and no other text.",
+    "max_tokens": 64,
+    "max_prompt_tokens": 12000,
+    "temperature": 0,
+    "top_p": 1
+  },
+  "positive_evidence": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "health_reached": true,
+    "two_visible_turns_completed": true,
+    "server_cache_controls_verified": true,
+    "stream_events": 15,
+    "complete_events": 2,
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "persisted_reasoning_count": 0,
+    "persisted_tool_count": 0
+  },
+  "red_evidence": {
+    "first_expected": "ACK-CB-742",
+    "first_actual": "ACKCB-742",
+    "second_expected": "{\"status\":\"ok\",\"value\":\"blue-cat\"}",
+    "second_actual": "{\"status\":\"ok\",\"value\":\"blue\"}",
+    "assertion_failures": [
+      "first assistant content mismatch: expected \"ACK-CB-742\", got \"ACKCB-742\"",
+      "second assistant content mismatch: expected \"{\\\"status\\\":\\\"ok\\\",\\\"value\\\":\\\"blue-cat\\\"}\", got \"{\\\"status\\\":\\\"ok\\\",\\\"value\\\":\\\"blue\\\"}\""
+    ]
+  },
+  "quantization": {
+    "codec": "turboquant_codebook",
+    "profile": "JANGTQ_2",
+    "target_bits": 2,
+    "config_bits": 8,
+    "group_size": 64,
+    "routed_expert_bits_label": "gate=2/up=2/down=2-bit",
+    "total_tensors": 1415,
+    "tq_target_counts": {
+      "routed_expert": 423
+    },
+    "routed_layout_counts": {
+      "prestacked_switch": 423,
+      "split_expert": 0
+    },
+    "weight_matmul_dispatch_primary": "jang_tools_turboquant_custom_kernels"
+  },
+  "runtime_cache": {
+    "family": "mimo_v2",
+    "schema": "mixed_swa_kv_v1",
+    "cache_type": "mixed_swa_kv",
+    "cache_subtype": "mimo_v2_asymmetric_swa",
+    "generic_turboquant_kv_enabled": false,
+    "generic_turboquant_kv_reason": "not_active",
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true
+  },
+  "cache_after": {
+    "ram_tokens_cached": 114,
+    "cache_hit_tokens": 40,
+    "l2_block_tokens_on_disk": 114,
+    "l2_tokens_on_disk": 114,
+    "block_disk_writes": 3,
+    "blocks_on_disk": 3,
+    "scheduler_hits": 1,
+    "scheduler_misses": 1
+  },
+  "memory": {
+    "active_mb": 76482.7,
+    "peak_mb": 77012.3,
+    "cache_mb": 100.5
+  },
+  "release_boundary": "This proof hardens the raw real-UI harness with exact assistant-content assertions and reproduces MiMo JANGTQ_2 exactness failure in the dev app while cache/L2 and parser surfaces are healthy. Do not fix this with parser repair, JSON repair, sampling clamps, or cache changes."
+}

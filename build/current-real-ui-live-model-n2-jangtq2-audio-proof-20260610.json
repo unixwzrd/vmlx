@@ -1,0 +1,79 @@
+{
+  "status": "fail",
+  "generated_at": "2026-06-10",
+  "scope": "real Electron dev-app Nex/N2 Pro JANGTQ2 Chat Completions audio modality proof",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+  "served_model": "n2-jangtq2-dev-ui-audio-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-live-model-n2-jangtq2-audio-20260610-proof.json",
+  "fixture": {
+    "path": "build/media-fixtures/audio-present.wav",
+    "bytes": 26372,
+    "description": "16 kHz mono WAV saying audio present"
+  },
+  "request": {
+    "wire_api": "chat",
+    "max_tokens": 96,
+    "max_prompt_tokens": 12000,
+    "enable_thinking": false,
+    "builtin_tools": false,
+    "media": "audio",
+    "audio_expect_regex": "audio present"
+  },
+  "proven": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "model_type": "mllm",
+    "chat_text_turns_before_audio_completed": true,
+    "server_media_diag_input_audio": true,
+    "unsupported_modality_guard_returned_400": true,
+    "supported_modalities_reported": [
+      "text",
+      "vision",
+      "video"
+    ],
+    "generation_defaults_applied": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 96,
+      "enable_thinking": false
+    },
+    "memory_mb": {
+      "active": 103805.0,
+      "peak": 104453.8
+    },
+    "native_cache": {
+      "family": "qwen3_5_moe",
+      "schema": "hybrid_ssm_v1",
+      "cache_type": "hybrid_ssm_typed",
+      "components": [
+        "attention_kv",
+        "ssm_companion_state",
+        "async_rederive"
+      ],
+      "attention_turboquant_kv": true,
+      "ssm_policy": "native_full_precision_companion_state",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache_before_audio": {
+      "cache_detail": "paged+ssm",
+      "cached_tokens": 18,
+      "l2_block_tokens_on_disk": 50,
+      "l2_ssm_tokens_on_disk": 68,
+      "l2_tokens_on_disk": 118
+    }
+  },
+  "red": {
+    "audio_attachment_persisted": false,
+    "audio_semantic_verified": false,
+    "audio_where_supported_surface": false,
+    "failure_stage": "audio_send_message",
+    "api_error": "400 - /v1/chat/completions received unsupported media modality audio. Supported modalities: text, vision, video."
+  },
+  "release_boundary": [
+    "Do not claim N2 JANGTQ2 audio support in the checkpoint release.",
+    "This is an honest capability guard: the runtime is green for text, vision, and video, but audio is rejected before decode/generation.",
+    "The failure is not a model load, cache, L2, or crash failure."
+  ]
+}

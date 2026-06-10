@@ -1,0 +1,518 @@
+{
+  "generated_from": [
+    "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-responses-tools-cache-20260610-proof.json",
+    "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-image-cache-20260610-proof.json"
+  ],
+  "not_proven": [
+    "installed packaged app parity",
+    "DMG package/sign/notarize/release readiness",
+    "local session manager starting the model from panel launch args rather than remote session connection",
+    "Gemma audio or video semantic E2E",
+    "N2 or MiMo dev-app chat proof",
+    "same-model public tunnel raw SSE parity"
+  ],
+  "proven": [
+    "real Electron dev app launched via npm run dev",
+    "real vMLX server loaded /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "Responses UI rail streamed assistant content and executed built-in run_command tool loop twice",
+    "function/tool UI persistence recorded tool execution and result phases",
+    "Chat Completions UI rail streamed visible text and image attachment reached Gemma MLLM media path",
+    "image semantic answer matched red fixture",
+    "Gemma mixed-SWA native cache surfaced with prefix, paged cache, and block-disk L2 writes",
+    "cache endpoint stats and cache-hit telemetry were visible from the app session",
+    "no raw parser/tool markup leak or hidden reasoning leak in these two runs"
+  ],
+  "rows": [
+    {
+      "block_disk_cache": {
+        "blocks_on_disk": 49,
+        "disk_evictions": 0,
+        "disk_hits": 258,
+        "disk_misses": 8,
+        "disk_size_bytes": 1038876375,
+        "disk_size_gb": 0.968,
+        "disk_writes": 49,
+        "total_accesses": 258,
+        "total_cached_tokens": 3016,
+        "total_tokens_on_disk": 3016
+      },
+      "builtin_tools": true,
+      "cache_after_scheduler": {
+        "active_requests": 0,
+        "allocated_blocks": 50,
+        "block_size": 64,
+        "cache_hit_rate": 0.8118811881188119,
+        "cache_hits": 246,
+        "cache_misses": 57,
+        "cow_copies": 0,
+        "disk_hits": 0,
+        "disk_misses": 8,
+        "entries_by_type": {
+          "assistant": 4,
+          "system": 0,
+          "user": 0
+        },
+        "evictions": 0,
+        "free_blocks": 950,
+        "hit_rate": 0.75,
+        "hits": 3,
+        "max_blocks": 1000,
+        "misses": 1,
+        "pixel_cache_hits": 0,
+        "pixel_cache_misses": 0,
+        "pixel_cache_size": 0,
+        "pixel_hit_rate": 0,
+        "shared_blocks": 47,
+        "tokens_saved": 8354,
+        "total_images_processed": 0,
+        "total_time_saved": 0,
+        "total_tokens_cached": 3016,
+        "utilization": 0.05
+      },
+      "cache_hit_tokens": 8354,
+      "event_counts": {
+        "complete": 2,
+        "reasoningDone": 0,
+        "stream": 40,
+        "tool": 154
+      },
+      "generated_at": "2026-06-10T01:58:20.613Z",
+      "media": false,
+      "media_status": {
+        "imageExpectedRegex": "\\bred\\b",
+        "imageSemanticVerified": false,
+        "imageVerified": false,
+        "persistedImageAttachment": false,
+        "persistedVideoAttachment": false,
+        "requestedImage": false,
+        "requestedVideo": false,
+        "videoExpectedRegex": "",
+        "videoSemanticVerified": false,
+        "videoVerified": false
+      },
+      "model_loaded": true,
+      "model_name": "JANGQ-AI/gemma-4-12B-it-JANG_4M",
+      "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+      "model_type": "mllm",
+      "native_cache": {
+        "block_disk_l2": true,
+        "cache_subtype": "mixed_swa_kv",
+        "cache_type": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "family": "gemma4",
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "paged": true,
+        "prefix": true,
+        "schema": "mixed_swa_kv_v1",
+        "storage_quantization": {
+          "applies_to": "full_and_sliding_attention_kv",
+          "bits": null,
+          "enabled": false,
+          "group_size": null,
+          "metadata_policy": "preserve_rotating_window_metadata",
+          "mode": "storage_boundary"
+        }
+      },
+      "persisted_tool_count": 154,
+      "proof_path": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-responses-tools-cache-20260610-proof.json",
+      "proven_surfaces": [
+        "cache_endpoint_stats",
+        "cache_hit_telemetry",
+        "chat_completions",
+        "current_electron_dev_build",
+        "generation_defaults_applied",
+        "l2_disk_storage",
+        "language_leak_check",
+        "long_tool_loop",
+        "native_cache_status",
+        "parser_leak_check",
+        "real_loaded_model",
+        "responses_api",
+        "responses_cache_detail_usage",
+        "responses_delta_streaming",
+        "server_cache_controls",
+        "settings_persistence",
+        "tool_l2_cache_integrated"
+      ],
+      "quantization": {
+        "backend": "mx.quantize",
+        "codec": "affine_quantized_matmul",
+        "config_bits": 8,
+        "group_size": 32,
+        "passthrough_tensor_count": 349,
+        "profile": "JANG_4M",
+        "sidecar": {
+          "jang_config": true,
+          "jangtq_runtime": false,
+          "prestacked_bundle": false
+        },
+        "target_bits": 8,
+        "weight_format": "jang_affine",
+        "weight_index": {
+          "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M/model.safetensors.index.json",
+          "mtp_tensor_count": 0,
+          "routed_layout_counts": {
+            "prestacked_switch": 0,
+            "split_expert": 0
+          },
+          "suffix_counts": {
+            "biases": 328,
+            "scales": 328,
+            "weight": 624
+          },
+          "total_tensors": 1333,
+          "tq_target_counts": {}
+        },
+        "weight_matmul_dispatch": {
+          "metal_na_eligible": true,
+          "primary": "mlx_affine_quantized_matmul",
+          "reason": null,
+          "uses_mlx_quantized_matmul": true
+        }
+      },
+      "raw_parser_leak": false,
+      "reasoning_raw_parser_leak": false,
+      "screenshot": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-responses-tools-cache-20260610-chat.png",
+      "served_model": "gemma4-12b-jang4m-dev-ui-20260610",
+      "server_cache_controls_verified": true,
+      "server_cache_labels": [
+        "Enable Prefix Cache",
+        "Use Paged KV Cache",
+        "Block Disk Cache (L2)",
+        "Enable Disk Cache",
+        "Stored Cache Quantization"
+      ],
+      "server_status": "healthy",
+      "status": "pass",
+      "stream_trace": [
+        {
+          "count": 16,
+          "firstFullContent": "The",
+          "firstMetrics": {
+            "cacheDetail": "",
+            "cachedTokens": 0,
+            "elapsed": "0.3",
+            "ppSpeed": "9600.0",
+            "promptTokens": 2688,
+            "tokenCount": 76,
+            "tokensPerSecond": "0.0",
+            "ttft": "0.28"
+          },
+          "firstReasoningContent": "",
+          "lastFullContent": "The file has been created successfully. REAL_UI_LIVE_TOOL_ONE",
+          "lastMetrics": {
+            "cacheDetail": "paged+mixed_swa",
+            "cachedTokens": 2687,
+            "elapsed": "0.6",
+            "ppSpeed": "9882.1",
+            "promptTokens": 2767,
+            "tokenCount": 94,
+            "tokensPerSecond": "45.3",
+            "ttft": "0.28"
+          },
+          "lastReasoningContent": "",
+          "messageId": "5f1c5d5d-b6d4-4573-8d80-d9ccdd43b93a"
+        },
+        {
+          "count": 24,
+          "firstFullContent": "The",
+          "firstMetrics": {
+            "cacheDetail": "paged+mixed_swa",
+            "cachedTokens": 2766,
+            "elapsed": "0.9",
+            "ppSpeed": "3107.1",
+            "promptTokens": 2902,
+            "tokenCount": 85,
+            "tokensPerSecond": "0.0",
+            "ttft": "0.93"
+          },
+          "firstReasoningContent": "",
+          "lastFullContent": "The second file has been created. REAL_UI_LIVE_TOOL_TWO. This is the second UI turn.",
+          "lastMetrics": {
+            "cacheDetail": "paged+mixed_swa",
+            "cachedTokens": 2901,
+            "elapsed": "1.4",
+            "ppSpeed": "3230.2",
+            "promptTokens": 3017,
+            "tokenCount": 111,
+            "tokensPerSecond": "45.2",
+            "ttft": "0.93"
+          },
+          "lastReasoningContent": "",
+          "messageId": "87c15dfd-cc2b-4026-9a5c-77572fb3bc6f"
+        }
+      ],
+      "tool_probe_files": {
+        "real_ui_tool_probe_1.txt": "REAL_UI_LIVE_TOOL_ONE\n",
+        "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO\n"
+      },
+      "ui_launch_mode": "electron-dev",
+      "visible_assistant_turns_complete": true,
+      "wire_api": "responses"
+    },
+    {
+      "block_disk_cache": {
+        "blocks_on_disk": 2,
+        "disk_evictions": 0,
+        "disk_hits": 0,
+        "disk_misses": 4,
+        "disk_size_bytes": 27572951,
+        "disk_size_gb": 0.026,
+        "disk_writes": 2,
+        "total_accesses": 0,
+        "total_cached_tokens": 80,
+        "total_tokens_on_disk": 80
+      },
+      "builtin_tools": false,
+      "cache_after_scheduler": {
+        "active_requests": 0,
+        "allocated_blocks": 3,
+        "block_size": 64,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 4,
+        "cow_copies": 0,
+        "disk_hits": 0,
+        "disk_misses": 2,
+        "entries_by_type": {
+          "assistant": 2,
+          "system": 0,
+          "user": 0
+        },
+        "evictions": 0,
+        "free_blocks": 997,
+        "hit_rate": 0.5,
+        "hits": 1,
+        "max_blocks": 1000,
+        "misses": 1,
+        "pixel_cache_hits": 0,
+        "pixel_cache_misses": 0,
+        "pixel_cache_size": 0,
+        "pixel_hit_rate": 0,
+        "shared_blocks": 1,
+        "tokens_saved": 20,
+        "total_images_processed": 0,
+        "total_time_saved": 0,
+        "total_tokens_cached": 80,
+        "utilization": 0.003
+      },
+      "cache_hit_tokens": 80,
+      "event_counts": {
+        "complete": 3,
+        "reasoningDone": 0,
+        "stream": 45,
+        "tool": 0
+      },
+      "generated_at": "2026-06-10T01:58:47.285Z",
+      "media": true,
+      "media_status": {
+        "imageExpectedRegex": "red|Red",
+        "imageSemanticVerified": true,
+        "imageVerified": true,
+        "persistedImageAttachment": true,
+        "persistedVideoAttachment": false,
+        "requestedImage": true,
+        "requestedVideo": false,
+        "videoExpectedRegex": "",
+        "videoSemanticVerified": false,
+        "videoVerified": false
+      },
+      "model_loaded": true,
+      "model_name": "JANGQ-AI/gemma-4-12B-it-JANG_4M",
+      "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+      "model_type": "mllm",
+      "native_cache": {
+        "block_disk_l2": true,
+        "cache_subtype": "mixed_swa_kv",
+        "cache_type": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "family": "gemma4",
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "paged": true,
+        "prefix": true,
+        "schema": "mixed_swa_kv_v1",
+        "storage_quantization": {
+          "applies_to": "full_and_sliding_attention_kv",
+          "bits": null,
+          "enabled": false,
+          "group_size": null,
+          "metadata_policy": "preserve_rotating_window_metadata",
+          "mode": "storage_boundary"
+        }
+      },
+      "persisted_tool_count": 0,
+      "proof_path": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-image-cache-20260610-proof.json",
+      "proven_surfaces": [
+        "cache_endpoint_stats",
+        "cache_hit_telemetry",
+        "chat_completions",
+        "current_electron_dev_build",
+        "generation_defaults_applied",
+        "l2_disk_storage",
+        "language_leak_check",
+        "native_cache_status",
+        "parser_leak_check",
+        "real_loaded_model",
+        "server_cache_controls",
+        "settings_persistence",
+        "vl_image"
+      ],
+      "quantization": {
+        "backend": "mx.quantize",
+        "codec": "affine_quantized_matmul",
+        "config_bits": 8,
+        "group_size": 32,
+        "passthrough_tensor_count": 349,
+        "profile": "JANG_4M",
+        "sidecar": {
+          "jang_config": true,
+          "jangtq_runtime": false,
+          "prestacked_bundle": false
+        },
+        "target_bits": 8,
+        "weight_format": "jang_affine",
+        "weight_index": {
+          "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M/model.safetensors.index.json",
+          "mtp_tensor_count": 0,
+          "routed_layout_counts": {
+            "prestacked_switch": 0,
+            "split_expert": 0
+          },
+          "suffix_counts": {
+            "biases": 328,
+            "scales": 328,
+            "weight": 624
+          },
+          "total_tensors": 1333,
+          "tq_target_counts": {}
+        },
+        "weight_matmul_dispatch": {
+          "metal_na_eligible": true,
+          "primary": "mlx_affine_quantized_matmul",
+          "reason": null,
+          "uses_mlx_quantized_matmul": true
+        }
+      },
+      "raw_parser_leak": false,
+      "reasoning_raw_parser_leak": false,
+      "screenshot": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-image-cache-20260610-chat.png",
+      "served_model": "gemma4-12b-jang4m-dev-ui-media-20260610",
+      "server_cache_controls_verified": true,
+      "server_cache_labels": [
+        "Enable Prefix Cache",
+        "Use Paged KV Cache",
+        "Block Disk Cache (L2)",
+        "Enable Disk Cache",
+        "Stored Cache Quantization"
+      ],
+      "server_status": "healthy",
+      "status": "pass",
+      "stream_trace": [
+        {
+          "count": 31,
+          "firstFullContent": "I",
+          "firstMetrics": {
+            "cacheDetail": "",
+            "cachedTokens": 0,
+            "elapsed": "0.0",
+            "ppSpeed": "77.2",
+            "promptTokens": 21,
+            "tokenCount": 5,
+            "tokensPerSecond": "0.0",
+            "ttft": "0.27"
+          },
+          "firstReasoningContent": "",
+          "lastFullContent": "I am ready to assist you with your request. Please let me know how I can help, and remember to check the REAL_UI_LIVE status.",
+          "lastMetrics": {
+            "cacheDetail": "",
+            "cachedTokens": 0,
+            "elapsed": "0.6",
+            "ppSpeed": "77.2",
+            "promptTokens": 21,
+            "tokenCount": 35,
+            "tokensPerSecond": "46.5",
+            "ttft": "0.27"
+          },
+          "lastReasoningContent": "",
+          "messageId": "cdb78b75-0a52-43a2-b92a-0728dd9ffba4"
+        },
+        {
+          "count": 13,
+          "firstFullContent": "REAL",
+          "firstMetrics": {
+            "cacheDetail": "paged+mixed_swa",
+            "cachedTokens": 20,
+            "elapsed": "0.0",
+            "ppSpeed": "371.6",
+            "promptTokens": 81,
+            "tokenCount": 5,
+            "tokensPerSecond": "0.0",
+            "ttft": "0.22"
+          },
+          "firstReasoningContent": "",
+          "lastFullContent": "REAL_UI_LIVE. This is the second UI turn.",
+          "lastMetrics": {
+            "cacheDetail": "paged+mixed_swa",
+            "cachedTokens": 20,
+            "elapsed": "0.3",
+            "ppSpeed": "371.6",
+            "promptTokens": 81,
+            "tokenCount": 17,
+            "tokensPerSecond": "47.1",
+            "ttft": "0.22"
+          },
+          "lastReasoningContent": "",
+          "messageId": "e52ae3ff-5dc2-412b-9141-f77085cc9281"
+        },
+        {
+          "count": 1,
+          "firstFullContent": "Red",
+          "firstMetrics": {
+            "cacheDetail": "",
+            "cachedTokens": 0,
+            "elapsed": "0.0",
+            "ppSpeed": "1026.8",
+            "promptTokens": 383,
+            "tokenCount": 6,
+            "tokensPerSecond": "0.0",
+            "ttft": "0.37"
+          },
+          "firstReasoningContent": "",
+          "lastFullContent": "Red",
+          "lastMetrics": {
+            "cacheDetail": "",
+            "cachedTokens": 0,
+            "elapsed": "0.0",
+            "ppSpeed": "1026.8",
+            "promptTokens": 383,
+            "tokenCount": 6,
+            "tokensPerSecond": "0.0",
+            "ttft": "0.37"
+          },
+          "lastReasoningContent": "",
+          "messageId": "1882490a-d38a-4e48-a6ea-c66b3d51c8cf"
+        }
+      ],
+      "tool_probe_files": {},
+      "ui_launch_mode": "electron-dev",
+      "visible_assistant_turns_complete": true,
+      "wire_api": "chat"
+    }
+  ],
+  "scope": "dev Electron app real remote-session proof for Gemma 4 12B JANG_4M",
+  "status": "pass"
+}

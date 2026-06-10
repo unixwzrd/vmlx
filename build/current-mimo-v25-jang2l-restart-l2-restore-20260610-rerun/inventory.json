@@ -1,0 +1,12 @@
+{
+  "row_count": 1,
+  "rows": [
+    {
+      "is_mllm": true,
+      "model_type": "mimo_v2",
+      "name": "MiMo-V2.5-JANG_2L",
+      "path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+      "served_name": "mimo-v2.5-jang_2l"
+    }
+  ]
+}

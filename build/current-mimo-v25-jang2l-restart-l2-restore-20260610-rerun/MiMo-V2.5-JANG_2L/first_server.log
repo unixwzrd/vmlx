@@ -1,0 +1,93 @@
+INFO:vmlx_engine.model_config_registry:Model config: matched multimodal wrapper model_type='mimo_v2' with media config → mimo_v2
+INFO:__main__:MXTQ/JANGTQ bundle detected — disabling JANGTQ_MPP_NAX=auto. Reporter repros showed incorrect prefill logits on MXTQ/hybrid JANGTQ with auto; set JANGTQ_MPP_NAX=on only for explicit kernel diagnostics.
+INFO:__main__:KV cache auto mode: TurboQuant enabled for compatible models; stored prefix cache quantization=q4
+INFO:__main__:MiMo-V2 asymmetric mixed-SWA cache detected — disabling auto stored-prefix q4/q8 quantization (was: q4). Prefix/paged/L2 cache stays enabled with native KV/RotatingKVCache state; explicit --kv-cache-quantization q4/q8 remains available for diagnostics but is not release-cleared for MiMo exactness.
+INFO:__main__:Auto-configured tool parser from registry: xml_function
+============================================================
+SECURITY CONFIGURATION
+============================================================
+  Authentication: DISABLED - Use --api-key to enable
+  Rate limiting: DISABLED - Use --rate-limit to enable
+  Request timeout: 240.0s
+  Tool calling: Use --enable-auto-tool-choice to enable
+  Reasoning: Use --reasoning-parser to enable
+  External speculative decoding: Use --speculative-model to enable
+============================================================
+Loading model: /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L
+Served model name: mimo-v2.5-jang_2l
+Default max tokens override: 128
+Mode: Continuous batching (for multiple concurrent users)
+Stream interval: 1 tokens
+Paged cache: block_size=64, max_blocks=1000
+Block disk cache: max=2.0GB
+INFO:vmlx_engine.server:Serving model as: mimo-v2.5-jang_2l (actual: JANGQ-AI/MiMo-V2.5-JANG_2L)
+INFO:vmlx_engine.server:System memory before load: 114.1GB available / 128.0GB total (10.9% used)
+INFO:vmlx_engine.server:Force MLLM mode enabled via --mllm flag
+INFO:vmlx_engine.server:Loading model with BatchedEngine: /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L
+INFO:vmlx_engine.models.mllm:Installed vMLX fallback compiled MiMo-V2 decode router
+INFO:vmlx_engine.models.mllm:Installed vMLX MiMo-V2 affine SwitchGLU decode fast path
+INFO:vmlx_engine.models.mllm:Installed vMLX MiMo-V2 keep=0 rotating-cache patch
+WARNING:vmlx_engine:is_mllm_model(/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L): MiMo V2 preserved media weights override force_mllm — bundle metadata marks vision/audio as unwired weights_preserved_text_runtime; routing text-only
+INFO:vmlx_engine.server:Model loaded (batched mode): /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L
+INFO:vmlx_engine.server:Metal GPU memory after load: 0.00GB active, 0.00GB peak
+INFO:vmlx_engine.server:System memory after load: 114.1GB available (10.9% used)
+INFO:vmlx_engine.server:Native tool format enabled for parser: xml_function
+INFO:vmlx_engine.server:Default max tokens override: 128
+Starting server at http://127.0.0.1:8874
+INFO:     Started server process [64781]
+INFO:     Waiting for application startup.
+INFO:vmlx_engine.server:Started caffeinate system wake lock for PID 64781
+INFO:vmlx_engine.utils.tokenizer:Detected JANG model: /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L
+INFO:vmlx_engine.utils.jang_loader:JANG v2 detected — loading via mmap (instant)
+INFO:vmlx_engine.utils.jang_loader:  Loading 103 safetensors shards via mmap
+INFO:vmlx_engine.utils.jang_loader:  Wired limit set to 115 GB (model 112 GB)
+INFO:vmlx_engine.utils.jang_loader:  TurboQuant KV skipped: MiMo-V2 uses native asymmetric full/SWA RotatingKVCache metadata; flat generic TQ-KV would violate the mixed_swa_kv_v1 cache contract.
+INFO:vmlx_engine.utils.jang_loader:JANG v2 loaded in 14.0s: unknown (0.0-bit avg)
+[transformers] You are using a model of type `mimo_v2` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] PreTrainedConfig got `key=rope_scaling` in kwargs but hasn't set it as attribute. For RoPE standardization you need to set `self.rope_parameters` in model's config.
+INFO:vmlx_engine.engine.batched:BatchedEngine multi-eos hook: family=mimo_v2, registry eos_tokens=['<|im_end|>'], tokenizer_class=TokenizerWrapper, primary=151645
+INFO:vmlx_engine.engine.batched:mimo_v2: BatchedEngine extended existing TokenizerWrapper; eos_token_ids={151672, 151643, 151645}
+INFO:vmlx_engine.scheduler:Runtime cache layout: model_type=mimo_v2 layers=48 layout=0:KVCache;1:RotatingKVCache;2:RotatingKVCache;3:RotatingKVCache;4:RotatingKVCache;5:KVCache;6:RotatingKVCache;7:RotatingKVCache;8:RotatingKVCache;9:RotatingKVCache;10:RotatingKVCache;11:KVCache;12:RotatingKVCache;13:RotatingKVCache;14:RotatingKVCache;15:RotatingKVCache;16:RotatingKVCache;17:KVCache;18:RotatingKVCache;19:RotatingKVCache;20:RotatingKVCache;21:RotatingKVCache;22:RotatingKVCache;23:KVCache;24:RotatingKVCache;25:RotatingKVCache;26:RotatingKVCache;27:RotatingKVCache;28:RotatingKVCache;29:KVCache;30:RotatingKVCache;31:RotatingKVCache;32:RotatingKVCache;33:RotatingKVCache;34:RotatingKVCache;35:KVCache;36:RotatingKVCache;37:RotatingKVCache;38:RotatingKVCache;39:RotatingKVCache;40:RotatingKVCache;41:KVCache;42:RotatingKVCache;43:RotatingKVCache;44:RotatingKVCache;45:RotatingKVCache;46:RotatingKVCache;47:KVCache
+INFO:vmlx_engine.scheduler:LLM mixed-attention model detected (e.g. Gemma 4 sliding+full). Prefix cache remains enabled; RotatingKVCache metadata will be preserved during truncation and paged/L2 reconstruction.
+INFO:vmlx_engine.scheduler:Prefix cache requires continuous batching — enabled automatically
+INFO:vmlx_engine.block_disk_store:BlockDiskStore initialized: dir=/Users/eric/mlx/vllm-mlx-finite-launch-guard/build/current-mimo-v25-jang2l-restart-l2-restore-20260610-rerun/MiMo-V2.5-JANG_2L/shared_block_cache, max_size=2.0GB, entries=0, size=0.00GB
+INFO:vmlx_engine.scheduler:Block disk cache enabled: dir=/Users/eric/mlx/vllm-mlx-finite-launch-guard/build/current-mimo-v25-jang2l-restart-l2-restore-20260610-rerun/MiMo-V2.5-JANG_2L/shared_block_cache, max=2.0GB, expected_layers=48
+INFO:vmlx_engine.paged_cache:PagedCacheManager initialized: block_size=64, max_blocks=1000, max_tokens=64000
+INFO:vmlx_engine.scheduler:Paged cache enabled: block_size=64, max_blocks=1000
+INFO:vmlx_engine.engine_core:Engine started
+INFO:vmlx_engine.engine.batched:BatchedEngine loaded: /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L (mllm=False)
+INFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=102.5GB max=107.5GB reason=lifespan_engine_start
+INFO:vmlx_engine.mcp.config:No MCP config file found, using empty config
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8874 (Press CTRL+C to quit)
+INFO:     127.0.0.1:64984 - "GET /health HTTP/1.1" 200 OK
+WARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.
+INFO:     127.0.0.1:64985 - "GET /v1/cache/stats HTTP/1.1" 200 OK
+INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 8, 'enable_thinking': False}
+INFO:vmlx_engine.scheduler:Request chatcmpl-3a09caf4: paged cache miss, processing all 49 tokens
+INFO:vmlx_engine.scheduler:max_num_seqs=1 — using vMLX SingleBatchGenerator (raw native cache, scheduler-owned single-active path)
+INFO:vmlx_engine.models.mllm:MiMo-V2 affine SwitchGLU decode fast path active: calls=1 compiled_shapes=1
+INFO:vmlx_engine.models.mllm:MiMo-V2 affine SwitchGLU decode fast path active: calls=64 compiled_shapes=2
+INFO:vmlx_engine.scheduler:Mixed-SWA prefix cache store using clean prompt-boundary re-prefill (48 cache-key tokens from 49 prompt tokens).
+INFO:vmlx_engine.scheduler:Extracted 48 layer states for request chatcmpl-3a09caf4
+INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=48, num_new_blocks=1, frugal=True
+INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)
+INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 1 (9 kv layers, rotating_kv=39, 48 tokens)
+INFO:vmlx_engine.prefix_cache:Block disk: writing 1 blocks to SSD
+INFO:vmlx_engine.scheduler:Stored paged cache for request chatcmpl-3a09caf4 (48 cache-key tokens from 49 prompt tokens, 48 layers, cache truncated to 48 tokens)
+INFO:vmlx_engine.server:Chat completion: 2 tokens in 4.64s (0.4 tok/s)
+INFO:     127.0.0.1:64986 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64987 - "GET /v1/cache/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64988 - "GET /health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:vmlx_engine.scheduler:Shutting down block disk cache...
+INFO:vmlx_engine.scheduler:Block disk cache shutdown complete
+INFO:vmlx_engine.engine_core:Engine stopped
+INFO:vmlx_engine.paged_cache:PagedCacheManager cleared
+INFO:vmlx_engine.scheduler:Deep reset completed - all caches cleared
+INFO:vmlx_engine.engine.batched:BatchedEngine stopped
+INFO:vmlx_engine.server:Engine stopped
+INFO:vmlx_engine.server:Caffeinate process terminated
+INFO:     Application shutdown complete.
+INFO:     Finished server process [64781]

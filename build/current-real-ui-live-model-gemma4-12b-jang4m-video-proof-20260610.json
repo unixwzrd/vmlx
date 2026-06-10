@@ -1,0 +1,96 @@
+{
+  "schema": "vmlx.real_ui_model_proof_summary.v1",
+  "status": "pass",
+  "generated_at": "2026-06-10T02:51:02Z",
+  "model": {
+    "path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "profile": "JANG_4M",
+    "served_model_name": "gemma4-12b-jang4m-dev-ui-video-max12k-20260610"
+  },
+  "fixture": {
+    "kind": "video",
+    "description": "1 second 64x64 solid red MP4 generated locally with ffmpeg",
+    "size_bytes": 1613
+  },
+  "raw_artifact": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-video-cache-max12k-20260610-proof.json",
+  "prior_failed_artifact": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-video-cache-20260610-proof.json",
+  "scope": "Real Electron dev-app Chat Completions video proof for Gemma 4 12B JANG4M with server cache controls enabled.",
+  "context_boundary": {
+    "max_prompt_tokens_4096": {
+      "status": "fail",
+      "reason": "video request rejected before generation with HTTP 413 prompt_too_long",
+      "observed_prompt_tokens": 8315,
+      "server_message": "Prompt too long (prompt: ~8,315 tokens)."
+    },
+    "max_prompt_tokens_12000": {
+      "status": "pass",
+      "reason": "same video fixture completed and returned semantic red answer"
+    }
+  },
+  "request": {
+    "wire_api": "chat",
+    "builtin_tools_enabled": false,
+    "enable_thinking": false,
+    "max_tokens": 96,
+    "max_prompt_tokens": 12000,
+    "video_expect_regex": "red|solid red",
+    "server_cache_controls_checked": true
+  },
+  "proven_surfaces": [
+    "current_electron_dev_build",
+    "real_loaded_model",
+    "chat_completions",
+    "video_where_supported",
+    "generation_defaults_applied",
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "native_cache_status",
+    "l2_disk_storage",
+    "server_cache_controls",
+    "settings_persistence",
+    "parser_leak_check",
+    "language_leak_check"
+  ],
+  "media": {
+    "persisted_video_attachment": true,
+    "video_semantic_verified": true,
+    "video_verified": true,
+    "assistant_video_answer": "The video shows a solid, dark red screen with a slight grain or texture, remaining static throughout the duration."
+  },
+  "runtime_cache": {
+    "model_loaded": true,
+    "model_type": "mllm",
+    "max_prompt_tokens": 12000,
+    "memory_active_mb": 9893.6,
+    "memory_peak_mb": 10446.0,
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": false,
+      "generic_turboquant_kv_reason": "not_active",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache_after": {
+      "cache_hit_tokens": 20,
+      "cache_detail": "paged+mixed_swa",
+      "l2_block_tokens_on_disk": 84,
+      "l2_tokens_on_disk": 84,
+      "block_disk_writes": 2
+    }
+  },
+  "not_proven": [
+    "Gemma audio semantic E2E.",
+    "Installed-app packaged parity for current HEAD.",
+    "Public tunnel SSE parity.",
+    "Full production release readiness."
+  ],
+  "release_boundary": "This proof clears Gemma 4 12B JANG4M dev-app video for a 12k context session. It does not clear audio, installed-app, package/sign/notarize, tag, upload, or public release gates."
+}

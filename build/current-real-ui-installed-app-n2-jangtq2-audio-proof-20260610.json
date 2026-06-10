@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-10T04:29:11.422Z",
+  "status": "fail",
+  "failure_stage": "audio_send_message",
+  "scope": "local rebuilt installed app N2 JANGTQ2 audio boundary",
+  "app_path": "/Applications/vMLX.app",
+  "ui_launch_mode": "installed-app",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+  "served_model": "n2-jangtq2-installed-ui-audio-20260610",
+  "wire_api": "chat",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-audio-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-audio-20260610-chat.png",
+  "positive_evidence": {
+    "installed_app_ui": true,
+    "real_loaded_model": true,
+    "model_type": "mllm",
+    "visible_text_turns_before_audio": true,
+    "audio_attachment_attempted": true,
+    "server_media_diag_saw_input_audio": true,
+    "server_cache_controls": true,
+    "chat_completions": true,
+    "generation_defaults_applied": true,
+    "parser_leak_check": true,
+    "reasoning_leak_check": true
+  },
+  "runtime": {
+    "loaded_family": "qwen3_5_moe",
+    "active_memory_mb": 103805,
+    "peak_memory_mb": 104453.9,
+    "quantization_type": "jang",
+    "quantization_codec": "turboquant_codebook",
+    "weight_format": "mxtq",
+    "profile": "JANGTQ2",
+    "kernel_type": "turboquant_codebook",
+    "mtp_status": "metadata_inconsistent",
+    "mtp_runtime_active": false,
+    "mtp_runtime_reason": "metadata_inconsistent"
+  },
+  "cache": {
+    "native_cache_schema": "hybrid_ssm_v1",
+    "components": [
+      "attention_kv",
+      "ssm_companion_state",
+      "async_rederive"
+    ],
+    "turboquant_kv_scope": "attention_kv_layers_only",
+    "ssm_policy": "native_full_precision_companion_state",
+    "cache_detail": "paged+ssm",
+    "cached_tokens": 18,
+    "l2_block_tokens_on_disk": 50,
+    "l2_ssm_tokens_on_disk": 68,
+    "l2_tokens_on_disk": 118,
+    "block_disk_hits": 3,
+    "block_disk_writes": 2,
+    "ssm_disk_stores": 2
+  },
+  "red_boundary": {
+    "audio_supported": false,
+    "api_status": 400,
+    "error": "/v1/chat/completions received unsupported media modality audio. Supported modalities: text, vision, video.",
+    "classification": "honest unsupported-modality guard, not load/cache/L2 failure"
+  },
+  "release_boundary": {
+    "clears_installed_app_audio_support": false,
+    "clears_installed_app_audio_gate_classification": true,
+    "clears_n2_jangtq2_text_tools_cache": false,
+    "clears_n2_jangtq2_image_video": false,
+    "clears_n2_jang_1l": false,
+    "clears_public_tunnel_sse": false,
+    "clears_dmg_package_sign_notarize": false,
+    "release_ready": false
+  }
+}

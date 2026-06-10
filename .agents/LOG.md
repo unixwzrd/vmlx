@@ -1,3 +1,123 @@
+# 2026-06-10 - Release gate refresh after MiMo/N2 dev-app proofs
+
+- Updated the canonical objective digest path from the stale N2 memory-only artifact to `build/current-objective-proof-after-mimo-n2-dev-app-proof-refresh-20260610.json`.
+- The N2 Pro 397B objective row now lists the real current-source forced proof and real Electron dev-app proofs: `build/current-n2-jang1l-live-chat-cache-forced-after-gemma-video-20260610.json`, `build/current-real-ui-dev-app-n2-jang1l-bounded-chat-proof-20260610.json`, and `build/current-real-ui-dev-app-n2-jang1l-one-turn-visible-proof-20260610.json`.
+- Regenerated `build/current-objective-proof-after-mimo-n2-dev-app-proof-refresh-20260610.json`, `build/current-full-release-objective-checklist-after-mimo-n2-dev-app-proof-refresh-20260610.json`, and `build/current-release-regression-manifest-after-mimo-n2-dev-app-proof-refresh-20260610.json`.
+- Result: release gate remains red: manifest `current_proof_sweep=fail`, `prepackage_ready=false`, `release_ready=false`; checklist `status=open`, `failed_count=73`.
+- Boundary: this is proof accounting and release-gate pointer repair only. No package, sign, notarize, tag, appcast, upload, or public release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 dev-app exactness harness assertion
+
+- Added optional exact assistant-content assertions to `panel/scripts/live-real-ui-model-proof.mjs`: `VMLINUX_REAL_UI_EXPECT_ASSISTANT_1` and `VMLINUX_REAL_UI_EXPECT_ASSISTANT_2`. The raw proof artifact now records the expected strings and fails directly on visible assistant mismatches.
+- Ran current Electron dev-build MiMo V2.5 JANGTQ_2 exact-output proof with expected `ACK-CB-742` then `{"status":"ok","value":"blue-cat"}`.
+- Proof summary `build/current-real-ui-dev-app-mimo-v25-jangtq2-exact-output-harness-assert-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-exact-output-harness-assert-20260610-proof.json`.
+- Positive evidence: real dev app launched, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` loaded, two UI turns completed, server cache controls were visible, no raw parser/reasoning leak was recorded, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa` stayed active, paged cache hit on turn two, and block L2 wrote.
+- Red evidence: first assistant mismatch `ACK-CB-742` -> `ACKCB-742`; second assistant mismatch `{"status":"ok","value":"blue-cat"}` -> `{"status":"ok","value":"blue"}`.
+- Runtime/cache evidence: active memory `76482.7 MB`, peak `77012.3 MB`, `codec=turboquant_codebook`, `profile=JANGTQ_2`, prestacked routed experts `423`, `cache_hit_tokens=40`, `ram_tokens_cached=114`, `l2_block_tokens_on_disk=114`, `l2_tokens_on_disk=114`, block-disk writes `3`.
+- Boundary: this strengthens the existing exactness blocker. Do not hide it with parser repair, JSON repair, sampling clamps, or cache changes; the next release-relevant action is artifact/logit/codebook/decode diagnosis or a replacement/lifted-precision artifact.
+
+# 2026-06-10 - N2 JANG_1L dev-app one-turn visible-output boundary
+
+- Added a scoped proof-harness switch `VMLINUX_REAL_UI_SECOND_TURN=0` in `panel/scripts/live-real-ui-model-proof.mjs`. It only disables the second UI message and relaxes only the two-turn/cache-hit assertions; it records `secondTurnEnabled=false` in proof artifacts and does not claim multi-turn/cache reuse.
+- Ran current Electron dev-build Nex/N2 Pro JANG_1L one-turn Chat proof with `npm run dev`, Chat Completions, server cache controls, prompt `Reply with exactly N2_JANG1L_VISIBLE and no other text.`, temperature `0`, top_p `1`, max tokens `16`, and max prompt tokens `1024`.
+- Proof summary `build/current-real-ui-dev-app-n2-jang1l-one-turn-visible-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-n2-jang1l-one-turn-visible-20260610-proof.json`.
+- Positive evidence: dev app launched, real `/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L` loaded, one Chat Completions request completed without renderer send errors or Metal 503, qwen3_5_moe/JANG_1L autodetect selected qwen tool parser and qwen3 reasoning parser, native `hybrid_ssm_v1` initialized, attention-only live TurboQuant KV and SSM companion state were active, async rederive ran, paged cache and block L2 wrote, and SSM companion L2 stored state.
+- Red evidence: the single assistant turn streamed `16` tokens but persisted empty visible content; stream trace went from one space to sixteen spaces, with no hidden reasoning or raw parser leak. This separates the first-turn whitespace decode/output blocker from the prior second-turn Metal working-set guard.
+- Runtime/cache evidence: active memory `112550.2 MB`, peak `112807.4 MB`, `actual_bits=2.13`, `profile=JANG_1L`, prestacked routed experts `540`, 15 attention TQ-KV layers, 45 SSM companion layers, `ram_tokens_cached=19`, `l2_block_tokens_on_disk=19`, `l2_ssm_tokens_on_disk=19`, `l2_tokens_on_disk=38`, block-disk writes `1`, SSM companion disk store `1`, TTFT `46.44s`, decode `0.8 tok/s`.
+- Boundary: this does not clear N2 JANG_1L visible quality, second-turn/cache reuse, tools, Responses, L2 restart, media, installed-app parity, package/sign/notarize, or release support. No release action was run.
+
+# 2026-06-10 - MiMo JANG_2L dev-app audio boundary
+
+- Ran current Electron dev-build MiMo V2.5 JANG_2L audio proof with `npm run dev`, Chat Completions, one app audio attachment, server cache controls, temperature `0`, top_p `1`, max tokens `96`, and max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-dev-app-mimo-v25-jang2l-audio-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jang2l-audio-20260610-proof.json`.
+- Positive evidence: dev app launched, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L` loaded, two visible text turns completed before audio, server `MEDIA_DIAG` saw one `input_audio` content part, server cache controls were visible, and no raw parser/reasoning leak was recorded.
+- Red evidence: audio turn failed at `audio_send_message` with HTTP `400`: `/v1/chat/completions received unsupported media modality audio because the loaded runtime is text-only. Supported modalities: text.`
+- Runtime/cache evidence before the audio guard: active memory `105016.1 MB`, peak `106151.0 MB`, `codec=affine_quantized_matmul`, `profile=JANG_2L_322_D3E16`, Metal NA eligible, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, generic TurboQuant KV correctly inactive, `ram_tokens_cached=110`, `l2_block_tokens_on_disk=110`, `l2_tokens_on_disk=110`, and block-disk writes `3`.
+- Boundary: this classifies MiMo JANG_2L dev-app audio as honestly unsupported by the current text-only runtime despite preserved media metadata. It does not clear MiMo media support, installed-app parity, or release readiness. No release action was run.
+
+# 2026-06-10 - MiMo JANG_2L dev-app video boundary
+
+- Ran current Electron dev-build MiMo V2.5 JANG_2L video proof with `npm run dev`, Chat Completions, one app video attachment, server cache controls, temperature `0`, top_p `1`, max tokens `96`, and max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-dev-app-mimo-v25-jang2l-video-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jang2l-video-20260610-proof.json`.
+- Positive evidence: dev app launched, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L` loaded, two visible text turns completed before video, server `MEDIA_DIAG` saw one `video_url` content part, server cache controls were visible, and no raw parser/reasoning leak was recorded.
+- Red evidence: video turn failed at `video_send_message` with HTTP `400`: `/v1/chat/completions received unsupported media modality video because the loaded runtime is text-only. Supported modalities: text.`
+- Runtime/cache evidence before the video guard: active memory `105016.1 MB`, peak `106152.4 MB`, `codec=affine_quantized_matmul`, `profile=JANG_2L_322_D3E16`, Metal NA eligible, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, generic TurboQuant KV correctly inactive, `ram_tokens_cached=110`, `l2_block_tokens_on_disk=110`, `l2_tokens_on_disk=110`, and block-disk writes `3`.
+- Boundary: this classifies MiMo JANG_2L dev-app video as honestly unsupported by the current text-only runtime despite preserved media metadata. It does not clear MiMo media support, installed-app parity, or release readiness. No release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 dev-app audio boundary
+
+- Ran current Electron dev-build MiMo V2.5 JANGTQ_2 audio proof with `npm run dev`, Chat Completions, one app audio attachment, server cache controls, temperature `0`, top_p `1`, max tokens `96`, and max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-dev-app-mimo-v25-jangtq2-audio-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-audio-20260610-proof.json`.
+- Positive evidence: dev app launched, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` loaded, two visible text turns completed before audio, server `MEDIA_DIAG` saw one `input_audio` content part, server cache controls were visible, and no raw parser/reasoning leak was recorded.
+- Red evidence: audio turn failed at `audio_send_message` with HTTP `400`: `/v1/chat/completions received unsupported media modality audio because the loaded runtime is text-only. Supported modalities: text.`
+- Runtime/cache evidence before the audio guard: active memory `76491.8 MB`, peak `77127.3 MB`, `codec=turboquant_codebook`, `profile=JANGTQ_2`, prestacked routed experts `423`, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, generic TurboQuant KV correctly inactive, `ram_tokens_cached=132`, `l2_block_tokens_on_disk=132`, `l2_tokens_on_disk=132`, and block-disk writes `3`.
+- Boundary: this classifies MiMo JANGTQ_2 dev-app audio as honestly unsupported by the current text-only runtime despite preserved media metadata. It does not clear MiMo media support, installed-app parity, exactness, or release readiness. No release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 dev-app video boundary
+
+- Ran current Electron dev-build MiMo V2.5 JANGTQ_2 video proof with `npm run dev`, Chat Completions, one app video attachment, server cache controls, temperature `0`, top_p `1`, max tokens `96`, and max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-dev-app-mimo-v25-jangtq2-video-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-video-20260610-proof.json`.
+- Positive evidence: dev app launched, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` loaded, two visible text turns completed before video, server `MEDIA_DIAG` saw one `video_url` content part, server cache controls were visible, and no raw parser/reasoning leak was recorded.
+- Red evidence: video turn failed at `video_send_message` with HTTP `400`: `/v1/chat/completions received unsupported media modality video because the loaded runtime is text-only. Supported modalities: text.`
+- Runtime/cache evidence before the video guard: active memory `76491.8 MB`, peak `77127.3 MB`, `codec=turboquant_codebook`, `profile=JANGTQ_2`, prestacked routed experts `423`, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, generic TurboQuant KV correctly inactive, `ram_tokens_cached=132`, `l2_block_tokens_on_disk=132`, `l2_tokens_on_disk=132`, and block-disk writes `3`.
+- Boundary: this classifies MiMo JANGTQ_2 dev-app video as honestly unsupported by the current text-only runtime despite preserved media metadata. It does not clear MiMo media support, installed-app parity, exactness, or release readiness. No release action was run.
+
+# 2026-06-10 - N2 JANG_1L dev-app bounded chat
+
+- Ran current Electron dev-build Nex/N2 Pro JANG_1L bounded Chat proof with `npm run dev`, Chat Completions, server cache controls, temperature `0`, top_p `1`, max tokens `8`, and max prompt tokens `4096`.
+- Proof summary `build/current-real-ui-dev-app-n2-jang1l-bounded-chat-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-n2-jang1l-bounded-chat-20260610-proof.json`.
+- Proven: dev app launched, real `/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L` loaded, `/health` reached, first Chat Completions request returned HTTP `200`, qwen3_5_moe/JANG_1L detection was correct, qwen tool parser and qwen3 reasoning parser auto-selected, native `hybrid_ssm_v1` cache initialized, live attention TurboQuant KV active, SSM companion state active, async rederive ran, paged cache active, block L2 wrote, and SSM companion L2 stored state.
+- Runtime/cache evidence: active memory `112548.8 MB`, peak `112803.4 MB`, `actual_bits=2.13`, `profile=JANG_1L`, `prestacked_switch=540`, `trained_active_experts=10`, 15 attention TQ-KV layers, 45 SSM companion layers, `ram_tokens_cached=18`, `l2_block_tokens_on_disk=18`, `l2_ssm_tokens_on_disk=18`, `l2_tokens_on_disk=36`, block-disk writes `1`, and SSM companion disk store `1`.
+- Red evidence: first assistant visible content was empty/whitespace (`8` streamed space tokens), and the second UI turn failed with HTTP `503`: Metal GPU working set too full at `102%` of the `107.5GB` cap. This means real dev-app load + one bounded request is proven, but visible quality and multi-turn/cache reuse remain red.
+- Boundary: this does not clear N2 JANG_1L tools, Responses, Responses stream, L2 restart, media, installed-app parity, public tunnel parity, package/sign/notarize/tag/upload, or release support. No release action was run.
+
+# 2026-06-10 - Gemma 31B JANG4M dev-app audio boundary
+
+- Ran current Electron dev-build Gemma 4 31B QAT JANG4M audio proof with `npm run dev`, Chat Completions, one app audio attachment, server cache controls, temperature `0`, top_p `1`, max tokens `128`, and max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-31b-jang4m-audio-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-audio-20260610-proof.json`.
+- Positive evidence: dev app launched, real `/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M` loaded, two visible text turns completed before audio, the app forced multimodal for one audio file, server `MEDIA_DIAG` saw one `input_audio` content part, server cache controls were visible, and no raw parser/reasoning leak was recorded.
+- Red evidence: audio turn failed at `audio_send_message` with HTTP `400`: `/v1/chat/completions received unsupported media modality audio. Supported modalities: text, vision, video.`
+- Runtime/cache evidence before the audio guard: active memory `25324.6 MB`, peak `25728.6 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA active, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=20`, `l2_block_tokens_on_disk=62`, `l2_tokens_on_disk=62`, and block-disk writes `2`.
+- Boundary: this classifies Gemma 31B JANG4M dev-app audio as honestly unsupported, not untested. It does not invalidate 31B text/tools/image/video/cache green rows, and it does not clear audio support, installed-app parity, public tunnel SSE, or release readiness. No release action was run.
+
+# 2026-06-10 - Gemma 26B JANG4M dev-app audio boundary
+
+- Ran current Electron dev-build Gemma 4 26B A4B QAT JANG4M audio proof with `npm run dev`, Chat Completions, one app audio attachment, server cache controls, temperature `0`, top_p `1`, max tokens `128`, and max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-26b-jang4m-audio-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-audio-20260610-proof.json`.
+- Positive evidence: dev app launched, real `/Users/eric/models/JANGQ-AI/gemma-4-26B-A4B-it-qat-JANG_4M` loaded, two visible text turns completed before audio, the app forced multimodal for one audio file, server `MEDIA_DIAG` saw one `input_audio` content part, server cache controls were visible, and no raw parser/reasoning leak was recorded.
+- Red evidence: audio turn failed at `audio_send_message` with HTTP `400`: `/v1/chat/completions received unsupported media modality audio. Supported modalities: text, vision, video.`
+- Runtime/cache evidence before the audio guard: active memory `17648.7 MB`, peak `17843.1 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA active, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=20`, `l2_block_tokens_on_disk=64`, `l2_tokens_on_disk=64`, and block-disk writes `2`.
+- Boundary: this classifies Gemma 26B JANG4M dev-app audio as honestly unsupported, not untested. It does not invalidate 26B text/tools/image/video/cache green rows, and it does not clear audio support, installed-app parity, public tunnel SSE, or release readiness. No release action was run.
+
+# 2026-06-10 - N2 JANG_1L forced live load after Gemma video
+
+- Per Eric's direction, ran Nex/N2 Pro JANG_1L live gate anyway instead of stopping at the preflight skip. Command used `--jang1l-required-extra-headroom-gib 0`, low batches (`prefill=64`, `step=128`, `completion=32`), `ssm-state-cache-mb=128`, paged cache block size `64`, and block L2 max `2 GB`.
+- Artifact `build/current-n2-jang1l-live-chat-cache-forced-after-gemma-video-20260610.json` is `status=fail`, but it proves a real load and one bounded request: server reached `/health`, model loaded as `qwen3_5_moe` JANG_1L, first Chat Completions request returned HTTP `200`, then cache-warm/cache-hit requests returned HTTP `503` from the Metal working-set guard at `102%` of the `107.5GB` cap.
+- Runtime proof: `profile=JANG_1L`, `codec=affine_quantized_matmul`, `target_bits=1.0`, `actual_bits=2.13`, `prestacked_switch=540`, `trained_active_experts=10`, `n_routed_experts=512`, qwen parser, qwen3 reasoning parser, MTP metadata inconsistent because `jang_config.drop_mtp=true` while config declares one MTP layer and no MTP tensors.
+- Cache proof: native `hybrid_ssm_v1`, `attention_kv + ssm_companion_state + async_rederive`, live attention TurboQuant KV enabled for 15 attention layers, companion SSM state full precision for 45 layers, q4 storage-boundary attention KV, paged cache, block L2, and SSM companion L2 initialized.
+- Memory proof: before launch `114.03 GiB` available; after health `112.92 GiB`; after first request `6.41 GiB` available. Final health reported active Metal `112357.6 MB`, peak `112563.1 MB`, cache `0 MB`. Server exited cleanly after the harness terminated it; no model process remained.
+- Boundary: this clears "can load and answer one bounded Chat request on this 128GB Mac" only. It does not clear cache warm/hit, tool, Responses, Responses stream, L2 restart, media, UI installed-app, or release support for N2 JANG_1L. No release action was run.
+
+# 2026-06-09 - N2 JANG1L continuation preflight
+
+- Stayed in `/Users/eric/mlx/vllm-mlx-finite-launch-guard`; no deprecated `/Users/eric/vmlx`, no package/sign/notarize/tag/download release action.
+- Reduced blocker class: `runtime/kernel` scheduling proof for Nex/N2 Pro 397B `JANG_1L`.
+- No-load command: `.venv/bin/python tests/cross_matrix/run_n2_jang1l_memory_preflight.py --model /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L --out build/current-n2-pro-jang1l-local-memory-preflight-continuation-20260609.json`.
+- Result: `decision=do_not_launch`; model/index/config/jang_config exist; `artifact_profile=JANG_1L`, `format=jang`, `model_type=qwen3_5_moe`, `architecture=Qwen3_5MoeForConditionalGeneration`.
+- Memory math: indexed payload `110.57 GiB`, required extra Metal/runtime headroom `8.0 GiB`, required available `118.57 GiB`, current available `112.17 GiB`, gap `6.40 GiB`.
+- Artifact weight map summary: `linear_attention_tensors=855`, `vision_tensors=333`, `expert_tensors=720`, `total_tensors=2845`.
+- Boundary: no N2 weights were loaded. This is scheduling/artifact proof only, not live runtime/cache/API/UI release clearance. Do not lower the gate or force launch below the available-memory requirement.
+
+# 2026-06-09 - Responses Qwen35 tunnel output-index classification
+
+- Stayed in `/Users/eric/mlx/vllm-mlx-finite-launch-guard`; no deprecated `/Users/eric/vmlx`, no package/sign/notarize/tag/download release action.
+- Reduced blocker class: `api/ui` Responses raw-SSE parity for reasoning-enabled tool calls.
+- Current-source trace: `stream_responses_api()` closes the streaming message item at `output_index=0`, appends it, increments `output_index`, then emits function_call items at the next index. The no-heavy contract still covers source empty XML required-arg fail-closed behavior, output-index ordering, gateway argument passthrough, and stale Responses port rejection.
+- Artifact truth: `build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json` remains `status=fail`; the only present surface is public tunnel Qwen35, which preserves `record_fact` args `{"value": "blue-cat"}` and has `reasoning_events=10`, but emits `message=[0]` and `function_call=[0]`.
+- Gemma same-model tunnel boundary: `build/current-responses-raw-sse-parity-direct-gateway-tunnel-gemma4-e2b-after-parser-20260609.json` remains `status=fail`; direct/gateway Gemma4 E2B preserve args and valid indices, but tunnel returns `model_not_found` because `gemma4-e2b-sse` is not advertised there.
+- Classification: do not fix this by disabling reasoning, inventing missing arguments, or adding parser fallback injection. Next proof is Qwen35 current-source direct and panel-gateway raw SSE with the exact tunnel request/model. If those use function_call `output_index=1`, rebuild/redeploy the tunnel backend and recapture. If they duplicate `0`, reopen the source streaming finalization path.
+- Boundary: Responses parity remains open for same-model direct/gateway/tunnel, deployed tunnel freshness, final object consistency, and tool-result continuation. No release action.
+
 # 2026-06-09 - Gemma4 12B JANG4M no-media current proof pointer
 
 - Stayed in `/Users/eric/mlx/vllm-mlx-finite-launch-guard`; no deprecated `/Users/eric/vmlx`, no package/sign/notarize/tag/download release action.
@@ -29,6 +149,24 @@
 - Regression: package/parity and current-suite tests now assert that every auto-installed runtime patch module is hash-covered.
 - Red/green proof: the focused package/current-suite test set failed before the manifest fix on missing runtime patch files, then passed after the fix (`6 passed`).
 - Boundary: package/parity/source-hash coverage only. This protects rebuild drift but does not clear live Gemma full media/UI/tunnel, Kimi live quality, DSV4 memory-gated tool-loop, N2/MiMo rows, signing, notarization, tag, or download rows.
+
+# 2026-06-09 - Installed app rebuild and package parity checkpoint
+
+- Rebuilt bundled Python and installed `/Applications/vMLX.app` from current source with `panel/scripts/build-and-install.sh`.
+- Fixed a real bundle bootstrap issue in `panel/scripts/bundle-python.sh`: after extracting the Python standalone tarball, the script now restores launcher/runtime files before the first pip invocation and uses the concrete `python3.12` launcher during bootstrap. It also restores the launcher again after MLX wheel installation before dependency installation. This addresses the observed missing `python3` / `unknown encoding: cp437` rebuild failure without changing model/runtime behavior.
+- Installed app proof: `build/current-installed-app-runtime-parity-audit-after-installed-app-rebuild-20260606.json` is `status=pass`. The installed bundled Python imports `vmlx_engine 1.5.56`, `mlx 0.31.2`, `mlx-lm 0.31.3`, `mlx-vlm 0.5.0`, TurboQuant disk/cache modules, SSM companion cache/disk store, Gemma4 Unified registration, native MTP, and Qwen35 MTP patches.
+- Packaged integrity proof: `build/current-packaged-integrity-contract-after-installed-app-rebuild-20260606.json` is still `status=fail`, but only for `packaged_app_developer_id_signing_blocked`. The release-gate unit contracts pass `47/47` and bundled verifier passes. Developer ID private-key access is blocked from this non-interactive keychain state (`developer_id_keychain_user_interaction_not_allowed`).
+- Full checklist proof: `build/current-full-release-objective-checklist-after-responses-raw-sse-gemma-surface-20260609.json` remains `status=open`, `failed_count=73`.
+- Boundary: the local `/Applications/vMLX.app` is ad-hoc signed and codesign-valid, not a Developer ID signed/notarized checkpoint DMG. No tag, upload, appcast, notarization, or release action was performed.
+
+# 2026-06-09 - Signed checkpoint DMG readiness audit
+
+- Added `tests/cross_matrix/run_signed_checkpoint_dmg_audit.py` to capture the current signing/notary state without building, signing, notarizing, uploading, tagging, or mutating updater feeds.
+- Fresh artifact `build/current-signed-checkpoint-dmg-readiness-20260609.json` is `status=open`.
+- Existing local `panel/release/vMLX-1.5.56-sequoia-arm64.dmg` and `panel/release/vMLX-1.5.56-tahoe-arm64.dmg` are Developer ID signed, stapled, and Gatekeeper accepted, with hashes `a7148d42e27ee8eccb428a460bc4aa643b227a25ef394aed7dbebe3f3763fd5c` and `faa049368ce7c3f67dbf20b24e250bbc901493d81d382e924d30789d2b067c56`.
+- Those DMGs are June 5 artifacts and are not current-source checkpoint proof for HEAD `8324bf11`.
+- Current `/Applications/vMLX.app` is codesign-valid but ad-hoc signed. Fresh Developer ID signing is blocked with `errSecInternalComponent`; `xcrun notarytool history --keychain ~/Library/Keychains/vmlx-build.keychain-db --keychain-profile vmlx-notary` is blocked because `vmlx-build.keychain-db` is locked.
+- Required next sequence: unlock `vmlx-build.keychain-db`, restore `codesign` partition-list access, rerun the fresh signing probe, rebuild current-source Sequoia/Tahoe DMGs, notarize with `VMLINUX_NOTARY_KEYCHAIN=$HOME/Library/Keychains/vmlx-build.keychain-db`, staple, verify, and only then consider upload/tag/appcast release steps.
 
 # 2026-06-09 - Qwen/N2 native-MTP package parity coverage
 
@@ -7752,12 +7890,30 @@ MiniMax #179, real UI matrix, and DSV4 blockers.
 - Failure boundary: the capture reuses `output_index=0` for both the initial message item and the later `function_call` item. The contract fails only `all_present_surfaces_have_valid_output_item_indices`; it is not the empty-args bug and not a reasoning-disable workaround.
 - Next proof required: same-model Qwen35 direct local and gateway raw SSE captures, plus tunnel recapture after deployed output-index fix. Keep Gemma E2B tunnel wrong-model availability separate from Qwen35 output-index validity.
 
+# 2026-06-09 - Checkpoint DMG app runtime parity proof
+
+- Ran staged-app runtime parity audits against the current checkpoint DMG app payloads without replacing `/Applications/vMLX.app`.
+- Sequoia artifact: `build/current-installed-app-runtime-parity-audit-sequoia-checkpoint-dmg-20260609.json`, `status=pass`, `missing_or_stale=[]`, bundled engine hash parity true, packaged engine-source hash parity true.
+- Tahoe artifact: `build/current-installed-app-runtime-parity-audit-tahoe-checkpoint-dmg-20260609.json`, `status=pass`, `missing_or_stale=[]`, bundled engine hash parity true, packaged engine-source hash parity true.
+- Proof-map update: release manifest/current suite now consume the Sequoia checkpoint app parity artifact for installed-app runtime parity and the Tahoe checkpoint app parity artifact for staged-app runtime parity. Regenerated `build/current-release-regression-manifest-after-checkpoint-app-parity-20260609.json`; it still reports `status=fail`, `prepackage_ready=false`, `release_ready=false`, but `installed_app_runtime_parity_audit=true` and `staged_app_runtime_parity_audit=true`.
+- Validation passed: focused parity/manifest/current-suite tests `23/23`, `py_compile`, and `git diff --check`.
+- Boundary: this is no-heavy app-runtime parity for the checkpoint DMG payloads. It is not live model/UI/media/cache clearance and does not publish/tag/upload/appcast/PyPI.
+
 # 2026-06-09 - Gemma4 31B QAT JANG_4M source smoke
 
 - Live proof run: `VMLINUX_BENCH_ISOLATED=1 .venv/bin/python bench/all_local_model_smoke.py --models-root /Users/eric/models/JANGQ-AI --only gemma-4-31B-it-qat-JANG_4M --max-models 1 --include-tools --include-l2-restart --no-media --port 8925 --load-timeout-s 600 --request-timeout-s 360 --out build/current-all-local-model-smoke-gemma4-31b-qat-jang4m-tools-nomedia-l2-20260609`.
 - Result: `status=pass`; required tool, tool-result continuation, JSON/code exactness, mixed-SWA prefix hit, block-disk writes, and L2 restart passed. Cache repeat hit showed `cached_tokens=56`, `cache_detail=paged+mixed_swa`; L2 restart summary showed `disk_hits=2`.
 - Proof-map update: QAT JANG_4M source-smoke open rows are now only `gemma4_12b_qat_jang4m`, blocked by visible `<audio|>` leak. E2B/E4B/26B/31B source no-media smokes are present and pass.
 - Boundary: source no-media 31B proof only. Media/Responses/UI/installed-app/release remain open.
+
+# 2026-06-09 - MiniMax #179 current-source smoke audit boundary
+
+- Source/proof-map fix: `tests/cross_matrix/run_issue179_minimax_k_root_cause_audit.py` now consumes `build/current-all-local-model-smoke-minimax-small-jangtq-cache-language-after-bare-invoke-tool-20260609/summary.json` as current-source MiniMax Small evidence.
+- Recorded green source checks: MiniMax family detection, `minimax` tool parser, `minimax_m2` reasoning parser, reasoning separation, required `record_fact({"value":"blue-cat"})`, exact tool-result continuation, exact JSON/code rows, `paged+tq` second-hit cache, `paged+disk+tq` fresh-process L2 restart restore, and native TurboQuant/L2 cache capability.
+- Refreshed audit: `build/current-issue179-minimax-k-root-cause-audit-after-parser-settings-parity-20260608.json`, `status=open`; the `language_planning_leak_isolation` matrix now lists the current-source MiniMax Small evidence while preserving reporter-machine blockers.
+- Refreshed checklist: `build/current-full-release-objective-checklist-after-responses-raw-sse-gemma-surface-20260609.json`, `status=open`, `failed_count=73`; new row `issue179_current_source_minimax_small_smoke=true`.
+- Remaining #179 blockers: reporter parity artifact missing, reporter server hash drift, reporter generation-config/sampling parity, reporter session/log/cancel lifecycle, and same-prompt reporter-machine raw SSE/visible/reasoning capture.
+- Validation passed: `tests/test_issue179_minimax_k_root_cause_audit.py` + `tests/test_full_release_objective_checklist.py` passed `37/37`; `py_compile` passed. No release, package, sign, notarize, tag, or download action.
 
 # 2026-06-09 - Gemma4 12B QAT JANG_4M tool sentinel source fix
 
@@ -7782,3 +7938,637 @@ MiniMax #179, real UI matrix, and DSV4 blockers.
 - New explicit red rows: `qwen35_raw_sse_status_pass` and `qwen35_raw_sse_valid_output_item_indices`; detail reports conflicting `output_index=0` for message and function_call on direct/gateway/tunnel copies of the current Qwen35 tunnel capture.
 - Parallel handoff: wrote `.agents/PARALLEL_RELEASE_LANE_HANDOFF_2026_06_09.md` with current green Gemma QAT JANG_4M rows and the best next work for Responses, Gemma media/UI, MiMo, N2, DSV4, and MiniMax.
 - Validation passed: focused full-checklist tests `4/4`, `py_compile`, and regenerated checklist. No release, package, sign, notarize, tag, or download action.
+- Follow-up no-heavy source recheck: `build/current-noheavy-api-cache-contract-after-qwen35-output-index-recheck-20260609.json`, `status=pass`; `responses_streaming_tool_call_arguments_and_indexes=true`, `gateway_responses_function_call_arguments_streaming=true`, `gateway_responses_reasoning_empty_final_arguments_streaming=true`, and `gateway_stale_responses_port_rejection=true`. Current source is not showing the output-index bug in synthetic/source contracts; next work is live same-model direct/gateway/tunnel capture or deployed route freshness.
+
+# 2026-06-09 18:31 PDT - Gemma QAT/native MXFP4 inventory/objective refresh
+
+- Regenerated `build/current-gemma-qat-native-mxfp4-local-inventory-after-source-smoke-map-20260609.json` and `build/current-objective-proof-after-n2-jang1l-memory-refresh-20260609.json`.
+- Gemma inventory remains `status=open`, with `missing_required_rows=[]`, all QAT/JANG_4M and QAT/native MXFP4 rows present, and `source_live_smoke_open_rows=[]`.
+- Objective digest now records the full set of Gemma source-live-smoke artifacts and keeps release clearance open with `all_required_live_proofs_present=false`. This is intentional: source smokes do not clear installed-app/UI/media/cache/API/tunnel release rows.
+- Secondary cleanup from the refreshed tool-call contract: `App maxToolIterations cap is enforced for DSV4 tool loop` is now `pass`; stale source hashes for `server.py`, `tests/test_gemma4_tool_parser.py`, and `tests/test_engine_audit.py` are gone from that row.
+- Validation passed: focused pytest `17/17` and `py_compile`.
+- Boundary: no Gemma release claim, no package/sign/notarize/tag/upload action.
+
+# 2026-06-09 18:26 PDT - DSV4 default-cache tool-loop live retry and gate path fix
+
+- Retried the DSV4 default-cache DSML/tool-loop gate for public issue #165 with current checkpoint Sequoia bundled Python:
+  `.venv/bin/python tests/cross_matrix/run_dsv4_default_cache_tool_loop_gate.py --python panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/bin/python3 --model /Users/eric/models/JANGQ/DeepSeek-V4-Flash-JANG --port 8854 --timeout 900 --request-timeout 600 --min-free-gb 120 --max-output-tokens 768 --code-prompt-variant copy_block --out build/current-dsv4-default-cache-tool-loop/result.json`.
+- Result: no model load. The artifact is `status=skipped`, `reason=insufficient_free_memory`, `required_available_gb=120.0`, observed `available_gib=112.45`.
+- Refreshed `build/current-tool-call-contract-after-cross-model-loop-metrics-20260609.json`; it remains `status=open`, `failed=[]`, `missing_markers=[]`. Source DSML/parser/Responses guards, panel loop controls, and family tool-parser matrix passed; only `live_default_cache_dsv4_tool_loop_artifact_passed=false`.
+- Fixed the live gate default Python resolver so future memory-ready runs do not use the stale missing `panel/release/mac-arm64/vMLX.app/.../python3` path. It now prefers current Sequoia/Tahoe checkpoint app bundled Python, then panel bundled Python, then `.venv`, then legacy.
+- Dry-run proof: `build/current-dsv4-default-cache-tool-loop-dryrun-current-python-20260609.json` shows Sequoia bundled Python plus default native prefix/paged/block-L2 flags, DSML parser, DeepSeek reasoning parser, and no generic KV quant flag.
+- Validation passed: focused pytest `14/14`, `py_compile`, and dry-run. Boundary: DSV4/tool-call matrix remains open until the live default-cache tool-loop passes at sufficient RAM; no release/publish action.
+
+# 2026-06-09 18:38 PDT - Public app issue audit pointer refresh
+
+- Refreshed `tests/cross_matrix/run_public_app_issue_audit.py` after checkpoint app/package parity and wrote `build/current-public-app-issue-audit-after-checkpoint-packaged-integrity-20260609.json`.
+- Updated current-suite and release-manifest pointers to the refreshed public issue audit artifact.
+- Positive changes: stale installed-app hash failures for #111 and #165 are gone; #111 is now `focused_source_slice=pass`, and #165 has `installed_app_dsml_parser_hash_guarded=true` plus `tool_call_contract_source_checks_pass=true`.
+- Remaining intended blocker: `public_app_issue_audit` is still false in `build/current-release-regression-manifest-after-public-issue-audit-refresh-20260609.json` because #165 still has `tool_call_contract_passes=false`; the broader tool-call contract remains open on live default-cache DSV4 tool-loop proof. Do not weaken this validator unless release scope explicitly defers DSV4/DSML tool-call clearance.
+- Validation passed: focused pytest `9/9`, `py_compile`, public issue audit runner, release manifest regen, and `git diff --check`.
+- Boundary: no tag/upload/appcast/PyPI/public release action.
+
+# 2026-06-09 18:25 PDT - Checkpoint packaged integrity proof-map refresh
+
+- Fixed stale packaged-integrity/release-gate proof pointers after the checkpoint DMG app parity run. `panel/scripts/release-gate-python-app.py` now refreshes `build/current-objective-proof-after-n2-jang1l-memory-refresh-20260609.json`, matching the current suite/release manifest instead of the older PR-intake objective artifact.
+- Updated packaged-integrity pointers in `run_packaged_integrity_contract.py`, `release_regression_manifest.py`, `run_current_regression_suite.py`, `run_public_app_issue_audit.py`, and matching tests to `build/current-packaged-integrity-contract-after-checkpoint-app-parity-20260609.json`.
+- Root cause for the first manifest mismatch: the packaged-integrity artifact was passing, but release manifest expected-open requirements had dropped the still-open Gemma QAT/native MXFP4 runtime/media/cache/API/UI release row. Added that expected-open row back so packaged integrity can be green while Gemma remains explicitly blocked.
+- Proof: `build/current-packaged-integrity-contract-after-checkpoint-app-parity-20260609.json` is `status=pass`, `failed=[]`; `release_gate_unit_contracts` passed `49`, bundled Python verifier passed, and dry release gate failed only for known open objectives while using the current objective digest.
+- Regenerated `build/current-release-regression-manifest-after-checkpoint-packaged-integrity-20260609.json`: overall `status=fail`, `prepackage_ready=false`, `release_ready=false`; targeted components now show `packaged_integrity_matrix=true`, `installed_app_runtime_parity_audit=true`, and `staged_app_runtime_parity_audit=true`.
+- Validation passed: focused pytest `57/57`, `py_compile`, packaged-integrity runner, regenerated release manifest, and `git diff --check`.
+- Boundary: no publish/tag/upload/appcast/PyPI action. This only clears packaged-integrity proof-map parity for the checkpoint DMGs; runtime/model/UI/cache release rows remain open.
+
+# 2026-06-09 - Apple signing/notary runbook correction
+
+- Corrected the release lane against `/Users/eric/wiki/infra/apple-notarization.md` instead of treating the keychain state as permanently blocked.
+- Ran the documented `vmlx-build.keychain-db` unlock, `security set-keychain-settings`, and `security set-key-partition-list -S apple-tool:,apple:,codesign:` sequence, repeated once per the runbook caveat for first-sign failures.
+- Fresh Developer ID signing probe now passes with `Developer ID Application: ShieldStack LLC (55KGF2S5AY)`, `TeamIdentifier=55KGF2S5AY`, hardened runtime, and secure timestamp.
+- Notary profile access now passes with `xcrun notarytool history --keychain ~/Library/Keychains/vmlx-build.keychain-db --keychain-profile vmlx-notary --output-format json`; current history includes accepted vMLX submissions.
+- Source fix: `tests/cross_matrix/run_signed_checkpoint_dmg_audit.py` now emits conditional `required_next_steps`, so green signing/notary access no longer tells the next agent to redo keychain repair.
+- Regenerated `build/current-signed-checkpoint-dmg-readiness-20260609.json`: `status=open`, `existing_dmgs_signed_and_stapled=true`, `fresh_signing_probe=pass`, `notarization=pass`, required next steps `rebuild_current_source_dmg_flavors` and `notarize_staple_and_verify_current_dmgs`.
+- Boundary: no current-source DMG was rebuilt in this entry, and no tag/upload/appcast/public release was performed. The next release action is current-source DMG build, notarize, staple, and verify after the checkpoint scope is explicit.
+
+# 2026-06-09 - Official DMG build gate after keychain unlock
+
+- Ran the official DMG build entrypoint for Sequoia with
+  `VMLINUX_PREPACKAGE_READY_MANIFEST_OUT=build/current-release-regression-manifest-pre-dmg-release-build-after-keychain-unlock-20260609.json panel/scripts/build-release-dmgs.sh sequoia`.
+- Result: the script stopped at `--require-prepackage-ready` before building a DMG. Artifact `build/current-release-regression-manifest-pre-dmg-release-build-after-keychain-unlock-20260609.json` reports `status=fail`, `prepackage_ready=false`, `release_ready=false`.
+- Important narrowing: `current_proof_sweep.component_ok.packaged_app_developer_id_signing=true`, so the current DMG build stop is not Apple signing/keychain/notary access.
+- Current prepackage blockers include MiMo JANG_2L runtime quality, MiniMax #179 reporter parity/root cause, Gemma26 installed-app memory stress, real UI matrix rows, N2 JANG_1L runtime/cache/API/UI, Responses raw-SSE parity, and DSV4 memory-safe live proof.
+- Boundary: no DMG was produced, no notarization/stapling was run, and no tag/upload/appcast/public release happened.
+
+# 2026-06-09 - N2 JANG_1L memory refresh after DMG gate
+
+- Refreshed the no-load Nex/N2 Pro 397B JANG_1L preflight at `build/current-n2-pro-jang1l-local-memory-preflight-after-release-gate-20260609.json`.
+- Result: `decision=do_not_launch`, model/index present, payload `110.57 GiB`, required available `118.57 GiB`, observed available `112.56 GiB`, gap `6.01 GiB`.
+- Refreshed the live chat/cache gate preflight path at `build/current-n2-jang1l-chat-cache-proof-after-release-gate-20260609.json`.
+- Result: `status=skipped`, `reason=n2_jang1l_insufficient_available_memory`, observed available `112.35 GiB`, gap `6.22 GiB`.
+- Boundary: no N2 weights were loaded. This does not clear N2 runtime/cache/API/UI; it keeps the one-at-a-time live proof queued until actual available headroom meets the gate.
+
+# 2026-06-09 - Qwen35 tunnel raw SSE output-index recapture
+
+- Recaptured public tunnel raw Responses SSE for `models/Qwen3.6-35B-A3B-MXFP8-CRACK-MTP` with reasoning enabled and required `record_fact`.
+- Raw capture: `build/responses-sse-captures-20260609/tunnel-qwen35-mxfp8-mtp-tool-recapture-max512-20260609.sse`.
+- Refreshed classifier artifact: `build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-recapture-20260609.json`, `status=fail`.
+- Positive evidence: authoritative args are preserved as `{"value": "blue-cat"}` in argument deltas, done event, and final function item; reasoning events are present; model matches; parse errors are `0`.
+- Remaining failure: tunnel still emits `message` and `function_call` at `output_index=0`, so `all_present_surfaces_have_valid_output_item_indices=false`.
+- Checklist pointer now consumes the recapture artifact, and focused raw-SSE/checklist validation passed `16/16`. Boundary: no package/sign/notarize/tag/download/release action.
+# 2026-06-10 - Panel exact local detector parity for Gemma/MiMo/N2
+
+- Reduced blocker class: `api/ui` launch/settings parity for the requested
+  checkpoint rows.
+- Source fix: panel now maps `gemma4_unified` and `gemma4_unified_text` to the
+  Gemma4 family, so exact local Gemma 12B MXFP4/JANG4M bundles get Gemma4
+  tool/reasoning parsers and rotating/paged mixed-SWA cache instead of
+  `unknown`.
+- Source fix: panel MiMo detection now matches Python registry policy:
+  `mimo_v2_asymmetric_swa` cache subtype, paged cache required for that
+  subtype, XML tools enabled, and no automatic MiMo reasoning claim until
+  visible-final thinking proof exists.
+- Proof: `build/current-panel-settings-contract-proof-20260610-mimo-n2-gemma-launch-parity.json`
+  is `status=pass`, `missing_source_markers=[]`.
+- Proof: `build/current-panel-exact-local-model-detect-mimo-n2-gemma-20260610.json`
+  is `status=pass`; exact local Gemma, MiMo, and N2 directories detect as
+  expected, with N2 JANG_1L honestly text-only/forceTextOnly.
+- Validation: `npx vitest run tests/model-config-registry.test.ts` passed
+  `66/66`; `npx vitest run tests/settings-flow.test.ts` passed `254/254`;
+  `.venv/bin/python -m pytest -q tests/test_panel_cli_flag_contract.py` passed
+  `9/9`; no-heavy panel settings contract regenerated green.
+- Boundary: no Electron-clicked chat transcript, no installed-app rebuild,
+  no N2 JANG_1L memory fix, no MiMo JANGTQ2 exactness fix, no Gemma audio/video
+  E2E, no package/sign/notarize/tag/download/release action.
+
+# 2026-06-09 16:59 PDT - documented signing/notarization path correction
+
+- Read the actual runbook `/Users/eric/wiki/infra/apple-notarization.md` and active scripts `panel/scripts/build-release-dmgs.sh`, `panel/scripts/notarize-release-dmgs.sh`, and `panel/scripts/verify-release-dmgs.sh`.
+- Updated `.agents/RELEASE_BLOCKER_LEDGER_2026_06_09.md` and `.agents/PARALLEL_RELEASE_LANE_HANDOFF_2026_06_09.md` with the concrete keychain unlock/partition-list sequence, Developer ID/notary profile boundary, and canonical Sequoia/Tahoe build -> notarize/staple/blockmap -> verify flow.
+- Boundary: no build, package, sign, notarize, tag, appcast, or download mutation was run. The known blocker is `prepackage_ready=false`, not missing knowledge of how to sign/notarize.
+
+# 2026-06-10 - Gemma 4 12B JANG4M dev-app video proof
+
+- Generated a tiny real video fixture with `ffmpeg`: 1-second 64x64 solid-red MP4, 1613 bytes.
+- First real Electron dev-app Gemma video attempt at `max_prompt_tokens=4096` failed honestly: `docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-video-cache-20260610-proof.json`, `HTTP 413 prompt_too_long`, about `8315` prompt tokens.
+- Reran with `max_prompt_tokens=12000`; tracked summary `build/current-real-ui-live-model-gemma4-12b-jang4m-video-proof-20260610.json` is `status=pass`; raw ignored proof is `docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-video-cache-max12k-20260610-proof.json`.
+- Proven: real Electron dev app, real loaded `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M`, `video_url` attachment persisted, server decoded the base64 MP4, extracted frames, routed through MLLM media fallback, and assistant described a solid/dark red screen. Proof surfaces include `video_where_supported`, parser/language leak checks, cache endpoint stats, mixed-SWA native cache, L2 disk storage, and server cache controls.
+- Cache/runtime evidence: `cache_detail=paged+mixed_swa`, `cached_tokens=20`, `l2_block_tokens_on_disk=84`, `disk_writes=2`; generic TurboQuant KV stayed inactive because Gemma mixed-SWA requires native RotatingKVCache metadata.
+- Boundary: Gemma 12B JANG4M video is green only with adequate context cap for this fixture. Audio semantic E2E, installed-app parity, public tunnel SSE, package/sign/notarize/tag/upload remain open. No release action.
+
+# 2026-06-10 - N2 JANGTQ2 dev-app Responses delta proof
+
+- Ran a separate real Electron dev-app N2 JANGTQ2 Responses pass without built-in tools to isolate app renderer/content-delta streaming from the earlier built-in-tool loop.
+- Tracked summary: `build/current-real-ui-live-model-n2-jangtq2-dev-app-delta-proof-20260610.json`, `status=pass`; raw ignored proof: `docs/internal/agent-notes/current-real-ui-live-model-n2-jangtq2-responses-delta-only-20260610-proof.json`.
+- Proven: current Electron dev build, real loaded `/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2`, `/v1/responses`, two complete visible assistant turns, `responses_delta_streaming`, `responses_cache_detail_usage`, generation defaults, server cache controls, parser/language leak checks.
+- Streaming evidence: `eventCounts.stream=45`; first assistant trace `count=21`, `N` -> `N2_APP_DELTA_ONE is ready. prefix cache, paged cache, and streaming delta are included.`; second assistant trace `count=24`, `N` -> `N2_APP_DELTA_TWO is ready. hybrid SSM, TurboQuant KV, and block disk L2 are included.`
+- Cache/runtime evidence: native cache `hybrid_ssm_v1` / `hybrid_ssm_typed` with `attention_kv`, `ssm_companion_state`, and `async_rederive`; live attention TurboQuant KV only for attention layers; SSM companion native; second trace `cached_tokens=45`, `cache_detail=paged+ssm`; final L2 totals `l2_block_tokens_on_disk=120`, `l2_ssm_tokens_on_disk=274`, `l2_tokens_on_disk=394`.
+- Boundary: this clears N2 dev-app content-delta transport. It does not prove built-in tools in this exact delta-only run, does not fix the earlier first post-tool visible answer collapse to `Created`, and does not clear installed-app/media/public tunnel/release gates. No package/sign/notarize/tag/download action.
+
+# 2026-06-10 - MiMo JANG_2L app tool-choice boundary remains exactness-red
+
+- Added scoped panel request behavior: when built-in tools are enabled and the latest user message explicitly names exactly one available tool, the panel sends a specific `tool_choice` for Chat Completions and Responses. It does not pin if no explicit tool name is present or if multiple tools are named.
+- Added direct boundary probe `tests/cross_matrix/run_mimo_jang2l_chat_tool_boundary_probe.py`.
+- Direct MiMo JANG_2L single-tool boundary passed: `build/current-mimo-v25-jang2l-chat-tool-boundary-20260610.json` shows auto and required `run_command` tool calls plus paged cache/L2 positive.
+- Direct MiMo JANG_2L full-panel-tool boundary reproduced the app pressure: `build/current-mimo-v25-jang2l-chat-tool-boundary-fulltools-20260610.json` is red for auto (`HTTP 413` nonstream and stream `prompt_too_long`, 4754 tokenized prompt tokens vs max 4096) but green for specific/required `run_command`.
+- Post-fix real Electron dev-app proof remains red: `build/current-real-ui-live-model-mimo-v25-jang2l-dev-app-after-toolchoice-proof-20260610.json`. The app loaded MiMo, executed `run_command`, streamed visible text, and proved paged cache/L2, but MiMo mutated requested semantics (`REAL_UI_LIVE_TOOL_ONE` to `REAL_UI_LAND_TOOL_ONE`, working-directory probe files to `/tmp/real_ui_land_tool_*.txt`). A stricter exact-command prompt also failed with partial/empty visible assistant content.
+- Validation: `panel/tests/request-builder.test.ts` passed 68/68; focused request/model registry tests passed 8/8; `npx tsc --noEmit --pretty false` passed; `python3 -m py_compile tests/cross_matrix/run_mimo_jang2l_chat_tool_boundary_probe.py` passed.
+- Boundary: do not call MiMo JANG_2L app tool support green yet. Next work is tool-argument/exactness diagnosis, not cache/L2 or fake parser/tool-call synthesis. No package/sign/notarize/tag/download action.
+
+# 2026-06-09 17:01 PDT - Gemma 4 12B MXFP4 source image proof
+
+- Ran one live source media row: `.venv/bin/python tests/cross_matrix/run_gemma4_12b_media_smoke.py --rows mxfp4 --port 8892 --load-timeout 420 --out build/current-gemma4-12b-mxfp4-media-smoke-after-release-doc-correction-20260609.json`.
+- Result: `status=pass`; `mxfp4_image` returned visible `Red`, `vision_advertised=true`, `red_detected=true`, `no_channel_leak=true`.
+- Server log: `build/current-gemma4-12b-mxfp4-media-smoke-after-release-doc-correction-20260609_artifacts/mxfp4_image_server.log`; health records `weight_format=mxfp4`, `mlx_affine_quantized_matmul`, and `metal_na_active_on_host=true`.
+- Boundary: source API image proof only. Does not clear Gemma tools/cache/UI/installed-app/tunnel/audio/video release rows. No package/sign/notarize/tag/download/release action.
+
+# 2026-06-09 17:08 PDT - PyPI vmlx/jang checkpoint publish
+
+- Published `jang==2.5.30` from `/Users/eric/jang/jang-tools`; PyPI URL: `https://pypi.org/project/jang/2.5.30/`.
+- Published `vmlx==1.5.56` from the active worktree; PyPI URL: `https://pypi.org/project/vmlx/1.5.56/`.
+- Source/package fix: bumped vMLX hard dependency and extras from `jang>=2.5.29` to `jang>=2.5.30`, and aligned `panel/scripts/bundle-python.sh`, `tests/test_engine_audit.py`, and `vmlx_engine/utils/jang_loader.py`.
+- Build proof: fresh artifacts in `/tmp/vmlx-pypi-dist` and `/tmp/jang-pypi-dist`; `twine check` passed for both wheels and sdists.
+- Publish proof: PyPI JSON reports `jang 2.5.30` and `vmlx 1.5.56` with both wheel and sdist files. Clean temp venv no-deps install succeeded for `jang==2.5.30 vmlx==1.5.56`; installed `vmlx` metadata requires `jang>=2.5.30`.
+- Boundary: PyPI package checkpoint only. This is not a signed/notarized DMG release, and app release remains blocked by current prepackage/runtime/model/UI/cache rows.
+
+# 2026-06-09 17:25 PDT - Qwen35 direct Responses SSE source-vs-tunnel proof
+
+- Added `tests/cross_matrix/run_qwen35_responses_raw_sse_capture.py` and `tests/test_qwen35_responses_raw_sse_capture.py` to capture current-source Qwen35 MXFP8-MTP raw Responses SSE with reasoning enabled and required `record_fact`, then classify it beside the existing public tunnel capture.
+- Live artifact: `build/current-responses-raw-sse-parity-qwen35-direct-source-vs-tunnel-20260609.json` is `status=fail`, with `missing_captures=["gateway"]`.
+- Current-source direct proof is green for the reported failure class: same served model as tunnel (`models/Qwen3.6-35B-A3B-MXFP8-CRACK-MTP`), authoritative args `{"value": "blue-cat"}`, reasoning events present, parse errors `0`, and valid output indices `message=[0]`, `function_call=[1]`.
+- Tunnel remains red but narrower: it preserves args and reasoning events, but still emits `message=[0]` and `function_call=[0]`, so `conflicting_output_indices=[0]`.
+- Health/runtime proof in the direct capture records native MTP active, hybrid SSM typed cache, TurboQuant attention KV enabled, and block disk cache writes. This is base Qwen35 MXFP8-MTP current-source proof; it does not clear Nex/N2 JANG_1L, MiMo, Gemma, UI, installed-app, or release rows.
+- Next lane action: capture panel gateway with the exact same Qwen35 model/request. If gateway matches direct, rebuild/redeploy the tunnel backend from current source and recapture. If gateway/source duplicates `0`, reopen `stream_responses_api()` before any release claim. No parser fallback, reasoning disable, or fake argument injection.
+- Boundary: no package, DMG build, signing, notarization, tag, appcast, upload, or public release action.
+
+# 2026-06-09 17:35 PDT - Qwen35 gateway raw SSE and JANG Max2 sync audit
+
+- Added gated live panel-gateway capture coverage in `panel/tests/api-gateway-qwen35-live-capture.test.ts`; `tests/cross_matrix/run_qwen35_responses_raw_sse_capture.py` now captures direct Qwen35 SSE and routes the same payload through the real `ApiGateway` class while the backend is live.
+- Fixed the raw-SSE parity classifier to accept structured gateway logs with `containsReasoning=true` as no-reasoning-disable evidence. Root cause: the gateway live capture log is JSON, while the classifier previously only recognized Python server text logs.
+- Live artifact: `build/current-responses-raw-sse-parity-qwen35-direct-gateway-source-vs-tunnel-20260609.json`, `status=fail`, `missing_captures=[]`.
+- Direct and gateway are now green for the reported Responses failure class: both preserve `record_fact` args `{"value": "blue-cat"}`, have reasoning events, match `models/Qwen3.6-35B-A3B-MXFP8-CRACK-MTP`, and emit valid indices `message=[0]`, `function_call=[1]`.
+- Tunnel is the only remaining red surface: it preserves args/reasoning/model but emits `message=[0]`, `function_call=[0]`, so `conflicting_output_indices=[0]`.
+- Checked JANG sync state locally and on `erics-m5-max2.local:~/jang`. Remote Max2 branch `codex/mimo-v25-cache-contract` has dirty JANG package/converter edits in `jang-tools/jang_tools/__main__.py`, `allocate.py`, `capabilities.py`, `convert.py`, and `convert_qwen35_jangtq.py`. They are package-side changes for MLP asymmetry floor control, `processor_config.json` preservation, Qwen35 JANGTQ MTP metadata stamping, and audio/video modality stamps.
+- Packaging boundary: PyPI `jang` latest is already `2.5.30`. Do not overwrite it. If the Max2 JANG changes are accepted, land them in canonical `/Users/eric/jang/jang-tools`, bump to `2.5.31`, run build/twine check/install proof, publish, then bump vMLX dependency/extras and bundled Python.
+- Boundary: no release/sign/notarize/tag/download action.
+
+# 2026-06-10 - 128GB Gemma/MiMo/N2 live checkpoint proof
+
+- Reduced blocker classes: `runtime/kernel`, `cache/storage`, and `api/ui` for the requested Gemma JANG/MXFP, MiMo JANG/JANGTQ, and Nex/N2 JANG/JANGTQ checkpoint rows.
+- Handoff/proof matrix added: `.agents/PROOF_MATRIX_128GB_MIMO_N2_GEMMA_20260610.md`.
+- Gemma 12B MXFP4/JANG4M: `build/current-gemma4-12b-mxfp4-jang4m-media-smoke-live-20260610.json` passed image/media for both rows; `build/current-gemma4-12b-mxfp4-jang4m-live-runtime-audit-20260610.json` passed conservative text, multiturn recall, reasoning-on answer, required tool, and cache endpoint sanity for both rows.
+- MiMo JANGTQ2: `build/current-mimo-v25-jangtq2-live-cb-cache-text-20260610.json` passed load/cache plumbing on the 128GB host with mixed-SWA native cache, q8 storage boundary, paged cache, and block-disk L2; however text exactness is red (`ACK-CB-742` became `ACKCB-742`). Exactness probe `build/current-mimo-v25-jangtq2-exactness-variant-probe-live-20260610/result.json` remains open with exact string, JSON, and tool-arg mutations.
+- MiMo JANG_2L: `build/current-mimo-v25-jang2l-live-cb-cache-text-20260610.json` passed. The 105 GiB local bundle loaded, used `mlx_affine_quantized_matmul`, final health showed about `104997.8 MB` active and `105956.2 MB` peak, exact `ACK-CB-742` was preserved, `cached_tokens=38` with `cache_detail=paged`, and L2 block writes were present (`l2_tokens_on_disk=62`).
+- N2 JANGTQ2: `build/current-n2-jangtq2-live-chat-cache-responses-l2-20260610.json` passed. The 101 GiB bundle loaded and proved hybrid SSM cache (`hybrid_ssm_v1`), attention TurboQuant KV + native SSM companion, chat cache hit `paged+ssm`, required chat tool, Responses required tool, Responses tool-result continuation, Responses streaming tool args, and fresh-process L2 restore `paged+ssm+disk` with block disk and SSM companion disk hits.
+- N2 JANG_1L: `build/current-n2-jang1l-live-chat-cache-responses-20260610.json` failed during `server_startup`. This was a real launch attempt with `--jang1l-required-extra-headroom-gib 1`, not a preflight skip. Server log shows qwen3_5_moe/JANG_1L route, 482 quant-shape patches, 123 shards, bfloat16 for 512 experts, wired limit set to the Metal cap (`115 GB`, model `119 GB` decimal), then `[METAL] Command buffer execution failed: Insufficient Memory` and exit `-6`.
+- Boundary: checkpoint candidates are Gemma 12B MXFP4/JANG4M, MiMo JANG_2L, and N2 JANGTQ2. MiMo JANGTQ2 needs artifact/logit/decode exactness work. N2 JANG_1L needs a real 128GB loader/runtime memory strategy before any support claim. No package/sign/notarize/tag/download release action was run in this slice.
+
+# 2026-06-10 - Gemma 12B JANG4M dev-app Responses/tools and image proof
+
+- Added tracked summary `build/current-real-ui-live-model-gemma4-12b-jang4m-dev-app-proof-20260610.json` from two real Electron dev-app captures.
+- Proven in app: Responses streaming + built-in tool loop + cache/L2 telemetry, and Chat Completions image attachment + red semantic answer.
+- Updated `.agents/PROOF_MATRIX_128GB_MIMO_N2_GEMMA_20260610.md` with exact proven/not-proven boundaries.
+- No release action was run.
+
+# 2026-06-10 - N2 JANGTQ2 dev-app proof classified red
+
+- Ran two real Electron dev-app N2 JANGTQ2 Responses/tool/cache attempts.
+- Added tracked summary `build/current-real-ui-live-model-n2-jangtq2-dev-app-proof-20260610.json`, `status=fail`.
+- Runtime/cache/tool pieces are positive: model loaded, hybrid SSM/TQ/L2 visible, built-in tools executed, no parser leak.
+- Red surface is exact: `responses_delta_streaming` was not proven because first post-tool visible content collapsed to `Created`; compare raw server SSE with panel gateway/dev-app stream traces next.
+- No release action was run.
+
+# 2026-06-10 - N2 JANGTQ2 direct/gateway raw SSE delta proof
+
+- Added and ran `tests/cross_matrix/run_n2_responses_stream_boundary_probe.py`.
+- Artifact `build/current-n2-jangtq2-responses-stream-boundary-20260610.json` is `status=pass`.
+- Direct and panel gateway raw SSE both prove N2 Responses tool-call args plus tool-result continuation content deltas.
+- This narrows the remaining dev-app red row to renderer/chat tool-loop trace behavior, not server or gateway SSE transport.
+- No release action was run.
+
+# 2026-06-10 - MiMo JANG_2L dev-app proof classified red
+
+- Ran real Electron dev-app MiMo V2.5 JANG_2L Chat/tools/cache proof.
+- Added tracked summary `build/current-real-ui-live-model-mimo-v25-jang2l-dev-app-proof-20260610.json`, `status=fail`.
+- Load/cache/L2 surfaces are positive; app tool loop and visible output are red.
+- Next diagnostic is raw chat/tool output versus panel app trace, not cache/L2 work.
+- No release action was run.
+
+# 2026-06-10 - Gemma 12B JANG4M dev-app audio classified red
+
+- Extended `panel/scripts/live-real-ui-model-proof.mjs` with a real audio attachment gate (`VMLINUX_REAL_UI_CHECK_AUDIO`) and strict semantic verification.
+- Ran real Electron dev-app Gemma 12B JANG4M Chat Completions audio proof with a generated WAV saying `audio present`.
+- Added tracked summary `build/current-real-ui-live-model-gemma4-12b-jang4m-audio-proof-20260610.json`, `status=fail`.
+- Positive surfaces: app persisted `input_audio`, server decoded the base64 WAV, visible output streamed, server cache controls were verified, mixed-SWA cache hit/L2 were present (`cache_detail=paged+mixed_swa`, `cacheHitTokens=67`, `l2_tokens_on_disk=67`, `disk_writes=2`).
+- Red surface: audio semantic verification failed; final text did not transcribe `audio present`.
+- Boundary: not an attachment persistence or cache/L2 failure. Do not claim Gemma JANG4M audio support in a checkpoint release.
+
+# 2026-06-10 - N2 JANGTQ2 dev-app Responses tool/cache/delta proof green
+
+- Fixed the panel Responses in-turn tool-result follow-up path: `panel/src/main/ipc/chat.ts` now sends scoped `function_call_output` input with the latest `previous_response_id` and suppresses the original explicit tool choice on that follow-up.
+- Ran real Electron dev-app N2 JANGTQ2 default Responses tool/cache proof after the fix.
+- Added tracked summary `build/current-real-ui-live-model-n2-jangtq2-dev-app-prevresp-proof-20260610.json`, `status=pass`.
+- Proven in the same app run: built-in `run_command`, tool-result continuation, visible `REAL_UI_LIVE_TOOL_ONE` and `REAL_UI_LIVE_TOOL_TWO`, renderer deltas (`count=8`, `count=15`), server cache controls, hybrid SSM cache, attention-only TurboQuant KV, block L2, and SSM disk.
+- Raw proof logs the source fix path twice: `Responses tool follow-up using previous_response_id=... with 1 function_call_output item(s)`.
+- Cache evidence: `cache_detail=paged+ssm`, `l2_block_tokens_on_disk=3579`, `l2_ssm_tokens_on_disk=17083`, `l2_tokens_on_disk=20662`, `block_disk_hits=110`, `ssm_disk_hits=1`.
+- Boundary: stricter custom long-delta prompt remains red with repeated `!` output and missing second tool file; installed-app parity, N2 media, public tunnel parity, N2 JANG_1L, and release gates remain open.
+
+# 2026-06-10 - MiMo JANG_2L dev-app Chat tool follow-up narrowed
+
+- Fixed the panel Chat Completions follow-up path so the original explicit single-tool `tool_choice` is not forced again after an in-turn tool call has already executed.
+- Ran real Electron dev-app MiMo V2.5 JANG_2L Chat/tools/cache proof after the follow-up change.
+- Added tracked summary `build/current-real-ui-live-model-mimo-v25-jang2l-dev-app-followup-proof-20260610.json`, `status=fail`.
+- Positive: no `tool_choice='required'` follow-up error, `persistedToolCount=135`, `eventCounts.stream=239`, `eventCounts.complete=2`, `cacheHitTokens=8072`, verified server cache controls, and `l2_block_tokens_on_disk=4580`.
+- Red: MiMo still rewrote the requested `LIVE` sentinel/path into `LAND` and `/tmp`, so `long_tool_loop` remains red and expected probe files were not created.
+- No release action was run.
+
+# 2026-06-10 - N2 JANGTQ2 dev-app image/VL proof green
+
+- Ran real Electron dev-app N2 JANGTQ2 Chat Completions image proof with server cache controls enabled and `max_prompt_tokens=12000`.
+- Added tracked summary `build/current-real-ui-live-model-n2-jangtq2-image-proof-20260610.json`, `status=pass`.
+- Proven in app: image attachment persisted, server `model_type=mllm`, one `image_url` reached `MEDIA_DIAG`, runtime processed `num_images_processed=1`, and final visible answer was `Red`.
+- Runtime/cache: active about `103812.6 MB`, peak about `104874.6 MB`, hybrid SSM cache, attention-only TurboQuant KV, `cache_detail=paged+ssm`, `cached_tokens=18`, `l2_block_tokens_on_disk=50`, `l2_ssm_tokens_on_disk=68`, `l2_tokens_on_disk=118`.
+- Boundary: audio/video/installed app/tunnel/N2 JANG_1L remain open. No release action was run.
+
+# 2026-06-10 - N2 JANGTQ2 dev-app video/VL proof green
+
+- Generated `build/media-fixtures/red-64x64-1s.mp4` with `ffmpeg` and ran real Electron dev-app N2 JANGTQ2 Chat Completions video proof.
+- Added tracked summary `build/current-real-ui-live-model-n2-jangtq2-video-proof-20260610.json`, `status=pass`.
+- Proven in app: `video_url` persisted, server decoded the base64 MP4, extracted `4` frames from `25 total frames @ 25.0 fps`, processed `num_images_processed=4`, and final visible answer described a solid red screen.
+- Runtime/cache: active about `103824.4 MB`, peak about `105305.7 MB`, hybrid SSM cache, attention-only TurboQuant KV, `cache_detail=paged+ssm`, `cached_tokens=18`, `l2_block_tokens_on_disk=50`, `l2_ssm_tokens_on_disk=68`, `l2_tokens_on_disk=118`.
+- Boundary: audio/installed app/tunnel/N2 JANG_1L remain open. No release action was run.
+
+# 2026-06-10 - N2 JANGTQ2 dev-app audio gated
+
+- Generated `build/media-fixtures/audio-present.wav` and ran real Electron dev-app N2 JANGTQ2 Chat Completions audio proof.
+- Added tracked summary `build/current-real-ui-live-model-n2-jangtq2-audio-proof-20260610.json`, `status=fail`.
+- Boundary proved: app attempted an audio turn and server saw `input_audio`, but `/v1/chat/completions` rejected it with `400` unsupported media modality; supported modalities reported by the server are `text, vision, video`.
+- This is not a load/cache/L2 failure. Do not claim N2 audio support.
+- No release action was run.
+
+# 2026-06-10 - Gemma 12B QAT MXFP4 dev-app Responses/tools/cache proof green
+
+- Ran real Electron dev-app Gemma 4 12B QAT MXFP4 Responses built-in tool/cache proof.
+- Added tracked summary `build/current-real-ui-live-model-gemma4-12b-qat-mxfp4-dev-app-proof-20260610.json`, `status=pass`.
+- Proven in app: built-in `run_command` loop, Responses tool-result continuation via `previous_response_id`, visible `REAL_UI_LIVE_TOOL_ONE` / `REAL_UI_LIVE_TOOL_TWO`, renderer deltas (`16`, `31`), MXFP4 affine matmul with Metal NA active, mixed-SWA cache, and block-disk L2.
+- Cache evidence: `cache_detail=paged+mixed_swa`, `cache_hit_tokens=3538`, `l2_block_tokens_on_disk=3588`, `disk_hits=30`, `disk_writes=58`.
+- Caveat: second visible answer starts with plain `thought`; leak gates passed, but keep visible-final style caveat open.
+- Boundary: media/installed app/tunnel/release remain open. No release action was run.
+
+# 2026-06-10 - Gemma 12B QAT MXFP4 dev-app image/VL proof green
+
+- Ran real Electron dev-app Gemma 4 12B QAT MXFP4 Chat Completions image proof.
+- Added tracked summary `build/current-real-ui-live-model-gemma4-12b-qat-mxfp4-image-proof-20260610.json`, `status=pass`.
+- Proven in app: image attachment persisted, server saw `image_url`, Gemma media fallback ran with `1 image(s)`, and final visible answer was `Red`.
+- Runtime/cache: MXFP4 affine matmul with Metal NA active, mixed-SWA cache, `cache_detail=paged+mixed_swa`, `cached_tokens=20`, `l2_block_tokens_on_disk=64`, `disk_writes=2`.
+- Boundary: video/audio/installed app/tunnel/release remain open. No release action was run.
+
+# 2026-06-10 - Gemma 12B QAT MXFP4 dev-app video/VL proof green
+
+- Ran real Electron dev-app Gemma 4 12B QAT MXFP4 Chat Completions video proof.
+- Added tracked summary `build/current-real-ui-live-model-gemma4-12b-qat-mxfp4-video-proof-20260610.json`, `status=pass`.
+- Proven in app: `video_url` persisted, server decoded the base64 MP4, extracted `4` frames from `25 total frames @ 25.0 fps`, and final visible answer described a solid red screen.
+- Runtime/cache: MXFP4 affine matmul with Metal NA active, mixed-SWA cache, `cache_detail=paged+mixed_swa`, `cached_tokens=20`, `l2_block_tokens_on_disk=65`, `disk_writes=2`.
+- Boundary: audio/installed app/tunnel/release remain open. No release action was run.
+
+# 2026-06-10 - Gemma 12B QAT MXFP4 dev-app audio gated
+
+- Ran real Electron dev-app Gemma 4 12B QAT MXFP4 Chat Completions audio proof.
+- Added tracked summary `build/current-real-ui-live-model-gemma4-12b-qat-mxfp4-audio-proof-20260610.json`, `status=fail`.
+- Boundary proved: app attempted an audio turn and server saw `input_audio`, but `/v1/chat/completions` rejected it with `400` unsupported media modality; supported modalities reported by the server are `text, vision, video`.
+- This is not a load/cache/L2 failure. Do not claim Gemma MXFP4 audio support.
+- No release action was run.
+
+# 2026-06-10 - MiMo JANG_2L dev-app image/VL gated
+
+- Ran real Electron dev-app MiMo V2.5 JANG_2L Chat Completions image proof with forced MLLM requested.
+- Added tracked summary `build/current-real-ui-live-model-mimo-v25-jang2l-image-proof-20260610.json`, `status=fail`.
+- Boundary proved: the 105 GiB artifact loaded and text/cache/L2 worked, but server `MEDIA_DIAG` saw `image_url` and then rejected image with `400` because the loaded runtime is text-only; supported modalities reported by the server are `text`.
+- This is not a load/cache/L2 failure. Do not claim MiMo JANG_2L media support from preserved media weights.
+- No release action was run.
+
+# 2026-06-10 - MiMo JANG_2L dev-app Responses tools red
+
+- Ran real Electron dev-app MiMo V2.5 JANG_2L Responses built-in tool proof.
+- Added tracked summary `build/current-real-ui-live-model-mimo-v25-jang2l-responses-tools-proof-20260610.json`, `status=fail`.
+- Positive evidence: first Responses turn emitted `run_command`, app used `previous_response_id` for the tool-result follow-up, and one tool loop completed.
+- Red boundary: full two-turn loop failed with `CDP timeout: Runtime.evaluate` while the second request was still active; no final tool probe file semantics were verified.
+- Cache/L2 remained real and positive: `cache_hit_tokens=1071`, `l2_block_tokens_on_disk=3784`, `disk_hits=18`, `disk_writes=60`.
+- No release action was run.
+
+# 2026-06-10 - Installed app runtime parity refreshed
+
+- Ran installed-app runtime parity audit before rebuild: `build/current-installed-app-runtime-parity-audit-after-june10-devapp-proofs-20260610.json`, `status=open`; only stale file was `vmlx_engine/utils/jang_loader.py` in bundled Python and packaged source mirrors.
+- Ran `panel/scripts/build-and-install.sh` to rebuild and locally install `/Applications/vMLX.app`.
+- Reran audit: `build/current-installed-app-runtime-parity-audit-after-local-install-20260610.json`, `status=pass`, `missing_or_stale=[]`.
+- Verified `/Applications/vMLX.app` with `codesign --verify --deep --strict --verbose=2`; valid on disk. This is local installed-app parity, not a signed/notarized DMG release.
+- Regenerated `build/current-release-regression-manifest-after-local-installed-app-parity-20260610.json`; overall release manifest still fails (`prepackage_ready=false`, `release_ready=false`) while installed/staged app runtime parity components are green.
+
+# 2026-06-10 - N2 JANGTQ2 installed-app live proof
+
+- Ran real UI proof through `/Applications/vMLX.app` for `/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2` with Responses, built-in tools, cache controls, `--is-mllm`, temperature `0`, top_p `1`, and max tokens `128`.
+- Proof summary `build/current-real-ui-installed-app-n2-jangtq2-responses-tools-cache-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-responses-tools-cache-20260610-proof.json`.
+- Proven surfaces: installed-app UI, visible two-turn Responses output, two `run_command` tool calls, tool-result continuation, content deltas, server cache controls, parser/reasoning leak checks, `hybrid_ssm_v1`, attention-only TurboQuant KV storage-boundary cache, native SSM companion state, block L2, and SSM disk restore hit.
+- Boundary: no public tunnel proof, no N2 audio support, no N2 JANG_1L clearance, no stricter prompt-quality clearance, and no package/sign/notarize/tag/upload/release action.
+
+# 2026-06-10 - Gemma 12B MXFP4 installed-app live proof
+
+- Ran real UI proof through `/Applications/vMLX.app` for `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4` with Responses, built-in tools, cache controls, temperature `0`, top_p `1`, and max tokens `128`.
+- Proof summary `build/current-real-ui-installed-app-gemma4-12b-mxfp4-responses-tools-cache-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-responses-tools-cache-20260610-proof.json`.
+- Proven surfaces: installed-app UI, visible two-turn Responses output, two `run_command` tool calls, tool-result continuation, content deltas, server cache controls, parser/reasoning leak checks, MXFP4 affine matmul with Metal NA active, `mixed_swa_kv_v1`, paged mixed-SWA cache, and block L2.
+- Boundary: no installed-app media proof in this run, no Gemma audio clearance, no public tunnel proof, and no package/sign/notarize/tag/upload/release action.
+
+# 2026-06-10 - Gemma 12B MXFP4 installed-app image proof
+
+- Ran real UI image proof through `/Applications/vMLX.app` for `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4` with Chat Completions, cache controls, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-installed-app-gemma4-12b-mxfp4-image-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-image-20260610-proof.json`.
+- Proven surfaces: installed-app UI, persisted image attachment, `MEDIA_DIAG` image detection, Gemma media fallback with `1 image(s)`, visible answer `Red`, server cache controls, parser/reasoning leak checks, MXFP4 affine matmul with Metal NA active, `mixed_swa_kv_v1`, paged mixed-SWA cache, and block L2 write.
+- Boundary: no installed-app video proof, no Gemma audio clearance, no public tunnel proof, and no package/sign/notarize/tag/upload/release action.
+
+# 2026-06-10 - Gemma 12B MXFP4 installed-app video proof
+
+- Generated a 1-second 64x64 solid-red MP4 fixture and ran real UI video proof through `/Applications/vMLX.app` for `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4`.
+- Proof summary `build/current-real-ui-installed-app-gemma4-12b-mxfp4-video-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-video-20260610-proof.json`.
+- Proven surfaces: installed-app UI, persisted video attachment, `MEDIA_DIAG` video detection, base64 MP4 decode, `25` frames at `25.0 fps`, `4` extracted frames, Gemma media fallback, visible answer describing a solid red background, server cache controls, parser/reasoning leak checks, MXFP4 affine matmul with Metal NA active, `mixed_swa_kv_v1`, paged mixed-SWA cache, and block L2 write.
+- Boundary: no Gemma audio clearance, no public tunnel proof, and no package/sign/notarize/tag/upload/release action.
+
+# 2026-06-10 - N2 JANGTQ2 installed-app image/video proof
+
+- Ran real UI image and video proofs through `/Applications/vMLX.app` for `/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2` with Chat Completions, cache controls, `--is-mllm`, temperature `0`, top_p `1`, and max tokens `96`.
+- Image proof summary `build/current-real-ui-installed-app-n2-jangtq2-image-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-image-20260610-proof.json`.
+- Video proof summary `build/current-real-ui-installed-app-n2-jangtq2-video-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-video-20260610-proof.json`.
+- Proven image: installed-app UI, persisted image attachment, `MEDIA_DIAG` image detection, `num_images_processed=1`, visible answer `Red`, server cache controls, parser/reasoning leak checks, `hybrid_ssm_v1`, attention-only TurboQuant KV, paged+SSM cache, block L2, and SSM companion disk stores.
+- Proven video: installed-app UI, persisted video attachment, `MEDIA_DIAG` video detection, base64 MP4 decode, `4` extracted frames, `num_images_processed=4`, visible answer describing a solid red screen, server cache controls, parser/reasoning leak checks, `hybrid_ssm_v1`, attention-only TurboQuant KV, paged+SSM cache, block L2, and SSM companion disk stores.
+- Boundary: no N2 audio clearance, no N2 JANG_1L clearance, no public tunnel proof, and no package/sign/notarize/tag/upload/release action.
+
+# 2026-06-10 - N2 JANGTQ2 installed-app audio gated
+
+- Ran real UI audio proof through `/Applications/vMLX.app` for `/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2` with Chat Completions, cache controls, `--is-mllm`, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-installed-app-n2-jangtq2-audio-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-audio-20260610-proof.json`.
+- Boundary proved: installed-app UI launched, text chat worked first, the app attached one audio file, server `MEDIA_DIAG` saw `input_audio`, and `/v1/chat/completions` rejected it with `400` unsupported media modality. Supported modalities reported by the server are `text, vision, video`.
+- Runtime/cache stayed live before the gate: `hybrid_ssm_v1`, attention-only TurboQuant KV, paged+SSM cache, block L2, and SSM companion disk stores.
+- This is not a load/cache/L2 failure. Do not claim N2 installed-app audio support. No package/sign/notarize/tag/upload/release action was run.
+
+# 2026-06-10 - Gemma 12B MXFP4 installed-app audio gated
+
+- Ran real UI audio proof through `/Applications/vMLX.app` for `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4` with Chat Completions, cache controls, `--is-mllm`, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-installed-app-gemma4-12b-mxfp4-audio-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-audio-20260610-proof.json`.
+- Boundary proved: installed-app UI launched, text chat worked first, the app attached one audio file, server `MEDIA_DIAG` saw `input_audio`, and `/v1/chat/completions` rejected it with `400` unsupported media modality. Supported modalities reported by the server are `text, vision, video`.
+- Runtime/cache stayed live before the gate: MXFP4 affine matmul with Metal NA active, `mixed_swa_kv_v1`, generic TurboQuant KV correctly disabled, paged mixed-SWA cache, and block L2 writes.
+- This is not a load/cache/L2 failure. Do not claim Gemma installed-app audio support. No package/sign/notarize/tag/upload/release action was run.
+
+# 2026-06-10 - N2 JANG_1L override and MiMo installed-app text/cache
+
+- Refreshed no-load Nex/N2 Pro JANG_1L memory preflight before launch. Artifact `build/current-n2-pro-jang1l-local-memory-preflight-20260610-after-installed-app-proofs.json` is `status=open`, `decision=do_not_launch`, payload `110.57 GiB`, required available `118.57 GiB`, observed available `112.77 GiB`, gap `5.8 GiB`.
+- Eric explicitly overrode the JANG_1L launch-safe gate. Override launch artifact `build/current-n2-jang1l-live-chat-cache-override-20260610.json` is `status=fail`, `phase=server_startup`; server log again ends with Metal OOM after `Wired limit set to 115 GB (model 119 GB)`.
+- Ran installed-app MiMo JANG_2L text/cache proof through `/Applications/vMLX.app` with Chat Completions, no tools, no media, cache controls, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-installed-app-mimo-v25-jang2l-text-cache-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-text-cache-20260610-proof.json`.
+- Proven: installed-app UI, real 105 GiB MiMo JANG_2L load, exact visible text turns `MIMO_INSTALLED_TEXT_ONE` and `MIMO_INSTALLED_TEXT_TWO`, generation defaults, no parser/reasoning leak, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, paged cache hit, and block L2 writes.
+- Boundary: MiMo installed-app tools/media/JANGTQ exactness/speed remain open. N2 JANG_1L remains red and needs a real lower-peak runtime strategy. No package/sign/notarize/tag/upload/release action was run.
+
+# 2026-06-10 - MiMo JANG_2L installed-app tools red
+
+- Ran installed-app MiMo JANG_2L built-in tool proof through `/Applications/vMLX.app` with Chat Completions, built-in tools, cache controls, temperature `0`, top_p `1`, and max tokens `256`.
+- Proof summary `build/current-real-ui-installed-app-mimo-v25-jang2l-tools-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-tools-20260610-proof.json`.
+- Positive evidence: the installed app reached the real tool surface and executed one `run_command`, creating `real_ui_tool_probe_2.txt` with `REAL_UI_LIVE_TOOL_TWO`.
+- Red evidence: no `long_tool_loop` surface; first-turn marker mutated to `REAL_UI_LAND_TOOL_ONE`, expected first probe file was missing, and visible content became repetitive tool-planning prose.
+- Cache/L2 stayed strong: `cache_detail=paged`, `cache_hit_tokens=4552`, `l2_block_tokens_on_disk=4720`. No release action was run.
+
+# 2026-06-10 - MiMo JANG_2L installed-app image gated
+
+- Ran installed-app MiMo JANG_2L image proof through `/Applications/vMLX.app` with Chat Completions, forced MLLM requested, cache controls, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-installed-app-mimo-v25-jang2l-image-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-image-20260610-proof.json`.
+- Boundary proved: installed app attached one image and server `MEDIA_DIAG` saw `image_url`, but `/v1/chat/completions` rejected image with `400` because the loaded runtime is text-only. Supported modalities reported by the server are `text`.
+- Runtime/cache stayed live before the gate: `mixed_swa_kv_v1`, `mimo_v2_asymmetric_swa`, `cache_detail=paged`, `cached_tokens=39`, and `l2_block_tokens_on_disk=110`.
+- This is not a load/cache/L2 failure and not a lost attachment. Do not claim MiMo installed-app media support. No release action was run.
+
+# 2026-06-10 - N2 JANG_1L launch-safe gate
+
+- Reran the no-load Nex/N2 Pro JANG_1L preflight and the launch-safe chat/cache gate after the MiMo installed-app image classification.
+- Preflight artifact `build/current-n2-pro-jang1l-local-memory-preflight-launch-safe-20260610.json` is `status=open`, `decision=do_not_launch`: payload `110.57 GiB`, required available `118.57 GiB`, observed available `114.23 GiB`, gap `4.34 GiB`.
+- Chat/cache gate artifact `build/current-n2-jang1l-chat-cache-launch-safe-20260610.json` is `status=skipped`, `reason=n2_jang1l_insufficient_available_memory`: observed available `114.22 GiB`, gap `4.35 GiB`.
+- Requested tool, Responses, Responses stream, and L2 restart probes were recorded, but the safe gate correctly skipped before launching the server.
+- Boundary: no new Metal OOM and no runtime clearance. The earlier override launch already proved forced below-gate startup aborts before health; current safe path remains queued until memory is high enough or a lower-peak JANG_1L loader/runtime path exists.
+
+# 2026-06-10 - MiMo JANGTQ_2 installed-app text/cache
+
+- Ran installed-app MiMo JANGTQ_2 short text/cache proof through `/Applications/vMLX.app` with Chat Completions, no tools, no media, cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-installed-app-mimo-v25-jangtq2-text-cache-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-text-cache-20260610-proof.json`.
+- Proven: installed-app UI, real 79 GiB MiMo JANGTQ_2 load, exact visible text turns `MIMO_JANGTQ2_TEXT_ONE` and `MIMO_JANGTQ2_TEXT_TWO`, generation defaults, no parser/reasoning leak, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, paged cache hit, and block L2 writes.
+- Runtime/cache evidence: active memory `76484.8 MB`, peak `77037.2 MB`, cache hit tokens `42`, `cache_detail=paged`, `l2_block_tokens_on_disk=120`, and block-disk writes `3`.
+- Boundary: short installed-app text/cache is green, but broader MiMo JANGTQ_2 exactness/tool/media/source-vs-quant rows remain open. No release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 installed-app image gated
+
+- Ran installed-app MiMo JANGTQ_2 image proof through `/Applications/vMLX.app` with Chat Completions, forced MLLM requested, cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-installed-app-mimo-v25-jangtq2-image-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-image-20260610-proof.json`.
+- Boundary proved: installed app attached one image and server `MEDIA_DIAG` saw `image_url`, but `/v1/chat/completions` rejected image with `400` because the loaded runtime is text-only. Supported modalities reported by the server are `text`.
+- Runtime/cache stayed live before the gate: `mixed_swa_kv_v1`, `mimo_v2_asymmetric_swa`, `cache_detail=paged`, `cache_hit_tokens=39`, `l2_block_tokens_on_disk=132`, and block-disk writes `3`.
+- This is not a load/cache/L2 failure and not a lost attachment. Do not claim MiMo JANGTQ_2 installed-app media support. No release action was run.
+
+# 2026-06-10 - Gemma 12B JANG4M installed-app Responses/tools/cache
+
+- Ran installed-app Gemma 12B JANG4M Responses/tool/cache proof through `/Applications/vMLX.app` with built-in tools, cache controls, temperature `0`, top_p `1`, and max tokens `128`.
+- Proof summary `build/current-real-ui-installed-app-gemma4-12b-jang4m-responses-tools-cache-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-jang4m-responses-tools-cache-20260610-proof.json`.
+- Proven: installed-app UI, real `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M` load, `/v1/responses`, two built-in `run_command` calls, `previous_response_id` tool-result continuations, visible assistant turns, content/tool deltas, server cache controls, no parser/reasoning leak, native mixed-SWA cache, and block L2.
+- Runtime/cache evidence: active memory `9889.4 MB`, peak `12630.4 MB`, JANG affine matmul with Metal NA active, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=3538`, `l2_block_tokens_on_disk=3571`, block-disk hits `30`, and block-disk writes `58`.
+- Boundary: installed-app JANG4M image/video/audio, larger Gemma QAT rows, tunnel SSE, and release readiness remain open. No release action was run.
+
+# 2026-06-10 - Gemma 12B JANG4M installed-app image/VL
+
+- Ran installed-app Gemma 12B JANG4M image proof through `/Applications/vMLX.app` with Chat Completions, forced media, cache controls, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-installed-app-gemma4-12b-jang4m-image-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-jang4m-image-20260610-proof.json`.
+- Proven: installed-app UI, real `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M` load, two visible text turns before media, image attachment persistence, Gemma media fallback with `1 image(s)`, visible answer `Red`, server cache controls, no parser/reasoning leak, native mixed-SWA cache, and block L2.
+- Runtime/cache evidence: active memory `9892.5 MB`, peak `10450.3 MB`, JANG affine matmul with Metal NA active, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=20`, `l2_block_tokens_on_disk=77`, and block-disk writes `2`.
+- Boundary: installed-app JANG4M video/audio, larger Gemma QAT rows, tunnel SSE, and release readiness remain open. No release action was run.
+
+# 2026-06-10 - N2 JANG_1L high-free live launch
+
+- Reran no-load Nex/N2 Pro JANG_1L preflight at `build/current-n2-pro-jang1l-local-memory-preflight-ultrafree-20260610.json`: indexed payload `110.57 GiB`, required available `118.57 GiB`, observed available `114.09 GiB`, gap `4.48 GiB`, strict decision `do_not_launch`.
+- Per Eric's instruction to launch one-at-a-time anyway, ran `build/current-n2-jang1l-live-chat-cache-ultrafree-20260610.json` with lowered JANG_1L headroom (`3 GiB`), max output `16`, server max tokens `256`, prefill batch `64`, prefill step `128`, completion batch `32`, SSM cache `128 MB`, paged cache block size `64`, max cache blocks `256`, block L2 `2 GB`, plus tool, Responses, Responses stream, and L2 restart probes requested.
+- Result: `status=fail`, `phase=server_startup`, server exit `-6`; no health or request probe was reached.
+- Server log proves this was a real launch: qwen3_5_moe/JANG_1L route, qwen tool parser, qwen3 reasoning parser, hybrid cache, attention-only TurboQuant KV with native SSM companion state, mmap JANG loader, `482` quant-shape patches, `123` shards, bfloat16 for `512` experts, `Wired limit set to 115 GB (model 119 GB)`, then `[METAL] Command buffer execution failed: Insufficient Memory`.
+- Boundary: N2 JANG_1L is still red on this 128 GiB host until a lower-peak loader/runtime path exists. Do not claim release support from another threshold reduction; N2 JANGTQ2 remains the N2 checkpoint candidate.
+
+# 2026-06-10 - Gemma 12B JANG4M installed-app video/VL
+
+- Ran installed-app Gemma 12B JANG4M video proof through `/Applications/vMLX.app` with Chat Completions, forced video, cache controls, temperature `0`, top_p `1`, max tokens `96`, and explicit max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-installed-app-gemma4-12b-jang4m-video-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-jang4m-video-20260610-proof.json`.
+- Proven: installed-app UI, real `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M` load, two visible text turns before media, video attachment persistence, server `MEDIA_DIAG` video detection, base64 MP4 decode, `4` extracted frames from the 25 fps fixture, visible answer `The video shows a solid, static red screen with no movement or changes.`, server cache controls, no parser/reasoning leak, native mixed-SWA cache, and block L2.
+- Runtime/cache evidence: active memory `9890 MB`, peak `10430.4 MB`, JANG affine matmul with Metal NA active, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=20`, `l2_block_tokens_on_disk=77`, and block-disk writes `2`.
+- Boundary: installed-app JANG4M audio, default-4k video, larger Gemma QAT rows, tunnel SSE, and release readiness remain open. No release action was run.
+
+# 2026-06-10 - Gemma 12B JANG4M installed-app audio red
+
+- Ran installed-app Gemma 12B JANG4M audio proof through `/Applications/vMLX.app` with Chat Completions, forced audio, cache controls, temperature `0`, top_p `1`, max tokens `96`, and the `audio-present.wav` fixture.
+- Proof summary `build/current-real-ui-installed-app-gemma4-12b-jang4m-audio-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-jang4m-audio-20260610-proof.json`.
+- Positive evidence: installed-app UI, real `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M` load, two visible text turns before audio, audio attachment persistence, server `MEDIA_DIAG` input_audio detection, base64 WAV decode, server cache controls, no parser/reasoning leak, native mixed-SWA cache, and block L2 before the media turn.
+- Red evidence: final audio turn had empty visible assistant content, `visibleAssistantTurnsComplete=false`, `audioSemanticVerified=false`, and no `audio_where_supported` surface.
+- Boundary: JANG4M installed-app audio is red. Do not claim audio support; text/tools/image/video rows remain separately green. No release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 installed-app tools
+
+- Ran installed-app MiMo V2.5 JANGTQ_2 built-in tool proof through `/Applications/vMLX.app` with Chat Completions, built-in tools, cache controls, temperature `0`, top_p `1`, and max tokens `256`.
+- Proof summary `build/current-real-ui-installed-app-mimo-v25-jangtq2-tools-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-tools-20260610-proof.json`.
+- Proven: installed-app UI, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` load, built-in `run_command` loop, exact probe files `REAL_UI_LIVE_TOOL_ONE` and `REAL_UI_LIVE_TOOL_TWO`, visible assistant turns, server cache controls, no parser/reasoning leak, native mixed-SWA cache, and block L2.
+- Runtime/cache evidence: active memory `76763.1 MB`, peak `81328.7 MB`, TurboQuant codebook routed experts with prestacked layout, `cache_detail=paged`, `cache_hit_tokens=4548`, `l2_block_tokens_on_disk=4225`, block-disk hits `36`, and block-disk writes `68`.
+- Boundary: this clears the default installed-app Chat Completions tool loop for MiMo JANGTQ_2 only. Broader exactness/source-vs-quant, Responses tools, media, JANG_2L tools, and release readiness remain open. No release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 installed-app Responses tools
+
+- Ran installed-app MiMo V2.5 JANGTQ_2 Responses built-in tool proof through `/Applications/vMLX.app` with built-in tools, cache controls, temperature `0`, top_p `1`, and max tokens `256`.
+- Proof summary `build/current-real-ui-installed-app-mimo-v25-jangtq2-responses-tools-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-responses-tools-20260610-proof.json`.
+- Proven: installed-app UI, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` load, `/v1/responses`, built-in `run_command`, `previous_response_id` tool follow-ups with `function_call_output`, Responses delta/cache-detail surfaces, exact probe files `REAL_UI_LIVE_TOOL_ONE` and `REAL_UI_LIVE_TOOL_TWO`, server cache controls, no parser/reasoning leak, native mixed-SWA cache, and block L2.
+- Runtime/cache evidence: active memory `76763.1 MB`, peak `81328.7 MB`, TurboQuant codebook routed experts with prestacked layout, `cache_detail=paged`, `cache_hit_tokens=4548`, `l2_block_tokens_on_disk=4225`, block-disk hits `36`, and block-disk writes `68`.
+- Boundary: this clears the default installed-app Responses tool loop for MiMo JANGTQ_2 only. Broader literal/JSON/source-vs-quant exactness, media, JANG_2L tools, and release readiness remain open. No release action was run.
+
+# 2026-06-10 - Gemma 31B JANG4M dev-app video/VL
+
+- Ran current Electron dev-build Gemma 4 31B QAT JANG4M video/VL proof with `npm run dev`, Chat Completions, one app video attachment, server cache controls, temperature `0`, top_p `1`, max tokens `128`, and max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-31b-jang4m-video-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-video-20260610-proof.json`.
+- Proven: dev app launched, real `/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M` loaded, two visible text turns completed before media, the app persisted one `video_url` attachment, server `MEDIA_DIAG` saw `video_url`, the server decoded the base64 MP4, extracted `4` frames, routed those frames through the Gemma media fallback, and the assistant answered `The provided image is a solid red square.`; `videoSemanticVerified=true`.
+- Runtime/cache evidence: active memory `25842.8 MB`, peak `26233.1 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA active, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=20`, `l2_block_tokens_on_disk=62`, `l2_tokens_on_disk=62`, block-disk writes `2`, and video-turn media-prefix cache stored `355` prompt tokens.
+- Boundary: this clears Gemma 31B JANG4M current dev-build video/VL only with explicit `max_prompt_tokens=12000`. The final wording calls the extracted frame an image while still verifying the solid-red video content. It does not clear default-4k video behavior, 31B audio, installed-app parity, public tunnel SSE, package/sign/notarize/tag/upload, or release readiness. No release action was run.
+
+# 2026-06-10 - Gemma 26B JANG4M dev-app video/VL
+
+- Ran current Electron dev-build Gemma 4 26B A4B QAT JANG4M video/VL proof with `npm run dev`, Chat Completions, one app video attachment, server cache controls, temperature `0`, top_p `1`, max tokens `128`, and max prompt tokens `12000`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-26b-jang4m-video-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-video-20260610-proof.json`.
+- Proven: dev app launched, real `/Users/eric/models/JANGQ-AI/gemma-4-26B-A4B-it-qat-JANG_4M` loaded, two visible text turns completed before media, the app persisted one `video_url` attachment, server `MEDIA_DIAG` saw `video_url`, the server decoded the base64 MP4, extracted `4` frames, routed those frames through the Gemma media fallback, and the assistant answered `The video is a solid, static red square. REAL_UI_LIVE.`; `videoSemanticVerified=true`.
+- Runtime/cache evidence: active memory `17779.1 MB`, peak `18557.2 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=20`, `l2_block_tokens_on_disk=64`, `l2_tokens_on_disk=64`, block-disk writes `2`, and video-turn media-prefix cache stored `357` prompt tokens.
+- Boundary: this clears Gemma 26B JANG4M current dev-build video/VL only with explicit `max_prompt_tokens=12000`. It does not clear default-4k video behavior, 26B audio, installed-app parity, public tunnel SSE, package/sign/notarize/tag/upload, or release readiness. No release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 installed-app exact output
+
+- Ran installed-app MiMo V2.5 JANGTQ_2 exact-output proof through `/Applications/vMLX.app` with Chat Completions, no tools, no media, cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-installed-app-mimo-v25-jangtq2-exact-output-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-exact-output-20260610-proof.json`.
+- Positive evidence: installed-app UI, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` load, visible streamed Chat turns, server cache controls, no parser/reasoning leak, no persisted tools/reasoning, native mixed-SWA cache, paged prefix hit, and block L2 writes.
+- Runtime/cache evidence: active memory `76483.5 MB`, peak `77024.8 MB`, TurboQuant codebook routed experts with prestacked layout, `cache_detail=paged`, `cache_hit_tokens=41`, `l2_block_tokens_on_disk=117`, and block-disk writes `3`.
+- Red evidence: expected `ACK-CB-742` but got `ACKCB-742`; expected `{"status":"ok","value":"blue-cat"}` but got `{"`. Boundary: exact literal/JSON output remains red for MiMo JANGTQ_2 and should stay assigned to artifact/logit/quant/decode diagnosis, not parser/cache work. No release action was run.
+
+# 2026-06-10 - N2 JANG_1L after-MiMo launch-safe refresh
+
+- Reran no-load Nex/N2 Pro JANG_1L preflight after the MiMo exact-output proof.
+- Preflight artifact `build/current-n2-pro-jang1l-local-memory-preflight-after-mimo-exact-20260610.json` is `status=open`, `decision=do_not_launch`: indexed payload `110.57 GiB`, required available `118.57 GiB`, observed available `113.29 GiB`, gap `5.28 GiB`.
+- Ran the launch-safe chat/cache gate with tool, Responses, Responses stream, and L2 restart probes requested. Artifact `build/current-n2-jang1l-chat-cache-after-mimo-exact-20260610.json` is `status=skipped`, `reason=n2_jang1l_insufficient_available_memory`: observed available `113.28 GiB`, gap `5.29 GiB`.
+- No weights were loaded and `build/current-n2-jang1l-after-mimo-exact-20260610-block-cache` stayed empty.
+- Boundary: current headroom still does not clear N2 JANG_1L. The correct release split remains N2 JANGTQ2 as checkpoint candidate, JANG_1L red until a lower-peak runtime/loader path or sufficient current headroom exists. No release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 dev-app Responses tools/cache
+
+- Ran current Electron dev-build MiMo V2.5 JANGTQ_2 proof with `npm run dev`, `/v1/responses`, built-in tools, server cache controls, temperature `0`, top_p `1`, and max tokens `256`.
+- Proof summary `build/current-real-ui-dev-app-mimo-v25-jangtq2-responses-tools-cache-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-responses-tools-cache-20260610-proof.json`.
+- Proven: dev app launched as `uiLaunchMode=electron-dev`, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` loaded, `/v1/responses` route used, built-in `run_command` executed, `previous_response_id` follow-ups sent `function_call_output`, Responses delta/cache-detail surfaces were recorded, and probe files contained `REAL_UI_LIVE_TOOL_ONE` and `REAL_UI_LIVE_TOOL_TWO` exactly.
+- Runtime/cache evidence: active memory `76763.1 MB`, peak `81328.7 MB`, TurboQuant codebook routed experts with prestacked layout, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, `cache_detail=paged`, `cache_hit_tokens=4548`, `l2_block_tokens_on_disk=4225`, block-disk hits `36`, and block-disk writes `68`.
+- Boundary: this clears dev-app Responses/tool/cache parity for MiMo JANGTQ_2 only. It does not clear MiMo JANGTQ_2 exact literal/JSON/source-vs-quant rows or media support. No release action was run.
+
+# 2026-06-10 - MiMo JANGTQ_2 dev-app exact output
+
+- Ran current Electron dev-build MiMo V2.5 JANGTQ_2 exact-output proof with `npm run dev`, Chat Completions, no tools, server cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-dev-app-mimo-v25-jangtq2-exact-output-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-exact-output-20260610-proof.json`.
+- Positive evidence: dev app launched as `uiLaunchMode=electron-dev`, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` loaded, visible streamed Chat turns completed, server cache controls were visible, no parser/reasoning leak was recorded, no persisted tools/reasoning, native mixed-SWA cache, paged prefix hit, and block L2 writes.
+- Runtime/cache evidence: active memory `76483.5 MB`, peak `77024.8 MB`, TurboQuant codebook routed experts with prestacked layout, `cache_detail=paged`, `cache_hit_tokens=41`, `l2_block_tokens_on_disk=117`, and block-disk writes `3`.
+- Red evidence: expected `ACK-CB-742` but got `ACKCB-742`; expected `{"status":"ok","value":"blue-cat"}` but got `{"`. Boundary: the same exactness failure reproduces in dev app and installed app. No release action was run.
+
+# 2026-06-10 - N2 JANGTQ2 dev-app exact output
+
+- Ran current Electron dev-build Nex/N2 Pro JANGTQ2 exact-output proof with `npm run dev`, Chat Completions, no tools, server cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-dev-app-n2-jangtq2-exact-output-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-n2-jangtq2-exact-output-20260610-proof.json`.
+- Proven: dev app launched as `uiLaunchMode=electron-dev`, real `/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2` loaded, exact text `N2-ACK-742` returned, exact JSON `{"status":"ok","value":"n2-blue"}` returned, server cache controls were visible, no parser/reasoning leak was recorded, no persisted tools/reasoning, hybrid SSM cache, attention-only TurboQuant KV, paged+SSM prefix hit, and block/SSM L2 writes.
+- Runtime/cache evidence: active memory `103805 MB`, peak `104441.4 MB`, `weight_format=mxtq`, `profile=JANGTQ2`, `hybrid_ssm_v1`, `cache_detail=paged+ssm`, `cache_hit_tokens=21`, `l2_block_tokens_on_disk=59`, `l2_ssm_tokens_on_disk=80`, `l2_tokens_on_disk=139`, block-disk hits `3`, block-disk writes `2`, and SSM companion stores `2`.
+- Boundary: this clears N2 JANGTQ2 dev-app exact text/JSON only. N2 JANG_1L, audio, public tunnel SSE parity, stricter custom long-delta prompt quality, and release readiness remain open. No release action was run.
+
+# 2026-06-10 - Gemma 12B MXFP4 dev-app exact output
+
+- Ran current Electron dev-build Gemma 12B QAT MXFP4 exact-output proof with `npm run dev`, Chat Completions, no tools, server cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-12b-mxfp4-exact-output-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-12b-mxfp4-exact-output-20260610-proof.json`.
+- Proven: dev app launched as `uiLaunchMode=electron-dev`, real `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4` loaded, exact text `GEMMA-ACK-742` returned, exact JSON `{"status":"ok","value":"gemma-blue"}` returned, server cache controls were visible, no parser/reasoning leak was recorded, no persisted tools/reasoning, mixed-SWA cache, paged prefix hit, and block L2 writes.
+- Runtime/cache evidence: active memory `7558.3 MB`, peak `7887 MB`, `weight_format=mxfp4`, `profile=MXFP4`, Metal NA active, `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=22`, `l2_block_tokens_on_disk=61`, and block-disk writes `2`.
+- Boundary: this clears Gemma 12B QAT MXFP4 dev-app exact text/JSON only. Gemma audio, larger Gemma QAT rows, public tunnel SSE parity, and release readiness remain open. No release action was run.
+
+# 2026-06-10 - Gemma 12B JANG4M dev-app exact output
+
+- Ran current Electron dev-build Gemma 12B JANG4M exact-output proof with `npm run dev`, Chat Completions, no tools, server cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-12b-jang4m-exact-output-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-12b-jang4m-exact-output-20260610-proof.json`.
+- Proven: dev app launched as `uiLaunchMode=electron-dev`, real `/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M` loaded, exact text `JANG4M-ACK-742` returned, exact JSON `{"status":"ok","value":"jang4m-blue"}` returned, server cache controls were visible, no parser/reasoning leak was recorded, no persisted tools/reasoning, Gemma4 tool/reasoning parsers auto-detected, mixed-SWA cache, paged prefix hit, and block L2 writes.
+- Runtime/cache evidence: active memory `9680.4 MB`, peak `9950.7 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA active, `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=24`, `l2_block_tokens_on_disk=66`, and block-disk writes `2`.
+- Boundary: this clears Gemma 12B JANG4M dev-app exact text/JSON only. Gemma audio, larger Gemma QAT rows, public tunnel SSE parity, package/sign/notarize/tag/upload, and release readiness remain open. No release action was run.
+
+# 2026-06-10 - N2 JANG_1L deferred startup eval
+
+- Fixed the prior N2 JANG_1L pre-health Metal OOM class by adding a narrow loader policy in `vmlx_engine/utils/tokenizer.py`: qwen3_5_moe affine `JANG_1L` now calls `load_jang_model(..., skip_eval=True)` so startup does not eagerly materialize every parameter. Ordinary JANG and JANGTQ rows are not affected.
+- Proof summary `build/current-n2-jang1l-deferred-eval-startup-proof-20260610.json` is `status=open`; live artifact is `build/current-n2-jang1l-live-chat-cache-deferred-eval-live-attempt-20260610.json`.
+- Proven: with `114.04 GiB` available and 3 GiB lower-peak headroom, the real `/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L` server reached `/health`, loaded in `6.7s`, selected qwen3_5_moe, qwen tools, qwen3 reasoning, hybrid cache, attention TurboQuant KV plus native SSM companion, initialized paged/block-L2/SSM companion L2, and completed one bounded Chat Completions request with HTTP `200`.
+- Still red: after the first request, active Metal working-set pressure hit `102%` of the `107.5GB` cap; cache warm/hit, tool, Responses, Responses stream, and full L2 restart probes did not pass. Raising `VMLINUX_METAL_WS_REJECT_PCT=104` with wired-limit setup reproduced a first-request Metal OOM (`server_exit=-6`), so do not bypass the guard as a release fix.
+- Boundary: this is a real startup/first-chat fix, not N2 JANG_1L release clearance. N2 JANGTQ2 remains the N2 checkpoint candidate until JANG_1L gets a second lower-peak request/cache strategy.
+
+# 2026-06-10 - MiMo JANGTQ_2 dev-app image/VL red
+
+- Ran current Electron dev-build MiMo V2.5 JANGTQ_2 image proof with `npm run dev`, Chat Completions, forced MLLM, one image attachment, server cache controls, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-dev-app-mimo-v25-jangtq2-image-proof-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-image-proof-20260610-proof.json`.
+- Positive evidence: dev app launched, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2` loaded, two visible text turns completed before media, server `MEDIA_DIAG` saw one `image_url`, no parser/reasoning leak was recorded, server cache controls were visible, and generation defaults were applied.
+- Runtime/cache evidence before the media guard: active memory `76491.8 MB`, peak `77127.2 MB`, TurboQuant codebook routed experts, prestacked layout, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, `cache_detail=paged`, `cache_hit_tokens=39`, `l2_block_tokens_on_disk=132`, and block-disk writes `3`.
+- Red evidence: image turn returned HTTP `400`: `/v1/chat/completions received unsupported media modality image because the loaded runtime is text-only. Supported modalities: text.` Server log says MiMo V2 preserved media weights override forced MLLM because bundle metadata marks vision/audio as `unwired weights_preserved_text_runtime`. Do not claim MiMo JANGTQ_2 image/VL support.
+
+# 2026-06-10 - Gemma 26B JANG4M dev-app exact output
+
+- Ran current Electron dev-build Gemma 4 26B A4B QAT JANG4M exact-output proof with `npm run dev`, Chat Completions, no tools, no media, server cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-26b-jang4m-exact-output-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-exact-output-20260610-proof.json`.
+- Proven: dev app launched as `uiLaunchMode=electron-dev`, real `/Users/eric/models/JANGQ-AI/gemma-4-26B-A4B-it-qat-JANG_4M` loaded, exact text `GEMMA26-JANG4M-ACK-742` returned, exact JSON `{"status":"ok","value":"gemma26-jang4m-blue"}` returned, server cache controls were visible, no parser/reasoning leak was recorded, no persisted tools/reasoning, Gemma4 parser family was used, mixed-SWA cache surfaced, paged prefix hit, and block L2 writes landed.
+- Runtime/cache evidence: active memory `17650.5 MB`, peak `17842.9 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA eligible, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=29`, `l2_block_tokens_on_disk=81`, `l2_tokens_on_disk=81`, and block-disk writes `2`.
+- Boundary: this clears Gemma 26B JANG4M dev-app exact text/JSON plus no-media mixed-SWA cache/L2 telemetry only. It does not clear 26B tools, Responses, image/video/audio, installed-app parity, Gemma 31B, public tunnel SSE, package/sign/notarize/tag/upload, or release readiness. No release action was run.
+
+# 2026-06-10 - Gemma 31B JANG4M dev-app exact output
+
+- Ran current Electron dev-build Gemma 4 31B QAT JANG4M exact-output proof with `npm run dev`, Chat Completions, no tools, no media, server cache controls, temperature `0`, top_p `1`, and max tokens `64`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-31b-jang4m-exact-output-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-exact-output-20260610-proof.json`.
+- Proven: dev app launched as `uiLaunchMode=electron-dev`, real `/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M` loaded, exact text `GEMMA31-JANG4M-ACK-742` returned, exact JSON `{"status":"ok","value":"gemma31-jang4m-blue"}` returned, server cache controls were visible, no parser/reasoning leak was recorded, no persisted tools/reasoning, Gemma4 parser family was used, mixed-SWA cache surfaced, paged prefix hit, and block L2 writes landed.
+- Runtime/cache evidence: active memory `25333.1 MB`, peak `25778.7 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA eligible, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=29`, `l2_block_tokens_on_disk=81`, `l2_tokens_on_disk=81`, and block-disk writes `2`.
+- Boundary: this clears Gemma 31B JANG4M dev-app exact text/JSON plus no-media mixed-SWA cache/L2 telemetry only. It does not clear 31B tools, Responses, image/video/audio, installed-app parity, public tunnel SSE, package/sign/notarize/tag/upload, or release readiness. No release action was run.
+
+# 2026-06-10 - Gemma 31B JANG4M dev-app Responses tools/cache
+
+- Ran current Electron dev-build Gemma 4 31B QAT JANG4M Responses built-in tool proof with `npm run dev`, `/v1/responses`, built-in tools, server cache controls, temperature `0`, top_p `1`, and max tokens `256`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-31b-jang4m-responses-tools-cache-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-responses-tools-cache-20260610-proof.json`.
+- Proven: dev app launched, real `/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M` loaded, `/v1/responses` was used, built-in `run_command` executed on both turns, tool follow-ups used `previous_response_id` plus `function_call_output`, visible assistant turns completed, and probe files contained exactly `REAL_UI_LIVE_TOOL_ONE` and `REAL_UI_LIVE_TOOL_TWO`.
+- Runtime/cache evidence: active memory `28090.3 MB`, peak `34587.3 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA eligible, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=320`, `l2_block_tokens_on_disk=1960`, `l2_tokens_on_disk=1960`, block-disk writes `58`, and block-disk evictions `26` inside the 2 GB L2 cap.
+- Boundary: this clears Gemma 31B JANG4M current dev-build Responses/tool/cache parity only. It does not clear 31B image/video/audio, installed-app parity, public tunnel SSE, 26B tools/media, package/sign/notarize/tag/upload, or release readiness. No release action was run.
+
+# 2026-06-10 - Gemma 26B JANG4M dev-app Responses tools/cache
+
+- Ran current Electron dev-build Gemma 4 26B A4B QAT JANG4M Responses built-in tool proof with `npm run dev`, `/v1/responses`, built-in tools, server cache controls, temperature `0`, top_p `1`, and max tokens `256`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-26b-jang4m-responses-tools-cache-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-responses-tools-cache-20260610-proof.json`.
+- Proven: dev app launched, real `/Users/eric/models/JANGQ-AI/gemma-4-26B-A4B-it-qat-JANG_4M` loaded, `/v1/responses` was used, built-in `run_command` executed on both turns, tool follow-ups used `previous_response_id` plus `function_call_output`, visible assistant turns completed, and probe files contained exactly `REAL_UI_LIVE_TOOL_ONE` and `REAL_UI_LIVE_TOOL_TWO`.
+- Runtime/cache evidence: active memory `17782 MB`, peak `19943.9 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA eligible, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=3538`, `l2_block_tokens_on_disk=3559`, `l2_tokens_on_disk=3559`, block-disk hits `30`, and block-disk writes `58`.
+- Boundary: this clears Gemma 26B JANG4M current dev-build Responses/tool/cache parity only. It does not clear 26B image/video/audio, installed-app parity, public tunnel SSE, package/sign/notarize/tag/upload, or release readiness. No release action was run.
+
+# 2026-06-10 - Gemma 26B JANG4M dev-app image/VL
+
+- Ran current Electron dev-build Gemma 4 26B A4B QAT JANG4M image/VL proof with `npm run dev`, Chat Completions, one app image attachment, server cache controls, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-26b-jang4m-image-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-26b-jang4m-image-20260610-proof.json`.
+- Proven: dev app launched, real `/Users/eric/models/JANGQ-AI/gemma-4-26B-A4B-it-qat-JANG_4M` loaded, two visible text turns completed before media, the app persisted one image attachment, `MEDIA_DIAG` saw `image_url`, the Gemma media fallback ran with `1 image(s)`, and the assistant answered `Red`; `imageSemanticVerified=true`.
+- Runtime/cache evidence: active memory `17780.6 MB`, peak `18557.2 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA eligible, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=20`, `l2_block_tokens_on_disk=64`, `l2_tokens_on_disk=64`, block-disk writes `2`, and media-prefix cache stored `367` prompt tokens for the image turn.
+- Boundary: this clears Gemma 26B JANG4M current dev-build image/VL only. It does not clear 26B video/audio, installed-app parity, public tunnel SSE, package/sign/notarize/tag/upload, or release readiness. No release action was run.
+
+# 2026-06-10 - Gemma 31B JANG4M dev-app image/VL
+
+- Ran current Electron dev-build Gemma 4 31B QAT JANG4M image/VL proof with `npm run dev`, Chat Completions, one app image attachment, server cache controls, temperature `0`, top_p `1`, and max tokens `96`.
+- Proof summary `build/current-real-ui-dev-app-gemma4-31b-jang4m-image-proof-20260610.json` is `status=pass`; raw proof is `docs/internal/agent-notes/current-real-ui-dev-app-gemma4-31b-jang4m-image-20260610-proof.json`.
+- Proven: dev app launched, real `/Users/eric/models/JANGQ-AI/gemma-4-31B-it-qat-JANG_4M` loaded, two visible text turns completed before media, the app persisted one image attachment, `MEDIA_DIAG` saw `image_url`, the Gemma media fallback ran with `1 image(s)`, and the assistant answered `Red`; `imageSemanticVerified=true`.
+- Runtime/cache evidence: active memory `25850.6 MB`, peak `26233.1 MB`, `weight_format=jang_affine`, `profile=JANG_4M`, Metal NA eligible, native `mixed_swa_kv_v1`, `cache_detail=paged+mixed_swa`, `cache_hit_tokens=20`, `l2_block_tokens_on_disk=62`, `l2_tokens_on_disk=62`, block-disk writes `2`, and media-prefix cache stored `365` prompt tokens for the image turn.
+- Boundary: this clears Gemma 31B JANG4M current dev-build image/VL only. It does not clear 31B video/audio, installed-app parity, public tunnel SSE, package/sign/notarize/tag/upload, or release readiness. No release action was run.
+
+# 2026-06-10 - MiMo JANG_2L fresh-process L2 restore
+
+- Ran `bench/local_restart_l2_gate.py` with `VMLINUX_BENCH_PYTHON=/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python`, real `/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L`, paged cache, block-disk L2, and two fresh server processes sharing one block-cache directory.
+- First attempt before the rerun was an environment/interpreter failure (`ModuleNotFoundError: No module named 'uvicorn'`) and was not treated as model evidence.
+- Live proof: `build/current-mimo-v25-jang2l-restart-l2-restore-20260610-rerun/summary.json` is `status=pass`; per-model result is `build/current-mimo-v25-jang2l-restart-l2-restore-20260610-rerun/MiMo-V2.5-JANG_2L/result.json`.
+- Proven cache surface: first process wrote one block / `48` tokens to block-disk L2; second process opened the existing store and served HTTP `200` with `48` cached tokens, `cache_detail=paged+disk`, block disk `disk_hits=1`, scheduler cache `disk_hits=1`, and `reconstruction_ok=true`.
+- Runtime evidence: JANG v2 mmap load, `103` safetensors shards, wired limit `115 GB`, active Metal baseline about `102.5 GB`, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, and generic TurboQuant KV intentionally inactive for MiMo.
+- Boundary: this clears MiMo JANG_2L source fresh-process block-disk L2 restore only. Visible exact `ACK` remains `output_status=review`; MiMo JANG_2L tool-loop, Responses semantics, media, installed-app parity, public tunnel SSE, package/sign/notarize/tag/upload, and release readiness remain open.
+
+# 2026-06-10 - MiMo JANG_2L dev-app Responses tools rerun
+
+- Reran the current Electron dev-app MiMo V2.5 JANG_2L Responses built-in tool proof on HEAD `47b4ad66` with `/v1/responses`, built-in tools, cache controls, thinking off, `temperature=0`, `top_p=1`, `max_tokens=384`, and `max_prompt_tokens=12000`.
+- Proof summary `build/current-real-ui-live-model-mimo-v25-jang2l-responses-tools-rerun-20260610.json` is `status=fail`; raw proof is `docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-responses-tools-rerun-20260610-proof.json`; screenshot is `docs/internal/agent-notes/current-real-ui-live-model-mimo-v25-jang2l-responses-tools-rerun-20260610-chat.png`.
+- Positive evidence: the older CDP-timeout ambiguity is gone. The real dev app completed two visible assistant turns, used `/v1/responses`, emitted Responses deltas, used `previous_response_id` for tool-result follow-up, persisted settings, applied generation defaults, and recorded server cache-control surfaces.
+- Runtime/cache evidence: active memory `105485.6 MB`, peak `110316.4 MB`, native `mixed_swa_kv_v1` / `mimo_v2_asymmetric_swa`, generic TurboQuant KV inactive, `cache_hit_tokens=4552`, last cache hit `paged` / `3481` tokens / `reconstruction_ok=true`, `l2_block_tokens_on_disk=4960`, block disk `disk_hits=36`, `disk_writes=80`, and block-disk size `1.487 GB`.
+- Red evidence: release assertion failed because the proof did not record `long_tool_loop`. Visible/tool semantics drifted: the first assistant content changed `REAL_UI_LIVE_TOOL_ONE` to `REAL_UI_LAND_TOOL_ONE`, the second assistant was only `The command executed successfully. The file`, and tool/file semantics did not satisfy the proof contract.
+- Boundary: this does not clear MiMo JANG_2L Responses/tool support for release. Cache/L2/Responses transport is not the current blocker; tool semantic drift remains the blocker. No release/sign/notarize/package/tag/upload action was run.

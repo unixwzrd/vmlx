@@ -19,7 +19,7 @@ from typing import Any
 
 
 DEFAULT_OUT = Path(
-    "build/current-public-app-issue-audit-after-issue179-memory-preflight-20260607.json"
+    "build/current-public-app-issue-audit-after-checkpoint-packaged-integrity-20260609.json"
 )
 INSTALLED_APP_ASAR = Path("/Applications/vMLX.app/Contents/Resources/app.asar")
 INSTALLED_APP = Path("/Applications/vMLX.app")
@@ -32,13 +32,13 @@ TOOL_CALL_CONTRACT = Path(
     "build/current-tool-call-contract-after-cross-model-loop-metrics-20260609.json"
 )
 INSTALLED_APP_RUNTIME_PARITY = Path(
-    "build/current-installed-app-runtime-parity-audit-after-installed-app-rebuild-20260606.json"
+    "build/current-installed-app-runtime-parity-audit-sequoia-checkpoint-dmg-20260609.json"
 )
 REASONING_TEMPLATE_CONTRACT = Path(
     "build/current-reasoning-template-contract-20260526-settings-audit.json"
 )
 PACKAGED_INTEGRITY_CONTRACT = Path(
-    "build/current-packaged-integrity-contract-after-bundled-python-sync-20260608.json"
+    "build/current-packaged-integrity-contract-after-checkpoint-app-parity-20260609.json"
 )
 GEMMA4_INSTALLED_SPEED_ARTIFACTS = (
     Path(

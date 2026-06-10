@@ -45,7 +45,7 @@ RELEASE_MANIFEST = Path(
     "build/current-release-regression-manifest-after-pr-intake-matrix-refresh-20260609.json"
 )
 OBJECTIVE_DIGEST = Path(
-    "build/current-objective-proof-after-n2-jang1l-memory-refresh-20260609.json"
+    "build/current-objective-proof-after-mimo-n2-dev-app-proof-refresh-20260610.json"
 )
 ISSUE179_AUDIT = Path(
     "build/current-issue179-minimax-k-root-cause-audit-after-parser-settings-parity-20260608.json"
@@ -75,7 +75,7 @@ QWEN35_RESTART_L2_RESTORE = Path(
     "build/current-qwen35-mxfp8-mtp-restart-l2-restore-20260607/summary.json"
 )
 QWEN35_RAW_SSE_PARITY = Path(
-    "build/current-responses-raw-sse-parity-qwen35-tunnel-output-index-20260609.json"
+    "build/current-responses-raw-sse-parity-qwen35-direct-gateway-source-vs-tunnel-20260609.json"
 )
 QWEN35_INSTALLED_VIDEO = Path(
     "docs/internal/agent-notes/current-real-ui-installed-app-qwen36-35b-mxfp8-mtp-responses-tools-video-reasoning-cachecontrols-max512-20260607-proof.json"
@@ -1563,6 +1563,16 @@ def _issue179_checks(data: dict[str, Any]) -> list[dict[str, Any]]:
         if isinstance(data.get("local_reporter_prompt_reproduction"), dict)
         else {}
     )
+    current_source_smoke = (
+        data.get("current_source_minimax_small_smoke")
+        if isinstance(data.get("current_source_minimax_small_smoke"), dict)
+        else {}
+    )
+    current_source_smoke_checks = (
+        current_source_smoke.get("checks")
+        if isinstance(current_source_smoke.get("checks"), dict)
+        else {}
+    )
     not_proven = data.get("not_proven") if isinstance(data.get("not_proven"), list) else []
     return [
         _check(
@@ -1652,6 +1662,18 @@ def _issue179_checks(data: dict[str, Any]) -> list[dict[str, Any]]:
                     "reporter_log_has_abort_before_visible_content"
                 ),
                 "reporter_repro": reporter_repro,
+            },
+        ),
+        _check(
+            "issue179_current_source_minimax_small_smoke",
+            current_source_smoke.get("all_checks_pass") is True
+            and all(current_source_smoke_checks.values()),
+            str(ISSUE179_AUDIT),
+            {
+                "path": current_source_smoke.get("path"),
+                "status": current_source_smoke.get("status"),
+                "checks": current_source_smoke_checks,
+                "release_boundary": current_source_smoke.get("release_boundary"),
             },
         ),
     ]

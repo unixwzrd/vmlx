@@ -1,0 +1,2843 @@
+{
+  "generatedAt": "2026-06-10T05:26:12.780Z",
+  "status": "pass",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "panelDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel",
+  "script": "panel/scripts/live-real-ui-model-proof.mjs",
+  "modelPath": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+  "modelName": "MiMo-V2.5-JANGTQ_2",
+  "servedModel": "mimo-v25-jangtq2-installed-ui-tools-20260610",
+  "requestedWireApi": "chat",
+  "requestedBuiltinTools": true,
+  "requestedServerCacheControls": true,
+  "requestedMedia": false,
+  "requestedVideo": false,
+  "requestedAudio": false,
+  "requestContract": {
+    "promptOne": "Use the run_command tool exactly once to create a file named real_ui_tool_probe_1.txt in the configured working directory. Write the text REAL_UI_LIVE_TOOL_ONE into that file. After the tool result is returned, reply briefly in English and include REAL_UI_LIVE_TOOL_ONE once.",
+    "promptTwo": "Use the run_command tool exactly once to read real_ui_tool_probe_1.txt and create real_ui_tool_probe_2.txt in the same working directory. Write REAL_UI_LIVE_TOOL_TWO into the second file. Do not copy the first file into the second file; the second file must contain REAL_UI_LIVE_TOOL_TWO. After the tool result is returned, reply briefly in English with REAL_UI_LIVE_TOOL_TWO once and mention this is the second UI turn.",
+    "requestMaxTokens": 256,
+    "requestMaxPromptTokens": null,
+    "maxToolIterations": 4,
+    "toolResultMaxChars": 12345,
+    "wireApi": "chat",
+    "builtinToolsEnabled": true,
+    "enableThinking": null,
+    "samplingOverrides": {
+      "temperature": 0,
+      "topP": 1
+    },
+    "checkServerCacheControls": true,
+    "checkMedia": false,
+    "checkVideo": false,
+    "checkAudio": false,
+    "expectPagedCacheLocked": false,
+    "imageExpectRegex": "\\bred\\b",
+    "videoExpectRegex": "",
+    "audioExpectRegex": "",
+    "cacheExpectRegex": ""
+  },
+  "baseUrl": "http://127.0.0.1:62955",
+  "python": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+  "runDir": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-9yvb4n",
+  "userDataDir": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-userdata-ZL8y6r",
+  "workingDirectory": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-tools-mGfCEx",
+  "uiLaunchMode": "installed-app",
+  "uiCommand": [
+    "/Applications/vMLX.app/Contents/MacOS/vMLX",
+    "--user-data-dir=/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-userdata-ZL8y6r",
+    "--remote-debugging-port=62956"
+  ],
+  "installedAppPath": "/Applications/vMLX.app",
+  "serverCommand": [
+    "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+    "-B",
+    "-s",
+    "-m",
+    "vmlx_engine.cli",
+    "serve",
+    "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "62955",
+    "--served-model-name",
+    "mimo-v25-jangtq2-installed-ui-tools-20260610",
+    "--timeout",
+    "240",
+    "--max-num-seqs",
+    "1",
+    "--prefill-batch-size",
+    "512",
+    "--prefill-step-size",
+    "1024",
+    "--completion-batch-size",
+    "128",
+    "--continuous-batching",
+    "--use-paged-cache",
+    "--paged-cache-block-size",
+    "64",
+    "--max-cache-blocks",
+    "1000",
+    "--enable-block-disk-cache",
+    "--block-disk-cache-dir",
+    "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-9yvb4n/block-cache",
+    "--block-disk-cache-max-gb",
+    "2",
+    "--ssm-state-cache-mb",
+    "512",
+    "--max-tokens",
+    "256",
+    "--log-level",
+    "INFO",
+    "--default-enable-thinking",
+    "false",
+    "--enable-auto-tool-choice",
+    "--tool-call-parser",
+    "auto"
+  ],
+  "server": {
+    "baseUrl": "http://127.0.0.1:62955",
+    "health": {
+      "status": "healthy",
+      "model_loaded": true,
+      "model_name": "JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+      "model_type": "llm",
+      "engine_type": "batched",
+      "last_request_time": 1781069141.400364,
+      "mcp": null,
+      "memory": {
+        "active_mb": 76763.1,
+        "peak_mb": 81328.7,
+        "cache_mb": 1032.6
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "speculative_decoding": "not_configured",
+      "scheduler": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": "single_active",
+        "batch_generator": {
+          "class": "SingleBatchGenerator",
+          "path": "single_active",
+          "single_active_decode": true,
+          "max_num_seqs": 1
+        },
+        "single_active_decode": true,
+        "ewma_ttft_seconds": 2.351,
+        "cache_hit_requests": 3,
+        "cache_hit_tokens": 4548,
+        "cache_hit_tokens_by_detail": {
+          "paged": 4548
+        },
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": {
+          "paged_cached_tokens": 3477,
+          "paged_cold_tokens": 0,
+          "warm_cached_tokens": 0,
+          "hot_advantage_tokens": 3477,
+          "hot_advantage_threshold_tokens": 64,
+          "selected": "paged",
+          "rejected": null,
+          "reason": "no_warm_prefix_alternative"
+        },
+        "last_cache_execution": {
+          "request_id": "chatcmpl-9af02cf8",
+          "cache_detail": "paged",
+          "cached_tokens": 3477,
+          "blocks": 55,
+          "selection": {
+            "paged_cached_tokens": 3477,
+            "paged_cold_tokens": 0,
+            "warm_cached_tokens": 0,
+            "hot_advantage_tokens": 3477,
+            "hot_advantage_threshold_tokens": 64,
+            "selected": "paged",
+            "rejected": null,
+            "reason": "no_warm_prefix_alternative"
+          },
+          "reconstructed": true,
+          "dequantized": false,
+          "reconstruction_seconds": 0.075997,
+          "dequantization_seconds": 0,
+          "total_worker_cache_seconds": 0.076231,
+          "reconstruction_ok": true
+        }
+      },
+      "cache": {
+        "scheduler_cache": {
+          "hits": 3,
+          "misses": 1,
+          "hit_rate": 0.75,
+          "tokens_saved": 4548,
+          "active_requests": 4,
+          "entries_by_type": {
+            "assistant": 0,
+            "user": 0,
+            "system": 4
+          },
+          "block_size": 64,
+          "max_blocks": 1000,
+          "allocated_blocks": 69,
+          "free_blocks": 931,
+          "shared_blocks": 60,
+          "total_tokens_cached": 4225,
+          "utilization": 0.069,
+          "cache_hit_rate": 0.6481481481481481,
+          "cache_hits": 140,
+          "cache_misses": 76,
+          "disk_hits": 0,
+          "disk_misses": 8,
+          "cow_copies": 0,
+          "evictions": 0,
+          "engine_path": "single_active",
+          "batch_generator": {
+            "class": "SingleBatchGenerator",
+            "path": "single_active",
+            "single_active_decode": true,
+            "max_num_seqs": 1
+          }
+        },
+        "block_disk_cache": {
+          "blocks_on_disk": 68,
+          "disk_size_bytes": 1269264055,
+          "disk_size_gb": 1.182,
+          "total_accesses": 36,
+          "total_tokens_on_disk": 4225,
+          "total_cached_tokens": 4225,
+          "disk_hits": 36,
+          "disk_misses": 8,
+          "disk_writes": 68,
+          "disk_evictions": 0
+        },
+        "totals": {
+          "ram_tokens_cached": 4225,
+          "l2_prompt_tokens_on_disk": 0,
+          "l2_block_tokens_on_disk": 4225,
+          "l2_ssm_tokens_on_disk": 0,
+          "ssm_tokens_on_disk": 0,
+          "l2_tokens_on_disk": 4225,
+          "l2_tokens_on_disk_store_sum": 4225,
+          "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+        }
+      },
+      "quantization_format": {
+        "type": "jang",
+        "target_bits": null,
+        "actual_bits": null,
+        "block_size": 64
+      },
+      "quantization": {
+        "codec": "turboquant_codebook",
+        "profile": "JANGTQ_2",
+        "mxtq_bits_by_role": {
+          "routed_expert": {
+            "down_proj": 2,
+            "gate_proj": 2,
+            "up_proj": 2
+          }
+        },
+        "routed_expert_bits_by_projection": {
+          "gate_proj": 2,
+          "up_proj": 2,
+          "down_proj": 2
+        },
+        "routed_expert_bits_label": "gate=2/up=2/down=2-bit",
+        "target_bits": 2,
+        "config_bits": 8,
+        "group_size": 64,
+        "weight_index": {
+          "index_file": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2/model.safetensors.index.json",
+          "total_tensors": 1415,
+          "suffix_counts": {
+            "biases": 101,
+            "scales": 101,
+            "tq_bits": 141,
+            "tq_norms": 141,
+            "tq_packed": 141,
+            "weight": 522
+          },
+          "tq_target_counts": {
+            "routed_expert": 423
+          },
+          "routed_layout_counts": {
+            "prestacked_switch": 423,
+            "split_expert": 0
+          },
+          "mtp_tensor_count": 0,
+          "sample_tq_packed_targets": [
+            "model.layers.1.mlp.switch_mlp.down_proj",
+            "model.layers.1.mlp.switch_mlp.gate_proj",
+            "model.layers.1.mlp.switch_mlp.up_proj",
+            "model.layers.10.mlp.switch_mlp.down_proj",
+            "model.layers.10.mlp.switch_mlp.gate_proj",
+            "model.layers.10.mlp.switch_mlp.up_proj",
+            "model.layers.11.mlp.switch_mlp.down_proj",
+            "model.layers.11.mlp.switch_mlp.gate_proj",
+            "model.layers.11.mlp.switch_mlp.up_proj",
+            "model.layers.12.mlp.switch_mlp.down_proj",
+            "model.layers.12.mlp.switch_mlp.gate_proj",
+            "model.layers.12.mlp.switch_mlp.up_proj"
+          ]
+        },
+        "weight_matmul_dispatch": {
+          "primary": "jang_tools_turboquant_custom_kernels",
+          "uses_mlx_quantized_matmul": false,
+          "metal_na_eligible": false,
+          "reason": "turboquant_codebook_uses_custom_tq_kernels"
+        },
+        "sidecar": {
+          "jang_config": true,
+          "jangtq_runtime": true,
+          "prestacked_bundle": true
+        }
+      },
+      "acceleration": {
+        "kernel_type": "turboquant_codebook",
+        "metal_na_capable": false,
+        "metal_na_active_on_host": false,
+        "reason": "turboquant_custom_kernels_do_not_use_mlx_na",
+        "metal_na_symbols": {
+          "available": true,
+          "nax_symbols": 4668,
+          "naxtile_symbols": 4154,
+          "affine_qmm_symbols": 4212,
+          "affine_gather_qmm_symbols": 3456
+        },
+        "host": {
+          "supported": true,
+          "brand": "Apple M5 Max",
+          "reason": null
+        },
+        "jangtq_acceleration": {
+          "mode": "off",
+          "requested": false,
+          "available": false,
+          "active": false,
+          "uses_mlx_quantized_matmul": false,
+          "reason": "disabled"
+        }
+      },
+      "mtp": {
+        "config_num_nextn_predict_layers": null,
+        "config_mtp_layer_source": null,
+        "jang_mtp_layers": null,
+        "jang_drop_mtp": null,
+        "index_has_mtp_tensors": false,
+        "index_mtp_layer_count": null,
+        "mtp_tensor_count": 0,
+        "artifact_available": false,
+        "family": "mimo_v2",
+        "has_vision_config": true,
+        "has_vision_weights": true,
+        "vision_tensor_count": 364,
+        "cache_type": null,
+        "runtime_supported": false,
+        "runtime_available": false,
+        "runtime_active": false,
+        "runtime_validation_blocked": false,
+        "effective_depth": null,
+        "effective_depth_source": null,
+        "runtime_scope": null,
+        "vl_runtime_available": false,
+        "runtime_bundle_has_mtp": null,
+        "runtime_mtp_mode": null,
+        "runtime_reason": "config does not request MTP",
+        "status": "not_configured",
+        "issues": [],
+        "request_policy": "compatible-only",
+        "request_gate": "temperature=0,repetition_penalty=1.0"
+      },
+      "routing": {
+        "trained_active_experts": 8,
+        "trained_active_experts_source": "config.num_experts_per_tok",
+        "n_routed_experts": 256,
+        "override_env": null,
+        "effective_active_experts": 8,
+        "effective_active_experts_source": "trained_default"
+      },
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "mimo_v2",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mimo_v2_asymmetric_swa",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      }
+    },
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "mimo-v25-jangtq2-installed-ui-tools-20260610",
+          "object": "model",
+          "created": 1781069072,
+          "owned_by": "vmlx-engine"
+        },
+        {
+          "id": "JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+          "object": "model",
+          "created": 1781069072,
+          "owned_by": "vmlx-engine"
+        }
+      ]
+    }
+  },
+  "cache": {
+    "before": {
+      "scheduler_cache": {
+        "hits": 0,
+        "misses": 0,
+        "hit_rate": 0,
+        "tokens_saved": 0,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 0,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 1,
+        "free_blocks": 999,
+        "shared_blocks": 0,
+        "total_tokens_cached": 0,
+        "utilization": 0.001,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "cow_copies": 0,
+        "evictions": 0,
+        "engine_path": "none",
+        "batch_generator": {
+          "class": null,
+          "path": "none",
+          "single_active_decode": false,
+          "max_num_seqs": 1
+        }
+      },
+      "scheduler_stats": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": "none",
+        "batch_generator": {
+          "class": null,
+          "path": "none",
+          "single_active_decode": false,
+          "max_num_seqs": 1
+        },
+        "single_active_decode": false,
+        "num_requests_processed": 0,
+        "total_prompt_tokens": 0,
+        "total_completion_tokens": 0,
+        "ewma_ttft_seconds": 0,
+        "cache_hit_requests": 0,
+        "cache_hit_tokens": 0,
+        "cache_hit_tokens_by_detail": {},
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": null,
+        "last_cache_execution": null
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "mimo_v2",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mimo_v2_asymmetric_swa",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 0,
+        "disk_size_bytes": 0,
+        "disk_size_gb": 0,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 0,
+        "total_cached_tokens": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "disk_writes": 0,
+        "disk_evictions": 0
+      },
+      "cache_totals": {
+        "ram_tokens_cached": 0,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 0,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 0,
+        "l2_tokens_on_disk_store_sum": 0,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      },
+      "memory": {
+        "active_mb": 76444,
+        "peak_mb": 76519.1,
+        "cache_mb": 0
+      }
+    },
+    "after": {
+      "scheduler_cache": {
+        "hits": 3,
+        "misses": 1,
+        "hit_rate": 0.75,
+        "tokens_saved": 4548,
+        "active_requests": 4,
+        "entries_by_type": {
+          "assistant": 0,
+          "user": 0,
+          "system": 4
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 69,
+        "free_blocks": 931,
+        "shared_blocks": 60,
+        "total_tokens_cached": 4225,
+        "utilization": 0.069,
+        "cache_hit_rate": 0.6481481481481481,
+        "cache_hits": 140,
+        "cache_misses": 76,
+        "disk_hits": 0,
+        "disk_misses": 8,
+        "cow_copies": 0,
+        "evictions": 0,
+        "engine_path": "single_active",
+        "batch_generator": {
+          "class": "SingleBatchGenerator",
+          "path": "single_active",
+          "single_active_decode": true,
+          "max_num_seqs": 1
+        }
+      },
+      "scheduler_stats": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": "single_active",
+        "batch_generator": {
+          "class": "SingleBatchGenerator",
+          "path": "single_active",
+          "single_active_decode": true,
+          "max_num_seqs": 1
+        },
+        "single_active_decode": true,
+        "num_requests_processed": 4,
+        "total_prompt_tokens": 8709,
+        "total_completion_tokens": 146,
+        "ewma_ttft_seconds": 2.351,
+        "cache_hit_requests": 3,
+        "cache_hit_tokens": 4548,
+        "cache_hit_tokens_by_detail": {
+          "paged": 4548
+        },
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": {
+          "paged_cached_tokens": 3477,
+          "paged_cold_tokens": 0,
+          "warm_cached_tokens": 0,
+          "hot_advantage_tokens": 3477,
+          "hot_advantage_threshold_tokens": 64,
+          "selected": "paged",
+          "rejected": null,
+          "reason": "no_warm_prefix_alternative"
+        },
+        "last_cache_execution": {
+          "request_id": "chatcmpl-9af02cf8",
+          "cache_detail": "paged",
+          "cached_tokens": 3477,
+          "blocks": 55,
+          "selection": {
+            "paged_cached_tokens": 3477,
+            "paged_cold_tokens": 0,
+            "warm_cached_tokens": 0,
+            "hot_advantage_tokens": 3477,
+            "hot_advantage_threshold_tokens": 64,
+            "selected": "paged",
+            "rejected": null,
+            "reason": "no_warm_prefix_alternative"
+          },
+          "reconstructed": true,
+          "dequantized": false,
+          "reconstruction_seconds": 0.075997,
+          "dequantization_seconds": 0,
+          "total_worker_cache_seconds": 0.076231,
+          "reconstruction_ok": true
+        }
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "mimo_v2",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mimo_v2_asymmetric_swa",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 68,
+        "disk_size_bytes": 1269264055,
+        "disk_size_gb": 1.182,
+        "total_accesses": 36,
+        "total_tokens_on_disk": 4225,
+        "total_cached_tokens": 4225,
+        "disk_hits": 36,
+        "disk_misses": 8,
+        "disk_writes": 68,
+        "disk_evictions": 0
+      },
+      "cache_totals": {
+        "ram_tokens_cached": 4225,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 4225,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 4225,
+        "l2_tokens_on_disk_store_sum": 4225,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      },
+      "memory": {
+        "active_mb": 76763.1,
+        "peak_mb": 81328.7,
+        "cache_mb": 1032.6
+      }
+    },
+    "cacheHitTokens": 4548
+  },
+  "chat": {
+    "turns": [
+      {
+        "role": "user",
+        "content": "Use the run_command tool exactly once to create a file named real_ui_tool_probe_1.txt in the configured working directory. Write the text REAL_UI_LIVE_TOOL_ONE into that file. After the tool result is returned, reply briefly in English and include REAL_UI_LIVE_TOOL_ONE once."
+      },
+      {
+        "role": "assistant",
+        "content": "The file"
+      },
+      {
+        "role": "user",
+        "content": "Use the run_command tool exactly once to read real_ui_tool_probe_1.txt and create real_ui_tool_probe_2.txt in the same working directory. Write REAL_UI_LIVE_TOOL_TWO into the second file. Do not copy the first file into the second file; the second file must contain REAL_UI_LIVE_TOOL_TWO. After the tool result is returned, reply briefly in English with REAL_UI_LIVE_TOOL_TWO once and mention this is the second UI turn."
+      },
+      {
+        "role": "assistant",
+        "content": "The file"
+      }
+    ],
+    "finalVisibleText": "The file",
+    "rawParserTagLeak": false,
+    "cjkLeakCount": 0,
+    "koreanLeakCount": 0,
+    "reasoningText": "",
+    "reasoningRawParserTagLeak": false,
+    "reasoningCjkLeakCount": 0,
+    "reasoningKoreanLeakCount": 0,
+    "reasoningNumericRunCount": 0
+  },
+  "screenshots": {
+    "chat": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jangtq2-tools-20260610-chat.png"
+  },
+  "rendererWireApi": "chat",
+  "rendererBuiltinToolsEnabled": true,
+  "remoteSessionId": "158af026-0c1b-4f0f-a94e-ff360b351ba9",
+  "remoteSessionStarted": true,
+  "chatId": "3e142681-c89d-4009-b0ee-ead1de933797",
+  "chatOverrides": {
+    "chatId": "3e142681-c89d-4009-b0ee-ead1de933797",
+    "temperature": 0,
+    "topP": 1,
+    "topK": null,
+    "minP": null,
+    "maxTokens": 256,
+    "maxThinkingTokens": null,
+    "repeatPenalty": null,
+    "systemPrompt": null,
+    "stopSequences": null,
+    "wireApi": "chat",
+    "maxToolIterations": 4,
+    "builtinToolsEnabled": true,
+    "workingDirectory": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-tools-mGfCEx",
+    "hideToolStatus": false,
+    "webSearchEnabled": false,
+    "braveSearchEnabled": false,
+    "fetchUrlEnabled": false,
+    "fileToolsEnabled": true,
+    "searchToolsEnabled": false,
+    "shellEnabled": true,
+    "toolResultMaxChars": 12345,
+    "gitEnabled": false,
+    "utilityToolsEnabled": true
+  },
+  "sendErrors": [],
+  "rendererFailureStage": null,
+  "media": {
+    "requestedImage": false,
+    "requestedVideo": false,
+    "requestedAudio": false,
+    "imageExpectedRegex": "\\bred\\b",
+    "videoExpectedRegex": "",
+    "audioExpectedRegex": "",
+    "imageSemanticVerified": false,
+    "videoSemanticVerified": false,
+    "audioSemanticVerified": false,
+    "imageVerified": false,
+    "videoVerified": false,
+    "audioVerified": false,
+    "persistedImageAttachment": false,
+    "persistedVideoAttachment": false,
+    "persistedAudioAttachment": false
+  },
+  "messageCount": 4,
+  "assistantCount": 2,
+  "firstAssistantContent": "The file",
+  "secondAssistantContent": "The file",
+  "persistedReasoningByMessage": [
+    [],
+    []
+  ],
+  "persistedToolsByMessage": [
+    [
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "calling",
+        "toolName": "run_command",
+        "toolCallId": "call_1566a9d8",
+        "iteration": 0,
+        "contentOffset": 0,
+        "detail": ""
+      },
+      {
+        "phase": "executing",
+        "toolName": "run_command",
+        "toolCallId": "call_1566a9d8",
+        "iteration": 1
+      },
+      {
+        "phase": "result",
+        "toolName": "run_command",
+        "toolCallId": "call_1566a9d8",
+        "iteration": 1,
+        "detail": "$ echo \"REAL_UI_LIVE_TOOL_ONE\" > real_ui_tool_probe_1.txt\n\n"
+      },
+      {
+        "phase": "processing",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "done",
+        "toolName": "",
+        "iteration": 1
+      }
+    ],
+    [
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 0
+      },
+      {
+        "phase": "calling",
+        "toolName": "run_command",
+        "toolCallId": "call_5c63c6a9",
+        "iteration": 0,
+        "contentOffset": 0,
+        "detail": ""
+      },
+      {
+        "phase": "executing",
+        "toolName": "run_command",
+        "toolCallId": "call_5c63c6a9",
+        "iteration": 1
+      },
+      {
+        "phase": "result",
+        "toolName": "run_command",
+        "toolCallId": "call_5c63c6a9",
+        "iteration": 1,
+        "detail": "$ cat real_ui_tool_probe_1.txt && echo \"REAL_UI_LIVE_TOOL_TWO\" > real_ui_tool_probe_2.txt\n\nREAL_UI_LIVE_TOOL_ONE\n"
+      },
+      {
+        "phase": "processing",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "generating",
+        "toolName": "",
+        "iteration": 1
+      },
+      {
+        "phase": "done",
+        "toolName": "",
+        "iteration": 1
+      }
+    ]
+  ],
+  "persistedReasoningText": "",
+  "persistedReasoningCount": 0,
+  "persistedToolCount": 152,
+  "streamTraceByMessage": [
+    {
+      "messageId": "d799cf03-5544-4232-88fc-f24a47ebd7c2",
+      "count": 41,
+      "firstFullContent": "The",
+      "lastFullContent": "The file",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 1,
+        "promptTokens": 688,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ttft": "4.60",
+        "elapsed": "4.6"
+      },
+      "lastMetrics": {
+        "tokenCount": 40,
+        "promptTokens": 3478,
+        "cachedTokens": 384,
+        "cacheDetail": "paged",
+        "tokensPerSecond": "40.0",
+        "ppSpeed": "161.8",
+        "ttft": "21.50",
+        "elapsed": "0.0"
+      }
+    },
+    {
+      "messageId": "19242b30-866d-4ea9-bd81-794d02ebaba1",
+      "count": 50,
+      "firstFullContent": "The",
+      "lastFullContent": "The file",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 1,
+        "promptTokens": 864,
+        "cachedTokens": 687,
+        "cacheDetail": "paged",
+        "tokensPerSecond": "0.0",
+        "ttft": "1.44",
+        "elapsed": "1.4"
+      },
+      "lastMetrics": {
+        "tokenCount": 49,
+        "promptTokens": 3679,
+        "cachedTokens": 3477,
+        "cacheDetail": "paged",
+        "tokensPerSecond": "35.7",
+        "ppSpeed": "2224.3",
+        "ttft": "1.65",
+        "elapsed": "0.0"
+      }
+    }
+  ],
+  "turns": [
+    {
+      "role": "user",
+      "content": "Use the run_command tool exactly once to create a file named real_ui_tool_probe_1.txt in the configured working directory. Write the text REAL_UI_LIVE_TOOL_ONE into that file. After the tool result is returned, reply briefly in English and include REAL_UI_LIVE_TOOL_ONE once."
+    },
+    {
+      "role": "assistant",
+      "content": "The file"
+    },
+    {
+      "role": "user",
+      "content": "Use the run_command tool exactly once to read real_ui_tool_probe_1.txt and create real_ui_tool_probe_2.txt in the same working directory. Write REAL_UI_LIVE_TOOL_TWO into the second file. Do not copy the first file into the second file; the second file must contain REAL_UI_LIVE_TOOL_TWO. After the tool result is returned, reply briefly in English with REAL_UI_LIVE_TOOL_TWO once and mention this is the second UI turn."
+    },
+    {
+      "role": "assistant",
+      "content": "The file"
+    }
+  ],
+  "rawParserLeak": false,
+  "reasoningRawParserLeak": false,
+  "reasoningCjkLeakCount": 0,
+  "reasoningKoreanLeakCount": 0,
+  "reasoningNumericRunCount": 0,
+  "preloadHealthBefore": {
+    "status": "healthy",
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+    "model_type": "llm",
+    "engine_type": "batched",
+    "last_request_time": null,
+    "mcp": null,
+    "memory": {
+      "active_mb": 76444,
+      "peak_mb": 76519.1,
+      "cache_mb": 0
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "speculative_decoding": "not_configured",
+    "scheduler": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": "none",
+      "batch_generator": {
+        "class": null,
+        "path": "none",
+        "single_active_decode": false,
+        "max_num_seqs": 1
+      },
+      "single_active_decode": false,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 0,
+      "cache_hit_tokens": 0,
+      "cache_hit_tokens_by_detail": {},
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": null
+    },
+    "cache": {
+      "scheduler_cache": {
+        "hits": 0,
+        "misses": 0,
+        "hit_rate": 0,
+        "tokens_saved": 0,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 0,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 1,
+        "free_blocks": 999,
+        "shared_blocks": 0,
+        "total_tokens_cached": 0,
+        "utilization": 0.001,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "cow_copies": 0,
+        "evictions": 0,
+        "engine_path": "none",
+        "batch_generator": {
+          "class": null,
+          "path": "none",
+          "single_active_decode": false,
+          "max_num_seqs": 1
+        }
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 0,
+        "disk_size_bytes": 0,
+        "disk_size_gb": 0,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 0,
+        "total_cached_tokens": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "disk_writes": 0,
+        "disk_evictions": 0
+      },
+      "totals": {
+        "ram_tokens_cached": 0,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 0,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 0,
+        "l2_tokens_on_disk_store_sum": 0,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      }
+    },
+    "quantization_format": {
+      "type": "jang",
+      "target_bits": null,
+      "actual_bits": null,
+      "block_size": 64
+    },
+    "quantization": {
+      "codec": "turboquant_codebook",
+      "profile": "JANGTQ_2",
+      "mxtq_bits_by_role": {
+        "routed_expert": {
+          "down_proj": 2,
+          "gate_proj": 2,
+          "up_proj": 2
+        }
+      },
+      "routed_expert_bits_by_projection": {
+        "gate_proj": 2,
+        "up_proj": 2,
+        "down_proj": 2
+      },
+      "routed_expert_bits_label": "gate=2/up=2/down=2-bit",
+      "target_bits": 2,
+      "config_bits": 8,
+      "group_size": 64,
+      "weight_index": {
+        "index_file": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2/model.safetensors.index.json",
+        "total_tensors": 1415,
+        "suffix_counts": {
+          "biases": 101,
+          "scales": 101,
+          "tq_bits": 141,
+          "tq_norms": 141,
+          "tq_packed": 141,
+          "weight": 522
+        },
+        "tq_target_counts": {
+          "routed_expert": 423
+        },
+        "routed_layout_counts": {
+          "prestacked_switch": 423,
+          "split_expert": 0
+        },
+        "mtp_tensor_count": 0,
+        "sample_tq_packed_targets": [
+          "model.layers.1.mlp.switch_mlp.down_proj",
+          "model.layers.1.mlp.switch_mlp.gate_proj",
+          "model.layers.1.mlp.switch_mlp.up_proj",
+          "model.layers.10.mlp.switch_mlp.down_proj",
+          "model.layers.10.mlp.switch_mlp.gate_proj",
+          "model.layers.10.mlp.switch_mlp.up_proj",
+          "model.layers.11.mlp.switch_mlp.down_proj",
+          "model.layers.11.mlp.switch_mlp.gate_proj",
+          "model.layers.11.mlp.switch_mlp.up_proj",
+          "model.layers.12.mlp.switch_mlp.down_proj",
+          "model.layers.12.mlp.switch_mlp.gate_proj",
+          "model.layers.12.mlp.switch_mlp.up_proj"
+        ]
+      },
+      "weight_matmul_dispatch": {
+        "primary": "jang_tools_turboquant_custom_kernels",
+        "uses_mlx_quantized_matmul": false,
+        "metal_na_eligible": false,
+        "reason": "turboquant_codebook_uses_custom_tq_kernels"
+      },
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": true,
+        "prestacked_bundle": true
+      }
+    },
+    "acceleration": {
+      "kernel_type": "turboquant_codebook",
+      "metal_na_capable": false,
+      "metal_na_active_on_host": false,
+      "reason": "turboquant_custom_kernels_do_not_use_mlx_na",
+      "metal_na_symbols": {
+        "available": true,
+        "nax_symbols": 4668,
+        "naxtile_symbols": 4154,
+        "affine_qmm_symbols": 4212,
+        "affine_gather_qmm_symbols": 3456
+      },
+      "host": {
+        "supported": true,
+        "brand": "Apple M5 Max",
+        "reason": null
+      },
+      "jangtq_acceleration": {
+        "mode": "off",
+        "requested": false,
+        "available": false,
+        "active": false,
+        "uses_mlx_quantized_matmul": false,
+        "reason": "disabled"
+      }
+    },
+    "mtp": {
+      "config_num_nextn_predict_layers": null,
+      "config_mtp_layer_source": null,
+      "jang_mtp_layers": null,
+      "jang_drop_mtp": null,
+      "index_has_mtp_tensors": false,
+      "index_mtp_layer_count": null,
+      "mtp_tensor_count": 0,
+      "artifact_available": false,
+      "family": "mimo_v2",
+      "has_vision_config": true,
+      "has_vision_weights": true,
+      "vision_tensor_count": 364,
+      "cache_type": null,
+      "runtime_supported": false,
+      "runtime_available": false,
+      "runtime_active": false,
+      "runtime_validation_blocked": false,
+      "effective_depth": null,
+      "effective_depth_source": null,
+      "runtime_scope": null,
+      "vl_runtime_available": false,
+      "runtime_bundle_has_mtp": null,
+      "runtime_mtp_mode": null,
+      "runtime_reason": "config does not request MTP",
+      "status": "not_configured",
+      "issues": [],
+      "request_policy": "compatible-only",
+      "request_gate": "temperature=0,repetition_penalty=1.0"
+    },
+    "routing": {
+      "trained_active_experts": 8,
+      "trained_active_experts_source": "config.num_experts_per_tok",
+      "n_routed_experts": 256,
+      "override_env": null,
+      "effective_active_experts": 8,
+      "effective_active_experts_source": "trained_default"
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "mimo_v2",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    }
+  },
+  "preloadHealthAfter": {
+    "status": "healthy",
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+    "model_type": "llm",
+    "engine_type": "batched",
+    "last_request_time": 1781069141.400364,
+    "mcp": null,
+    "memory": {
+      "active_mb": 76763.1,
+      "peak_mb": 81328.7,
+      "cache_mb": 1032.6
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "speculative_decoding": "not_configured",
+    "scheduler": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": "single_active",
+      "batch_generator": {
+        "class": "SingleBatchGenerator",
+        "path": "single_active",
+        "single_active_decode": true,
+        "max_num_seqs": 1
+      },
+      "single_active_decode": true,
+      "ewma_ttft_seconds": 2.351,
+      "cache_hit_requests": 3,
+      "cache_hit_tokens": 4548,
+      "cache_hit_tokens_by_detail": {
+        "paged": 4548
+      },
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": {
+        "paged_cached_tokens": 3477,
+        "paged_cold_tokens": 0,
+        "warm_cached_tokens": 0,
+        "hot_advantage_tokens": 3477,
+        "hot_advantage_threshold_tokens": 64,
+        "selected": "paged",
+        "rejected": null,
+        "reason": "no_warm_prefix_alternative"
+      },
+      "last_cache_execution": {
+        "request_id": "chatcmpl-9af02cf8",
+        "cache_detail": "paged",
+        "cached_tokens": 3477,
+        "blocks": 55,
+        "selection": {
+          "paged_cached_tokens": 3477,
+          "paged_cold_tokens": 0,
+          "warm_cached_tokens": 0,
+          "hot_advantage_tokens": 3477,
+          "hot_advantage_threshold_tokens": 64,
+          "selected": "paged",
+          "rejected": null,
+          "reason": "no_warm_prefix_alternative"
+        },
+        "reconstructed": true,
+        "dequantized": false,
+        "reconstruction_seconds": 0.075997,
+        "dequantization_seconds": 0,
+        "total_worker_cache_seconds": 0.076231,
+        "reconstruction_ok": true
+      }
+    },
+    "cache": {
+      "scheduler_cache": {
+        "hits": 3,
+        "misses": 1,
+        "hit_rate": 0.75,
+        "tokens_saved": 4548,
+        "active_requests": 4,
+        "entries_by_type": {
+          "assistant": 0,
+          "user": 0,
+          "system": 4
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 69,
+        "free_blocks": 931,
+        "shared_blocks": 60,
+        "total_tokens_cached": 4225,
+        "utilization": 0.069,
+        "cache_hit_rate": 0.6481481481481481,
+        "cache_hits": 140,
+        "cache_misses": 76,
+        "disk_hits": 0,
+        "disk_misses": 8,
+        "cow_copies": 0,
+        "evictions": 0,
+        "engine_path": "single_active",
+        "batch_generator": {
+          "class": "SingleBatchGenerator",
+          "path": "single_active",
+          "single_active_decode": true,
+          "max_num_seqs": 1
+        }
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 68,
+        "disk_size_bytes": 1269264055,
+        "disk_size_gb": 1.182,
+        "total_accesses": 36,
+        "total_tokens_on_disk": 4225,
+        "total_cached_tokens": 4225,
+        "disk_hits": 36,
+        "disk_misses": 8,
+        "disk_writes": 68,
+        "disk_evictions": 0
+      },
+      "totals": {
+        "ram_tokens_cached": 4225,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 4225,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 4225,
+        "l2_tokens_on_disk_store_sum": 4225,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      }
+    },
+    "quantization_format": {
+      "type": "jang",
+      "target_bits": null,
+      "actual_bits": null,
+      "block_size": 64
+    },
+    "quantization": {
+      "codec": "turboquant_codebook",
+      "profile": "JANGTQ_2",
+      "mxtq_bits_by_role": {
+        "routed_expert": {
+          "down_proj": 2,
+          "gate_proj": 2,
+          "up_proj": 2
+        }
+      },
+      "routed_expert_bits_by_projection": {
+        "gate_proj": 2,
+        "up_proj": 2,
+        "down_proj": 2
+      },
+      "routed_expert_bits_label": "gate=2/up=2/down=2-bit",
+      "target_bits": 2,
+      "config_bits": 8,
+      "group_size": 64,
+      "weight_index": {
+        "index_file": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2/model.safetensors.index.json",
+        "total_tensors": 1415,
+        "suffix_counts": {
+          "biases": 101,
+          "scales": 101,
+          "tq_bits": 141,
+          "tq_norms": 141,
+          "tq_packed": 141,
+          "weight": 522
+        },
+        "tq_target_counts": {
+          "routed_expert": 423
+        },
+        "routed_layout_counts": {
+          "prestacked_switch": 423,
+          "split_expert": 0
+        },
+        "mtp_tensor_count": 0,
+        "sample_tq_packed_targets": [
+          "model.layers.1.mlp.switch_mlp.down_proj",
+          "model.layers.1.mlp.switch_mlp.gate_proj",
+          "model.layers.1.mlp.switch_mlp.up_proj",
+          "model.layers.10.mlp.switch_mlp.down_proj",
+          "model.layers.10.mlp.switch_mlp.gate_proj",
+          "model.layers.10.mlp.switch_mlp.up_proj",
+          "model.layers.11.mlp.switch_mlp.down_proj",
+          "model.layers.11.mlp.switch_mlp.gate_proj",
+          "model.layers.11.mlp.switch_mlp.up_proj",
+          "model.layers.12.mlp.switch_mlp.down_proj",
+          "model.layers.12.mlp.switch_mlp.gate_proj",
+          "model.layers.12.mlp.switch_mlp.up_proj"
+        ]
+      },
+      "weight_matmul_dispatch": {
+        "primary": "jang_tools_turboquant_custom_kernels",
+        "uses_mlx_quantized_matmul": false,
+        "metal_na_eligible": false,
+        "reason": "turboquant_codebook_uses_custom_tq_kernels"
+      },
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": true,
+        "prestacked_bundle": true
+      }
+    },
+    "acceleration": {
+      "kernel_type": "turboquant_codebook",
+      "metal_na_capable": false,
+      "metal_na_active_on_host": false,
+      "reason": "turboquant_custom_kernels_do_not_use_mlx_na",
+      "metal_na_symbols": {
+        "available": true,
+        "nax_symbols": 4668,
+        "naxtile_symbols": 4154,
+        "affine_qmm_symbols": 4212,
+        "affine_gather_qmm_symbols": 3456
+      },
+      "host": {
+        "supported": true,
+        "brand": "Apple M5 Max",
+        "reason": null
+      },
+      "jangtq_acceleration": {
+        "mode": "off",
+        "requested": false,
+        "available": false,
+        "active": false,
+        "uses_mlx_quantized_matmul": false,
+        "reason": "disabled"
+      }
+    },
+    "mtp": {
+      "config_num_nextn_predict_layers": null,
+      "config_mtp_layer_source": null,
+      "jang_mtp_layers": null,
+      "jang_drop_mtp": null,
+      "index_has_mtp_tensors": false,
+      "index_mtp_layer_count": null,
+      "mtp_tensor_count": 0,
+      "artifact_available": false,
+      "family": "mimo_v2",
+      "has_vision_config": true,
+      "has_vision_weights": true,
+      "vision_tensor_count": 364,
+      "cache_type": null,
+      "runtime_supported": false,
+      "runtime_available": false,
+      "runtime_active": false,
+      "runtime_validation_blocked": false,
+      "effective_depth": null,
+      "effective_depth_source": null,
+      "runtime_scope": null,
+      "vl_runtime_available": false,
+      "runtime_bundle_has_mtp": null,
+      "runtime_mtp_mode": null,
+      "runtime_reason": "config does not request MTP",
+      "status": "not_configured",
+      "issues": [],
+      "request_policy": "compatible-only",
+      "request_gate": "temperature=0,repetition_penalty=1.0"
+    },
+    "routing": {
+      "trained_active_experts": 8,
+      "trained_active_experts_source": "config.num_experts_per_tok",
+      "n_routed_experts": 256,
+      "override_env": null,
+      "effective_active_experts": 8,
+      "effective_active_experts_source": "trained_default"
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "mimo_v2",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    }
+  },
+  "cacheBefore": {
+    "scheduler_cache": {
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": 0,
+      "tokens_saved": 0,
+      "active_requests": 0,
+      "entries_by_type": {
+        "assistant": 0,
+        "user": 0,
+        "system": 0
+      },
+      "block_size": 64,
+      "max_blocks": 1000,
+      "allocated_blocks": 1,
+      "free_blocks": 999,
+      "shared_blocks": 0,
+      "total_tokens_cached": 0,
+      "utilization": 0.001,
+      "cache_hit_rate": 0,
+      "cache_hits": 0,
+      "cache_misses": 0,
+      "disk_hits": 0,
+      "disk_misses": 0,
+      "cow_copies": 0,
+      "evictions": 0,
+      "engine_path": "none",
+      "batch_generator": {
+        "class": null,
+        "path": "none",
+        "single_active_decode": false,
+        "max_num_seqs": 1
+      }
+    },
+    "scheduler_stats": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": "none",
+      "batch_generator": {
+        "class": null,
+        "path": "none",
+        "single_active_decode": false,
+        "max_num_seqs": 1
+      },
+      "single_active_decode": false,
+      "num_requests_processed": 0,
+      "total_prompt_tokens": 0,
+      "total_completion_tokens": 0,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 0,
+      "cache_hit_tokens": 0,
+      "cache_hit_tokens_by_detail": {},
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": null
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "mimo_v2",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "block_disk_cache": {
+      "blocks_on_disk": 0,
+      "disk_size_bytes": 0,
+      "disk_size_gb": 0,
+      "total_accesses": 0,
+      "total_tokens_on_disk": 0,
+      "total_cached_tokens": 0,
+      "disk_hits": 0,
+      "disk_misses": 0,
+      "disk_writes": 0,
+      "disk_evictions": 0
+    },
+    "cache_totals": {
+      "ram_tokens_cached": 0,
+      "l2_prompt_tokens_on_disk": 0,
+      "l2_block_tokens_on_disk": 0,
+      "l2_ssm_tokens_on_disk": 0,
+      "ssm_tokens_on_disk": 0,
+      "l2_tokens_on_disk": 0,
+      "l2_tokens_on_disk_store_sum": 0,
+      "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+    },
+    "memory": {
+      "active_mb": 76444,
+      "peak_mb": 76519.1,
+      "cache_mb": 0
+    }
+  },
+  "cacheAfter": {
+    "scheduler_cache": {
+      "hits": 3,
+      "misses": 1,
+      "hit_rate": 0.75,
+      "tokens_saved": 4548,
+      "active_requests": 4,
+      "entries_by_type": {
+        "assistant": 0,
+        "user": 0,
+        "system": 4
+      },
+      "block_size": 64,
+      "max_blocks": 1000,
+      "allocated_blocks": 69,
+      "free_blocks": 931,
+      "shared_blocks": 60,
+      "total_tokens_cached": 4225,
+      "utilization": 0.069,
+      "cache_hit_rate": 0.6481481481481481,
+      "cache_hits": 140,
+      "cache_misses": 76,
+      "disk_hits": 0,
+      "disk_misses": 8,
+      "cow_copies": 0,
+      "evictions": 0,
+      "engine_path": "single_active",
+      "batch_generator": {
+        "class": "SingleBatchGenerator",
+        "path": "single_active",
+        "single_active_decode": true,
+        "max_num_seqs": 1
+      }
+    },
+    "scheduler_stats": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": "single_active",
+      "batch_generator": {
+        "class": "SingleBatchGenerator",
+        "path": "single_active",
+        "single_active_decode": true,
+        "max_num_seqs": 1
+      },
+      "single_active_decode": true,
+      "num_requests_processed": 4,
+      "total_prompt_tokens": 8709,
+      "total_completion_tokens": 146,
+      "ewma_ttft_seconds": 2.351,
+      "cache_hit_requests": 3,
+      "cache_hit_tokens": 4548,
+      "cache_hit_tokens_by_detail": {
+        "paged": 4548
+      },
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": {
+        "paged_cached_tokens": 3477,
+        "paged_cold_tokens": 0,
+        "warm_cached_tokens": 0,
+        "hot_advantage_tokens": 3477,
+        "hot_advantage_threshold_tokens": 64,
+        "selected": "paged",
+        "rejected": null,
+        "reason": "no_warm_prefix_alternative"
+      },
+      "last_cache_execution": {
+        "request_id": "chatcmpl-9af02cf8",
+        "cache_detail": "paged",
+        "cached_tokens": 3477,
+        "blocks": 55,
+        "selection": {
+          "paged_cached_tokens": 3477,
+          "paged_cold_tokens": 0,
+          "warm_cached_tokens": 0,
+          "hot_advantage_tokens": 3477,
+          "hot_advantage_threshold_tokens": 64,
+          "selected": "paged",
+          "rejected": null,
+          "reason": "no_warm_prefix_alternative"
+        },
+        "reconstructed": true,
+        "dequantized": false,
+        "reconstruction_seconds": 0.075997,
+        "dequantization_seconds": 0,
+        "total_worker_cache_seconds": 0.076231,
+        "reconstruction_ok": true
+      }
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "mimo_v2",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "block_disk_cache": {
+      "blocks_on_disk": 68,
+      "disk_size_bytes": 1269264055,
+      "disk_size_gb": 1.182,
+      "total_accesses": 36,
+      "total_tokens_on_disk": 4225,
+      "total_cached_tokens": 4225,
+      "disk_hits": 36,
+      "disk_misses": 8,
+      "disk_writes": 68,
+      "disk_evictions": 0
+    },
+    "cache_totals": {
+      "ram_tokens_cached": 4225,
+      "l2_prompt_tokens_on_disk": 0,
+      "l2_block_tokens_on_disk": 4225,
+      "l2_ssm_tokens_on_disk": 0,
+      "ssm_tokens_on_disk": 0,
+      "l2_tokens_on_disk": 4225,
+      "l2_tokens_on_disk_store_sum": 4225,
+      "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+    },
+    "memory": {
+      "active_mb": 76763.1,
+      "peak_mb": 81328.7,
+      "cache_mb": 1032.6
+    }
+  },
+  "eventCounts": {
+    "stream": 91,
+    "tool": 152,
+    "reasoningDone": 0,
+    "complete": 2
+  },
+  "serverCacheControls": {
+    "requested": true,
+    "verified": true,
+    "cacheExpectRegex": "",
+    "expectPagedCacheLocked": false,
+    "cacheExpectationMatches": true,
+    "labels": [
+      "Enable Prefix Cache",
+      "Use Paged KV Cache",
+      "Block Disk Cache (L2)",
+      "Enable Disk Cache",
+      "Stored Cache Quantization"
+    ],
+    "initialCacheControls": {
+      "enablePrefixCache": true,
+      "usePagedCache": true,
+      "enableBlockDiskCache": true,
+      "enableDiskCache": false,
+      "usePagedCacheDisabled": false,
+      "enableDiskCacheDisabled": true,
+      "blockDiskCachePresent": true
+    },
+    "sectionClickResults": [
+      {
+        "title": "Prefix Cache",
+        "found": true,
+        "text": "▶\nPrefix Cache",
+        "blockDiskVisibleBefore": false,
+        "blockDiskVisibleAfter": false
+      },
+      {
+        "title": "Paged KV Cache",
+        "found": true,
+        "text": "▶\nPaged KV Cache",
+        "blockDiskVisibleBefore": false,
+        "blockDiskVisibleAfter": true
+      },
+      {
+        "title": "KV Cache Quantization",
+        "found": true,
+        "text": "▶\nKV Cache Quantization",
+        "blockDiskVisibleBefore": true,
+        "blockDiskVisibleAfter": true
+      },
+      {
+        "title": "Disk Cache (Persistent)",
+        "found": true,
+        "text": "▶\nDisk Cache (Persistent)",
+        "blockDiskVisibleBefore": true,
+        "blockDiskVisibleAfter": true
+      }
+    ],
+    "textHead": "Code\nChat\nServer\nTools\nImage\nAPI\n🇺🇸\nBack\nCreate Session\nStep 2: Configure\nModel\n\n/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2\n\n▶\nServer Settings\nHost\n?\nPort\n?\nAPI Key\n?\nServed Model Name\n?\nRate Limit (req/min)\n?\nDisabled\nTimeout (seconds)\n?\nNo limit\nLog Level\n?\nDEBUG (verbose)\nINFO (default)\nWARNING\nERROR (minimal)\nCORS Origins\n?\n▶\nConcurrent Processing\n▶\nPrefix Cache\nSpeeds up repeated conversations by remembering previous prompts. Makes follow-up messages much faster (lower time-to-first-token).\nEnable Prefix Cache\n?\nLegacy Entry-Count Cache\n?\nCache Memory Limit and Cache Memory % only apply to memory-aware non-paged prefix cache. With paged cache on, use Max Cache Blocks for L1 RAM capacity and Block Cache Max for L2 disk capacity.\nCache Memory Limit (MB)\n?\nAuto-detect\nCache Memory %\n?\nCache TTL has no effect when paged cache is enabled — paged cache uses block-count LRU eviction instead. To control paged cache size, adjust 'Max Cache Blocks' in the Paged KV Cache section below. To use time-based TTL, disable 'Use Paged KV Cache' in the Paged KV Cache section.\nCache TTL (minutes)\n?\nNo expiration\n▶\nPaged KV Cache\nReduces memory waste by splitting the KV cache into small blocks instead of one big chunk. Lets the server handle longer conversations without running out of RAM.\nPaged cache and legacy Disk Cache cannot run simultaneously. Enabling paged cache will auto-disable legacy Disk Cache. For persistent caching with paged cache, use 'Block Disk Cache (L2)' below instead.\nUse Paged KV Cache\n?\nBlock Size (tokens)\n?\nMax Cache Blocks\n?\nDefault (1000)\nBlock Dis"
+  },
+  "toolProbeFiles": {
+    "real_ui_tool_probe_1.txt": "REAL_UI_LIVE_TOOL_ONE\n",
+    "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO\n"
+  },
+  "streamTrace": [
+    {
+      "messageId": "d799cf03-5544-4232-88fc-f24a47ebd7c2",
+      "count": 41,
+      "firstFullContent": "The",
+      "lastFullContent": "The file",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 1,
+        "promptTokens": 688,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ttft": "4.60",
+        "elapsed": "4.6"
+      },
+      "lastMetrics": {
+        "tokenCount": 40,
+        "promptTokens": 3478,
+        "cachedTokens": 384,
+        "cacheDetail": "paged",
+        "tokensPerSecond": "40.0",
+        "ppSpeed": "161.8",
+        "ttft": "21.50",
+        "elapsed": "0.0"
+      }
+    },
+    {
+      "messageId": "19242b30-866d-4ea9-bd81-794d02ebaba1",
+      "count": 50,
+      "firstFullContent": "The",
+      "lastFullContent": "The file",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 1,
+        "promptTokens": 864,
+        "cachedTokens": 687,
+        "cacheDetail": "paged",
+        "tokensPerSecond": "0.0",
+        "ttft": "1.44",
+        "elapsed": "1.4"
+      },
+      "lastMetrics": {
+        "tokenCount": 49,
+        "promptTokens": 3679,
+        "cachedTokens": 3477,
+        "cacheDetail": "paged",
+        "tokensPerSecond": "35.7",
+        "ppSpeed": "2224.3",
+        "ttft": "1.65",
+        "elapsed": "0.0"
+      }
+    }
+  ],
+  "appLogTail": [
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Tool call detected: run_command({\"command\": \"cat real_ui_tool_probe_1.txt && echo \\\"REAL_UI_LIVE_TOOL_TWO\\\" > real_ui_tool_probe_2.t)",
+    "[CHAT] Stream ended — content: 0 chars, reasoning: 0 chars, tool calls: 1, buffered: true",
+    "[CHAT] Tool execution iteration 1 (1 tool calls)",
+    "[CHAT] Builtin tool: run_command",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Server signaled tool call generation in progress",
+    "[CHAT] Tool loop completed after 1 iteration(s)",
+    "[CHAT] Response complete: 82 tokens in 39.4s (2.9 t/s, live=1.2 t/s, TTFT: 1.65s, pp: 3679 tokens (3477 cached), 2224.3 pp/s, usage=server)",
+    "[MODELS] Scanning directories: [",
+    "  '/Users/eric/.mlxstudio/models',",
+    "  '/Users/eric/.cache/huggingface/hub',",
+    "  '/Users/eric/.exo/models'",
+    "]",
+    "[MODELS] Found 14 models in /Users/eric/.mlxstudio/models",
+    "[MODELS] Found 0 models in /Users/eric/.cache/huggingface/hub",
+    "[MODELS] Found 0 models in /Users/eric/.exo/models",
+    "[MODELS] Total models found: 14 (0 duplicates removed)"
+  ],
+  "serverLogTail": [
+    "INFO:     127.0.0.1:62981 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62982 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62981 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62982 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62983 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62984 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62983 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62984 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.scheduler:Mixed-SWA prefix cache store using clean prompt-boundary re-prefill (3477 cache-key tokens from 3478 prompt tokens).",
+    "INFO:     127.0.0.1:62985 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62986 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62985 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62986 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62987 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62988 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62987 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62989 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62990 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62991 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.scheduler:Extracted 48 layer states for request chatcmpl-189e7804",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=3477, num_new_blocks=55, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 12 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 13 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 14 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 15 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 16 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 17 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 18 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 19 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 20 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 21 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 22 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 23 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 24 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 25 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 26 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 27 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 28 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 29 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 30 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 31 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 32 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 33 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 34 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 35 (9 kv layers, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 36 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 37 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 38 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 39 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 40 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 41 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 42 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 43 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 44 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 45 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 46 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 47 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 48 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 49 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 50 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 51 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 52 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 53 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 54 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 55 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 56 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 57 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 58 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 59 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 60 (9 kv layers, rotating_kv=39, 21 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 49 blocks to SSD",
+    "INFO:vmlx_engine.scheduler:Stored paged cache for request chatcmpl-189e7804 (3477 cache-key tokens from 3478 prompt tokens, 48 layers, cache truncated to 3477 tokens)",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2 kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 256, 'enable_thinking': False}",
+    "INFO:     127.0.0.1:62992 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.prefix_cache:Prefix index exact-partial match for chatcmpl-15e5d080 extends paged hit from 640 to 687 tokens",
+    "INFO:vmlx_engine.scheduler:Request chatcmpl-15e5d080: paged cache hit, 687 tokens in 11 blocks, 177 remaining to process (worker reconstruct pending)",
+    "INFO:     127.0.0.1:62990 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62991 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.scheduler:Mixed-SWA prefix cache store using clean prompt-boundary re-prefill (863 cache-key tokens from 864 prompt tokens).",
+    "INFO:     127.0.0.1:62993 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62994 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.scheduler:Extracted 48 layer states for request chatcmpl-15e5d080",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=863, num_new_blocks=14, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 61 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 62 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 63 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 64 (9 kv layers, rotating_kv=39, 31 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 4 blocks to SSD",
+    "INFO:vmlx_engine.scheduler:Stored paged cache for request chatcmpl-15e5d080 (863 cache-key tokens from 864 prompt tokens, 48 layers, cache truncated to 863 tokens)",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2 kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 256, 'enable_thinking': False}",
+    "INFO:     127.0.0.1:62995 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.prefix_cache:Prefix index exact-partial match for chatcmpl-9af02cf8 extends paged hit from 3456 to 3477 tokens",
+    "INFO:vmlx_engine.scheduler:Request chatcmpl-9af02cf8: paged cache hit, 3477 tokens in 55 blocks, 202 remaining to process (worker reconstruct pending)",
+    "INFO:     127.0.0.1:62993 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62994 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.scheduler:Mixed-SWA prefix cache store using clean prompt-boundary re-prefill (3678 cache-key tokens from 3679 prompt tokens).",
+    "INFO:     127.0.0.1:62996 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62997 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62996 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62997 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62999 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:63000 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62999 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:63000 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:63001 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:63002 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.scheduler:Extracted 48 layer states for request chatcmpl-9af02cf8",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=3678, num_new_blocks=58, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 65 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 66 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 67 (9 kv layers, rotating_kv=39, 64 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 68 (9 kv layers, rotating_kv=39, 30 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 4 blocks to SSD",
+    "INFO:vmlx_engine.scheduler:Stored paged cache for request chatcmpl-9af02cf8 (3678 cache-key tokens from 3679 prompt tokens, 48 layers, cache truncated to 3678 tokens)",
+    "INFO:     127.0.0.1:63001 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:63001 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:63003 - \"GET /health HTTP/1.1\" 200 OK"
+  ],
+  "visibleAssistantTurnsComplete": true,
+  "liveSpeedSamples": [
+    {
+      "tokens": 82,
+      "liveTokensPerSecond": 1.2,
+      "ttftSeconds": 1.65,
+      "line": "[CHAT] Response complete: 82 tokens in 39.4s (2.9 t/s, live=1.2 t/s, TTFT: 1.65s, pp: 3679 tokens (3477 cached), 2224.3 pp/s, usage=server)"
+    }
+  ],
+  "provenSurfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "generation_defaults_applied",
+    "installed_app_ui",
+    "l2_disk_storage",
+    "language_leak_check",
+    "long_tool_loop",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "server_cache_controls",
+    "settings_persistence",
+    "tool_l2_cache_integrated"
+  ]
+}

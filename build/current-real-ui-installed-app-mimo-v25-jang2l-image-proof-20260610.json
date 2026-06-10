@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-06-10T04:54:09.701Z",
+  "status": "fail",
+  "failure_stage": "image_send_message",
+  "scope": "local rebuilt installed app MiMo V2.5 JANG_2L image/media boundary",
+  "app_path": "/Applications/vMLX.app",
+  "ui_launch_mode": "installed-app",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+  "served_model": "mimo-v25-jang2l-installed-ui-image-20260610",
+  "wire_api": "chat",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-image-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-image-20260610-chat.png",
+  "positive_evidence": {
+    "installed_app_ui": true,
+    "real_loaded_model": true,
+    "visible_text_turns_before_media": true,
+    "image_attachment_attempted": true,
+    "server_media_diag_saw_image_url": true,
+    "server_cache_controls": true,
+    "chat_completions": true,
+    "generation_defaults_applied": true,
+    "parser_leak_check": true,
+    "reasoning_leak_check": true
+  },
+  "runtime": {
+    "loaded_family": "mimo_v2",
+    "model_type": "llm",
+    "force_mllm_requested": true,
+    "force_mllm_overridden_by_metadata": true,
+    "active_memory_mb": 105016.1,
+    "peak_memory_mb": 105842.8,
+    "quantization_type": "jang",
+    "quantization_codec": "affine_quantized_matmul",
+    "profile": "JANG_2L_322_D3E16",
+    "kernel_type": "affine_quantized_matmul",
+    "metal_na_active_on_host": true
+  },
+  "cache": {
+    "native_cache_schema": "mixed_swa_kv_v1",
+    "cache_subtype": "mimo_v2_asymmetric_swa",
+    "generic_turboquant_kv": false,
+    "cache_detail": "paged",
+    "cached_tokens": 39,
+    "l2_block_tokens_on_disk": 110,
+    "l2_tokens_on_disk": 110,
+    "block_disk_writes": 3
+  },
+  "red_boundary": {
+    "image_supported": false,
+    "api_status": 400,
+    "error": "/v1/chat/completions received unsupported media modality image because the loaded runtime is text-only. Supported modalities: text.",
+    "classification": "honest text-only runtime guard for preserved-but-unwired media weights"
+  },
+  "release_boundary": {
+    "clears_installed_app_image_support": false,
+    "clears_installed_app_media_gate_classification": true,
+    "clears_installed_app_text_cache": false,
+    "clears_installed_app_tools": false,
+    "clears_mimo_jangtq2_exactness": false,
+    "clears_dmg_package_sign_notarize": false,
+    "release_ready": false
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-06-10T05:54:44.296Z",
+  "status": "pass",
+  "classification": "dev_app_exact_text_json_green",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "uiLaunchMode": "electron-dev",
+  "uiCommand": "npm run dev",
+  "modelPath": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4",
+  "servedModel": "gemma4-12b-mxfp4-dev-ui-exact-output-20260610",
+  "wireApi": "chat",
+  "rawProof": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-12b-mxfp4-exact-output-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-12b-mxfp4-exact-output-20260610-chat.png",
+  "expected": {
+    "firstAssistantContent": "GEMMA-ACK-742",
+    "secondAssistantContent": "{\"status\":\"ok\",\"value\":\"gemma-blue\"}"
+  },
+  "actual": {
+    "firstAssistantContent": "GEMMA-ACK-742",
+    "secondAssistantContent": "{\"status\":\"ok\",\"value\":\"gemma-blue\"}"
+  },
+  "exactness": {
+    "firstExactMatch": true,
+    "secondExactMatch": true
+  },
+  "positiveEvidence": {
+    "currentElectronDevBuild": true,
+    "realLoadedModel": true,
+    "visibleAssistantTurnsComplete": true,
+    "chatCompletions": true,
+    "rawParserLeak": false,
+    "reasoningRawParserLeak": false,
+    "persistedToolCount": 0,
+    "persistedReasoningCount": 0,
+    "serverCacheControls": true,
+    "generationDefaultsApplied": true,
+    "toolParserAutoDetected": "gemma4",
+    "reasoningParserAutoDetected": "gemma4"
+  },
+  "runtime": {
+    "memoryActiveMb": 7558.3,
+    "memoryPeakMb": 7887,
+    "modelType": "mllm",
+    "quantizationCodec": "affine_quantized_matmul",
+    "quantizationWeightFormat": "mxfp4",
+    "quantizationProfile": "MXFP4",
+    "weightMatmulDispatch": "mlx_affine_quantized_matmul",
+    "metalNaActiveOnHost": true,
+    "passthroughTensorCount": 349
+  },
+  "cache": {
+    "nativeCacheFamily": "gemma4",
+    "nativeCacheSchema": "mixed_swa_kv_v1",
+    "nativeCacheType": "mixed_swa_kv",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "turboquantKvEnabled": false,
+    "turboquantKvReason": "mixed_swa_native_rotating_metadata",
+    "cacheDetail": "paged+mixed_swa",
+    "cacheHitRequests": 1,
+    "cacheHitTokens": 22,
+    "l2BlockTokensOnDisk": 61,
+    "l2TokensOnDisk": 61,
+    "blockDiskWrites": 2,
+    "blockDiskHits": 0
+  },
+  "releaseBoundary": "Clears current Electron dev-build Gemma 12B QAT MXFP4 exact text/JSON output with mixed-SWA cache and L2 evidence. It does not clear Gemma audio, larger Gemma QAT rows, public tunnel SSE parity, or release packaging/sign/notarize."
+}

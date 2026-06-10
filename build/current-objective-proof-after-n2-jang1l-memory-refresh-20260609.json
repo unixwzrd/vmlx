@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-06-09T15:58:52-0700",
+  "created_at": "2026-06-09T18:27:28-0700",
   "requirements": [
     {
       "requirement": "DSV4 Flash prefix/paged/L2 cache is enabled by default from app launch",
@@ -372,7 +372,7 @@
     },
     {
       "requirement": "App maxToolIterations cap is enforced for DSV4 tool loop",
-      "status": "open",
+      "status": "pass",
       "evidence": [
         "build/current-tool-call-contract-after-cross-model-loop-metrics-20260609.json"
       ],
@@ -391,7 +391,7 @@
         ],
         "source_hashes_recorded": {
           "tests/cross_matrix/run_tool_call_contract.py": "f4e09ec189d43c71f8e38473c213592e4372256f47e045ad61126be87b1217ba",
-          "vmlx_engine/server.py": "ca045d9df8cab304b315c4357a159457bbd1b56a23b43546b4f0bda3192720e1",
+          "vmlx_engine/server.py": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452",
           "vmlx_engine/tool_parsers/abstract_tool_parser.py": "ba766e6193d67e64613a28af17ed336e875e7b209ac974ebbc7499a06b158bd3",
           "vmlx_engine/tool_parsers/qwen_tool_parser.py": "a6b6c4429efaca07fd50db5da35c0e103119c89a4c29579a7b98b259b7fb3acb",
           "vmlx_engine/tool_parsers/auto_tool_parser.py": "63849fcd759ab609dae1514e6b8dce67d78f8016211a3e11fcb6e1115a650dba",
@@ -400,12 +400,12 @@
           "tests/test_tool_format.py": "7175cee08f849dd564f7ff8553bad27506b4a260368afd6d669f2f4bb4acfaea",
           "tests/test_tool_parsers.py": "7866068581ec5a159910ea9dba7935597e77cc5a245c1a45c1ae5474d5197950",
           "tests/test_gemma3_tool_parser.py": "184f78d88c266868971e2b92dac34bdf70309f73a242f8204f6f6d1607e11ea6",
-          "tests/test_gemma4_tool_parser.py": "e9532be651782d8ccd630725cd91f5595f85d246570607d7f1ddfba6e64c046a",
+          "tests/test_gemma4_tool_parser.py": "4e35c804391a8a966eeef1d2a921b968bc1af4a67a117ac5b016e52a3bb40826",
           "tests/test_glm47_tool_parser.py": "34260287a4cf76deb63526b6f3e65d57e02c7cfa22b2ec271b5283b365f93c78",
           "tests/test_granite_tool_parser.py": "27ec8d06e830a38b28e4d1e3599019236bce566e09acd2f9704d1cee7839061f",
           "tests/test_hunyuan_tool_parser.py": "21acf81ce2965beb487e856a441bd987ab238061fb6928c3a215e5e02925c971",
           "tests/test_xml_function_tool_parser.py": "7105232d4c26628c7dc0fac71d2c2f85f87fad6bf06b0a3944345c78c1756a79",
-          "tests/test_engine_audit.py": "d7cb6386c726505560d1438eed9fa132253e2c98b737f12337944b5d4b6199f3",
+          "tests/test_engine_audit.py": "bc72000988d5d5cc4f809acd6133ed1bd853f32df1b7fc572f214597913279db",
           "panel/src/main/ipc/coding-tools.ts": "42937f7253b2e483d905693a5911c9072368b47bb338e70a86230f02f9d848e1",
           "panel/src/main/tools/executor.ts": "89f0869f819912d339aabbd2b3cd080f5a47b7ebb8c15fceeefc3b711b5b2fd5",
           "panel/src/main/ipc/chat.ts": "1d147559881dabf7b50bc003ba98ad352307799b915feb3163c8328d38ec5504",
@@ -429,7 +429,7 @@
           "tests/test_granite_tool_parser.py": "27ec8d06e830a38b28e4d1e3599019236bce566e09acd2f9704d1cee7839061f",
           "tests/test_hunyuan_tool_parser.py": "21acf81ce2965beb487e856a441bd987ab238061fb6928c3a215e5e02925c971",
           "tests/test_xml_function_tool_parser.py": "7105232d4c26628c7dc0fac71d2c2f85f87fad6bf06b0a3944345c78c1756a79",
-          "tests/test_engine_audit.py": "9e5a440972147548e61c8b874292e8320a6afe6c079d41e0fd200b7f5111abd0",
+          "tests/test_engine_audit.py": "bc72000988d5d5cc4f809acd6133ed1bd853f32df1b7fc572f214597913279db",
           "panel/src/main/ipc/coding-tools.ts": "42937f7253b2e483d905693a5911c9072368b47bb338e70a86230f02f9d848e1",
           "panel/src/main/tools/executor.ts": "89f0869f819912d339aabbd2b3cd080f5a47b7ebb8c15fceeefc3b711b5b2fd5",
           "panel/src/main/ipc/chat.ts": "1d147559881dabf7b50bc003ba98ad352307799b915feb3163c8328d38ec5504",
@@ -438,11 +438,7 @@
           "panel/tests/request-builder.test.ts": "cbf8a7808680d5a056bf34e8a961b47e45b3414226ceb35f106c831300bcc285"
         },
         "missing_source_hashes": [],
-        "stale_source_hashes": [
-          "vmlx_engine/server.py",
-          "tests/test_gemma4_tool_parser.py",
-          "tests/test_engine_audit.py"
-        ],
+        "stale_source_hashes": [],
         "missing_source_files": [],
         "evidence_files_present": {
           "build/current-tool-call-contract-after-cross-model-loop-metrics-20260609.json": true
@@ -517,7 +513,7 @@
           "vmlx_engine/api/models.py": "d5a34040c6e8ce37c588e71062f2835ece4dd803f10f7928fc1c2e0db85a26e0",
           "vmlx_engine/api/anthropic_adapter.py": "52efb1b488786362638ef0bd9ba1e5889377e6aa9b73879a9c26091388d47914",
           "vmlx_engine/api/ollama_adapter.py": "88a0c2f3034758a82db82c1936505cc61773974e824d774a463019abb76cb2cd",
-          "tests/test_engine_audit.py": "9e5a440972147548e61c8b874292e8320a6afe6c079d41e0fd200b7f5111abd0",
+          "tests/test_engine_audit.py": "bc72000988d5d5cc4f809acd6133ed1bd853f32df1b7fc572f214597913279db",
           "tests/test_ollama_adapter.py": "6ee0a7e3e9f46893795d95fcaed6e594bbb3a8017a5a065663c8e90cbde380d8",
           "tests/test_max_output_context_contract.py": "fc0f95e12fc5c7a0b5cdc3bc805e7e57a2bbdd746e4bfda0f33f16fb1ae9a678",
           "panel/src/main/api-gateway.ts": "18baf6b7c26369b59dce23b0dc6721cb9dbc581935416d6e757499bc8a8a1093",
@@ -1223,7 +1219,7 @@
           "vmlx_engine/tq_disk_store.py": "32592de18d85e645827b077f32c9eee459ccdb40a0c226ae800925b1f6437b5a",
           "tests/cross_matrix/run_noheavy_api_cache_contract.py": "e7aeb94d50589293da3c05a8e3f1ffab27ce845422b5e80ae3ac8685f024a2b8",
           "tests/cross_matrix/run_cache_architecture_contract.py": "544d5ba106a2414b8c14da5b841ecefdb4a8c351fb78440c0765582f6892e660",
-          "tests/test_engine_audit.py": "9e5a440972147548e61c8b874292e8320a6afe6c079d41e0fd200b7f5111abd0",
+          "tests/test_engine_audit.py": "bc72000988d5d5cc4f809acd6133ed1bd853f32df1b7fc572f214597913279db",
           "tests/test_batching.py": "56fa5cb4d01cc64e9ab2d4f599e7e7f06a84dd42ed1607f352f27f77eedb6b38",
           "tests/test_hybrid_batching.py": "c55c4b78201dbfec4a5ee353cecb4cf8561b769ef382e57d3191548033071663",
           "tests/test_hybrid_prefix_cache.py": "9feda129f63acca197dac1b735fc207bef6cf9667c97a5182ba1e36d113b8afa",
@@ -1402,7 +1398,7 @@
             "panel/tests/settings-flow.test.ts": "07825d0f16a63d48786d6ebcfee2d9d151269b352cd4fc3648c2b0479addce2f",
             "tests/cross_matrix/run_decode_speed_gate.py": "5e74644dfe06dacec75600423d5c49026c502dd05f9b97930923a8a5ef8ace04",
             "tests/cross_matrix/run_parser_registry_contract.py": "aa4947a7c85be548fe77656e9aee6a8147ee5749da532e600d3cef391888d774",
-            "tests/test_engine_audit.py": "9e5a440972147548e61c8b874292e8320a6afe6c079d41e0fd200b7f5111abd0",
+            "tests/test_engine_audit.py": "bc72000988d5d5cc4f809acd6133ed1bd853f32df1b7fc572f214597913279db",
             "tests/test_model_config_registry.py": "4c1667b9a20f476b478f3444176fd763ba8cb4d8bb47babec126b84e8674e121",
             "tests/test_parser_registry_contract.py": "0288a672c0efdb993d9d39dd0053e94e1fa00d1f7d15410bdc5ce51463f8f3a2"
           },
@@ -1453,7 +1449,7 @@
             "vmlx_engine/model_configs.py": "9eb67271ae4125079578714d1b20171f889119cd7e85426bf8ec085516a2f5aa",
             "vmlx_engine/native_mtp.py": "80c7c5a9afe85e42f951f85df064bb57c993c667b94d509d614ea651bfafd612",
             "vmlx_engine/server.py": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452",
-            "vmlx_engine/utils/jang_loader.py": "85601d82207df39d620cd39fa6037be8ea0af2bf5ed995a4923408bf08934bca",
+            "vmlx_engine/utils/jang_loader.py": "90ffc49cecdc25aacc18fddf26e7378b830011f1cfa6aa559e5f677fe9043300",
             "vmlx_engine/loaders/load_jangtq.py": "f2172554585b5a3a1a172dc86ae71acd48366de5fc48da0dbed859ab7d7ef7ba",
             "vmlx_engine/loaders/load_jangtq_vlm.py": "0f20adc007a06489784e3d3767137d0cb0bbaa94407e27a99edce1c6c518c903",
             "vmlx_engine/loaders/load_jangtq_kimi_vlm.py": "a7d79aec1070b10b1e47b23a7468002bcbc775efa0cad246027978426fb9e7cb",
@@ -1468,7 +1464,8 @@
           },
           "missing_source_hashes": [],
           "stale_source_hashes": [
-            "vmlx_engine/server.py"
+            "vmlx_engine/server.py",
+            "vmlx_engine/utils/jang_loader.py"
           ],
           "missing_source_files": []
         },
@@ -1538,7 +1535,7 @@
           "source_hashes_current": {
             "vmlx_engine/server.py": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452",
             "vmlx_engine/cli.py": "011707af57328e79065a0196f02cc2593016b23c53780e1e698654144b93c3c7",
-            "tests/test_engine_audit.py": "9e5a440972147548e61c8b874292e8320a6afe6c079d41e0fd200b7f5111abd0",
+            "tests/test_engine_audit.py": "bc72000988d5d5cc4f809acd6133ed1bd853f32df1b7fc572f214597913279db",
             "tests/test_reasoning_modes.py": "ee5ede8146d3311c5c96c64f24399897c32ab7fa3f00ad505a88068fac11ace2",
             "panel/src/main/ipc/models.ts": "3054fcbcdf411ee4943c93ff16ac92a2bd71704333f88bfdade73530e0a5eab0",
             "panel/src/main/sessions.ts": "c832d3c116dcc71cedaa44d1017dc006cc1c24a9624d51156cb669cbde8cd4e8",
@@ -2466,7 +2463,7 @@
         "source_hashes_current": {
           "vmlx_engine/server.py": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452",
           "vmlx_engine/tool_parsers/dsml_tool_parser.py": "7c9c0d983f479d1ab6dff39253d4636d608a7fe3653bb5f64051e75f30c7e9f8",
-          "tests/test_engine_audit.py": "9e5a440972147548e61c8b874292e8320a6afe6c079d41e0fd200b7f5111abd0",
+          "tests/test_engine_audit.py": "bc72000988d5d5cc4f809acd6133ed1bd853f32df1b7fc572f214597913279db",
           "tests/test_batching.py": "56fa5cb4d01cc64e9ab2d4f599e7e7f06a84dd42ed1607f352f27f77eedb6b38",
           "tests/test_mllm_scheduler_cache.py": "5681927d449836af3cb148e9aa196b8155da253dd423469344e36955b05e3840",
           "tests/test_tq_disk_cache.py": "3a9138e972d247867191b9f1e42aeb25ddb6182aa9b6a29debbd107d374746b0",

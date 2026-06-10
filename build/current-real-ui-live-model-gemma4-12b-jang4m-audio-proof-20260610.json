@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-06-10T02:57:21.754Z",
+  "status": "fail",
+  "blocker_class": "media",
+  "model": "Gemma 4 12B JANG_4M",
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+  "raw_artifact": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-audio-cache-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-jang4m-audio-cache-20260610-chat.png",
+  "proof_surface": "real Electron dev app Chat Completions audio attachment",
+  "requested_audio": true,
+  "expected_transcript_regex": "audio present",
+  "positive_evidence": {
+    "current_electron_dev_build": true,
+    "real_loaded_model": true,
+    "chat_completions": true,
+    "persisted_audio_attachment": true,
+    "engine_decoded_base64_wav": true,
+    "visible_assistant_turns": 3,
+    "stream_events": 124,
+    "server_cache_controls_verified": true,
+    "cache_detail": "paged+mixed_swa",
+    "cache_hit_tokens": 67,
+    "native_cache_family": "gemma4",
+    "native_cache_schema": "mixed_swa_kv_v1",
+    "l2_tokens_on_disk": 67,
+    "block_disk_writes": 2,
+    "quantization_profile": "JANG_4M"
+  },
+  "red_evidence": {
+    "failure_stage": "release_assertions",
+    "assertion_failures": [
+      "requested real audio media but proof did not record audio_where_supported surface"
+    ],
+    "audio_semantic_verified": false,
+    "audio_verified": false,
+    "final_visible_text_tail": "No, what, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no,"
+  },
+  "boundary": "This is not an attachment persistence failure: the app stored input_audio and the engine decoded the WAV. It is not a cache/control failure: mixed-SWA cache, server cache controls, and L2 writes are present. The remaining red surface is real audio transcription quality/runtime support in the Gemma 12B JANG4M dev-app path.",
+  "release_boundary": "Do not claim Gemma 12B JANG4M audio support or release clearance from this proof. Image and video have separate green dev-app proof rows; audio remains red."
+}

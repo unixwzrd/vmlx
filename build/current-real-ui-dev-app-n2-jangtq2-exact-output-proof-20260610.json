@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-06-10T05:50:50.659Z",
+  "status": "pass",
+  "classification": "dev_app_exact_text_json_green",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "uiLaunchMode": "electron-dev",
+  "uiCommand": "npm run dev",
+  "modelPath": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+  "servedModel": "n2-jangtq2-dev-ui-exact-output-20260610",
+  "wireApi": "chat",
+  "rawProof": "docs/internal/agent-notes/current-real-ui-dev-app-n2-jangtq2-exact-output-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-n2-jangtq2-exact-output-20260610-chat.png",
+  "expected": {
+    "firstAssistantContent": "N2-ACK-742",
+    "secondAssistantContent": "{\"status\":\"ok\",\"value\":\"n2-blue\"}"
+  },
+  "actual": {
+    "firstAssistantContent": "N2-ACK-742",
+    "secondAssistantContent": "{\"status\":\"ok\",\"value\":\"n2-blue\"}"
+  },
+  "exactness": {
+    "firstExactMatch": true,
+    "secondExactMatch": true
+  },
+  "positiveEvidence": {
+    "currentElectronDevBuild": true,
+    "realLoadedModel": true,
+    "visibleAssistantTurnsComplete": true,
+    "chatCompletions": true,
+    "rawParserLeak": false,
+    "reasoningRawParserLeak": false,
+    "persistedToolCount": 0,
+    "persistedReasoningCount": 0,
+    "serverCacheControls": true,
+    "generationDefaultsApplied": true,
+    "reasoningParserDetectedButThinkingDisabledForRequest": true
+  },
+  "runtime": {
+    "memoryActiveMb": 103805,
+    "memoryPeakMb": 104441.4,
+    "modelType": "mllm",
+    "quantizationCodec": "turboquant_codebook",
+    "quantizationWeightFormat": "mxtq",
+    "quantizationProfile": "JANGTQ2",
+    "routedLayout": "prestacked_switch",
+    "weightMatmulDispatch": "jang_tools_turboquant_custom_kernels",
+    "mtpStatus": "metadata_inconsistent"
+  },
+  "cache": {
+    "nativeCacheFamily": "qwen3_5_moe",
+    "nativeCacheSchema": "hybrid_ssm_v1",
+    "nativeCacheType": "hybrid_ssm_typed",
+    "components": [
+      "attention_kv",
+      "ssm_companion_state",
+      "async_rederive"
+    ],
+    "turboquantKvEnabled": true,
+    "turboquantKvPolicy": "attention_kv_layers_only",
+    "ssmPolicy": "native_full_precision_companion_state",
+    "cacheDetail": "paged+ssm",
+    "cacheHitRequests": 1,
+    "cacheHitTokens": 21,
+    "l2BlockTokensOnDisk": 59,
+    "l2SsmTokensOnDisk": 80,
+    "l2TokensOnDisk": 139,
+    "blockDiskWrites": 2,
+    "blockDiskHits": 3,
+    "ssmDiskStores": 2,
+    "ssmDiskHits": 0
+  },
+  "releaseBoundary": "Clears current Electron dev-build N2 JANGTQ2 exact text/JSON output with hybrid SSM/TurboQuant-KV/cache evidence. It does not clear N2 JANG_1L, audio, public tunnel SSE parity, or stricter custom long-delta prompt quality."
+}

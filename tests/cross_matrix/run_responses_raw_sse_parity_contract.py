@@ -169,6 +169,19 @@ def classify_sse_capture(sse_text: str) -> dict[str, Any]:
 
 
 def classify_server_log(log_text: str) -> dict[str, Any]:
+    try:
+        payload = json.loads(log_text)
+    except json.JSONDecodeError:
+        payload = None
+    if isinstance(payload, dict):
+        contains_reasoning = payload.get("containsReasoning") is True
+        return {
+            "reasoning_enabled_by_server_log": contains_reasoning,
+            "reasoning_disabled_by_server_log": False,
+            "enable_thinking_resolved_true": contains_reasoning,
+            "enable_thinking_resolved_false": False,
+            "no_reasoning_disable_workaround": contains_reasoning,
+        }
     reasoning_enabled = "Reasoning: ENABLED" in log_text
     reasoning_disabled = "Reasoning: DISABLED" in log_text
     enable_thinking_true = (
@@ -256,6 +269,22 @@ def classify_noheavy_contract(path: Path | None) -> dict[str, Any]:
     return row
 
 
+def _normalized_argument_key(arguments: Any) -> Any:
+    if not isinstance(arguments, str):
+        return arguments
+    try:
+        decoded = json.loads(arguments)
+    except json.JSONDecodeError:
+        return ("raw", arguments)
+    return ("json", json.dumps(decoded, sort_keys=True, separators=(",", ":")))
+
+
+def _arguments_match(actual: Any, expected: str | None) -> bool:
+    if expected is None:
+        return True
+    return _normalized_argument_key(actual) == _normalized_argument_key(expected)
+
+
 def build_artifact(
     *,
     direct_sse: Path | None,
@@ -289,9 +318,7 @@ def build_artifact(
             else classified.get("function_name") == expected_function_name
         )
         classified["expected_arguments_match"] = (
-            True
-            if expected_arguments is None
-            else classified.get("authoritative_arguments") == expected_arguments
+            _arguments_match(classified.get("authoritative_arguments"), expected_arguments)
         )
         classified["expected_model_match"] = (
             True
@@ -325,7 +352,7 @@ def build_artifact(
 
     comparable = [name for name, row in captures.items() if row.get("present")]
     args_by_surface = {
-        name: row.get("authoritative_arguments", "")
+        name: _normalized_argument_key(row.get("authoritative_arguments", ""))
         for name, row in captures.items()
         if row.get("present")
     }

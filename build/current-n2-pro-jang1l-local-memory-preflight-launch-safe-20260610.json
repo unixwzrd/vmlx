@@ -1,0 +1,67 @@
+{
+  "architecture": "Qwen3_5MoeForConditionalGeneration",
+  "artifact": "build/current-n2-pro-jang1l-local-memory-preflight-launch-safe-20260610.json",
+  "artifact_profile": "JANG_1L",
+  "available_gib": 114.23,
+  "classification": "careful_ram_live_proof_pending",
+  "config_exists": true,
+  "decision": "do_not_launch",
+  "format": "jang",
+  "format_version": "2.0",
+  "index_exists": true,
+  "indexed_payload_bytes": 118726363464,
+  "indexed_payload_gb_decimal": 118.73,
+  "indexed_payload_gib": 110.57,
+  "jang_config_exists": true,
+  "launch_safe": false,
+  "memory_gap_gib": 4.34,
+  "model_exists": true,
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L",
+  "model_type": "qwen3_5_moe",
+  "no_load": true,
+  "quantization": {
+    "actual_bits": 2.13,
+    "bit_widths_used": [
+      2,
+      8
+    ],
+    "block_size": 128,
+    "calibration_method": "weights",
+    "hadamard_rotation": false,
+    "method": "jang-importance",
+    "mlp_asymmetry_floor": false,
+    "passthrough_bit_widths_used": [
+      16
+    ],
+    "passthrough_tensor_count": 135,
+    "profile": "JANG_1L",
+    "quantization_backend": "mx.quantize",
+    "quantization_method": "mse",
+    "quantization_scheme": "asymmetric",
+    "scoring_method": "weight-magnitude",
+    "target_bits": 1.0
+  },
+  "reason": "payload plus required Metal/runtime headroom exceeds current available memory",
+  "release_boundary": "This is a no-heavy scheduling and artifact/index proof only. It is not live N2 JANG_1L runtime/cache/API/UI proof, and it must not be used to claim release support.",
+  "required_available_gib": 118.57,
+  "required_extra_headroom_gib": 8.0,
+  "status": "open",
+  "system_memory": {
+    "available_gib": 114.23,
+    "percent": 10.8,
+    "total_gib": 128.0,
+    "unit": "GiB"
+  },
+  "timestamp_unix": 1781067480.294083,
+  "unit": "GiB",
+  "weights": {
+    "audio_tensors": 0,
+    "expert_tensors": 720,
+    "gated_delta_tensors": 0,
+    "linear_attention_tensors": 855,
+    "mtp_tensors": 0,
+    "total_tensors": 2845,
+    "video_tensors": 0,
+    "vision_tensors": 333
+  }
+}

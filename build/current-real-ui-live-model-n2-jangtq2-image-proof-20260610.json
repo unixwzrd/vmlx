@@ -1,0 +1,97 @@
+{
+  "status": "pass",
+  "generated_at": "2026-06-10",
+  "scope": "real Electron dev-app Nex/N2 Pro JANGTQ2 Chat Completions image/VL proof",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+  "served_model": "n2-jangtq2-dev-ui-image-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-live-model-n2-jangtq2-image-20260610-proof.json",
+  "request": {
+    "wire_api": "chat",
+    "max_tokens": 96,
+    "max_prompt_tokens": 12000,
+    "enable_thinking": false,
+    "builtin_tools": false,
+    "media": "image",
+    "image_expect_regex": "\\bred\\b"
+  },
+  "proven": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "model_type": "mllm",
+    "image_attachment_persisted": true,
+    "server_media_diag_image_url": true,
+    "num_images_processed": 1,
+    "vision_encoding_time_seconds": 0.004612874996382743,
+    "image_semantic_verified": true,
+    "visible_image_answer": "Red",
+    "visible_assistant_turns_complete": true,
+    "event_counts": {
+      "stream": 17,
+      "tool": 0,
+      "reasoningDone": 0,
+      "complete": 3
+    },
+    "generation_defaults_applied": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 96,
+      "enable_thinking": false
+    },
+    "memory_mb": {
+      "active": 103812.6,
+      "peak": 104874.6
+    },
+    "native_cache": {
+      "family": "qwen3_5_moe",
+      "schema": "hybrid_ssm_v1",
+      "cache_type": "hybrid_ssm_typed",
+      "components": [
+        "attention_kv",
+        "ssm_companion_state",
+        "async_rederive"
+      ],
+      "attention_turboquant_kv": true,
+      "ssm_policy": "native_full_precision_companion_state",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache": {
+      "cache_detail": "paged+ssm",
+      "cached_tokens": 18,
+      "l2_block_tokens_on_disk": 50,
+      "l2_ssm_tokens_on_disk": 68,
+      "l2_tokens_on_disk": 118,
+      "block_disk_hits": 3,
+      "block_disk_writes": 2,
+      "ssm_disk_stores": 2
+    },
+    "proven_surfaces": [
+      "cache_endpoint_stats",
+      "cache_hit_telemetry",
+      "chat_completions",
+      "current_electron_dev_build",
+      "generation_defaults_applied",
+      "l2_disk_storage",
+      "language_leak_check",
+      "native_cache_status",
+      "parser_leak_check",
+      "real_loaded_model",
+      "server_cache_controls",
+      "settings_persistence",
+      "vl_image"
+    ]
+  },
+  "not_proven": [
+    "N2 audio runtime/semantic E2E",
+    "N2 video runtime/semantic E2E",
+    "N2 installed-app parity",
+    "N2 public tunnel parity",
+    "N2 JANG_1L memory-safe startup"
+  ],
+  "release_boundary": [
+    "N2 JANGTQ2 image/VL is checkpoint-green in the source Electron dev app.",
+    "This is not installed-app, signed DMG, or notarized release proof.",
+    "Media cache handling remains conservative: the media request was processed, but the server intentionally skipped prefix/paged cache store for the media prompt because media embeddings are path-dependent."
+  ]
+}

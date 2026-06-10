@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-06-10T05:59:21Z",
+  "status": "pass",
+  "classification": "dev_app_exact_text_json_green",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "uiLaunchMode": "electron-dev",
+  "uiCommand": "npm run dev",
+  "modelPath": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+  "servedModel": "gemma4-12b-jang4m-dev-ui-exact-output-20260610",
+  "wireApi": "chat",
+  "rawProof": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-12b-jang4m-exact-output-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-gemma4-12b-jang4m-exact-output-20260610-chat.png",
+  "expected": {
+    "firstAssistantContent": "JANG4M-ACK-742",
+    "secondAssistantContent": "{\"status\":\"ok\",\"value\":\"jang4m-blue\"}"
+  },
+  "actual": {
+    "firstAssistantContent": "JANG4M-ACK-742",
+    "secondAssistantContent": "{\"status\":\"ok\",\"value\":\"jang4m-blue\"}"
+  },
+  "exactness": {
+    "firstExactMatch": true,
+    "secondExactMatch": true
+  },
+  "positiveEvidence": {
+    "currentElectronDevBuild": true,
+    "realLoadedModel": true,
+    "visibleAssistantTurnsComplete": true,
+    "chatCompletions": true,
+    "rawParserLeak": false,
+    "reasoningRawParserLeak": false,
+    "persistedToolCount": 0,
+    "persistedReasoningCount": 0,
+    "serverCacheControls": true,
+    "generationDefaultsApplied": true,
+    "toolParserAutoDetected": "gemma4",
+    "reasoningParserAutoDetected": "gemma4"
+  },
+  "runtime": {
+    "memoryActiveMb": 9680.4,
+    "memoryPeakMb": 9950.7,
+    "modelType": "mllm",
+    "quantizationCodec": "affine_quantized_matmul",
+    "quantizationWeightFormat": "jang_affine",
+    "quantizationProfile": "JANG_4M",
+    "weightMatmulDispatch": "mlx_affine_quantized_matmul",
+    "metalNaActiveOnHost": true,
+    "passthroughTensorCount": 349
+  },
+  "cache": {
+    "nativeCacheFamily": "gemma4",
+    "nativeCacheSchema": "mixed_swa_kv_v1",
+    "nativeCacheType": "mixed_swa_kv",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "turboquantKvEnabled": false,
+    "turboquantKvReason": "mixed_swa_native_rotating_metadata",
+    "cacheDetail": "paged+mixed_swa",
+    "cacheHitRequests": 1,
+    "cacheHitTokens": 24,
+    "l2BlockTokensOnDisk": 66,
+    "l2TokensOnDisk": 66,
+    "blockDiskWrites": 2,
+    "blockDiskHits": 0
+  },
+  "autodetect": {
+    "detectionSource": "jang_stamped",
+    "family": "gemma4",
+    "reasoningParser": "gemma4",
+    "toolParser": "gemma4",
+    "thinkInTemplate": false,
+    "cacheType": "kv",
+    "cacheSubtype": null,
+    "isMllm": true
+  },
+  "generation": {
+    "maxTokens": 64,
+    "temperature": 0,
+    "topP": 1,
+    "enableThinking": false
+  },
+  "releaseBoundary": "Clears current Electron dev-build Gemma 12B JANG4M exact text/JSON output with Gemma4 parser/reasoning autodetect, mixed-SWA cache, and L2 evidence. It does not clear Gemma audio, larger Gemma QAT rows, public tunnel SSE parity, package/sign/notarize/tag/upload, or full release readiness."
+}

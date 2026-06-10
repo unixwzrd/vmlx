@@ -1,0 +1,93 @@
+{
+  "status": "fail",
+  "generated_at": "2026-06-10",
+  "proof_kind": "real_ui_dev_app_bounded_chat",
+  "ui_launch_mode": "electron-dev",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L",
+  "served_model": "n2-jang1l-dev-ui-bounded-chat-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-dev-app-n2-jang1l-bounded-chat-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-n2-jang1l-bounded-chat-20260610-chat.png",
+  "request": {
+    "wire_api": "chat",
+    "max_tokens": 8,
+    "max_prompt_tokens": 4096,
+    "temperature": 0,
+    "top_p": 1,
+    "server_cache_controls": true
+  },
+  "proven": {
+    "real_dev_app": true,
+    "model_loaded": true,
+    "health_reached": true,
+    "first_chat_http_200": true,
+    "stream_trace_count": 8,
+    "single_active_decode": true,
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false
+  },
+  "red": {
+    "first_assistant_visible_content": "",
+    "first_assistant_stream_text": "        ",
+    "second_turn_http_status": 503,
+    "second_turn_error": "Metal GPU working set too full (102% of 107.5GB cap)",
+    "visible_assistant_turns_complete": false,
+    "message_count": 3,
+    "assistant_count": 1
+  },
+  "runtime": {
+    "family": "qwen3_5_moe",
+    "weight_format": "jang",
+    "profile": "JANG_1L",
+    "actual_bits": 2.13,
+    "target_bits": 1,
+    "tool_parser": "qwen",
+    "reasoning_parser": "qwen3",
+    "prestacked_switch": 540,
+    "trained_active_experts": 10,
+    "n_routed_experts": 512,
+    "active_memory_mb": 112548.8,
+    "peak_memory_mb": 112803.4,
+    "cache_memory_mb": 0,
+    "metal_na_eligible": true,
+    "metal_na_active_on_host": true
+  },
+  "mtp": {
+    "status": "metadata_inconsistent",
+    "config_num_nextn_predict_layers": 1,
+    "jang_drop_mtp": true,
+    "index_has_mtp_tensors": false,
+    "issue": "jang_config.drop_mtp=true but config declares 1 MTP layer(s)"
+  },
+  "cache": {
+    "native_schema": "hybrid_ssm_v1",
+    "cache_type": "hybrid_ssm_typed",
+    "components": [
+      "attention_kv",
+      "ssm_companion_state",
+      "async_rederive"
+    ],
+    "live_attention_tq_kv": true,
+    "attention_layers": 15,
+    "ssm_companion_layers": 45,
+    "stored_attention_kv_quantization": "q4",
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true,
+    "ssm_companion_l2": true,
+    "ram_tokens_cached": 18,
+    "l2_block_tokens_on_disk": 18,
+    "l2_ssm_tokens_on_disk": 18,
+    "l2_tokens_on_disk": 36,
+    "block_disk_writes": 1,
+    "ssm_companion_stores": 1,
+    "ssm_companion_disk_tokens": 18,
+    "ssm_companion_disk_bytes_mb": 183.18
+  },
+  "boundary": [
+    "This proves N2 JANG_1L can load and execute one bounded real Electron dev-app Chat request.",
+    "It does not prove usable visible output quality: the first assistant content was whitespace/empty.",
+    "It does not prove multi-turn cache reuse: the second turn was rejected by the Metal working-set guard at 102% of the 107.5GB cap.",
+    "It does not clear tools, Responses, Responses stream, L2 restart, media, installed-app parity, public tunnel parity, package/sign/notarize/tag/upload/download, or release support."
+  ],
+  "release_action": "none"
+}

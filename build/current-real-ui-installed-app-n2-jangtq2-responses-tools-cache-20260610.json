@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-06-10T04:07:19.868Z",
+  "status": "pass",
+  "source_proof": "docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-responses-tools-cache-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-n2-jangtq2-responses-tools-cache-20260610-chat.png",
+  "repo_dir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "ui_launch_mode": "installed-app",
+  "installed_app_path": "/Applications/vMLX.app",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+  "served_model": "n2-jangtq2-installed-ui-20260610",
+  "wire_api": "responses",
+  "builtin_tools_enabled": true,
+  "server_cache_controls_verified": true,
+  "status_summary": {
+    "visible_assistant_turns_complete": true,
+    "first_assistant_content": "Done. REAL_UI_LIVE_TOOL_ONE",
+    "second_assistant_content": "Done - this is the second UI turn. REAL_UI_LIVE_TOOL_TWO",
+    "tool_probe_files": {
+      "real_ui_tool_probe_1.txt": "REAL_UI_LIVE_TOOL_ONE",
+      "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO"
+    },
+    "send_errors": [],
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false,
+    "reasoning_cjk_leak_count": 0,
+    "reasoning_korean_leak_count": 0
+  },
+  "event_counts": {
+    "stream": 23,
+    "tool": 106,
+    "reasoning_done": 0,
+    "complete": 2
+  },
+  "stream_traces": [
+    {
+      "count": 8,
+      "last_full_content": "Done. REAL_UI_LIVE_TOOL_ONE",
+      "last_cached_tokens": 0,
+      "last_cache_detail": "",
+      "last_tokens_per_second": "29.7"
+    },
+    {
+      "count": 15,
+      "last_full_content": "Done - this is the second UI turn. REAL_UI_LIVE_TOOL_TWO",
+      "last_cached_tokens": 384,
+      "last_cache_detail": "paged+ssm",
+      "last_tokens_per_second": "23.0"
+    }
+  ],
+  "runtime": {
+    "model_type": "mllm",
+    "active_mb": 103802.3,
+    "peak_mb": 108624.4,
+    "quantization_codec": "turboquant_codebook",
+    "weight_format": "mxtq",
+    "profile": "JANGTQ2",
+    "mtp_status": "metadata_inconsistent",
+    "mtp_runtime_active": false,
+    "mtp_issues": [
+      "jang_config.drop_mtp=true but config declares 1 MTP layer(s)"
+    ]
+  },
+  "native_cache": {
+    "family": "qwen3_5_moe",
+    "schema": "hybrid_ssm_v1",
+    "cache_type": "hybrid_ssm_typed",
+    "components": [
+      "attention_kv",
+      "ssm_companion_state",
+      "async_rederive"
+    ],
+    "generic_turboquant_kv_enabled": true,
+    "generic_turboquant_kv_reason": "hybrid_attention_kv_only",
+    "attention_kv_storage_quantization": {
+      "enabled": true,
+      "mode": "storage_boundary",
+      "bits": 4,
+      "group_size": 64,
+      "applies_to": "attention_kv_layers_only",
+      "ssm_policy": "native_companion_state",
+      "rederive": "async_clean_prefill_on_miss_or_warm_pass"
+    },
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true
+  },
+  "cache": {
+    "cache_hit_requests": 1,
+    "cache_hit_tokens": 384,
+    "cache_hit_tokens_by_detail": {
+      "paged+ssm": 384
+    },
+    "hybrid_kv_without_ssm_hits": 2,
+    "hybrid_kv_without_ssm_tokens": 2816,
+    "last_cache_execution": {
+      "cache_detail": "paged+ssm",
+      "cached_tokens": 384,
+      "reconstructed": true,
+      "dequantized": true,
+      "reconstruction_ok": true,
+      "dequantization_ok": true
+    },
+    "ram_tokens_cached": 3582,
+    "l2_block_tokens_on_disk": 3582,
+    "l2_ssm_tokens_on_disk": 17086,
+    "l2_tokens_on_disk": 20668,
+    "block_disk_hits": 110,
+    "block_disk_writes": 59,
+    "ssm_disk_stores": 11,
+    "ssm_disk_hits": 1
+  },
+  "proven_surfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "generation_defaults_applied",
+    "installed_app_ui",
+    "l2_disk_storage",
+    "language_leak_check",
+    "long_tool_loop",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "responses_api",
+    "responses_cache_detail_usage",
+    "responses_delta_streaming",
+    "server_cache_controls",
+    "settings_persistence",
+    "tool_l2_cache_integrated"
+  ],
+  "not_proven": [
+    "Developer ID notarized public DMG release",
+    "public tunnel raw SSE parity",
+    "N2 audio support",
+    "N2 JANG_1L memory-safe runtime",
+    "stricter custom long-delta prompt quality"
+  ]
+}

@@ -2,273 +2,632 @@
   "artifact": "build/current-installed-app-runtime-parity-audit-after-installed-app-rebuild-20260606.json",
   "boundary": "Installed app parity is required before claiming packaged/app coverage for #178 LoRA flags, MiMo xml_function launch, or Electron gateway EPIPE/AggregateError disconnect handling, or ALGateway single-model cache endpoint/routing behavior, or model-owned generation/max-token settings behavior, or parser/reasoning settings and launch-preview parity.",
   "bundled_engine_hash_parity": {
-    "bundled_engine": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine",
+    "bundled_engine": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine",
     "files": {
       "api/anthropic_adapter.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/api/anthropic_adapter.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/api/anthropic_adapter.py",
         "bundled_sha256": "52efb1b488786362638ef0bd9ba1e5889377e6aa9b73879a9c26091388d47914",
         "match": true,
         "source": "vmlx_engine/api/anthropic_adapter.py",
         "source_sha256": "52efb1b488786362638ef0bd9ba1e5889377e6aa9b73879a9c26091388d47914"
       },
       "api/ollama_adapter.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/api/ollama_adapter.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/api/ollama_adapter.py",
         "bundled_sha256": "88a0c2f3034758a82db82c1936505cc61773974e824d774a463019abb76cb2cd",
         "match": true,
         "source": "vmlx_engine/api/ollama_adapter.py",
         "source_sha256": "88a0c2f3034758a82db82c1936505cc61773974e824d774a463019abb76cb2cd"
       },
       "api/tool_calling.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/api/tool_calling.py",
-        "bundled_sha256": "804469a09e858d0ce6eea719c1a9c5474d6bcb64a49dc3bdb4c4a0048333397a",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/api/tool_calling.py",
+        "bundled_sha256": "65b76c2e5e3bc182a5f9e6cb167b6531dc096e885c42ae74aa073ca12dc93255",
         "match": true,
         "source": "vmlx_engine/api/tool_calling.py",
-        "source_sha256": "804469a09e858d0ce6eea719c1a9c5474d6bcb64a49dc3bdb4c4a0048333397a"
+        "source_sha256": "65b76c2e5e3bc182a5f9e6cb167b6531dc096e885c42ae74aa073ca12dc93255"
       },
       "api/utils.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/api/utils.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/api/utils.py",
         "bundled_sha256": "d20cb1db24054a737401d5ed5094f5e8e7fca7e6c3c74c3951b7e3b0432d27f7",
         "match": true,
         "source": "vmlx_engine/api/utils.py",
         "source_sha256": "d20cb1db24054a737401d5ed5094f5e8e7fca7e6c3c74c3951b7e3b0432d27f7"
       },
       "block_disk_store.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/block_disk_store.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/block_disk_store.py",
         "bundled_sha256": "059016ee3aa1edbdc829d8b59367243118b83b23e79e21687e5ff7c8ec6c8344",
         "match": true,
         "source": "vmlx_engine/block_disk_store.py",
         "source_sha256": "059016ee3aa1edbdc829d8b59367243118b83b23e79e21687e5ff7c8ec6c8344"
       },
+      "cache_record_validator.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/cache_record_validator.py",
+        "bundled_sha256": "3e8026944a78ecabf9bf4296ce5fa62851e2d9ad4acedb5d7a1d24a6e8f06ec5",
+        "match": true,
+        "source": "vmlx_engine/cache_record_validator.py",
+        "source_sha256": "3e8026944a78ecabf9bf4296ce5fa62851e2d9ad4acedb5d7a1d24a6e8f06ec5"
+      },
       "chat_templates/gemma4.jinja": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/chat_templates/gemma4.jinja",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/chat_templates/gemma4.jinja",
         "bundled_sha256": "85a08664d16d8f3be4416c92427b3ac10df1024ac566cc0b4bc3bab409393f98",
         "match": true,
         "source": "vmlx_engine/chat_templates/gemma4.jinja",
         "source_sha256": "85a08664d16d8f3be4416c92427b3ac10df1024ac566cc0b4bc3bab409393f98"
       },
       "cli.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/cli.py",
-        "bundled_sha256": "cfd2d8169719896ca5c95a23bf2d8e978973ee33acd4a330da7148e4844d1eb8",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/cli.py",
+        "bundled_sha256": "011707af57328e79065a0196f02cc2593016b23c53780e1e698654144b93c3c7",
         "match": true,
         "source": "vmlx_engine/cli.py",
-        "source_sha256": "cfd2d8169719896ca5c95a23bf2d8e978973ee33acd4a330da7148e4844d1eb8"
+        "source_sha256": "011707af57328e79065a0196f02cc2593016b23c53780e1e698654144b93c3c7"
       },
       "config/defaults.yaml": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/config/defaults.yaml",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/config/defaults.yaml",
         "bundled_sha256": "90d22bfd76665b2fe73a6f28e3406d65fb22f320cb81ee1b4cb5de020988bd66",
         "match": true,
         "source": "vmlx_engine/config/defaults.yaml",
         "source_sha256": "90d22bfd76665b2fe73a6f28e3406d65fb22f320cb81ee1b4cb5de020988bd66"
       },
       "disk_cache.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/disk_cache.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/disk_cache.py",
         "bundled_sha256": "66990ec26bfd9479a5e039dc001a84982c9976a319fa17e9e694c1f8bd13b035",
         "match": true,
         "source": "vmlx_engine/disk_cache.py",
         "source_sha256": "66990ec26bfd9479a5e039dc001a84982c9976a319fa17e9e694c1f8bd13b035"
       },
       "engine/batched.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/engine/batched.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/engine/batched.py",
         "bundled_sha256": "b565c2e56f6112b73f1d6bd02fa636bd58f93cac7ef6bcc56ee8bb618491c421",
         "match": true,
         "source": "vmlx_engine/engine/batched.py",
         "source_sha256": "b565c2e56f6112b73f1d6bd02fa636bd58f93cac7ef6bcc56ee8bb618491c421"
       },
       "engine/simple.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/engine/simple.py",
-        "bundled_sha256": "82cdacdf65acd6d8a274866c76b99cb243ca38e81e07181ac5abb798f5f0419f",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/engine/simple.py",
+        "bundled_sha256": "91acaaa9a712ef6408f0bf3405ff66cf29c8c254a58af38620781d142aab4bb8",
         "match": true,
         "source": "vmlx_engine/engine/simple.py",
-        "source_sha256": "82cdacdf65acd6d8a274866c76b99cb243ca38e81e07181ac5abb798f5f0419f"
+        "source_sha256": "91acaaa9a712ef6408f0bf3405ff66cf29c8c254a58af38620781d142aab4bb8"
       },
       "loaders/load_jangtq_dsv4.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/loaders/load_jangtq_dsv4.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/loaders/load_jangtq_dsv4.py",
         "bundled_sha256": "ae6c45d1c66b42644bdf39675ac472afd9c8a7c6629fb16a7c85a936f8f133af",
         "match": true,
         "source": "vmlx_engine/loaders/load_jangtq_dsv4.py",
         "source_sha256": "ae6c45d1c66b42644bdf39675ac472afd9c8a7c6629fb16a7c85a936f8f133af"
       },
       "metal/codebook_matvec.metal": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/metal/codebook_matvec.metal",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/metal/codebook_matvec.metal",
         "bundled_sha256": "77fa07ae8ab2acf1ed0871bfe6c65b443adc6a4b4a23ea69769cc0aaffa3baa0",
         "match": true,
         "source": "vmlx_engine/metal/codebook_matvec.metal",
         "source_sha256": "77fa07ae8ab2acf1ed0871bfe6c65b443adc6a4b4a23ea69769cc0aaffa3baa0"
       },
       "metal/codebook_moe.metal": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/metal/codebook_moe.metal",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/metal/codebook_moe.metal",
         "bundled_sha256": "8fbd5f1cf16a36aee016733a4ff092956926d5443121825da8f0232fae91a887",
         "match": true,
         "source": "vmlx_engine/metal/codebook_moe.metal",
         "source_sha256": "8fbd5f1cf16a36aee016733a4ff092956926d5443121825da8f0232fae91a887"
       },
       "mllm_batch_generator.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/mllm_batch_generator.py",
-        "bundled_sha256": "90b22784f3163e56006e2d5bb85cf212da37c3549117ff38c0a07a04c4ee5fda",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/mllm_batch_generator.py",
+        "bundled_sha256": "7aef5095206b19d980bea7afee87a7f635d7ef6ad8632f23c51bf8d4be11efcc",
         "match": true,
         "source": "vmlx_engine/mllm_batch_generator.py",
-        "source_sha256": "90b22784f3163e56006e2d5bb85cf212da37c3549117ff38c0a07a04c4ee5fda"
+        "source_sha256": "7aef5095206b19d980bea7afee87a7f635d7ef6ad8632f23c51bf8d4be11efcc"
       },
       "mllm_scheduler.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/mllm_scheduler.py",
-        "bundled_sha256": "c7fb71660aea38aee48edae6d902cd07bdc803afd3ff8f59113c210d532a9b37",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/mllm_scheduler.py",
+        "bundled_sha256": "99fb2ecb056894d01d9478e6de8518b4e46f651dc877afd1519420d3c2a64f4a",
         "match": true,
         "source": "vmlx_engine/mllm_scheduler.py",
-        "source_sha256": "c7fb71660aea38aee48edae6d902cd07bdc803afd3ff8f59113c210d532a9b37"
+        "source_sha256": "99fb2ecb056894d01d9478e6de8518b4e46f651dc877afd1519420d3c2a64f4a"
       },
       "model_config_registry.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/model_config_registry.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/model_config_registry.py",
         "bundled_sha256": "eb9bb35a04d1cec9728d38968e980ccbc828120c95ea042a44a9a78f7c89e862",
         "match": true,
         "source": "vmlx_engine/model_config_registry.py",
         "source_sha256": "eb9bb35a04d1cec9728d38968e980ccbc828120c95ea042a44a9a78f7c89e862"
       },
       "model_configs.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/model_configs.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/model_configs.py",
         "bundled_sha256": "9eb67271ae4125079578714d1b20171f889119cd7e85426bf8ec085516a2f5aa",
         "match": true,
         "source": "vmlx_engine/model_configs.py",
         "source_sha256": "9eb67271ae4125079578714d1b20171f889119cd7e85426bf8ec085516a2f5aa"
       },
+      "models/gemma4_unified/__init__.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/gemma4_unified/__init__.py",
+        "bundled_sha256": "9305815deae8089c2f082a1723f02179a4e1624865752ab9918c41ff677a5dce",
+        "match": true,
+        "source": "vmlx_engine/models/gemma4_unified/__init__.py",
+        "source_sha256": "9305815deae8089c2f082a1723f02179a4e1624865752ab9918c41ff677a5dce"
+      },
+      "models/gemma4_unified/config.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/gemma4_unified/config.py",
+        "bundled_sha256": "67cef0fdc1ee09b7c3e3ab3a1860b2747a7f3ec86f8e5270d8bd12695967cd61",
+        "match": true,
+        "source": "vmlx_engine/models/gemma4_unified/config.py",
+        "source_sha256": "67cef0fdc1ee09b7c3e3ab3a1860b2747a7f3ec86f8e5270d8bd12695967cd61"
+      },
+      "models/gemma4_unified/gemma4_unified.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/gemma4_unified/gemma4_unified.py",
+        "bundled_sha256": "e1477e475fb56973928bb5683f524fefe40c66c5f3133914d29e7ba63681d65f",
+        "match": true,
+        "source": "vmlx_engine/models/gemma4_unified/gemma4_unified.py",
+        "source_sha256": "e1477e475fb56973928bb5683f524fefe40c66c5f3133914d29e7ba63681d65f"
+      },
+      "models/gemma4_unified/processing_gemma4_unified.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/gemma4_unified/processing_gemma4_unified.py",
+        "bundled_sha256": "d3d1ca4bb33b9a95eb721970a7f0b964afa6bf7d8523e36d8101b86065afb0c3",
+        "match": true,
+        "source": "vmlx_engine/models/gemma4_unified/processing_gemma4_unified.py",
+        "source_sha256": "d3d1ca4bb33b9a95eb721970a7f0b964afa6bf7d8523e36d8101b86065afb0c3"
+      },
+      "models/gemma4_unified_register.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/gemma4_unified_register.py",
+        "bundled_sha256": "b0c4be1d0aa6965bdab5bb94a50255cd23e4bb7bfb3eda86ffdf38f100519e21",
+        "match": true,
+        "source": "vmlx_engine/models/gemma4_unified_register.py",
+        "source_sha256": "b0c4be1d0aa6965bdab5bb94a50255cd23e4bb7bfb3eda86ffdf38f100519e21"
+      },
       "models/mllm.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/mllm.py",
-        "bundled_sha256": "8c77647b4bcaab6695c48b162ae5f7627b38a340152c77138c1be375865a3c0a",
-        "match": false,
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/mllm.py",
+        "bundled_sha256": "c743e14bbfdced6ed252587c7df3f7f9d1d0595d42002b0eff7b5f6f2180f3c8",
+        "match": true,
         "source": "vmlx_engine/models/mllm.py",
-        "source_sha256": "b443c959ec9c4121a7f03f3ce217623f9cac64c1d417f5d7219e076d2449b3d4"
+        "source_sha256": "c743e14bbfdced6ed252587c7df3f7f9d1d0595d42002b0eff7b5f6f2180f3c8"
       },
       "models/step3p7_mlx_vlm.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/step3p7_mlx_vlm.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/models/step3p7_mlx_vlm.py",
         "bundled_sha256": "02ca4375aa4a7a0714ec5daa7817be40f6d8d40620f6fa9818ce51dd83e0e31c",
         "match": true,
         "source": "vmlx_engine/models/step3p7_mlx_vlm.py",
         "source_sha256": "02ca4375aa4a7a0714ec5daa7817be40f6d8d40620f6fa9818ce51dd83e0e31c"
       },
+      "native_mtp.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/native_mtp.py",
+        "bundled_sha256": "80c7c5a9afe85e42f951f85df064bb57c993c667b94d509d614ea651bfafd612",
+        "match": true,
+        "source": "vmlx_engine/native_mtp.py",
+        "source_sha256": "80c7c5a9afe85e42f951f85df064bb57c993c667b94d509d614ea651bfafd612"
+      },
       "omni_multimodal.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/omni_multimodal.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/omni_multimodal.py",
         "bundled_sha256": "6c1c6f96651e800b8ec518948bd44c5b8c15cbb6cc3bcf15b08ffd6c15226b67",
         "match": true,
         "source": "vmlx_engine/omni_multimodal.py",
         "source_sha256": "6c1c6f96651e800b8ec518948bd44c5b8c15cbb6cc3bcf15b08ffd6c15226b67"
       },
       "paged_cache.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/paged_cache.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/paged_cache.py",
         "bundled_sha256": "b9c67a5a4921378fd7098ae64e1364725db6e609ba67212661848cc05b988da2",
         "match": true,
         "source": "vmlx_engine/paged_cache.py",
         "source_sha256": "b9c67a5a4921378fd7098ae64e1364725db6e609ba67212661848cc05b988da2"
       },
+      "patches/mlx_lm_mtp/__init__.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/patches/mlx_lm_mtp/__init__.py",
+        "bundled_sha256": "519c5e86904f805019efe7ce060c97cdbe0fb68a86029bafcd8bf56a2549a71d",
+        "match": true,
+        "source": "vmlx_engine/patches/mlx_lm_mtp/__init__.py",
+        "source_sha256": "519c5e86904f805019efe7ce060c97cdbe0fb68a86029bafcd8bf56a2549a71d"
+      },
+      "patches/mlx_lm_mtp/batch_generator.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/patches/mlx_lm_mtp/batch_generator.py",
+        "bundled_sha256": "39694ba8f3bec8bb8dcb7d8de7e40c63285e69563930e379b069f96b9de212e6",
+        "match": true,
+        "source": "vmlx_engine/patches/mlx_lm_mtp/batch_generator.py",
+        "source_sha256": "39694ba8f3bec8bb8dcb7d8de7e40c63285e69563930e379b069f96b9de212e6"
+      },
+      "patches/mlx_lm_mtp/cache_rollback.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/patches/mlx_lm_mtp/cache_rollback.py",
+        "bundled_sha256": "308cda2d3c57f6061f0b161cacec76f63c196fb75a7e62a754c06ca2402909da",
+        "match": true,
+        "source": "vmlx_engine/patches/mlx_lm_mtp/cache_rollback.py",
+        "source_sha256": "308cda2d3c57f6061f0b161cacec76f63c196fb75a7e62a754c06ca2402909da"
+      },
+      "patches/mlx_lm_mtp/deepseek_v4_model.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/patches/mlx_lm_mtp/deepseek_v4_model.py",
+        "bundled_sha256": "56a2c82226b59051fcb18b0a6b5ee33788c3efdbd0126a99b258249692ca1aaa",
+        "match": true,
+        "source": "vmlx_engine/patches/mlx_lm_mtp/deepseek_v4_model.py",
+        "source_sha256": "56a2c82226b59051fcb18b0a6b5ee33788c3efdbd0126a99b258249692ca1aaa"
+      },
+      "patches/mlx_lm_mtp/qwen35_model.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/patches/mlx_lm_mtp/qwen35_model.py",
+        "bundled_sha256": "ae4c6851ac26403883a0b10cc607945f69d644fe643fa7f87384401be60f18ff",
+        "match": true,
+        "source": "vmlx_engine/patches/mlx_lm_mtp/qwen35_model.py",
+        "source_sha256": "ae4c6851ac26403883a0b10cc607945f69d644fe643fa7f87384401be60f18ff"
+      },
       "patches/mlx_vlm_mtp/qwen35_vl.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/patches/mlx_vlm_mtp/qwen35_vl.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/patches/mlx_vlm_mtp/qwen35_vl.py",
         "bundled_sha256": "a5f640a26477043d50c611145d48570a685bf64ef5295565cecf7c098e2b3203",
         "match": true,
         "source": "vmlx_engine/patches/mlx_vlm_mtp/qwen35_vl.py",
         "source_sha256": "a5f640a26477043d50c611145d48570a685bf64ef5295565cecf7c098e2b3203"
       },
       "prefix_cache.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/prefix_cache.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/prefix_cache.py",
         "bundled_sha256": "51b4f24af39f94572972b58b05ad84048c261a25b81e25bb61ec487f139e1942",
         "match": true,
         "source": "vmlx_engine/prefix_cache.py",
         "source_sha256": "51b4f24af39f94572972b58b05ad84048c261a25b81e25bb61ec487f139e1942"
       },
+      "reasoning/__init__.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/__init__.py",
+        "bundled_sha256": "3a46cb412a024d0e831bf75279e621da99c38bc803de47558281182fb453a39a",
+        "match": true,
+        "source": "vmlx_engine/reasoning/__init__.py",
+        "source_sha256": "3a46cb412a024d0e831bf75279e621da99c38bc803de47558281182fb453a39a"
+      },
+      "reasoning/base.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/base.py",
+        "bundled_sha256": "2ed788ae55e67fd2b1d69f2ea8ae4a74be2207878c6851fa7b778b305d08bc0c",
+        "match": true,
+        "source": "vmlx_engine/reasoning/base.py",
+        "source_sha256": "2ed788ae55e67fd2b1d69f2ea8ae4a74be2207878c6851fa7b778b305d08bc0c"
+      },
+      "reasoning/deepseek_r1_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/deepseek_r1_parser.py",
+        "bundled_sha256": "2fdfa7924b9cedace9f222888841275f7a8ad086160f38c73c596a6d1ce5f6f9",
+        "match": true,
+        "source": "vmlx_engine/reasoning/deepseek_r1_parser.py",
+        "source_sha256": "2fdfa7924b9cedace9f222888841275f7a8ad086160f38c73c596a6d1ce5f6f9"
+      },
+      "reasoning/gemma4_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/gemma4_parser.py",
+        "bundled_sha256": "f63a3bc1c1852e8d341d6ed576dff8e9a2f819fb69c47488e115052e25a386f3",
+        "match": true,
+        "source": "vmlx_engine/reasoning/gemma4_parser.py",
+        "source_sha256": "f63a3bc1c1852e8d341d6ed576dff8e9a2f819fb69c47488e115052e25a386f3"
+      },
+      "reasoning/gptoss_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/gptoss_parser.py",
+        "bundled_sha256": "c2f6c562778bccf89bf1e8718a3b5951435c116c931896146a0fa1664f6f2a73",
+        "match": true,
+        "source": "vmlx_engine/reasoning/gptoss_parser.py",
+        "source_sha256": "c2f6c562778bccf89bf1e8718a3b5951435c116c931896146a0fa1664f6f2a73"
+      },
+      "reasoning/minimax_m2_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/minimax_m2_parser.py",
+        "bundled_sha256": "0123746f5ad9a20152c137ef7bb3b1ebaf32d4c418fb111b5150fd1c6820b951",
+        "match": true,
+        "source": "vmlx_engine/reasoning/minimax_m2_parser.py",
+        "source_sha256": "0123746f5ad9a20152c137ef7bb3b1ebaf32d4c418fb111b5150fd1c6820b951"
+      },
+      "reasoning/mistral_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/mistral_parser.py",
+        "bundled_sha256": "8bf6551379009b0dc4b8746a3b4fa6941d030904cda1eda274f146561394d35e",
+        "match": true,
+        "source": "vmlx_engine/reasoning/mistral_parser.py",
+        "source_sha256": "8bf6551379009b0dc4b8746a3b4fa6941d030904cda1eda274f146561394d35e"
+      },
+      "reasoning/qwen3_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/qwen3_parser.py",
+        "bundled_sha256": "e561e53bccf972887843655bd6247969b9dca95e489134819230d96508f07550",
+        "match": true,
+        "source": "vmlx_engine/reasoning/qwen3_parser.py",
+        "source_sha256": "e561e53bccf972887843655bd6247969b9dca95e489134819230d96508f07550"
+      },
+      "reasoning/think_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/think_parser.py",
+        "bundled_sha256": "4f4aafe4164cc8cc94d5a4c145caf9e21c0a94560c3197607666b14f76a4163a",
+        "match": true,
+        "source": "vmlx_engine/reasoning/think_parser.py",
+        "source_sha256": "4f4aafe4164cc8cc94d5a4c145caf9e21c0a94560c3197607666b14f76a4163a"
+      },
+      "reasoning/think_xml_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/reasoning/think_xml_parser.py",
+        "bundled_sha256": "b9edd6294373cc413f3c8e668b00f1e20354d00f0489afb6845df2b8f1bbbd07",
+        "match": true,
+        "source": "vmlx_engine/reasoning/think_xml_parser.py",
+        "source_sha256": "b9edd6294373cc413f3c8e668b00f1e20354d00f0489afb6845df2b8f1bbbd07"
+      },
+      "runtime_patches/__init__.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/runtime_patches/__init__.py",
+        "bundled_sha256": "73e0a7418689ca571e855dc1b11f72a2f804215c8403d9b1437346c8a34f172c",
+        "match": true,
+        "source": "vmlx_engine/runtime_patches/__init__.py",
+        "source_sha256": "73e0a7418689ca571e855dc1b11f72a2f804215c8403d9b1437346c8a34f172c"
+      },
+      "runtime_patches/deepseek_v4_register.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/runtime_patches/deepseek_v4_register.py",
+        "bundled_sha256": "c46a8c9202492301e0fbc910cc2ebf41f9fc83994a31e29205dc981d6d7b892a",
+        "match": true,
+        "source": "vmlx_engine/runtime_patches/deepseek_v4_register.py",
+        "source_sha256": "c46a8c9202492301e0fbc910cc2ebf41f9fc83994a31e29205dc981d6d7b892a"
+      },
       "runtime_patches/gemma4_processing.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/runtime_patches/gemma4_processing.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/runtime_patches/gemma4_processing.py",
         "bundled_sha256": "2c9f475b07c26b277ce6dcf8fee21a81d2c7615e1cdd5584a9a3d22d01082dda",
         "match": true,
         "source": "vmlx_engine/runtime_patches/gemma4_processing.py",
         "source_sha256": "2c9f475b07c26b277ce6dcf8fee21a81d2c7615e1cdd5584a9a3d22d01082dda"
       },
+      "runtime_patches/gemma4_vision.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/runtime_patches/gemma4_vision.py",
+        "bundled_sha256": "3cf8de03bc071887fb2c4366ae00d48284bf66f405036e7b1539926b769eb6f5",
+        "match": true,
+        "source": "vmlx_engine/runtime_patches/gemma4_vision.py",
+        "source_sha256": "3cf8de03bc071887fb2c4366ae00d48284bf66f405036e7b1539926b769eb6f5"
+      },
+      "runtime_patches/kimi_k25_mla.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/runtime_patches/kimi_k25_mla.py",
+        "bundled_sha256": "eac747a2f7de08a389584eabbdb60587d7e6f0853a74a1cb1f59ac1709b89d55",
+        "match": true,
+        "source": "vmlx_engine/runtime_patches/kimi_k25_mla.py",
+        "source_sha256": "eac747a2f7de08a389584eabbdb60587d7e6f0853a74a1cb1f59ac1709b89d55"
+      },
+      "runtime_patches/mlx_lm_compat.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/runtime_patches/mlx_lm_compat.py",
+        "bundled_sha256": "457a28233a34f1e734310f6e6c178a1c2e8b451d6dd47296b7c03917d8d19d60",
+        "match": true,
+        "source": "vmlx_engine/runtime_patches/mlx_lm_compat.py",
+        "source_sha256": "457a28233a34f1e734310f6e6c178a1c2e8b451d6dd47296b7c03917d8d19d60"
+      },
+      "runtime_patches/mlx_vlm_compat.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/runtime_patches/mlx_vlm_compat.py",
+        "bundled_sha256": "721faac6eed4b085b9cc1c39f57c7f02b96d871e70ac6569c63ae5259a40fa56",
+        "match": true,
+        "source": "vmlx_engine/runtime_patches/mlx_vlm_compat.py",
+        "source_sha256": "721faac6eed4b085b9cc1c39f57c7f02b96d871e70ac6569c63ae5259a40fa56"
+      },
       "scheduler.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/scheduler.py",
-        "bundled_sha256": "419b793ae5a1398dd7bf2c73968fb64ea93a11d454d98c0a292aeba7be1e2214",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/scheduler.py",
+        "bundled_sha256": "2a8ba0c6fa514fa70e654d95937bab9656901ee5ce114d2485dbd7f836737c58",
         "match": true,
         "source": "vmlx_engine/scheduler.py",
-        "source_sha256": "419b793ae5a1398dd7bf2c73968fb64ea93a11d454d98c0a292aeba7be1e2214"
+        "source_sha256": "2a8ba0c6fa514fa70e654d95937bab9656901ee5ce114d2485dbd7f836737c58"
       },
       "server.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
-        "bundled_sha256": "80b8c4f8ce0116f4fe8e6f7abdc3abb8a83e7c2adf3a5936457d73941ceb7117",
-        "match": false,
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+        "bundled_sha256": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452",
+        "match": true,
         "source": "vmlx_engine/server.py",
-        "source_sha256": "792a22c944e61bf1a8bade26302e4aae50c62a9dcc1828c3437481fce5501909"
+        "source_sha256": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452"
+      },
+      "tool_parsers/__init__.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/__init__.py",
+        "bundled_sha256": "85d06e739cf9ace1302485bd35dc1bef4c78be0c05a1b415acc86bbd75d0c27b",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/__init__.py",
+        "source_sha256": "85d06e739cf9ace1302485bd35dc1bef4c78be0c05a1b415acc86bbd75d0c27b"
+      },
+      "tool_parsers/abstract_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/abstract_tool_parser.py",
+        "bundled_sha256": "ba766e6193d67e64613a28af17ed336e875e7b209ac974ebbc7499a06b158bd3",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/abstract_tool_parser.py",
+        "source_sha256": "ba766e6193d67e64613a28af17ed336e875e7b209ac974ebbc7499a06b158bd3"
+      },
+      "tool_parsers/auto_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/auto_tool_parser.py",
+        "bundled_sha256": "63849fcd759ab609dae1514e6b8dce67d78f8016211a3e11fcb6e1115a650dba",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/auto_tool_parser.py",
+        "source_sha256": "63849fcd759ab609dae1514e6b8dce67d78f8016211a3e11fcb6e1115a650dba"
+      },
+      "tool_parsers/deepseek_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/deepseek_tool_parser.py",
+        "bundled_sha256": "fab9f2346ca480f86ce5530f4b039bab5cc136f4428d41c06b20d65bab00ee71",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/deepseek_tool_parser.py",
+        "source_sha256": "fab9f2346ca480f86ce5530f4b039bab5cc136f4428d41c06b20d65bab00ee71"
       },
       "tool_parsers/dsml_tool_parser.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/dsml_tool_parser.py",
-        "bundled_sha256": "5f7f7f8ab6ac647755490c7d5ddb14ceb93f48a8710818df399549b78e04f713",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/dsml_tool_parser.py",
+        "bundled_sha256": "7c9c0d983f479d1ab6dff39253d4636d608a7fe3653bb5f64051e75f30c7e9f8",
         "match": true,
         "source": "vmlx_engine/tool_parsers/dsml_tool_parser.py",
-        "source_sha256": "5f7f7f8ab6ac647755490c7d5ddb14ceb93f48a8710818df399549b78e04f713"
+        "source_sha256": "7c9c0d983f479d1ab6dff39253d4636d608a7fe3653bb5f64051e75f30c7e9f8"
+      },
+      "tool_parsers/functionary_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/functionary_tool_parser.py",
+        "bundled_sha256": "49788d044ae0afbf704118a37850e187fc0427a7d73b590c45e2fc9c2fb44df8",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/functionary_tool_parser.py",
+        "source_sha256": "49788d044ae0afbf704118a37850e187fc0427a7d73b590c45e2fc9c2fb44df8"
+      },
+      "tool_parsers/gemma3_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/gemma3_tool_parser.py",
+        "bundled_sha256": "38864a3a6a0e3faa4f9b8317ca79a912e68edd876f6da5fd58891f84c56558e9",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/gemma3_tool_parser.py",
+        "source_sha256": "38864a3a6a0e3faa4f9b8317ca79a912e68edd876f6da5fd58891f84c56558e9"
+      },
+      "tool_parsers/gemma4_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/gemma4_tool_parser.py",
+        "bundled_sha256": "e11b4be00d6854940b24e97d64c7cf0ba249011b141d466e875ed059434510bf",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/gemma4_tool_parser.py",
+        "source_sha256": "e11b4be00d6854940b24e97d64c7cf0ba249011b141d466e875ed059434510bf"
+      },
+      "tool_parsers/glm47_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/glm47_tool_parser.py",
+        "bundled_sha256": "1d88e4e1ab8c48064686d3c7233e2aa16ef3bc43f1a0af1ebcc237788469531c",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/glm47_tool_parser.py",
+        "source_sha256": "1d88e4e1ab8c48064686d3c7233e2aa16ef3bc43f1a0af1ebcc237788469531c"
+      },
+      "tool_parsers/granite_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/granite_tool_parser.py",
+        "bundled_sha256": "903606dafb829b4c43733cb9f29c830d08a264c72d3fb51fc03492c00affe6a1",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/granite_tool_parser.py",
+        "source_sha256": "903606dafb829b4c43733cb9f29c830d08a264c72d3fb51fc03492c00affe6a1"
+      },
+      "tool_parsers/hermes_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/hermes_tool_parser.py",
+        "bundled_sha256": "512c1cd5dd0567c8547acb47fcd908d66f39f3a177cf1c6295f897ef186a913a",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/hermes_tool_parser.py",
+        "source_sha256": "512c1cd5dd0567c8547acb47fcd908d66f39f3a177cf1c6295f897ef186a913a"
+      },
+      "tool_parsers/hunyuan_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/hunyuan_tool_parser.py",
+        "bundled_sha256": "22614c3b8b89fbec6d0bbe3fac911962445689f0046b2c754b314ee477de57d5",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/hunyuan_tool_parser.py",
+        "source_sha256": "22614c3b8b89fbec6d0bbe3fac911962445689f0046b2c754b314ee477de57d5"
+      },
+      "tool_parsers/kimi_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/kimi_tool_parser.py",
+        "bundled_sha256": "421a7bcace450d23ee10fbec05d25a9dd921a1efb6113e666a656ca7c1a17f86",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/kimi_tool_parser.py",
+        "source_sha256": "421a7bcace450d23ee10fbec05d25a9dd921a1efb6113e666a656ca7c1a17f86"
+      },
+      "tool_parsers/lfm2_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/lfm2_tool_parser.py",
+        "bundled_sha256": "e858a52d3cdbc3176c797c30ec56cd723d18d27b4357431146d3f392d7cd90fe",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/lfm2_tool_parser.py",
+        "source_sha256": "e858a52d3cdbc3176c797c30ec56cd723d18d27b4357431146d3f392d7cd90fe"
+      },
+      "tool_parsers/llama_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/llama_tool_parser.py",
+        "bundled_sha256": "b94f028a50506d6cbca5832351e2d8c5b31b645193a112139b951afd9abed5e2",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/llama_tool_parser.py",
+        "source_sha256": "b94f028a50506d6cbca5832351e2d8c5b31b645193a112139b951afd9abed5e2"
+      },
+      "tool_parsers/minimax_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/minimax_tool_parser.py",
+        "bundled_sha256": "9cc0968200c6715d7471a03796498e05b4607f50f74760e78a7ae0daaf2195fc",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/minimax_tool_parser.py",
+        "source_sha256": "9cc0968200c6715d7471a03796498e05b4607f50f74760e78a7ae0daaf2195fc"
+      },
+      "tool_parsers/mistral_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/mistral_tool_parser.py",
+        "bundled_sha256": "ebd5b68d62530373e1ad7919a40566db64c33f74d3155ac4ebb77527ea4f726b",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/mistral_tool_parser.py",
+        "source_sha256": "ebd5b68d62530373e1ad7919a40566db64c33f74d3155ac4ebb77527ea4f726b"
+      },
+      "tool_parsers/nemotron_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/nemotron_tool_parser.py",
+        "bundled_sha256": "6aad1e70fdd2230a5fca6d5e2b17f07f1ff7fdec8594dfc332989f5df1ec0dc6",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/nemotron_tool_parser.py",
+        "source_sha256": "6aad1e70fdd2230a5fca6d5e2b17f07f1ff7fdec8594dfc332989f5df1ec0dc6"
+      },
+      "tool_parsers/qwen_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/qwen_tool_parser.py",
+        "bundled_sha256": "a6b6c4429efaca07fd50db5da35c0e103119c89a4c29579a7b98b259b7fb3acb",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/qwen_tool_parser.py",
+        "source_sha256": "a6b6c4429efaca07fd50db5da35c0e103119c89a4c29579a7b98b259b7fb3acb"
+      },
+      "tool_parsers/step3p5_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/step3p5_tool_parser.py",
+        "bundled_sha256": "397cbe3e31a447ecd2c2338605de7f7d3940e5a7abb8f7ce5f70c1eb66ee3110",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/step3p5_tool_parser.py",
+        "source_sha256": "397cbe3e31a447ecd2c2338605de7f7d3940e5a7abb8f7ce5f70c1eb66ee3110"
+      },
+      "tool_parsers/xlam_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/xlam_tool_parser.py",
+        "bundled_sha256": "5e4c5eabc4778d99783af73f8179c3582f2c516ceda9446d85ec50babf95f12e",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/xlam_tool_parser.py",
+        "source_sha256": "5e4c5eabc4778d99783af73f8179c3582f2c516ceda9446d85ec50babf95f12e"
+      },
+      "tool_parsers/xml_function_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/xml_function_tool_parser.py",
+        "bundled_sha256": "9e44a487aeaefe1117dbaaa473030ae236753fa281ecbeb6d583fff2afb5342e",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/xml_function_tool_parser.py",
+        "source_sha256": "9e44a487aeaefe1117dbaaa473030ae236753fa281ecbeb6d583fff2afb5342e"
+      },
+      "tool_parsers/zaya_tool_parser.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tool_parsers/zaya_tool_parser.py",
+        "bundled_sha256": "21d46296f21c1486eaef2ccd96a24ec30528e04ded7be9120164ced28167c531",
+        "match": true,
+        "source": "vmlx_engine/tool_parsers/zaya_tool_parser.py",
+        "source_sha256": "21d46296f21c1486eaef2ccd96a24ec30528e04ded7be9120164ced28167c531"
+      },
+      "tq_disk_store.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/tq_disk_store.py",
+        "bundled_sha256": "32592de18d85e645827b077f32c9eee459ccdb40a0c226ae800925b1f6437b5a",
+        "match": true,
+        "source": "vmlx_engine/tq_disk_store.py",
+        "source_sha256": "32592de18d85e645827b077f32c9eee459ccdb40a0c226ae800925b1f6437b5a"
       },
       "utils/head_dim_detection.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/head_dim_detection.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/head_dim_detection.py",
         "bundled_sha256": "95ce0bfb4d1b685bbf5fd7106a2f04dd5cf8dd80ca0889d02e4e74fe384fec40",
         "match": true,
         "source": "vmlx_engine/utils/head_dim_detection.py",
         "source_sha256": "95ce0bfb4d1b685bbf5fd7106a2f04dd5cf8dd80ca0889d02e4e74fe384fec40"
       },
+      "utils/hybrid_tq_cache.py": {
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/hybrid_tq_cache.py",
+        "bundled_sha256": "fbbb4b9ac7f2c3a9ef7845e3c68a96ff15919dc4f18eb078e9c43f72f8349ac5",
+        "match": true,
+        "source": "vmlx_engine/utils/hybrid_tq_cache.py",
+        "source_sha256": "fbbb4b9ac7f2c3a9ef7845e3c68a96ff15919dc4f18eb078e9c43f72f8349ac5"
+      },
       "utils/jang_loader.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/jang_loader.py",
-        "bundled_sha256": "d69c898c6245b47d8e7e1f4fceed499b7fa6fe34e1a9b3191ff60b694855bc90",
-        "match": false,
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/jang_loader.py",
+        "bundled_sha256": "85601d82207df39d620cd39fa6037be8ea0af2bf5ed995a4923408bf08934bca",
+        "match": true,
         "source": "vmlx_engine/utils/jang_loader.py",
-        "source_sha256": "46fb8b074bff9d203a8bb0630c497d611f3a93e1b7712cf05e7118cac7c52e84"
+        "source_sha256": "85601d82207df39d620cd39fa6037be8ea0af2bf5ed995a4923408bf08934bca"
       },
       "utils/mlx_vlm_compat.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/mlx_vlm_compat.py",
-        "bundled_sha256": "f0049893b4603b4b3ea6aaac39e35369cb0165b056a982abfc01810c3f50f542",
-        "match": false,
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/mlx_vlm_compat.py",
+        "bundled_sha256": "ca9b339633869e667e2e5e9106880fbfbe7d3de29be395f5574915e34424359c",
+        "match": true,
         "source": "vmlx_engine/utils/mlx_vlm_compat.py",
         "source_sha256": "ca9b339633869e667e2e5e9106880fbfbe7d3de29be395f5574915e34424359c"
       },
       "utils/single_batch_generator.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/single_batch_generator.py",
-        "bundled_sha256": "3630b18e33a479da6fa3984568dd82e25f107818f2b1e446b319bf02d81c665c",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/single_batch_generator.py",
+        "bundled_sha256": "4985ed2cbf7e670d5eb5b4fa800c8a09d1e6cb76bb990db06c7f6a7a40d350fa",
         "match": true,
         "source": "vmlx_engine/utils/single_batch_generator.py",
-        "source_sha256": "3630b18e33a479da6fa3984568dd82e25f107818f2b1e446b319bf02d81c665c"
+        "source_sha256": "4985ed2cbf7e670d5eb5b4fa800c8a09d1e6cb76bb990db06c7f6a7a40d350fa"
       },
       "utils/ssm_companion_cache.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/ssm_companion_cache.py",
-        "bundled_sha256": "79192190b09edab898bd8693ecadc5dc25db301bc47d50891b793510e43947fe",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/ssm_companion_cache.py",
+        "bundled_sha256": "9457b61cbb4e1135c7904e29dc01f162ea83e8533471cc00ac9e77d7b622001f",
         "match": true,
         "source": "vmlx_engine/utils/ssm_companion_cache.py",
-        "source_sha256": "79192190b09edab898bd8693ecadc5dc25db301bc47d50891b793510e43947fe"
+        "source_sha256": "9457b61cbb4e1135c7904e29dc01f162ea83e8533471cc00ac9e77d7b622001f"
       },
       "utils/ssm_companion_disk_store.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/ssm_companion_disk_store.py",
-        "bundled_sha256": "62d19061a8a6fcbd37cc22187ea6a5b5bf12e9c74b3f54d67c4edff29f3e33eb",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/ssm_companion_disk_store.py",
+        "bundled_sha256": "a3b5fd44de84d004b06018173fed2ea38dd9b4e25f28f3158313f1880b4f9fbd",
         "match": true,
         "source": "vmlx_engine/utils/ssm_companion_disk_store.py",
-        "source_sha256": "62d19061a8a6fcbd37cc22187ea6a5b5bf12e9c74b3f54d67c4edff29f3e33eb"
+        "source_sha256": "a3b5fd44de84d004b06018173fed2ea38dd9b4e25f28f3158313f1880b4f9fbd"
       },
       "utils/tokenizer.py": {
-        "bundled": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/tokenizer.py",
+        "bundled": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/utils/tokenizer.py",
         "bundled_sha256": "1675a64e83b92858f475cd9bec169fab37b550f99a631798a86dca61a56880c3",
         "match": true,
         "source": "vmlx_engine/utils/tokenizer.py",
         "source_sha256": "1675a64e83b92858f475cd9bec169fab37b550f99a631798a86dca61a56880c3"
       }
     },
-    "mismatched": [
-      "server.py",
-      "models/mllm.py",
-      "utils/mlx_vlm_compat.py",
-      "utils/jang_loader.py"
-    ],
+    "mismatched": [],
     "missing_bundled": [],
     "missing_source": [],
-    "ok": false,
+    "ok": true,
     "source_engine": "vmlx_engine"
   },
   "checks": {
     "image_lora_cli_flags": true,
     "image_lora_load_signature": true,
     "image_lora_server_globals": true,
-    "installed_bundled_engine_hash_parity": false,
+    "installed_bundled_engine_hash_parity": true,
     "installed_bundled_python_launch_crash_reports_classified": true,
     "installed_bundled_python_launch_crashes_not_reproduced": true,
-    "installed_packaged_engine_source_hash_parity": false,
+    "installed_packaged_engine_source_hash_parity": true,
     "installed_panel_backend_stderr_line_disconnect_guard": true,
     "installed_panel_cache_ipc_epipe_aggregate_guard": true,
     "installed_panel_chat_ipc_epipe_aggregate_guard": true,
@@ -335,277 +694,633 @@
         "group_size": 64
       }
     },
-    "server_file": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
+    "server_file": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/lib/python3.12/site-packages/vmlx_engine/server.py",
     "text_lora_error": "Error: --lora-paths/--lora-scales are only supported for image models through vmlx serve. Text-model LoRA loading is not wired in this runtime path.",
     "text_lora_rejected": true
   },
   "import_returncode": 0,
-  "installed_app": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app",
-  "installed_app_asar": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/app.asar",
-  "installed_python": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/bin/python3",
-  "installed_versioned_python": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/bundled-python/python/bin/python3.12",
-  "missing_or_stale": [
-    "installed_bundled_engine_hash_parity",
-    "installed_packaged_engine_source_hash_parity"
-  ],
+  "installed_app": "/Applications/vMLX.app",
+  "installed_app_asar": "/Applications/vMLX.app/Contents/Resources/app.asar",
+  "installed_python": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/bin/python3",
+  "installed_versioned_python": "/Applications/vMLX.app/Contents/Resources/bundled-python/python/bin/python3.12",
+  "missing_or_stale": [],
   "packaged_engine_source_hash_parity": {
     "files": {
       "api/anthropic_adapter.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/api/anthropic_adapter.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/api/anthropic_adapter.py",
         "packaged_sha256": "52efb1b488786362638ef0bd9ba1e5889377e6aa9b73879a9c26091388d47914",
         "source": "vmlx_engine/api/anthropic_adapter.py",
         "source_sha256": "52efb1b488786362638ef0bd9ba1e5889377e6aa9b73879a9c26091388d47914"
       },
       "api/ollama_adapter.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/api/ollama_adapter.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/api/ollama_adapter.py",
         "packaged_sha256": "88a0c2f3034758a82db82c1936505cc61773974e824d774a463019abb76cb2cd",
         "source": "vmlx_engine/api/ollama_adapter.py",
         "source_sha256": "88a0c2f3034758a82db82c1936505cc61773974e824d774a463019abb76cb2cd"
       },
       "api/tool_calling.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/api/tool_calling.py",
-        "packaged_sha256": "804469a09e858d0ce6eea719c1a9c5474d6bcb64a49dc3bdb4c4a0048333397a",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/api/tool_calling.py",
+        "packaged_sha256": "65b76c2e5e3bc182a5f9e6cb167b6531dc096e885c42ae74aa073ca12dc93255",
         "source": "vmlx_engine/api/tool_calling.py",
-        "source_sha256": "804469a09e858d0ce6eea719c1a9c5474d6bcb64a49dc3bdb4c4a0048333397a"
+        "source_sha256": "65b76c2e5e3bc182a5f9e6cb167b6531dc096e885c42ae74aa073ca12dc93255"
       },
       "api/utils.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/api/utils.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/api/utils.py",
         "packaged_sha256": "d20cb1db24054a737401d5ed5094f5e8e7fca7e6c3c74c3951b7e3b0432d27f7",
         "source": "vmlx_engine/api/utils.py",
         "source_sha256": "d20cb1db24054a737401d5ed5094f5e8e7fca7e6c3c74c3951b7e3b0432d27f7"
       },
       "block_disk_store.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/block_disk_store.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/block_disk_store.py",
         "packaged_sha256": "059016ee3aa1edbdc829d8b59367243118b83b23e79e21687e5ff7c8ec6c8344",
         "source": "vmlx_engine/block_disk_store.py",
         "source_sha256": "059016ee3aa1edbdc829d8b59367243118b83b23e79e21687e5ff7c8ec6c8344"
       },
+      "cache_record_validator.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/cache_record_validator.py",
+        "packaged_sha256": "3e8026944a78ecabf9bf4296ce5fa62851e2d9ad4acedb5d7a1d24a6e8f06ec5",
+        "source": "vmlx_engine/cache_record_validator.py",
+        "source_sha256": "3e8026944a78ecabf9bf4296ce5fa62851e2d9ad4acedb5d7a1d24a6e8f06ec5"
+      },
       "chat_templates/gemma4.jinja": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/chat_templates/gemma4.jinja",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/chat_templates/gemma4.jinja",
         "packaged_sha256": "85a08664d16d8f3be4416c92427b3ac10df1024ac566cc0b4bc3bab409393f98",
         "source": "vmlx_engine/chat_templates/gemma4.jinja",
         "source_sha256": "85a08664d16d8f3be4416c92427b3ac10df1024ac566cc0b4bc3bab409393f98"
       },
       "cli.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/cli.py",
-        "packaged_sha256": "cfd2d8169719896ca5c95a23bf2d8e978973ee33acd4a330da7148e4844d1eb8",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/cli.py",
+        "packaged_sha256": "011707af57328e79065a0196f02cc2593016b23c53780e1e698654144b93c3c7",
         "source": "vmlx_engine/cli.py",
-        "source_sha256": "cfd2d8169719896ca5c95a23bf2d8e978973ee33acd4a330da7148e4844d1eb8"
+        "source_sha256": "011707af57328e79065a0196f02cc2593016b23c53780e1e698654144b93c3c7"
       },
       "config/defaults.yaml": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/config/defaults.yaml",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/config/defaults.yaml",
         "packaged_sha256": "90d22bfd76665b2fe73a6f28e3406d65fb22f320cb81ee1b4cb5de020988bd66",
         "source": "vmlx_engine/config/defaults.yaml",
         "source_sha256": "90d22bfd76665b2fe73a6f28e3406d65fb22f320cb81ee1b4cb5de020988bd66"
       },
       "disk_cache.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/disk_cache.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/disk_cache.py",
         "packaged_sha256": "66990ec26bfd9479a5e039dc001a84982c9976a319fa17e9e694c1f8bd13b035",
         "source": "vmlx_engine/disk_cache.py",
         "source_sha256": "66990ec26bfd9479a5e039dc001a84982c9976a319fa17e9e694c1f8bd13b035"
       },
       "engine/batched.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/engine/batched.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/engine/batched.py",
         "packaged_sha256": "b565c2e56f6112b73f1d6bd02fa636bd58f93cac7ef6bcc56ee8bb618491c421",
         "source": "vmlx_engine/engine/batched.py",
         "source_sha256": "b565c2e56f6112b73f1d6bd02fa636bd58f93cac7ef6bcc56ee8bb618491c421"
       },
       "engine/simple.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/engine/simple.py",
-        "packaged_sha256": "82cdacdf65acd6d8a274866c76b99cb243ca38e81e07181ac5abb798f5f0419f",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/engine/simple.py",
+        "packaged_sha256": "91acaaa9a712ef6408f0bf3405ff66cf29c8c254a58af38620781d142aab4bb8",
         "source": "vmlx_engine/engine/simple.py",
-        "source_sha256": "82cdacdf65acd6d8a274866c76b99cb243ca38e81e07181ac5abb798f5f0419f"
+        "source_sha256": "91acaaa9a712ef6408f0bf3405ff66cf29c8c254a58af38620781d142aab4bb8"
       },
       "loaders/load_jangtq_dsv4.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/loaders/load_jangtq_dsv4.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/loaders/load_jangtq_dsv4.py",
         "packaged_sha256": "ae6c45d1c66b42644bdf39675ac472afd9c8a7c6629fb16a7c85a936f8f133af",
         "source": "vmlx_engine/loaders/load_jangtq_dsv4.py",
         "source_sha256": "ae6c45d1c66b42644bdf39675ac472afd9c8a7c6629fb16a7c85a936f8f133af"
       },
       "metal/codebook_matvec.metal": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/metal/codebook_matvec.metal",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/metal/codebook_matvec.metal",
         "packaged_sha256": "77fa07ae8ab2acf1ed0871bfe6c65b443adc6a4b4a23ea69769cc0aaffa3baa0",
         "source": "vmlx_engine/metal/codebook_matvec.metal",
         "source_sha256": "77fa07ae8ab2acf1ed0871bfe6c65b443adc6a4b4a23ea69769cc0aaffa3baa0"
       },
       "metal/codebook_moe.metal": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/metal/codebook_moe.metal",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/metal/codebook_moe.metal",
         "packaged_sha256": "8fbd5f1cf16a36aee016733a4ff092956926d5443121825da8f0232fae91a887",
         "source": "vmlx_engine/metal/codebook_moe.metal",
         "source_sha256": "8fbd5f1cf16a36aee016733a4ff092956926d5443121825da8f0232fae91a887"
       },
       "mllm_batch_generator.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/mllm_batch_generator.py",
-        "packaged_sha256": "90b22784f3163e56006e2d5bb85cf212da37c3549117ff38c0a07a04c4ee5fda",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/mllm_batch_generator.py",
+        "packaged_sha256": "7aef5095206b19d980bea7afee87a7f635d7ef6ad8632f23c51bf8d4be11efcc",
         "source": "vmlx_engine/mllm_batch_generator.py",
-        "source_sha256": "90b22784f3163e56006e2d5bb85cf212da37c3549117ff38c0a07a04c4ee5fda"
+        "source_sha256": "7aef5095206b19d980bea7afee87a7f635d7ef6ad8632f23c51bf8d4be11efcc"
       },
       "mllm_scheduler.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/mllm_scheduler.py",
-        "packaged_sha256": "c7fb71660aea38aee48edae6d902cd07bdc803afd3ff8f59113c210d532a9b37",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/mllm_scheduler.py",
+        "packaged_sha256": "99fb2ecb056894d01d9478e6de8518b4e46f651dc877afd1519420d3c2a64f4a",
         "source": "vmlx_engine/mllm_scheduler.py",
-        "source_sha256": "c7fb71660aea38aee48edae6d902cd07bdc803afd3ff8f59113c210d532a9b37"
+        "source_sha256": "99fb2ecb056894d01d9478e6de8518b4e46f651dc877afd1519420d3c2a64f4a"
       },
       "model_config_registry.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/model_config_registry.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/model_config_registry.py",
         "packaged_sha256": "eb9bb35a04d1cec9728d38968e980ccbc828120c95ea042a44a9a78f7c89e862",
         "source": "vmlx_engine/model_config_registry.py",
         "source_sha256": "eb9bb35a04d1cec9728d38968e980ccbc828120c95ea042a44a9a78f7c89e862"
       },
       "model_configs.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/model_configs.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/model_configs.py",
         "packaged_sha256": "9eb67271ae4125079578714d1b20171f889119cd7e85426bf8ec085516a2f5aa",
         "source": "vmlx_engine/model_configs.py",
         "source_sha256": "9eb67271ae4125079578714d1b20171f889119cd7e85426bf8ec085516a2f5aa"
       },
+      "models/gemma4_unified/__init__.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/gemma4_unified/__init__.py",
+        "packaged_sha256": "9305815deae8089c2f082a1723f02179a4e1624865752ab9918c41ff677a5dce",
+        "source": "vmlx_engine/models/gemma4_unified/__init__.py",
+        "source_sha256": "9305815deae8089c2f082a1723f02179a4e1624865752ab9918c41ff677a5dce"
+      },
+      "models/gemma4_unified/config.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/gemma4_unified/config.py",
+        "packaged_sha256": "67cef0fdc1ee09b7c3e3ab3a1860b2747a7f3ec86f8e5270d8bd12695967cd61",
+        "source": "vmlx_engine/models/gemma4_unified/config.py",
+        "source_sha256": "67cef0fdc1ee09b7c3e3ab3a1860b2747a7f3ec86f8e5270d8bd12695967cd61"
+      },
+      "models/gemma4_unified/gemma4_unified.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/gemma4_unified/gemma4_unified.py",
+        "packaged_sha256": "e1477e475fb56973928bb5683f524fefe40c66c5f3133914d29e7ba63681d65f",
+        "source": "vmlx_engine/models/gemma4_unified/gemma4_unified.py",
+        "source_sha256": "e1477e475fb56973928bb5683f524fefe40c66c5f3133914d29e7ba63681d65f"
+      },
+      "models/gemma4_unified/processing_gemma4_unified.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/gemma4_unified/processing_gemma4_unified.py",
+        "packaged_sha256": "d3d1ca4bb33b9a95eb721970a7f0b964afa6bf7d8523e36d8101b86065afb0c3",
+        "source": "vmlx_engine/models/gemma4_unified/processing_gemma4_unified.py",
+        "source_sha256": "d3d1ca4bb33b9a95eb721970a7f0b964afa6bf7d8523e36d8101b86065afb0c3"
+      },
+      "models/gemma4_unified_register.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/gemma4_unified_register.py",
+        "packaged_sha256": "b0c4be1d0aa6965bdab5bb94a50255cd23e4bb7bfb3eda86ffdf38f100519e21",
+        "source": "vmlx_engine/models/gemma4_unified_register.py",
+        "source_sha256": "b0c4be1d0aa6965bdab5bb94a50255cd23e4bb7bfb3eda86ffdf38f100519e21"
+      },
       "models/mllm.py": {
-        "match": false,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/mllm.py",
-        "packaged_sha256": "8c77647b4bcaab6695c48b162ae5f7627b38a340152c77138c1be375865a3c0a",
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/mllm.py",
+        "packaged_sha256": "c743e14bbfdced6ed252587c7df3f7f9d1d0595d42002b0eff7b5f6f2180f3c8",
         "source": "vmlx_engine/models/mllm.py",
-        "source_sha256": "b443c959ec9c4121a7f03f3ce217623f9cac64c1d417f5d7219e076d2449b3d4"
+        "source_sha256": "c743e14bbfdced6ed252587c7df3f7f9d1d0595d42002b0eff7b5f6f2180f3c8"
       },
       "models/step3p7_mlx_vlm.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/step3p7_mlx_vlm.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/models/step3p7_mlx_vlm.py",
         "packaged_sha256": "02ca4375aa4a7a0714ec5daa7817be40f6d8d40620f6fa9818ce51dd83e0e31c",
         "source": "vmlx_engine/models/step3p7_mlx_vlm.py",
         "source_sha256": "02ca4375aa4a7a0714ec5daa7817be40f6d8d40620f6fa9818ce51dd83e0e31c"
       },
+      "native_mtp.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/native_mtp.py",
+        "packaged_sha256": "80c7c5a9afe85e42f951f85df064bb57c993c667b94d509d614ea651bfafd612",
+        "source": "vmlx_engine/native_mtp.py",
+        "source_sha256": "80c7c5a9afe85e42f951f85df064bb57c993c667b94d509d614ea651bfafd612"
+      },
       "omni_multimodal.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/omni_multimodal.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/omni_multimodal.py",
         "packaged_sha256": "6c1c6f96651e800b8ec518948bd44c5b8c15cbb6cc3bcf15b08ffd6c15226b67",
         "source": "vmlx_engine/omni_multimodal.py",
         "source_sha256": "6c1c6f96651e800b8ec518948bd44c5b8c15cbb6cc3bcf15b08ffd6c15226b67"
       },
       "paged_cache.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/paged_cache.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/paged_cache.py",
         "packaged_sha256": "b9c67a5a4921378fd7098ae64e1364725db6e609ba67212661848cc05b988da2",
         "source": "vmlx_engine/paged_cache.py",
         "source_sha256": "b9c67a5a4921378fd7098ae64e1364725db6e609ba67212661848cc05b988da2"
       },
+      "patches/mlx_lm_mtp/__init__.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/patches/mlx_lm_mtp/__init__.py",
+        "packaged_sha256": "519c5e86904f805019efe7ce060c97cdbe0fb68a86029bafcd8bf56a2549a71d",
+        "source": "vmlx_engine/patches/mlx_lm_mtp/__init__.py",
+        "source_sha256": "519c5e86904f805019efe7ce060c97cdbe0fb68a86029bafcd8bf56a2549a71d"
+      },
+      "patches/mlx_lm_mtp/batch_generator.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/patches/mlx_lm_mtp/batch_generator.py",
+        "packaged_sha256": "39694ba8f3bec8bb8dcb7d8de7e40c63285e69563930e379b069f96b9de212e6",
+        "source": "vmlx_engine/patches/mlx_lm_mtp/batch_generator.py",
+        "source_sha256": "39694ba8f3bec8bb8dcb7d8de7e40c63285e69563930e379b069f96b9de212e6"
+      },
+      "patches/mlx_lm_mtp/cache_rollback.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/patches/mlx_lm_mtp/cache_rollback.py",
+        "packaged_sha256": "308cda2d3c57f6061f0b161cacec76f63c196fb75a7e62a754c06ca2402909da",
+        "source": "vmlx_engine/patches/mlx_lm_mtp/cache_rollback.py",
+        "source_sha256": "308cda2d3c57f6061f0b161cacec76f63c196fb75a7e62a754c06ca2402909da"
+      },
+      "patches/mlx_lm_mtp/deepseek_v4_model.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/patches/mlx_lm_mtp/deepseek_v4_model.py",
+        "packaged_sha256": "56a2c82226b59051fcb18b0a6b5ee33788c3efdbd0126a99b258249692ca1aaa",
+        "source": "vmlx_engine/patches/mlx_lm_mtp/deepseek_v4_model.py",
+        "source_sha256": "56a2c82226b59051fcb18b0a6b5ee33788c3efdbd0126a99b258249692ca1aaa"
+      },
+      "patches/mlx_lm_mtp/qwen35_model.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/patches/mlx_lm_mtp/qwen35_model.py",
+        "packaged_sha256": "ae4c6851ac26403883a0b10cc607945f69d644fe643fa7f87384401be60f18ff",
+        "source": "vmlx_engine/patches/mlx_lm_mtp/qwen35_model.py",
+        "source_sha256": "ae4c6851ac26403883a0b10cc607945f69d644fe643fa7f87384401be60f18ff"
+      },
       "patches/mlx_vlm_mtp/qwen35_vl.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/patches/mlx_vlm_mtp/qwen35_vl.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/patches/mlx_vlm_mtp/qwen35_vl.py",
         "packaged_sha256": "a5f640a26477043d50c611145d48570a685bf64ef5295565cecf7c098e2b3203",
         "source": "vmlx_engine/patches/mlx_vlm_mtp/qwen35_vl.py",
         "source_sha256": "a5f640a26477043d50c611145d48570a685bf64ef5295565cecf7c098e2b3203"
       },
       "prefix_cache.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/prefix_cache.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/prefix_cache.py",
         "packaged_sha256": "51b4f24af39f94572972b58b05ad84048c261a25b81e25bb61ec487f139e1942",
         "source": "vmlx_engine/prefix_cache.py",
         "source_sha256": "51b4f24af39f94572972b58b05ad84048c261a25b81e25bb61ec487f139e1942"
       },
+      "reasoning/__init__.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/__init__.py",
+        "packaged_sha256": "3a46cb412a024d0e831bf75279e621da99c38bc803de47558281182fb453a39a",
+        "source": "vmlx_engine/reasoning/__init__.py",
+        "source_sha256": "3a46cb412a024d0e831bf75279e621da99c38bc803de47558281182fb453a39a"
+      },
+      "reasoning/base.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/base.py",
+        "packaged_sha256": "2ed788ae55e67fd2b1d69f2ea8ae4a74be2207878c6851fa7b778b305d08bc0c",
+        "source": "vmlx_engine/reasoning/base.py",
+        "source_sha256": "2ed788ae55e67fd2b1d69f2ea8ae4a74be2207878c6851fa7b778b305d08bc0c"
+      },
+      "reasoning/deepseek_r1_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/deepseek_r1_parser.py",
+        "packaged_sha256": "2fdfa7924b9cedace9f222888841275f7a8ad086160f38c73c596a6d1ce5f6f9",
+        "source": "vmlx_engine/reasoning/deepseek_r1_parser.py",
+        "source_sha256": "2fdfa7924b9cedace9f222888841275f7a8ad086160f38c73c596a6d1ce5f6f9"
+      },
+      "reasoning/gemma4_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/gemma4_parser.py",
+        "packaged_sha256": "f63a3bc1c1852e8d341d6ed576dff8e9a2f819fb69c47488e115052e25a386f3",
+        "source": "vmlx_engine/reasoning/gemma4_parser.py",
+        "source_sha256": "f63a3bc1c1852e8d341d6ed576dff8e9a2f819fb69c47488e115052e25a386f3"
+      },
+      "reasoning/gptoss_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/gptoss_parser.py",
+        "packaged_sha256": "c2f6c562778bccf89bf1e8718a3b5951435c116c931896146a0fa1664f6f2a73",
+        "source": "vmlx_engine/reasoning/gptoss_parser.py",
+        "source_sha256": "c2f6c562778bccf89bf1e8718a3b5951435c116c931896146a0fa1664f6f2a73"
+      },
+      "reasoning/minimax_m2_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/minimax_m2_parser.py",
+        "packaged_sha256": "0123746f5ad9a20152c137ef7bb3b1ebaf32d4c418fb111b5150fd1c6820b951",
+        "source": "vmlx_engine/reasoning/minimax_m2_parser.py",
+        "source_sha256": "0123746f5ad9a20152c137ef7bb3b1ebaf32d4c418fb111b5150fd1c6820b951"
+      },
+      "reasoning/mistral_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/mistral_parser.py",
+        "packaged_sha256": "8bf6551379009b0dc4b8746a3b4fa6941d030904cda1eda274f146561394d35e",
+        "source": "vmlx_engine/reasoning/mistral_parser.py",
+        "source_sha256": "8bf6551379009b0dc4b8746a3b4fa6941d030904cda1eda274f146561394d35e"
+      },
+      "reasoning/qwen3_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/qwen3_parser.py",
+        "packaged_sha256": "e561e53bccf972887843655bd6247969b9dca95e489134819230d96508f07550",
+        "source": "vmlx_engine/reasoning/qwen3_parser.py",
+        "source_sha256": "e561e53bccf972887843655bd6247969b9dca95e489134819230d96508f07550"
+      },
+      "reasoning/think_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/think_parser.py",
+        "packaged_sha256": "4f4aafe4164cc8cc94d5a4c145caf9e21c0a94560c3197607666b14f76a4163a",
+        "source": "vmlx_engine/reasoning/think_parser.py",
+        "source_sha256": "4f4aafe4164cc8cc94d5a4c145caf9e21c0a94560c3197607666b14f76a4163a"
+      },
+      "reasoning/think_xml_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/reasoning/think_xml_parser.py",
+        "packaged_sha256": "b9edd6294373cc413f3c8e668b00f1e20354d00f0489afb6845df2b8f1bbbd07",
+        "source": "vmlx_engine/reasoning/think_xml_parser.py",
+        "source_sha256": "b9edd6294373cc413f3c8e668b00f1e20354d00f0489afb6845df2b8f1bbbd07"
+      },
+      "runtime_patches/__init__.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/runtime_patches/__init__.py",
+        "packaged_sha256": "73e0a7418689ca571e855dc1b11f72a2f804215c8403d9b1437346c8a34f172c",
+        "source": "vmlx_engine/runtime_patches/__init__.py",
+        "source_sha256": "73e0a7418689ca571e855dc1b11f72a2f804215c8403d9b1437346c8a34f172c"
+      },
+      "runtime_patches/deepseek_v4_register.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/runtime_patches/deepseek_v4_register.py",
+        "packaged_sha256": "c46a8c9202492301e0fbc910cc2ebf41f9fc83994a31e29205dc981d6d7b892a",
+        "source": "vmlx_engine/runtime_patches/deepseek_v4_register.py",
+        "source_sha256": "c46a8c9202492301e0fbc910cc2ebf41f9fc83994a31e29205dc981d6d7b892a"
+      },
       "runtime_patches/gemma4_processing.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/runtime_patches/gemma4_processing.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/runtime_patches/gemma4_processing.py",
         "packaged_sha256": "2c9f475b07c26b277ce6dcf8fee21a81d2c7615e1cdd5584a9a3d22d01082dda",
         "source": "vmlx_engine/runtime_patches/gemma4_processing.py",
         "source_sha256": "2c9f475b07c26b277ce6dcf8fee21a81d2c7615e1cdd5584a9a3d22d01082dda"
       },
+      "runtime_patches/gemma4_vision.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/runtime_patches/gemma4_vision.py",
+        "packaged_sha256": "3cf8de03bc071887fb2c4366ae00d48284bf66f405036e7b1539926b769eb6f5",
+        "source": "vmlx_engine/runtime_patches/gemma4_vision.py",
+        "source_sha256": "3cf8de03bc071887fb2c4366ae00d48284bf66f405036e7b1539926b769eb6f5"
+      },
+      "runtime_patches/kimi_k25_mla.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/runtime_patches/kimi_k25_mla.py",
+        "packaged_sha256": "eac747a2f7de08a389584eabbdb60587d7e6f0853a74a1cb1f59ac1709b89d55",
+        "source": "vmlx_engine/runtime_patches/kimi_k25_mla.py",
+        "source_sha256": "eac747a2f7de08a389584eabbdb60587d7e6f0853a74a1cb1f59ac1709b89d55"
+      },
+      "runtime_patches/mlx_lm_compat.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/runtime_patches/mlx_lm_compat.py",
+        "packaged_sha256": "457a28233a34f1e734310f6e6c178a1c2e8b451d6dd47296b7c03917d8d19d60",
+        "source": "vmlx_engine/runtime_patches/mlx_lm_compat.py",
+        "source_sha256": "457a28233a34f1e734310f6e6c178a1c2e8b451d6dd47296b7c03917d8d19d60"
+      },
+      "runtime_patches/mlx_vlm_compat.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/runtime_patches/mlx_vlm_compat.py",
+        "packaged_sha256": "721faac6eed4b085b9cc1c39f57c7f02b96d871e70ac6569c63ae5259a40fa56",
+        "source": "vmlx_engine/runtime_patches/mlx_vlm_compat.py",
+        "source_sha256": "721faac6eed4b085b9cc1c39f57c7f02b96d871e70ac6569c63ae5259a40fa56"
+      },
       "scheduler.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/scheduler.py",
-        "packaged_sha256": "419b793ae5a1398dd7bf2c73968fb64ea93a11d454d98c0a292aeba7be1e2214",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/scheduler.py",
+        "packaged_sha256": "2a8ba0c6fa514fa70e654d95937bab9656901ee5ce114d2485dbd7f836737c58",
         "source": "vmlx_engine/scheduler.py",
-        "source_sha256": "419b793ae5a1398dd7bf2c73968fb64ea93a11d454d98c0a292aeba7be1e2214"
+        "source_sha256": "2a8ba0c6fa514fa70e654d95937bab9656901ee5ce114d2485dbd7f836737c58"
       },
       "server.py": {
-        "match": false,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
-        "packaged_sha256": "80b8c4f8ce0116f4fe8e6f7abdc3abb8a83e7c2adf3a5936457d73941ceb7117",
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/server.py",
+        "packaged_sha256": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452",
         "source": "vmlx_engine/server.py",
-        "source_sha256": "792a22c944e61bf1a8bade26302e4aae50c62a9dcc1828c3437481fce5501909"
+        "source_sha256": "b1f56da8f1415ebdf1d9c9fd6895e213e66ea563d986aec3ebf9fd77c88f0452"
+      },
+      "tool_parsers/__init__.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/__init__.py",
+        "packaged_sha256": "85d06e739cf9ace1302485bd35dc1bef4c78be0c05a1b415acc86bbd75d0c27b",
+        "source": "vmlx_engine/tool_parsers/__init__.py",
+        "source_sha256": "85d06e739cf9ace1302485bd35dc1bef4c78be0c05a1b415acc86bbd75d0c27b"
+      },
+      "tool_parsers/abstract_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/abstract_tool_parser.py",
+        "packaged_sha256": "ba766e6193d67e64613a28af17ed336e875e7b209ac974ebbc7499a06b158bd3",
+        "source": "vmlx_engine/tool_parsers/abstract_tool_parser.py",
+        "source_sha256": "ba766e6193d67e64613a28af17ed336e875e7b209ac974ebbc7499a06b158bd3"
+      },
+      "tool_parsers/auto_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/auto_tool_parser.py",
+        "packaged_sha256": "63849fcd759ab609dae1514e6b8dce67d78f8016211a3e11fcb6e1115a650dba",
+        "source": "vmlx_engine/tool_parsers/auto_tool_parser.py",
+        "source_sha256": "63849fcd759ab609dae1514e6b8dce67d78f8016211a3e11fcb6e1115a650dba"
+      },
+      "tool_parsers/deepseek_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/deepseek_tool_parser.py",
+        "packaged_sha256": "fab9f2346ca480f86ce5530f4b039bab5cc136f4428d41c06b20d65bab00ee71",
+        "source": "vmlx_engine/tool_parsers/deepseek_tool_parser.py",
+        "source_sha256": "fab9f2346ca480f86ce5530f4b039bab5cc136f4428d41c06b20d65bab00ee71"
       },
       "tool_parsers/dsml_tool_parser.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/dsml_tool_parser.py",
-        "packaged_sha256": "5f7f7f8ab6ac647755490c7d5ddb14ceb93f48a8710818df399549b78e04f713",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/dsml_tool_parser.py",
+        "packaged_sha256": "7c9c0d983f479d1ab6dff39253d4636d608a7fe3653bb5f64051e75f30c7e9f8",
         "source": "vmlx_engine/tool_parsers/dsml_tool_parser.py",
-        "source_sha256": "5f7f7f8ab6ac647755490c7d5ddb14ceb93f48a8710818df399549b78e04f713"
+        "source_sha256": "7c9c0d983f479d1ab6dff39253d4636d608a7fe3653bb5f64051e75f30c7e9f8"
+      },
+      "tool_parsers/functionary_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/functionary_tool_parser.py",
+        "packaged_sha256": "49788d044ae0afbf704118a37850e187fc0427a7d73b590c45e2fc9c2fb44df8",
+        "source": "vmlx_engine/tool_parsers/functionary_tool_parser.py",
+        "source_sha256": "49788d044ae0afbf704118a37850e187fc0427a7d73b590c45e2fc9c2fb44df8"
+      },
+      "tool_parsers/gemma3_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/gemma3_tool_parser.py",
+        "packaged_sha256": "38864a3a6a0e3faa4f9b8317ca79a912e68edd876f6da5fd58891f84c56558e9",
+        "source": "vmlx_engine/tool_parsers/gemma3_tool_parser.py",
+        "source_sha256": "38864a3a6a0e3faa4f9b8317ca79a912e68edd876f6da5fd58891f84c56558e9"
+      },
+      "tool_parsers/gemma4_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/gemma4_tool_parser.py",
+        "packaged_sha256": "e11b4be00d6854940b24e97d64c7cf0ba249011b141d466e875ed059434510bf",
+        "source": "vmlx_engine/tool_parsers/gemma4_tool_parser.py",
+        "source_sha256": "e11b4be00d6854940b24e97d64c7cf0ba249011b141d466e875ed059434510bf"
+      },
+      "tool_parsers/glm47_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/glm47_tool_parser.py",
+        "packaged_sha256": "1d88e4e1ab8c48064686d3c7233e2aa16ef3bc43f1a0af1ebcc237788469531c",
+        "source": "vmlx_engine/tool_parsers/glm47_tool_parser.py",
+        "source_sha256": "1d88e4e1ab8c48064686d3c7233e2aa16ef3bc43f1a0af1ebcc237788469531c"
+      },
+      "tool_parsers/granite_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/granite_tool_parser.py",
+        "packaged_sha256": "903606dafb829b4c43733cb9f29c830d08a264c72d3fb51fc03492c00affe6a1",
+        "source": "vmlx_engine/tool_parsers/granite_tool_parser.py",
+        "source_sha256": "903606dafb829b4c43733cb9f29c830d08a264c72d3fb51fc03492c00affe6a1"
+      },
+      "tool_parsers/hermes_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/hermes_tool_parser.py",
+        "packaged_sha256": "512c1cd5dd0567c8547acb47fcd908d66f39f3a177cf1c6295f897ef186a913a",
+        "source": "vmlx_engine/tool_parsers/hermes_tool_parser.py",
+        "source_sha256": "512c1cd5dd0567c8547acb47fcd908d66f39f3a177cf1c6295f897ef186a913a"
+      },
+      "tool_parsers/hunyuan_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/hunyuan_tool_parser.py",
+        "packaged_sha256": "22614c3b8b89fbec6d0bbe3fac911962445689f0046b2c754b314ee477de57d5",
+        "source": "vmlx_engine/tool_parsers/hunyuan_tool_parser.py",
+        "source_sha256": "22614c3b8b89fbec6d0bbe3fac911962445689f0046b2c754b314ee477de57d5"
+      },
+      "tool_parsers/kimi_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/kimi_tool_parser.py",
+        "packaged_sha256": "421a7bcace450d23ee10fbec05d25a9dd921a1efb6113e666a656ca7c1a17f86",
+        "source": "vmlx_engine/tool_parsers/kimi_tool_parser.py",
+        "source_sha256": "421a7bcace450d23ee10fbec05d25a9dd921a1efb6113e666a656ca7c1a17f86"
+      },
+      "tool_parsers/lfm2_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/lfm2_tool_parser.py",
+        "packaged_sha256": "e858a52d3cdbc3176c797c30ec56cd723d18d27b4357431146d3f392d7cd90fe",
+        "source": "vmlx_engine/tool_parsers/lfm2_tool_parser.py",
+        "source_sha256": "e858a52d3cdbc3176c797c30ec56cd723d18d27b4357431146d3f392d7cd90fe"
+      },
+      "tool_parsers/llama_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/llama_tool_parser.py",
+        "packaged_sha256": "b94f028a50506d6cbca5832351e2d8c5b31b645193a112139b951afd9abed5e2",
+        "source": "vmlx_engine/tool_parsers/llama_tool_parser.py",
+        "source_sha256": "b94f028a50506d6cbca5832351e2d8c5b31b645193a112139b951afd9abed5e2"
+      },
+      "tool_parsers/minimax_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/minimax_tool_parser.py",
+        "packaged_sha256": "9cc0968200c6715d7471a03796498e05b4607f50f74760e78a7ae0daaf2195fc",
+        "source": "vmlx_engine/tool_parsers/minimax_tool_parser.py",
+        "source_sha256": "9cc0968200c6715d7471a03796498e05b4607f50f74760e78a7ae0daaf2195fc"
+      },
+      "tool_parsers/mistral_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/mistral_tool_parser.py",
+        "packaged_sha256": "ebd5b68d62530373e1ad7919a40566db64c33f74d3155ac4ebb77527ea4f726b",
+        "source": "vmlx_engine/tool_parsers/mistral_tool_parser.py",
+        "source_sha256": "ebd5b68d62530373e1ad7919a40566db64c33f74d3155ac4ebb77527ea4f726b"
+      },
+      "tool_parsers/nemotron_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/nemotron_tool_parser.py",
+        "packaged_sha256": "6aad1e70fdd2230a5fca6d5e2b17f07f1ff7fdec8594dfc332989f5df1ec0dc6",
+        "source": "vmlx_engine/tool_parsers/nemotron_tool_parser.py",
+        "source_sha256": "6aad1e70fdd2230a5fca6d5e2b17f07f1ff7fdec8594dfc332989f5df1ec0dc6"
+      },
+      "tool_parsers/qwen_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/qwen_tool_parser.py",
+        "packaged_sha256": "a6b6c4429efaca07fd50db5da35c0e103119c89a4c29579a7b98b259b7fb3acb",
+        "source": "vmlx_engine/tool_parsers/qwen_tool_parser.py",
+        "source_sha256": "a6b6c4429efaca07fd50db5da35c0e103119c89a4c29579a7b98b259b7fb3acb"
+      },
+      "tool_parsers/step3p5_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/step3p5_tool_parser.py",
+        "packaged_sha256": "397cbe3e31a447ecd2c2338605de7f7d3940e5a7abb8f7ce5f70c1eb66ee3110",
+        "source": "vmlx_engine/tool_parsers/step3p5_tool_parser.py",
+        "source_sha256": "397cbe3e31a447ecd2c2338605de7f7d3940e5a7abb8f7ce5f70c1eb66ee3110"
+      },
+      "tool_parsers/xlam_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/xlam_tool_parser.py",
+        "packaged_sha256": "5e4c5eabc4778d99783af73f8179c3582f2c516ceda9446d85ec50babf95f12e",
+        "source": "vmlx_engine/tool_parsers/xlam_tool_parser.py",
+        "source_sha256": "5e4c5eabc4778d99783af73f8179c3582f2c516ceda9446d85ec50babf95f12e"
+      },
+      "tool_parsers/xml_function_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/xml_function_tool_parser.py",
+        "packaged_sha256": "9e44a487aeaefe1117dbaaa473030ae236753fa281ecbeb6d583fff2afb5342e",
+        "source": "vmlx_engine/tool_parsers/xml_function_tool_parser.py",
+        "source_sha256": "9e44a487aeaefe1117dbaaa473030ae236753fa281ecbeb6d583fff2afb5342e"
+      },
+      "tool_parsers/zaya_tool_parser.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tool_parsers/zaya_tool_parser.py",
+        "packaged_sha256": "21d46296f21c1486eaef2ccd96a24ec30528e04ded7be9120164ced28167c531",
+        "source": "vmlx_engine/tool_parsers/zaya_tool_parser.py",
+        "source_sha256": "21d46296f21c1486eaef2ccd96a24ec30528e04ded7be9120164ced28167c531"
+      },
+      "tq_disk_store.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/tq_disk_store.py",
+        "packaged_sha256": "32592de18d85e645827b077f32c9eee459ccdb40a0c226ae800925b1f6437b5a",
+        "source": "vmlx_engine/tq_disk_store.py",
+        "source_sha256": "32592de18d85e645827b077f32c9eee459ccdb40a0c226ae800925b1f6437b5a"
       },
       "utils/head_dim_detection.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/head_dim_detection.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/head_dim_detection.py",
         "packaged_sha256": "95ce0bfb4d1b685bbf5fd7106a2f04dd5cf8dd80ca0889d02e4e74fe384fec40",
         "source": "vmlx_engine/utils/head_dim_detection.py",
         "source_sha256": "95ce0bfb4d1b685bbf5fd7106a2f04dd5cf8dd80ca0889d02e4e74fe384fec40"
       },
+      "utils/hybrid_tq_cache.py": {
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/hybrid_tq_cache.py",
+        "packaged_sha256": "fbbb4b9ac7f2c3a9ef7845e3c68a96ff15919dc4f18eb078e9c43f72f8349ac5",
+        "source": "vmlx_engine/utils/hybrid_tq_cache.py",
+        "source_sha256": "fbbb4b9ac7f2c3a9ef7845e3c68a96ff15919dc4f18eb078e9c43f72f8349ac5"
+      },
       "utils/jang_loader.py": {
-        "match": false,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/jang_loader.py",
-        "packaged_sha256": "d69c898c6245b47d8e7e1f4fceed499b7fa6fe34e1a9b3191ff60b694855bc90",
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/jang_loader.py",
+        "packaged_sha256": "85601d82207df39d620cd39fa6037be8ea0af2bf5ed995a4923408bf08934bca",
         "source": "vmlx_engine/utils/jang_loader.py",
-        "source_sha256": "46fb8b074bff9d203a8bb0630c497d611f3a93e1b7712cf05e7118cac7c52e84"
+        "source_sha256": "85601d82207df39d620cd39fa6037be8ea0af2bf5ed995a4923408bf08934bca"
       },
       "utils/mlx_vlm_compat.py": {
-        "match": false,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/mlx_vlm_compat.py",
-        "packaged_sha256": "f0049893b4603b4b3ea6aaac39e35369cb0165b056a982abfc01810c3f50f542",
+        "match": true,
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/mlx_vlm_compat.py",
+        "packaged_sha256": "ca9b339633869e667e2e5e9106880fbfbe7d3de29be395f5574915e34424359c",
         "source": "vmlx_engine/utils/mlx_vlm_compat.py",
         "source_sha256": "ca9b339633869e667e2e5e9106880fbfbe7d3de29be395f5574915e34424359c"
       },
       "utils/single_batch_generator.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/single_batch_generator.py",
-        "packaged_sha256": "3630b18e33a479da6fa3984568dd82e25f107818f2b1e446b319bf02d81c665c",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/single_batch_generator.py",
+        "packaged_sha256": "4985ed2cbf7e670d5eb5b4fa800c8a09d1e6cb76bb990db06c7f6a7a40d350fa",
         "source": "vmlx_engine/utils/single_batch_generator.py",
-        "source_sha256": "3630b18e33a479da6fa3984568dd82e25f107818f2b1e446b319bf02d81c665c"
+        "source_sha256": "4985ed2cbf7e670d5eb5b4fa800c8a09d1e6cb76bb990db06c7f6a7a40d350fa"
       },
       "utils/ssm_companion_cache.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/ssm_companion_cache.py",
-        "packaged_sha256": "79192190b09edab898bd8693ecadc5dc25db301bc47d50891b793510e43947fe",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/ssm_companion_cache.py",
+        "packaged_sha256": "9457b61cbb4e1135c7904e29dc01f162ea83e8533471cc00ac9e77d7b622001f",
         "source": "vmlx_engine/utils/ssm_companion_cache.py",
-        "source_sha256": "79192190b09edab898bd8693ecadc5dc25db301bc47d50891b793510e43947fe"
+        "source_sha256": "9457b61cbb4e1135c7904e29dc01f162ea83e8533471cc00ac9e77d7b622001f"
       },
       "utils/ssm_companion_disk_store.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/ssm_companion_disk_store.py",
-        "packaged_sha256": "62d19061a8a6fcbd37cc22187ea6a5b5bf12e9c74b3f54d67c4edff29f3e33eb",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/ssm_companion_disk_store.py",
+        "packaged_sha256": "a3b5fd44de84d004b06018173fed2ea38dd9b4e25f28f3158313f1880b4f9fbd",
         "source": "vmlx_engine/utils/ssm_companion_disk_store.py",
-        "source_sha256": "62d19061a8a6fcbd37cc22187ea6a5b5bf12e9c74b3f54d67c4edff29f3e33eb"
+        "source_sha256": "a3b5fd44de84d004b06018173fed2ea38dd9b4e25f28f3158313f1880b4f9fbd"
       },
       "utils/tokenizer.py": {
         "match": true,
-        "packaged": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/tokenizer.py",
+        "packaged": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine/utils/tokenizer.py",
         "packaged_sha256": "1675a64e83b92858f475cd9bec169fab37b550f99a631798a86dca61a56880c3",
         "source": "vmlx_engine/utils/tokenizer.py",
         "source_sha256": "1675a64e83b92858f475cd9bec169fab37b550f99a631798a86dca61a56880c3"
       }
     },
-    "mismatched": [
-      "server.py",
-      "models/mllm.py",
-      "utils/mlx_vlm_compat.py",
-      "utils/jang_loader.py"
-    ],
+    "mismatched": [],
     "missing_packaged": [],
     "missing_source": [],
-    "ok": false,
-    "packaged_engine": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/sequoia-app/mac-arm64/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine",
+    "ok": true,
+    "packaged_engine": "/Applications/vMLX.app/Contents/Resources/vmlx-engine-source/vmlx_engine",
     "source_engine": "vmlx_engine"
   },
   "panel_main_markers": {
@@ -691,7 +1406,7 @@
     "  --tool-call-parser {auto,none,mistral,qwen,llama,hermes,deepseek,kimi,lfm2,granite,nemotron,minimax,xlam,functionary,glm47,step3p5,gemma3,gemma3n,xml_function,dsml,deepseek_v4,zaya_xml,hunyuan,generic,qwen3,llama3,llama4,nous,deepseek_v3,deepseek_r1,kimi_k2,moonshot,liquid,granite3,nemotron3,minimax_m2,meetkai,stepfun,glm4,gemma4,hy_v3,tencent}"
   ],
   "serve_help_returncode": 0,
-  "status": "open",
+  "status": "pass",
   "versioned_python_output": "Python 3.12.12",
   "versioned_python_returncode": 0,
   "vmlx_bundled_python_launch_crash_reports": {
@@ -699,142 +1414,157 @@
     "exists": true,
     "hits": [
       {
-        "file": "python3.12-2026-06-08-0321422.ips",
+        "file": "Retired/python3.12-2026-06-08-0321422.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-095255.000.ips",
+        "file": "Retired/python3.12-2026-06-08-095255.000.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-095255.0002.ips",
+        "file": "Retired/python3.12-2026-06-08-095255.0002.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-095255.0003.ips",
+        "file": "Retired/python3.12-2026-06-08-095255.0003.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-095255.0004.ips",
+        "file": "Retired/python3.12-2026-06-08-095255.0004.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-095255.0005.ips",
+        "file": "Retired/python3.12-2026-06-08-095255.0005.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-095255.ips",
+        "file": "Retired/python3.12-2026-06-08-095255.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-100945.000.ips",
+        "file": "Retired/python3.12-2026-06-08-100945.000.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-100945.ips",
+        "file": "Retired/python3.12-2026-06-08-100945.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-100946.000.ips",
+        "file": "Retired/python3.12-2026-06-08-100946.000.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-100946.0002.ips",
+        "file": "Retired/python3.12-2026-06-08-100946.0002.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-100946.0003.ips",
+        "file": "Retired/python3.12-2026-06-08-100946.0003.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-100946.ips",
+        "file": "Retired/python3.12-2026-06-08-100946.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-103830.000.ips",
+        "file": "Retired/python3.12-2026-06-08-103830.000.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-103830.0002.ips",
+        "file": "Retired/python3.12-2026-06-08-103830.0002.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-103830.0003.ips",
+        "file": "Retired/python3.12-2026-06-08-103830.0003.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-103830.0004.ips",
+        "file": "Retired/python3.12-2026-06-08-103830.0004.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-103830.0005.ips",
+        "file": "Retired/python3.12-2026-06-08-103830.0005.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-103830.ips",
+        "file": "Retired/python3.12-2026-06-08-103830.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-104323.000.ips",
+        "file": "Retired/python3.12-2026-06-08-104323.000.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-104323.0002.ips",
+        "file": "Retired/python3.12-2026-06-08-104323.0002.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-104323.0003.ips",
+        "file": "Retired/python3.12-2026-06-08-104323.0003.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-104323.ips",
+        "file": "Retired/python3.12-2026-06-08-104323.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-110417.ips",
+        "file": "Retired/python3.12-2026-06-08-110417.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-111515.000.ips",
+        "file": "Retired/python3.12-2026-06-08-111515.000.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-111515.ips",
+        "file": "Retired/python3.12-2026-06-08-111515.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       },
       {
-        "file": "python3.12-2026-06-08-112543.ips",
+        "file": "Retired/python3.12-2026-06-08-112543.ips",
+        "reason": "Library not loaded: @rpath/libpython3.12.dylib"
+      },
+      {
+        "file": "Retired/python3.12-2026-06-08-185259.000.ips",
+        "reason": "Library not loaded: @rpath/libpython3.12.dylib"
+      },
+      {
+        "file": "Retired/python3.12-2026-06-08-185259.0002.ips",
+        "reason": "Library not loaded: @rpath/libpython3.12.dylib"
+      },
+      {
+        "file": "Retired/python3.12-2026-06-08-185259.ips",
         "reason": "Library not loaded: @rpath/libpython3.12.dylib"
       }
     ],
     "scanned": [
-      "python3.12-2026-06-08-0321422.ips",
-      "python3.12-2026-06-08-095255.000.ips",
-      "python3.12-2026-06-08-095255.0002.ips",
-      "python3.12-2026-06-08-095255.0003.ips",
-      "python3.12-2026-06-08-095255.0004.ips",
-      "python3.12-2026-06-08-095255.0005.ips",
-      "python3.12-2026-06-08-095255.ips",
-      "python3.12-2026-06-08-100945.000.ips",
-      "python3.12-2026-06-08-100945.ips",
-      "python3.12-2026-06-08-100946.000.ips",
-      "python3.12-2026-06-08-100946.0002.ips",
-      "python3.12-2026-06-08-100946.0003.ips",
-      "python3.12-2026-06-08-100946.ips",
-      "python3.12-2026-06-08-103830.000.ips",
-      "python3.12-2026-06-08-103830.0002.ips",
-      "python3.12-2026-06-08-103830.0003.ips",
-      "python3.12-2026-06-08-103830.0004.ips",
-      "python3.12-2026-06-08-103830.0005.ips",
-      "python3.12-2026-06-08-103830.ips",
-      "python3.12-2026-06-08-104323.000.ips",
-      "python3.12-2026-06-08-104323.0002.ips",
-      "python3.12-2026-06-08-104323.0003.ips",
-      "python3.12-2026-06-08-104323.ips",
-      "python3.12-2026-06-08-110417.ips",
-      "python3.12-2026-06-08-111515.000.ips",
-      "python3.12-2026-06-08-111515.ips",
-      "python3.12-2026-06-08-112543.ips"
+      "Retired/python3.12-2026-06-08-0321422.ips",
+      "Retired/python3.12-2026-06-08-095255.000.ips",
+      "Retired/python3.12-2026-06-08-095255.0002.ips",
+      "Retired/python3.12-2026-06-08-095255.0003.ips",
+      "Retired/python3.12-2026-06-08-095255.0004.ips",
+      "Retired/python3.12-2026-06-08-095255.0005.ips",
+      "Retired/python3.12-2026-06-08-095255.ips",
+      "Retired/python3.12-2026-06-08-100945.000.ips",
+      "Retired/python3.12-2026-06-08-100945.ips",
+      "Retired/python3.12-2026-06-08-100946.000.ips",
+      "Retired/python3.12-2026-06-08-100946.0002.ips",
+      "Retired/python3.12-2026-06-08-100946.0003.ips",
+      "Retired/python3.12-2026-06-08-100946.ips",
+      "Retired/python3.12-2026-06-08-103830.000.ips",
+      "Retired/python3.12-2026-06-08-103830.0002.ips",
+      "Retired/python3.12-2026-06-08-103830.0003.ips",
+      "Retired/python3.12-2026-06-08-103830.0004.ips",
+      "Retired/python3.12-2026-06-08-103830.0005.ips",
+      "Retired/python3.12-2026-06-08-103830.ips",
+      "Retired/python3.12-2026-06-08-104323.000.ips",
+      "Retired/python3.12-2026-06-08-104323.0002.ips",
+      "Retired/python3.12-2026-06-08-104323.0003.ips",
+      "Retired/python3.12-2026-06-08-104323.ips",
+      "Retired/python3.12-2026-06-08-110417.ips",
+      "Retired/python3.12-2026-06-08-111515.000.ips",
+      "Retired/python3.12-2026-06-08-111515.ips",
+      "Retired/python3.12-2026-06-08-112543.ips",
+      "Retired/python3.12-2026-06-08-185259.000.ips",
+      "Retired/python3.12-2026-06-08-185259.0002.ips",
+      "Retired/python3.12-2026-06-08-185259.ips"
     ]
   },
   "vmlx_bundled_python_launch_crash_repro": {

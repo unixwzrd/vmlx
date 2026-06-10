@@ -1,0 +1,904 @@
+{
+  "available_gb_before": 111.14,
+  "base_url": "http://127.0.0.1:8898",
+  "cache_dir": "build/current-mimo-v25-jang2l-live-cb-cache-text-20260610-block-cache",
+  "cmd": [
+    "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+    "-B",
+    "-s",
+    "-P",
+    "-m",
+    "vmlx_engine.cli",
+    "serve",
+    "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8898",
+    "--served-model-name",
+    "mimo-v25-jang2l-live-20260610",
+    "--timeout",
+    "300",
+    "--continuous-batching",
+    "--max-num-seqs",
+    "1",
+    "--prefill-batch-size",
+    "512",
+    "--prefill-step-size",
+    "512",
+    "--completion-batch-size",
+    "512",
+    "--enable-prefix-cache",
+    "--use-paged-cache",
+    "--paged-cache-block-size",
+    "64",
+    "--max-cache-blocks",
+    "1000",
+    "--enable-block-disk-cache",
+    "--block-disk-cache-dir",
+    "build/current-mimo-v25-jang2l-live-cb-cache-text-20260610-block-cache",
+    "--block-disk-cache-max-gb",
+    "10",
+    "--kv-cache-quantization",
+    "q8",
+    "--kv-cache-group-size",
+    "64",
+    "--default-enable-thinking",
+    "false",
+    "--tool-call-parser",
+    "xml_function",
+    "--reasoning-parser",
+    "none",
+    "--log-level",
+    "INFO"
+  ],
+  "final_health": {
+    "body": {
+      "acceleration": {
+        "host": {
+          "brand": "Apple M5 Max",
+          "reason": null,
+          "supported": true
+        },
+        "kernel_type": "affine_quantized_matmul",
+        "metal_na_active_on_host": true,
+        "metal_na_capable": true,
+        "metal_na_symbols": {
+          "affine_gather_qmm_symbols": 3456,
+          "affine_qmm_symbols": 4212,
+          "available": true,
+          "nax_symbols": 4668,
+          "naxtile_symbols": 4154
+        },
+        "reason": null
+      },
+      "cache": {
+        "block_disk_cache": {
+          "blocks_on_disk": 2,
+          "disk_evictions": 0,
+          "disk_hits": 0,
+          "disk_misses": 5,
+          "disk_size_bytes": 27664430,
+          "disk_size_gb": 0.026,
+          "disk_writes": 2,
+          "total_accesses": 0,
+          "total_cached_tokens": 62,
+          "total_tokens_on_disk": 62
+        },
+        "scheduler_cache": {
+          "active_requests": 3,
+          "allocated_blocks": 3,
+          "batch_generator": {
+            "class": "SingleBatchGenerator",
+            "max_num_seqs": 1,
+            "path": "single_active",
+            "single_active_decode": true
+          },
+          "block_size": 64,
+          "cache_hit_rate": 0.5,
+          "cache_hits": 2,
+          "cache_misses": 2,
+          "cow_copies": 0,
+          "disk_hits": 0,
+          "disk_misses": 0,
+          "engine_path": "single_active",
+          "entries_by_type": {
+            "assistant": 0,
+            "system": 3,
+            "user": 0
+          },
+          "evictions": 0,
+          "free_blocks": 997,
+          "hit_rate": 0.3333333333333333,
+          "hits": 1,
+          "max_blocks": 1000,
+          "misses": 2,
+          "shared_blocks": 1,
+          "tokens_saved": 38,
+          "total_tokens_cached": 62,
+          "utilization": 0.003
+        },
+        "totals": {
+          "l2_block_tokens_on_disk": 62,
+          "l2_prompt_tokens_on_disk": 0,
+          "l2_ssm_tokens_on_disk": 0,
+          "l2_tokens_on_disk": 62,
+          "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap",
+          "l2_tokens_on_disk_store_sum": 62,
+          "ram_tokens_cached": 62,
+          "ssm_tokens_on_disk": 0
+        }
+      },
+      "engine_type": "batched",
+      "kv_cache_quantization": {
+        "bits": 8,
+        "enabled": true,
+        "group_size": 64
+      },
+      "last_request_time": 1781055498.260704,
+      "mcp": null,
+      "memory": {
+        "active_mb": 104997.8,
+        "cache_mb": 69.1,
+        "peak_mb": 105956.2
+      },
+      "model_loaded": true,
+      "model_name": "JANGQ-AI/MiMo-V2.5-JANG_2L",
+      "model_type": "llm",
+      "mtp": {
+        "artifact_available": false,
+        "cache_type": null,
+        "config_mtp_layer_source": null,
+        "config_num_nextn_predict_layers": null,
+        "effective_depth": null,
+        "effective_depth_source": null,
+        "family": "mimo_v2",
+        "has_vision_config": true,
+        "has_vision_weights": true,
+        "index_has_mtp_tensors": false,
+        "index_mtp_layer_count": null,
+        "issues": [],
+        "jang_drop_mtp": null,
+        "jang_mtp_layers": null,
+        "mtp_tensor_count": 0,
+        "request_gate": "temperature=0,repetition_penalty=1.0",
+        "request_policy": "compatible-only",
+        "runtime_active": false,
+        "runtime_available": false,
+        "runtime_bundle_has_mtp": null,
+        "runtime_mtp_mode": null,
+        "runtime_reason": "config does not request MTP",
+        "runtime_scope": null,
+        "runtime_supported": false,
+        "runtime_validation_blocked": false,
+        "status": "not_configured",
+        "vision_tensor_count": 364,
+        "vl_runtime_available": false
+      },
+      "native_cache": {
+        "block_disk_l2": true,
+        "cache_subtype": "mimo_v2_asymmetric_swa",
+        "cache_type": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "family": "mimo_v2",
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "paged": true,
+        "prefix": true,
+        "schema": "mixed_swa_kv_v1",
+        "storage_quantization": {
+          "applies_to": "full_and_sliding_attention_kv",
+          "bits": 8,
+          "enabled": true,
+          "group_size": 64,
+          "metadata_policy": "preserve_rotating_window_metadata",
+          "mode": "storage_boundary"
+        }
+      },
+      "quantization": {
+        "codec": "affine_quantized_matmul",
+        "config_bits": 8,
+        "group_size": 64,
+        "mxtq_bits_by_role": {
+          "down_proj": 2,
+          "gate_proj": 3,
+          "up_proj": 2
+        },
+        "profile": "JANG_2L_322_D3E16",
+        "sidecar": {
+          "jang_config": true,
+          "jangtq_runtime": false,
+          "prestacked_bundle": false
+        },
+        "target_bits": 8,
+        "weight_index": {
+          "index_file": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L/model.safetensors.index.json",
+          "mtp_tensor_count": 0,
+          "routed_layout_counts": {
+            "prestacked_switch": 423,
+            "split_expert": 0
+          },
+          "suffix_counts": {
+            "biases": 194,
+            "scales": 194,
+            "weight": 663
+          },
+          "total_tensors": 1319,
+          "tq_target_counts": {}
+        },
+        "weight_matmul_dispatch": {
+          "metal_na_eligible": true,
+          "primary": "mlx_affine_quantized_matmul",
+          "reason": null,
+          "uses_mlx_quantized_matmul": true
+        }
+      },
+      "quantization_format": {
+        "actual_bits": null,
+        "block_size": 64,
+        "target_bits": null,
+        "type": "jang"
+      },
+      "routing": {
+        "effective_active_experts": 8,
+        "effective_active_experts_source": "trained_default",
+        "n_routed_experts": 256,
+        "override_env": null,
+        "trained_active_experts": 8,
+        "trained_active_experts_source": "config.num_experts_per_tok"
+      },
+      "scheduler": {
+        "batch_generator": {
+          "class": "SingleBatchGenerator",
+          "max_num_seqs": 1,
+          "path": "single_active",
+          "single_active_decode": true
+        },
+        "cache_hit_requests": 1,
+        "cache_hit_tokens": 38,
+        "cache_hit_tokens_by_detail": {
+          "paged": 38
+        },
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "cache_reuse_skip_tokens": 0,
+        "cache_reuse_skips": 0,
+        "engine_path": "single_active",
+        "ewma_ttft_seconds": 0.486,
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_cache_execution": {
+          "blocks": 1,
+          "cache_detail": "paged",
+          "cached_tokens": 38,
+          "dequantization_ok": true,
+          "dequantization_seconds": 3e-05,
+          "dequantized": true,
+          "reconstructed": true,
+          "reconstruction_ok": true,
+          "reconstruction_seconds": 0.004518,
+          "request_id": "chatcmpl-6e48eba0",
+          "selection": {
+            "hot_advantage_threshold_tokens": 64,
+            "hot_advantage_tokens": 38,
+            "paged_cached_tokens": 38,
+            "paged_cold_tokens": 0,
+            "reason": "no_warm_prefix_alternative",
+            "rejected": null,
+            "selected": "paged",
+            "warm_cached_tokens": 0
+          },
+          "total_worker_cache_seconds": 0.004727
+        },
+        "last_cache_reuse_partial": null,
+        "last_cache_reuse_skip": null,
+        "last_cache_selection": {
+          "hot_advantage_threshold_tokens": 64,
+          "hot_advantage_tokens": 38,
+          "paged_cached_tokens": 38,
+          "paged_cold_tokens": 0,
+          "reason": "no_warm_prefix_alternative",
+          "rejected": null,
+          "selected": "paged",
+          "warm_cached_tokens": 0
+        },
+        "last_hybrid_kv_without_ssm": null,
+        "num_running": 0,
+        "num_waiting": 0,
+        "single_active_decode": true
+      },
+      "speculative_decoding": "not_configured",
+      "status": "healthy",
+      "turboquant_kv_cache": {
+        "enabled": false
+      }
+    },
+    "elapsed": 0.017,
+    "error": null,
+    "ok": true,
+    "raw": "{\"status\":\"healthy\",\"model_loaded\":true,\"model_name\":\"JANGQ-AI/MiMo-V2.5-JANG_2L\",\"model_type\":\"llm\",\"engine_type\":\"batched\",\"last_request_time\":1781055498.260704,\"mcp\":null,\"memory\":{\"active_mb\":104997.8,\"peak_mb\":105956.2,\"cache_mb\":69.1},\"kv_cache_quantization\":{\"enabled\":true,\"bits\":8,\"group_size\":64},\"speculative_decoding\":\"not_configured\",\"scheduler\":{\"num_waiting\":0,\"num_running\":0,\"engine_path\":\"single_active\",\"batch_generator\":{\"class\":\"SingleBatchGenerator\",\"path\":\"single_active\",\"single_active_decode\":true,\"max_num_seqs\":1},\"single_active_decode\":true,\"ewma_ttft_seconds\":0.486,\"cache_hit_requests\":1,\"cache_hit_tokens\":38,\"cache_hit_tokens_by_detail\":{\"paged\":38},\"hybrid_kv_without_ssm_hits\":0,\"hybrid_kv_without_ssm_tokens\":0,\"last_hybrid_kv_without_ssm\":null,\"cache_reuse_skips\":0,\"cache_reuse_skip_tokens\":0,\"last_cache_reuse_skip\":null,\"cache_reuse_partial_downgrades\":0,\"cache_reuse_partial_tokens\":0,\"last_cache_reuse_partial\":null,\"last_cache_selection\":{\"paged_cached_tokens\":38,\"paged_cold_tokens\":0,\"warm_cached_tokens\":0,\"hot_advantage_tokens\":38,\"hot_advantage_threshold_tokens\":64,\"selected\":\"paged\",\"rejected\":null,\"reason\":\"no_warm_prefix_alternative\"},\"last_cache_execution\":{\"request_id\":\"chatcmpl-6e48eba0\",\"cache_detail\":\"paged\",\"cached_tokens\":38,\"blocks\":1,\"selection\":{\"paged_cached_tokens\":38,\"paged_cold_tokens\":0,\"warm_cached_tokens\":0,\"hot_advantage_tokens\":38,\"hot_advantage_threshold_tokens\":64,\"selected\":\"paged\",\"rejected\":null,\"reason\":\"no_warm_prefix_alternative\"},\"reconstructed\":true,\"dequantized\":true,\"reconstruction_seconds\":0.004518,\"dequantization_seconds\":3e-05,\"total_worker_cache_seconds\":0.004727,\"reconstruction_ok\":true,\"dequantization_ok\":true}},\"cache\":{\"scheduler_cache\":{\"hits\":1,\"misses\":2,\"hit_rate\":0.3333333333333333,\"tokens_saved\":38,\"active_requests\":3,\"entries_by_type\":{\"assistant\":0,\"user\":0,\"system\":3},\"block_size\":64,\"max_blocks\":1000,\"allocated_blocks\":3,\"free_blocks\":997,\"shared_blocks\":1,\"total_tokens_cached\":62,\"utilization\":0.003,\"cache_hit_rate\":0.5,\"cache_hits\":2,\"cache_misses\":2,\"disk_hits\":0,\"disk_misses\":0,\"cow_copies\":0,\"evictions\":0,\"engine_path\":\"single_active\",\"batch_generator\":{\"class\":\"SingleBatchGenerator\",\"path\":\"single_active\",\"single_active_decode\":true,\"max_num_seqs\":1}},\"block_disk_cache\":{\"blocks_on_disk\":2,\"disk_size_bytes\":27664430,\"disk_size_gb\":0.026,\"total_accesses\":0,\"total_tokens_on_disk\":62,\"total_cached_tokens\":62,\"disk_hits\":0,\"disk_misses\":5,\"disk_writes\":2,\"disk_evictions\":0},\"totals\":{\"ram_tokens_cached\":62,\"l2_prompt_tokens_on_disk\":0,\"l2_block_tokens_on_disk\":62,\"l2_ssm_tokens_on_disk\":0,\"ssm_tokens_on_disk\":0,\"l2_tokens_on_disk\":62,\"l2_tokens_on_disk_store_sum\":62,\"l2_tokens_on_disk_note\":\"store_sum_across_prompt_block_ssm_l2; tiers_may_overlap\"}},\"quantization_format\":{\"type\":\"jang\",\"target_bits\":null,\"actual_bits\":null,\"block_size\":64},\"quantization\":{\"codec\":\"affine_quantized_matmul\",\"profile\":\"JANG_2L_322_D3E16\",\"mxtq_bits_by_role\":{\"gate_proj\":3,\"up_proj\":2,\"down_proj\":2},\"target_bits\":8,\"config_bits\":8,\"group_size\":64,\"weight_index\":{\"index_file\":\"/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L/model.safetensors.index.json\",\"total_tensors\":1319,\"suffix_counts\":{\"biases\":194,\"scales\":194,\"weight\":663},\"tq_target_counts\":{},\"routed_layout_counts\":{\"prestacked_switch\":423,\"split_expert\":0},\"mtp_tensor_count\":0},\"weight_matmul_dispatch\":{\"primary\":\"mlx_affine_quantized_matmul\",\"uses_mlx_quantized_matmul\":true,\"metal_na_eligible\":true,\"reason\":null},\"sidecar\":{\"jang_config\":true,\"jangtq_runtime\":false,\"prestacked_bundle\":false}},\"acceleration\":{\"kernel_type\":\"affine_quantized_matmul\",\"metal_na_capable\":true,\"metal_na_active_on_host\":true,\"reason\":null,\"metal_na_symbols\":{\"available\":true,\"nax_symbols\":4668,\"naxtile_symbols\":4154,\"affine_qmm_symbols\":4212,\"affine_gather_qmm_symbols\":3456},\"host\":{\"supported\":true,\"brand\":\"Apple M5 Max\",\"reason\":null}},\"mtp\":{\"config_num_nextn_predict_layers\":null,\"config_mtp_layer_source\":null,\"jang_mtp_layers\":null,\"jang_drop_mtp\":null,\"index_has_mtp_tensors\":false,\"index_mtp_layer_count\":null,\"mtp_tensor_count\":0,\"artifact_available\":false,\"family\":\"mimo_v2\",\"has_vision_config\":true,\"has_vision_weights\":true,\"vision_tensor_count\":364,\"cache_type\":null,\"runtime_supported\":false,\"runtime_available\":false,\"runtime_active\":false,\"runtime_validation_blocked\":false,\"effective_depth\":null,\"effective_depth_source\":null,\"runtime_scope\":null,\"vl_runtime_available\":false,\"runtime_bundle_has_mtp\":null,\"runtime_mtp_mode\":null,\"runtime_reason\":\"config does not request MTP\",\"status\":\"not_configured\",\"issues\":[],\"request_policy\":\"compatible-only\",\"request_gate\":\"temperature=0,repetition_penalty=1.0\"},\"routing\":{\"trained_active_experts\":8,\"trained_active_experts_source\":\"config.num_experts_per_tok\",\"n_routed_experts\":256,\"override_env\":null,\"effective_active_experts\":8,\"effective_active_experts_source\":\"trained_default\"},\"turboquant_kv_cache\":{\"enabled\":false},\"native_cache\":{\"family\":\"mimo_v2\",\"schema\":\"mixed_swa_kv_v1\",\"cache_type\":\"mixed_swa_kv\",\"cache_subtype\":\"mimo_v2_asymmetric_swa\",\"components\":[\"full_attention_kv\",\"sliding_window_kv\",\"rotating_window_metadata\"],\"generic_turboquant_kv\":{\"enabled\":false,\"reason\":\"not_active\"},\"storage_quantization\":{\"enabled\":true,\"mode\":\"storage_boundary\",\"bits\":8,\"group_size\":64,\"applies_to\":\"full_and_sliding_attention_kv\",\"metadata_policy\":\"preserve_rotating_window_metadata\"},\"prefix\":true,\"paged\":true,\"block_disk_l2\":true}}",
+    "status": 200
+  },
+  "initial_health": {
+    "body": {
+      "acceleration": {
+        "host": {
+          "brand": "Apple M5 Max",
+          "reason": null,
+          "supported": true
+        },
+        "kernel_type": "affine_quantized_matmul",
+        "metal_na_active_on_host": true,
+        "metal_na_capable": true,
+        "metal_na_symbols": {
+          "affine_gather_qmm_symbols": 3456,
+          "affine_qmm_symbols": 4212,
+          "available": true,
+          "nax_symbols": 4668,
+          "naxtile_symbols": 4154
+        },
+        "reason": null
+      },
+      "cache": {
+        "block_disk_cache": {
+          "blocks_on_disk": 0,
+          "disk_evictions": 0,
+          "disk_hits": 0,
+          "disk_misses": 0,
+          "disk_size_bytes": 0,
+          "disk_size_gb": 0.0,
+          "disk_writes": 0,
+          "total_accesses": 0,
+          "total_cached_tokens": 0,
+          "total_tokens_on_disk": 0
+        },
+        "scheduler_cache": {
+          "active_requests": 0,
+          "allocated_blocks": 1,
+          "batch_generator": {
+            "class": null,
+            "max_num_seqs": 1,
+            "path": "none",
+            "single_active_decode": false
+          },
+          "block_size": 64,
+          "cache_hit_rate": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cow_copies": 0,
+          "disk_hits": 0,
+          "disk_misses": 0,
+          "engine_path": "none",
+          "entries_by_type": {
+            "assistant": 0,
+            "system": 0,
+            "user": 0
+          },
+          "evictions": 0,
+          "free_blocks": 999,
+          "hit_rate": 0,
+          "hits": 0,
+          "max_blocks": 1000,
+          "misses": 0,
+          "shared_blocks": 0,
+          "tokens_saved": 0,
+          "total_tokens_cached": 0,
+          "utilization": 0.001
+        },
+        "totals": {
+          "l2_block_tokens_on_disk": 0,
+          "l2_prompt_tokens_on_disk": 0,
+          "l2_ssm_tokens_on_disk": 0,
+          "l2_tokens_on_disk": 0,
+          "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap",
+          "l2_tokens_on_disk_store_sum": 0,
+          "ram_tokens_cached": 0,
+          "ssm_tokens_on_disk": 0
+        }
+      },
+      "engine_type": "batched",
+      "kv_cache_quantization": {
+        "bits": 8,
+        "enabled": true,
+        "group_size": 64
+      },
+      "last_request_time": null,
+      "mcp": null,
+      "memory": {
+        "active_mb": 104985.5,
+        "cache_mb": 0.0,
+        "peak_mb": 104985.6
+      },
+      "model_loaded": true,
+      "model_name": "JANGQ-AI/MiMo-V2.5-JANG_2L",
+      "model_type": "llm",
+      "mtp": {
+        "artifact_available": false,
+        "cache_type": null,
+        "config_mtp_layer_source": null,
+        "config_num_nextn_predict_layers": null,
+        "effective_depth": null,
+        "effective_depth_source": null,
+        "family": "mimo_v2",
+        "has_vision_config": true,
+        "has_vision_weights": true,
+        "index_has_mtp_tensors": false,
+        "index_mtp_layer_count": null,
+        "issues": [],
+        "jang_drop_mtp": null,
+        "jang_mtp_layers": null,
+        "mtp_tensor_count": 0,
+        "request_gate": "temperature=0,repetition_penalty=1.0",
+        "request_policy": "compatible-only",
+        "runtime_active": false,
+        "runtime_available": false,
+        "runtime_bundle_has_mtp": null,
+        "runtime_mtp_mode": null,
+        "runtime_reason": "config does not request MTP",
+        "runtime_scope": null,
+        "runtime_supported": false,
+        "runtime_validation_blocked": false,
+        "status": "not_configured",
+        "vision_tensor_count": 364,
+        "vl_runtime_available": false
+      },
+      "native_cache": {
+        "block_disk_l2": true,
+        "cache_subtype": "mimo_v2_asymmetric_swa",
+        "cache_type": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "family": "mimo_v2",
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "paged": true,
+        "prefix": true,
+        "schema": "mixed_swa_kv_v1",
+        "storage_quantization": {
+          "applies_to": "full_and_sliding_attention_kv",
+          "bits": 8,
+          "enabled": true,
+          "group_size": 64,
+          "metadata_policy": "preserve_rotating_window_metadata",
+          "mode": "storage_boundary"
+        }
+      },
+      "quantization": {
+        "codec": "affine_quantized_matmul",
+        "config_bits": 8,
+        "group_size": 64,
+        "mxtq_bits_by_role": {
+          "down_proj": 2,
+          "gate_proj": 3,
+          "up_proj": 2
+        },
+        "profile": "JANG_2L_322_D3E16",
+        "sidecar": {
+          "jang_config": true,
+          "jangtq_runtime": false,
+          "prestacked_bundle": false
+        },
+        "target_bits": 8,
+        "weight_index": {
+          "index_file": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L/model.safetensors.index.json",
+          "mtp_tensor_count": 0,
+          "routed_layout_counts": {
+            "prestacked_switch": 423,
+            "split_expert": 0
+          },
+          "suffix_counts": {
+            "biases": 194,
+            "scales": 194,
+            "weight": 663
+          },
+          "total_tensors": 1319,
+          "tq_target_counts": {}
+        },
+        "weight_matmul_dispatch": {
+          "metal_na_eligible": true,
+          "primary": "mlx_affine_quantized_matmul",
+          "reason": null,
+          "uses_mlx_quantized_matmul": true
+        }
+      },
+      "quantization_format": {
+        "actual_bits": null,
+        "block_size": 64,
+        "target_bits": null,
+        "type": "jang"
+      },
+      "routing": {
+        "effective_active_experts": 8,
+        "effective_active_experts_source": "trained_default",
+        "n_routed_experts": 256,
+        "override_env": null,
+        "trained_active_experts": 8,
+        "trained_active_experts_source": "config.num_experts_per_tok"
+      },
+      "scheduler": {
+        "batch_generator": {
+          "class": null,
+          "max_num_seqs": 1,
+          "path": "none",
+          "single_active_decode": false
+        },
+        "cache_hit_requests": 0,
+        "cache_hit_tokens": 0,
+        "cache_hit_tokens_by_detail": {},
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "cache_reuse_skip_tokens": 0,
+        "cache_reuse_skips": 0,
+        "engine_path": "none",
+        "ewma_ttft_seconds": 0.0,
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_cache_execution": null,
+        "last_cache_reuse_partial": null,
+        "last_cache_reuse_skip": null,
+        "last_cache_selection": null,
+        "last_hybrid_kv_without_ssm": null,
+        "num_running": 0,
+        "num_waiting": 0,
+        "single_active_decode": false
+      },
+      "speculative_decoding": "not_configured",
+      "status": "healthy",
+      "turboquant_kv_cache": {
+        "enabled": false
+      }
+    },
+    "elapsed": 0.248,
+    "error": null,
+    "ok": true,
+    "raw": "{\"status\":\"healthy\",\"model_loaded\":true,\"model_name\":\"JANGQ-AI/MiMo-V2.5-JANG_2L\",\"model_type\":\"llm\",\"engine_type\":\"batched\",\"last_request_time\":null,\"mcp\":null,\"memory\":{\"active_mb\":104985.5,\"peak_mb\":104985.6,\"cache_mb\":0.0},\"kv_cache_quantization\":{\"enabled\":true,\"bits\":8,\"group_size\":64},\"speculative_decoding\":\"not_configured\",\"scheduler\":{\"num_waiting\":0,\"num_running\":0,\"engine_path\":\"none\",\"batch_generator\":{\"class\":null,\"path\":\"none\",\"single_active_decode\":false,\"max_num_seqs\":1},\"single_active_decode\":false,\"ewma_ttft_seconds\":0.0,\"cache_hit_requests\":0,\"cache_hit_tokens\":0,\"cache_hit_tokens_by_detail\":{},\"hybrid_kv_without_ssm_hits\":0,\"hybrid_kv_without_ssm_tokens\":0,\"last_hybrid_kv_without_ssm\":null,\"cache_reuse_skips\":0,\"cache_reuse_skip_tokens\":0,\"last_cache_reuse_skip\":null,\"cache_reuse_partial_downgrades\":0,\"cache_reuse_partial_tokens\":0,\"last_cache_reuse_partial\":null,\"last_cache_selection\":null,\"last_cache_execution\":null},\"cache\":{\"scheduler_cache\":{\"hits\":0,\"misses\":0,\"hit_rate\":0,\"tokens_saved\":0,\"active_requests\":0,\"entries_by_type\":{\"assistant\":0,\"user\":0,\"system\":0},\"block_size\":64,\"max_blocks\":1000,\"allocated_blocks\":1,\"free_blocks\":999,\"shared_blocks\":0,\"total_tokens_cached\":0,\"utilization\":0.001,\"cache_hit_rate\":0,\"cache_hits\":0,\"cache_misses\":0,\"disk_hits\":0,\"disk_misses\":0,\"cow_copies\":0,\"evictions\":0,\"engine_path\":\"none\",\"batch_generator\":{\"class\":null,\"path\":\"none\",\"single_active_decode\":false,\"max_num_seqs\":1}},\"block_disk_cache\":{\"blocks_on_disk\":0,\"disk_size_bytes\":0,\"disk_size_gb\":0.0,\"total_accesses\":0,\"total_tokens_on_disk\":0,\"total_cached_tokens\":0,\"disk_hits\":0,\"disk_misses\":0,\"disk_writes\":0,\"disk_evictions\":0},\"totals\":{\"ram_tokens_cached\":0,\"l2_prompt_tokens_on_disk\":0,\"l2_block_tokens_on_disk\":0,\"l2_ssm_tokens_on_disk\":0,\"ssm_tokens_on_disk\":0,\"l2_tokens_on_disk\":0,\"l2_tokens_on_disk_store_sum\":0,\"l2_tokens_on_disk_note\":\"store_sum_across_prompt_block_ssm_l2; tiers_may_overlap\"}},\"quantization_format\":{\"type\":\"jang\",\"target_bits\":null,\"actual_bits\":null,\"block_size\":64},\"quantization\":{\"codec\":\"affine_quantized_matmul\",\"profile\":\"JANG_2L_322_D3E16\",\"mxtq_bits_by_role\":{\"gate_proj\":3,\"up_proj\":2,\"down_proj\":2},\"target_bits\":8,\"config_bits\":8,\"group_size\":64,\"weight_index\":{\"index_file\":\"/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L/model.safetensors.index.json\",\"total_tensors\":1319,\"suffix_counts\":{\"biases\":194,\"scales\":194,\"weight\":663},\"tq_target_counts\":{},\"routed_layout_counts\":{\"prestacked_switch\":423,\"split_expert\":0},\"mtp_tensor_count\":0},\"weight_matmul_dispatch\":{\"primary\":\"mlx_affine_quantized_matmul\",\"uses_mlx_quantized_matmul\":true,\"metal_na_eligible\":true,\"reason\":null},\"sidecar\":{\"jang_config\":true,\"jangtq_runtime\":false,\"prestacked_bundle\":false}},\"acceleration\":{\"kernel_type\":\"affine_quantized_matmul\",\"metal_na_capable\":true,\"metal_na_active_on_host\":true,\"reason\":null,\"metal_na_symbols\":{\"available\":true,\"nax_symbols\":4668,\"naxtile_symbols\":4154,\"affine_qmm_symbols\":4212,\"affine_gather_qmm_symbols\":3456},\"host\":{\"supported\":true,\"brand\":\"Apple M5 Max\",\"reason\":null}},\"mtp\":{\"config_num_nextn_predict_layers\":null,\"config_mtp_layer_source\":null,\"jang_mtp_layers\":null,\"jang_drop_mtp\":null,\"index_has_mtp_tensors\":false,\"index_mtp_layer_count\":null,\"mtp_tensor_count\":0,\"artifact_available\":false,\"family\":\"mimo_v2\",\"has_vision_config\":true,\"has_vision_weights\":true,\"vision_tensor_count\":364,\"cache_type\":null,\"runtime_supported\":false,\"runtime_available\":false,\"runtime_active\":false,\"runtime_validation_blocked\":false,\"effective_depth\":null,\"effective_depth_source\":null,\"runtime_scope\":null,\"vl_runtime_available\":false,\"runtime_bundle_has_mtp\":null,\"runtime_mtp_mode\":null,\"runtime_reason\":\"config does not request MTP\",\"status\":\"not_configured\",\"issues\":[],\"request_policy\":\"compatible-only\",\"request_gate\":\"temperature=0,repetition_penalty=1.0\"},\"routing\":{\"trained_active_experts\":8,\"trained_active_experts_source\":\"config.num_experts_per_tok\",\"n_routed_experts\":256,\"override_env\":null,\"effective_active_experts\":8,\"effective_active_experts_source\":\"trained_default\"},\"turboquant_kv_cache\":{\"enabled\":false},\"native_cache\":{\"family\":\"mimo_v2\",\"schema\":\"mixed_swa_kv_v1\",\"cache_type\":\"mixed_swa_kv\",\"cache_subtype\":\"mimo_v2_asymmetric_swa\",\"components\":[\"full_attention_kv\",\"sliding_window_kv\",\"rotating_window_metadata\"],\"generic_turboquant_kv\":{\"enabled\":false,\"reason\":\"not_active\"},\"storage_quantization\":{\"enabled\":true,\"mode\":\"storage_boundary\",\"bits\":8,\"group_size\":64,\"applies_to\":\"full_and_sliding_attention_kv\",\"metadata_policy\":\"preserve_rotating_window_metadata\"},\"prefix\":true,\"paged\":true,\"block_disk_l2\":true}}",
+    "status": 200
+  },
+  "log_path": "build/current-mimo-v25-jang2l-live-cb-cache-text-20260610.server.log",
+  "log_tail": [
+    "INFO:vmlx_engine.model_config_registry:Model config: matched multimodal wrapper model_type='mimo_v2' with media config \u2192 mimo_v2",
+    "INFO:__main__:MXTQ/JANGTQ bundle detected \u2014 disabling JANGTQ_MPP_NAX=auto. Reporter repros showed incorrect prefill logits on MXTQ/hybrid JANGTQ with auto; set JANGTQ_MPP_NAX=on only for explicit kernel diagnostics.",
+    "INFO:__main__:--kv-cache-quantization=q8 explicit; VMLX_DISABLE_TQ_KV=1 set so JANG-calibrated TurboQuant KV is skipped at load time. Omit the flag (or set VMLX_FORCE_TQ_AUTO=1) to keep the bundle's calibrated TQ.",
+    "INFO:__main__:Auto-configured tool parser from registry: xml_function",
+    "INFO:vmlx_engine.server:Serving model as: mimo-v25-jang2l-live-20260610 (actual: JANGQ-AI/MiMo-V2.5-JANG_2L)",
+    "INFO:vmlx_engine.server:System memory before load: 110.8GB available / 128.0GB total (13.5% used)",
+    "INFO:vmlx_engine.server:Loading model with BatchedEngine: /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "INFO:vmlx_engine.models.mllm:Installed vMLX fallback compiled MiMo-V2 decode router",
+    "INFO:vmlx_engine.models.mllm:Installed vMLX MiMo-V2 affine SwitchGLU decode fast path",
+    "INFO:vmlx_engine.models.mllm:Installed vMLX MiMo-V2 keep=0 rotating-cache patch",
+    "INFO:vmlx_engine:is_mllm_model(/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L): tier=mimo_v2_preserved_text_runtime result=False",
+    "INFO:vmlx_engine.server:Model loaded (batched mode): /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "INFO:vmlx_engine.server:Metal GPU memory after load: 0.00GB active, 0.00GB peak",
+    "INFO:vmlx_engine.server:System memory after load: 110.7GB available (13.5% used)",
+    "INFO:vmlx_engine.server:Native tool format enabled for parser: xml_function",
+    "INFO:vmlx_engine.server:Default max tokens fallback: 4096 (bundle max_new_tokens wins when present)",
+    "INFO:     Started server process [730]",
+    "INFO:     Waiting for application startup.",
+    "INFO:vmlx_engine.server:Started caffeinate system wake lock for PID 730",
+    "INFO:vmlx_engine.utils.tokenizer:Detected JANG model: /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "INFO:vmlx_engine.utils.jang_loader:JANG v2 detected \u2014 loading via mmap (instant)",
+    "INFO:vmlx_engine.utils.jang_loader:  Loading 103 safetensors shards via mmap",
+    "INFO:vmlx_engine.utils.jang_loader:  Wired limit set to 115 GB (model 112 GB)",
+    "INFO:vmlx_engine.utils.jang_loader:  TurboQuant KV skipped: VMLX_DISABLE_TQ_KV=1; using native model cache plus scheduler-level q4/q8 storage only when explicitly requested and compatible.",
+    "INFO:vmlx_engine.utils.jang_loader:JANG v2 loaded in 20.7s: unknown (0.0-bit avg)",
+    "[transformers] You are using a model of type `mimo_v2` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.",
+    "[transformers] PreTrainedConfig got `key=rope_scaling` in kwargs but hasn't set it as attribute. For RoPE standardization you need to set `self.rope_parameters` in model's config. ",
+    "INFO:vmlx_engine.engine.batched:BatchedEngine multi-eos hook: family=mimo_v2, registry eos_tokens=['<|im_end|>'], tokenizer_class=TokenizerWrapper, primary=151645",
+    "INFO:vmlx_engine.engine.batched:mimo_v2: BatchedEngine extended existing TokenizerWrapper; eos_token_ids={151672, 151643, 151645}",
+    "INFO:vmlx_engine.scheduler:Runtime cache layout: model_type=mimo_v2 layers=48 layout=0:KVCache;1:RotatingKVCache;2:RotatingKVCache;3:RotatingKVCache;4:RotatingKVCache;5:KVCache;6:RotatingKVCache;7:RotatingKVCache;8:RotatingKVCache;9:RotatingKVCache;10:RotatingKVCache;11:KVCache;12:RotatingKVCache;13:RotatingKVCache;14:RotatingKVCache;15:RotatingKVCache;16:RotatingKVCache;17:KVCache;18:RotatingKVCache;19:RotatingKVCache;20:RotatingKVCache;21:RotatingKVCache;22:RotatingKVCache;23:KVCache;24:RotatingKVCache;25:RotatingKVCache;26:RotatingKVCache;27:RotatingKVCache;28:RotatingKVCache;29:KVCache;30:RotatingKVCache;31:RotatingKVCache;32:RotatingKVCache;33:RotatingKVCache;34:RotatingKVCache;35:KVCache;36:RotatingKVCache;37:RotatingKVCache;38:RotatingKVCache;39:RotatingKVCache;40:RotatingKVCache;41:KVCache;42:RotatingKVCache;43:RotatingKVCache;44:RotatingKVCache;45:RotatingKVCache;46:RotatingKVCache;47:KVCache",
+    "INFO:vmlx_engine.scheduler:LLM mixed-attention model detected (e.g. Gemma 4 sliding+full). Prefix cache remains enabled; RotatingKVCache metadata will be preserved during truncation and paged/L2 reconstruction.",
+    "INFO:vmlx_engine.scheduler:KV cache quantization validated: cache_head_dims=(192,), group_size=64",
+    "INFO:vmlx_engine.scheduler:KV cache quantization round-trip test passed: bits=8, group_size=64, test_shape=(1, 4, 8, 192)",
+    "INFO:vmlx_engine.scheduler:KV cache quantization enabled: q8 (bits=8, group_size=64)",
+    "INFO:vmlx_engine.scheduler:Prefix cache requires continuous batching \u2014 enabled automatically",
+    "INFO:vmlx_engine.block_disk_store:BlockDiskStore initialized: dir=build/current-mimo-v25-jang2l-live-cb-cache-text-20260610-block-cache, max_size=10.0GB, entries=0, size=0.00GB",
+    "INFO:vmlx_engine.scheduler:Block disk cache enabled: dir=build/current-mimo-v25-jang2l-live-cb-cache-text-20260610-block-cache, max=10.0GB, expected_layers=48",
+    "INFO:vmlx_engine.paged_cache:PagedCacheManager initialized: block_size=64, max_blocks=1000, max_tokens=64000",
+    "INFO:vmlx_engine.scheduler:Paged cache enabled: block_size=64, max_blocks=1000",
+    "INFO:vmlx_engine.engine_core:Engine started",
+    "INFO:vmlx_engine.engine.batched:BatchedEngine loaded: /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L (mllm=False)",
+    "INFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=102.5GB max=107.5GB reason=lifespan_engine_start",
+    "INFO:vmlx_engine.mcp.config:No MCP config file found, using empty config",
+    "INFO:     Application startup complete.",
+    "INFO:     Uvicorn running on http://127.0.0.1:8898 (Press CTRL+C to quit)",
+    "============================================================",
+    "SECURITY CONFIGURATION",
+    "============================================================",
+    "  Authentication: DISABLED - Use --api-key to enable",
+    "  Rate limiting: DISABLED - Use --rate-limit to enable",
+    "  Request timeout: 300.0s",
+    "  Tool calling: Use --enable-auto-tool-choice to enable",
+    "  Reasoning: DISABLED (--reasoning-parser none)",
+    "  External speculative decoding: Use --speculative-model to enable",
+    "============================================================",
+    "Loading model: /Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+    "Served model name: mimo-v25-jang2l-live-20260610",
+    "Max output fallback: 4096 (bundle max_new_tokens wins when present)",
+    "Mode: Continuous batching (for multiple concurrent users)",
+    "Stream interval: 1 tokens",
+    "Paged cache: block_size=64, max_blocks=1000",
+    "Block disk cache: max=10.0GB",
+    "KV cache quantization: q8 (group_size=64)",
+    "Starting server at http://127.0.0.1:8898",
+    "INFO:     127.0.0.1:58804 - \"GET /health HTTP/1.1\" 200 OK",
+    "WARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 8, 'enable_thinking': False}",
+    "INFO:vmlx_engine.scheduler:Request chatcmpl-b4cb920a: paged cache miss, processing all 39 tokens",
+    "INFO:vmlx_engine.scheduler:max_num_seqs=1 \u2014 using vMLX SingleBatchGenerator (raw native cache, scheduler-owned single-active path)",
+    "INFO:vmlx_engine.models.mllm:MiMo-V2 affine SwitchGLU decode fast path active: calls=1 compiled_shapes=1",
+    "INFO:vmlx_engine.models.mllm:MiMo-V2 affine SwitchGLU decode fast path active: calls=64 compiled_shapes=2",
+    "INFO:vmlx_engine.scheduler:Mixed-SWA prefix cache store using clean prompt-boundary re-prefill (38 cache-key tokens from 39 prompt tokens).",
+    "INFO:vmlx_engine.scheduler:Extracted 48 layer states for request chatcmpl-b4cb920a",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=38, num_new_blocks=1, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 1 (9 kv layers, rotating_kv=39, 38 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 1 blocks to SSD",
+    "INFO:vmlx_engine.scheduler:Stored paged cache for request chatcmpl-b4cb920a (38 cache-key tokens from 39 prompt tokens, 48 layers, cache truncated to 38 tokens)",
+    "INFO:vmlx_engine.server:Chat completion: 8 tokens in 6.84s (1.2 tok/s)",
+    "INFO:     127.0.0.1:58805 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 8, 'enable_thinking': False}",
+    "INFO:vmlx_engine.prefix_cache:Paged cache hit for chatcmpl-6e48eba0: 1 blocks, 38 tokens",
+    "INFO:vmlx_engine.scheduler:Request chatcmpl-6e48eba0: paged cache hit, 38 tokens in 1 blocks, 1 remaining to process (worker reconstruct pending)",
+    "INFO:vmlx_engine.models.mllm:MiMo-V2 affine SwitchGLU decode fast path active: calls=512 compiled_shapes=2",
+    "INFO:vmlx_engine.scheduler:Mixed-SWA prefix cache store using clean prompt-boundary re-prefill (38 cache-key tokens from 39 prompt tokens).",
+    "INFO:vmlx_engine.scheduler:Extracted 48 layer states for request chatcmpl-6e48eba0",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=38, num_new_blocks=1, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)",
+    "INFO:vmlx_engine.scheduler:Stored paged cache for request chatcmpl-6e48eba0 (38 cache-key tokens from 39 prompt tokens, 48 layers, cache truncated to 38 tokens)",
+    "INFO:vmlx_engine.server:Chat completion: 8 tokens in 5.15s (1.6 tok/s)",
+    "INFO:     127.0.0.1:58806 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 4, 'enable_thinking': False}",
+    "INFO:vmlx_engine.scheduler:Request chatcmpl-24124131: paged cache miss, processing all 25 tokens",
+    "INFO:vmlx_engine.scheduler:Mixed-SWA prefix cache store using clean prompt-boundary re-prefill (24 cache-key tokens from 25 prompt tokens).",
+    "INFO:vmlx_engine.scheduler:Extracted 48 layer states for request chatcmpl-24124131",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=24, num_new_blocks=1, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 2 (9 kv layers, rotating_kv=39, 24 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 1 blocks to SSD",
+    "INFO:vmlx_engine.scheduler:Stored paged cache for request chatcmpl-24124131 (24 cache-key tokens from 25 prompt tokens, 48 layers, cache truncated to 24 tokens)",
+    "INFO:vmlx_engine.server:Chat completion: 2 tokens in 2.94s (0.7 tok/s)",
+    "INFO:     127.0.0.1:58807 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:58810 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     Shutting down",
+    "INFO:     Waiting for application shutdown.",
+    "INFO:vmlx_engine.scheduler:Shutting down block disk cache...",
+    "INFO:vmlx_engine.scheduler:Block disk cache shutdown complete",
+    "INFO:vmlx_engine.engine_core:Engine stopped",
+    "INFO:vmlx_engine.paged_cache:PagedCacheManager cleared",
+    "INFO:vmlx_engine.scheduler:Deep reset completed - all caches cleared",
+    "INFO:vmlx_engine.engine.batched:BatchedEngine stopped",
+    "INFO:vmlx_engine.server:Engine stopped",
+    "INFO:vmlx_engine.server:Caffeinate process terminated",
+    "INFO:     Application shutdown complete.",
+    "INFO:     Finished server process [730]"
+  ],
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+  "pid": 730,
+  "rows": [
+    {
+      "elapsed_s": 6.84,
+      "error": null,
+      "finish_reason": "stop",
+      "has_think_tag": false,
+      "json": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "ACK-CB-742",
+              "reasoning_content": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1781055493,
+        "id": "chatcmpl-b4cb920a",
+        "model": "mimo-v25-jang2l-live-20260610",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 8,
+          "prompt_tokens": 39,
+          "prompt_tokens_details": null,
+          "total_tokens": 47
+        },
+        "warnings": null
+      },
+      "name": "exact_repeat_1",
+      "ok": true,
+      "raw": "{\"id\":\"chatcmpl-b4cb920a\",\"object\":\"chat.completion\",\"created\":1781055493,\"model\":\"mimo-v25-jang2l-live-20260610\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"ACK-CB-742\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":39,\"completion_tokens\":8,\"total_tokens\":47,\"prompt_tokens_details\":null},\"warnings\":null}",
+      "status": 200,
+      "text": "ACK-CB-742",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 39,
+        "prompt_tokens_details": null,
+        "total_tokens": 47
+      }
+    },
+    {
+      "elapsed_s": 5.153,
+      "error": null,
+      "finish_reason": "stop",
+      "has_think_tag": false,
+      "json": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "ACK-CB-742",
+              "reasoning_content": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1781055498,
+        "id": "chatcmpl-6e48eba0",
+        "model": "mimo-v25-jang2l-live-20260610",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 8,
+          "prompt_tokens": 39,
+          "prompt_tokens_details": {
+            "cache_detail": "paged",
+            "cached_tokens": 38
+          },
+          "total_tokens": 47
+        },
+        "warnings": null
+      },
+      "name": "exact_repeat_2",
+      "ok": true,
+      "raw": "{\"id\":\"chatcmpl-6e48eba0\",\"object\":\"chat.completion\",\"created\":1781055498,\"model\":\"mimo-v25-jang2l-live-20260610\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"ACK-CB-742\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":39,\"completion_tokens\":8,\"total_tokens\":47,\"prompt_tokens_details\":{\"cached_tokens\":38,\"cache_detail\":\"paged\"}},\"warnings\":null}",
+      "status": 200,
+      "text": "ACK-CB-742",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 39,
+        "prompt_tokens_details": {
+          "cache_detail": "paged",
+          "cached_tokens": 38
+        },
+        "total_tokens": 47
+      }
+    },
+    {
+      "elapsed_s": 2.941,
+      "error": null,
+      "finish_reason": "stop",
+      "has_think_tag": false,
+      "json": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "OK",
+              "reasoning_content": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1781055501,
+        "id": "chatcmpl-24124131",
+        "model": "mimo-v25-jang2l-live-20260610",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 2,
+          "prompt_tokens": 25,
+          "prompt_tokens_details": null,
+          "total_tokens": 27
+        },
+        "warnings": null
+      },
+      "name": "first_token_system_probe",
+      "ok": true,
+      "raw": "{\"id\":\"chatcmpl-24124131\",\"object\":\"chat.completion\",\"created\":1781055501,\"model\":\"mimo-v25-jang2l-live-20260610\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"OK\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":25,\"completion_tokens\":2,\"total_tokens\":27,\"prompt_tokens_details\":null},\"warnings\":null}",
+      "status": 200,
+      "text": "OK",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 25,
+        "prompt_tokens_details": null,
+        "total_tokens": 27
+      }
+    }
+  ],
+  "server_exit": {
+    "returncode": -15,
+    "terminated": true
+  },
+  "status": "pass",
+  "summary": {
+    "all_requests_http_ok": true,
+    "cache_detail": "paged",
+    "cache_hit_tokens": 38,
+    "engine_type": "batched",
+    "exact_repeat_1": true,
+    "exact_repeat_2": true,
+    "finish_reasons": {
+      "exact_repeat_1": "stop",
+      "exact_repeat_2": "stop",
+      "first_token_system_probe": "stop"
+    },
+    "first_token_system_probe_http_ok": true,
+    "first_token_system_probe_text": "OK",
+    "l2_tokens_on_disk": 62,
+    "last_cache_execution": null,
+    "memory_pressure_cleared": true,
+    "native_cache": {
+      "block_disk_l2": true,
+      "cache_subtype": "mimo_v2_asymmetric_swa",
+      "cache_type": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "family": "mimo_v2",
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "paged": true,
+      "prefix": true,
+      "schema": "mixed_swa_kv_v1",
+      "storage_quantization": {
+        "applies_to": "full_and_sliding_attention_kv",
+        "bits": 8,
+        "enabled": true,
+        "group_size": 64,
+        "metadata_policy": "preserve_rotating_window_metadata",
+        "mode": "storage_boundary"
+      }
+    },
+    "no_think_tags": true,
+    "texts": {
+      "exact_repeat_1": "ACK-CB-742",
+      "exact_repeat_2": "ACK-CB-742",
+      "first_token_system_probe": "OK"
+    },
+    "usage": {
+      "exact_repeat_1": {
+        "completion_tokens": 8,
+        "prompt_tokens": 39,
+        "prompt_tokens_details": null,
+        "total_tokens": 47
+      },
+      "exact_repeat_2": {
+        "completion_tokens": 8,
+        "prompt_tokens": 39,
+        "prompt_tokens_details": {
+          "cache_detail": "paged",
+          "cached_tokens": 38
+        },
+        "total_tokens": 47
+      },
+      "first_token_system_probe": {
+        "completion_tokens": 2,
+        "prompt_tokens": 25,
+        "prompt_tokens_details": null,
+        "total_tokens": 27
+      }
+    }
+  },
+  "ts": 1781055502
+}

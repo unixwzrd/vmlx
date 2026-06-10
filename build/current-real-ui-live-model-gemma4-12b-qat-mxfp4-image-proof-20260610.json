@@ -1,0 +1,96 @@
+{
+  "status": "pass",
+  "generated_at": "2026-06-10",
+  "scope": "real Electron dev-app Gemma 4 12B QAT MXFP4 Chat Completions image/VL proof",
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4",
+  "served_model": "gemma4-12b-qat-mxfp4-dev-ui-image-20260610",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-live-model-gemma4-12b-qat-mxfp4-image-20260610-proof.json",
+  "request": {
+    "wire_api": "chat",
+    "max_tokens": 96,
+    "max_prompt_tokens": 12000,
+    "enable_thinking": false,
+    "builtin_tools": false,
+    "media": "image",
+    "image_expect_regex": "\\bred\\b"
+  },
+  "proven": {
+    "real_electron_dev_app": true,
+    "real_model_loaded": true,
+    "model_type": "mllm",
+    "image_attachment_persisted": true,
+    "server_media_diag_image_url": true,
+    "gemma_media_fallback_used": true,
+    "image_semantic_verified": true,
+    "visible_image_answer": "Red",
+    "visible_assistant_turns_complete": true,
+    "generation_defaults_applied": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_tokens": 96,
+      "enable_thinking": false
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "mxfp4",
+      "profile": "MXFP4",
+      "target_bits": 4,
+      "group_size": 32,
+      "passthrough_tensor_count": 349,
+      "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+      "metal_na_active_on_host": true
+    },
+    "memory_mb": {
+      "active": 7763.8,
+      "peak": 8399.7
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache": {
+      "cache_detail": "paged+mixed_swa",
+      "cached_tokens": 20,
+      "l2_block_tokens_on_disk": 64,
+      "l2_tokens_on_disk": 64,
+      "block_disk_writes": 2
+    },
+    "server_cache_controls_verified": true,
+    "proven_surfaces": [
+      "cache_endpoint_stats",
+      "cache_hit_telemetry",
+      "chat_completions",
+      "current_electron_dev_build",
+      "generation_defaults_applied",
+      "l2_disk_storage",
+      "language_leak_check",
+      "native_cache_status",
+      "parser_leak_check",
+      "real_loaded_model",
+      "server_cache_controls",
+      "settings_persistence",
+      "vl_image"
+    ]
+  },
+  "not_proven": [
+    "Gemma 12B QAT MXFP4 video in the dev app",
+    "Gemma 12B QAT MXFP4 audio in the dev app",
+    "Gemma 12B QAT MXFP4 installed-app parity",
+    "Gemma 12B QAT MXFP4 public tunnel parity",
+    "Signed/notarized DMG release readiness"
+  ],
+  "release_boundary": [
+    "Gemma 12B QAT MXFP4 image/VL is checkpoint-green in the source Electron dev app.",
+    "This is not installed-app, signed DMG, or notarized release proof."
+  ]
+}

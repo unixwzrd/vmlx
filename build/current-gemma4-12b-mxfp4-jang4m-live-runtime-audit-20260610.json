@@ -1,0 +1,1448 @@
+{
+  "created_at": "2026-06-09T18:34:17-0700",
+  "status": "pass",
+  "checks": {
+    "all_rows_passed": true,
+    "at_least_one_row_ran": true
+  },
+  "rows": {
+    "mxfp4_conservative": {
+      "row": "mxfp4",
+      "mode": "conservative",
+      "model_path": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4",
+      "served_name": "gemma4-12b-mxfp4-live",
+      "command": [
+        "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+        "-B",
+        "-s",
+        "-P",
+        "-m",
+        "vmlx_engine.cli",
+        "serve",
+        "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4",
+        "--served-model-name",
+        "gemma4-12b-mxfp4-live",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8934",
+        "--reasoning-parser",
+        "gemma4",
+        "--tool-call-parser",
+        "gemma4",
+        "--enable-auto-tool-choice",
+        "--default-enable-thinking",
+        "false",
+        "--log-level",
+        "INFO",
+        "--no-continuous-batching",
+        "--disable-prefix-cache",
+        "--kv-cache-quantization",
+        "none",
+        "--disable-native-mtp"
+      ],
+      "server_log": "build/current-gemma4-12b-mxfp4-jang4m-live-runtime-audit-20260610_artifacts/mxfp4_conservative_server.log",
+      "status": "pass",
+      "checks": {
+        "health_ok": true,
+        "models_ok": true,
+        "capabilities_ok": true,
+        "cache_stats_ok": true,
+        "basic_chat_ok": true,
+        "multi_turn_recall_ok": true,
+        "reasoning_request_visible_answer_ok": true,
+        "tool_required_structured_ok": true,
+        "cache_warm_endpoint_ok": true,
+        "cache_reuse_observed_if_expected": true,
+        "block_l2_observed_if_expected": true,
+        "tq_kv_observed_if_expected": true
+      },
+      "failures": [],
+      "health_initial": {
+        "ok": true,
+        "elapsed_sec": 4.263,
+        "body": {
+          "status": "healthy",
+          "model_loaded": true,
+          "model_name": "OsaurusAI/gemma-4-12B-it-MXFP4",
+          "model_type": "mllm",
+          "engine_type": "simple",
+          "last_request_time": null,
+          "mcp": null,
+          "memory": {
+            "active_mb": 7544.9,
+            "peak_mb": 7544.9,
+            "cache_mb": 0.0
+          },
+          "speculative_decoding": "not_configured",
+          "quantization_format": {
+            "type": "jang",
+            "target_bits": null,
+            "actual_bits": null,
+            "block_size": 64
+          },
+          "quantization": {
+            "codec": "affine_quantized_matmul",
+            "weight_format": "mxfp4",
+            "backend": "mx.quantize",
+            "profile": "MXFP4",
+            "target_bits": 4,
+            "config_bits": 4,
+            "group_size": 32,
+            "passthrough_bit_widths_used": [
+              16
+            ],
+            "passthrough_tensor_count": 349,
+            "weight_index": {
+              "index_file": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4/model.safetensors.index.json",
+              "total_tensors": 1005,
+              "suffix_counts": {
+                "scales": 328,
+                "weight": 624
+              },
+              "tq_target_counts": {},
+              "routed_layout_counts": {
+                "prestacked_switch": 0,
+                "split_expert": 0
+              },
+              "mtp_tensor_count": 0
+            },
+            "weight_matmul_dispatch": {
+              "primary": "mlx_affine_quantized_matmul",
+              "uses_mlx_quantized_matmul": true,
+              "metal_na_eligible": true,
+              "reason": null
+            },
+            "sidecar": {
+              "jang_config": true,
+              "jangtq_runtime": false,
+              "prestacked_bundle": false
+            }
+          },
+          "acceleration": {
+            "kernel_type": "affine_quantized_matmul",
+            "metal_na_capable": true,
+            "metal_na_active_on_host": true,
+            "reason": null,
+            "metal_na_symbols": {
+              "available": true,
+              "nax_symbols": 4668,
+              "naxtile_symbols": 4154,
+              "affine_qmm_symbols": 4212,
+              "affine_gather_qmm_symbols": 3456
+            },
+            "host": {
+              "supported": true,
+              "brand": "Apple M5 Max",
+              "reason": null
+            }
+          },
+          "mtp": {
+            "config_num_nextn_predict_layers": null,
+            "config_mtp_layer_source": null,
+            "jang_mtp_layers": null,
+            "jang_drop_mtp": null,
+            "index_has_mtp_tensors": false,
+            "index_mtp_layer_count": null,
+            "mtp_tensor_count": 0,
+            "artifact_available": false,
+            "family": "gemma4",
+            "has_vision_config": true,
+            "has_vision_weights": false,
+            "vision_tensor_count": 0,
+            "cache_type": "kv",
+            "runtime_supported": false,
+            "runtime_available": false,
+            "runtime_active": false,
+            "runtime_validation_blocked": false,
+            "effective_depth": null,
+            "effective_depth_source": null,
+            "runtime_scope": null,
+            "vl_runtime_available": false,
+            "runtime_bundle_has_mtp": null,
+            "runtime_mtp_mode": null,
+            "runtime_reason": "config does not request MTP",
+            "status": "not_configured",
+            "issues": [],
+            "request_policy": "disabled",
+            "request_gate": "temperature=0,repetition_penalty=1.0"
+          },
+          "turboquant_kv_cache": {
+            "enabled": false
+          },
+          "native_cache": {
+            "family": "gemma4",
+            "schema": "plain_kv_v1",
+            "cache_type": "paged_kv",
+            "components": [
+              "attention_kv"
+            ],
+            "generic_turboquant_kv": {
+              "enabled": false,
+              "reason": "not_active"
+            },
+            "storage_quantization": {
+              "enabled": false,
+              "bits": null,
+              "group_size": null
+            },
+            "prefix": false,
+            "paged": false,
+            "block_disk_l2": false
+          }
+        }
+      },
+      "models": {
+        "code": 200,
+        "body": {
+          "object": "list",
+          "data": [
+            {
+              "id": "gemma4-12b-mxfp4-live",
+              "object": "model",
+              "created": 1781055243,
+              "owned_by": "vmlx-engine"
+            },
+            {
+              "id": "OsaurusAI/gemma-4-12B-it-MXFP4",
+              "object": "model",
+              "created": 1781055243,
+              "owned_by": "vmlx-engine"
+            }
+          ]
+        },
+        "raw_tail": "{\"object\":\"list\",\"data\":[{\"id\":\"gemma4-12b-mxfp4-live\",\"object\":\"model\",\"created\":1781055243,\"owned_by\":\"vmlx-engine\"},{\"id\":\"OsaurusAI/gemma-4-12B-it-MXFP4\",\"object\":\"model\",\"created\":1781055243,\"owned_by\":\"vmlx-engine\"}]}"
+      },
+      "capabilities": {
+        "code": 200,
+        "body": {
+          "id": "gemma4-12b-mxfp4-live",
+          "loaded_model": "gemma4-12b-mxfp4-live",
+          "model_path": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4",
+          "family": "gemma4",
+          "compat_warnings": [],
+          "supports_tools": true,
+          "tool_parser": "gemma4",
+          "supports_thinking": true,
+          "reasoning_parser": "gemma4",
+          "think_in_template": false,
+          "supported_modes": [
+            "instruct",
+            "reasoning"
+          ],
+          "experimental_modes": [],
+          "reasoning_efforts": [],
+          "modalities": [
+            "text",
+            "vision",
+            "video"
+          ],
+          "media": {
+            "runtime_modalities": [
+              "text",
+              "vision",
+              "video"
+            ],
+            "declared_modalities": [
+              "text",
+              "vision",
+              "image",
+              "video",
+              "audio"
+            ],
+            "preserved_modalities": [],
+            "unwired_modalities": [],
+            "memory_gate": {
+              "applicable": false,
+              "safe": true,
+              "reason": "not_mimo_v2"
+            },
+            "status_by_modality": {
+              "audio": "declared_not_runtime_supported",
+              "image": "runtime_supported",
+              "text": "runtime_supported",
+              "video": "runtime_supported",
+              "vision": "runtime_supported"
+            }
+          },
+          "cache": {
+            "prefix": false,
+            "type": "disabled",
+            "paged": false,
+            "block_disk_l2": false,
+            "dsv4_composite_state": false,
+            "native": {
+              "family": "gemma4",
+              "schema": "plain_kv_v1",
+              "cache_type": "paged_kv",
+              "components": [
+                "attention_kv"
+              ],
+              "generic_turboquant_kv": {
+                "enabled": false,
+                "reason": "not_active"
+              },
+              "storage_quantization": {
+                "enabled": false,
+                "bits": null,
+                "group_size": null
+              },
+              "prefix": false,
+              "paged": false,
+              "block_disk_l2": false
+            }
+          },
+          "quantization": {
+            "codec": "affine_quantized_matmul",
+            "weight_format": "mxfp4",
+            "backend": "mx.quantize",
+            "profile": "MXFP4",
+            "target_bits": 4,
+            "config_bits": 4,
+            "group_size": 32,
+            "passthrough_bit_widths_used": [
+              16
+            ],
+            "passthrough_tensor_count": 349,
+            "weight_index": {
+              "index_file": "/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4/model.safetensors.index.json",
+              "total_tensors": 1005,
+              "suffix_counts": {
+                "scales": 328,
+                "weight": 624
+              },
+              "tq_target_counts": {},
+              "routed_layout_counts": {
+                "prestacked_switch": 0,
+                "split_expert": 0
+              },
+              "mtp_tensor_count": 0
+            },
+            "weight_matmul_dispatch": {
+              "primary": "mlx_affine_quantized_matmul",
+              "uses_mlx_quantized_matmul": true,
+              "metal_na_eligible": true,
+              "reason": null
+            },
+            "sidecar": {
+              "jang_config": true,
+              "jangtq_runtime": false,
+              "prestacked_bundle": false
+            }
+          },
+          "acceleration": {
+            "kernel_type": "affine_quantized_matmul",
+            "metal_na_capable": true,
+            "metal_na_active_on_host": true,
+            "reason": null,
+            "metal_na_symbols": {
+              "available": true,
+              "nax_symbols": 4668,
+              "naxtile_symbols": 4154,
+              "affine_qmm_symbols": 4212,
+              "affine_gather_qmm_symbols": 3456
+            },
+            "host": {
+              "supported": true,
+              "brand": "Apple M5 Max",
+              "reason": null
+            }
+          },
+          "mtp": {
+            "config_num_nextn_predict_layers": null,
+            "config_mtp_layer_source": null,
+            "jang_mtp_layers": null,
+            "jang_drop_mtp": null,
+            "index_has_mtp_tensors": false,
+            "index_mtp_layer_count": null,
+            "mtp_tensor_count": 0,
+            "artifact_available": false,
+            "family": "gemma4",
+            "has_vision_config": true,
+            "has_vision_weights": false,
+            "vision_tensor_count": 0,
+            "cache_type": "kv",
+            "runtime_supported": false,
+            "runtime_available": false,
+            "runtime_active": false,
+            "runtime_validation_blocked": false,
+            "effective_depth": null,
+            "effective_depth_source": null,
+            "runtime_scope": null,
+            "vl_runtime_available": false,
+            "runtime_bundle_has_mtp": null,
+            "runtime_mtp_mode": null,
+            "runtime_reason": "config does not request MTP",
+            "status": "not_configured",
+            "issues": [],
+            "request_policy": "disabled",
+            "request_gate": "temperature=0,repetition_penalty=1.0"
+          },
+          "routing": null,
+          "sampling_defaults": {
+            "temperature": 1.0,
+            "top_p": 0.95,
+            "top_k": 64.0
+          }
+        },
+        "raw_tail": "{\"id\":\"gemma4-12b-mxfp4-live\",\"loaded_model\":\"gemma4-12b-mxfp4-live\",\"model_path\":\"/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\",\"family\":\"gemma4\",\"compat_warnings\":[],\"supports_tools\":true,\"tool_parser\":\"gemma4\",\"supports_thinking\":true,\"reasoning_parser\":\"gemma4\",\"think_in_template\":false,\"supported_modes\":[\"instruct\",\"reasoning\"],\"experimental_modes\":[],\"reasoning_efforts\":[],\"modalities\":[\"text\",\"vision\",\"video\"],\"media\":{\"runtime_modalities\":[\"text\",\"vision\",\"video\"],\"declared_modalities\":[\"text\",\"vision\",\"image\",\"video\",\"audio\"],\"preserved_modalities\":[],\"unwired_modalities\":[],\"memory_gate\":{\"applicable\":false,\"safe\":true,\"reason\":\"not_mimo_v2\"},\"status_by_modality\":{\"audio\":\"declared_not_runtime_supported\",\"image\":\"runtime_supported\",\"text\":\"runtime_supported\",\"video\":\"runtime_supported\",\"vision\":\"runtime_supported\"}},\"cache\":{\"prefix\":false,\"type\":\"disabled\",\"paged\":false,\"block_disk_l2\":false,\"dsv4_composite_state\":false,\"native\":{\"family\":\"gemma4\",\"schema\":\"plain_kv_v1\",\"cache_type\":\"paged_kv\",\"components\":[\"attention_kv\"],\"generic_turboquant_kv\":{\"enabled\":false,\"reason\":\"not_active\"},\"storage_quantization\":{\"enabled\":false,\"bits\":null,\"group_size\":null},\"prefix\":false,\"paged\":false,\"block_disk_l2\":false}},\"quantization\":{\"codec\":\"affine_quantized_matmul\",\"weight_format\":\"mxfp4\",\"backend\":\"mx.quantize\",\"profile\":\"MXFP4\",\"target_bits\":4,\"config_bits\":4,\"group_size\":32,\"passthrough_bit_widths_used\":[16],\"passthrough_tensor_count\":349,\"weight_index\":{\"index_file\":\"/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4/model.safetensors.index.json\",\"total_tensors\":1005,\"suffix_counts\":{\"scales\":328,\"weight\":624},\"tq_target_counts\":{},\"routed_layout_counts\":{\"prestacked_switch\":0,\"split_expert\":0},\"mtp_tensor_count\":0},\"weight_matmul_dispatch\":{\"primary\":\"mlx_affine_quantized_matmul\",\"uses_mlx_quantized_matmul\":true,\"metal_na_eligible\":true,\"reason\":null},\"sidecar\":{\"jang_config\":true,\"jangtq_runtime\":false,\"prestacked_bundle\":false}},\"acceleration\":{\"kernel_type\":\"affine_quantized_matmul\",\"metal_na_capable\":true,\"metal_na_active_on_host\":true,\"reason\":null,\"metal_na_symbols\":{\"available\":true,\"nax_symbols\":4668,\"naxtile_symbols\":4154,\"affine_qmm_symbols\":4212,\"affine_gather_qmm_symbols\":3456},\"host\":{\"supported\":true,\"brand\":\"Apple M5 Max\",\"reason\":null}},\"mtp\":{\"config_num_nextn_predict_layers\":null,\"config_mtp_layer_source\":null,\"jang_mtp_layers\":null,\"jang_drop_mtp\":null,\"index_has_mtp_tensors\":false,\"index_mtp_layer_count\":null,\"mtp_tensor_count\":0,\"artifact_available\":false,\"family\":\"gemma4\",\"has_vision_config\":true,\"has_vision_weights\":false,\"vision_tensor_count\":0,\"cache_type\":\"kv\",\"runtime_supported\":false,\"runtime_available\":false,\"runtime_active\":false,\"runtime_validation_blocked\":false,\"effective_depth\":null,\"effective_depth_source\":null,\"runtime_scope\":null,\"vl_runtime_available\":false,\"runtime_bundle_has_mtp\":null,\"runtime_mtp_mode\":null,\"runtime_reason\":\"config does not request MTP\",\"status\":\"not_configured\",\"issues\":[],\"request_policy\":\"disabled\",\"request_gate\":\"temperature=0,repetition_penalty=1.0\"},\"routing\":null,\"sampling_defaults\":{\"temperature\":1.0,\"top_p\":0.95,\"top_k\":64.0}}"
+      },
+      "cache_stats_initial": {
+        "code": 200,
+        "body": {
+          "scheduler_cache": {
+            "hits": 0,
+            "misses": 0,
+            "partial_hits": 0,
+            "hit_rate": 0.0,
+            "tokens_saved": 0,
+            "image_cache_hits": 0,
+            "vision_encoder_skips": 0,
+            "total_queries": 0,
+            "evictions": 0,
+            "entries": 0,
+            "max_entries": 50,
+            "memory_used_mb": 0.0,
+            "max_memory_mb": 2048.0,
+            "enabled": true,
+            "cache_entries": 0
+          },
+          "cache_totals": {
+            "ram_tokens_cached": 0,
+            "l2_prompt_tokens_on_disk": 0,
+            "l2_block_tokens_on_disk": 0,
+            "l2_ssm_tokens_on_disk": 0,
+            "ssm_tokens_on_disk": 0,
+            "l2_tokens_on_disk": 0,
+            "l2_tokens_on_disk_store_sum": 0,
+            "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+          },
+          "memory": {
+            "active_mb": 7544.9,
+            "peak_mb": 7544.9,
+            "cache_mb": 0.0
+          }
+        },
+        "raw_tail": "{\"scheduler_cache\":{\"hits\":0,\"misses\":0,\"partial_hits\":0,\"hit_rate\":0.0,\"tokens_saved\":0,\"image_cache_hits\":0,\"vision_encoder_skips\":0,\"total_queries\":0,\"evictions\":0,\"entries\":0,\"max_entries\":50,\"memory_used_mb\":0.0,\"max_memory_mb\":2048.0,\"enabled\":true,\"cache_entries\":0},\"cache_totals\":{\"ram_tokens_cached\":0,\"l2_prompt_tokens_on_disk\":0,\"l2_block_tokens_on_disk\":0,\"l2_ssm_tokens_on_disk\":0,\"ssm_tokens_on_disk\":0,\"l2_tokens_on_disk\":0,\"l2_tokens_on_disk_store_sum\":0,\"l2_tokens_on_disk_note\":\"store_sum_across_prompt_block_ssm_l2; tiers_may_overlap\"},\"memory\":{\"active_mb\":7544.9,\"peak_mb\":7544.9,\"cache_mb\":0.0}}"
+      },
+      "chat_basic": {
+        "code": 200,
+        "elapsed_sec": 0.346,
+        "body": {
+          "id": "chatcmpl-7ad4c411",
+          "object": "chat.completion",
+          "created": 1781055244,
+          "model": "gemma4-12b-mxfp4-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "The capital of France is Paris.",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 22,
+            "completion_tokens": 12,
+            "total_tokens": 34,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-7ad4c411\",\"object\":\"chat.completion\",\"created\":1781055244,\"model\":\"gemma4-12b-mxfp4-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The capital of France is Paris.\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":22,\"completion_tokens\":12,\"total_tokens\":34,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "The capital of France is Paris.",
+        "tool_calls": []
+      },
+      "chat_basic_checks": {
+        "has_visible_text": true,
+        "mentions_paris": true,
+        "no_replacement_char": true,
+        "no_channel_leak": true,
+        "no_tool_markup_leak": true,
+        "length": 31
+      },
+      "chat_memory_turn1": {
+        "code": 200,
+        "elapsed_sec": 0.629,
+        "body": {
+          "id": "chatcmpl-d7eb6383",
+          "object": "chat.completion",
+          "created": 1781055244,
+          "model": "gemma4-12b-mxfp4-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Understood. I have noted the codeword: **ORCHID-4729**. I will remember this for the next turn.",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 27,
+            "completion_tokens": 33,
+            "total_tokens": 60,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-d7eb6383\",\"object\":\"chat.completion\",\"created\":1781055244,\"model\":\"gemma4-12b-mxfp4-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Understood. I have noted the codeword: **ORCHID-4729**. I will remember this for the next turn.\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":27,\"completion_tokens\":33,\"total_tokens\":60,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "Understood. I have noted the codeword: **ORCHID-4729**. I will remember this for the next turn.",
+        "tool_calls": []
+      },
+      "chat_memory_turn2": {
+        "code": 200,
+        "elapsed_sec": 0.496,
+        "body": {
+          "id": "chatcmpl-08695c03",
+          "object": "chat.completion",
+          "created": 1781055245,
+          "model": "gemma4-12b-mxfp4-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "The exact codeword you gave me is: **ORCHID-4729**",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 73,
+            "completion_tokens": 23,
+            "total_tokens": 96,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-08695c03\",\"object\":\"chat.completion\",\"created\":1781055245,\"model\":\"gemma4-12b-mxfp4-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The exact codeword you gave me is: **ORCHID-4729**\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":73,\"completion_tokens\":23,\"total_tokens\":96,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "The exact codeword you gave me is: **ORCHID-4729**",
+        "tool_calls": []
+      },
+      "chat_reasoning_on": {
+        "code": 200,
+        "elapsed_sec": 0.18,
+        "body": {
+          "id": "chatcmpl-b867b456",
+          "object": "chat.completion",
+          "created": 1781055245,
+          "model": "gemma4-12b-mxfp4-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "45",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 28,
+            "completion_tokens": 7,
+            "total_tokens": 35,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-b867b456\",\"object\":\"chat.completion\",\"created\":1781055245,\"model\":\"gemma4-12b-mxfp4-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"45\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":28,\"completion_tokens\":7,\"total_tokens\":35,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "45",
+        "tool_calls": []
+      },
+      "chat_tool_required": {
+        "code": 200,
+        "elapsed_sec": 0.565,
+        "body": {
+          "id": "chatcmpl-b0589d80",
+          "object": "chat.completion",
+          "created": 1781055246,
+          "model": "gemma4-12b-mxfp4-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "id": "call_3fb74375",
+                    "type": "function",
+                    "function": {
+                      "name": "record_fact",
+                      "arguments": "{\"codeword\": \"ORCHID-4729\"}"
+                    }
+                  }
+                ],
+                "content": null
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 74,
+            "completion_tokens": 27,
+            "total_tokens": 101
+          }
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-b0589d80\",\"object\":\"chat.completion\",\"created\":1781055246,\"model\":\"gemma4-12b-mxfp4-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_3fb74375\",\"type\":\"function\",\"function\":{\"name\":\"record_fact\",\"arguments\":\"{\\\"codeword\\\": \\\"ORCHID-4729\\\"}\"}}],\"content\":null},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":74,\"completion_tokens\":27,\"total_tokens\":101}}",
+        "content": "",
+        "tool_calls": [
+          {
+            "id": "call_3fb74375",
+            "type": "function",
+            "function": {
+              "name": "record_fact",
+              "arguments": "{\"codeword\": \"ORCHID-4729\"}"
+            }
+          }
+        ]
+      },
+      "cache_warm": {
+        "code": 200,
+        "body": {
+          "error": "Scheduler not available (SimpleEngine mode)"
+        },
+        "raw_tail": "{\"error\":\"Scheduler not available (SimpleEngine mode)\"}"
+      },
+      "cache_repeat_1": {
+        "code": 200,
+        "elapsed_sec": 0.336,
+        "body": {
+          "id": "chatcmpl-ad48b424",
+          "object": "chat.completion",
+          "created": 1781055246,
+          "model": "gemma4-12b-mxfp4-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "CACHE-ACK ORCHID-4729",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 30,
+            "completion_tokens": 16,
+            "total_tokens": 46,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-ad48b424\",\"object\":\"chat.completion\",\"created\":1781055246,\"model\":\"gemma4-12b-mxfp4-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"CACHE-ACK ORCHID-4729\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":30,\"completion_tokens\":16,\"total_tokens\":46,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "CACHE-ACK ORCHID-4729",
+        "tool_calls": []
+      },
+      "cache_repeat_2": {
+        "code": 200,
+        "elapsed_sec": 0.336,
+        "body": {
+          "id": "chatcmpl-8861b0d0",
+          "object": "chat.completion",
+          "created": 1781055246,
+          "model": "gemma4-12b-mxfp4-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "CACHE-ACK ORCHID-4729",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 30,
+            "completion_tokens": 16,
+            "total_tokens": 46,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-8861b0d0\",\"object\":\"chat.completion\",\"created\":1781055246,\"model\":\"gemma4-12b-mxfp4-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"CACHE-ACK ORCHID-4729\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":30,\"completion_tokens\":16,\"total_tokens\":46,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "CACHE-ACK ORCHID-4729",
+        "tool_calls": []
+      },
+      "cache_stats_final": {
+        "code": 200,
+        "body": {
+          "scheduler_cache": {
+            "hits": 0,
+            "misses": 0,
+            "partial_hits": 0,
+            "hit_rate": 0.0,
+            "tokens_saved": 0,
+            "image_cache_hits": 0,
+            "vision_encoder_skips": 0,
+            "total_queries": 0,
+            "evictions": 0,
+            "entries": 0,
+            "max_entries": 50,
+            "memory_used_mb": 0.0,
+            "max_memory_mb": 2048.0,
+            "enabled": true,
+            "cache_entries": 0
+          },
+          "cache_totals": {
+            "ram_tokens_cached": 0,
+            "l2_prompt_tokens_on_disk": 0,
+            "l2_block_tokens_on_disk": 0,
+            "l2_ssm_tokens_on_disk": 0,
+            "ssm_tokens_on_disk": 0,
+            "l2_tokens_on_disk": 0,
+            "l2_tokens_on_disk_store_sum": 0,
+            "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+          },
+          "memory": {
+            "active_mb": 7544.9,
+            "peak_mb": 7770.0,
+            "cache_mb": 102.4
+          }
+        },
+        "raw_tail": "{\"scheduler_cache\":{\"hits\":0,\"misses\":0,\"partial_hits\":0,\"hit_rate\":0.0,\"tokens_saved\":0,\"image_cache_hits\":0,\"vision_encoder_skips\":0,\"total_queries\":0,\"evictions\":0,\"entries\":0,\"max_entries\":50,\"memory_used_mb\":0.0,\"max_memory_mb\":2048.0,\"enabled\":true,\"cache_entries\":0},\"cache_totals\":{\"ram_tokens_cached\":0,\"l2_prompt_tokens_on_disk\":0,\"l2_block_tokens_on_disk\":0,\"l2_ssm_tokens_on_disk\":0,\"ssm_tokens_on_disk\":0,\"l2_tokens_on_disk\":0,\"l2_tokens_on_disk_store_sum\":0,\"l2_tokens_on_disk_note\":\"store_sum_across_prompt_block_ssm_l2; tiers_may_overlap\"},\"memory\":{\"active_mb\":7544.9,\"peak_mb\":7770.0,\"cache_mb\":102.4}}"
+      },
+      "server_returncode": -15,
+      "server_log_tail": "INFO:vmlx_engine.model_config_registry:Model config: detection_source=jang_stamped family=gemma4 reasoning_parser=gemma4 tool_parser=gemma4 think_in_template=False cache_type=kv cache_subtype=None is_mllm=True\nINFO:__main__:--kv-cache-quantization=none explicit; VMLX_DISABLE_TQ_KV=1 set so JANG-calibrated TurboQuant KV is skipped at load time. Omit the flag (or set VMLX_FORCE_TQ_AUTO=1) to keep the bundle's calibrated TQ.\nINFO:__main__:Reasoning parser enabled: gemma4\n============================================================\nSECURITY CONFIGURATION\n============================================================\n  Authentication: DISABLED - Use --api-key to enable\n  Rate limiting: DISABLED - Use --rate-limit to enable\n  Request timeout: 300.0s\n  Tool calling: ENABLED (parser: gemma4)\n  Reasoning: ENABLED (parser: Gemma4ReasoningParser)\n  External speculative decoding: Use --speculative-model to enable\n============================================================\nLoading model: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nServed model name: gemma4-12b-mxfp4-live\nMax output fallback: 4096 (bundle max_new_tokens wins when present)\nMode: Simple (maximum throughput)\nINFO:vmlx_engine.server:Serving model as: gemma4-12b-mxfp4-live (actual: OsaurusAI/gemma-4-12B-it-MXFP4)\nINFO:vmlx_engine.server:System memory before load: 110.7GB available / 128.0GB total (13.5% used)\nINFO:vmlx_engine.server:Loading model with SimpleEngine: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nINFO:vmlx_engine:is_mllm_model(/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4): tier=config_json_vision_config result=True\nINFO:vmlx_engine.models.mllm:Loading JANG VL model: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nINFO:vmlx_engine.utils.jang_loader:JANG v2 VLM detected \u2014 loading via mmap (instant)\nINFO:vmlx_engine.utils.jang_loader:  Wired limit set to 25 GB (model 8 GB)\nINFO:vmlx_engine.utils.jang_loader:  TurboQuant KV skipped: VMLX_DISABLE_TQ_KV=1; using native model cache plus scheduler-level q4/q8 storage only when explicitly requested and compatible.\nINFO:vmlx_engine.utils.jang_loader:JANG v2 VLM loaded in 1.0s\n[transformers] You are using a model of type `gemma4_unified` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.\nINFO:vmlx_engine.models.mllm:JANG VL model loaded: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nINFO:vmlx_engine.engine.simple:SimpleEngine loaded: /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 (MLLM=True)\nINFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=7.4GB max=107.5GB reason=simple_engine_start\nINFO:vmlx_engine.server:MLLM model loaded (simple mode): /Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4\nINFO:vmlx_engine.server:Metal GPU memory after load: 7.37GB active, 7.37GB peak\nINFO:vmlx_engine.server:System memory after load: 102.7GB available (19.7% used)\nINFO:vmlx_engine.server:Native tool format enabled for parser: gemma4\nINFO:vmlx_engine.server:Default max tokens fallback: 4096 (bundle max_new_tokens wins when present)\nStarting server at http://127.0.0.1:8934\nINFO:     Started server process [153]\nINFO:     Waiting for application startup.\nINFO:vmlx_engine.server:Started caffeinate system wake lock for PID 153\nINFO:vmlx_engine.mcp.config:No MCP config file found, using empty config\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://127.0.0.1:8934 (Press CTRL+C to quit)\nINFO:     127.0.0.1:58691 - \"GET /health HTTP/1.1\" 200 OK\nWARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.\nINFO:     127.0.0.1:58692 - \"GET /v1/models HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:58693 - \"GET /v1/models/gemma4-12b-mxfp4-live/capabilities HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:58694 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 48, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Answer in one short sentence: what is the capital of ...\nINFO:vmlx_engine.server:Chat completion: 12 tokens in 0.34s (35.1 tok/s)\nINFO:     127.0.0.1:58695 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 72, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Remember this exact codeword for the next turn: ORCHI...\nINFO:vmlx_engine.server:Chat completion: 33 tokens in 0.63s (52.6 tok/s)\nINFO:     127.0.0.1:58696 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 72, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 3 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 3 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Remember this exact codeword for the next turn: ORCHI...\nINFO:vmlx_engine.models.mllm:  Chat msg 1: role=assistant, content=Understood. I have noted the codeword: **ORCHID-4729**. I will remember this for...\nINFO:vmlx_engine.models.mllm:  Chat msg 2: role=user, content=[{'type': 'text', 'text': 'What exact codeword did I give you?', 'content': 'Wha...\nINFO:vmlx_engine.server:Chat completion: 23 tokens in 0.49s (46.5 tok/s)\nINFO:     127.0.0.1:58697 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 96, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Think briefly if needed, then answer only the number:...\nINFO:vmlx_engine.server:Chat completion: 7 tokens in 0.18s (39.1 tok/s)\nINFO:     127.0.0.1:58698 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 128, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Use the available tool to record the codeword ORCHID-...\nINFO:vmlx_engine.server:Chat completion: 27 tokens in 0.56s (47.9 tok/s)\nINFO:     127.0.0.1:58699 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:58700 - \"POST /v1/cache/warm HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 64, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Repeatable cache probe. Say exactly: CACHE-ACK ORCHID...\nINFO:vmlx_engine.server:Chat completion: 16 tokens in 0.33s (47.9 tok/s)\nINFO:     127.0.0.1:58701 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/OsaurusAI/gemma-4-12B-it-MXFP4 kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 64, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Repeatable cache probe. Say exactly: CACHE-ACK ORCHID...\nINFO:vmlx_engine.server:Chat completion: 16 tokens in 0.33s (47.9 tok/s)\nINFO:     127.0.0.1:58702 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:58703 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:vmlx_engine.engine.simple:SimpleEngine stopped\nINFO:vmlx_engine.server:Engine stopped\nINFO:vmlx_engine.server:Caffeinate process terminated\nINFO:     Application shutdown complete.\nINFO:     Finished server process [153]\n"
+    },
+    "jang4m_conservative": {
+      "row": "jang4m",
+      "mode": "conservative",
+      "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+      "served_name": "gemma4-12b-jang4m-live",
+      "command": [
+        "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+        "-B",
+        "-s",
+        "-P",
+        "-m",
+        "vmlx_engine.cli",
+        "serve",
+        "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+        "--served-model-name",
+        "gemma4-12b-jang4m-live",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8935",
+        "--reasoning-parser",
+        "gemma4",
+        "--tool-call-parser",
+        "gemma4",
+        "--enable-auto-tool-choice",
+        "--default-enable-thinking",
+        "false",
+        "--log-level",
+        "INFO",
+        "--no-continuous-batching",
+        "--disable-prefix-cache",
+        "--kv-cache-quantization",
+        "none",
+        "--disable-native-mtp"
+      ],
+      "server_log": "build/current-gemma4-12b-mxfp4-jang4m-live-runtime-audit-20260610_artifacts/jang4m_conservative_server.log",
+      "status": "pass",
+      "checks": {
+        "health_ok": true,
+        "models_ok": true,
+        "capabilities_ok": true,
+        "cache_stats_ok": true,
+        "basic_chat_ok": true,
+        "multi_turn_recall_ok": true,
+        "reasoning_request_visible_answer_ok": true,
+        "tool_required_structured_ok": true,
+        "cache_warm_endpoint_ok": true,
+        "cache_reuse_observed_if_expected": true,
+        "block_l2_observed_if_expected": true,
+        "tq_kv_observed_if_expected": true
+      },
+      "failures": [],
+      "health_initial": {
+        "ok": true,
+        "elapsed_sec": 6.283,
+        "body": {
+          "status": "healthy",
+          "model_loaded": true,
+          "model_name": "JANGQ-AI/gemma-4-12B-it-JANG_4M",
+          "model_type": "mllm",
+          "engine_type": "simple",
+          "last_request_time": null,
+          "mcp": null,
+          "memory": {
+            "active_mb": 9665.9,
+            "peak_mb": 9665.9,
+            "cache_mb": 0.0
+          },
+          "speculative_decoding": "not_configured",
+          "quantization_format": {
+            "type": "jang",
+            "target_bits": null,
+            "actual_bits": null,
+            "block_size": 64
+          },
+          "quantization": {
+            "codec": "affine_quantized_matmul",
+            "weight_format": "jang_affine",
+            "backend": "mx.quantize",
+            "profile": "JANG_4M",
+            "target_bits": 8,
+            "config_bits": 8,
+            "group_size": 32,
+            "passthrough_tensor_count": 349,
+            "weight_index": {
+              "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M/model.safetensors.index.json",
+              "total_tensors": 1333,
+              "suffix_counts": {
+                "biases": 328,
+                "scales": 328,
+                "weight": 624
+              },
+              "tq_target_counts": {},
+              "routed_layout_counts": {
+                "prestacked_switch": 0,
+                "split_expert": 0
+              },
+              "mtp_tensor_count": 0
+            },
+            "weight_matmul_dispatch": {
+              "primary": "mlx_affine_quantized_matmul",
+              "uses_mlx_quantized_matmul": true,
+              "metal_na_eligible": true,
+              "reason": null
+            },
+            "sidecar": {
+              "jang_config": true,
+              "jangtq_runtime": false,
+              "prestacked_bundle": false
+            }
+          },
+          "acceleration": {
+            "kernel_type": "affine_quantized_matmul",
+            "metal_na_capable": true,
+            "metal_na_active_on_host": true,
+            "reason": null,
+            "metal_na_symbols": {
+              "available": true,
+              "nax_symbols": 4668,
+              "naxtile_symbols": 4154,
+              "affine_qmm_symbols": 4212,
+              "affine_gather_qmm_symbols": 3456
+            },
+            "host": {
+              "supported": true,
+              "brand": "Apple M5 Max",
+              "reason": null
+            }
+          },
+          "mtp": {
+            "config_num_nextn_predict_layers": null,
+            "config_mtp_layer_source": null,
+            "jang_mtp_layers": null,
+            "jang_drop_mtp": null,
+            "index_has_mtp_tensors": false,
+            "index_mtp_layer_count": null,
+            "mtp_tensor_count": 0,
+            "artifact_available": false,
+            "family": "gemma4",
+            "has_vision_config": true,
+            "has_vision_weights": false,
+            "vision_tensor_count": 0,
+            "cache_type": "kv",
+            "runtime_supported": false,
+            "runtime_available": false,
+            "runtime_active": false,
+            "runtime_validation_blocked": false,
+            "effective_depth": null,
+            "effective_depth_source": null,
+            "runtime_scope": null,
+            "vl_runtime_available": false,
+            "runtime_bundle_has_mtp": null,
+            "runtime_mtp_mode": null,
+            "runtime_reason": "config does not request MTP",
+            "status": "not_configured",
+            "issues": [],
+            "request_policy": "disabled",
+            "request_gate": "temperature=0,repetition_penalty=1.0"
+          },
+          "turboquant_kv_cache": {
+            "enabled": false
+          },
+          "native_cache": {
+            "family": "gemma4",
+            "schema": "plain_kv_v1",
+            "cache_type": "paged_kv",
+            "components": [
+              "attention_kv"
+            ],
+            "generic_turboquant_kv": {
+              "enabled": false,
+              "reason": "not_active"
+            },
+            "storage_quantization": {
+              "enabled": false,
+              "bits": null,
+              "group_size": null
+            },
+            "prefix": false,
+            "paged": false,
+            "block_disk_l2": false
+          }
+        }
+      },
+      "models": {
+        "code": 200,
+        "body": {
+          "object": "list",
+          "data": [
+            {
+              "id": "gemma4-12b-jang4m-live",
+              "object": "model",
+              "created": 1781055253,
+              "owned_by": "vmlx-engine"
+            },
+            {
+              "id": "JANGQ-AI/gemma-4-12B-it-JANG_4M",
+              "object": "model",
+              "created": 1781055253,
+              "owned_by": "vmlx-engine"
+            }
+          ]
+        },
+        "raw_tail": "{\"object\":\"list\",\"data\":[{\"id\":\"gemma4-12b-jang4m-live\",\"object\":\"model\",\"created\":1781055253,\"owned_by\":\"vmlx-engine\"},{\"id\":\"JANGQ-AI/gemma-4-12B-it-JANG_4M\",\"object\":\"model\",\"created\":1781055253,\"owned_by\":\"vmlx-engine\"}]}"
+      },
+      "capabilities": {
+        "code": 200,
+        "body": {
+          "id": "gemma4-12b-jang4m-live",
+          "loaded_model": "gemma4-12b-jang4m-live",
+          "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+          "family": "gemma4",
+          "compat_warnings": [],
+          "supports_tools": true,
+          "tool_parser": "gemma4",
+          "supports_thinking": true,
+          "reasoning_parser": "gemma4",
+          "think_in_template": false,
+          "supported_modes": [
+            "instruct",
+            "reasoning"
+          ],
+          "experimental_modes": [],
+          "reasoning_efforts": [],
+          "modalities": [
+            "text",
+            "vision",
+            "audio",
+            "video"
+          ],
+          "media": {
+            "runtime_modalities": [
+              "text",
+              "vision",
+              "audio",
+              "video"
+            ],
+            "declared_modalities": [
+              "text",
+              "vision",
+              "image",
+              "video",
+              "audio"
+            ],
+            "preserved_modalities": [],
+            "unwired_modalities": [],
+            "memory_gate": {
+              "applicable": false,
+              "safe": true,
+              "reason": "not_mimo_v2"
+            },
+            "status_by_modality": {
+              "audio": "runtime_supported",
+              "image": "runtime_supported",
+              "text": "runtime_supported",
+              "video": "runtime_supported",
+              "vision": "runtime_supported"
+            }
+          },
+          "cache": {
+            "prefix": false,
+            "type": "disabled",
+            "paged": false,
+            "block_disk_l2": false,
+            "dsv4_composite_state": false,
+            "native": {
+              "family": "gemma4",
+              "schema": "plain_kv_v1",
+              "cache_type": "paged_kv",
+              "components": [
+                "attention_kv"
+              ],
+              "generic_turboquant_kv": {
+                "enabled": false,
+                "reason": "not_active"
+              },
+              "storage_quantization": {
+                "enabled": false,
+                "bits": null,
+                "group_size": null
+              },
+              "prefix": false,
+              "paged": false,
+              "block_disk_l2": false
+            }
+          },
+          "quantization": {
+            "codec": "affine_quantized_matmul",
+            "weight_format": "jang_affine",
+            "backend": "mx.quantize",
+            "profile": "JANG_4M",
+            "target_bits": 8,
+            "config_bits": 8,
+            "group_size": 32,
+            "passthrough_tensor_count": 349,
+            "weight_index": {
+              "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M/model.safetensors.index.json",
+              "total_tensors": 1333,
+              "suffix_counts": {
+                "biases": 328,
+                "scales": 328,
+                "weight": 624
+              },
+              "tq_target_counts": {},
+              "routed_layout_counts": {
+                "prestacked_switch": 0,
+                "split_expert": 0
+              },
+              "mtp_tensor_count": 0
+            },
+            "weight_matmul_dispatch": {
+              "primary": "mlx_affine_quantized_matmul",
+              "uses_mlx_quantized_matmul": true,
+              "metal_na_eligible": true,
+              "reason": null
+            },
+            "sidecar": {
+              "jang_config": true,
+              "jangtq_runtime": false,
+              "prestacked_bundle": false
+            }
+          },
+          "acceleration": {
+            "kernel_type": "affine_quantized_matmul",
+            "metal_na_capable": true,
+            "metal_na_active_on_host": true,
+            "reason": null,
+            "metal_na_symbols": {
+              "available": true,
+              "nax_symbols": 4668,
+              "naxtile_symbols": 4154,
+              "affine_qmm_symbols": 4212,
+              "affine_gather_qmm_symbols": 3456
+            },
+            "host": {
+              "supported": true,
+              "brand": "Apple M5 Max",
+              "reason": null
+            }
+          },
+          "mtp": {
+            "config_num_nextn_predict_layers": null,
+            "config_mtp_layer_source": null,
+            "jang_mtp_layers": null,
+            "jang_drop_mtp": null,
+            "index_has_mtp_tensors": false,
+            "index_mtp_layer_count": null,
+            "mtp_tensor_count": 0,
+            "artifact_available": false,
+            "family": "gemma4",
+            "has_vision_config": true,
+            "has_vision_weights": false,
+            "vision_tensor_count": 0,
+            "cache_type": "kv",
+            "runtime_supported": false,
+            "runtime_available": false,
+            "runtime_active": false,
+            "runtime_validation_blocked": false,
+            "effective_depth": null,
+            "effective_depth_source": null,
+            "runtime_scope": null,
+            "vl_runtime_available": false,
+            "runtime_bundle_has_mtp": null,
+            "runtime_mtp_mode": null,
+            "runtime_reason": "config does not request MTP",
+            "status": "not_configured",
+            "issues": [],
+            "request_policy": "disabled",
+            "request_gate": "temperature=0,repetition_penalty=1.0"
+          },
+          "routing": null,
+          "sampling_defaults": {
+            "temperature": 1.0,
+            "top_p": 0.95,
+            "top_k": 64.0
+          }
+        },
+        "raw_tail": "{\"id\":\"gemma4-12b-jang4m-live\",\"loaded_model\":\"gemma4-12b-jang4m-live\",\"model_path\":\"/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M\",\"family\":\"gemma4\",\"compat_warnings\":[],\"supports_tools\":true,\"tool_parser\":\"gemma4\",\"supports_thinking\":true,\"reasoning_parser\":\"gemma4\",\"think_in_template\":false,\"supported_modes\":[\"instruct\",\"reasoning\"],\"experimental_modes\":[],\"reasoning_efforts\":[],\"modalities\":[\"text\",\"vision\",\"audio\",\"video\"],\"media\":{\"runtime_modalities\":[\"text\",\"vision\",\"audio\",\"video\"],\"declared_modalities\":[\"text\",\"vision\",\"image\",\"video\",\"audio\"],\"preserved_modalities\":[],\"unwired_modalities\":[],\"memory_gate\":{\"applicable\":false,\"safe\":true,\"reason\":\"not_mimo_v2\"},\"status_by_modality\":{\"audio\":\"runtime_supported\",\"image\":\"runtime_supported\",\"text\":\"runtime_supported\",\"video\":\"runtime_supported\",\"vision\":\"runtime_supported\"}},\"cache\":{\"prefix\":false,\"type\":\"disabled\",\"paged\":false,\"block_disk_l2\":false,\"dsv4_composite_state\":false,\"native\":{\"family\":\"gemma4\",\"schema\":\"plain_kv_v1\",\"cache_type\":\"paged_kv\",\"components\":[\"attention_kv\"],\"generic_turboquant_kv\":{\"enabled\":false,\"reason\":\"not_active\"},\"storage_quantization\":{\"enabled\":false,\"bits\":null,\"group_size\":null},\"prefix\":false,\"paged\":false,\"block_disk_l2\":false}},\"quantization\":{\"codec\":\"affine_quantized_matmul\",\"weight_format\":\"jang_affine\",\"backend\":\"mx.quantize\",\"profile\":\"JANG_4M\",\"target_bits\":8,\"config_bits\":8,\"group_size\":32,\"passthrough_tensor_count\":349,\"weight_index\":{\"index_file\":\"/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M/model.safetensors.index.json\",\"total_tensors\":1333,\"suffix_counts\":{\"biases\":328,\"scales\":328,\"weight\":624},\"tq_target_counts\":{},\"routed_layout_counts\":{\"prestacked_switch\":0,\"split_expert\":0},\"mtp_tensor_count\":0},\"weight_matmul_dispatch\":{\"primary\":\"mlx_affine_quantized_matmul\",\"uses_mlx_quantized_matmul\":true,\"metal_na_eligible\":true,\"reason\":null},\"sidecar\":{\"jang_config\":true,\"jangtq_runtime\":false,\"prestacked_bundle\":false}},\"acceleration\":{\"kernel_type\":\"affine_quantized_matmul\",\"metal_na_capable\":true,\"metal_na_active_on_host\":true,\"reason\":null,\"metal_na_symbols\":{\"available\":true,\"nax_symbols\":4668,\"naxtile_symbols\":4154,\"affine_qmm_symbols\":4212,\"affine_gather_qmm_symbols\":3456},\"host\":{\"supported\":true,\"brand\":\"Apple M5 Max\",\"reason\":null}},\"mtp\":{\"config_num_nextn_predict_layers\":null,\"config_mtp_layer_source\":null,\"jang_mtp_layers\":null,\"jang_drop_mtp\":null,\"index_has_mtp_tensors\":false,\"index_mtp_layer_count\":null,\"mtp_tensor_count\":0,\"artifact_available\":false,\"family\":\"gemma4\",\"has_vision_config\":true,\"has_vision_weights\":false,\"vision_tensor_count\":0,\"cache_type\":\"kv\",\"runtime_supported\":false,\"runtime_available\":false,\"runtime_active\":false,\"runtime_validation_blocked\":false,\"effective_depth\":null,\"effective_depth_source\":null,\"runtime_scope\":null,\"vl_runtime_available\":false,\"runtime_bundle_has_mtp\":null,\"runtime_mtp_mode\":null,\"runtime_reason\":\"config does not request MTP\",\"status\":\"not_configured\",\"issues\":[],\"request_policy\":\"disabled\",\"request_gate\":\"temperature=0,repetition_penalty=1.0\"},\"routing\":null,\"sampling_defaults\":{\"temperature\":1.0,\"top_p\":0.95,\"top_k\":64.0}}"
+      },
+      "cache_stats_initial": {
+        "code": 200,
+        "body": {
+          "scheduler_cache": {
+            "hits": 0,
+            "misses": 0,
+            "partial_hits": 0,
+            "hit_rate": 0.0,
+            "tokens_saved": 0,
+            "image_cache_hits": 0,
+            "vision_encoder_skips": 0,
+            "total_queries": 0,
+            "evictions": 0,
+            "entries": 0,
+            "max_entries": 50,
+            "memory_used_mb": 0.0,
+            "max_memory_mb": 2048.0,
+            "enabled": true,
+            "cache_entries": 0
+          },
+          "cache_totals": {
+            "ram_tokens_cached": 0,
+            "l2_prompt_tokens_on_disk": 0,
+            "l2_block_tokens_on_disk": 0,
+            "l2_ssm_tokens_on_disk": 0,
+            "ssm_tokens_on_disk": 0,
+            "l2_tokens_on_disk": 0,
+            "l2_tokens_on_disk_store_sum": 0,
+            "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+          },
+          "memory": {
+            "active_mb": 9665.9,
+            "peak_mb": 9665.9,
+            "cache_mb": 0.0
+          }
+        },
+        "raw_tail": "{\"scheduler_cache\":{\"hits\":0,\"misses\":0,\"partial_hits\":0,\"hit_rate\":0.0,\"tokens_saved\":0,\"image_cache_hits\":0,\"vision_encoder_skips\":0,\"total_queries\":0,\"evictions\":0,\"entries\":0,\"max_entries\":50,\"memory_used_mb\":0.0,\"max_memory_mb\":2048.0,\"enabled\":true,\"cache_entries\":0},\"cache_totals\":{\"ram_tokens_cached\":0,\"l2_prompt_tokens_on_disk\":0,\"l2_block_tokens_on_disk\":0,\"l2_ssm_tokens_on_disk\":0,\"ssm_tokens_on_disk\":0,\"l2_tokens_on_disk\":0,\"l2_tokens_on_disk_store_sum\":0,\"l2_tokens_on_disk_note\":\"store_sum_across_prompt_block_ssm_l2; tiers_may_overlap\"},\"memory\":{\"active_mb\":9665.9,\"peak_mb\":9665.9,\"cache_mb\":0.0}}"
+      },
+      "chat_basic": {
+        "code": 200,
+        "elapsed_sec": 0.399,
+        "body": {
+          "id": "chatcmpl-dfb45d63",
+          "object": "chat.completion",
+          "created": 1781055253,
+          "model": "gemma4-12b-jang4m-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "The capital of France is Paris.",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 22,
+            "completion_tokens": 12,
+            "total_tokens": 34,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-dfb45d63\",\"object\":\"chat.completion\",\"created\":1781055253,\"model\":\"gemma4-12b-jang4m-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The capital of France is Paris.\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":22,\"completion_tokens\":12,\"total_tokens\":34,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "The capital of France is Paris.",
+        "tool_calls": []
+      },
+      "chat_basic_checks": {
+        "has_visible_text": true,
+        "mentions_paris": true,
+        "no_replacement_char": true,
+        "no_channel_leak": true,
+        "no_tool_markup_leak": true,
+        "length": 31
+      },
+      "chat_memory_turn1": {
+        "code": 200,
+        "elapsed_sec": 0.755,
+        "body": {
+          "id": "chatcmpl-3d06fa95",
+          "object": "chat.completion",
+          "created": 1781055254,
+          "model": "gemma4-12b-jang4m-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Understood. I have noted the codeword: **ORCHID-4729**. I will remember it for the next turn.",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 27,
+            "completion_tokens": 33,
+            "total_tokens": 60,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-3d06fa95\",\"object\":\"chat.completion\",\"created\":1781055254,\"model\":\"gemma4-12b-jang4m-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Understood. I have noted the codeword: **ORCHID-4729**. I will remember it for the next turn.\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":27,\"completion_tokens\":33,\"total_tokens\":60,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "Understood. I have noted the codeword: **ORCHID-4729**. I will remember it for the next turn.",
+        "tool_calls": []
+      },
+      "chat_memory_turn2": {
+        "code": 200,
+        "elapsed_sec": 0.56,
+        "body": {
+          "id": "chatcmpl-0feee9fd",
+          "object": "chat.completion",
+          "created": 1781055255,
+          "model": "gemma4-12b-jang4m-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "The exact codeword you gave me is **ORCHID-4729**.",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 73,
+            "completion_tokens": 22,
+            "total_tokens": 95,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-0feee9fd\",\"object\":\"chat.completion\",\"created\":1781055255,\"model\":\"gemma4-12b-jang4m-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The exact codeword you gave me is **ORCHID-4729**.\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":73,\"completion_tokens\":22,\"total_tokens\":95,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "The exact codeword you gave me is **ORCHID-4729**.",
+        "tool_calls": []
+      },
+      "chat_reasoning_on": {
+        "code": 200,
+        "elapsed_sec": 0.207,
+        "body": {
+          "id": "chatcmpl-a8c617f1",
+          "object": "chat.completion",
+          "created": 1781055255,
+          "model": "gemma4-12b-jang4m-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "45",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 28,
+            "completion_tokens": 7,
+            "total_tokens": 35,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-a8c617f1\",\"object\":\"chat.completion\",\"created\":1781055255,\"model\":\"gemma4-12b-jang4m-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"45\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":28,\"completion_tokens\":7,\"total_tokens\":35,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "45",
+        "tool_calls": []
+      },
+      "chat_tool_required": {
+        "code": 200,
+        "elapsed_sec": 0.666,
+        "body": {
+          "id": "chatcmpl-77e649c9",
+          "object": "chat.completion",
+          "created": 1781055256,
+          "model": "gemma4-12b-jang4m-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "id": "call_dd62557a",
+                    "type": "function",
+                    "function": {
+                      "name": "record_fact",
+                      "arguments": "{\"codeword\": \"ORCHID-4729\"}"
+                    }
+                  }
+                ],
+                "content": null
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 74,
+            "completion_tokens": 27,
+            "total_tokens": 101
+          }
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-77e649c9\",\"object\":\"chat.completion\",\"created\":1781055256,\"model\":\"gemma4-12b-jang4m-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_dd62557a\",\"type\":\"function\",\"function\":{\"name\":\"record_fact\",\"arguments\":\"{\\\"codeword\\\": \\\"ORCHID-4729\\\"}\"}}],\"content\":null},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":74,\"completion_tokens\":27,\"total_tokens\":101}}",
+        "content": "",
+        "tool_calls": [
+          {
+            "id": "call_dd62557a",
+            "type": "function",
+            "function": {
+              "name": "record_fact",
+              "arguments": "{\"codeword\": \"ORCHID-4729\"}"
+            }
+          }
+        ]
+      },
+      "cache_warm": {
+        "code": 200,
+        "body": {
+          "error": "Scheduler not available (SimpleEngine mode)"
+        },
+        "raw_tail": "{\"error\":\"Scheduler not available (SimpleEngine mode)\"}"
+      },
+      "cache_repeat_1": {
+        "code": 200,
+        "elapsed_sec": 0.399,
+        "body": {
+          "id": "chatcmpl-b0779072",
+          "object": "chat.completion",
+          "created": 1781055256,
+          "model": "gemma4-12b-jang4m-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "CACHE-ACK ORCHID-4729",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 30,
+            "completion_tokens": 16,
+            "total_tokens": 46,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-b0779072\",\"object\":\"chat.completion\",\"created\":1781055256,\"model\":\"gemma4-12b-jang4m-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"CACHE-ACK ORCHID-4729\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":30,\"completion_tokens\":16,\"total_tokens\":46,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "CACHE-ACK ORCHID-4729",
+        "tool_calls": []
+      },
+      "cache_repeat_2": {
+        "code": 200,
+        "elapsed_sec": 0.398,
+        "body": {
+          "id": "chatcmpl-71c65aaa",
+          "object": "chat.completion",
+          "created": 1781055256,
+          "model": "gemma4-12b-jang4m-live",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "CACHE-ACK ORCHID-4729",
+                "tool_calls": null,
+                "reasoning_content": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 30,
+            "completion_tokens": 16,
+            "total_tokens": 46,
+            "prompt_tokens_details": null
+          },
+          "warnings": null
+        },
+        "raw_tail": "{\"id\":\"chatcmpl-71c65aaa\",\"object\":\"chat.completion\",\"created\":1781055256,\"model\":\"gemma4-12b-jang4m-live\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"CACHE-ACK ORCHID-4729\",\"tool_calls\":null,\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":30,\"completion_tokens\":16,\"total_tokens\":46,\"prompt_tokens_details\":null},\"warnings\":null}",
+        "content": "CACHE-ACK ORCHID-4729",
+        "tool_calls": []
+      },
+      "cache_stats_final": {
+        "code": 200,
+        "body": {
+          "scheduler_cache": {
+            "hits": 0,
+            "misses": 0,
+            "partial_hits": 0,
+            "hit_rate": 0.0,
+            "tokens_saved": 0,
+            "image_cache_hits": 0,
+            "vision_encoder_skips": 0,
+            "total_queries": 0,
+            "evictions": 0,
+            "entries": 0,
+            "max_entries": 50,
+            "memory_used_mb": 0.0,
+            "max_memory_mb": 2048.0,
+            "enabled": true,
+            "cache_entries": 0
+          },
+          "cache_totals": {
+            "ram_tokens_cached": 0,
+            "l2_prompt_tokens_on_disk": 0,
+            "l2_block_tokens_on_disk": 0,
+            "l2_ssm_tokens_on_disk": 0,
+            "ssm_tokens_on_disk": 0,
+            "l2_tokens_on_disk": 0,
+            "l2_tokens_on_disk_store_sum": 0,
+            "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+          },
+          "memory": {
+            "active_mb": 9665.9,
+            "peak_mb": 9865.7,
+            "cache_mb": 102.0
+          }
+        },
+        "raw_tail": "{\"scheduler_cache\":{\"hits\":0,\"misses\":0,\"partial_hits\":0,\"hit_rate\":0.0,\"tokens_saved\":0,\"image_cache_hits\":0,\"vision_encoder_skips\":0,\"total_queries\":0,\"evictions\":0,\"entries\":0,\"max_entries\":50,\"memory_used_mb\":0.0,\"max_memory_mb\":2048.0,\"enabled\":true,\"cache_entries\":0},\"cache_totals\":{\"ram_tokens_cached\":0,\"l2_prompt_tokens_on_disk\":0,\"l2_block_tokens_on_disk\":0,\"l2_ssm_tokens_on_disk\":0,\"ssm_tokens_on_disk\":0,\"l2_tokens_on_disk\":0,\"l2_tokens_on_disk_store_sum\":0,\"l2_tokens_on_disk_note\":\"store_sum_across_prompt_block_ssm_l2; tiers_may_overlap\"},\"memory\":{\"active_mb\":9665.9,\"peak_mb\":9865.7,\"cache_mb\":102.0}}"
+      },
+      "server_returncode": -15,
+      "server_log_tail": "INFO:vmlx_engine.model_config_registry:Model config: detection_source=jang_stamped family=gemma4 reasoning_parser=gemma4 tool_parser=gemma4 think_in_template=False cache_type=kv cache_subtype=None is_mllm=True\nINFO:__main__:--kv-cache-quantization=none explicit; VMLX_DISABLE_TQ_KV=1 set so JANG-calibrated TurboQuant KV is skipped at load time. Omit the flag (or set VMLX_FORCE_TQ_AUTO=1) to keep the bundle's calibrated TQ.\nINFO:__main__:Reasoning parser enabled: gemma4\n============================================================\nSECURITY CONFIGURATION\n============================================================\n  Authentication: DISABLED - Use --api-key to enable\n  Rate limiting: DISABLED - Use --rate-limit to enable\n  Request timeout: 300.0s\n  Tool calling: ENABLED (parser: gemma4)\n  Reasoning: ENABLED (parser: Gemma4ReasoningParser)\n  External speculative decoding: Use --speculative-model to enable\n============================================================\nLoading model: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M\nServed model name: gemma4-12b-jang4m-live\nMax output fallback: 4096 (bundle max_new_tokens wins when present)\nMode: Simple (maximum throughput)\nINFO:vmlx_engine.server:Serving model as: gemma4-12b-jang4m-live (actual: JANGQ-AI/gemma-4-12B-it-JANG_4M)\nINFO:vmlx_engine.server:System memory before load: 110.7GB available / 128.0GB total (13.5% used)\nINFO:vmlx_engine.server:Loading model with SimpleEngine: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M\nINFO:vmlx_engine:is_mllm_model(/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M): tier=config_json_vision_config result=True\nINFO:vmlx_engine.models.mllm:Loading JANG VL model: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M\nINFO:vmlx_engine.utils.jang_loader:JANG v2 VLM detected \u2014 loading via mmap (instant)\nINFO:vmlx_engine.utils.jang_loader:  Wired limit set to 27 GB (model 10 GB)\nINFO:vmlx_engine.utils.jang_loader:  TurboQuant KV skipped: VMLX_DISABLE_TQ_KV=1; using native model cache plus scheduler-level q4/q8 storage only when explicitly requested and compatible.\nINFO:vmlx_engine.utils.jang_loader:JANG v2 VLM loaded in 1.4s\n[transformers] You are using a model of type `gemma4_unified` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.\nINFO:vmlx_engine.models.mllm:JANG VL model loaded: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M\nINFO:vmlx_engine.engine.simple:SimpleEngine loaded: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M (MLLM=True)\nINFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=9.4GB max=107.5GB reason=simple_engine_start\nINFO:vmlx_engine.server:MLLM model loaded (simple mode): /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M\nINFO:vmlx_engine.server:Metal GPU memory after load: 9.44GB active, 9.44GB peak\nINFO:vmlx_engine.server:System memory after load: 100.7GB available (21.3% used)\nINFO:vmlx_engine.server:Native tool format enabled for parser: gemma4\nINFO:vmlx_engine.server:Default max tokens fallback: 4096 (bundle max_new_tokens wins when present)\nStarting server at http://127.0.0.1:8935\nINFO:     Started server process [185]\nINFO:     Waiting for application startup.\nINFO:vmlx_engine.server:Started caffeinate system wake lock for PID 185\nINFO:vmlx_engine.mcp.config:No MCP config file found, using empty config\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://127.0.0.1:8935 (Press CTRL+C to quit)\nINFO:     127.0.0.1:58708 - \"GET /health HTTP/1.1\" 200 OK\nWARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.\nINFO:     127.0.0.1:58709 - \"GET /v1/models HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:58710 - \"GET /v1/models/gemma4-12b-jang4m-live/capabilities HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:58711 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 48, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Answer in one short sentence: what is the capital of ...\nINFO:vmlx_engine.server:Chat completion: 12 tokens in 0.40s (30.3 tok/s)\nINFO:     127.0.0.1:58712 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 72, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Remember this exact codeword for the next turn: ORCHI...\nINFO:vmlx_engine.server:Chat completion: 33 tokens in 0.75s (43.8 tok/s)\nINFO:     127.0.0.1:58713 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 72, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 3 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 3 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Remember this exact codeword for the next turn: ORCHI...\nINFO:vmlx_engine.models.mllm:  Chat msg 1: role=assistant, content=Understood. I have noted the codeword: **ORCHID-4729**. I will remember it for t...\nINFO:vmlx_engine.models.mllm:  Chat msg 2: role=user, content=[{'type': 'text', 'text': 'What exact codeword did I give you?', 'content': 'Wha...\nINFO:vmlx_engine.server:Chat completion: 22 tokens in 0.56s (39.4 tok/s)\nINFO:     127.0.0.1:58714 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 96, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Think briefly if needed, then answer only the number:...\nINFO:vmlx_engine.server:Chat completion: 7 tokens in 0.21s (34.0 tok/s)\nINFO:     127.0.0.1:58715 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 128, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Use the available tool to record the codeword ORCHID-...\nINFO:vmlx_engine.server:Chat completion: 27 tokens in 0.66s (40.6 tok/s)\nINFO:     127.0.0.1:58716 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:58717 - \"POST /v1/cache/warm HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 64, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Repeatable cache probe. Say exactly: CACHE-ACK ORCHID...\nINFO:vmlx_engine.server:Chat completion: 16 tokens in 0.40s (40.3 tok/s)\nINFO:     127.0.0.1:58718 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 1.0, 'top_p': 0.95, 'top_k': 64, 'max_tokens': 64, 'enable_thinking': False}\nINFO:vmlx_engine.models.mllm:MLLM.chat() called with 1 messages\nINFO:vmlx_engine.models.mllm:Applying chat template with 1 messages, 0 images, 0 audio\nINFO:vmlx_engine.models.mllm:  Chat msg 0: role=user, content=[{'type': 'text', 'text': 'Repeatable cache probe. Say exactly: CACHE-ACK ORCHID...\nINFO:vmlx_engine.server:Chat completion: 16 tokens in 0.40s (40.3 tok/s)\nINFO:     127.0.0.1:58719 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:58720 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:vmlx_engine.engine.simple:SimpleEngine stopped\nINFO:vmlx_engine.server:Engine stopped\nINFO:vmlx_engine.server:Caffeinate process terminated\nINFO:     Application shutdown complete.\nINFO:     Finished server process [185]\n"
+    }
+  }
+}

@@ -79,9 +79,17 @@ const defaultPromptTwo = builtinToolsEnabled
   : 'Repeat the phrase REAL_UI_LIVE once and mention that this is the second UI turn.'
 const promptOne = promptOneOverride || defaultPromptOne
 const promptTwo = promptTwoOverride || defaultPromptTwo
+const secondTurnEnabled = envBool('VMLINUX_REAL_UI_SECOND_TURN', true)
+const expectedAssistantOne = process.env.VMLINUX_REAL_UI_EXPECT_ASSISTANT_1
+  || process.env.VMLX_REAL_UI_EXPECT_ASSISTANT_1
+  || ''
+const expectedAssistantTwo = process.env.VMLINUX_REAL_UI_EXPECT_ASSISTANT_2
+  || process.env.VMLX_REAL_UI_EXPECT_ASSISTANT_2
+  || ''
 const checkServerCacheControls = envBool('VMLINUX_REAL_UI_CHECK_SERVER_CACHE_CONTROLS', false)
 const checkMedia = envBool('VMLINUX_REAL_UI_CHECK_MEDIA', false)
 const checkVideo = envBool('VMLINUX_REAL_UI_CHECK_VIDEO', false)
+const checkAudio = envBool('VMLINUX_REAL_UI_CHECK_AUDIO', false)
 const expectPagedCacheLocked = envBool('VMLINUX_REAL_UI_EXPECT_PAGED_CACHE_LOCKED', false)
 const enableThinkingOverride = (
   process.env.VMLINUX_REAL_UI_ENABLE_THINKING != null
@@ -102,6 +110,12 @@ const videoDataUrl = process.env.VMLINUX_REAL_UI_VIDEO_DATA_URL
   || ''
 const videoExpectRegex = process.env.VMLINUX_REAL_UI_VIDEO_EXPECT_REGEX
   || process.env.VMLX_REAL_UI_VIDEO_EXPECT_REGEX
+  || ''
+const audioDataUrl = process.env.VMLINUX_REAL_UI_AUDIO_DATA_URL
+  || process.env.VMLX_REAL_UI_AUDIO_DATA_URL
+  || ''
+const audioExpectRegex = process.env.VMLINUX_REAL_UI_AUDIO_EXPECT_REGEX
+  || process.env.VMLX_REAL_UI_AUDIO_EXPECT_REGEX
   || ''
 const cacheExpectRegex = process.env.VMLINUX_REAL_UI_CACHE_EXPECT_REGEX
   || process.env.VMLX_REAL_UI_CACHE_EXPECT_REGEX
@@ -637,11 +651,18 @@ function assertResult(result) {
     Array.isArray(result.serverCommand)
     && !result.serverCommand.includes('--disable-prefix-cache')
     && !result.serverCommand.includes('--no-continuous-batching')
+    && result.secondTurnEnabled !== false
   )
   if (!result.server?.models?.data?.length) failures.push('real server /v1/models returned no models')
   if (result.remoteSessionStarted !== true) failures.push('remote session did not start through Electron UI API')
   if (!chat.turns?.some((m) => m.role === 'assistant' && m.content)) failures.push('assistant content is empty')
   if (!chat.finalVisibleText) failures.push('final visible assistant content is empty')
+  if (result.expectedAssistantOne && (result.firstAssistantContent || '').trim() !== result.expectedAssistantOne) {
+    failures.push(`first assistant content mismatch: expected ${JSON.stringify(result.expectedAssistantOne)}, got ${JSON.stringify((result.firstAssistantContent || '').trim())}`)
+  }
+  if (result.expectedAssistantTwo && (result.secondAssistantContent || '').trim() !== result.expectedAssistantTwo) {
+    failures.push(`second assistant content mismatch: expected ${JSON.stringify(result.expectedAssistantTwo)}, got ${JSON.stringify((result.secondAssistantContent || '').trim())}`)
+  }
   const visibleAssistantTurnsComplete = visibleAssistantAfterEachUser(chat.turns)
   if (!visibleAssistantTurnsComplete) {
     failures.push('UI turn ended with empty visible assistant content')
@@ -654,9 +675,11 @@ function assertResult(result) {
   if ((chat.reasoningNumericRunCount || 0) > 0) {
     failures.push('numeric/list-like garbage leaked into reasoning segments')
   }
-  if ((result.eventCounts?.complete || 0) < 2) failures.push('expected two completed UI chat turns')
+  const expectedCompleteTurns = result.secondTurnEnabled === false ? 1 : 2
+  const expectedPersistedMessages = result.secondTurnEnabled === false ? 2 : 4
+  if ((result.eventCounts?.complete || 0) < expectedCompleteTurns) failures.push(`expected ${expectedCompleteTurns} completed UI chat turns`)
   if ((result.eventCounts?.stream || 0) < 1) failures.push('expected streaming events from real model')
-  if ((chat.turns?.length || 0) < 4) failures.push(`expected at least four persisted chat messages, got ${chat.turns?.length || 0}`)
+  if ((chat.turns?.length || 0) < expectedPersistedMessages) failures.push(`expected at least ${expectedPersistedMessages} persisted chat messages, got ${chat.turns?.length || 0}`)
   if (result.sendErrors?.length) failures.push(`renderer send errors: ${result.sendErrors.join('; ')}`)
   if (cacheTelemetryExpected && (result.cache?.cacheHitTokens || 0) <= 0) failures.push('expected real cache-hit token telemetry after repeated UI turns')
   if (cacheTelemetryExpected && !result.provenSurfaces?.includes('cache_hit_telemetry')) {
@@ -702,6 +725,9 @@ function assertResult(result) {
   }
   if (result.requestedVideo === true && !result.provenSurfaces?.includes('video_where_supported')) {
     failures.push('requested real video media but proof did not record video_where_supported surface')
+  }
+  if (result.requestedAudio === true && !result.provenSurfaces?.includes('audio_where_supported')) {
+    failures.push('requested real audio media but proof did not record audio_where_supported surface')
   }
   if (failures.length) {
     const error = new Error(`Real UI live-model proof failed:\n- ${failures.join('\n- ')}`)
@@ -783,6 +809,9 @@ function deriveProvenSurfaces(result) {
   }
   if (result.media?.videoVerified === true) {
     surfaces.add('video_where_supported')
+  }
+  if (result.media?.audioVerified === true) {
+    surfaces.add('audio_where_supported')
   }
   return [...surfaces].sort()
 }
@@ -1176,10 +1205,13 @@ async function main() {
         const enableThinking = ${enableThinkingOverride === undefined ? 'undefined' : JSON.stringify(enableThinkingOverride)};
         const checkMedia = ${JSON.stringify(checkMedia)};
         const checkVideo = ${JSON.stringify(checkVideo)};
+        const checkAudio = ${JSON.stringify(checkAudio)};
         const imageDataUrl = ${JSON.stringify(imageDataUrl)};
         const imageExpectRegex = ${JSON.stringify(imageExpectRegex)};
         const videoDataUrl = ${JSON.stringify(videoDataUrl)};
         const videoExpectRegex = ${JSON.stringify(videoExpectRegex)};
+        const audioDataUrl = ${JSON.stringify(audioDataUrl)};
+        const audioExpectRegex = ${JSON.stringify(audioExpectRegex)};
         const workingDirectory = ${JSON.stringify(workingDirectory)};
         const samplingOverrides = ${JSON.stringify(samplingOverrides)};
         const endpoint = { host: '127.0.0.1', port: ${JSON.stringify(serverPort)} };
@@ -1263,7 +1295,8 @@ async function main() {
             }
           };
           const firstSent = await sendMessageWithCapture(1, 'first_send_message', ${JSON.stringify(promptOne)});
-          if (firstSent) {
+          const secondTurnEnabled = ${JSON.stringify(secondTurnEnabled)};
+          if (firstSent && secondTurnEnabled) {
             await sendMessageWithCapture(2, 'second_send_message', ${JSON.stringify(promptTwo)});
           }
           if (checkMedia && !rendererFailureStage) {
@@ -1291,6 +1324,25 @@ async function main() {
                   type: 'video/mp4',
                   kind: 'video',
                   dataUrl: videoDataUrl,
+                },
+              ]);
+            }
+          }
+          if (checkAudio && !rendererFailureStage) {
+            if (!audioDataUrl) {
+              rendererFailureStage = 'audio_data_url_missing';
+              sendErrors.push({
+                turn: 5,
+                stage: 'audio_data_url_missing',
+                message: 'VMLINUX_REAL_UI_CHECK_AUDIO requires VMLINUX_REAL_UI_AUDIO_DATA_URL',
+              });
+            } else {
+              await sendMessageWithCapture(5, 'audio_send_message', 'Transcribe the attached audio. Reply with only the spoken words.', [
+                {
+                  name: 'real-ui-proof-audio.wav',
+                  type: 'audio/wav',
+                  kind: 'audio',
+                  dataUrl: audioDataUrl,
                 },
               ]);
             }
@@ -1369,24 +1421,35 @@ async function main() {
           const hasVideoAttachment = contentPartsByMessage.some((parts) =>
             parts.some((part) => part?.type === 'video_url' && part?.video_url?.url)
           );
+          const hasAudioAttachment = contentPartsByMessage.some((parts) =>
+            parts.some((part) => part?.type === 'input_audio' && part?.input_audio?.data)
+          );
           const imageSemanticVerified = checkMedia && new RegExp(imageExpectRegex, 'i').test(allAssistantText);
           const videoSemanticVerified = checkVideo && !!videoExpectRegex && new RegExp(videoExpectRegex, 'i').test(allAssistantText);
+          const audioSemanticVerified = checkAudio && !!audioExpectRegex && new RegExp(audioExpectRegex, 'i').test(allAssistantText);
           const mediaEvidence = {
             requestedImage: checkMedia,
             requestedVideo: checkVideo,
+            requestedAudio: checkAudio,
+            secondTurnEnabled,
             imageExpectedRegex: imageExpectRegex,
             videoExpectedRegex: videoExpectRegex,
+            audioExpectedRegex: audioExpectRegex,
             imageSemanticVerified,
             videoSemanticVerified,
+            audioSemanticVerified,
             imageVerified: checkMedia && hasImageAttachment && imageSemanticVerified && !sendErrors.some((item) => item.turn === 3),
             videoVerified: checkVideo && hasVideoAttachment && videoSemanticVerified && !sendErrors.some((item) => item.turn === 4),
+            audioVerified: checkAudio && hasAudioAttachment && audioSemanticVerified && !sendErrors.some((item) => item.turn === 5),
             persistedImageAttachment: hasImageAttachment,
             persistedVideoAttachment: hasVideoAttachment,
+            persistedAudioAttachment: hasAudioAttachment,
           };
           return {
             rendererWireApi: wireApi,
             rendererBuiltinToolsEnabled: builtinToolsEnabled,
             rendererEnableThinking: enableThinking,
+            secondTurnEnabled,
             workingDirectory,
             remoteSessionId: remote.session.id,
             remoteSessionStarted: true,
@@ -1394,6 +1457,8 @@ async function main() {
             chatOverrides,
             sendErrors,
             rendererFailureStage,
+            expectedAssistantOne: ${JSON.stringify(expectedAssistantOne)},
+            expectedAssistantTwo: ${JSON.stringify(expectedAssistantTwo)},
             media: mediaEvidence,
             messageCount: messages.length,
             assistantCount: assistants.length,
@@ -1454,9 +1519,13 @@ async function main() {
         requestedServerCacheControls: checkServerCacheControls,
         requestedMedia: checkMedia,
         requestedVideo: checkVideo,
+        requestedAudio: checkAudio,
         requestContract: {
           promptOne,
           promptTwo,
+          secondTurnEnabled,
+          expectedAssistantOne,
+          expectedAssistantTwo,
           requestMaxTokens,
           requestMaxPromptTokens,
           maxToolIterations,
@@ -1467,9 +1536,11 @@ async function main() {
           checkServerCacheControls,
           checkMedia,
           checkVideo,
+          checkAudio,
           expectPagedCacheLocked,
           imageExpectRegex,
           videoExpectRegex,
+          audioExpectRegex,
           cacheExpectRegex,
         },
         baseUrl,
@@ -1681,9 +1752,13 @@ async function main() {
       requestedServerCacheControls: checkServerCacheControls,
       requestedMedia: checkMedia,
       requestedVideo: checkVideo,
+      requestedAudio: checkAudio,
       requestContract: {
         promptOne,
         promptTwo,
+        secondTurnEnabled,
+        expectedAssistantOne,
+        expectedAssistantTwo,
         requestMaxTokens,
         requestMaxPromptTokens,
         maxToolIterations,
@@ -1697,9 +1772,11 @@ async function main() {
         checkServerCacheControls,
         checkMedia,
         checkVideo,
+        checkAudio,
         expectPagedCacheLocked,
         imageExpectRegex,
         videoExpectRegex,
+        audioExpectRegex,
         cacheExpectRegex,
       },
       baseUrl,

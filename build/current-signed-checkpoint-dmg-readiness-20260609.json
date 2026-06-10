@@ -1,0 +1,411 @@
+{
+  "artifact": "build/current-signed-checkpoint-dmg-readiness-20260609.json",
+  "current_installed_app": {
+    "codesign_valid": true,
+    "codesign_verify": {
+      "cmd": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        "/Applications/vMLX.app"
+      ],
+      "returncode": 0,
+      "tail": [
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/vMLX Helper.app",
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/vMLX Helper (Plugin).app",
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/vMLX Helper (GPU).app",
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/vMLX Helper (Renderer).app",
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/Mantle.framework/Versions/Current/.",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/vMLX Helper.app",
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/ReactiveObjC.framework/Versions/Current/.",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/vMLX Helper (Plugin).app",
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/vMLX Helper (GPU).app",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/vMLX Helper (Renderer).app",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/Mantle.framework/Versions/Current/.",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/ReactiveObjC.framework/Versions/Current/.",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.",
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/.",
+        "--prepared:/Applications/vMLX.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/Helpers/chrome_crashpad_handler",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/Helpers/chrome_crashpad_handler",
+        "--validated:/Applications/vMLX.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/.",
+        "/Applications/vMLX.app: valid on disk",
+        "/Applications/vMLX.app: satisfies its Designated Requirement"
+      ]
+    },
+    "developer_id_signed": false,
+    "exists": true,
+    "path": "/Applications/vMLX.app",
+    "signature": {
+      "authority_developer_id": false,
+      "returncode": 0,
+      "signature_is_adhoc": true,
+      "tail": [
+        "Executable=/Applications/vMLX.app/Contents/MacOS/vMLX",
+        "Identifier=net.vmlx.app",
+        "Format=app bundle with Mach-O thin (arm64)",
+        "CodeDirectory v=20400 size=325 flags=0x2(adhoc) hashes=4+3 location=embedded",
+        "VersionPlatform=1",
+        "VersionMin=720896",
+        "VersionSDK=917504",
+        "Hash type=sha256 size=32",
+        "CandidateCDHash sha256=dae1bee92adfc538aedee9a286a6029b86b1b4a7",
+        "CandidateCDHashFull sha256=dae1bee92adfc538aedee9a286a6029b86b1b4a74f33be1c7acaba168fe97e36",
+        "Hash choices=sha256",
+        "CMSDigest=dae1bee92adfc538aedee9a286a6029b86b1b4a74f33be1c7acaba168fe97e36",
+        "CMSDigestType=2",
+        "Executable Segment base=0",
+        "Executable Segment limit=16384",
+        "Executable Segment flags=0x1",
+        "Page size=16384",
+        "CDHash=dae1bee92adfc538aedee9a286a6029b86b1b4a7",
+        "Signature=adhoc",
+        "Info.plist entries=30",
+        "TeamIdentifier=not set",
+        "Sealed Resources version=2 rules=13 files=29266",
+        "Internal requirements count=0 size=12"
+      ],
+      "team_identifier": null
+    },
+    "signature_is_adhoc": true,
+    "team_identifier": null
+  },
+  "existing_dmgs": [
+    {
+      "codesign_verify": {
+        "cmd": [
+          "codesign",
+          "--verify",
+          "--verbose=2",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg"
+        ],
+        "returncode": 0,
+        "tail": [
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg: valid on disk",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg: satisfies its Designated Requirement"
+        ]
+      },
+      "exists": true,
+      "hdiutil_verify": {
+        "cmd": [
+          "hdiutil",
+          "verify",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg"
+        ],
+        "returncode": 0,
+        "tail": [
+          "Checksumming Protective Master Boot Record (MBR : 0)\u2026",
+          "Protective Master Boot Record (MBR :: verified   CRC32 $A0FEE3D3",
+          "Checksumming GPT Header (Primary GPT Header : 1)\u2026",
+          " GPT Header (Primary GPT Header : 1): verified   CRC32 $60CE3FA5",
+          "Checksumming GPT Partition Data (Primary GPT Table : 2)\u2026",
+          "GPT Partition Data (Primary GPT Tabl: verified   CRC32 $DB208A0B",
+          "Checksumming  (Apple_Free : 3)\u2026",
+          "                    (Apple_Free : 3): verified   CRC32 $00000000",
+          "Checksumming EFI System Partition (C12A7328-F81F-11D2-BA4B-00A0C93EC93B : 4)\u2026",
+          "EFI System Partition (C12A7328-F81F-: verified   CRC32 $B54B659C",
+          "Checksumming disk image (Apple_APFS : 5)\u2026",
+          "         disk image (Apple_APFS : 5): verified   CRC32 $097005B8",
+          "Checksumming  (Apple_Free : 6)\u2026",
+          "                    (Apple_Free : 6): verified   CRC32 $00000000",
+          "Checksumming GPT Partition Data (Backup GPT Table : 7)\u2026",
+          "GPT Partition Data (Backup GPT Table: verified   CRC32 $DB208A0B",
+          "Checksumming GPT Header (Backup GPT Header : 8)\u2026",
+          "  GPT Header (Backup GPT Header : 8): verified   CRC32 $1F7C2923",
+          "verified   CRC32 $7A81D76D",
+          "hdiutil: verify: checksum of \"/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg\" is VALID"
+        ]
+      },
+      "mtime": 1780688184.3586047,
+      "path": "panel/release/vMLX-1.5.56-sequoia-arm64.dmg",
+      "sha256": "a7148d42e27ee8eccb428a460bc4aa643b227a25ef394aed7dbebe3f3763fd5c",
+      "signature": {
+        "authority_developer_id": true,
+        "returncode": 0,
+        "signature_is_adhoc": false,
+        "tail": [
+          "Executable=/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg",
+          "Identifier=vMLX-1.5.56-sequoia-arm64",
+          "Format=disk image",
+          "CodeDirectory v=20200 size=313 flags=0x0(none) hashes=1+6 location=embedded",
+          "Hash type=sha256 size=32",
+          "CandidateCDHash sha256=38d5afaa44204b354d1d19750029aa9bddcf46be",
+          "CandidateCDHashFull sha256=38d5afaa44204b354d1d19750029aa9bddcf46be192ce4254cb5c2124e96346f",
+          "Hash choices=sha256",
+          "CMSDigest=38d5afaa44204b354d1d19750029aa9bddcf46be192ce4254cb5c2124e96346f",
+          "CMSDigestType=2",
+          "Page size=none",
+          "CDHash=38d5afaa44204b354d1d19750029aa9bddcf46be",
+          "Signature size=9049",
+          "Authority=Developer ID Application: ShieldStack LLC (55KGF2S5AY)",
+          "Authority=Developer ID Certification Authority",
+          "Authority=Apple Root CA",
+          "Timestamp=Jun 5, 2026 at 12:23:14\u202fPM",
+          "Notarization Ticket=stapled",
+          "Info.plist=not bound",
+          "TeamIdentifier=55KGF2S5AY",
+          "Sealed Resources=none",
+          "Internal requirements count=1 size=188"
+        ],
+        "team_identifier": "55KGF2S5AY"
+      },
+      "signed_and_stapled": true,
+      "spctl_assess": {
+        "cmd": [
+          "spctl",
+          "--assess",
+          "--type",
+          "open",
+          "--context",
+          "context:primary-signature",
+          "--verbose=4",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg"
+        ],
+        "returncode": 0,
+        "tail": [
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg: accepted",
+          "source=Notarized Developer ID"
+        ]
+      },
+      "stapler_validate": {
+        "cmd": [
+          "xcrun",
+          "stapler",
+          "validate",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg"
+        ],
+        "returncode": 0,
+        "tail": [
+          "Processing: /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-sequoia-arm64.dmg",
+          "The validate action worked!"
+        ]
+      }
+    },
+    {
+      "codesign_verify": {
+        "cmd": [
+          "codesign",
+          "--verify",
+          "--verbose=2",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg"
+        ],
+        "returncode": 0,
+        "tail": [
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg: valid on disk",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg: satisfies its Designated Requirement"
+        ]
+      },
+      "exists": true,
+      "hdiutil_verify": {
+        "cmd": [
+          "hdiutil",
+          "verify",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg"
+        ],
+        "returncode": 0,
+        "tail": [
+          "Checksumming Protective Master Boot Record (MBR : 0)\u2026",
+          "Protective Master Boot Record (MBR :: verified   CRC32 $D60E37FA",
+          "Checksumming GPT Header (Primary GPT Header : 1)\u2026",
+          " GPT Header (Primary GPT Header : 1): verified   CRC32 $7D91483E",
+          "Checksumming GPT Partition Data (Primary GPT Table : 2)\u2026",
+          "GPT Partition Data (Primary GPT Tabl: verified   CRC32 $AA8840CF",
+          "Checksumming  (Apple_Free : 3)\u2026",
+          "                    (Apple_Free : 3): verified   CRC32 $00000000",
+          "Checksumming EFI System Partition (C12A7328-F81F-11D2-BA4B-00A0C93EC93B : 4)\u2026",
+          "EFI System Partition (C12A7328-F81F-: verified   CRC32 $B54B659C",
+          "Checksumming disk image (Apple_APFS : 5)\u2026",
+          "         disk image (Apple_APFS : 5): verified   CRC32 $ACA36E53",
+          "Checksumming  (Apple_Free : 6)\u2026",
+          "                    (Apple_Free : 6): verified   CRC32 $00000000",
+          "Checksumming GPT Partition Data (Backup GPT Table : 7)\u2026",
+          "GPT Partition Data (Backup GPT Table: verified   CRC32 $AA8840CF",
+          "Checksumming GPT Header (Backup GPT Header : 8)\u2026",
+          "  GPT Header (Backup GPT Header : 8): verified   CRC32 $6212534C",
+          "verified   CRC32 $BCAA837F",
+          "hdiutil: verify: checksum of \"/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg\" is VALID"
+        ]
+      },
+      "mtime": 1780688626.0451252,
+      "path": "panel/release/vMLX-1.5.56-tahoe-arm64.dmg",
+      "sha256": "faa049368ce7c3f67dbf20b24e250bbc901493d81d382e924d30789d2b067c56",
+      "signature": {
+        "authority_developer_id": true,
+        "returncode": 0,
+        "signature_is_adhoc": false,
+        "tail": [
+          "Executable=/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg",
+          "Identifier=vMLX-1.5.56-tahoe-arm64",
+          "Format=disk image",
+          "CodeDirectory v=20200 size=311 flags=0x0(none) hashes=1+6 location=embedded",
+          "Hash type=sha256 size=32",
+          "CandidateCDHash sha256=408c87c06bb99dff04aefe2bb1aba75ca7595d00",
+          "CandidateCDHashFull sha256=408c87c06bb99dff04aefe2bb1aba75ca7595d00f01d5bff39a6a5b4fc89219e",
+          "Hash choices=sha256",
+          "CMSDigest=408c87c06bb99dff04aefe2bb1aba75ca7595d00f01d5bff39a6a5b4fc89219e",
+          "CMSDigestType=2",
+          "Page size=none",
+          "CDHash=408c87c06bb99dff04aefe2bb1aba75ca7595d00",
+          "Signature size=9050",
+          "Authority=Developer ID Application: ShieldStack LLC (55KGF2S5AY)",
+          "Authority=Developer ID Certification Authority",
+          "Authority=Apple Root CA",
+          "Timestamp=Jun 5, 2026 at 12:28:23\u202fPM",
+          "Notarization Ticket=stapled",
+          "Info.plist=not bound",
+          "TeamIdentifier=55KGF2S5AY",
+          "Sealed Resources=none",
+          "Internal requirements count=1 size=184"
+        ],
+        "team_identifier": "55KGF2S5AY"
+      },
+      "signed_and_stapled": true,
+      "spctl_assess": {
+        "cmd": [
+          "spctl",
+          "--assess",
+          "--type",
+          "open",
+          "--context",
+          "context:primary-signature",
+          "--verbose=4",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg"
+        ],
+        "returncode": 0,
+        "tail": [
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg: accepted",
+          "source=Notarized Developer ID"
+        ]
+      },
+      "stapler_validate": {
+        "cmd": [
+          "xcrun",
+          "stapler",
+          "validate",
+          "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg"
+        ],
+        "returncode": 0,
+        "tail": [
+          "Processing: /Users/eric/mlx/vllm-mlx-finite-launch-guard/panel/release/vMLX-1.5.56-tahoe-arm64.dmg",
+          "The validate action worked!"
+        ]
+      }
+    }
+  ],
+  "existing_dmgs_current_for_head": false,
+  "existing_dmgs_signed_and_stapled": true,
+  "fresh_signing_probe": {
+    "identity": "Developer ID Application: ShieldStack LLC (55KGF2S5AY)",
+    "sign": {
+      "cmd": [
+        "codesign",
+        "--force",
+        "--timestamp",
+        "--options",
+        "runtime",
+        "--sign",
+        "Developer ID Application: ShieldStack LLC (55KGF2S5AY)",
+        "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-current-signing-probe.g0io3kjv/codesign-probe"
+      ],
+      "returncode": 0,
+      "tail": [
+        "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-current-signing-probe.g0io3kjv/codesign-probe: replacing existing signature"
+      ]
+    },
+    "signature": {
+      "authority_developer_id": true,
+      "returncode": 0,
+      "signature_is_adhoc": false,
+      "tail": [
+        "Executable=/private/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-current-signing-probe.g0io3kjv/codesign-probe",
+        "Identifier=codesign-probe",
+        "Format=Mach-O universal (x86_64 arm64e)",
+        "CodeDirectory v=20500 size=282 flags=0x10000(runtime) hashes=3+2 location=embedded",
+        "VersionPlatform=1",
+        "VersionMin=1704704",
+        "VersionSDK=1704704",
+        "Hash type=sha256 size=32",
+        "CandidateCDHash sha256=6f9e741a276fd06a7687f5d75c543ace68a4c302",
+        "CandidateCDHashFull sha256=6f9e741a276fd06a7687f5d75c543ace68a4c302abaaa0bc0e4ade11ae9e2d49",
+        "Hash choices=sha256",
+        "CMSDigest=6f9e741a276fd06a7687f5d75c543ace68a4c302abaaa0bc0e4ade11ae9e2d49",
+        "CMSDigestType=2",
+        "Executable Segment base=0",
+        "Executable Segment limit=16384",
+        "Executable Segment flags=0x1",
+        "Page size=16384",
+        "CDHash=6f9e741a276fd06a7687f5d75c543ace68a4c302",
+        "Signature size=9051",
+        "Authority=Developer ID Application: ShieldStack LLC (55KGF2S5AY)",
+        "Authority=Developer ID Certification Authority",
+        "Authority=Apple Root CA",
+        "Timestamp=Jun 9, 2026 at 4:44:54\u202fPM",
+        "Info.plist=not bound",
+        "TeamIdentifier=55KGF2S5AY",
+        "Runtime Version=26.3.0",
+        "Sealed Resources=none",
+        "Internal requirements count=1 size=176"
+      ],
+      "team_identifier": "55KGF2S5AY"
+    },
+    "status": "pass"
+  },
+  "head": "d1054f41580c7f0420522fa5addd0b8292bd7d22",
+  "head_time": "2026-06-09T16:40:35-07:00",
+  "keychains": [
+    {
+      "locked_or_interactive_blocked": false,
+      "path": "/Users/eric/Library/Keychains/vmlx-build.keychain-db",
+      "returncode": 0,
+      "tail": [
+        "Keychain \"/Users/eric/Library/Keychains/vmlx-build.keychain-db\" no-timeout"
+      ]
+    },
+    {
+      "locked_or_interactive_blocked": true,
+      "path": "/Users/eric/Library/Keychains/build.keychain-db",
+      "returncode": 36,
+      "tail": [
+        "security: SecKeychainCopySettings /Users/eric/Library/Keychains/build.keychain-db: User interaction is not allowed."
+      ]
+    },
+    {
+      "locked_or_interactive_blocked": true,
+      "path": "/Users/eric/Library/Keychains/login.keychain-db",
+      "returncode": 36,
+      "tail": [
+        "security: SecKeychainCopySettings /Users/eric/Library/Keychains/login.keychain-db: User interaction is not allowed."
+      ]
+    }
+  ],
+  "notarization": {
+    "history": {
+      "cmd": [
+        "xcrun",
+        "notarytool",
+        "history",
+        "--keychain",
+        "/Users/eric/Library/Keychains/vmlx-build.keychain-db",
+        "--keychain-profile",
+        "vmlx-notary",
+        "--output-format",
+        "json"
+      ],
+      "returncode": 0,
+      "tail": [
+        "{\"history\":[{\"name\":\"vMLX.zip\",\"createdDate\":\"2026-06-09T07:01:27.583Z\",\"id\":\"ddd17ab1-b83f-4304-ab14-2385e8b294bc\",\"status\":\"Accepted\"},{\"id\":\"f802929b-7fa1-4112-b08f-85bf31eee51e\",\"status\":\"Accepted\",\"name\":\"vMLX.zip\",\"createdDate\":\"2026-06-09T06:51:59.097Z\"},{\"id\":\"baa5c552-6d76-4ae5-a243-e6be1fdc33d3\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-05T19:36:34.342Z\",\"name\":\"vMLX-1.5.56-tahoe-arm64.dmg\"},{\"status\":\"Accepted\",\"createdDate\":\"2026-06-05T19:30:28.447Z\",\"id\":\"7547edc8-6586-4745-9c50-eed4a8b91439\",\"name\":\"vMLX-1.5.56-sequoia-arm64.dmg\"},{\"createdDate\":\"2026-06-05T04:15:23.643Z\",\"name\":\"vMLX-1.5.55-tahoe-arm64.dmg\",\"id\":\"fea7a79b-b3bb-49f5-a2be-9c7db059b240\",\"status\":\"Accepted\"},{\"id\":\"509cbc4c-f04f-4837-98fe-fde8a81226a0\",\"name\":\"vMLX-1.5.55-sequoia-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-05T04:07:57.683Z\"},{\"createdDate\":\"2026-06-05T00:32:32.005Z\",\"id\":\"2115ae4f-dcea-4307-b85b-5272744002bf\",\"status\":\"Accepted\",\"name\":\"vMLX-1.5.54-tahoe-arm64.dmg\"},{\"createdDate\":\"2026-06-05T00:25:46.780Z\",\"name\":\"vMLX-1.5.54-sequoia-arm64.dmg\",\"id\":\"93f782f3-070c-45a4-9378-f713b53415a3\",\"status\":\"Accepted\"},{\"id\":\"2a1c9183-59ce-45f7-8470-795975e49af6\",\"name\":\"vMLX-1.5.54-tahoe-arm64.dmg\",\"createdDate\":\"2026-06-04T23:51:38.819Z\",\"status\":\"Accepted\"},{\"id\":\"1c8b256f-cff5-461e-b24d-1a9d3dec2b4e\",\"name\":\"vMLX-1.5.54-sequoia-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-04T23:46:05.059Z\"},{\"createdDate\":\"2026-06-04T08:21:52.445Z\",\"name\":\"vMLX-1.5.54-tahoe-arm64.dmg\",\"id\":\"885009d4-5f27-4839-a68c-e796194d9107\",\"status\":\"Accepted\"},{\"id\":\"a118b223-2845-4657-bd51-e8569c0f6e50\",\"name\":\"vMLX-1.5.54-sequoia-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-04T08:15:25.530Z\"},{\"name\":\"vMLX-1.5.54-tahoe-arm64.dmg\",\"createdDate\":\"2026-06-04T07:35:43.520Z\",\"status\":\"Accepted\",\"id\":\"10d426eb-db8e-4122-b725-afa7718d064d\"},{\"createdDate\":\"2026-06-04T07:29:39.491Z\",\"id\":\"f9cbd779-5638-4fe3-8b20-00f7f2d869e6\",\"name\":\"vMLX-1.5.54-sequoia-arm64.dmg\",\"status\":\"Accepted\"},{\"id\":\"108fef54-aa6e-4532-8220-f3c58bb459d8\",\"name\":\"ExploitBot-beta.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-03T01:55:44.005Z\"},{\"status\":\"Accepted\",\"name\":\"ExploitBot-beta-app.zip\",\"createdDate\":\"2026-06-03T01:47:49.240Z\",\"id\":\"1f721d2f-9cb2-4b90-9ff8-6eac295a0235\"},{\"status\":\"Accepted\",\"id\":\"4af954c4-7e0c-460a-b437-3ad7ae2c8c2b\",\"createdDate\":\"2026-06-03T01:16:25.705Z\",\"name\":\"vMLX-1.5.47-sequoia-arm64.dmg\"},{\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-03T01:07:09.330Z\",\"id\":\"4ee1950e-9588-4a4e-b22b-ed8dc6942166\"},{\"createdDate\":\"2026-06-03T00:53:49.086Z\",\"id\":\"5c322be3-da16-4738-b5d4-cbb63a4b7d8a\",\"status\":\"Accepted\",\"name\":\"vMLX.zip\"},{\"name\":\"vMLX-1.5.47-tahoe-arm64.dmg\",\"status\":\"Accepted\",\"id\":\"1dd2643a-a463-483c-8883-d5e6eebd5ee5\",\"createdDate\":\"2026-06-03T00:30:05.145Z\"},{\"id\":\"f67cd578-a608-4989-a563-232e8380512c\",\"name\":\"vMLX-1.5.47-sequoia-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-03T00:22:45.466Z\"},{\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-03T00:13:02.989Z\",\"id\":\"0d56f55e-99e6-4bd4-8b09-7b29c147c1ae\"},{\"status\":\"Accepted\",\"createdDate\":\"2026-06-03T00:06:56.286Z\",\"id\":\"a8037164-3945-4bce-ad01-b07a78c1f83c\",\"name\":\"ExploitBot-beta.dmg\"},{\"id\":\"5965c9ee-7576-4abc-a6b6-9d12a54f82d2\",\"status\":\"Accepted\",\"name\":\"vMLX.zip\",\"createdDate\":\"2026-06-02T23:59:01.598Z\"},{\"name\":\"ExploitBot-beta-app.zip\",\"createdDate\":\"2026-06-02T23:57:36.874Z\",\"status\":\"Accepted\",\"id\":\"110413ff-aca9-4b30-baac-e48ea9b862bd\"},{\"name\":\"vMLX-1.5.47-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-02T23:40:36.368Z\",\"id\":\"83b47f48-4975-4405-b087-a9a465d4a1fc\"},{\"name\":\"vMLX.zip\",\"createdDate\":\"2026-06-02T23:32:00.683Z\",\"id\":\"a847632f-6217-4bea-b7c4-8287d3a8a7f3\",\"status\":\"Accepted\"},{\"id\":\"7f6e8212-0a0a-4736-8dc7-33358e03db92\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-02T22:49:24.402Z\",\"name\":\"vMLX-1.5.54-tahoe-arm64.dmg\"},{\"createdDate\":\"2026-06-02T22:42:39.329Z\",\"id\":\"40601b79-2a06-4256-86ed-406d25dc7974\",\"name\":\"vMLX-1.5.54-sequoia-arm64.dmg\",\"status\":\"Accepted\"},{\"createdDate\":\"2026-06-02T21:06:47.590Z\",\"id\":\"7e6960a3-53e8-4388-9585-7e8983e249a0\",\"name\":\"vMLX-1.5.53-tahoe-arm64.dmg\",\"status\":\"Accepted\"},{\"status\":\"Accepted\",\"createdDate\":\"2026-06-02T21:00:19.491Z\",\"id\":\"761c3d6f-44de-49d3-b81d-95c6f80ee978\",\"name\":\"vMLX-1.5.53-sequoia-arm64.dmg\"},{\"status\":\"Accepted\",\"name\":\"vMLX-1.5.52-tahoe-arm64.dmg\",\"id\":\"abb14ec6-779b-44a7-8777-1bddbf6b3c25\",\"createdDate\":\"2026-06-02T17:55:51.262Z\"},{\"id\":\"9d93afff-361b-4044-b689-3d7223d6a13a\",\"name\":\"vMLX-1.5.52-sequoia-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-02T17:49:25.249Z\"},{\"createdDate\":\"2026-06-02T17:10:54.367Z\",\"id\":\"a704ec9f-786f-4410-b0dc-340f1074d27e\",\"status\":\"Accepted\",\"name\":\"vMLX-1.5.51-tahoe-arm64.dmg\"},{\"status\":\"Accepted\",\"createdDate\":\"2026-06-02T17:04:45.353Z\",\"id\":\"0ca25244-62fc-4db7-825b-d4028747f84c\",\"name\":\"vMLX-1.5.51-sequoia-arm64.dmg\"},{\"createdDate\":\"2026-06-02T10:29:37.081Z\",\"name\":\"vMLX-1.5.50-tahoe-arm64.dmg\",\"status\":\"Accepted\",\"id\":\"f302950d-78e2-4eec-b26b-26e8ecfbba10\"},{\"id\":\"4a19ff3f-c7a0-4fad-9b1f-9501c2c3b396\",\"name\":\"vMLX-1.5.50-sequoia-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-06-02T10:24:12.624Z\"},{\"name\":\"vMLX-1.5.50-sequoia-arm64.dmg\",\"createdDate\":\"2026-06-02T10:13:29.005Z\",\"id\":\"93edee81-62ed-4eee-bde7-4ca66e22beb5\",\"status\":\"Invalid\"},{\"id\":\"f195d22f-4039-4884-adfc-587e8ac56c3d\",\"createdDate\":\"2026-05-24T05:39:45.371Z\",\"status\":\"Accepted\",\"name\":\"vMLX-1.5.49-tahoe-arm64.dmg\"},{\"createdDate\":\"2026-05-24T05:34:07.988Z\",\"name\":\"vMLX-1.5.49-sequoia-arm64.dmg\",\"id\":\"d8d6312b-6ddd-4b42-b529-6d793f2e9625\",\"status\":\"Accepted\"},{\"status\":\"Accepted\",\"name\":\"vMLX-1.5.49-tahoe-arm64.dmg\",\"id\":\"bf9950c5-2415-4fc4-b720-1126ce7b9d46\",\"createdDate\":\"2026-05-24T05:32:42.246Z\"},{\"id\":\"43befb33-850d-4cd3-be2b-7b59e13ce578\",\"createdDate\":\"2026-05-24T05:24:13.935Z\",\"name\":\"vMLX.zip\",\"status\":\"Accepted\"},{\"id\":\"baab74e3-9d76-478b-bf5b-805392829b20\",\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-24T05:11:04.939Z\"},{\"name\":\"vMLX-1.5.49-sequoia-arm64.dmg\",\"id\":\"b58b1c93-d7b2-478a-b37c-8eb1195b28e5\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-24T05:07:35.978Z\"},{\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-24T04:59:11.012Z\",\"status\":\"Accepted\",\"id\":\"b0dce678-382c-473a-a8b0-c63816d54f6b\"},{\"status\":\"Accepted\",\"name\":\"vMLX-1.5.48-tahoe-arm64.dmg\",\"createdDate\":\"2026-05-22T18:18:48.487Z\",\"id\":\"53891a97-2e7e-4ab0-b0bb-6c5567d1a53e\"},{\"name\":\"vMLX-1.5.48-sequoia-arm64.dmg\",\"id\":\"203e123c-1032-4c95-ae65-503e9387daf6\",\"createdDate\":\"2026-05-22T18:18:48.382Z\",\"status\":\"Accepted\"},{\"id\":\"744454af-3aab-4f3b-92f3-d0724f5df0ee\",\"status\":\"Accepted\",\"name\":\"vMLX-1.5.48-sequoia-arm64.dmg\",\"createdDate\":\"2026-05-22T18:11:37.912Z\"},{\"name\":\"vMLX-1.5.48-tahoe-arm64.dmg\",\"status\":\"Accepted\",\"id\":\"cbc25ebf-f072-4cb6-96f0-bf578059a24f\",\"createdDate\":\"2026-05-22T18:11:37.728Z\"},{\"id\":\"f7c9ba4d-8957-403f-81f0-48d3b0e97b35\",\"name\":\"vMLX-1.5.47-tahoe-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-22T16:53:49.637Z\"},{\"id\":\"5565448b-9f1e-4b52-9910-1d82ef30e421\",\"name\":\"vMLX-1.5.47-sequoia-arm64.dmg\",\"createdDate\":\"2026-05-22T16:48:41.752Z\",\"status\":\"Accepted\"},{\"createdDate\":\"2026-05-22T16:39:06.844Z\",\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"id\":\"30efca4f-c781-484d-ada1-ec6b2ccbbf6f\"},{\"id\":\"d04607a5-1d7d-4d99-9c22-bfc46aba863c\",\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-22T16:26:16.493Z\",\"status\":\"Accepted\"},{\"id\":\"2e5de1a3-8e59-407b-a7cd-5399cfacab57\",\"createdDate\":\"2026-05-21T18:23:35.143Z\",\"status\":\"Invalid\",\"name\":\"vMLX-1.5.47-source-current-app.zip\"},{\"createdDate\":\"2026-05-21T03:16:49.994Z\",\"name\":\"vMLX-1.5.46-tahoe-arm64.dmg\",\"status\":\"Accepted\",\"id\":\"b2330739-370b-44d5-b923-12cac9ede977\"},{\"id\":\"882a2df3-712f-4bb1-afd5-bddeb913c294\",\"name\":\"vMLX-1.5.46-sequoia-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-21T03:09:55.640Z\"},{\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-21T03:00:31.502Z\",\"status\":\"Accepted\",\"id\":\"85afe10d-f11c-4dab-a49d-6d49460ac9f9\"},{\"status\":\"Accepted\",\"id\":\"b434141f-55f0-4e49-a616-3351611fff34\",\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-21T02:46:40.115Z\"},{\"id\":\"cb2449ef-f23c-424c-8bb7-db35ceb9eef4\",\"name\":\"vMLX-1.5.45-source-current-app.zip\",\"createdDate\":\"2026-05-20T23:13:41.777Z\",\"status\":\"Accepted\"},{\"status\":\"Accepted\",\"id\":\"1e07dba6-e3fe-4cdb-b3db-0d9ceb146ff5\",\"createdDate\":\"2026-05-20T21:15:41.485Z\",\"name\":\"vMLX-1.5.45-arm64.dmg\"},{\"status\":\"Accepted\",\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-20T20:40:59.438Z\",\"id\":\"b4d65ae6-4bb8-4c27-95ef-5798a75253e7\"},{\"status\":\"Accepted\",\"createdDate\":\"2026-05-20T20:18:56.792Z\",\"id\":\"40329349-eb3d-4fe3-80b8-e771be7bc873\",\"name\":\"vMLX.zip\"},{\"id\":\"3fd34fc9-3772-4b0a-aeaa-75d4ad23f417\",\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-20T20:04:52.066Z\"},{\"id\":\"67c34155-c22b-4e0a-8848-98733734a695\",\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-20T19:43:48.005Z\"},{\"name\":\"vMLX.zip\",\"id\":\"7e139981-4985-4050-abfb-58bc33354955\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-20T12:38:28.369Z\"},{\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-20T12:20:48.639Z\",\"id\":\"e46bd76d-0531-4da6-ba4f-c19eb8c2230e\",\"status\":\"Accepted\"},{\"name\":\"vMLX.zip\",\"id\":\"0c75d10e-90ae-4320-b387-9fade966520f\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-20T12:02:00.159Z\"},{\"status\":\"Accepted\",\"id\":\"5ab6e73e-3ac0-431e-ad96-d0dee2652175\",\"name\":\"vMLX-1.5.44-tahoe-arm64.dmg\",\"createdDate\":\"2026-05-19T22:04:34.449Z\"},{\"id\":\"8803f9f3-2a16-4881-8ccc-d7efdf3b67d2\",\"name\":\"vMLX-1.5.44-sequoia-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-19T21:58:34.344Z\"},{\"status\":\"Accepted\",\"createdDate\":\"2026-05-19T21:48:03.179Z\",\"name\":\"vMLX.zip\",\"id\":\"f09aaa6d-9618-4867-9606-0abd32e71829\"},{\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-19T21:35:23.539Z\",\"id\":\"c4a4ea5a-7b67-497d-a7ed-098912d57eb0\"},{\"status\":\"Accepted\",\"id\":\"33f04f45-5215-4876-b072-59c3e887795a\",\"name\":\"vMLX-1.5.43-tahoe-arm64.dmg\",\"createdDate\":\"2026-05-19T14:17:29.287Z\"},{\"status\":\"Accepted\",\"name\":\"vMLX-1.5.43-sequoia-arm64.dmg\",\"id\":\"92e0cf48-b5da-4fc6-9822-86b88b8e7b9b\",\"createdDate\":\"2026-05-19T14:12:03.828Z\"},{\"createdDate\":\"2026-05-19T14:02:02.001Z\",\"name\":\"vMLX.zip\",\"id\":\"38ce5f69-2ffd-4239-8977-af78d87c5906\",\"status\":\"Accepted\"},{\"id\":\"ba6c0b6b-058b-4d56-b412-faaa51059095\",\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-19T13:49:15.881Z\",\"status\":\"Accepted\"},{\"name\":\"vMLX-1.5.42-arm64.dmg\",\"createdDate\":\"2026-05-18T18:13:21.018Z\",\"id\":\"8bea67b8-d0ad-4908-9409-ce4f06de4fc7\",\"status\":\"Accepted\"},{\"id\":\"0736a178-ffb2-4bfb-b8ef-8945924d617f\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-18T18:07:07.630Z\",\"name\":\"vMLX-1.5.42-arm64.dmg\"},{\"id\":\"5351a774-7591-4d3a-91f6-ec8a3bead7b6\",\"status\":\"Accepted\",\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-18T17:55:24.617Z\"},{\"createdDate\":\"2026-05-18T17:24:04.310Z\",\"status\":\"Accepted\",\"id\":\"057ac62d-5178-41ed-be25-e237c28e27c7\",\"name\":\"vMLX-1.5.41-arm64.dmg\"},{\"name\":\"vMLX-1.5.41-arm64.dmg\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-18T17:17:23.072Z\",\"id\":\"d2e2fac4-87bb-44fc-8290-b85efc302c27\"},{\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-18T17:07:10.911Z\",\"status\":\"Accepted\",\"id\":\"027008ba-31b4-45c7-b816-9d7729174c28\"},{\"createdDate\":\"2026-05-18T02:22:43.776Z\",\"id\":\"305d7756-78ac-4728-8223-7d0abb048633\",\"name\":\"vMLX-1.5.40-arm64.dmg\",\"status\":\"Accepted\"},{\"createdDate\":\"2026-05-18T02:12:37.820Z\",\"status\":\"Accepted\",\"name\":\"vMLX.zip\",\"id\":\"74a7e1ad-84de-4078-b666-c051b90f6007\"},{\"id\":\"01889096-b53b-49f0-8faf-895c2764374d\",\"name\":\"vMLX-1.5.39-arm64.dmg\",\"createdDate\":\"2026-05-17T22:49:05.655Z\",\"status\":\"Accepted\"},{\"id\":\"33e2e555-c9f5-4f5f-b833-fa91877fb75c\",\"createdDate\":\"2026-05-17T22:42:42.961Z\",\"name\":\"vMLX-1.5.39-arm64.dmg\",\"status\":\"Accepted\"},{\"status\":\"Accepted\",\"id\":\"0f79402f-a0f3-44e8-bce9-c4bae3e4f232\",\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-17T22:33:03.114Z\"},{\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-17T22:08:57.293Z\",\"id\":\"5892d8a3-1c6f-4278-a91d-99aabb262f97\"},{\"name\":\"vMLX-1.5.38-arm64.dmg\",\"status\":\"Accepted\",\"id\":\"9ae65499-4a43-4834-9a02-f9f0341f28b9\",\"createdDate\":\"2026-05-16T10:22:31.450Z\"},{\"name\":\"vMLX.zip\",\"id\":\"b34890ad-34d4-424d-bcd6-c72601e60d60\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-16T10:11:59.884Z\"},{\"createdDate\":\"2026-05-16T10:03:59.091Z\",\"name\":\"vMLX.zip\",\"id\":\"af8351c3-9a58-4cdc-9c75-02cb98d18167\",\"status\":\"Accepted\"},{\"name\":\"vMLX-1.5.37-arm64.dmg\",\"createdDate\":\"2026-05-16T09:33:20.285Z\",\"status\":\"Accepted\",\"id\":\"86c631b9-a65d-42b7-a685-e36a9586ddee\"},{\"name\":\"vMLX.zip\",\"createdDate\":\"2026-05-16T09:22:54.689Z\",\"id\":\"c8e38761-4a7f-487e-9753-ab44d402ad3f\",\"status\":\"Accepted\"},{\"id\":\"99b0e092-d45c-41cf-abbd-8f849fa82bb4\",\"status\":\"Accepted\",\"name\":\"vMLX-1.5.37-arm64.dmg\",\"createdDate\":\"2026-05-16T08:59:57.379Z\"},{\"createdDate\":\"2026-05-16T08:53:09.855Z\",\"status\":\"Accepted\",\"id\":\"c416d2df-e8d6-4bef-bc9a-142b5c89cac8\",\"name\":\"vMLX-1.5.37-arm64.dmg\"},{\"name\":\"vMLX.zip\",\"id\":\"30955e21-4280-414e-86a9-f86cda09b334\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-16T08:43:18.058Z\"},{\"id\":\"fa10d1fc-5d61-4e42-91d7-33d9fb19c719\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-16T06:47:51.771Z\",\"name\":\"vMLX.zip\"},{\"name\":\"vMLX.zip\",\"status\":\"Accepted\",\"id\":\"6647dcad-ae20-40ef-96e8-2f054655704d\",\"createdDate\":\"2026-05-16T06:42:27.309Z\"},{\"id\":\"8a6493d9-3b8a-4dd7-9c27-9452b73e1af3\",\"createdDate\":\"2026-05-16T03:25:24.821Z\",\"name\":\"vMLX-1.5.36-arm64.dmg\",\"status\":\"Accepted\"},{\"id\":\"776aeb5f-b447-439e-b20d-be92bbc730a2\",\"status\":\"Accepted\",\"createdDate\":\"2026-05-16T03:17:59.763Z\",\"name\":\"vMLX-1.5.36-arm64.dmg\"},{\"createdDate\":\"2026-05-16T03:08:22.782Z\",\"status\":\"Accepted\",\"id\":\"dd0595b4-e600-4339-b5dc-42a7af95fe7a\",\"name\":\"vMLX.zip\"}],\"message\":\"Successfully received submission history.\"}"
+      ]
+    },
+    "required_keychain": "/Users/eric/Library/Keychains/vmlx-build.keychain-db",
+    "required_profile": "vmlx-notary",
+    "status": "pass"
+  },
+  "release_boundary": "Existing local DMGs may be signed/stapled, but they are not current-source checkpoint proof unless rebuilt after this HEAD and verified again.",
+  "required_next_steps": [
+    "rebuild_current_source_dmg_flavors",
+    "notarize_staple_and_verify_current_dmgs"
+  ],
+  "status": "open"
+}

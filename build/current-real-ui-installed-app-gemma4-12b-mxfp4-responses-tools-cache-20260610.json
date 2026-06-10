@@ -1,0 +1,129 @@
+{
+  "generated_at": "2026-06-10T04:11:10.255Z",
+  "status": "pass",
+  "source_proof": "docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-responses-tools-cache-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-mxfp4-responses-tools-cache-20260610-chat.png",
+  "repo_dir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "ui_launch_mode": "installed-app",
+  "installed_app_path": "/Applications/vMLX.app",
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-qat-MXFP4",
+  "served_model": "gemma4-12b-mxfp4-installed-ui-20260610",
+  "wire_api": "responses",
+  "builtin_tools_enabled": true,
+  "server_cache_controls_verified": true,
+  "status_summary": {
+    "visible_assistant_turns_complete": true,
+    "first_assistant_content": "The file has been created successfully. REAL_UI_LIVE_TOOL_ONE",
+    "second_assistant_content": "The file has been created successfully. REAL_UI_LIVE_TOOL_TWO. This is the second UI turn.",
+    "tool_probe_files": {
+      "real_ui_tool_probe_1.txt": "REAL_UI_LIVE_TOOL_ONE\\n",
+      "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO\\n"
+    },
+    "send_errors": [],
+    "raw_parser_leak": false,
+    "reasoning_raw_parser_leak": false
+  },
+  "event_counts": {
+    "stream": 40,
+    "tool": 156,
+    "reasoning_done": 0,
+    "complete": 2
+  },
+  "stream_traces": [
+    {
+      "count": 16,
+      "last_full_content": "The file has been created successfully. REAL_UI_LIVE_TOOL_ONE",
+      "last_cached_tokens": 320,
+      "last_cache_detail": "paged+mixed_swa",
+      "last_tokens_per_second": "52.8"
+    },
+    {
+      "count": 24,
+      "last_full_content": "The file has been created successfully. REAL_UI_LIVE_TOOL_TWO. This is the second UI turn.",
+      "last_cached_tokens": 2688,
+      "last_cache_detail": "paged+mixed_swa",
+      "last_tokens_per_second": "54.3"
+    }
+  ],
+  "runtime": {
+    "model_type": "mllm",
+    "active_mb": 7772.4,
+    "peak_mb": 10512.9,
+    "quantization_codec": "affine_quantized_matmul",
+    "weight_format": "mxfp4",
+    "profile": "MXFP4",
+    "weight_matmul_dispatch": "mlx_affine_quantized_matmul",
+    "metal_na_active_on_host": true,
+    "passthrough_tensor_count": 349,
+    "mtp_status": "not_configured",
+    "mtp_runtime_active": false
+  },
+  "native_cache": {
+    "family": "gemma4",
+    "schema": "mixed_swa_kv_v1",
+    "cache_type": "mixed_swa_kv",
+    "cache_subtype": "mixed_swa_kv",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "generic_turboquant_kv_enabled": false,
+    "generic_turboquant_kv_reason": "not_active",
+    "storage_quantization": {
+      "enabled": false,
+      "mode": "storage_boundary",
+      "applies_to": "full_and_sliding_attention_kv",
+      "metadata_policy": "preserve_rotating_window_metadata"
+    },
+    "prefix": true,
+    "paged": true,
+    "block_disk_l2": true
+  },
+  "cache": {
+    "cache_hit_requests": 3,
+    "cache_hit_tokens": 3538,
+    "cache_hit_tokens_by_detail": {
+      "paged+mixed_swa": 3538
+    },
+    "last_cache_execution": {
+      "cache_detail": "paged+mixed_swa",
+      "cached_tokens": 2688,
+      "reconstructed": true,
+      "dequantized": true,
+      "reconstruction_ok": true,
+      "dequantization_ok": true
+    },
+    "ram_tokens_cached": 3584,
+    "l2_block_tokens_on_disk": 3584,
+    "l2_tokens_on_disk": 3584,
+    "block_disk_hits": 30,
+    "block_disk_writes": 58
+  },
+  "proven_surfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "generation_defaults_applied",
+    "installed_app_ui",
+    "l2_disk_storage",
+    "language_leak_check",
+    "long_tool_loop",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "responses_api",
+    "responses_cache_detail_usage",
+    "responses_delta_streaming",
+    "server_cache_controls",
+    "settings_persistence",
+    "tool_l2_cache_integrated"
+  ],
+  "not_proven": [
+    "Developer ID notarized public DMG release",
+    "Gemma audio support",
+    "public tunnel raw SSE parity",
+    "full larger Gemma QAT installed-app matrix",
+    "Gemma media installed-app image/video in this run"
+  ]
+}

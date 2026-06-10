@@ -1,0 +1,1989 @@
+{
+  "generatedAt": "2026-06-10T05:20:45.842Z",
+  "status": "fail",
+  "failureStage": "release_assertions",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "panelDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/panel",
+  "script": "panel/scripts/live-real-ui-model-proof.mjs",
+  "modelPath": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+  "modelName": "gemma-4-12B-it-JANG_4M",
+  "servedModel": "gemma4-12b-jang4m-installed-ui-audio-20260610",
+  "requestedWireApi": "chat",
+  "requestedBuiltinTools": false,
+  "requestedServerCacheControls": true,
+  "requestedMedia": false,
+  "requestedVideo": false,
+  "requestedAudio": true,
+  "requestContract": {
+    "promptOne": "Reply briefly in English. Include the phrase REAL_UI_LIVE once.",
+    "promptTwo": "Repeat the phrase REAL_UI_LIVE once and mention that this is the second UI turn.",
+    "requestMaxTokens": 96,
+    "requestMaxPromptTokens": null,
+    "maxToolIterations": 4,
+    "toolResultMaxChars": 12345,
+    "wireApi": "chat",
+    "builtinToolsEnabled": false,
+    "enableThinking": null,
+    "samplingOverrides": {
+      "temperature": 0,
+      "topP": 1
+    },
+    "checkServerCacheControls": true,
+    "checkMedia": false,
+    "checkVideo": false,
+    "checkAudio": true,
+    "expectPagedCacheLocked": false,
+    "imageExpectRegex": "\\bred\\b",
+    "videoExpectRegex": "",
+    "audioExpectRegex": "audio present",
+    "cacheExpectRegex": ""
+  },
+  "baseUrl": "http://127.0.0.1:62907",
+  "python": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+  "runDir": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-5as21L",
+  "userDataDir": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-userdata-rhQg8f",
+  "workingDirectory": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-tools-Fymv37",
+  "uiLaunchMode": "installed-app",
+  "uiCommand": [
+    "/Applications/vMLX.app/Contents/MacOS/vMLX",
+    "--user-data-dir=/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-userdata-rhQg8f",
+    "--remote-debugging-port=62908"
+  ],
+  "installedAppPath": "/Applications/vMLX.app",
+  "serverCommand": [
+    "/Users/eric/mlx/vllm-mlx-finite-launch-guard/.venv/bin/python",
+    "-B",
+    "-s",
+    "-m",
+    "vmlx_engine.cli",
+    "serve",
+    "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "62907",
+    "--served-model-name",
+    "gemma4-12b-jang4m-installed-ui-audio-20260610",
+    "--timeout",
+    "240",
+    "--max-num-seqs",
+    "1",
+    "--prefill-batch-size",
+    "512",
+    "--prefill-step-size",
+    "1024",
+    "--completion-batch-size",
+    "128",
+    "--continuous-batching",
+    "--use-paged-cache",
+    "--paged-cache-block-size",
+    "64",
+    "--max-cache-blocks",
+    "1000",
+    "--enable-block-disk-cache",
+    "--block-disk-cache-dir",
+    "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-5as21L/block-cache",
+    "--block-disk-cache-max-gb",
+    "2",
+    "--ssm-state-cache-mb",
+    "512",
+    "--max-tokens",
+    "96",
+    "--log-level",
+    "INFO",
+    "--default-enable-thinking",
+    "false"
+  ],
+  "server": {
+    "baseUrl": "http://127.0.0.1:62907",
+    "health": {
+      "status": "healthy",
+      "model_loaded": true,
+      "model_name": "JANGQ-AI/gemma-4-12B-it-JANG_4M",
+      "model_type": "mllm",
+      "engine_type": "batched",
+      "last_request_time": 1781068844.026837,
+      "mcp": null,
+      "memory": {
+        "active_mb": 9685.8,
+        "peak_mb": 10040.8,
+        "cache_mb": 129.6
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "speculative_decoding": "not_configured",
+      "scheduler": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": null,
+        "batch_generator": {
+          "prompt_tokens": 26,
+          "prompt_time": 0.909707625003648,
+          "prompt_tps": 28.580611270457077,
+          "generation_tokens": 57,
+          "generation_time": 1.1412638779875124,
+          "generation_tps": 49.9446281437672,
+          "vision_encoding_time": 0.5299927920132177,
+          "num_images_processed": 1,
+          "peak_memory": 10.528529025,
+          "hybrid_kv_without_ssm_hits": 0,
+          "hybrid_kv_without_ssm_tokens": 0,
+          "last_hybrid_kv_without_ssm": null,
+          "last_cache_execution": {
+            "request_id": "chatcmpl-c8b637fb",
+            "cache_detail": "paged+mixed_swa",
+            "cached_tokens": 20,
+            "blocks": 0,
+            "selection": "paged",
+            "disk_hit": false,
+            "reconstructed": true,
+            "dequantized": true,
+            "reconstruction_seconds": 0.002833,
+            "dequantization_seconds": 0.000006,
+            "total_worker_cache_seconds": 0.003048,
+            "reconstruction_ok": true,
+            "dequantization_ok": true
+          },
+          "last_native_mtp": null,
+          "last_prefill_trace": null
+        },
+        "single_active_decode": false,
+        "ewma_ttft_seconds": 0,
+        "cache_hit_requests": 1,
+        "cache_hit_tokens": 20,
+        "cache_hit_tokens_by_detail": {
+          "paged+mixed_swa": 20
+        },
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": null,
+        "last_cache_execution": {
+          "request_id": "chatcmpl-c8b637fb",
+          "cache_detail": "paged+mixed_swa",
+          "cached_tokens": 20,
+          "blocks": 0,
+          "selection": "paged",
+          "disk_hit": false,
+          "reconstructed": true,
+          "dequantized": true,
+          "reconstruction_seconds": 0.002833,
+          "dequantization_seconds": 0.000006,
+          "total_worker_cache_seconds": 0.003048,
+          "reconstruction_ok": true,
+          "dequantization_ok": true
+        }
+      },
+      "cache": {
+        "scheduler_cache": {
+          "pixel_cache_hits": 0,
+          "pixel_cache_misses": 1,
+          "pixel_hit_rate": 0,
+          "total_time_saved": 0,
+          "total_images_processed": 0,
+          "pixel_cache_size": 0,
+          "hits": 1,
+          "misses": 1,
+          "hit_rate": 0.5,
+          "tokens_saved": 20,
+          "active_requests": 0,
+          "entries_by_type": {
+            "assistant": 2,
+            "user": 0,
+            "system": 0
+          },
+          "block_size": 64,
+          "max_blocks": 1000,
+          "allocated_blocks": 3,
+          "free_blocks": 997,
+          "shared_blocks": 1,
+          "total_tokens_cached": 77,
+          "utilization": 0.003,
+          "cache_hit_rate": 0,
+          "cache_hits": 0,
+          "cache_misses": 4,
+          "disk_hits": 0,
+          "disk_misses": 2,
+          "cow_copies": 0,
+          "evictions": 0
+        },
+        "block_disk_cache": {
+          "blocks_on_disk": 2,
+          "disk_size_bytes": 26540747,
+          "disk_size_gb": 0.025,
+          "total_accesses": 0,
+          "total_tokens_on_disk": 77,
+          "total_cached_tokens": 77,
+          "disk_hits": 0,
+          "disk_misses": 4,
+          "disk_writes": 2,
+          "disk_evictions": 0
+        },
+        "ssm_companion": {
+          "entries": 0,
+          "max_entries": 8,
+          "nbytes": 0,
+          "nbytes_mb": 0,
+          "disk_enabled": false,
+          "disk_directory": null
+        },
+        "totals": {
+          "ram_tokens_cached": 77,
+          "l2_prompt_tokens_on_disk": 0,
+          "l2_block_tokens_on_disk": 77,
+          "l2_ssm_tokens_on_disk": 0,
+          "ssm_tokens_on_disk": 0,
+          "l2_tokens_on_disk": 77,
+          "l2_tokens_on_disk_store_sum": 77,
+          "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+        }
+      },
+      "quantization_format": {
+        "type": "jang",
+        "target_bits": null,
+        "actual_bits": null,
+        "block_size": 64
+      },
+      "quantization": {
+        "codec": "affine_quantized_matmul",
+        "weight_format": "jang_affine",
+        "backend": "mx.quantize",
+        "profile": "JANG_4M",
+        "target_bits": 8,
+        "config_bits": 8,
+        "group_size": 32,
+        "passthrough_tensor_count": 349,
+        "weight_index": {
+          "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M/model.safetensors.index.json",
+          "total_tensors": 1333,
+          "suffix_counts": {
+            "biases": 328,
+            "scales": 328,
+            "weight": 624
+          },
+          "tq_target_counts": {},
+          "routed_layout_counts": {
+            "prestacked_switch": 0,
+            "split_expert": 0
+          },
+          "mtp_tensor_count": 0
+        },
+        "weight_matmul_dispatch": {
+          "primary": "mlx_affine_quantized_matmul",
+          "uses_mlx_quantized_matmul": true,
+          "metal_na_eligible": true,
+          "reason": null
+        },
+        "sidecar": {
+          "jang_config": true,
+          "jangtq_runtime": false,
+          "prestacked_bundle": false
+        }
+      },
+      "acceleration": {
+        "kernel_type": "affine_quantized_matmul",
+        "metal_na_capable": true,
+        "metal_na_active_on_host": true,
+        "reason": null,
+        "metal_na_symbols": {
+          "available": true,
+          "nax_symbols": 4668,
+          "naxtile_symbols": 4154,
+          "affine_qmm_symbols": 4212,
+          "affine_gather_qmm_symbols": 3456
+        },
+        "host": {
+          "supported": true,
+          "brand": "Apple M5 Max",
+          "reason": null
+        }
+      },
+      "mtp": {
+        "config_num_nextn_predict_layers": null,
+        "config_mtp_layer_source": null,
+        "jang_mtp_layers": null,
+        "jang_drop_mtp": null,
+        "index_has_mtp_tensors": false,
+        "index_mtp_layer_count": null,
+        "mtp_tensor_count": 0,
+        "artifact_available": false,
+        "family": "gemma4",
+        "has_vision_config": true,
+        "has_vision_weights": false,
+        "vision_tensor_count": 0,
+        "cache_type": "kv",
+        "runtime_supported": false,
+        "runtime_available": false,
+        "runtime_active": false,
+        "runtime_validation_blocked": false,
+        "effective_depth": null,
+        "effective_depth_source": null,
+        "runtime_scope": null,
+        "vl_runtime_available": false,
+        "runtime_bundle_has_mtp": null,
+        "runtime_mtp_mode": null,
+        "runtime_reason": "config does not request MTP",
+        "status": "not_configured",
+        "issues": [],
+        "request_policy": "compatible-only",
+        "request_gate": "temperature=0,repetition_penalty=1.0"
+      },
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "gemma4",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      }
+    },
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "gemma4-12b-jang4m-installed-ui-audio-20260610",
+          "object": "model",
+          "created": 1781068841,
+          "owned_by": "vmlx-engine"
+        },
+        {
+          "id": "JANGQ-AI/gemma-4-12B-it-JANG_4M",
+          "object": "model",
+          "created": 1781068841,
+          "owned_by": "vmlx-engine"
+        }
+      ]
+    }
+  },
+  "cache": {
+    "before": {
+      "scheduler_cache": {
+        "hits": 0,
+        "misses": 0,
+        "hit_rate": 0,
+        "tokens_saved": 0,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 0,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 1,
+        "free_blocks": 999,
+        "shared_blocks": 0,
+        "total_tokens_cached": 0,
+        "utilization": 0.001,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "cow_copies": 0,
+        "evictions": 0
+      },
+      "scheduler_stats": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": null,
+        "batch_generator": {},
+        "single_active_decode": false,
+        "num_requests_processed": 0,
+        "total_prompt_tokens": 0,
+        "total_completion_tokens": 0,
+        "ewma_ttft_seconds": 0,
+        "cache_hit_requests": 0,
+        "cache_hit_tokens": 0,
+        "cache_hit_tokens_by_detail": {},
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": null,
+        "last_cache_execution": null
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "gemma4",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 0,
+        "disk_size_bytes": 0,
+        "disk_size_gb": 0,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 0,
+        "total_cached_tokens": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "disk_writes": 0,
+        "disk_evictions": 0
+      },
+      "cache_totals": {
+        "ram_tokens_cached": 0,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 0,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 0,
+        "l2_tokens_on_disk_store_sum": 0,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      },
+      "memory": {
+        "active_mb": 9665.9,
+        "peak_mb": 9665.9,
+        "cache_mb": 0
+      }
+    },
+    "after": {
+      "scheduler_cache": {
+        "pixel_cache_hits": 0,
+        "pixel_cache_misses": 1,
+        "pixel_hit_rate": 0,
+        "total_time_saved": 0,
+        "total_images_processed": 0,
+        "pixel_cache_size": 0,
+        "hits": 1,
+        "misses": 1,
+        "hit_rate": 0.5,
+        "tokens_saved": 20,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 2,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 3,
+        "free_blocks": 997,
+        "shared_blocks": 1,
+        "total_tokens_cached": 77,
+        "utilization": 0.003,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 4,
+        "disk_hits": 0,
+        "disk_misses": 2,
+        "cow_copies": 0,
+        "evictions": 0
+      },
+      "scheduler_stats": {
+        "num_waiting": 0,
+        "num_running": 0,
+        "engine_path": null,
+        "batch_generator": {
+          "prompt_tokens": 26,
+          "prompt_time": 0.909707625003648,
+          "prompt_tps": 28.580611270457077,
+          "generation_tokens": 57,
+          "generation_time": 1.1412638779875124,
+          "generation_tps": 49.9446281437672,
+          "vision_encoding_time": 0.5299927920132177,
+          "num_images_processed": 1,
+          "peak_memory": 10.528529025,
+          "hybrid_kv_without_ssm_hits": 0,
+          "hybrid_kv_without_ssm_tokens": 0,
+          "last_hybrid_kv_without_ssm": null,
+          "last_cache_execution": {
+            "request_id": "chatcmpl-c8b637fb",
+            "cache_detail": "paged+mixed_swa",
+            "cached_tokens": 20,
+            "blocks": 0,
+            "selection": "paged",
+            "disk_hit": false,
+            "reconstructed": true,
+            "dequantized": true,
+            "reconstruction_seconds": 0.002833,
+            "dequantization_seconds": 0.000006,
+            "total_worker_cache_seconds": 0.003048,
+            "reconstruction_ok": true,
+            "dequantization_ok": true
+          },
+          "last_native_mtp": null,
+          "last_prefill_trace": null
+        },
+        "single_active_decode": false,
+        "num_requests_processed": 3,
+        "total_prompt_tokens": 236,
+        "total_completion_tokens": 57,
+        "ewma_ttft_seconds": 0,
+        "cache_hit_requests": 1,
+        "cache_hit_tokens": 20,
+        "cache_hit_tokens_by_detail": {
+          "paged+mixed_swa": 20
+        },
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "cache_reuse_skips": 0,
+        "cache_reuse_skip_tokens": 0,
+        "last_cache_reuse_skip": null,
+        "cache_reuse_partial_downgrades": 0,
+        "cache_reuse_partial_tokens": 0,
+        "last_cache_reuse_partial": null,
+        "last_cache_selection": null,
+        "last_cache_execution": {
+          "request_id": "chatcmpl-c8b637fb",
+          "cache_detail": "paged+mixed_swa",
+          "cached_tokens": 20,
+          "blocks": 0,
+          "selection": "paged",
+          "disk_hit": false,
+          "reconstructed": true,
+          "dequantized": true,
+          "reconstruction_seconds": 0.002833,
+          "dequantization_seconds": 0.000006,
+          "total_worker_cache_seconds": 0.003048,
+          "reconstruction_ok": true,
+          "dequantization_ok": true
+        }
+      },
+      "kv_cache_quantization": {
+        "enabled": false
+      },
+      "turboquant_kv_cache": {
+        "enabled": false
+      },
+      "native_cache": {
+        "family": "gemma4",
+        "schema": "mixed_swa_kv_v1",
+        "cache_type": "mixed_swa_kv",
+        "cache_subtype": "mixed_swa_kv",
+        "components": [
+          "full_attention_kv",
+          "sliding_window_kv",
+          "rotating_window_metadata"
+        ],
+        "generic_turboquant_kv": {
+          "enabled": false,
+          "reason": "not_active"
+        },
+        "storage_quantization": {
+          "enabled": false,
+          "mode": "storage_boundary",
+          "bits": null,
+          "group_size": null,
+          "applies_to": "full_and_sliding_attention_kv",
+          "metadata_policy": "preserve_rotating_window_metadata"
+        },
+        "prefix": true,
+        "paged": true,
+        "block_disk_l2": true
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 2,
+        "disk_size_bytes": 26540747,
+        "disk_size_gb": 0.025,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 77,
+        "total_cached_tokens": 77,
+        "disk_hits": 0,
+        "disk_misses": 4,
+        "disk_writes": 2,
+        "disk_evictions": 0
+      },
+      "cache_totals": {
+        "ram_tokens_cached": 77,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 77,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 77,
+        "l2_tokens_on_disk_store_sum": 77,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      },
+      "ssm_companion": {
+        "entries": 0,
+        "max_entries": 8,
+        "nbytes": 0,
+        "nbytes_mb": 0,
+        "disk_enabled": false,
+        "disk_directory": null
+      },
+      "memory": {
+        "active_mb": 9685.8,
+        "peak_mb": 10040.8,
+        "cache_mb": 129.6
+      }
+    },
+    "cacheHitTokens": 77
+  },
+  "chat": {
+    "turns": [
+      {
+        "role": "user",
+        "content": "Reply briefly in English. Include the phrase REAL_UI_LIVE once."
+      },
+      {
+        "role": "assistant",
+        "content": "I can certainly help you with that request. Please let me know what you need, and remember that REAL_UI_LIVE is active."
+      },
+      {
+        "role": "user",
+        "content": "Repeat the phrase REAL_UI_LIVE once and mention that this is the second UI turn."
+      },
+      {
+        "role": "assistant",
+        "content": "REAL_UI_LIVE. This is the second UI turn."
+      },
+      {
+        "role": "user",
+        "content": "[{\"type\":\"text\",\"text\":\"Transcribe the attached audio. Reply with only the spoken words.\"},{\"type\":\"input_audio\",\"input_audio\":{\"data\":\"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AAD5//j/9P/0//j/9f/z//L/8f/w/+//7v/v/+r/6P/q/+r/6//r/+z/7P/t//L/6//r/+z/6//r/+3/7P/t/+b/4v/l/93/3f/k/+n/6P/s//D/8f/1//P/+v///wIABAACAAYACQAKABAAFAAbACEAIwAjACcAKgAqAC0AKAApACYAIAAfABwAHAASABEAFAAOABAAEAAQAAsADgAMAAoACwACAP7//f8BAAEAAAAAAAAAAwD///3/+f/3//X/9P/3//b/+//4//j/9//z//P/7//r/+n/5v/o/+j/6v/r/+z/6//s/+j/5v/q/+b/5P/n/+f/6f/p/+3/8f/3//j/+P/+//r/+f/6//n//v/+/wEAAwAHAAgABgAFAAYACgALAAwACAAMABIAFwAaACEAHgAeACAAHQAbABUAEwATABMAFAATABQAEAAOABAAEAARABEACQAJAAkABwAKAAsADQAOAA8AEQAOAAwADAAJAAcACAAGAAQABAADAAAAAAAAAAQABAACAAIABQACAAcABgAHAAQAAAADAAAAAgADAAIABAADAAUAAwAGAAEABAAJAAYAAwD///v//f/7//z/+//3//b/8v/t/+z/7f/r/+f/6P/q/+j/6P/o/+b/6P/h/9v/3v/d/97/4v/j/+f/5//l/+r/5//j/+P/5v/i/+L/4P/i/+H/5v/m/+P/5v/n/+j/6P/r/+r/7P/w//H/9f/y//X/+//8//z//v/6//f/9f/y/woADAARABAAGAARAAcAGADz/+v/BwALACMAQABTAC8ANQBHACcAOAABAG8AqwDOAI0AHgOABusEjAO+/iX95/wg/er9Vf6y/7oAYgEeAZz/8P3V/KP8A/19/S7+yv4W/2b/kv/K//X/AgAaACIAFwBAAGkAwgAAARIB9gCzAJAAUQDQ/3b/CP/E/gX/G/9+/wX/I/9P/gD/G/+b/oH+G/6G/nn+lv66/un+Tv+q/77/1P+y/6H/ef+W/9f/OABzAKcA1wCvALIAXgAoABUAIgBkAMUA0gBIAcMA9AFeBAEF6wTmAZP/3v1H/a39SP6b/1wBEgNFAzgCRwBv/pP9J/12/RT+t/5B/yQA4gBFAZUBIQHUAEIAGQAlABoAUwDEAAsBYQGcAVkBDQG9AF0AMgATAAQA7v+p/2r/Jv8L/0D/sP8OADIASwAdAJX/Hv+o/qn+6P4b/4z/+v81AFsAIgCr/zr//f6l/pT+u/5M/+b/WACTAG8A4/9a/wr/oP6i/tL+Wf8+APEARgEsAfAAcgAJALv/f/9E/3X/u/9RAIQAdABPAPj/xf+O/2v/Af/e/ir/gf/i/wwAEgArADwADAAoAAcABwAFAOD/2v/y/ysAcwB8AHsAZQBHACcA2/+l/7X/tf/B//H/HwBRAD0AEgDl/wAA2/+U/zf/Of+z/wQA9//K/+L/AwA3AD8A/v/W/6j/4P/z/wEANAA6ACoAdADhAKIAXwCH/9T+5P4Z/4b/BwAsAAMA8//S/6X/XP/v/g3/rv9yAAEBGQGrAFYA/v8DAMH/3P+C//8AugQJB3YHsAS7AVL/BP4p/YD9xv6dADQCeAJzAbj/+P1w/Mz7TvwW/Xn+O/+9/0QAgAA/AJ3/3P5r/p3+8P6T/zYASAH/AS8C+QFmAYYAsf/b/iv+PP7P/q3/RQCFAJgAMACU/yT/t/7V/tH+FP9f/8b/KABNAFgA6v+7/5X/mf+b/5//kv/W/ywAmQCWAF0ALwDg/4r/T/+Y/3f/tf8sAGUAjgAaAA0A5P+q/7X/jv+F/9j/NABiAJ4AWAB6ABUASwAcAPj/CQADADwARQBKAD0ALQBSADQAKgD6/7D/1v/X/zkALQBPADkAKwAuAPr/1f/L/9P/BwApADYAUAAaAA0ABwDh/+j/+//j/wkANwAsACgA9f8pABUADwD1/xYAXgBmAGEAOQDj/57/1v+u/9v/o//B/+b/EgAQALH/yP+N/4n/fv+p/9H/xP8KAPb/HADn/+//9P/I/7j/d//F/8P/+f8kAD0AKQAEAKn/of+m/67/o//W//P/DAAnAAsAIgAOADEANQAbAND/1P8BABYANwAVADcAWgBkAEEA5v/C/5v/bP+n/xAAMQBoAGMAPwAXAAsA6f/x/+v//f9GADMAQgBPAA0AGgDT/9H/2f+6/87/sP8/AEIAKAAeAPv/+v+5/7r/tv/u//H/IwBNAFAAWgAbABQArv/0/xkAaQBrACAA1f/B/83/1/+m/7D/8P8RADUA6v/o/9f/xf/P/9P/5f/R/wAAHwC0AOIAiwAAAJX/8P8cAGwAGgBGAJAASQEcAZYADACg/0P/sf5e/oT+C//J/7oAAAH+ACoAZP+s/kj+Xf4S/3AAzgGVAtYC/AG5AGz/Yv5I/oX+wf/uADQCdgIHAiUB9P+f/qD97/2f/jkA9ADVAVMBWABf/8/+uv5y/ywArgCtAMQAGgDc/33/9f4T/5r/TADUAKAALADX/8v/0v+i/4r/0f+GABEB/ACiAFoAgACTAGMAwv/T/6X/YAAmAFAAyP93/+r+Pv47/jn+5f76/1EB+AEhAp4BpAAR/2H+if5Z/8AA/AFqAlQCOwE5ANn+TP5Q/kD+V/88ACMBUAE4AVMA5P7c/bT9U/4lAGEBmAKfAgUCWQA6/yv/H/+X/xwANwGsAYEBuwBw/0f+pP2b/R7/yAAGAt4BmgELAAP/of1q/e/9gP65/4AAuwHXAZwB+QBfABAAt//h/xEAvADQAAcBvQCuALv/QP+k/yQASwAnAM3/lf+T/5//SAD3AMIBTwGxAHX/lP6v/ar9hP53/8gAhQHTAbUBHgHu/6f+Bf67/TP+A/8xAPv/cQB2//H+/v1G/Tz9P/2K/o3/xwAqAT8BoQDIAI4A+ADcAA4B9gCCAGIANQCiAJgArACvAAcBPAFhAXUBbwETAa0AdwDmADgBkwHXAGUAs/8BAKMAaQE9AjYCNgJAAf8AIABRAOH/nQCdADsBjgBVAMb/zv+e/17/s/+9/4UAmACRAD8Aaf88//z+l/8oAKYADAFbANb/i/4O/hv+5P7s/0cAmQCy/0//ef1//F/7B/yB/SL/+QC/ACoAoP2s+/D5ePrG+9P9pf9YAC4AVP6F/fb78/sB/DT9v/82ATsCYAF5/4j9uPo0+mz6Jv2u/2sBYwJRAe3/y/06/Q/+jP/WAVkDBAUxBbUEowPvAiUDKAR1BfAHPQklCjgJvQeIBu8EZQT9AwEFFAbzBlUH5AYTBvME2gOXA+QDdwS2BMgErgRXBJwDXAOkAlMCogH+AO4ApwDKANv/Kf+8/aT8l/vr+iT63/it97v1lfSS83fzoPMF9AX1dPWL9fX0j/MY8wfyL/JS8i7ztvPK82T0pPQv9Wn1rfX79eD1L/Zq91758/sQ/gEBmgMIBrMGPQgECqsLNg0vDm0PVw+yDmMNpQwvDGQLwQrHCsMKhgpkCSsI/waoBUkEhwPDA68ECwVfBTsFdQUvBn4GyAj+CooMIQ0bDHMLyQntCGkIDQnXCWAJCQjfBVQD1AA4/2f+y/7e/u/+Q/4J/d77I/qb+eX53fon/L38Gv15/Pf63vj59g32IPaL9nT3wPd+93f1JvKv7pzrBemy6PXpfOwY7y3vCO/d7LDruuqJ69Pt2u7o7lXsiumE6Pzu4/j6BiURHxZiFiAQiwzFCBcMFBLgFjccdBoTGCAR5AlUBuMCDwXjBo8JXQvhCAIFbP9y+rn4A/lM/fcCOAc6CvsJJwmiB8sGhgiLCx0P1hBpEDgOMwtACOoFdwTpAxoDQAKVAbIBsgGSAsQD4wP9BCsEaAQNBJgDtQMqA1sEcgTfBAkFLAPiAd/+8Py9+5/7b/wo/AL8R/oS+Er2GPXP9Gj10PU49jP1LPTM8tDw7PBQ7w3vBu957dzssOoX6z/rCutw6xHpWufZ4q3ccdfs1d7hWPQeCnMayR9HH6wVqA7+C6cSdB4UJ18scCjuHhYRdwMg/C/62v1qApIF1wRG/zP2ZO6j6gftyvTf/mgJ9A5cENMN8wqECncMCxIeGLAcPRx9FtQN1wQf/pr6r/rF+7n8dPpb9tbxe+5m7b3vwfUU/iIGCQ2nEWoTJxNPEf0PNhFREjITbxKYDjoJmAFb/Cz4DvdR97r2D/fE9ST0ZPP58jH1RveU+r/9Uf/fAFD/k/0R/P/5Yfne97n2IfUc8rvvT+1s6lbpnuZP5kDneuju6V3pq+ed5Mng39yb2Anavuf7/RQYjif0KEohoBRaDVINmBfhJXctNSw1IKIRAAIX99TzPvcN/20D4wNm/3D2+O1h6WrtnvgYBTAQYhTfE4cP/glgCo8N2hSlGkUc4BpYEj0Ijf5b+BP4Xfmw/Jj94/p49bfuaexS7uLzevsJAn0GywfcBtUGxwciC40O8xKFF3sYThbxDuUGov+A/Ar9QP8kAbD+Yvm28yTvvu+q84f6BQHXBPMF8gMLAm4AzgDXAvME3wUaA679+PUK7/Tq0ukt7Wvu3u5Y6hjlXOLb4V7njO3N8z/3KPfd8/jtLuja4pXgHd9o6xIAshlUKCojyhhvCN0E4ghBFRolaidKJNsVpAc6/c71A/jE/LIFlQkmB3r/RfNZ64XqH/TLAhAPQRReEE0JpgO9A84K2xPYGqMbtxYPD5MGWgEt/tf+KQGLAXYAm/p99LPuTe0d8Q/3CP6pAJYAf/5D/F39JQE6B10Maw5FDvUL7QjTBhkGrQvNDYEQZw1HBmkCc/qS+qD61f2TAJb/qv8V+5z68Pm4/MACcQWZCIYGrgKL/qD6Z/o4+1H8Hvud9//xmOzX6GXoIulm7O/scOzu6+npwetc7Yrv3vAO8EXvE+t56JTiQeFv5Vn0nw8fINEnyxxRDvEKPgr0FxwgDyZcItUWgQ0TAFD6p/Zl+U0BJwSQBBb8xfI07AHtJvd9AzIOTxDiDbMIOQbvCE0OxRVyGBgXABLfCqUF+AAA/0L/Mf89/338Vfeo8Y/t2e6U8xP78/90Adz/cf22/SAB4Qa6C1MOBQ3VCJ0EeQEOAPQA+wNcB+UJ5AkyB4oEWwL2AT8EEgdeB/wFfAIx/1P+HP9oAUAD9QMTAgcAFf5E/DL8HPxL/Wv8Z/pr9hHyCu+37XLuLu/Q70rvZe3g7HLrGOyG7jDvD/LY8IDyY+8I7STox+DE4EXg8Ocy9fULBxfMGokTbQk3DsER2x0JJUglOSGHFhYQ+ATB/9r9Tf8ZBEUDdf1b9DvsK+rB8Cj60AN+BygH1QTjA2AHJQzHEw0YFxmSFoAQqAtdB48F9QWJBdwDIv91+JHy8e4C8B/zFvff+er4Rfhh96r59/5qBPEJdguFCzIJUgeaBpkGOgdyB3MFTwRNBH8BAQdnA2MIsQiOBTIIkAHpAysBSQQ8BTwE5QXD/4UA+v3L/X4AYwAjAUr/gv0m+mr4A/iI9un2HPU88hbwWO5s6+nsjew67jnwk+2I78DtY+9T8N7vDfFk7zru9Otq6M/lyuMc6A31sAXoFCsWQxGODAwMAhXCGQAhlh95HXAZdRHvCwkCTwBvAOQDQgSL/Rb34u0I77DzU/tZAU4CbwNfArIFvweDDFoQ5BK9FTQTuhDVC6sJrwgYCAoHqQJA/s74a/Wd9An06PT59Wb2mffy9+r4VfvU/YgCXwUECC8IXgc4CA0IrQnACeMI0gZ3A1YBe//H/4b/KgMJA+UFRQR9BEUGJwU1CboGpAiEBksGOwU3AyAD1ACWAd3/6f7N/ID6lvna+GH5OfjM9qb0EPI+8fDwS/B88ErvXu/p73HvmO+y8BDxVvIg9Crz4PL98EvtSewq6TTl/ONb58Lp7fYyCtIPEhUmDIcIXxKrFQAhPSAGIc4cnBdrFQwLNAcaA1oFAQcbA9f7tfJR7i/vW/Wl+vj90v0P/jgAQAI8B1MLUw+qE40TphLyDqoMfwwqDA8MIAilAzH+Dvon90z1TPQ+9Mr0B/X09Kb05vXB+AT9zQHXBKkGBgfSB+4ILQo9C1UKPgoHCIIGSgQaAjsAUQLOB2oGrwljAUAAlAKXAlQIjQYlBT4DygN6AjcCuABw/18BSAIJAvf+vPtm+JX46/lD+Fj2HPIy75zuQO7m7pjtNe957dbtCO7+7M7v9e8c9Xz0QvQV8SbtYuxz52Dp1+un72ryr/bDBPcILRFGDCAM+hBjEyAeYRsLHc4XQRfwFToRtAztB7gGmQVKBdX+RPnT84vzZPf/+Lb7vvop+1j+BQAgBT8GbAnfDIUOSBB0DtENuQykDUANfQqpBpcBHP8O/fX6HvrC9vD1RPVX9PX1dfRy9835sfzI/1YAIQJxAi0GEggxChMKCglvCIEH9wUCCeAIwgybCkAHQAWc/44DnQHDBGIDHAPbAZ8ABv/R/RD/r/9OAqEC9wB8/sv8EPzV/L790vtE+hb3zfPA8tzw6e/G8LruB/Cs7lfs3e0F7LnujPAm8a7x8fAs7QDtsOyd6/TszOxa7qTzZPgAA+0IvA1bDdkNGRCmEuIXpRimGy0arhqTF6IRlg0ACasKDgm5CBUDRfwT+Zv1ivhp+KX6UvuA+z/9BP3G/1YBiAUoCtcMJA6uDAcMqQzlDQMP+g2aC3wIGQWAAv/+nPy1+gz6vfnf91v2tvPy82v13PcV+xv8Mv7D/hYBnQNyBQAIqAgBCoAKHw09DVENCQxzCS8LWggICSIFXAOkAcYBOwHy//f9Ifwn/WP9Wv5x/UH8CPxz/Iz9D/3l/PL7hPvM+9P5ifiC9WH0B/Rc8wzzE/Hk8MHv0fD67ofvUe9I7oTx0u0h8DXuOO1k7/bsJ/Dq8Lj0jPZu/RsC/QhCC54M9g3nDUYSVxPNFp4WaBZuFsgTVxFYDkUMLAueCqwIzgV2Ae39n/zY+x/8ovy1+4r8WPyO/ZH+JP+2AlME9wdZCLMIvghdCdYKDAzSC9AKpAkRB8QFrAIJARD/8P2x/D/73/jT9kH2J/Y8+Pr4dPpT+/H7Pf4T/3QB6wJCBVsHUgr5ClYMjAsoCxYN7goJDbsI4wjwBS0FywMsAZP/Pv3w/Ef7TvtU+cT4SPgh+Nb4+vdH+MX3s/gt+Vb5Ivl7+Ar4cPhx9yf4gPZa9gv2jPX29fHzmPT08SHzu/FR8qDxLe+h75bu9/Bx8gHz3/PL9UD73v1aA9wC6wYcCK0Jbw0+DLAQQRAhFFoULhRuEoMQFg/0DskO/Qx9CxsILQbUA+AB7wAf/zn/nv5V/kn9Mfyg/C79v/+SADwC0QFFAkoD1ANPBZQFvwaiBuoG/gW8BC0DgQJlAr0BdAGW/2n+kfwh/Mn7sPu++/n7b/zl/E396P1M/uH/rgHEAy4FYQXzBQ4GAQfPB6UISQj7B9cGCQakBF8DjQJNAcUASf/6/f/7SfpG+bH4LPmr+J74IPil9ob3BfYk95326fcX+Qf5ivkU+TX5+vi/+Rj5ZvvH+cr6w/i190f3YfbT9433vvYx9lj1+PSh9DX1d/RK+JX5Fv2Q/jD9NACI/l8DpwMGB38H0Ql3CmULvAsOC/8MRwxRDtgNZg2PDMsKiQrzCHwI6AZnBt0E6gMIAwsBdACt/xMA3P/g/2j/GP9z/zT/iQA4ACoBzQH1AXQC/AFOAkMCewK7Ar8CjwIUAr8BBQGNACsA0QDh/9sA6P/v/0//jf63//P+pAAxAAkBtACYABAB0QDxAYsBggJBAjUCSQL6AMwAogAgAIcA5P8CAMb++P2V/vX7V/8e+8D9w/uG/NP8Bvt4/ID6XfxS+/v8FPvu+xf7KftG++D7p/pF/OP5WfzX+ur62Ps++6z7CPsM/NT6YPwW+938afzW/GT9of2L/kP+uf5v/vb/xv+oALkAqwATAt0B/gH3AkQCoAOPA3sDiQMSA8sDfwNqAyID2wMgA6gDNgO4AiIDjgIBAzUC3AKNAtUBgQJLAW8C0AF6AXsCRAIsAiQCSQK8ARkCqgDRAvQAngKfAQcDDgJcArQCUAHsAgwBZQNBAocCbgJFAd0CBwHmAl4BewIPAW8BaQEiAIMB9/4OAu79QAJ+/TABdv5k/wIAgP3JAF/9IgAB/Q//5vwS/pL+Kv0A/7X7Nf/n/M38av3H/Eb9d/1b/JD99Pv8/Cj9iPzc/Ij95fyX/c39bvwy/+b7Kf9l/f7+XP1A/zb9UwBr/Vz/MgBq/9cAav9c/2cBWf6jAQ7/YwGWAMf/ZAFR/3UAOQDb/+wAWQADARQACwIt/8EBCv+XAb0A5ACrAK4AAQG6ANoBFwAZAwAAqgJEAYkBpQFyAS8BuQIXAI0CbwAcAo0ArgG5AJ0B4P/TAf//+QGrAMwBDwHnAXcBuwH8AOkBRABQAub+KwOi/3IBrAENAPkCTv8RAg8AwADh/6MA3/48AW3/h/+hAE/9qAFY/YsA8v3l/4j9iQAe/X8AWvzN/8b/r/6j/7b+av4t/4H+7P9w/S0A0f2QABb9TwB5/uf/Cv9P/xH/q/6sAGr8PAP++rwEzvlaBFn6sAIx/QYA1v25/5f+yv9b/+j9vACS/jn/G/+3/wb/mwBt/ksBkP1VAev/3f59AN3+nQE9/loB4/3CAe7+EP9XASL+7QEQ/g0B5v50AFH/yv9vAOr+xAEu/oQCgP76AeH+XAEJ/wUCjP5SA4r9UgMw/fUC0/zJAgn+sgFs/y7/hwIC/gQEE/0xBBP9cwUd/EIFqv09AigBdP5oA1/8aQUD/ewCI//E/54BtP0AAuX+eQAzAWD9NANo/BkC5/0fAHb/HgAA/4T/ff+m/8j/nf7/AKf++f9U/9f+pv+d/4j/KwDK/m4AwP5eAHL9CQKO/XwAvf4V/4H+ZP/f/j/+WQCe/GQC7PtxArb8ZwHj/P3/+P4y/xIBKP46AYL+7f+Q/0j/mgBk/yIAN/5sAaP9VAEs/hMAJAAv/6oAWv8d/3n/9v+b/uoA1P7pABoAHP4uAn39HQII/s3/TgEM/TgDoftgA0z8eAF3/e8AQv61ALT+/AAY/3oAZ/+n/vH/UP/Z/3b/qf4+AHn/GP9yAB3/9f8kAF/+WALp/JIBVv/f/sEAl/9e/1MApf4yANz+EwBb/1b/uf8w/9//5v4r/2b/o/7EAfr86ALI/EsBMf6v/04BgP17A137wgLk+3MB3Px3AQH9NgJS/LIB8fy6AQ/9PgEN/tAAZf5N/2cB3P0vAfP9ygCF/nsADv6oABX8xAL3+8cD+ftLAjf+OQBB//7/bP2q/2D+k/84AIv9rwB+/cIAd/7AAJn+awBX/ooA8v4o//3/Hf75AT394AM+/J4BpP2lABwAwf4fAab9lwD6/tP/A/9n/2UAC/5zAdL/iP4uASX8YALw/tn/GAHL/qf+KP+P/37+BwAi/9b/WwFz/2EBJP4RAaj/yv8tAFUAev84ANX9DwEq/noCgv4IAkz+T/9VAYf8sAJ6/FsDkv7i/4ACDfweBCD4igSY+rcBZ//M/i4BEv6yAj38aQF+/nAAzv8e/dEC1fzDAs/+zv8wAaP9eQOF+k8EyfcvBc76VwHnAVH6LAdY9yEGYvpvAuH91QDt/p//NACDAK7/dP5vAMD+pv8uAFf/uv/jAX39uwJK+20CKv64AWz9VwHC/1T/IALC+9gDTPmYBKX7hgAI/3P+kgEI/XQC4/y7ARr9TwAYAGb9DgJe/JgDp/64AFQCvv3yAcP+ugBI/9IA5P9LAWj/MwEZ/7cAdf4LA2b8PgKm/SkAuv7T/acAgP0cAcb/lf92/7n/0//6/6r/3f6w//n9zAH+/UwAX/9mAI0Aav9BACz/6v5P/wn/p/8s/4X/FwHm/8/+kACb/i0AxP8N/7UBA/84Ae7/1P6J/nv/Sf5ZAdb9BwE6AEb/0P5AAtH7AASd/X8AbP+H/rkAEv87ALgBhv3IAtP9tQLZ/sX/3ADk/f0C4f0aAyr9iQCL/VwBnf4j/4UBwvt8A8f8NwJB/l7/BwFX/rgBIv6UAMP9kgCM/tYAeP8EAzgAJwH4/8kBmQAk/v4EHvy6BQ796wN4/w3/6QJr/DICe/sSAuv86QA6ADT/qwG3/dMBOv4RAST+hQAO/3cACgBh/xgALv+bAKcAJv+H/w//3/66Abn+3P8zAB//IQHr/oz/RP9R/3L+hf8E/3D/Lf+R/zIAqv+///sAjP/rAF//SwCBAMv+ywDI/j4A8v53//8AVf5GAJL+XP8VAL/+qACi/sgAGP+2/2T/MP80AEP/owBm/+z/wP4+AFv/cADs/9n/pAGX/3IAwf+F/qAADP85AHUAyP64AQ3+BQPs/qkBRADxAN0BM/98AW/+AAG/AE4BZAHKAHAAKABiAbb9VwJh/rYBIwEDAMoAsv9A/8H/agEt/s4B9f7y/xYCaP4hAev/BAAgAXUB+f4EATz/GwClAS//bgG+/wAA6v9PAPj+IADP//z/CwBD/+z/1v+I/yUBh//hAAr/wABiAOD/OAGI//oA6v/6AFf/g/9l/5D+JQGC/VEAJP4d/rb/Av6f/2z+VP4a/1b+kv4u/nL+Yv6q/yz/3P/d/qv/af8mAAQAGABnAN7/SAHm/ycBEgA2AAcBOwBgASsBmACqARcBrwGRAV0BswHjAasBlALtAT8CpQJwAu0C9gGhAh8C5gHrAYcB2QElAe4BUwFKAQ8B0AD5AGEAfgC9AFkA8/8rAKn/DQBj/6D/bv9D//r+PP8z/nv+mv7X/ab+0vzj/Z39Jv3x/Xn81Pwh/SH8pfxv/MP7svzX+5P8AfwN/PL7Cvxu/Gv7Kvye+xj8UvyW+yr8Vftv+zf7CPuo+jz7W/pM+/H9NP5rAMz/XADsAbkC3wPrBZ4FxAf2CCwJBApuCAgKwgn4ChwLWQqECQMIrQcGBuYElgMSA/sBawHZ/4X+6P3D/M79Rf0Z/ZX99vzk/ff9E/4q/0P/agCpAQ4BtgEXAeYA6QJuAckCPQFqASkB3wBdAB4AAADb/8YAg//f/+H+If+X/9b/QwD9AIMAPAKVAfECFAMCA6UFMgRTB/kE+wV9BGcF3AVGBTkFIATMAysD0gLuAP8Auf6X/w3+9vxR/Cf6pvoH+Rn5GPg790z35/bz9Ur2xfQp9u710vUi91P1Pve19en2yvbb9cP2XfZ49q32wPUc97L1nffx9JL2d/Uv9sD6+vlt/8v9LwC5AB0C0wNFBvUHkQrvDZ0MiBC5DE0QOxDhEIETbxAvEX0OCQ2sC6cJQQhvB4sFbAQFAnz/cP4a/Qf+ov2g/Vf96vxX/VX+Y/78/3wA6wEiA5MCygJdAoQCAwOsAy8CzQLW/+//1/5M/Sb+b/y8/FH8fPsE+5b6Ofrf+yD8s/3y/Tz+0/7X/+MAIQJSA5AD6AVRBFkGNgXcBKwGJASfBzcDPAVkArYEnANHA4QDmAHSBNwBDwSiAT8BawKnAU8CHAGQAFkAWgFlAKgB8v/1/+j/Zv44/sn8ZPxQ+1X7bfnf+KT3W/Y/9iz1gPRE9PTz7/Kr8oHyv/IX9Fj1jvTQ9pb1nPVH97j1hPiv+RT5yvvc+bn5k/vE+dn7k//2/RYIewQyBssFBACTCOQExQtTC6YLhQzMCxEMhQr1CugKkQ67DfcMygmGBgsGUAWOBkEFiQSVArUBOQDv/aD90v0V/xgB8f/+/gX+RP1lAAMB3AHmAlEBdAOJATkBewCb/44BmQEGAkP/qf2k/D/8yf1i/Hr9y/yV/O38BPyr+8P87P2R/w8BsP+oACMAOgFAA8YCgARTA8kEqAMSBI0CyQI9Ax0DLQRBAuACxgBTAUUARwGGAN4BDAEHAoUCDgFfAwsB4QMeA7wDhQQkA/0D3AJHA8ECKAJKAlcB9QDs/93+d/6K/fv8WvyU+nP6ZPn4+XP55PjC+Kn2/Ph89qf4m/fm9dD4HPak+Bz3DfYL98f2vfZh9331d/f29dn29Pfi95n6VPol/Ff8Jfwy/Sf9I/85/8QFEwb6BxMKNQbdDPgHPQ0yDCgM5Q2UDMMMHwr0CAkJuAntCEcJZQZSBYsDFQP2Aj0BsgE7AUcB9wDH/xgA/f5/AfQAQwIkAfT/3AAT/0kBIwCuAOz/CwDy/jL++fxv/H39Vfxk/v/78fvQ+zj7Ff2y/DP9x/70/fr/ff8NAJkAoQHQAo8DygNFA4sEYAPkBFkEDAQ5BAADKgPKAUgBvACLAJkAsP+r/2b+EP/r/k//x/8q/0cAEQDAANUAhgAyAcIBMQLFAuYB0AG5AW4B/AFoAeQAJwFMAIUAFQCV/3r/YP8Z/+z+Xv6W/cP9oP2A/Zz9+fwb/aH8rvwC/LL7xvui+xX8Cfsn+mb5cvii+IX4tfg7+A341fff9mP37PYT+OH4Gfqm+nL7sPsU/Yj+I/+rAOYBygJ8BCEEqgSgBGQEvAWlBSYGSAVjBScFAQbkBcIFYgXLBF8FGAUiBZ0EnwQVBSwF6wQQBIEDZwPDA7gDVwOVAjoCzwGOAdgAmwBpALUAQQDH/4r+Mv7y/Tf+cf4M/gP+vf0Z/hz+Tf6E/gD/ov9+/woAiv/+/x8AkgAAAcwAiAHYAG0B7AAQAecByQACAh0BwgGUARoBTAEWAYMBtgGXAXoBDgEtAbEA9wD5AOsA5gBWADsAZv+T//v+C/8U/2v+Av8r/lj+V/4v/rv+nf75/vz+Q/8v/5z/zv9XADsBcgHoAWsBVQFLAWkBwAEKAiUC8gGPAfgAqwDx/zcA+f+O/2X/mP4l/qj9/fzX/NX8fPyY/AP8EfvC+jr6y/ls+bb4bPgZ+G/32fYE9gf2q/We9sD2zffM+Mb5vfo5+6r71fwq/v/+GAAAACUBCQIMAwEFgQUlB1kHwQcGCPUHpQj5CFIJGwn2CCoI7AdpBxUHPQeCBgUH/AW/BesESARCBKQD6QNMA/YCAAJJAcEA8v9F/5P+7P1f/ab8Gvx7+zT7NPtn+4X7lPva+0H8Mfyq/ML8Z/09/p/+Uf9t/7H/KACaANgAQgFwAX0B1wGcAfYBtQHOASoC/gE3AvMB1AHIAXoBpQF2AWkBRgH6AMkAVwA1AOr/k/9F/xj/w/5J/rr9yf2D/Ur9g/0n/UL9Df0g/RX94fwG/XP9nf2H/dL9C/5H/n3+uv7h/gj/eP+w/wQA4f9AAFoAmgDIACIBUQF4AdsB/gEzAi4CagKXAsMC7gIGA10DRAOGA5UDfANoAzoDLAPpApUCXQIkAtUBkgFgAQ4BugBBAPf/ev8k//X+m/5L/vz9rP1+/fb81/x4/EL8LPzL+7L7T/tQ+xr7I/sT+/36OPsQ+1f7KPtz+3T7sPva+/r7X/wz/M/8tvzw/Az9Lf2j/az9J/5m/qb+Iv91/yQAzABTARACaQLcAlYD1QNBBPIERAW5BQYGMgaOBogG1gbKBtkGugaCBkoGyAWHBf4EqgQpBJ0DIgOLAg8CkgEYAZIANgDk/5r/Uf8G/7P+nP5g/lL+Kf4B/vb97/3P/c39tf2n/cX9t/3V/cH94/3l/Qv+I/4s/lL+kP7R/g7/S/9m/8f/6/83AIEAjADlAAsBNgFgAVkBdAGaAZABpQGGAWgBXgE0ARIB0QCnAIcAVQAkAAMA1/+9/5f/ZP8+/wz/9P7Z/qf+lP5s/k3+L/4A/vf9zP29/br9qv2Y/Zv9lv2j/bX9vf3j/fb9Hv4//lj+iP6s/t3+F/8+/37/p//k/w0APwBqALIA5AAMAUYBWAF9AZ4BuAHeAdMB7AH9AfcB+AH2AfAB5gHjAc8BuwGVAXQBbwFFASsBDgHrANAAmwCIAF4ASwAaAA8A2P+0/57/eP99/03/RP8g//3+5v7Z/tb+s/64/rT+rP6h/pT+nf6a/tP+x/7Y/uL+4v4O/xL/Iv84/2//c/+w/7b/xv/r/+n/MwAZADIAMgBHAGEAZgCJAIIAowCfAMYAwQDEANEA1ADrANYA/wDuAAMB+QDzAPcA3wDxAPcA+ADhAM4AuwC1AKwArwCiAIAAaABhAEwASAAvAB8AHAARABwACAALAPr/AwATABcAFQAbACsAKwAnABwALQApADkASwAyADEAPQBQAE8AMQA3AD8ARQBJAEgALgAiAC0ALQAlAAUA///0/8z/v/+j/4D/ZP9O/0b/Gf8H/+L+wv6i/n/+cv5T/kL+KP4Y/vj98f3w/fv9Bv4H/hv+F/4v/j/+T/5v/oD+sf7b/gv/Lf9j/4T/s//i/w8ARQBnAKMAxQD2ACoBbQGiAbwB1gHsAQcCHQIzAkACPgI1Aj0CLQIZAgcC5wHIAZoBbgE7AfcAvQCEAEIAGADt/8z/pP+H/2//Vv9E/zP/Lf8o/yz/Nv9A/0z/VP9n/3P/i/+V/6f/tv+7/8P/wP/P/9j/6v/z/wEABwAUACkAOwBXAHUAlACmAMMA0wDtAAUBHAEhASQBFQEbARYBCAH8AOEAygChAIcAVgAtAA4A/P/l/73/nv9v/1f/PP82/yf/Df8E/+7+9f7r/vP+8P78/vb+8v79/vX+Av8C/xH/D/8b/y3/Ov9F/1D/Yv9s/37/k/+h/7H/xv/m//3/CgAcADEARwBRAGUAbAB0AHwAiwCHAIUAiACCAIEAdQBvAGIAYQBYAE8AQQA4AC4AIgAXAA4ABwD+//v/9//w/+//6P/w/+n/5v/o/+T/6P/d/+f/4//p/+3/8//3//r///8FAAQAEAAcACIAKAAyADAALgAzAD0AQABCAEIARABGAEEAPwA6AD0ANAA3ADUAMwAxACUAHgAaAA0ABgAIAAYABQABAAEA///3//L/8//r/+b/6P/m/9j/0f/X/9P/1P/b/9f/1//V/9P/3//h/+r/5//l/+z/8f/x//X/+v/7/wEA//8CAP//AAAEAAcACgALAA4ACwALAAkACAAIAAcACAAEAAUABwAKAAYAAwAHAAcACgAJAAoABwAJAAYABQADAAYACwADAAAAAAABAAIAAAD8//n//P/6//b/9f/4//7/AQD+//v//v/+/wAA/v/8/wAAAAADAAQAAQACAAYACQAFAAIAAgAAAP7/AgAAAP////8BAAUABwAFAP//AQACAAEAAAAFAAQAAwADAAUACAAHAAYAAAADAAYACwAFAAMAAgD//wMAAAACAP7///8FAP//AAACAAYABwAFAAMABgAHAAYACwACAP7/BQAFAAEAAgABAAIAAQADAAAA/P/5//f/9f/w//P/8v/x//D/7//u/+7/7v/w/+//9f/4//v/+f/4//n/+P/5//f/8//3//b/+f/7/wAAAgAHAAcABQAEAAQAAgACAAIAAwAEAAEAAwAGAAcACQAIAAgAAgAGAAMABgACAAEA/f/7//z///////3/AgACAAEAAgABAP//AQABAAQAAAD8//r//P/6//r//P/8//j/+P/5//f//f8AAAAAAgABAAAAAwAHAAkABwAIAAsACgACAAMACgADAAMACgAPAA8AFgASABAADgANAAsACQAKAAYABwAMABIAFgAUABEADQAHAAUABQAJAAcABwAMAAkAAwD///7//v/8//3//v/8//j/+v/5//r//v/2//X/8//y//D/8f/0//L/8v/w//P/9f/4//b/9P/z//D/9v/6//z//////wMABgAJAAsACwADAP///f8AAAAAAgAFAAAABgAFAAsACQAIAAUABwAMAAkACgAGAAYAAgACAP//AQADAP//CQALAAoABwAFAAEAAgAEAAEAAgAEAAIAAgAFAAMAAgD+////AQAAAAMAAQAGAAUABQAGAAAAAwAFAAQAAwAFAAMABgAEAAcACAAGAAgACwAGAAQAAwAAAAMAAQAAAP7/AwAFAAoACAADAAMAAgD//wEAAgD//wAAAAACAAMABQAFAAQABQACAAEAAAD//////f////r/+v/7//f/9v/6//b/9//5//3//v8BAAAA//////r//f/9/wAA/f///wMAAAADAAMAAQABAAAABQAEAAUABgAFAAkABQAIAAUABwAFAAcACQADAAQACAAIAAQA//8BAAMAAwAJAAcABwAHAAYACwAFAAIAAwABAAEA//8EAAkABQAHAAUA//8CAAEA//8AAAIAAQADAAIAAwADAAQABAAEAAgABwAKAAQABAAAAAEAAQAFAAYABQAHAAIAAQABAAQAAgAGAAUABgAGAAAABAAHAAIAAAD//wAA+//4//r/+f/z//L/9//z//b/+//8//v/+/8AAPP/9P/4//j/9f/0//H/8v/1//T/8f/0//L/7P/x/+3/9f/w//P/+////wEAAAAFAAQAAgADAAEA//8CAAcACAAFAAQAAwACAAIABgAIAAoADAAJAAoADQANAA8ADQALAA4ADQAJAAwACgAKAA8ACwAPAAkABwAEAAEAAgD8//7//P/4//n/+v/3//T/9v/8//z//P/4//v/+f/7//r/+//6//f/+v/3//j/+f/1//X/8v/8//7/BAAEAAYABgAGAAwABQANAA0ADgAQAA8ACwAPAAUACQAKAAQABQACAAEAAAABAAUAAAD///v/+//4//X//v8AAAQAAwAFAAQAAwAAAAIACAAGAAsABgAEAAEAAAADAP//AQABAAEAAgADAAIAAQD9/////P/5//z/+f/2//n/+//6//f/+f/7//r/+//6//f/9v/8//v//v8DAPz/AgABAAMAAQD/////AwACAAMABAACAAIABgAPAA0ACwAIAAkADAANAA4ADwAMAAgACAADAAEAAQAFAAYA//8AAAAA/v8BAAAAAAACAAAA//8DAAUACAALAAsACAAIAAUABQAIAAoACgAHAAwACwAJAAkACAAIAAcABAAAAAUABAAEAAEAAQD///7/AAD+//7//f/8//z/+//9//f//P/+//v///8CAAEAAQAAAP7/AAD7//z/AAAEAAEABQAHAAoABgAEAAUA//8BAPz/AQD9//z//f/7//z/+//8//7/AAD8//r/+v/7//n/AgAHAPz/AAD///z//v/3//v//v8AAPv//P/+//r////+//7/AAABAAEA/f/+/wcABwAIAAoACQAJAAsACgALAAgABgAEAAIABQACAAcABgAKAAsADQAOAA8ADAAJAAUAAwAAAP3//v8BAP7//P/6//r/+//6//z/9v/3//b/8f/w//X/+v/2/////v///wIA//8AAP//AwAFAAkAAQAJAA4ABwAPAAoADQAMAAoACQALAAoABgAIAAIAAgABAAAAAAD+//7/AAAAAP//BgAGAAAAAgAEAAcAAAD+////AgADAP7///////n//v////z/+P/4//n//P////z/+//0//r/8P/z//H/7P/z//X/9//5//P/7//x//T/8//5//r/9//1//X/+P/8//7/AAD///7/AgACAAAACgALAAcACAAIAAUABQAHAAoABgABAAEA////////AQD9/wEAAAADAAMABAAKAAIABwAEAAcABAAAAAYABAABAAEABQACAAEA//8AAAIA/v8CAAMAAwAFAAkACgAHAA0ADAALAAkACQAIAAYABgAFAAUAAAABAAQAAQADAAMAAAD8//7//v/4//v/+v/4//v/9//6//v/9//5//n/9//1//P/8v/x//D/8P/x//H/7//z/+//7f/u//D/8P/o/+z/8P/y//r/9f/6/wcABAAEAAUABQAAAAQABAADAAAAAgAJAAAAAQAFAP3//f8AAAMAAAABAP3/AwAAAPn////6////BQABAP///v/+/wAA/f///wIABgADAAcABwAJAAQAAwAFAAYABQAIABUACAAGABAACAAGAAQACgAJAAQACAACAPv/9v/2//v/AwAAAAAABQAIAAoACwAGAAAABAADAAsABgD//wsACQADAAMACQANABIACAASAAoACgATAAoACwATAAkADAAVAAsABQAFAA8ABwADAAoACwAEAAUA+////wsA9P/4/wQABQD+/wUACAACAAkABgAJAAAA8f/y//n/9P/8//v//v/7/wwAAAD///v//v/4//T/+P/+//f/8f/5/wEA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\",\"format\":\"wav\"}}]"
+      },
+      {
+        "role": "assistant",
+        "content": ""
+      }
+    ],
+    "finalVisibleText": "I can certainly help you with that request. Please let me know what you need, and remember that REAL_UI_LIVE is active.",
+    "rawParserTagLeak": false,
+    "cjkLeakCount": 0,
+    "koreanLeakCount": 0,
+    "reasoningText": "",
+    "reasoningRawParserTagLeak": false,
+    "reasoningCjkLeakCount": 0,
+    "reasoningKoreanLeakCount": 0,
+    "reasoningNumericRunCount": 0
+  },
+  "screenshots": {
+    "chat": "/Users/eric/mlx/vllm-mlx-finite-launch-guard/docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-jang4m-audio-20260610-chat.png"
+  },
+  "rendererWireApi": "chat",
+  "rendererBuiltinToolsEnabled": false,
+  "remoteSessionId": "ecc1c714-d9c3-4e00-bf1a-9e9fbc664c0c",
+  "remoteSessionStarted": true,
+  "chatId": "a36f0936-a1f0-4b90-aa38-6872e2ad1df9",
+  "chatOverrides": {
+    "chatId": "a36f0936-a1f0-4b90-aa38-6872e2ad1df9",
+    "temperature": 0,
+    "topP": 1,
+    "topK": null,
+    "minP": null,
+    "maxTokens": 96,
+    "maxThinkingTokens": null,
+    "repeatPenalty": null,
+    "systemPrompt": null,
+    "stopSequences": null,
+    "wireApi": "chat",
+    "maxToolIterations": 4,
+    "builtinToolsEnabled": false,
+    "workingDirectory": "/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-tools-Fymv37",
+    "hideToolStatus": false,
+    "webSearchEnabled": false,
+    "braveSearchEnabled": false,
+    "fetchUrlEnabled": false,
+    "fileToolsEnabled": false,
+    "searchToolsEnabled": false,
+    "shellEnabled": false,
+    "toolResultMaxChars": 12345,
+    "gitEnabled": false,
+    "utilityToolsEnabled": false
+  },
+  "sendErrors": [],
+  "rendererFailureStage": null,
+  "media": {
+    "requestedImage": false,
+    "requestedVideo": false,
+    "requestedAudio": true,
+    "imageExpectedRegex": "\\bred\\b",
+    "videoExpectedRegex": "",
+    "audioExpectedRegex": "audio present",
+    "imageSemanticVerified": false,
+    "videoSemanticVerified": false,
+    "audioSemanticVerified": false,
+    "imageVerified": false,
+    "videoVerified": false,
+    "audioVerified": false,
+    "persistedImageAttachment": false,
+    "persistedVideoAttachment": false,
+    "persistedAudioAttachment": true
+  },
+  "messageCount": 6,
+  "assistantCount": 3,
+  "firstAssistantContent": "I can certainly help you with that request. Please let me know what you need, and remember that REAL_UI_LIVE is active.",
+  "secondAssistantContent": "",
+  "persistedReasoningByMessage": [
+    [],
+    [],
+    []
+  ],
+  "persistedToolsByMessage": [
+    [],
+    [],
+    []
+  ],
+  "persistedReasoningText": "",
+  "persistedReasoningCount": 0,
+  "persistedToolCount": 0,
+  "streamTraceByMessage": [
+    {
+      "messageId": "2fd7e27a-c262-4ad3-ae25-5f1f6abf8bb5",
+      "count": 28,
+      "firstFullContent": "I",
+      "lastFullContent": "I can certainly help you with that request. Please let me know what you need, and remember that REAL_UI_LIVE is active.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 5,
+        "promptTokens": 21,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "81.1",
+        "ttft": "0.26",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 32,
+        "promptTokens": 21,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "46.7",
+        "ppSpeed": "81.1",
+        "ttft": "0.26",
+        "elapsed": "0.6"
+      }
+    },
+    {
+      "messageId": "90d4f39e-6f0c-4cf8-b613-c302a9b84230",
+      "count": 13,
+      "firstFullContent": "REAL",
+      "lastFullContent": "REAL_UI_LIVE. This is the second UI turn.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 5,
+        "promptTokens": 78,
+        "cachedTokens": 20,
+        "cacheDetail": "paged+mixed_swa",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "348.2",
+        "ttft": "0.22",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 17,
+        "promptTokens": 78,
+        "cachedTokens": 20,
+        "cacheDetail": "paged+mixed_swa",
+        "tokensPerSecond": "47.4",
+        "ppSpeed": "348.2",
+        "ttft": "0.22",
+        "elapsed": "0.3"
+      }
+    },
+    {
+      "messageId": "f4b7b8dc-fe1f-4c41-880b-0a7fe7c8cd97",
+      "count": 1,
+      "firstFullContent": "",
+      "lastFullContent": "",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 6,
+        "promptTokens": 137,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ttft": "0.80",
+        "elapsed": "0.8"
+      },
+      "lastMetrics": {
+        "tokenCount": 6,
+        "promptTokens": 137,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ttft": "0.80",
+        "elapsed": "0.8"
+      }
+    }
+  ],
+  "turns": [
+    {
+      "role": "user",
+      "content": "Reply briefly in English. Include the phrase REAL_UI_LIVE once."
+    },
+    {
+      "role": "assistant",
+      "content": "I can certainly help you with that request. Please let me know what you need, and remember that REAL_UI_LIVE is active."
+    },
+    {
+      "role": "user",
+      "content": "Repeat the phrase REAL_UI_LIVE once and mention that this is the second UI turn."
+    },
+    {
+      "role": "assistant",
+      "content": "REAL_UI_LIVE. This is the second UI turn."
+    },
+    {
+      "role": "user",
+      "content": "[{\"type\":\"text\",\"text\":\"Transcribe the attached audio. Reply with only the spoken words.\"},{\"type\":\"input_audio\",\"input_audio\":{\"data\":\"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AAD5//j/9P/0//j/9f/z//L/8f/w/+//7v/v/+r/6P/q/+r/6//r/+z/7P/t//L/6//r/+z/6//r/+3/7P/t/+b/4v/l/93/3f/k/+n/6P/s//D/8f/1//P/+v///wIABAACAAYACQAKABAAFAAbACEAIwAjACcAKgAqAC0AKAApACYAIAAfABwAHAASABEAFAAOABAAEAAQAAsADgAMAAoACwACAP7//f8BAAEAAAAAAAAAAwD///3/+f/3//X/9P/3//b/+//4//j/9//z//P/7//r/+n/5v/o/+j/6v/r/+z/6//s/+j/5v/q/+b/5P/n/+f/6f/p/+3/8f/3//j/+P/+//r/+f/6//n//v/+/wEAAwAHAAgABgAFAAYACgALAAwACAAMABIAFwAaACEAHgAeACAAHQAbABUAEwATABMAFAATABQAEAAOABAAEAARABEACQAJAAkABwAKAAsADQAOAA8AEQAOAAwADAAJAAcACAAGAAQABAADAAAAAAAAAAQABAACAAIABQACAAcABgAHAAQAAAADAAAAAgADAAIABAADAAUAAwAGAAEABAAJAAYAAwD///v//f/7//z/+//3//b/8v/t/+z/7f/r/+f/6P/q/+j/6P/o/+b/6P/h/9v/3v/d/97/4v/j/+f/5//l/+r/5//j/+P/5v/i/+L/4P/i/+H/5v/m/+P/5v/n/+j/6P/r/+r/7P/w//H/9f/y//X/+//8//z//v/6//f/9f/y/woADAARABAAGAARAAcAGADz/+v/BwALACMAQABTAC8ANQBHACcAOAABAG8AqwDOAI0AHgOABusEjAO+/iX95/wg/er9Vf6y/7oAYgEeAZz/8P3V/KP8A/19/S7+yv4W/2b/kv/K//X/AgAaACIAFwBAAGkAwgAAARIB9gCzAJAAUQDQ/3b/CP/E/gX/G/9+/wX/I/9P/gD/G/+b/oH+G/6G/nn+lv66/un+Tv+q/77/1P+y/6H/ef+W/9f/OABzAKcA1wCvALIAXgAoABUAIgBkAMUA0gBIAcMA9AFeBAEF6wTmAZP/3v1H/a39SP6b/1wBEgNFAzgCRwBv/pP9J/12/RT+t/5B/yQA4gBFAZUBIQHUAEIAGQAlABoAUwDEAAsBYQGcAVkBDQG9AF0AMgATAAQA7v+p/2r/Jv8L/0D/sP8OADIASwAdAJX/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nv9v/1f/PP82/yf/Df8E/+7+9f7r/vP+8P78/vb+8v79/vX+Av8C/xH/D/8b/y3/Ov9F/1D/Yv9s/37/k/+h/7H/xv/m//3/CgAcADEARwBRAGUAbAB0AHwAiwCHAIUAiACCAIEAdQBvAGIAYQBYAE8AQQA4AC4AIgAXAA4ABwD+//v/9//w/+//6P/w/+n/5v/o/+T/6P/d/+f/4//p/+3/8//3//r///8FAAQAEAAcACIAKAAyADAALgAzAD0AQABCAEIARABGAEEAPwA6AD0ANAA3ADUAMwAxACUAHgAaAA0ABgAIAAYABQABAAEA///3//L/8//r/+b/6P/m/9j/0f/X/9P/1P/b/9f/1//V/9P/3//h/+r/5//l/+z/8f/x//X/+v/7/wEA//8CAP//AAAEAAcACgALAA4ACwALAAkACAAIAAcACAAEAAUABwAKAAYAAwAHAAcACgAJAAoABwAJAAYABQADAAYACwADAAAAAAABAAIAAAD8//n//P/6//b/9f/4//7/AQD+//v//v/+/wAA/v/8/wAAAAADAAQAAQACAAYACQAFAAIAAgAAAP7/AgAAAP////8BAAUABwAFAP//AQACAAEAAAAFAAQAAwADAAUACAAHAAYAAAADAAYACwAFAAMAAgD//wMAAAACAP7///8FAP//AAACAAYABwAFAAMABgAHAAYACwACAP7/BQAFAAEAAgABAAIAAQADAAAA/P/5//f/9f/w//P/8v/x//D/7//u/+7/7v/w/+//9f/4//v/+f/4//n/+P/5//f/8//3//b/+f/7/wAAAgAHAAcABQAEAAQAAgACAAIAAwAEAAEAAwAGAAcACQAIAAgAAgAGAAMABgACAAEA/f/7//z///////3/AgACAAEAAgABAP//AQABAAQAAAD8//r//P/6//r//P/8//j/+P/5//f//f8AAAAAAgABAAAAAwAHAAkABwAIAAsACgACAAMACgADAAMACgAPAA8AFgASABAADgANAAsACQAKAAYABwAMABIAFgAUABEADQAHAAUABQAJAAcABwAMAAkAAwD///7//v/8//3//v/8//j/+v/5//r//v/2//X/8//y//D/8f/0//L/8v/w//P/9f/4//b/9P/z//D/9v/6//z//////wMABgAJAAsACwADAP///f8AAAAAAgAFAAAABgAFAAsACQAIAAUABwAMAAkACgAGAAYAAgACAP//AQADAP//CQALAAoABwAFAAEAAgAEAAEAAgAEAAIAAgAFAAMAAgD+////AQAAAAMAAQAGAAUABQAGAAAAAwAFAAQAAwAFAAMABgAEAAcACAAGAAgACwAGAAQAAwAAAAMAAQAAAP7/AwAFAAoACAADAAMAAgD//wEAAgD//wAAAAACAAMABQAFAAQABQACAAEAAAD//////f////r/+v/7//f/9v/6//b/9//5//3//v8BAAAA//////r//f/9/wAA/f///wMAAAADAAMAAQABAAAABQAEAAUABgAFAAkABQAIAAUABwAFAAcACQADAAQACAAIAAQA//8BAAMAAwAJAAcABwAHAAYACwAFAAIAAwABAAEA//8EAAkABQAHAAUA//8CAAEA//8AAAIAAQADAAIAAwADAAQABAAEAAgABwAKAAQABAAAAAEAAQAFAAYABQAHAAIAAQABAAQAAgAGAAUABgAGAAAABAAHAAIAAAD//wAA+//4//r/+f/z//L/9//z//b/+//8//v/+/8AAPP/9P/4//j/9f/0//H/8v/1//T/8f/0//L/7P/x/+3/9f/w//P/+////wEAAAAFAAQAAgADAAEA//8CAAcACAAFAAQAAwACAAIABgAIAAoADAAJAAoADQANAA8ADQALAA4ADQAJAAwACgAKAA8ACwAPAAkABwAEAAEAAgD8//7//P/4//n/+v/3//T/9v/8//z//P/4//v/+f/7//r/+//6//f/+v/3//j/+f/1//X/8v/8//7/BAAEAAYABgAGAAwABQANAA0ADgAQAA8ACwAPAAUACQAKAAQABQACAAEAAAABAAUAAAD///v/+//4//X//v8AAAQAAwAFAAQAAwAAAAIACAAGAAsABgAEAAEAAAADAP//AQABAAEAAgADAAIAAQD9/////P/5//z/+f/2//n/+//6//f/+f/7//r/+//6//f/9v/8//v//v8DAPz/AgABAAMAAQD/////AwACAAMABAACAAIABgAPAA0ACwAIAAkADAANAA4ADwAMAAgACAADAAEAAQAFAAYA//8AAAAA/v8BAAAAAAACAAAA//8DAAUACAALAAsACAAIAAUABQAIAAoACgAHAAwACwAJAAkACAAIAAcABAAAAAUABAAEAAEAAQD///7/AAD+//7//f/8//z/+//9//f//P/+//v///8CAAEAAQAAAP7/AAD7//z/AAAEAAEABQAHAAoABgAEAAUA//8BAPz/AQD9//z//f/7//z/+//8//7/AAD8//r/+v/7//n/AgAHAPz/AAD///z//v/3//v//v8AAPv//P/+//r////+//7/AAABAAEA/f/+/wcABwAIAAoACQAJAAsACgALAAgABgAEAAIABQACAAcABgAKAAsADQAOAA8ADAAJAAUAAwAAAP3//v8BAP7//P/6//r/+//6//z/9v/3//b/8f/w//X/+v/2/////v///wIA//8AAP//AwAFAAkAAQAJAA4ABwAPAAoADQAMAAoACQALAAoABgAIAAIAAgABAAAAAAD+//7/AAAAAP//BgAGAAAAAgAEAAcAAAD+////AgADAP7///////n//v////z/+P/4//n//P////z/+//0//r/8P/z//H/7P/z//X/9//5//P/7//x//T/8//5//r/9//1//X/+P/8//7/AAD///7/AgACAAAACgALAAcACAAIAAUABQAHAAoABgABAAEA////////AQD9/wEAAAADAAMABAAKAAIABwAEAAcABAAAAAYABAABAAEABQACAAEA//8AAAIA/v8CAAMAAwAFAAkACgAHAA0ADAALAAkACQAIAAYABgAFAAUAAAABAAQAAQADAAMAAAD8//7//v/4//v/+v/4//v/9//6//v/9//5//n/9//1//P/8v/x//D/8P/x//H/7//z/+//7f/u//D/8P/o/+z/8P/y//r/9f/6/wcABAAEAAUABQAAAAQABAADAAAAAgAJAAAAAQAFAP3//f8AAAMAAAABAP3/AwAAAPn////6////BQABAP///v/+/wAA/f///wIABgADAAcABwAJAAQAAwAFAAYABQAIABUACAAGABAACAAGAAQACgAJAAQACAACAPv/9v/2//v/AwAAAAAABQAIAAoACwAGAAAABAADAAsABgD//wsACQADAAMACQANABIACAASAAoACgATAAoACwATAAkADAAVAAsABQAFAA8ABwADAAoACwAEAAUA+////wsA9P/4/wQABQD+/wUACAACAAkABgAJAAAA8f/y//n/9P/8//v//v/7/wwAAAD///v//v/4//T/+P/+//f/8f/5/wEA/v8AAAkAAAAEAAkABQAOAAkADAAGAAgADgD9/wkAAgAEAPj////6//f/+//8//7/+v///wMAAwAAAP///f/3/wIAAgD0/wAA/v8BAPb/AgD9//z/AAD4//r/8v8FAAIABAAHAAAA9v/0/wEA8v/1//D/+f/6/w8AEgD7/yIA6v9bAAgAFQBPACoANABDACAAIwAjAAkAKwAIACEAFgAGACAACAAKAAAACQAAAPj/+P/2/wAA///7/wMAAAAGAAgA/f8KAAgABQAfAPn/5v8hABEA9v/d//D/6P////n/+P8oAP//FAAYAMf/3v8YAAQAMAAoABMAPAAeABEAJQD0//P/DQAdANX/BgAWAOP/AAAIABQACAD9/+L//f8HAP3/AAAuAPb/DQAtACAABAD5/yQA7P/p////5f/r//z/AQATAB8A5f8BAPj/MwAIAOj/DQATACUA9/8AABIAJQAdAAUACgAKAPH/8P/2//f/+v/n/9f/7P8PAA4A2f/c/+D/4v/z/wcABQBMAC0A3P/v/zEAGwC+/yYAFwA2AE8ALAATAF4A6f8wAD4AMgDZ/73/RAAEAPz/KgBOACkAIwBbAM//x/8gABQA0v/k/ysAGQD8/8P/OgCb/6X/fgBj/8X/HwAjAEwAHgDp/+L/IQAMAMv/KAAXALH/SABLAOL/HABPAFkATgCeANwAIf/w//0AZ/+E//7/l//s/xIARP/O/ygAv/+n/5r/uf8EAGT/ZQBW/13/vQAyAIj/x/8jAf/+8/80AB0AuwBH/3oAhwAFAAkAAQD0//sAt/4kAGcAG/9s/9YAqf+T/4MAGwCe/3kANAAl/1oAfABKAEz/JACQAGL/jABL/88AdABu/2kAvP/S/07/2wBe/0r/mAAtAH0AOQDr/1UAFgAEAVr/wwD9/67/zf9//6//hf+j/+P/4v/a/+b/hP/4/6//HABCAMT/OwFL/wYAwQDe/qwAlwB0Au7+jv+HAN7/LAAx/8H/hP6XAI//of7N/8D+R/+WAbH+4f4zAaH/P//8/8r/Bf9HARj/9/44Afj+0wAiADH/igBmAev///4+AF4CIP4yAUwAGP45AW4AYQBA/xH/RQHpAHH+YQHK/oP/ggAsAHX/rv98/1P+kgBB/8X+2ABP/soAHwE6/7D/eP9oAP7/LAA5/4b/HwATAKUAt/9H//3/JgBeAGYAdv/h/yoBPgAcAAQAGwEbAAMAk/+yACcCeP4mANf/9f+D/wj/BQD//uz/LwDM/5z/DwBw/6YAOgDu/noA4ADr/04AGADi/+v/BAC1//H/uv9H/9T/qv9R/1cAmP+q/+3/UwCG/4L/lABL/8gAff9GAEwAGgBAAIEA3wHo/gYBOQFF/yMADv8wAMD/x/+O/3j/FwBW/zP/1gDw/WAAMv8h/oH/TgCL/1n/lQDL//P/fP7dAMD+VABx/tAAlv8z/0gATAAfAJ//dgG4/4b/If9XASb+j//yAOr+ngAPAHn/7AC//7z/cwCtAFb+iACRAC3/7/+9AAMAq/9JAMP/nv/M/xYA+f5yAPwAfP8OAPr/KP/MADH/ZgAkAK7/VQBV/7//hgC8/zkBq//C/1wB//7kAFX/qwAXACn/GQCl/1n/3//v/kAAZ/9TAJj/ZgDy/+P+WwFT/qwA0P+u/z0Ak/6XAK3/if/VAR//Ev91AFz/SgEM/48Bs/+OABoAKQG7/y3/MgBh/+f/NQF+/03/Wv/4/7X/ov9e/gP/rgAS/vsAqP7MACz/MAAfAbr/uf/c/tn/f/+4/wsAyv/SAMAAcgAkALsAPQCo/2kBa/8bAM//ZP+KABwARP+b/4MBn/6G/0IAi/28ANn+kf8pAHP/W/8hAIn/Dv/4AKn+3ABkACAAJQCKAGYAcADu/wIB7f+j/3gAv//n/zL/NABX/+z/I/9fALz/iv5qAE3/8//y/4cAsP++/1YAOADC/30ABgBMAG0AdQAtABcA6P9l/zoA5f/k/57/Wv81/xcASv8rAGUAef8HAFz/DwACAA4AbAD8/0IArP8fACEAo/9UADEAq/+6APT/FwDp/wgAUf8VAMv/Iv/k/yQAzP6B/x4A/f9fAM//qP8NABwAOQDQACcA0P9qALkAbADH/yn/NQBQ/w0AcQA4/y7/ZP/W//MAZv/W/kQAWgCtAPv/0wDY/pIAowF0ANj/l/+3/w0AXgB3/0r/t/9R/z4AWAAO/3n/iv/j/1j/sf8o/5j/KQBuAG4AZP8MADEA7ABpAGMADADsAK4AmQCe/1//pv/CADQAQACs/6v/rf+q//r/aP6G/9v/bf/k/7f/+/8XAA0AmgGDAAUAb//v/87/4//BACMAHAD//10BbP9n/wT/Dv/B/9n/Iv/i/7X/ov+IAOL/mf/I/9P/wf87AIUATgB1AFoAdwD//+P/OgD+/5QAMwAOAKb/mv++/+L/Hf8C/xj/0//6/7T/+P9E/w3/zQCnAIj/kv8EANb/8f/D/+b/0//4/3cAMQBB/5b/EACH/7T/FABb//L/5f/e/wMAi/8a/+j/lf+Q/0YAJABmAAsBdgF9AQUBaACUAFUAWgDe//n/SQBYACsA4P/B//T/+/+7/3v/n/+K/1r/S/8o/0//zv+t/5r/IQD+/9j/dgBbAKkAmwCqAIQAoAB9ACwACwDn/zgAwf/O/7b/Tf+U/1j/TP9k/5z/yv/R/9z/xv/t/zcASABMALQAKAA5AC4Av/8lAOT/pv8qAAUAp//E/6n/fv+7/97/1/+k/1j/bP/K/+f/yP/g/9T/AAAsAPn/1f/x/0oATgBMAGIA9P8BAA4ACgDW/6j/vf/Z/+z/9v8BAOb/5v8MABoA7v/F/9v/LAAwADcAVAAsAA4ALwAUAAMABQAXAAMA9v/c/8b/1v/V/9f/3P/M/9P/EQAFAAgAHQAmAC8ANQAsAB4AKAAXAFQAYABMACkAJAAXAP///P/m/8z/1v+4/6H/of+g/5v/0v/q/+X/1v/Y/+j/BQAkACMAJgArACsANwA9ADcAJABBADIAFgD2/8f/0P/9//f/4f/I/7L/vv+3/9L/9P/3//n/AwACAPf/8/8AAPX/AQAjACkANwAqACYAIwAlAA0ABgDt/97/8P/l/+z/3//o/+L/2v/Z/8P/uv/P/9D/7//t/+X/7P/1/xEAFgAaACMAJwAsADYAIwAZACIAGwAUAAMABQAKAAgAAAABAPn/8f/7/wIABQD8/w4AFQATAAYA+f/3//b/+P/7/+L/4//n//r/CAABAP7/AwAKAP7/AAAFAP3/BQAMAA0ABAD7/wAA/v8RAAUA+P/4//j//P8GAO//4//w//P/9P/4/+j/0//a//L/+v/e/9H/6//9/wUAFQAPABgAHgAiABYAFAAOABEADwD9/+T/2//n//b/BwACAAAA9//7/w4ABgD4/wUABwAcABUADgANAAcAIgAmACsAFQAPABQAFAAXAAwAAAD//wMA///6/+//6f/4//T/6P/c/9X/1P/p/+//6v/o/+7/+f/+////AwALAAYADgALAPz/8v/w//n/7//3/+r/7//1//H/+P/2//3/9//x////AAD9/w0AHAASAA8ADwARABcAFgAVABcAIwAgAB0AFwAMAA8AAADv/9//1f/Y/9j/4//p/+X/4f/w//b/BgAQABEAEwACAPv/CwARABgAHQAuAB0AAwD7/wIADQAPAAMAAAD5//X/7v/w/+n/4P/r//H/7//v//X/9v/9/wMABgAIAAwAEQAdABoAJwAkABwAGAAaABIAAAD7//j/AAD6//n/8P/q/+v/7P/m/+H/6v/y//f/5//s/+z/9/8CAP//AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"format\":\"wav\"}}]"
+    },
+    {
+      "role": "assistant",
+      "content": ""
+    }
+  ],
+  "rawParserLeak": false,
+  "reasoningRawParserLeak": false,
+  "reasoningCjkLeakCount": 0,
+  "reasoningKoreanLeakCount": 0,
+  "reasoningNumericRunCount": 0,
+  "preloadHealthBefore": {
+    "status": "healthy",
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "model_type": "mllm",
+    "engine_type": "batched",
+    "last_request_time": null,
+    "mcp": null,
+    "memory": {
+      "active_mb": 9665.9,
+      "peak_mb": 9665.9,
+      "cache_mb": 0
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "speculative_decoding": "not_configured",
+    "scheduler": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": null,
+      "batch_generator": {},
+      "single_active_decode": false,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 0,
+      "cache_hit_tokens": 0,
+      "cache_hit_tokens_by_detail": {},
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": null
+    },
+    "cache": {
+      "scheduler_cache": {
+        "hits": 0,
+        "misses": 0,
+        "hit_rate": 0,
+        "tokens_saved": 0,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 0,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 1,
+        "free_blocks": 999,
+        "shared_blocks": 0,
+        "total_tokens_cached": 0,
+        "utilization": 0.001,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "cow_copies": 0,
+        "evictions": 0
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 0,
+        "disk_size_bytes": 0,
+        "disk_size_gb": 0,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 0,
+        "total_cached_tokens": 0,
+        "disk_hits": 0,
+        "disk_misses": 0,
+        "disk_writes": 0,
+        "disk_evictions": 0
+      },
+      "totals": {
+        "ram_tokens_cached": 0,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 0,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 0,
+        "l2_tokens_on_disk_store_sum": 0,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      }
+    },
+    "quantization_format": {
+      "type": "jang",
+      "target_bits": null,
+      "actual_bits": null,
+      "block_size": 64
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "jang_affine",
+      "backend": "mx.quantize",
+      "profile": "JANG_4M",
+      "target_bits": 8,
+      "config_bits": 8,
+      "group_size": 32,
+      "passthrough_tensor_count": 349,
+      "weight_index": {
+        "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M/model.safetensors.index.json",
+        "total_tensors": 1333,
+        "suffix_counts": {
+          "biases": 328,
+          "scales": 328,
+          "weight": 624
+        },
+        "tq_target_counts": {},
+        "routed_layout_counts": {
+          "prestacked_switch": 0,
+          "split_expert": 0
+        },
+        "mtp_tensor_count": 0
+      },
+      "weight_matmul_dispatch": {
+        "primary": "mlx_affine_quantized_matmul",
+        "uses_mlx_quantized_matmul": true,
+        "metal_na_eligible": true,
+        "reason": null
+      },
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": false,
+        "prestacked_bundle": false
+      }
+    },
+    "acceleration": {
+      "kernel_type": "affine_quantized_matmul",
+      "metal_na_capable": true,
+      "metal_na_active_on_host": true,
+      "reason": null,
+      "metal_na_symbols": {
+        "available": true,
+        "nax_symbols": 4668,
+        "naxtile_symbols": 4154,
+        "affine_qmm_symbols": 4212,
+        "affine_gather_qmm_symbols": 3456
+      },
+      "host": {
+        "supported": true,
+        "brand": "Apple M5 Max",
+        "reason": null
+      }
+    },
+    "mtp": {
+      "config_num_nextn_predict_layers": null,
+      "config_mtp_layer_source": null,
+      "jang_mtp_layers": null,
+      "jang_drop_mtp": null,
+      "index_has_mtp_tensors": false,
+      "index_mtp_layer_count": null,
+      "mtp_tensor_count": 0,
+      "artifact_available": false,
+      "family": "gemma4",
+      "has_vision_config": true,
+      "has_vision_weights": false,
+      "vision_tensor_count": 0,
+      "cache_type": "kv",
+      "runtime_supported": false,
+      "runtime_available": false,
+      "runtime_active": false,
+      "runtime_validation_blocked": false,
+      "effective_depth": null,
+      "effective_depth_source": null,
+      "runtime_scope": null,
+      "vl_runtime_available": false,
+      "runtime_bundle_has_mtp": null,
+      "runtime_mtp_mode": null,
+      "runtime_reason": "config does not request MTP",
+      "status": "not_configured",
+      "issues": [],
+      "request_policy": "compatible-only",
+      "request_gate": "temperature=0,repetition_penalty=1.0"
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    }
+  },
+  "preloadHealthAfter": {
+    "status": "healthy",
+    "model_loaded": true,
+    "model_name": "JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "model_type": "mllm",
+    "engine_type": "batched",
+    "last_request_time": 1781068844.026837,
+    "mcp": null,
+    "memory": {
+      "active_mb": 9687.1,
+      "peak_mb": 10040.8,
+      "cache_mb": 128.3
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "speculative_decoding": "not_configured",
+    "scheduler": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": null,
+      "batch_generator": {
+        "prompt_tokens": 26,
+        "prompt_time": 0.909707625003648,
+        "prompt_tps": 28.580611270457077,
+        "generation_tokens": 57,
+        "generation_time": 1.1412638779875124,
+        "generation_tps": 49.9446281437672,
+        "vision_encoding_time": 0.5299927920132177,
+        "num_images_processed": 1,
+        "peak_memory": 10.528529025,
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "last_cache_execution": {
+          "request_id": "chatcmpl-c8b637fb",
+          "cache_detail": "paged+mixed_swa",
+          "cached_tokens": 20,
+          "blocks": 0,
+          "selection": "paged",
+          "disk_hit": false,
+          "reconstructed": true,
+          "dequantized": true,
+          "reconstruction_seconds": 0.002833,
+          "dequantization_seconds": 0.000006,
+          "total_worker_cache_seconds": 0.003048,
+          "reconstruction_ok": true,
+          "dequantization_ok": true
+        },
+        "last_native_mtp": null,
+        "last_prefill_trace": null
+      },
+      "single_active_decode": false,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 1,
+      "cache_hit_tokens": 20,
+      "cache_hit_tokens_by_detail": {
+        "paged+mixed_swa": 20
+      },
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": {
+        "request_id": "chatcmpl-c8b637fb",
+        "cache_detail": "paged+mixed_swa",
+        "cached_tokens": 20,
+        "blocks": 0,
+        "selection": "paged",
+        "disk_hit": false,
+        "reconstructed": true,
+        "dequantized": true,
+        "reconstruction_seconds": 0.002833,
+        "dequantization_seconds": 0.000006,
+        "total_worker_cache_seconds": 0.003048,
+        "reconstruction_ok": true,
+        "dequantization_ok": true
+      }
+    },
+    "cache": {
+      "scheduler_cache": {
+        "pixel_cache_hits": 0,
+        "pixel_cache_misses": 1,
+        "pixel_hit_rate": 0,
+        "total_time_saved": 0,
+        "total_images_processed": 0,
+        "pixel_cache_size": 0,
+        "hits": 1,
+        "misses": 1,
+        "hit_rate": 0.5,
+        "tokens_saved": 20,
+        "active_requests": 0,
+        "entries_by_type": {
+          "assistant": 2,
+          "user": 0,
+          "system": 0
+        },
+        "block_size": 64,
+        "max_blocks": 1000,
+        "allocated_blocks": 3,
+        "free_blocks": 997,
+        "shared_blocks": 1,
+        "total_tokens_cached": 77,
+        "utilization": 0.003,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 4,
+        "disk_hits": 0,
+        "disk_misses": 2,
+        "cow_copies": 0,
+        "evictions": 0
+      },
+      "block_disk_cache": {
+        "blocks_on_disk": 2,
+        "disk_size_bytes": 26540747,
+        "disk_size_gb": 0.025,
+        "total_accesses": 0,
+        "total_tokens_on_disk": 77,
+        "total_cached_tokens": 77,
+        "disk_hits": 0,
+        "disk_misses": 4,
+        "disk_writes": 2,
+        "disk_evictions": 0
+      },
+      "ssm_companion": {
+        "entries": 0,
+        "max_entries": 8,
+        "nbytes": 0,
+        "nbytes_mb": 0,
+        "disk_enabled": false,
+        "disk_directory": null
+      },
+      "totals": {
+        "ram_tokens_cached": 77,
+        "l2_prompt_tokens_on_disk": 0,
+        "l2_block_tokens_on_disk": 77,
+        "l2_ssm_tokens_on_disk": 0,
+        "ssm_tokens_on_disk": 0,
+        "l2_tokens_on_disk": 77,
+        "l2_tokens_on_disk_store_sum": 77,
+        "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+      }
+    },
+    "quantization_format": {
+      "type": "jang",
+      "target_bits": null,
+      "actual_bits": null,
+      "block_size": 64
+    },
+    "quantization": {
+      "codec": "affine_quantized_matmul",
+      "weight_format": "jang_affine",
+      "backend": "mx.quantize",
+      "profile": "JANG_4M",
+      "target_bits": 8,
+      "config_bits": 8,
+      "group_size": 32,
+      "passthrough_tensor_count": 349,
+      "weight_index": {
+        "index_file": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M/model.safetensors.index.json",
+        "total_tensors": 1333,
+        "suffix_counts": {
+          "biases": 328,
+          "scales": 328,
+          "weight": 624
+        },
+        "tq_target_counts": {},
+        "routed_layout_counts": {
+          "prestacked_switch": 0,
+          "split_expert": 0
+        },
+        "mtp_tensor_count": 0
+      },
+      "weight_matmul_dispatch": {
+        "primary": "mlx_affine_quantized_matmul",
+        "uses_mlx_quantized_matmul": true,
+        "metal_na_eligible": true,
+        "reason": null
+      },
+      "sidecar": {
+        "jang_config": true,
+        "jangtq_runtime": false,
+        "prestacked_bundle": false
+      }
+    },
+    "acceleration": {
+      "kernel_type": "affine_quantized_matmul",
+      "metal_na_capable": true,
+      "metal_na_active_on_host": true,
+      "reason": null,
+      "metal_na_symbols": {
+        "available": true,
+        "nax_symbols": 4668,
+        "naxtile_symbols": 4154,
+        "affine_qmm_symbols": 4212,
+        "affine_gather_qmm_symbols": 3456
+      },
+      "host": {
+        "supported": true,
+        "brand": "Apple M5 Max",
+        "reason": null
+      }
+    },
+    "mtp": {
+      "config_num_nextn_predict_layers": null,
+      "config_mtp_layer_source": null,
+      "jang_mtp_layers": null,
+      "jang_drop_mtp": null,
+      "index_has_mtp_tensors": false,
+      "index_mtp_layer_count": null,
+      "mtp_tensor_count": 0,
+      "artifact_available": false,
+      "family": "gemma4",
+      "has_vision_config": true,
+      "has_vision_weights": false,
+      "vision_tensor_count": 0,
+      "cache_type": "kv",
+      "runtime_supported": false,
+      "runtime_available": false,
+      "runtime_active": false,
+      "runtime_validation_blocked": false,
+      "effective_depth": null,
+      "effective_depth_source": null,
+      "runtime_scope": null,
+      "vl_runtime_available": false,
+      "runtime_bundle_has_mtp": null,
+      "runtime_mtp_mode": null,
+      "runtime_reason": "config does not request MTP",
+      "status": "not_configured",
+      "issues": [],
+      "request_policy": "compatible-only",
+      "request_gate": "temperature=0,repetition_penalty=1.0"
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    }
+  },
+  "cacheBefore": {
+    "scheduler_cache": {
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": 0,
+      "tokens_saved": 0,
+      "active_requests": 0,
+      "entries_by_type": {
+        "assistant": 0,
+        "user": 0,
+        "system": 0
+      },
+      "block_size": 64,
+      "max_blocks": 1000,
+      "allocated_blocks": 1,
+      "free_blocks": 999,
+      "shared_blocks": 0,
+      "total_tokens_cached": 0,
+      "utilization": 0.001,
+      "cache_hit_rate": 0,
+      "cache_hits": 0,
+      "cache_misses": 0,
+      "disk_hits": 0,
+      "disk_misses": 0,
+      "cow_copies": 0,
+      "evictions": 0
+    },
+    "scheduler_stats": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": null,
+      "batch_generator": {},
+      "single_active_decode": false,
+      "num_requests_processed": 0,
+      "total_prompt_tokens": 0,
+      "total_completion_tokens": 0,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 0,
+      "cache_hit_tokens": 0,
+      "cache_hit_tokens_by_detail": {},
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": null
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "block_disk_cache": {
+      "blocks_on_disk": 0,
+      "disk_size_bytes": 0,
+      "disk_size_gb": 0,
+      "total_accesses": 0,
+      "total_tokens_on_disk": 0,
+      "total_cached_tokens": 0,
+      "disk_hits": 0,
+      "disk_misses": 0,
+      "disk_writes": 0,
+      "disk_evictions": 0
+    },
+    "cache_totals": {
+      "ram_tokens_cached": 0,
+      "l2_prompt_tokens_on_disk": 0,
+      "l2_block_tokens_on_disk": 0,
+      "l2_ssm_tokens_on_disk": 0,
+      "ssm_tokens_on_disk": 0,
+      "l2_tokens_on_disk": 0,
+      "l2_tokens_on_disk_store_sum": 0,
+      "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+    },
+    "memory": {
+      "active_mb": 9665.9,
+      "peak_mb": 9665.9,
+      "cache_mb": 0
+    }
+  },
+  "cacheAfter": {
+    "scheduler_cache": {
+      "pixel_cache_hits": 0,
+      "pixel_cache_misses": 1,
+      "pixel_hit_rate": 0,
+      "total_time_saved": 0,
+      "total_images_processed": 0,
+      "pixel_cache_size": 0,
+      "hits": 1,
+      "misses": 1,
+      "hit_rate": 0.5,
+      "tokens_saved": 20,
+      "active_requests": 0,
+      "entries_by_type": {
+        "assistant": 2,
+        "user": 0,
+        "system": 0
+      },
+      "block_size": 64,
+      "max_blocks": 1000,
+      "allocated_blocks": 3,
+      "free_blocks": 997,
+      "shared_blocks": 1,
+      "total_tokens_cached": 77,
+      "utilization": 0.003,
+      "cache_hit_rate": 0,
+      "cache_hits": 0,
+      "cache_misses": 4,
+      "disk_hits": 0,
+      "disk_misses": 2,
+      "cow_copies": 0,
+      "evictions": 0
+    },
+    "scheduler_stats": {
+      "num_waiting": 0,
+      "num_running": 0,
+      "engine_path": null,
+      "batch_generator": {
+        "prompt_tokens": 26,
+        "prompt_time": 0.909707625003648,
+        "prompt_tps": 28.580611270457077,
+        "generation_tokens": 57,
+        "generation_time": 1.1412638779875124,
+        "generation_tps": 49.9446281437672,
+        "vision_encoding_time": 0.5299927920132177,
+        "num_images_processed": 1,
+        "peak_memory": 10.528529025,
+        "hybrid_kv_without_ssm_hits": 0,
+        "hybrid_kv_without_ssm_tokens": 0,
+        "last_hybrid_kv_without_ssm": null,
+        "last_cache_execution": {
+          "request_id": "chatcmpl-c8b637fb",
+          "cache_detail": "paged+mixed_swa",
+          "cached_tokens": 20,
+          "blocks": 0,
+          "selection": "paged",
+          "disk_hit": false,
+          "reconstructed": true,
+          "dequantized": true,
+          "reconstruction_seconds": 0.002833,
+          "dequantization_seconds": 0.000006,
+          "total_worker_cache_seconds": 0.003048,
+          "reconstruction_ok": true,
+          "dequantization_ok": true
+        },
+        "last_native_mtp": null,
+        "last_prefill_trace": null
+      },
+      "single_active_decode": false,
+      "num_requests_processed": 3,
+      "total_prompt_tokens": 236,
+      "total_completion_tokens": 57,
+      "ewma_ttft_seconds": 0,
+      "cache_hit_requests": 1,
+      "cache_hit_tokens": 20,
+      "cache_hit_tokens_by_detail": {
+        "paged+mixed_swa": 20
+      },
+      "hybrid_kv_without_ssm_hits": 0,
+      "hybrid_kv_without_ssm_tokens": 0,
+      "last_hybrid_kv_without_ssm": null,
+      "cache_reuse_skips": 0,
+      "cache_reuse_skip_tokens": 0,
+      "last_cache_reuse_skip": null,
+      "cache_reuse_partial_downgrades": 0,
+      "cache_reuse_partial_tokens": 0,
+      "last_cache_reuse_partial": null,
+      "last_cache_selection": null,
+      "last_cache_execution": {
+        "request_id": "chatcmpl-c8b637fb",
+        "cache_detail": "paged+mixed_swa",
+        "cached_tokens": 20,
+        "blocks": 0,
+        "selection": "paged",
+        "disk_hit": false,
+        "reconstructed": true,
+        "dequantized": true,
+        "reconstruction_seconds": 0.002833,
+        "dequantization_seconds": 0.000006,
+        "total_worker_cache_seconds": 0.003048,
+        "reconstruction_ok": true,
+        "dequantization_ok": true
+      }
+    },
+    "kv_cache_quantization": {
+      "enabled": false
+    },
+    "turboquant_kv_cache": {
+      "enabled": false
+    },
+    "native_cache": {
+      "family": "gemma4",
+      "schema": "mixed_swa_kv_v1",
+      "cache_type": "mixed_swa_kv",
+      "cache_subtype": "mixed_swa_kv",
+      "components": [
+        "full_attention_kv",
+        "sliding_window_kv",
+        "rotating_window_metadata"
+      ],
+      "generic_turboquant_kv": {
+        "enabled": false,
+        "reason": "not_active"
+      },
+      "storage_quantization": {
+        "enabled": false,
+        "mode": "storage_boundary",
+        "bits": null,
+        "group_size": null,
+        "applies_to": "full_and_sliding_attention_kv",
+        "metadata_policy": "preserve_rotating_window_metadata"
+      },
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "block_disk_cache": {
+      "blocks_on_disk": 2,
+      "disk_size_bytes": 26540747,
+      "disk_size_gb": 0.025,
+      "total_accesses": 0,
+      "total_tokens_on_disk": 77,
+      "total_cached_tokens": 77,
+      "disk_hits": 0,
+      "disk_misses": 4,
+      "disk_writes": 2,
+      "disk_evictions": 0
+    },
+    "cache_totals": {
+      "ram_tokens_cached": 77,
+      "l2_prompt_tokens_on_disk": 0,
+      "l2_block_tokens_on_disk": 77,
+      "l2_ssm_tokens_on_disk": 0,
+      "ssm_tokens_on_disk": 0,
+      "l2_tokens_on_disk": 77,
+      "l2_tokens_on_disk_store_sum": 77,
+      "l2_tokens_on_disk_note": "store_sum_across_prompt_block_ssm_l2; tiers_may_overlap"
+    },
+    "ssm_companion": {
+      "entries": 0,
+      "max_entries": 8,
+      "nbytes": 0,
+      "nbytes_mb": 0,
+      "disk_enabled": false,
+      "disk_directory": null
+    },
+    "memory": {
+      "active_mb": 9685.8,
+      "peak_mb": 10040.8,
+      "cache_mb": 129.6
+    }
+  },
+  "eventCounts": {
+    "stream": 42,
+    "tool": 0,
+    "reasoningDone": 0,
+    "complete": 3
+  },
+  "serverCacheControls": {
+    "requested": true,
+    "verified": true,
+    "cacheExpectRegex": "",
+    "expectPagedCacheLocked": false,
+    "cacheExpectationMatches": true,
+    "labels": [
+      "Enable Prefix Cache",
+      "Use Paged KV Cache",
+      "Block Disk Cache (L2)",
+      "Enable Disk Cache",
+      "Stored Cache Quantization"
+    ],
+    "initialCacheControls": {
+      "enablePrefixCache": true,
+      "usePagedCache": true,
+      "enableBlockDiskCache": true,
+      "enableDiskCache": false,
+      "usePagedCacheDisabled": true,
+      "enableDiskCacheDisabled": true,
+      "blockDiskCachePresent": true
+    },
+    "sectionClickResults": [
+      {
+        "title": "Prefix Cache",
+        "found": true,
+        "text": "▶\nPrefix Cache",
+        "blockDiskVisibleBefore": false,
+        "blockDiskVisibleAfter": false
+      },
+      {
+        "title": "Paged KV Cache",
+        "found": true,
+        "text": "▶\nPaged KV Cache",
+        "blockDiskVisibleBefore": false,
+        "blockDiskVisibleAfter": true
+      },
+      {
+        "title": "KV Cache Quantization",
+        "found": true,
+        "text": "▶\nKV Cache Quantization",
+        "blockDiskVisibleBefore": true,
+        "blockDiskVisibleAfter": true
+      },
+      {
+        "title": "Disk Cache (Persistent)",
+        "found": true,
+        "text": "▶\nDisk Cache (Persistent)",
+        "blockDiskVisibleBefore": true,
+        "blockDiskVisibleAfter": true
+      }
+    ],
+    "textHead": "Code\nChat\nServer\nTools\nImage\nAPI\n🇺🇸\nBack\nCreate Session\nStep 2: Configure\nModel\n\n/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M\n\n▶\nServer Settings\nHost\n?\nPort\n?\nAPI Key\n?\nServed Model Name\n?\nRate Limit (req/min)\n?\nDisabled\nTimeout (seconds)\n?\nNo limit\nLog Level\n?\nDEBUG (verbose)\nINFO (default)\nWARNING\nERROR (minimal)\nCORS Origins\n?\n▶\nConcurrent Processing\n▶\nPrefix Cache\nSpeeds up repeated conversations by remembering previous prompts. Makes follow-up messages much faster (lower time-to-first-token).\nEnable Prefix Cache\n?\nLegacy Entry-Count Cache\n?\nCache Memory Limit and Cache Memory % only apply to memory-aware non-paged prefix cache. With paged cache on, use Max Cache Blocks for L1 RAM capacity and Block Cache Max for L2 disk capacity.\nCache Memory Limit (MB)\n?\nAuto-detect\nCache Memory %\n?\nCache TTL has no effect when paged cache is enabled — paged cache uses block-count LRU eviction instead. To control paged cache size, adjust 'Max Cache Blocks' in the Paged KV Cache section below. To use time-based TTL, disable 'Use Paged KV Cache' in the Paged KV Cache section.\nCache TTL (minutes)\n?\nNo expiration\n▶\nPaged KV Cache\nReduces memory waste by splitting the KV cache into small blocks instead of one big chunk. Lets the server handle longer conversations without running out of RAM.\nPaged cache and legacy Disk Cache cannot run simultaneously. Enabling paged cache will auto-disable legacy Disk Cache. For persistent caching with paged cache, use 'Block Disk Cache (L2)' below instead.\nHybrid/Mamba cache models require paged cache while prefix cache is enabled so KV blocks and "
+  },
+  "toolProbeFiles": {},
+  "streamTrace": [
+    {
+      "messageId": "2fd7e27a-c262-4ad3-ae25-5f1f6abf8bb5",
+      "count": 28,
+      "firstFullContent": "I",
+      "lastFullContent": "I can certainly help you with that request. Please let me know what you need, and remember that REAL_UI_LIVE is active.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 5,
+        "promptTokens": 21,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "81.1",
+        "ttft": "0.26",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 32,
+        "promptTokens": 21,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "46.7",
+        "ppSpeed": "81.1",
+        "ttft": "0.26",
+        "elapsed": "0.6"
+      }
+    },
+    {
+      "messageId": "90d4f39e-6f0c-4cf8-b613-c302a9b84230",
+      "count": 13,
+      "firstFullContent": "REAL",
+      "lastFullContent": "REAL_UI_LIVE. This is the second UI turn.",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 5,
+        "promptTokens": 78,
+        "cachedTokens": 20,
+        "cacheDetail": "paged+mixed_swa",
+        "tokensPerSecond": "0.0",
+        "ppSpeed": "348.2",
+        "ttft": "0.22",
+        "elapsed": "0.0"
+      },
+      "lastMetrics": {
+        "tokenCount": 17,
+        "promptTokens": 78,
+        "cachedTokens": 20,
+        "cacheDetail": "paged+mixed_swa",
+        "tokensPerSecond": "47.4",
+        "ppSpeed": "348.2",
+        "ttft": "0.22",
+        "elapsed": "0.3"
+      }
+    },
+    {
+      "messageId": "f4b7b8dc-fe1f-4c41-880b-0a7fe7c8cd97",
+      "count": 1,
+      "firstFullContent": "",
+      "lastFullContent": "",
+      "firstReasoningContent": "",
+      "lastReasoningContent": "",
+      "firstMetrics": {
+        "tokenCount": 6,
+        "promptTokens": 137,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ttft": "0.80",
+        "elapsed": "0.8"
+      },
+      "lastMetrics": {
+        "tokenCount": 6,
+        "promptTokens": 137,
+        "cachedTokens": 0,
+        "cacheDetail": "",
+        "tokensPerSecond": "0.0",
+        "ttft": "0.80",
+        "elapsed": "0.8"
+      }
+    }
+  ],
+  "appLogTail": [
+    "DevTools listening on ws://127.0.0.1:62908/devtools/browser/44e6cdff-8239-44ab-a7ad-46ed9ef71c79",
+    "[Engine Manager] Engine version check: installed=1.5.56, source=1.5.56, needsUpdate=false",
+    "[MODE] Auto-detected: expert (128GB RAM)",
+    "[STARTUP] Restoring 0 App Sandbox bookmarks",
+    "[UPDATE] Skipping update check because VMLX_SKIP_UPDATE_CHECK=1",
+    "[IMAGE] Migrated existing model: schnell q=4 → /Users/eric/.mlxstudio/models/image/FLUX.1-schnell-mflux-4bit",
+    "[IMAGE] Migrated existing model: klein-4b q=4 → /Users/eric/.mlxstudio/models/image/FLUX.2-klein-4B-mflux-4bit",
+    "[IMAGE] Migrated existing model: klein-9b q=0 → /Users/eric/.mlxstudio/models/image/FLUX.2-klein-9B",
+    "[IMAGE] Migrated existing model: qwen-image-edit q=0 → /Users/eric/.mlxstudio/models/image/Qwen-Image-Edit",
+    "[IMAGE] Migrated existing model: z-image-turbo q=4 → /Users/eric/.mlxstudio/models/image/Z-Image-Turbo-mflux-4bit",
+    "[IMAGE] Migrated existing model: qwen-image q=4 → /Users/eric/.mlxstudio/models/image/qwen-image-mflux-4bit",
+    "[IMAGE] Migration complete: registered 6 existing image model(s) in DB",
+    "[Engine Manager] Checking installation...",
+    "[Engine Manager] Found bundled Python with vmlx_engine 1.5.56 (from dist-info)",
+    "[STARTUP] Adopted 1 vmlx-engine process(es):",
+    "  - JANGQ-AI/gemma-4-12B-it-JANG_4M on port 62907 (PID 48039)",
+    "[MemoryEnforcer] Started (max 120 GB, poll 5000ms, TTL 30m)",
+    "[gateway] Listening on 127.0.0.1:8080",
+    "[Engine Manager] Checking installation...",
+    "[Engine Manager] Found bundled Python with vmlx_engine 1.5.56 (from dist-info)",
+    "[SESSION] Connecting to remote: http://127.0.0.1:62907/v1/models",
+    "[SESSION] Remote connected: http://127.0.0.1:62907/v1/models (attempt 1)",
+    "[SLEEP] touchSession ecc1c714 — idle timer reset",
+    "[CHAT] Endpoint resolution: isRemote=true, rawBaseUrl=http://127.0.0.1:62907, baseUrl=http://127.0.0.1:62907, session=ecc1c714-d9c3-4e00-bf1a-9e9fbc664c0c, type=remote",
+    "[CHAT] Skipping health check — global monitor confirmed healthy within 15s",
+    "[CHAT] Sending to: http://127.0.0.1:62907/v1/chat/completions (wire: chat, remote: true)",
+    "[CHAT] Stream ended — content: 119 chars, reasoning: 0 chars, tool calls: 0, buffered: false",
+    "[CHAT] Response complete: 33 tokens in 1.0s (57.1 t/s, live=46.7 t/s, TTFT: 0.26s, pp: 21 tokens, 81.1 pp/s, usage=server)",
+    "[CHAT] Endpoint resolution: isRemote=true, rawBaseUrl=http://127.0.0.1:62907, baseUrl=http://127.0.0.1:62907, session=ecc1c714-d9c3-4e00-bf1a-9e9fbc664c0c, type=remote",
+    "[CHAT] Skipping health check — global monitor confirmed healthy within 15s",
+    "[CHAT] Sending to: http://127.0.0.1:62907/v1/chat/completions (wire: chat, remote: true)",
+    "[CHAT] Stream ended — content: 41 chars, reasoning: 0 chars, tool calls: 0, buffered: false",
+    "[CHAT] Response complete: 18 tokens in 0.7s (71.1 t/s, live=47.4 t/s, TTFT: 0.22s, pp: 78 tokens (20 cached), 348.2 pp/s, usage=server)",
+    "[CHAT] Endpoint resolution: isRemote=true, rawBaseUrl=http://127.0.0.1:62907, baseUrl=http://127.0.0.1:62907, session=ecc1c714-d9c3-4e00-bf1a-9e9fbc664c0c, type=remote",
+    "[CHAT] Skipping health check — global monitor confirmed healthy within 15s",
+    "[CHAT] Forcing multimodal=true for a36f0936-a1f0-4b90-aa38-6872e2ad1df9 — user attached 0 image(s), 0 video(s), 1 audio file(s)",
+    "[CHAT] Sending to: http://127.0.0.1:62907/v1/chat/completions (wire: chat, remote: true)",
+    "[CHAT] Stream ended — content: 0 chars, reasoning: 0 chars, tool calls: 0, buffered: false",
+    "[CHAT] Response complete: 6 tokens in 0.8s (0.0 t/s, live=0.0 t/s, TTFT: 0.80s, pp: 137 tokens, 171.3 pp/s, usage=server)",
+    "[MODELS] Scanning directories: [",
+    "  '/Users/eric/.mlxstudio/models',",
+    "  '/Users/eric/.cache/huggingface/hub',",
+    "  '/Users/eric/.exo/models'",
+    "]",
+    "[MODELS] Found 14 models in /Users/eric/.mlxstudio/models",
+    "[MODELS] Found 0 models in /Users/eric/.cache/huggingface/hub",
+    "[MODELS] Found 0 models in /Users/eric/.exo/models",
+    "[MODELS] Total models found: 14 (0 duplicates removed)"
+  ],
+  "serverLogTail": [
+    "INFO:vmlx_engine.model_config_registry:Model config: detection_source=jang_stamped family=gemma4 reasoning_parser=gemma4 tool_parser=gemma4 think_in_template=False cache_type=kv cache_subtype=None is_mllm=True",
+    "INFO:__main__:KV cache auto mode: TurboQuant enabled for compatible models; stored prefix cache quantization=q4",
+    "INFO:__main__:Auto-configured tool parser from registry: gemma4",
+    "INFO:__main__:Auto-configured reasoning parser from registry: gemma4",
+    "============================================================",
+    "SECURITY CONFIGURATION",
+    "============================================================",
+    "  Authentication: DISABLED - Use --api-key to enable",
+    "  Rate limiting: DISABLED - Use --rate-limit to enable",
+    "  Request timeout: 240.0s",
+    "  Tool calling: Use --enable-auto-tool-choice to enable",
+    "  Reasoning: ENABLED (parser: Gemma4ReasoningParser)",
+    "  External speculative decoding: Use --speculative-model to enable",
+    "============================================================",
+    "Loading model: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "Served model name: gemma4-12b-jang4m-installed-ui-audio-20260610",
+    "Default max tokens override: 96",
+    "Mode: Continuous batching (for multiple concurrent users)",
+    "Stream interval: 1 tokens",
+    "Paged cache: block_size=64, max_blocks=1000",
+    "Block disk cache: max=2.0GB",
+    "KV cache quantization: q4 (group_size=64)",
+    "INFO:vmlx_engine.server:Serving model as: gemma4-12b-jang4m-installed-ui-audio-20260610 (actual: JANGQ-AI/gemma-4-12B-it-JANG_4M)",
+    "INFO:vmlx_engine.server:System memory before load: 113.9GB available / 128.0GB total (11.0% used)",
+    "INFO:vmlx_engine.server:Loading model with BatchedEngine: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "INFO:vmlx_engine:is_mllm_model(/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M): tier=config_json_vision_config result=True",
+    "INFO:vmlx_engine.server:Model loaded (batched mode): /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "INFO:vmlx_engine.server:Metal GPU memory after load: 0.00GB active, 0.00GB peak",
+    "INFO:vmlx_engine.server:System memory after load: 113.9GB available (11.0% used)",
+    "INFO:vmlx_engine.server:Native tool format enabled for parser: gemma4",
+    "INFO:vmlx_engine.server:Default max tokens override: 96",
+    "Starting server at http://127.0.0.1:62907",
+    "INFO:     Started server process [48039]",
+    "INFO:     Waiting for application startup.",
+    "INFO:vmlx_engine.server:Started caffeinate system wake lock for PID 48039",
+    "INFO:vmlx_engine.models.mllm:Loading JANG VL model: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "INFO:vmlx_engine.utils.jang_loader:JANG v2 VLM detected — loading via mmap (instant)",
+    "INFO:vmlx_engine.utils.jang_loader:  Wired limit set to 27 GB (model 10 GB)",
+    "INFO:vmlx_engine.utils.jang_loader:  TurboQuant KV skipped: mixed sliding/full attention model uses native RotatingKVCache metadata; flat generic TQ-KV would violate the mixed_swa_kv_v1 cache contract.",
+    "INFO:vmlx_engine.utils.jang_loader:JANG v2 VLM loaded in 1.4s",
+    "[transformers] You are using a model of type `gemma4_unified` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.",
+    "INFO:vmlx_engine.models.mllm:JANG VL model loaded: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+    "INFO:vmlx_engine.mllm_scheduler:VLM mixed-attention model detected (e.g. Gemma 4 sliding+full). Prefix cache remains enabled; RotatingKVCache metadata will be preserved during truncation and paged/L2 reconstruction.",
+    "INFO:vmlx_engine.block_disk_store:BlockDiskStore initialized: dir=/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-5as21L/block-cache, max_size=2.0GB, entries=0, size=0.00GB",
+    "INFO:vmlx_engine.mllm_scheduler:VLM block disk cache enabled: dir=/var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/vmlx-real-ui-live-5as21L/block-cache, max=2.0GB",
+    "INFO:vmlx_engine.paged_cache:PagedCacheManager initialized: block_size=64, max_blocks=1000, max_tokens=64000",
+    "INFO:vmlx_engine.mllm_scheduler:VLM Paged cache enabled: block_size=64, max_blocks=1000",
+    "INFO:vmlx_engine.mllm_scheduler:Mixed-SWA VLM cache detected — disabling auto q4/q8 stored-cache quantization (was: q4). Native KVCache/RotatingKVCache prefix, paged, and block-L2 cache remain active; explicit q4/q8 is a diagnostic override until family-specific semantic parity is proven.",
+    "INFO:vmlx_engine.mllm_scheduler:Runtime cache layout: model_type=gemma4_unified layers=48 layout=0:RotatingKVCache;1:RotatingKVCache;2:RotatingKVCache;3:RotatingKVCache;4:RotatingKVCache;5:KVCache;6:RotatingKVCache;7:RotatingKVCache;8:RotatingKVCache;9:RotatingKVCache;10:RotatingKVCache;11:KVCache;12:RotatingKVCache;13:RotatingKVCache;14:RotatingKVCache;15:RotatingKVCache;16:RotatingKVCache;17:KVCache;18:RotatingKVCache;19:RotatingKVCache;20:RotatingKVCache;21:RotatingKVCache;22:RotatingKVCache;23:KVCache;24:RotatingKVCache;25:RotatingKVCache;26:RotatingKVCache;27:RotatingKVCache;28:RotatingKVCache;29:KVCache;30:RotatingKVCache;31:RotatingKVCache;32:RotatingKVCache;33:RotatingKVCache;34:RotatingKVCache;35:KVCache;36:RotatingKVCache;37:RotatingKVCache;38:RotatingKVCache;39:RotatingKVCache;40:RotatingKVCache;41:KVCache;42:RotatingKVCache;43:RotatingKVCache;44:RotatingKVCache;45:RotatingKVCache;46:RotatingKVCache;47:KVCache",
+    "INFO:vmlx_engine.mllm_scheduler:MLLM Scheduler initialized: cache_mode=paged, hybrid=False, zaya_cca=False, kv_quant=none, prompt_l2=False, block_l2=True, max_seqs=1",
+    "INFO:vmlx_engine.mllm_scheduler:MLLM Scheduler started with max_num_seqs=1",
+    "INFO:vmlx_engine.engine.batched:MLLM Scheduler started with continuous batching: max_num_seqs=1, prefill_batch=512, completion_batch=128",
+    "INFO:vmlx_engine.engine.batched:BatchedEngine loaded: /Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M (mllm=True)",
+    "INFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=9.4GB max=107.5GB reason=lifespan_engine_start",
+    "INFO:vmlx_engine.mcp.config:No MCP config file found, using empty config",
+    "INFO:     Application startup complete.",
+    "INFO:     Uvicorn running on http://127.0.0.1:62907 (Press CTRL+C to quit)",
+    "WARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.",
+    "INFO:     127.0.0.1:62915 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62918 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62915 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62918 - \"GET /v1/models HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62918 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62918 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 96, 'enable_thinking': False}",
+    "INFO:     127.0.0.1:62921 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLMBatchGenerator: Using VLM's language_model for batched generation",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLMBatchGenerator: Vision cache enabled (size=16)",
+    "INFO:vmlx_engine.mllm_batch_generator:Metal cache limit set to 26.88GB (max_ws=107.5GB, active=9.4GB, free=98.1GB; base=26.88GB safety=49.04GB; mlxstudio#78)",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLM native MTP skipped for request=chatcmpl-9428a65f: loaded language model has no native MTP head",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=20, num_new_blocks=1, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 1 (8 kv layers, rotating_kv=40, 20 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 1 blocks to SSD",
+    "INFO:vmlx_engine.mllm_scheduler:VLM Scheduler stored paged Prefix Cache for chatcmpl-9428a65f: 48 layers, truncated to 20 tokens",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 96, 'enable_thinking': False}",
+    "INFO:     127.0.0.1:62922 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.mllm_batch_generator:VLM prefix cache HIT for chatcmpl-c8b637fb: 20 cached, 61 remaining (incl. 3-token gen-prompt suffix)",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLM native MTP skipped for request=chatcmpl-c8b637fb: loaded language model has no native MTP head",
+    "INFO:vmlx_engine.prefix_cache:Block disk write-through: disk_store=present, is_tensor_data=True, new_tokens=57, num_new_blocks=1, frugal=True",
+    "INFO:vmlx_engine.prefix_cache:Block disk: np_sources has 48 positional layers (out of 48 total)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: queuing write for block 2 (8 kv layers, rotating_kv=40, 57 tokens)",
+    "INFO:vmlx_engine.prefix_cache:Block disk: writing 1 blocks to SSD",
+    "INFO:vmlx_engine.mllm_scheduler:VLM Scheduler stored paged Prefix Cache for chatcmpl-c8b637fb: 48 layers, truncated to 77 tokens",
+    "INFO:vmlx_engine.server:[MEDIA_DIAG] request_shape={\"engine_is_mllm\": true, \"family\": \"gemma4\", \"media\": {\"content_arrays\": 1, \"data_url\": 0, \"messages\": 1, \"missing_source\": 0, \"roles\": {\"user\": 1}, \"total\": 1, \"types\": {\"input_audio\": 1}, \"url_or_path\": 1}, \"model\": \"gemma-4-12B-it-JANG_4M\", \"omni_modalities\": null, \"registry_is_mllm\": true, \"route\": \"/v1/chat/completions\"}",
+    "INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 96, 'enable_thinking': False}",
+    "INFO:     127.0.0.1:62923 - \"POST /v1/chat/completions HTTP/1.1\" 200 OK",
+    "INFO:vmlx_engine.models.mllm:Base64 audio decoded: /var/folders/55/4db45j8d3sdblm_7mqz34b1c0000gn/T/tmp7ft2g7fa.wav (0.0 MB)",
+    "INFO:vmlx_engine.mllm_batch_generator:VLM image request Metal cache limit tightened to 1.00GB (active=9.5GB, max_ws=107.5GB, free_fraction=0.10)",
+    "INFO:vmlx_engine.mllm_batch_generator:VLM image request Metal cache limit tightened to 1.00GB (active=9.5GB, max_ws=107.5GB, free_fraction=0.10)",
+    "INFO:vmlx_engine.mllm_batch_generator:MLLM native MTP skipped for request=chatcmpl-9ad10088: loaded language model has no native MTP head",
+    "INFO:vmlx_engine.mllm_scheduler:Skipping VLM prefix cache store for chatcmpl-9ad10088: prompt contains media context/placeholders; media embeddings are path-dependent and must not be rebuilt from text-only tokens",
+    "INFO:vmlx_engine.mllm_scheduler:Skipping VLM paged cache store for chatcmpl-9ad10088: resolved extracted cache is empty (mixed_swa=True, zaya_cca=False, prompt_tokens=137, cache_callable=False)",
+    "INFO:     127.0.0.1:62918 - \"GET /health HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62918 - \"GET /v1/cache/stats HTTP/1.1\" 200 OK",
+    "INFO:     127.0.0.1:62915 - \"GET /health HTTP/1.1\" 200 OK"
+  ],
+  "visibleAssistantTurnsComplete": false,
+  "liveSpeedSamples": [
+    {
+      "tokens": 33,
+      "liveTokensPerSecond": 46.7,
+      "ttftSeconds": 0.26,
+      "line": "[CHAT] Response complete: 33 tokens in 1.0s (57.1 t/s, live=46.7 t/s, TTFT: 0.26s, pp: 21 tokens, 81.1 pp/s, usage=server)"
+    },
+    {
+      "tokens": 18,
+      "liveTokensPerSecond": 47.4,
+      "ttftSeconds": 0.22,
+      "line": "[CHAT] Response complete: 18 tokens in 0.7s (71.1 t/s, live=47.4 t/s, TTFT: 0.22s, pp: 78 tokens (20 cached), 348.2 pp/s, usage=server)"
+    },
+    {
+      "tokens": 6,
+      "liveTokensPerSecond": 0,
+      "ttftSeconds": 0.8,
+      "line": "[CHAT] Response complete: 6 tokens in 0.8s (0.0 t/s, live=0.0 t/s, TTFT: 0.80s, pp: 137 tokens, 171.3 pp/s, usage=server)"
+    }
+  ],
+  "provenSurfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "generation_defaults_applied",
+    "installed_app_ui",
+    "l2_disk_storage",
+    "language_leak_check",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "server_cache_controls",
+    "settings_persistence"
+  ],
+  "assertionFailures": [
+    "UI turn ended with empty visible assistant content",
+    "requested real audio media but proof did not record audio_where_supported surface"
+  ]
+}

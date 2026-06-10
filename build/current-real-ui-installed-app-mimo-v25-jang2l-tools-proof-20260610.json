@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-06-10T04:49:00Z",
+  "status": "fail",
+  "failure_stage": "release_assertions",
+  "scope": "local rebuilt installed app MiMo V2.5 JANG_2L built-in tool boundary",
+  "app_path": "/Applications/vMLX.app",
+  "ui_launch_mode": "installed-app",
+  "model_path": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANG_2L",
+  "served_model": "mimo-v25-jang2l-installed-ui-tools-20260610",
+  "wire_api": "chat",
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-tools-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-mimo-v25-jang2l-tools-20260610-chat.png",
+  "positive_evidence": {
+    "installed_app_ui": true,
+    "real_loaded_model": true,
+    "builtin_tool_surface_reached": true,
+    "one_run_command_executed": true,
+    "second_tool_probe_file_created": true,
+    "server_cache_controls": true,
+    "chat_completions": true,
+    "generation_defaults_applied": true,
+    "parser_leak_check": true,
+    "reasoning_leak_check": true
+  },
+  "red_evidence": {
+    "long_tool_loop": false,
+    "assertion": "requested real built-in tools but proof did not record long_tool_loop surface",
+    "missing_first_tool_probe_file": true,
+    "first_visible_content_mutated_marker": "REAL_UI_LIVE_TOOL_ONE -> REAL_UI_LAND_TOOL_ONE",
+    "first_visible_content_quality": "repetitive tool-planning prose instead of a completed tool result continuation",
+    "second_turn_partial": "created real_ui_tool_probe_2.txt but final visible text only began 'I used the'"
+  },
+  "tool_probe_files": {
+    "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO\n"
+  },
+  "runtime": {
+    "loaded_family": "mimo_v2",
+    "model_type": "llm",
+    "active_memory_mb": 105384.7,
+    "peak_memory_mb": 109903.3,
+    "quantization_type": "jang",
+    "quantization_codec": "affine_quantized_matmul",
+    "profile": "JANG_2L_322_D3E16",
+    "kernel_type": "affine_quantized_matmul",
+    "metal_na_active_on_host": true
+  },
+  "cache": {
+    "native_cache_schema": "mixed_swa_kv_v1",
+    "cache_subtype": "mimo_v2_asymmetric_swa",
+    "generic_turboquant_kv": false,
+    "cache_detail": "paged",
+    "cache_hit_tokens": 4552,
+    "last_cached_tokens": 3481,
+    "l2_block_tokens_on_disk": 4720,
+    "l2_tokens_on_disk": 4720
+  },
+  "release_boundary": {
+    "clears_installed_app_tools": false,
+    "clears_installed_app_text_cache": false,
+    "clears_installed_app_media": false,
+    "clears_mimo_jangtq2_exactness": false,
+    "clears_dmg_package_sign_notarize": false,
+    "release_ready": false
+  }
+}

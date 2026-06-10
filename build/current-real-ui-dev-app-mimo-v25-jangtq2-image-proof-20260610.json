@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-06-10T06:16:02Z",
+  "status": "fail",
+  "classification": "dev_app_image_vl_text_only_guard_red",
+  "repoDir": "/Users/eric/mlx/vllm-mlx-finite-launch-guard",
+  "uiLaunchMode": "electron-dev",
+  "uiCommand": "npm run dev",
+  "modelPath": "/Users/eric/.mlxstudio/models/JANGQ-AI/MiMo-V2.5-JANGTQ_2",
+  "servedModel": "mimo-v25-jangtq2-dev-ui-image-20260610",
+  "wireApi": "chat",
+  "rawProof": "docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-image-proof-20260610-proof.json",
+  "screenshot": "docs/internal/agent-notes/current-real-ui-dev-app-mimo-v25-jangtq2-image-proof-20260610-chat.png",
+  "positiveEvidence": {
+    "currentElectronDevBuild": true,
+    "realLoadedModel": true,
+    "forcedMllmRequested": true,
+    "chatCompletions": true,
+    "visibleAssistantTurnsCompleteBeforeMedia": true,
+    "serverCacheControls": true,
+    "generationDefaultsApplied": true,
+    "rawParserLeak": false,
+    "reasoningRawParserLeak": false,
+    "persistedToolCount": 0,
+    "persistedReasoningCount": 0,
+    "serverMediaDiagSawImageUrl": true
+  },
+  "redEvidence": {
+    "failureStage": "image_send_message",
+    "imageVerified": false,
+    "sendError": "API error: 400 - /v1/chat/completions received unsupported media modality image because the loaded runtime is text-only. Supported modalities: text.",
+    "runtimeBoundary": "MiMo V2 preserved media weights override force_mllm because bundle metadata marks vision/audio as unwired weights_preserved_text_runtime; runtime routes text-only."
+  },
+  "runtime": {
+    "memoryActiveMb": 76491.8,
+    "memoryPeakMb": 77127.2,
+    "modelType": "llm",
+    "quantizationCodec": "turboquant_codebook",
+    "quantizationProfile": "JANGTQ_2",
+    "weightMatmulDispatch": "jang_tools_turboquant_custom_kernels",
+    "tqPackedTargets": 141,
+    "prestackedSwitchTargets": 423,
+    "routedExpertBitsLabel": "gate=2/up=2/down=2-bit"
+  },
+  "cache": {
+    "nativeCacheFamily": "mimo_v2",
+    "nativeCacheSchema": "mixed_swa_kv_v1",
+    "nativeCacheSubtype": "mimo_v2_asymmetric_swa",
+    "cacheDetail": "paged",
+    "cacheHitRequests": 1,
+    "cacheHitTokens": 39,
+    "l2BlockTokensOnDisk": 132,
+    "l2TokensOnDisk": 132,
+    "blockDiskWrites": 3,
+    "blockDiskHits": 0,
+    "genericTurboquantKvEnabled": false
+  },
+  "releaseBoundary": "This clears the current Electron dev-build MiMo JANGTQ2 image/VL classification only: the app and server plumbing reached the media boundary, but runtime honestly rejects image because the loaded MiMo runtime is text-only. It does not clear MiMo media support, exactness, tools, package/sign/notarize, or release readiness."
+}

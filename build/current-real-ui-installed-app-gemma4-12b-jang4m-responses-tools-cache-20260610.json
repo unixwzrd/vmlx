@@ -1,0 +1,124 @@
+{
+  "boundary": "Gemma 12B JANG4M installed-app Responses/tool/cache is green for this two-turn built-in tool proof. This does not clear installed-app image/video/audio for JANG4M, larger Gemma QAT rows, public tunnel SSE, or release readiness.",
+  "cache": {
+    "cache_hit_tokens": 3538,
+    "cache_hit_tokens_by_detail": {
+      "paged+mixed_swa": 3538
+    },
+    "disk_hits": 30,
+    "disk_writes": 58,
+    "l2_block_tokens_on_disk": 3571,
+    "l2_tokens_on_disk": 3571,
+    "last_cache_execution": {
+      "blocks": 0,
+      "cache_detail": "paged+mixed_swa",
+      "cached_tokens": 2688,
+      "dequantization_ok": true,
+      "dequantization_seconds": 9e-06,
+      "dequantized": true,
+      "disk_hit": false,
+      "reconstructed": true,
+      "reconstruction_ok": true,
+      "reconstruction_seconds": 0.064002,
+      "request_id": "resp_fbdb9dc603ca",
+      "selection": "paged",
+      "total_worker_cache_seconds": 0.064242
+    }
+  },
+  "live_speed_samples": [
+    {
+      "line": "[CHAT] Response complete: 83 tokens in 6.0s (48.2 t/s, live=45.0 t/s, TTFT: 1.38s, pp: 2790 tokens (320 cached), 2017.4 pp/s, usage=server)",
+      "liveTokensPerSecond": 45,
+      "tokens": 83,
+      "ttftSeconds": 1.38
+    },
+    {
+      "line": "[CHAT] Response complete: 117 tokens in 5.6s (119.9 t/s, live=44.7 t/s, TTFT: 0.48s, pp: 3047 tokens (2688 cached), 6374.5 pp/s, usage=server)",
+      "liveTokensPerSecond": 44.7,
+      "tokens": 117,
+      "ttftSeconds": 0.48
+    }
+  ],
+  "memory": {
+    "active_mb": 9889.4,
+    "cache_mb": 1370.5,
+    "peak_mb": 12630.4
+  },
+  "model_path": "/Users/eric/models/JANGQ-AI/gemma-4-12B-it-JANG_4M",
+  "native_cache": {
+    "block_disk_l2": true,
+    "cache_subtype": "mixed_swa_kv",
+    "cache_type": "mixed_swa_kv",
+    "components": [
+      "full_attention_kv",
+      "sliding_window_kv",
+      "rotating_window_metadata"
+    ],
+    "family": "gemma4",
+    "generic_turboquant_kv": {
+      "enabled": false,
+      "reason": "not_active"
+    },
+    "paged": true,
+    "prefix": true,
+    "schema": "mixed_swa_kv_v1",
+    "storage_quantization": {
+      "applies_to": "full_and_sliding_attention_kv",
+      "bits": null,
+      "enabled": false,
+      "group_size": null,
+      "metadata_policy": "preserve_rotating_window_metadata",
+      "mode": "storage_boundary"
+    }
+  },
+  "proven_surfaces": [
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "chat_completions",
+    "generation_defaults_applied",
+    "installed_app_ui",
+    "l2_disk_storage",
+    "language_leak_check",
+    "long_tool_loop",
+    "native_cache_status",
+    "parser_leak_check",
+    "real_loaded_model",
+    "responses_api",
+    "responses_cache_detail_usage",
+    "responses_delta_streaming",
+    "server_cache_controls",
+    "settings_persistence",
+    "tool_l2_cache_integrated"
+  ],
+  "quantization": {
+    "codec": "affine_quantized_matmul",
+    "profile": "JANG_4M",
+    "weight_format": "jang_affine",
+    "weight_matmul_dispatch": {
+      "metal_na_eligible": true,
+      "primary": "mlx_affine_quantized_matmul",
+      "reason": null,
+      "uses_mlx_quantized_matmul": true
+    }
+  },
+  "raw_proof": "docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-jang4m-responses-tools-cache-20260610-proof.json",
+  "requested_builtin_tools": true,
+  "screenshot": "docs/internal/agent-notes/current-real-ui-installed-app-gemma4-12b-jang4m-responses-tools-cache-20260610-chat.png",
+  "served_model": "gemma4-12b-jang4m-installed-ui-responses-tools-cache-20260610",
+  "status": "pass",
+  "stream_delta_counts": [
+    16,
+    23
+  ],
+  "stream_last_full_content": [
+    "The file has been created successfully. REAL_UI_LIVE_TOOL_ONE",
+    "The file has been created. REAL_UI_LIVE_TOOL_TWO. This is the second UI turn."
+  ],
+  "tool_probe_files": {
+    "real_ui_tool_probe_1.txt": "REAL_UI_LIVE_TOOL_ONE\n",
+    "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO\n"
+  },
+  "ui_launch_mode": "installed-app",
+  "visible_assistant_turns_complete": true,
+  "wire_api": "responses"
+}

@@ -1,0 +1,93 @@
+INFO:vmlx_engine.model_config_registry:Model config: detection_source=jang_stamped family=qwen3_5_moe reasoning_parser=qwen3 tool_parser=qwen think_in_template=True cache_type=hybrid cache_subtype=None is_mllm=False
+INFO:__main__:KV cache auto mode: TurboQuant enabled for compatible models; stored prefix cache quantization=q4
+INFO:__main__:Qwen3.6 hybrid/path-dependent cache model detected — keeping auto live TurboQuant enabled for attention KVCache layers only; SSM/GatedDelta companion state remains native full precision. Stored attention-KV quantization=q4 remains active for prefix/paged/L2 boundaries.
+INFO:__main__:Auto-configured tool parser from registry: qwen
+INFO:__main__:Auto-configured reasoning parser from registry: qwen3
+============================================================
+SECURITY CONFIGURATION
+============================================================
+  Authentication: DISABLED - Use --api-key to enable
+  Rate limiting: DISABLED - Use --rate-limit to enable
+  Request timeout: 900.0s
+  Tool calling: Use --enable-auto-tool-choice to enable
+  Reasoning: ENABLED (parser: Qwen3ReasoningParser)  [thinking model detected]
+  External speculative decoding: Use --speculative-model to enable
+  Native MTP: metadata inconsistent (scope: text, policy: compatible-only)
+============================================================
+Loading model: /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L
+Served model name: n2-pro-jang1l-deferred-eval-live-attempt-20260610
+Default max tokens override: 16
+Mode: Continuous batching (for multiple concurrent users)
+Stream interval: 1 tokens
+Paged cache: block_size=64, max_blocks=256
+Block disk cache: max=2.0GB
+KV cache quantization: q4 (group_size=64)
+INFO:vmlx_engine.server:Serving model as: n2-pro-jang1l-deferred-eval-live-attempt-20260610 (actual: JANGQ-AI/Nex-N2-Pro-JANG_1L)
+INFO:vmlx_engine.server:System memory before load: 113.5GB available / 128.0GB total (11.4% used)
+INFO:vmlx_engine.server:Loading model with BatchedEngine: /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L
+INFO:vmlx_engine:is_mllm_model(/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L): tier=affine_qwen_hybrid_jang_text_only result=False
+INFO:vmlx_engine.server:Model loaded (batched mode): /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L
+INFO:vmlx_engine.server:Metal GPU memory after load: 0.00GB active, 0.00GB peak
+INFO:vmlx_engine.server:System memory after load: 113.5GB available (11.4% used)
+INFO:vmlx_engine.server:Default max tokens override: 16
+Starting server at http://127.0.0.1:8876
+INFO:     Started server process [53763]
+INFO:     Waiting for application startup.
+INFO:vmlx_engine.server:Started caffeinate system wake lock for PID 53763
+INFO:vmlx_engine.utils.tokenizer:Detected JANG model: /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L
+INFO:vmlx_engine.utils.tokenizer:Nex/N2 JANG_1L affine bundle detected — deferring JANG startup parameter eval to reduce Metal residency peak
+INFO:vmlx_engine.utils.jang_loader:JANG v2 detected — loading via mmap (instant)
+WARNING:vmlx_engine.utils.quant_shape_inference:quant_shape_inference: patched 482 module(s) in Nex-N2-Pro-JANG_1L — config disagreed with safetensors shapes (top-level config claimed bits=2 group_size=128; per-module overrides corrected from shape). Most common cause: an older JANG/JANGTQ converter wrote uniform bits=2 into config.json while actual weights were stored with mixed precision per layer.
+INFO:vmlx_engine.utils.jang_loader:  Loading 123 safetensors shards via mmap
+INFO:vmlx_engine.utils.jang_loader:  bfloat16 enabled: 512 experts, hidden=4096 (float16 overflow prevention)
+INFO:vmlx_engine.utils.jang_loader:  TurboQuant auto-enabled via VMLX_FORCE_TQ_AUTO=1
+INFO:vmlx_engine.utils.jang_loader:  Hybrid model: 15 attention + 45 SSM layers
+INFO:vmlx_engine.utils.jang_loader:  TurboQuant enabled: 3-bit keys, 3-bit values, 6 critical layers
+INFO:vmlx_engine.utils.jang_loader:JANG v2 loaded in 6.7s: Nex-N2-Pro (2.1-bit avg)
+INFO:vmlx_engine.engine.batched:BatchedEngine multi-eos hook: family=qwen3_5_moe, registry eos_tokens=['<|im_end|>'], tokenizer_class=TokenizerWrapper, primary=248046
+INFO:vmlx_engine.scheduler:Runtime cache layout: model_type=qwen3_5_moe layers=60 layout=0:ArraysCache;1:ArraysCache;2:ArraysCache;3:TurboQuantKVCache;4:ArraysCache;5:ArraysCache;6:ArraysCache;7:TurboQuantKVCache;8:ArraysCache;9:ArraysCache;10:ArraysCache;11:TurboQuantKVCache;12:ArraysCache;13:ArraysCache;14:ArraysCache;15:TurboQuantKVCache;16:ArraysCache;17:ArraysCache;18:ArraysCache;19:TurboQuantKVCache;20:ArraysCache;21:ArraysCache;22:ArraysCache;23:TurboQuantKVCache;24:ArraysCache;25:ArraysCache;26:ArraysCache;27:TurboQuantKVCache;28:ArraysCache;29:ArraysCache;30:ArraysCache;31:TurboQuantKVCache;32:ArraysCache;33:ArraysCache;34:ArraysCache;35:TurboQuantKVCache;36:ArraysCache;37:ArraysCache;38:ArraysCache;39:TurboQuantKVCache;40:ArraysCache;41:ArraysCache;42:ArraysCache;43:TurboQuantKVCache;44:ArraysCache;45:ArraysCache;46:ArraysCache;47:TurboQuantKVCache;48:ArraysCache;49:ArraysCache;50:ArraysCache;51:TurboQuantKVCache;52:ArraysCache;53:ArraysCache;54:ArraysCache;55:TurboQuantKVCache;56:ArraysCache;57:ArraysCache;58:ArraysCache;59:TurboQuantKVCache
+INFO:vmlx_engine.scheduler:TurboQuantKVCache live decode preserving configured batching (batch cache API=turboquant_kv_v1).
+INFO:vmlx_engine.scheduler:KV cache auto mode: TurboQuantKVCache is active for live decode; stored prefix/cache snapshots still use q4 when applicable.
+INFO:vmlx_engine.scheduler:Hybrid/path-dependent cache model detected — live TurboQuant KV active for attention KVCache layers; q4/q8 remains storage-boundary quantization for prefix/paged/L2. Hybrid non-KV state is preserved full precision and restored through the SSM companion cache or clean-prefill rederive (stored_kv_quantization=q4).
+INFO:vmlx_engine.scheduler:Hybrid SSM cache: 15/60 KV layers, SSM companion enabled (entries=8, max_mb=128, model_key=85507cc1f64d)
+INFO:vmlx_engine.scheduler:KV cache quantization validated: cache_head_dims=(256,), group_size=64
+INFO:vmlx_engine.scheduler:KV cache quantization round-trip test passed: bits=4, group_size=64, test_shape=(1, 4, 8, 256)
+INFO:vmlx_engine.scheduler:KV cache quantization enabled: q4 (bits=4, group_size=64)
+INFO:vmlx_engine.scheduler:Prefix cache requires continuous batching — enabled automatically
+INFO:vmlx_engine.block_disk_store:BlockDiskStore initialized: dir=build/current-n2-jang1l-deferred-eval-live-attempt-20260610-block-cache, max_size=2.0GB, entries=0, size=0.00GB
+INFO:vmlx_engine.scheduler:Block disk cache enabled: dir=build/current-n2-jang1l-deferred-eval-live-attempt-20260610-block-cache, max=2.0GB, expected_layers=60
+INFO:vmlx_engine.scheduler:Hybrid SSM companion L2 enabled: dir=build/current-n2-jang1l-deferred-eval-live-attempt-20260610-block-cache/ssm_companion, max=2GB
+INFO:vmlx_engine.paged_cache:PagedCacheManager initialized: block_size=64, max_blocks=256, max_tokens=16384
+INFO:vmlx_engine.scheduler:Paged cache enabled: block_size=64, max_blocks=256
+INFO:vmlx_engine.engine_core:Engine started
+INFO:vmlx_engine.engine.batched:BatchedEngine loaded: /Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L (mllm=False)
+INFO:vmlx_engine.server:Recorded Metal working-set model baseline: active=0.0GB max=107.5GB reason=lifespan_engine_start
+INFO:vmlx_engine.mcp.config:No MCP config file found, using empty config
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8876 (Press CTRL+C to quit)
+INFO:     127.0.0.1:63575 - "GET /health HTTP/1.1" 200 OK
+WARNING:vmlx_engine.server:SECURITY WARNING: Server running without API key authentication. Anyone can access the API. Use --api-key to enable authentication.
+INFO:vmlx_engine.server:Resolved sampling kwargs route=/v1/chat/completions model=/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANG_1L kwargs={'temperature': 0.0, 'top_p': 1.0, 'max_tokens': 4, 'enable_thinking': False}
+INFO:vmlx_engine.scheduler:max_num_seqs=1 — using vMLX SingleBatchGenerator (raw native cache, scheduler-owned single-active path)
+INFO:vmlx_engine.server:Chat completion: 4 tokens in 49.05s (0.1 tok/s)
+INFO:     127.0.0.1:63576 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+WARNING:vmlx_engine.server:mlxstudio#78 Metal working-set pressure reject: 102.0% of 107.5GB (threshold 99.0%); rejecting to avoid command-buffer OOM. active=109.7GB
+INFO:     127.0.0.1:63577 - "POST /v1/chat/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:63578 - "POST /v1/chat/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:63579 - "POST /v1/chat/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:63580 - "POST /v1/responses HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:63581 - "POST /v1/responses HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:63582 - "POST /v1/responses HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:63583 - "GET /health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:vmlx_engine.scheduler:Shutting down block disk cache...
+INFO:vmlx_engine.scheduler:Block disk cache shutdown complete
+INFO:vmlx_engine.engine_core:Engine stopped
+INFO:vmlx_engine.paged_cache:PagedCacheManager cleared
+INFO:vmlx_engine.scheduler:Deep reset completed - all caches cleared
+INFO:vmlx_engine.engine.batched:BatchedEngine stopped
+INFO:vmlx_engine.server:Engine stopped
+INFO:vmlx_engine.server:Caffeinate process terminated
+INFO:     Application shutdown complete.
+INFO:     Finished server process [53763]

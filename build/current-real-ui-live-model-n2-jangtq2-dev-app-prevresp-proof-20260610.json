@@ -1,0 +1,136 @@
+{
+  "schema": "vmlx.real_ui_model_proof_summary.v1",
+  "status": "pass",
+  "generated_at": "2026-06-10T03:09:48.115Z",
+  "model": {
+    "path": "/Users/eric/.mlxstudio/models/JANGQ-AI/Nex-N2-Pro-JANGTQ2",
+    "profile": "JANGTQ2",
+    "served_model_name": "n2-jangtq2-dev-ui-tools-prevresp-default-20260610"
+  },
+  "source_fix": {
+    "file": "panel/src/main/ipc/chat.ts",
+    "summary": "Responses API in-turn tool-result follow-ups now send scoped function_call_output input with the latest previous_response_id and suppress the original explicit tool choice on that follow-up request.",
+    "diagnostic_logs": [
+      "[CHAT] Responses tool follow-up using previous_response_id=resp_319707b6b152 with 1 function_call_output item(s)",
+      "[CHAT] Responses tool follow-up using previous_response_id=resp_cace821c6775 with 1 function_call_output item(s)"
+    ]
+  },
+  "raw_artifact": "docs/internal/agent-notes/current-real-ui-live-model-n2-jangtq2-responses-tools-prevresp-default-20260610-proof.json",
+  "scope": "Real Electron dev-app Responses proof with built-in run_command tools, previous_response_id tool-result continuation, renderer content deltas, hybrid SSM/TurboQuant KV cache, and L2 disk cache.",
+  "request": {
+    "wire_api": "responses",
+    "builtin_tools_enabled": true,
+    "enable_thinking": false,
+    "max_tokens": 128,
+    "max_prompt_tokens": 4096,
+    "server_cache_controls_checked": true
+  },
+  "proven_surfaces": [
+    "current_electron_dev_build",
+    "real_loaded_model",
+    "chat_completions",
+    "responses_api",
+    "responses_delta_streaming",
+    "responses_cache_detail_usage",
+    "generation_defaults_applied",
+    "cache_endpoint_stats",
+    "cache_hit_telemetry",
+    "native_cache_status",
+    "l2_disk_storage",
+    "server_cache_controls",
+    "settings_persistence",
+    "parser_leak_check",
+    "language_leak_check",
+    "long_tool_loop",
+    "tool_l2_cache_integrated"
+  ],
+  "tool_loop": {
+    "event_counts": {
+      "stream": 23,
+      "tool": 106,
+      "complete": 2
+    },
+    "assistant_messages": [
+      "Done. REAL_UI_LIVE_TOOL_ONE",
+      "Done \u2014 this is the second UI turn. REAL_UI_LIVE_TOOL_TWO"
+    ],
+    "probe_files": {
+      "real_ui_tool_probe_1.txt": "REAL_UI_LIVE_TOOL_ONE",
+      "real_ui_tool_probe_2.txt": "REAL_UI_LIVE_TOOL_TWO"
+    },
+    "visible_assistant_turns_complete": true
+  },
+  "streaming": {
+    "assistant_traces": [
+      {
+        "count": 8,
+        "first_full_content": "Done",
+        "last_full_content": "Done. REAL_UI_LIVE_TOOL_ONE",
+        "last_metrics": {
+          "prompt_tokens": 2500,
+          "cached_tokens": 0,
+          "tokens_per_second": "29.7",
+          "ttft": "14.66"
+        }
+      },
+      {
+        "count": 15,
+        "first_full_content": "Done",
+        "last_full_content": "Done \u2014 this is the second UI turn. REAL_UI_LIVE_TOOL_TWO",
+        "last_metrics": {
+          "prompt_tokens": 2711,
+          "cached_tokens": 384,
+          "cache_detail": "paged+ssm",
+          "tokens_per_second": "22.8",
+          "ttft": "16.81"
+        }
+      }
+    ]
+  },
+  "runtime_cache": {
+    "model_loaded": true,
+    "model_type": "mllm",
+    "memory_active_mb": 103802.3,
+    "memory_peak_mb": 108624.4,
+    "native_cache": {
+      "family": "qwen3_5_moe",
+      "schema": "hybrid_ssm_v1",
+      "cache_type": "hybrid_ssm_typed",
+      "components": [
+        "attention_kv",
+        "ssm_companion_state",
+        "async_rederive"
+      ],
+      "live_attention_tq_kv": true,
+      "attention_tq_applies_to": "attention_kv_layers_only",
+      "ssm_policy": "native_full_precision_companion_state",
+      "prefix": true,
+      "paged": true,
+      "block_disk_l2": true
+    },
+    "cache_after": {
+      "cache_hit_tokens": 17083,
+      "cache_detail": "paged+ssm",
+      "l2_block_tokens_on_disk": 3579,
+      "l2_ssm_tokens_on_disk": 17083,
+      "l2_tokens_on_disk": 20662,
+      "block_disk_writes": 59,
+      "block_disk_hits": 110,
+      "ssm_disk_stores": 11,
+      "ssm_disk_hits": 1
+    }
+  },
+  "red_followup": {
+    "artifact": "docs/internal/agent-notes/current-real-ui-live-model-n2-jangtq2-responses-tools-prevresp-longdelta-20260610-proof.json",
+    "status": "fail",
+    "boundary": "A stricter custom prompt still failed: the second turn did not create real_ui_tool_probe_2.txt and visible output degenerated into repeated exclamation marks after a tool_choice-required error. Treat this as a stricter prompt/model quality red row, not as the default checkpoint proof."
+  },
+  "not_proven": [
+    "Installed-app packaged parity for current HEAD.",
+    "VL/audio/video runtime for N2 JANGTQ2.",
+    "Public tunnel SSE parity for this exact dev-app route.",
+    "N2 JANG_1L profile.",
+    "Full production release readiness."
+  ],
+  "release_boundary": "This clears the default N2 JANGTQ2 real dev-app Responses tool/cache/delta path. It does not clear installed-app parity, media, N2 JANG_1L, package/sign/notarize, tag, upload, or public release gates."
+}
